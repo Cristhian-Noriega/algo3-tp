@@ -1,6 +1,7 @@
 package tp1.clases;
 
 public class HabilidadEstadistica extends Habilidad {
+    //comentario
     public enum Estadisticas {
         BAJAR_VELOCIDAD, BAJAR_ATAQUE, BAJAR_DEFENSA, SUBIR_VELOCIDAD, SUBIR_ATAQUE, SUBIR_DEFENSA, SUBIR_VIDA
     }
@@ -13,4 +14,5 @@ public class HabilidadEstadistica extends Habilidad {
     public Estadisticas getEstadistica() {
         return estadistica;
     }
+
 }
