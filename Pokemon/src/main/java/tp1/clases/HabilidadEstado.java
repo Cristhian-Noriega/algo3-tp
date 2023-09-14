@@ -1,7 +1,7 @@
 package tp1.clases;
 
 public class HabilidadEstado extends Habilidad {
-    //comentario2
+    //comentario2 kedpoa
     public enum Estado {
         DORMIDO, PARALIZADO, ENVENENADO
     }
