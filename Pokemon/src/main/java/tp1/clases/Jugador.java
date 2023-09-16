@@ -38,16 +38,8 @@ public class Jugador {
         // ESTA HORRIBLE YA SE
         String res = "CAMPO DE BATALLA \n";
 
-        int vida1 = this.pokemonActual.getVida();
-        int vida2 = oponente.pokemonActual.getVida();
-        int nivel1 = this.pokemonActual.getNivel();
-        int nivel2 = oponente.pokemonActual.getNivel();
-        Estado estado1 = this.pokemonActual.getEstado();
-        Estado estado2 = oponente.pokemonActual.getEstado();
-
-        // Perdon x ponerlo asi, no me sale con el %d y eso :)
-        res = res.concat("Tu pokemon es: " + this.pokemonActual + "\n" + "Nivel: " + nivel1 + ". Estado: " + estado1 + ". Vida: " + vida1 + "\n");
-        res = res.concat("El pokemon de tu oponente es: " + oponente.pokemonActual + "\n"+ "Nivel: " + nivel2 + ". Estado: " + estado2 + ". Vida: " + vida2 + "\n");
+        res = res.concat("Tu pokemon es: " + this.pokemonActual + "\n" + "Nivel: " +this.pokemonActual.getNivel() + ". Estado: " + this.pokemonActual.getEstado() + ". Vida: " + this.pokemonActual.getVida() + "\n");
+        res = res.concat("El pokemon de tu oponente es: " + oponente.pokemonActual + "\n"+ "Nivel: " + oponente.pokemonActual.getNivel() + ". Estado: " + oponente.pokemonActual.getEstado() + ". Vida: " + oponente.pokemonActual.getVida() + "\n");
 
         return res;
     }
@@ -82,12 +74,13 @@ public class Jugador {
         for (int i = 0; i < this.items.size(); i++) {
             String item = this.items.get(i);
             int cantidad = itemsPorCant.getOrDefault(item, 0);
-            res = res.concat((i + 1) + ". " + item + " (%" + cantidad + ")\n");
+            res = res.concat((i + 1) + ". " + item + " (" + cantidad + ")\n");
         }
 
         return res;
     }
 
+    //esto chau ?
     private String obtenerFrasesGanador() {
         String[] elementosG = {"¡Enhorabuena! El ganador es ", "WOW ¡Que partida! Felicitaciones ", "¡Bravo! El ganador de esta partida es ", "¡¡Que gran partida!! Felicitaciones ganador ", "Sigue así ¡Que genio! "};
         List<String> frasesGanador = new ArrayList<>(Arrays.asList(elementosG));
