@@ -5,16 +5,15 @@ import java.util.stream.Collectors;
 
 public class Pokemon {
     private final String nombre;
-    private int nivel;
+    private final int nivel;
     private HabilidadEstado.Estado estado;
     private final Tipo tipo;
-    private final List<Habilidad> habilidades; //no estoy seguro si las habilidades del pokemon pueden variar(cambiar en la partida)
+    private final List<Habilidad> habilidades;
     private int vidaMax;
     private int vidaActual;
     private int velocidad;
     private int ataque;
     private int defensa;
-    private Boolean estaKO;
 
 
     public Pokemon(String nombre, int nivel, Tipo tipo,
@@ -28,7 +27,6 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.ataque = ataque;
         this.defensa = defensa;
-        this.estaKO = false;
     }
 
 
@@ -75,15 +73,10 @@ public class Pokemon {
         }
     }
 
-    public void usarItem(Item item){
-        item.usarItem(this);
-    }
-
     public boolean estaMuerto() {
         return this.vidaActual <= 0;
     }
 
-    //supongo que estara bien tener los metodos de modificascion de stats en pokmeon ?)
     public void aumentarAtaque(int aumento) {
         this.ataque += aumento;
     }
@@ -106,6 +99,8 @@ public class Pokemon {
         this.estado = estado;
     }
 
+    public void modificarVida(int aumento) { this.vidaActual += aumento; }
+
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 
     public Tipo getTipo() {
@@ -123,6 +118,8 @@ public class Pokemon {
     public int getVida(){
         return this.vidaActual;
     }
+
+    public int getVidaMax() { return this.vidaMax; }
 
     public int getAtaque(){
         return this.ataque;
