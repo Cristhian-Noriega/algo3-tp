@@ -6,7 +6,7 @@ public abstract class Habilidad {
     final protected Integer usos;
     final protected Tipo tipo;
     final protected String info;
-
+    //comentario
     //constructor:
     public Habilidad(String nombre, Integer usos, Tipo tipo, String info) {
         this.nombre = nombre;

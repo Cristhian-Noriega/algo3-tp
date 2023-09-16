@@ -6,5 +6,5 @@ public class HabilidadAtaque extends Habilidad {
         super(nombre, usos, tipo, info);
         this.poder = poder;
     }
-
+    //comentario
 }

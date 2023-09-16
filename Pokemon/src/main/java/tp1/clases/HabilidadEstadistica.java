@@ -8,7 +8,7 @@ public class HabilidadEstadistica extends Habilidad {
         this.estadistica = estadistica;
         this.contraRival = contraRival;
     }
-
+    //comentario
     public Estadisticas getEstadistica() {
         return estadistica;
     }
