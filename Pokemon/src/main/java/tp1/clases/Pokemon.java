@@ -13,8 +13,7 @@ public class Pokemon {
     private int velocidad;
     private int ataque;
     private int defensa;
-
-
+    
     public Pokemon(String nombre, int nivel, Tipo tipo,
                    List<Habilidad> habilidades, int vidaMax, int velocidad, int ataque, int defensa) {
         this.nombre = nombre;

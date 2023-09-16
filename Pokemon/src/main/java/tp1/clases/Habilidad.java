@@ -1,13 +1,12 @@
 package tp1.clases;
 
 public abstract class Habilidad {
-    //comentario4 kopedk
     //atributos:
     final protected String nombre;
     final protected Integer usos;
     final protected Tipo tipo;
     final protected String info;
-
+    //comentario
     //constructor:
     public Habilidad(String nombre, Integer usos, Tipo tipo, String info) {
         this.nombre = nombre;
@@ -15,7 +14,6 @@ public abstract class Habilidad {
         this.tipo = tipo;
         this.info = info;
     }
-
 
     //getters:
     public String getNombre(){
