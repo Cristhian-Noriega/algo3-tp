@@ -69,7 +69,6 @@ public class Pokemon {
         vidaActual -= danio;
         if (this.estaMuerto()) {
             this.vidaMax = 0;
-            this.estaKO = true;
         }
     }
 
@@ -77,24 +76,12 @@ public class Pokemon {
         return this.vidaActual <= 0;
     }
 
-    public void aumentarAtaque(int aumento) {
-        this.ataque += aumento;
-    }
+    public void modificarAtaque(int modificador) { this.ataque += modificador; }
 
-    public void disminuirAtaque(int disminucion) {
-        this.ataque -= disminucion;
-    }
+    public void modificarDefensa(int modificador) {this.defensa += modificador; }
 
-    public void aumentarDefensa(int aumento) {
-        this.defensa += aumento;
-    }
-    public void disminuirDefensa(int disminucion) {
-        this.defensa -= disminucion;
-    }
+    public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
 
-    public void aumentarVelocidad(int aumento) { this.velocidad += aumento; }
-
-    public void disminuirVelocidad(int disminucion) { this.velocidad -= disminucion; }
     public void setEstado(HabilidadEstado.Estado estado) {
         this.estado = estado;
     }
@@ -135,7 +122,6 @@ public class Pokemon {
     public HabilidadEstado.Estado getEstado() {
         return this.estado;
     }
-
 }
 
 
