@@ -17,8 +17,8 @@ public class ItemVida extends Item{
         switch (this.vida){
             case REVIVIR  && pokemon.estaMuerto():
                 pokemon.modificarVida(pokemon.getVidaMaxima);
-                System.out.println("¡Pokemon " + pokemon.getNombre() + " a revivido!!");
-            case REVIVIR -> System.out.println("El pokemon no esta muerto, no se puede usar el Item " + this.nombre);
+                System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
+            case REVIVIR -> System.out.println("El pokemon " + pokemon.getNombre() + " no esta muerto, no se puede usar el Item " + this.nombre);
             default:
                 pokemon.modificarVida(this.vida);
                 System.out.println("¡" + this.nombre + " ha sido usada!");
