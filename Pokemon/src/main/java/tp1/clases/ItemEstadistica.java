@@ -2,7 +2,7 @@ package tp1.clases;
 
 public class ItemEstadistica extends Item{
 
-    private Estadisticas estadistica;
+    private final Estadisticas estadistica;
     public ItemEstadistica(String nombre, Estadisticas estadistica) {
         super.nombre = nombre;
         this.estadistica = estadistica;
