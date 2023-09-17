@@ -7,9 +7,9 @@ public class ItemEstado extends Item{
     }
 
     public void usar(Pokemon pokemon){
-        switch (pokemon.getEstado){
+        switch (pokemon.getEstado()){
             case NORMAL -> System.out.println(pokemon.getNombre() + " no necesita el Item " + super.nombre);
-            default -> pokemon.modificarEstado(NORMAL);
+            default -> pokemon.actualizarEstado(NORMAL);
         }
     }
 }
