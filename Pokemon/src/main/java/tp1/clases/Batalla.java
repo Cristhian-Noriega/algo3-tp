@@ -45,9 +45,7 @@ public class Batalla {
         int defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = tipoAtaque.getEfectividad(ataque.getTipo(), defensor.getTipo());
         double mismoTipo = (atacante.getTipo() == ataque.getTipo())? 1.5: 1;
-        //me falta la variable random :/ ( multiplicacion por un numero
-        //entero aleatorio uniformemente distribuido entre 217 y 255 (inclusive),
-        //seguido de una division entera por 255)
+        //me falta la variable random
 
         int danio = (int) (((2 * nivelAtacante * poderAtaque * (ataqueAtacante / defensaDefensor) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo);
 

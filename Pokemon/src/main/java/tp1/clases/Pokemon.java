@@ -46,12 +46,11 @@ public class Pokemon {
         return habilidades.stream()
                 .map(habilidad -> habilidad.getNombre() + "-" + habilidad.getInfo())
                 .collect(Collectors.joining("\n"));
-        // hay que probarlo, no se si anda xd
     }
 
     public int atacar(HabilidadAtaque ataque, Pokemon enemigo) {
         if (ataque.getUsos() == 0) {
-            throw new NoHayMasAtaquesException(); //estaria bueno tener una clase/interfaz excepciones y manejar todas ahi, o algo asi
+            throw new NoHayMasAtaquesException();
         }
 
         Tipo tipoAtaque = ataque.getTipo();
