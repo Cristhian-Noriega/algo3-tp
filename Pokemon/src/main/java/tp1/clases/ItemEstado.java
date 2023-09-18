@@ -16,13 +16,12 @@ public class ItemEstado implements Item{
     }
 
     @Override
-    public String usar(Pokemon pokemon){
+    public void usar(Pokemon pokemon){
         if (pokemon.getEstado() == NORMAL) {
-            return Error.pokemonNormal(pokemon.getNombre(), this.nombre);
+            throw new PokemonNormalError(pokemon.getNombre(), this.nombre);
         } else {
             pokemon.actualizarEstado(NORMAL);
         }
-        return null;
     }
 
 }

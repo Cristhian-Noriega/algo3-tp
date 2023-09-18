@@ -16,7 +16,7 @@ public class ItemEstadistica implements Item{
     }
 
     @Override
-    public String usar(Pokemon pokemon){
+    public void usar(Pokemon pokemon){
         switch (this.estadistica){
             case ATAQUE:
                 pokemon.aumentarAtaque(pokemon.getAtaque()*0.1);
@@ -28,7 +28,6 @@ public class ItemEstadistica implements Item{
                 pokemon.aumentarVelocidad(pokemon.getVelocidad()*0.1);
                 System.out.println("¡La velocidad de " + pokemon.getNombre() + " ha aumentado!");
         }
-        return null;
     }
 }
 

@@ -16,18 +16,17 @@ public class ItemVida implements Item {
     }
 
     @Override
-    public String usar(Pokemon pokemon){
+    public void usar(Pokemon pokemon){
         if ((this.vida == 0) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMaxima());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
-        } else if (this.vida == 0){
-            return Error.pokemonNoMuerto(pokemon.getNombre(), this.nombre);
+        } else if (this.vida == 0) {
+            throw new PokemonNoMuertoError(pokemon.getNombre(), this.nombre);
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");
             System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
         }
-        return null;
     }
 
 }
