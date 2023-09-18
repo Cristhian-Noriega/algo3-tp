@@ -16,4 +16,4 @@ public class HabilidadEstadistica extends Habilidad {
     public boolean isContraRival() {
         return contraRival;
     }
-}|
+}
