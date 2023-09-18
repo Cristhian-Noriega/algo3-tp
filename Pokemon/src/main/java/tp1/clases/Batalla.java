@@ -45,7 +45,7 @@ public class Batalla {
         int defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = tipoAtaque.getEfectividad(ataque.getTipo(), defensor.getTipo());
         double mismoTipo = (atacante.getTipo() == ataque.getTipo())? 1.5: 1;
-        //me falta la variable random
+        //me falta la variable random que es una uniforme
 
         int danio = (int) (((2 * nivelAtacante * poderAtaque * (ataqueAtacante / defensaDefensor) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo);
 

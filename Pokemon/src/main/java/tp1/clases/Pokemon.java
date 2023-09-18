@@ -54,7 +54,7 @@ public class Pokemon {
         }
 
         Tipo tipoAtaque = ataque.getTipo();
-        float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo());
+        float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
         int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
         int defensaEnemigo = enemigo.getDefensa();
 
