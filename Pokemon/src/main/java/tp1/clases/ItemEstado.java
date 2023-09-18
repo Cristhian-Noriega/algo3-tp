@@ -1,5 +1,7 @@
 package tp1.clases;
 
+import static tp1.clases.Estado.NORMAL;
+
 public class ItemEstado implements Item{
 
     private final String nombre;
