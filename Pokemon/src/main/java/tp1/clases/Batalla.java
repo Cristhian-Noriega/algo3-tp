@@ -43,7 +43,7 @@ public class Batalla {
         int poderAtaque = ataque.getPoder();
         int ataqueAtacante = atacante.getAtaque();
         int defensaDefensor = defensor.getDefensa();
-        double tipoAtaqueEfectividad = tipoAtaque.getEfectividad(defensor.getTipo());
+        double tipoAtaqueEfectividad = tipoAtaque.getEfectividad(ataque.getTipo(), defensor.getTipo());
         double mismoTipo = (atacante.getTipo() == ataque.getTipo())? 1.5: 1;
         //me falta la variable random :/ ( multiplicacion por un numero
         //entero aleatorio uniformemente distribuido entre 217 y 255 (inclusive),
