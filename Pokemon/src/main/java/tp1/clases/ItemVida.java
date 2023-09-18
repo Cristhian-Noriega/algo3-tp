@@ -1,31 +1,33 @@
 package tp1.clases;
 
-import static tp1.clases.ItemVida.CantVida.REVIVIR;
+public class ItemVida implements Item {
 
-public class ItemVida extends Item{
+    private final String nombre;
+    private final int vida;
 
-    public enum CantVida{
-        VEINTE, CINCUENTA, CIEN, REVIVIR;
-    }
-
-    private final CantVida vida;
-
-    public ItemVida(String nombre, CantVida vida){
-        super.nombre = nombre;
+    public ItemVida(String nombre, int vida){ //si vida es 0 entonces es pocion para revivir
+        this.nombre = nombre;
         this.vida = vida;
     }
 
-    public void usar(Pokemon pokemon){
-        if (this.vida == REVIVIR && pokemon.estaMuerto()) {
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String usar(Pokemon pokemon){
+        if ((this.vida == 0) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMaxima());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
-        } else if (this.vida == REVIVIR){
-            System.out.println("El pokemon " + pokemon.getNombre() + " no esta muerto, no se puede usar el Item " + this.nombre);
+        } else if (this.vida == 0){
+            return Error.pokemonNoMuerto(pokemon.getNombre(), this.nombre);
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");
             System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
         }
+        return null;
     }
 
 }

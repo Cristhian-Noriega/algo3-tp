@@ -1,16 +1,26 @@
 package tp1.clases;
 
-public class ItemEstado extends Item{
+public class ItemEstado implements Item{
+
+    private final String nombre;
 
     public ItemEstado(String nombre){
-        super.nombre = nombre;
+        this.nombre = nombre;
     }
 
-    public void usar(Pokemon pokemon){
+    @Override
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    @Override
+    public String usar(Pokemon pokemon){
         if (pokemon.getEstado() == NORMAL) {
-            System.out.println(pokemon.getNombre() + " no necesita el Item " + super.nombre);
+            return Error.pokemonNormal(pokemon.getNombre(), this.nombre);
         } else {
             pokemon.actualizarEstado(NORMAL);
         }
+        return null;
     }
+
 }

@@ -79,7 +79,7 @@ public class Pokemon {
         return this.tipo;
     }
 
-    public int getNombre() { return this.nombre;}
+    public String getNombre() { return this.nombre;}
 
     public int getNivel() {
         return this.nivel;
