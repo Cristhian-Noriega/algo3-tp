@@ -6,6 +6,10 @@ public class Proveedor {
     private final List<Pokemon> listaJugador1;
     private final List<Pokemon> listaJugador2;
 
+    // CREACION HABILIDADES
+
+
+    // CREACION POKEMONES
     Pokemon poke1 = new Pokemon("Rapidash", 40, "Fuego", List.of("Run Away", "FLash Fire", "Flame Body", "Chlorophyll"), 240, 193, 184, 130);
     Pokemon poke2 = new Pokemon("Toxtricity", 30, "Electrico", List.of("Punk Rock", "Plus", "Technician", "Insomnio"), 260, 139, 180, 130);
     Pokemon poke3 = new Pokemon("Golurk", 43, "Tierra", List.of("Iron Fist", "Klutz", "No Guard", "White Smoke"), 288, 103, 227, 148);

@@ -5,14 +5,16 @@ import java.util.stream.Collectors;
 
 public class Jugador {
 
-    private List<Pokemon> pokemones;
+    private final List<Pokemon> pokemones;
     private Pokemon pokemonActual;
-    private List<String> items;
+    private final List<Item> items;
     private final String nombre;
-    private Jugador oponente;
+    private Jugador oponente; //sacarlo?
 
-    public Jugador(String nombre){
+    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items){
         this.nombre = nombre;
+        this.pokemones = pokemones;
+        this.items = items;
     }
 
     // METODOS PRINCIPALES
@@ -65,14 +67,14 @@ public class Jugador {
     public String mostrarItems() {
         String res = "Tienes los siguientes items disponibles: \n";
 
-        Map<String, Integer> itemsPorCant = this.items.stream()
+        Map<Item, Integer> itemsPorCant = this.items.stream()
                 .collect(Collectors.groupingBy(
                         elemento -> elemento,
                         Collectors.summingInt(e -> 1)
                 ));
 
         for (int i = 0; i < this.items.size(); i++) {
-            String item = this.items.get(i);
+            Item item = this.items.get(i);
             int cantidad = itemsPorCant.getOrDefault(item, 0);
             res = res.concat((i + 1) + ". " + item + " (" + cantidad + ")\n");
         }
