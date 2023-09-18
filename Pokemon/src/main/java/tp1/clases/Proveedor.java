@@ -7,7 +7,16 @@ public class Proveedor {
     private final List<Pokemon> listaJugador2;
 
     // CREACION HABILIDADES
+    Habilidad hab1 = new HabilidadAtaque("Arañazo", 35, "Normal", 40, "Araña con afiladas garras");
+    Habilidad hab2 = new HabilidadAtaque("Cascada", 15, "Agua", 80, "Embiste con gran impulso que puede hacer retroceder");
+    Habilidad hab3 = new HabilidadAtaque("Demolicion", 15, "Lucha", 75, "Potente ataque que tambien es capaz de destruir barreras");
+    Habilidad hab4 = new HabilidadAtaque("Ala Bis", 10, "Volador", 40, "Ataca al adversario golpeandolo dos veces con las alas");
 
+    Habilidad hab5 = new HabilidadEstadistica("Amnesia", 20, "Psiquico", "El usuario olvida sus preocupaciones y aumenta mucho sus defensas", HabilidadEstadistica.Estadisticas.SUBIR_DEFENSA);
+    Habilidad hab6 = new HabilidadEstadistica("Danza Pluma", 15, "Volador", "Envuelve al objetivo cpn un manto de plumas para reducir mucho su ataque", HabilidadEstadistica.Estadisticas.BAJAR_ATAQUE);
+
+    Habilidad hab7 = new HabilidadEstado("Bostezo", 10, "Normal", "Gran bostezo que induce al sueño del enemigo", HabilidadEstado.Estado.DORMIDO);
+    Habilidad hab8 = new HabilidadEstado("Gas venenoso", 40, "Veneno","Lanza una nube de gas toxico a los rivales", HabilidadEstado.Estado.ENVENENADO);
 
     // CREACION POKEMONES
     Pokemon poke1 = new Pokemon("Rapidash", 40, "Fuego", List.of("Run Away", "FLash Fire", "Flame Body", "Chlorophyll"), 240, 193, 184, 130);
