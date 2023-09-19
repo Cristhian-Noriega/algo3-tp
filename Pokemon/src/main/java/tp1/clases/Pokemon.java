@@ -1,13 +1,14 @@
 package tp1.clases;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Pokemon {
-    private String nombre;
-    private int nivel;
+    private final String nombre;
+    private final int nivel;
     private HabilidadEstado.Estado estado;
-    private Tipo tipo;
-    private List<Habilidad> habilidades;
+    private final Tipo tipo;
+    private final List<Habilidad> habilidades;
     private int vidaMax;
     private int vidaActual;
     private int velocidad;
@@ -21,65 +22,79 @@ public class Pokemon {
         this.tipo = tipo;
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
-        this.vidaActual = vidaMax; // La vida actual al inicio es igual a la vida max
+        this.vidaActual = vidaMax;
         this.velocidad = velocidad;
         this.ataque = ataque;
         this.defensa = defensa;
     }
 
+
+    public String verHabilidades() {
+        return "Habilidades de " + this.nombre + ":\n" + generarCadenaHabilidades(this.habilidades);
+    }
+
+    public String verAtaques() {
+        return "Ataques de " + this.nombre + ":\n" +
+                habilidades.stream()
+                        .filter(habilidad -> habilidad instanceof HabilidadAtaque)
+                        .map(habilidad -> habilidad.getNombre() + "-" + habilidad.getInfo())
+                        .collect(Collectors.joining("\n"));
+    }
+
+    private String generarCadenaHabilidades(List<Habilidad> habilidades) {
+        return habilidades.stream()
+                .map(habilidad -> habilidad.getNombre() + "-" + habilidad.getInfo())
+                .collect(Collectors.joining("\n"));
+    }
+
     public int atacar(HabilidadAtaque ataque, Pokemon enemigo) {
-        if !ataque.getUsos == 0 { //cada ataque puede usarse x cantidad de veces
-            throw new NoHayMasAtaquesException(); //estaria bueno tener una clase/interfaz excepciones y manejar todas ahi, o algo asi
+        if (ataque.getUsos() == 0) {
+            throw new NoHayMasAtaquesException();
         }
 
         Tipo tipoAtaque = ataque.getTipo();
-        float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo());
+        float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
         int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
-        int defensaEnemigo = enemigo.obtenerDefensa();
+        int defensaEnemigo = enemigo.getDefensa();
 
         enemigo.recibirDanio(danio);
         ataque.usarAtaque();
 
         return danio;
-
     }
 
-    public int recibirDanio(int danio){
+    public void recibirDanio(int danio) {
         vidaActual -= danio;
-        if this.estaMuerto(){
-            //hay que manejar la logica de cuando ya no tiene vida
-
+        if (this.estaMuerto()) {
+            this.vidaMax = 0;
         }
-        return danio;
     }
+
+    public boolean estaMuerto() {
+        return this.vidaActual <= 0;
+    }
+
+    public void modificarAtaque(int modificador) { this.ataque += modificador; }
+
+    public void modificarDefensa(int modificador) {this.defensa += modificador; }
+
+    public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
 
     public void setEstado(HabilidadEstado.Estado estado) {
         this.estado = estado;
     }
 
+    public void modificarVida(int aumento) { this.vidaActual += aumento; }
 
-
-    public void usarItem(Item item){
-        if !this.puedeUsarItem(item) {
-            throw new NoPuedeUsarItemException();
-        }
-        item.usarItem(this);
-    }
-
-    public void actualizarEstado() {
-
-    }
-
-    public List<Habilidad> verHabilidades() {
-
-    }
-    
+    public List<Habilidad> getHabilidades() { return this.habilidades; }
 
     public Tipo getTipo() {
         return this.tipo;
     }
 
-    public int getNombre() { return this.nombre;}
+    public String getNombre() {
+        return this.nombre;
+    }
 
     public int getNivel() {
         return this.nivel;
@@ -88,6 +103,8 @@ public class Pokemon {
     public int getVida(){
         return this.vidaActual;
     }
+
+    public int getVidaMax() { return this.vidaMax; }
 
     public int getAtaque(){
         return this.ataque;
@@ -100,14 +117,8 @@ public class Pokemon {
         return this.velocidad;
     }
 
-    public boolean estaMuerto() {
-        return this.vidaActual == 0;
-    }
-
-    public Estado getEstado() { return this.estado; }
-
-    public boolean puedeUsarItem(Item item){
-        //tengo que codearlo :P
+    public HabilidadEstado.Estado getEstado() {
+        return this.estado;
     }
 }
 
