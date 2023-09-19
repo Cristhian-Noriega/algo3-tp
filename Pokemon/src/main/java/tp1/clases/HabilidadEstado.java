@@ -7,7 +7,7 @@ public class HabilidadEstado extends Habilidad {
         super(nombre, usos, tipo, info);
         this.estado = estado;
     }
-    //comentario
+
     public Estado getEstado() {
         return estado;
     }

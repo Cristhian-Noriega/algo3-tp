@@ -2,9 +2,13 @@ package tp1.clases;
 
 public class HabilidadAtaque extends Habilidad {
     final protected Integer poder;
+
     public HabilidadAtaque(String nombre, Integer usos, TipoPokemon.Tipo tipo, Integer poder, String info) {
         super(nombre, usos, tipo, info);
         this.poder = poder;
     }
-    //comentario
+
+    public Integer getPoder() {
+        return poder;
+    }
 }
