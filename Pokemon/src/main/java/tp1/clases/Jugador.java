@@ -18,6 +18,11 @@ public class Jugador {
     }
 
     // METODOS PRINCIPALES
+
+    public Pokemon getPokemonActual() {
+        return pokemonActual;
+    }
+
     public void seleccionarPokemon(int pokeElegido){
         if (pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto()){
             this.pokemonActual = this.pokemones.get(pokeElegido);
@@ -47,12 +52,17 @@ public class Jugador {
     }
 
     public void aplicarItem(int itemElegido){
-        if (itemElegido <= this.items.size() && this.pokemonActual.puedeUsarItem(this.items.get(itemElegido))){
-            //aca no entiendo bien que tiene que hacer
-        }
+        //terminar
     }
 
-    // METODOS AUXILIARES
+    public boolean tienePokemonesConVida(){
+        for (Pokemon pokemon : this.pokemones) {
+            if (pokemon.getVida() < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
     public String mostrarPokemones() {
         String res = "Tienes los siguientes pokemones disponibles: \n";
 
@@ -82,7 +92,6 @@ public class Jugador {
         return res;
     }
 
-    //esto chau ?
     private String obtenerFrasesGanador() {
         String[] elementosG = {"¡Enhorabuena! El ganador es ", "WOW ¡Que partida! Felicitaciones ", "¡Bravo! El ganador de esta partida es ", "¡¡Que gran partida!! Felicitaciones ganador ", "Sigue así ¡Que genio! "};
         List<String> frasesGanador = new ArrayList<>(Arrays.asList(elementosG));

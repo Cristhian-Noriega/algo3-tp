@@ -4,11 +4,11 @@ public abstract class Habilidad {
     //atributos:
     final protected String nombre;
     final protected Integer usos;
-    final protected Tipo tipo;
+    final protected TipoPokemon.Tipo tipo;
     final protected String info;
     //comentario
     //constructor:
-    public Habilidad(String nombre, Integer usos, Tipo tipo, String info) {
+    public Habilidad(String nombre, Integer usos, TipoPokemon.Tipo tipo, String info) {
         this.nombre = nombre;
         this.usos = usos;
         this.tipo = tipo;
@@ -24,7 +24,7 @@ public abstract class Habilidad {
         return usos;
     }
 
-    public Tipo getTipo() {
+    public TipoPokemon.Tipo getTipo() {
         return tipo;
     }
 

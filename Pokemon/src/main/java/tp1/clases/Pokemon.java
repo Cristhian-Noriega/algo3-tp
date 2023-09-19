@@ -7,7 +7,7 @@ public class Pokemon {
     private final String nombre;
     private final int nivel;
     private HabilidadEstado.Estado estado;
-    private final Tipo tipo;
+    private final TipoPokemon.Tipo tipo;
     private final List<Habilidad> habilidades;
     private int vidaMax;
     private int vidaActual;
@@ -15,7 +15,7 @@ public class Pokemon {
     private int ataque;
     private int defensa;
     
-    public Pokemon(String nombre, int nivel, Tipo tipo,
+    public Pokemon(String nombre, int nivel, TipoPokemon.Tipo tipo,
                    List<Habilidad> habilidades, int vidaMax, int velocidad, int ataque, int defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
@@ -47,12 +47,14 @@ public class Pokemon {
                 .collect(Collectors.joining("\n"));
     }
 
-    public int atacar(HabilidadAtaque ataque, Pokemon enemigo) {
+    public int atacar(Integer indiceAtaque, Pokemon enemigo) {
+        Habilidad ataque = this.habilidades.get(indiceAtaque); // agregue esto para que el Jugador seleccione numero, habilidad como tipo solo se acceden desde clase Pokemon xq es qn las tiene. (emi)
+
         if (ataque.getUsos() == 0) {
             throw new NoHayMasAtaquesException();
         }
 
-        Tipo tipoAtaque = ataque.getTipo();
+        TipoPokemon.Tipo tipoAtaque = ataque.getTipo();
         float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
         int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
         int defensaEnemigo = enemigo.getDefensa();
@@ -88,7 +90,7 @@ public class Pokemon {
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 
-    public Tipo getTipo() {
+    public TipoPokemon.Tipo getTipo() {
         return this.tipo;
     }
 
