@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 public class Pokemon {
     private final String nombre;
     private final int nivel;
-    private HabilidadEstado.Estado estado;
-    private final TipoPokemon.Tipo tipo;
+    private Estado estado;
+    private final Tipo tipo;
     private final List<Habilidad> habilidades;
     private int vidaMax;
     private int vidaActual;
@@ -15,7 +15,7 @@ public class Pokemon {
     private int ataque;
     private int defensa;
     
-    public Pokemon(String nombre, int nivel, TipoPokemon.Tipo tipo,
+    public Pokemon(String nombre, int nivel, Tipo tipo,
                    List<Habilidad> habilidades, int vidaMax, int velocidad, int ataque, int defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
@@ -54,7 +54,7 @@ public class Pokemon {
             throw new NoHayMasAtaquesException();
         }
 
-        TipoPokemon.Tipo tipoAtaque = ataque.getTipo();
+        Tipo tipoAtaque = ataque.getTipo();
         float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
         int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
         int defensaEnemigo = enemigo.getDefensa();
@@ -82,7 +82,7 @@ public class Pokemon {
 
     public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
 
-    public void setEstado(HabilidadEstado.Estado estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 
@@ -90,7 +90,7 @@ public class Pokemon {
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 
-    public TipoPokemon.Tipo getTipo() {
+    public Tipo getTipo() {
         return this.tipo;
     }
 
@@ -119,7 +119,7 @@ public class Pokemon {
         return this.velocidad;
     }
 
-    public HabilidadEstado.Estado getEstado() {
+    public Estado getEstado() {
         return this.estado;
     }
 }
