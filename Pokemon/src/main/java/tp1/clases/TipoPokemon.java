@@ -5,11 +5,7 @@ import java.util.List;
 
 public class TipoPokemon {
 
-    public enum Tipo{
-        AGUA, BICHO, DRAGON, ELECTRICO, FANTASMA, FUEGO, HIELO, LUCHA, NORMAL, PLANTA, PSIQUICO, ROCA, TIERRA, VENENO, VOLADOR
-    }
-
-     List<List<Double>> TablaEfectividad = Arrays.asList(List.of(0.5, 1.0, 0.5, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0),
+     static List<List<Double>> TablaEfectividad = Arrays.asList(List.of(0.5, 1.0, 0.5, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0),
                 List.of(1.0, 1.0, 1.0, 1.0, 0.5, 0.5, 1.0, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0, 2.0, 0.5),
                 List.of(0.5, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
                 List.of(2.0, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 0.0, 1.0, 2.0),
@@ -25,7 +21,7 @@ public class TipoPokemon {
                 List.of(1.0, 2.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5, 0.5, 0.5, 1.0),
                 List.of(1.0, 2.0, 1.0, 0.5, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 1.0, 0.5, 1.0, 1.0, 1.0));
 
-    public Double getEfectividad(int fila, int columna) {
+    public static Double getEfectividad(int fila, int columna) {
         return TablaEfectividad.get(fila).get(columna);
     }
 }
