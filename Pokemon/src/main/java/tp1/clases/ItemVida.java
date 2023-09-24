@@ -21,7 +21,7 @@ public class ItemVida implements Item {
             pokemon.modificarVida(pokemon.getVidaMaxima());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
         } else if (this.vida == 0) {
-            throw new PokemonNoMuertoError(pokemon.getNombre(), this.nombre);
+            PokemonNoMuertoError(pokemon.getNombre(), this.nombre);
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");
