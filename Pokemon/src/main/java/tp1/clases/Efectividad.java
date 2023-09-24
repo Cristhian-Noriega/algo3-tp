@@ -3,7 +3,7 @@ package tp1.clases;
 import java.util.Arrays;
 import java.util.List;
 
-public class TipoPokemon {
+public class Efectividad {
      static List<List<Double>> TablaEfectividad = Arrays.asList(List.of(0.5, 1.0, 0.5, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0),
                 List.of(1.0, 1.0, 1.0, 1.0, 0.5, 0.5, 1.0, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0, 2.0, 0.5),
                 List.of(0.5, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),

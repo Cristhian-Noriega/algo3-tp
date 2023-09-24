@@ -18,9 +18,9 @@ public class ItemEstado implements Item{
     @Override
     public void usar(Pokemon pokemon){
         if (pokemon.getEstado() == NORMAL) {
-            PokemonNormalError(pokemon.getNombre(), this.nombre);
+            PokemonNormalError(pokemon.getNombre(), this.nombre); //TO DO: organizar a donde van a ir los errores
         } else {
-            pokemon.actualizarEstado(NORMAL);
+            pokemon.setEstado(NORMAL);
         }
     }
 
