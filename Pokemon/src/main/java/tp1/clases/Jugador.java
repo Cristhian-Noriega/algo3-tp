@@ -54,15 +54,6 @@ public class Jugador {
     public void aplicarItem(int itemElegido){
         //terminar
     }
-
-    public boolean tienePokemonesConVida(){
-        for (Pokemon pokemon : this.pokemones) {
-            if (pokemon.getVida() < 0) {
-                return false;
-            }
-        }
-        return true;
-    }
     public String mostrarPokemones() {
         String res = "Tienes los siguientes pokemones disponibles: \n";
 
@@ -91,6 +82,18 @@ public class Jugador {
 
         return res;
     }
+
+
+    public boolean tienePokemonesConVida(){
+        for (Pokemon pokemon : this.pokemones) {
+            if (pokemon.getVida() < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //esto chau ?
 
     private String obtenerFrasesGanador() {
         String[] elementosG = {"¡Enhorabuena! El ganador es ", "WOW ¡Que partida! Felicitaciones ", "¡Bravo! El ganador de esta partida es ", "¡¡Que gran partida!! Felicitaciones ganador ", "Sigue así ¡Que genio! "};

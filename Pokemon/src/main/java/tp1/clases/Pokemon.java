@@ -54,7 +54,7 @@ public class Pokemon {
             throw new NoHayMasAtaquesException();
         }
 
-        TipoPokemon.Tipo tipoAtaque = ataque.getTipo();
+        Tipo tipoAtaque = ataque.getTipo();
         float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
         int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
         int defensaEnemigo = enemigo.getDefensa();
@@ -82,7 +82,7 @@ public class Pokemon {
 
     public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
 
-    public void setEstado(HabilidadEstado.Estado estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 
@@ -90,7 +90,7 @@ public class Pokemon {
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 
-    public TipoPokemon.Tipo getTipo() {
+    public Tipo getTipo() {
         return this.tipo;
     }
 
@@ -123,7 +123,7 @@ public class Pokemon {
         return this.velocidad;
     }
 
-    public HabilidadEstado.Estado getEstado() {
+    public Estado getEstado() {
         return this.estado;
     }
 }
