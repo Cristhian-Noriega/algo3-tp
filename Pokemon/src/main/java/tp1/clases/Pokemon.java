@@ -14,7 +14,7 @@ public class Pokemon {
     private int velocidad;
     private int ataque;
     private int defensa;
-    
+
     public Pokemon(String nombre, int nivel, Tipo tipo,
                    List<Habilidad> habilidades, int vidaMax, int velocidad, int ataque, int defensa) {
         this.nombre = nombre;
@@ -94,13 +94,9 @@ public class Pokemon {
         return this.tipo;
     }
 
-<<<<<<< HEAD
-    public String getNombre() { return this.nombre;}
-=======
     public String getNombre() {
         return this.nombre;
     }
->>>>>>> 785d885acd304de4e5a048d0774c80de07d64f5a
 
     public int getNivel() {
         return this.nivel;
@@ -127,6 +123,3 @@ public class Pokemon {
         return this.estado;
     }
 }
-
-
-
