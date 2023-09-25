@@ -1,4 +1,4 @@
-package tp1.clases;
+package tp1.clases.modelo;
 
 public class HabilidadAtaque extends Habilidad {
     final protected Integer poder;

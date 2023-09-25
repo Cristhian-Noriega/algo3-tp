@@ -1,4 +1,4 @@
-package tp1.clases;
+package tp1.clases.modelo;
 
 public class Batalla {
     private Jugador jugador1;
