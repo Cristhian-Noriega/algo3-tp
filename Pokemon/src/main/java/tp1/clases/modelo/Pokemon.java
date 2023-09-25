@@ -1,4 +1,4 @@
-package tp1.clases;
+package tp1.clases.modelo;
 
 import java.util.List;
 import java.util.stream.Collectors;

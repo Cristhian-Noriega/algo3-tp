@@ -1,6 +1,6 @@
-package tp1.clases;
+package tp1.clases.modelo;
 
-import static tp1.clases.Estado.NORMAL;
+import static tp1.clases.modelo.Estado.NORMAL;
 
 public class ItemEstado implements Item{
 
