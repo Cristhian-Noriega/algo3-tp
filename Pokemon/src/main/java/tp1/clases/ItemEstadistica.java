@@ -1,20 +1,33 @@
 package tp1.clases;
 
-public class ItemEstadistica extends Item{
+public class ItemEstadistica implements Item{
 
-    private Estadisticas estadistica;
+    private final String nombre;
+    private final Estadisticas estadistica;
+
     public ItemEstadistica(String nombre, Estadisticas estadistica) {
-        super.nombre = nombre;
+        this.nombre = nombre;
         this.estadistica = estadistica;
     }
 
-    public void usar(Pokemon pokemon){ //agregar comentarios necesarios
-        switch (this.estadistica){
-            case ATAQUE -> pokemon.aumentarAtaque(pokemon.getAtaque()*0.1);
-            case DEFENSA -> pokemon.aumentarDefensa(pokemon.getDefensa()*0.1);
-            case VELOCIDAD -> pokemon.aumentarVelocidad(pokemon.getVelocidad()*0.1);
-        }
+    @Override
+    public String getNombre() {
+        return this.nombre;
+    }
 
+    @Override
+    public void usar(Pokemon pokemon){
+        switch (this.estadistica){
+            case ATAQUE:
+                pokemon.aumentarAtaque(pokemon.getAtaque()*0.1);
+                System.out.println("¡El ataque de " + pokemon.getNombre() + " ha aumentado!");
+            case DEFENSA:
+                pokemon.aumentarDefensa(pokemon.getDefensa()*0.1);
+                System.out.println("¡La defensa de " + pokemon.getNombre() + " ha aumentado!");
+            case VELOCIDAD:
+                pokemon.aumentarVelocidad(pokemon.getVelocidad()*0.1);
+                System.out.println("¡La velocidad de " + pokemon.getNombre() + " ha aumentado!");
+        }
     }
 }
 

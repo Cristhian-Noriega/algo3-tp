@@ -1,28 +1,31 @@
 package tp1.clases;
 
-public class ItemVida extends Item{
+public class ItemVida implements Item {
 
-    public enum CantVida{
-        VEINTE, CINCUENTA, CIEN, REVIVIR;
-    }
+    private final String nombre;
+    private final int vida;
 
-    private final CantVida vida;
-
-    public ItemVida(String nombre, CantVida vida){
-        super.nombre = nombre;
+    public ItemVida(String nombre, int vida){ //si vida es 0 entonces es pocion para revivir
+        this.nombre = nombre;
         this.vida = vida;
     }
 
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
     public void usar(Pokemon pokemon){
-        switch (this.vida){
-            case REVIVIR  && pokemon.estaMuerto():
-                pokemon.modificarVida(pokemon.getVidaMaxima);
-                System.out.println("¡Pokemon " + pokemon.getNombre() + " a revivido!!");
-            case REVIVIR -> System.out.println("El pokemon no esta muerto, no se puede usar el Item " + this.nombre);
-            default:
-                pokemon.modificarVida(this.vida);
-                System.out.println("¡" + this.nombre + " ha sido usada!");
-                System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
+        if ((this.vida == 0) && pokemon.estaMuerto()) {
+            pokemon.modificarVida(pokemon.getVidaMaxima());
+            System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
+        } else if (this.vida == 0) {
+            PokemonNoMuertoError(pokemon.getNombre(), this.nombre);
+        } else {
+            pokemon.modificarVida(this.vida);
+            System.out.println("¡" + this.nombre + " ha sido usada!");
+            System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
         }
     }
 
