@@ -1,5 +1,13 @@
 package tp1.clases.vista;
 
+import tp1.clases.modelo.Jugador;
+
 public class VistaMenu {
-    //work in progress
+
+    public VistaMenu() {
+
+    }
+
 }
+
+
