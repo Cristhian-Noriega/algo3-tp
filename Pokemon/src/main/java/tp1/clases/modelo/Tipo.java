@@ -1,4 +1,4 @@
-package tp1.clases;
+package tp1.clases.modelo;
 
 public enum Tipo {
     AGUA, BICHO, DRAGON, ELECTRICO, FANTASMA, FUEGO, HIELO, LUCHA, NORMAL, PLANTA, PSIQUICO, ROCA, TIERRA, VENENO, VOLADOR
