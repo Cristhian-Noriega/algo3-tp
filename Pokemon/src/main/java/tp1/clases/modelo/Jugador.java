@@ -33,11 +33,10 @@ public class Jugador {
     }
 
     public Optional<String> seleccionarPokemon(int pokeElegido){
-        if (pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto()){
-            this.pokemonActual = this.pokemones.get(pokeElegido);
-        }else{
-            return Optional.of("No se encontro el pokemon seleccionado");
+        if (!this.verificarPokemon(pokeElegido)){
+            return Optional.of("El pokemon seleccionado no esta disponible");
         }
+        this.pokemonActual = this.pokemones.get(pokeElegido);
         return Optional.empty();
     }
 
@@ -49,12 +48,15 @@ public class Jugador {
         }
         return false;
     }
-
     public int getVelocidadPokemonActual(){
         return this.pokemonActual.getVelocidad();
     }
 
     public List<Habilidad> getHabilidadesPokemonActual(){
         return this.pokemonActual.getHabilidades();
+    }
+
+    public boolean verificarPokemon(int pokeElegido){
+        return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
     }
 }
