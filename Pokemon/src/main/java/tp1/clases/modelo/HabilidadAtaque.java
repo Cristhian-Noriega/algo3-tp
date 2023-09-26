@@ -23,4 +23,10 @@ public class HabilidadAtaque extends Habilidad {
 
         return danio;
     }
+
+    @Override
+    public void usar(Pokemon propio, Pokemon ajeno) {
+        int danio = calcularDanioAtaque(propio, ajeno);
+        ajeno.modificarVida((-1)*danio);
+    }
 }

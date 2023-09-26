@@ -11,4 +11,9 @@ public class HabilidadEstado extends Habilidad {
     public Estado getEstado() {
         return estado;
     }
+
+    @Override
+    public void usar(Pokemon propio, Pokemon ajeno) {
+     ajeno.setEstado(this.estado);
+    }
 }
