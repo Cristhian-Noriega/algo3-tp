@@ -1,39 +1,50 @@
 package tp1.clases.modelo;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class Batalla {
-    private Jugador jugador1;
-    private Jugador jugador2;
-    private Jugador jugadorActual;
+    private ArrayList<Jugador> jugadores;
+    private int turno;
 
-    public Batalla(Jugador jugador1, Jugador jugador2) {
-        this.jugador1 = jugador1;
-        this.jugador2 = jugador2;
-        this.jugadorActual = determinarJugadorInicial();
+    public Batalla(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+        determinarJugadorInicial();
     }
 
-    private Jugador determinarJugadorInicial() {
-        if (this.jugador1.getPokemonActual().getVelocidad() > this.jugador2.getPokemonActual().getVelocidad()) {
-            return this.jugador1;
-        } else {
-            return this.jugador2;
+    private void determinarJugadorInicial() {
+        int primero = 0;
+        int mayorVelocidad = 0;
+        for (int i = 0; i < this.jugadores.size(); i++) {
+         if (this.jugadores.get(i).getPokemonActual().getVelocidad() > mayorVelocidad) {
+             primero = i;
+             mayorVelocidad = this.jugadores.get(i).getPokemonActual().getVelocidad();
+         }
         }
+
+        this.turno = primero;
     }
 
     public Optional<Jugador> obtenerGanador() {
-        if (this.jugador1.tienePokemonesConVida() && this.jugador2.tienePokemonesConVida()){
-            return Optional.empty();
+       ArrayList<Jugador> jugadoresConVida = new ArrayList<>();
+        for (Jugador jugador : this.jugadores) {
+            if (jugador.tienePokemonesConVida()) {
+                jugadoresConVida.add(jugador);
+            }
         }
-        if (!this.jugador1.tienePokemonesConVida()) {
-            return Optional.of(this.jugador2);
-        }else{
-            return Optional.of(this.jugador1);
+        if (jugadoresConVida.size() ==  1) {
+            return Optional.of(jugadoresConVida.get(0));
+        } else {
+            return Optional.empty();
         }
     }
 
     public void cambiarTurno() {
-        jugadorActual = (jugadorActual == jugador1) ? jugador2: jugador1;
+        this.turno += 1;
+    }
+
+    public Jugador getTurno() {
+        return this.jugadores.get(this.turno % this.jugadores.size());
     }
 
 
