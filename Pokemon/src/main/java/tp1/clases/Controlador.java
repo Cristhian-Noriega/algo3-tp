@@ -38,6 +38,23 @@ public class Controlador {
             }
         }
 
-        
+        //definir la variable accion llamando a vistaMenu y pidiendole que especifique quien es op
+        //hacer battala.accion(), tmb se puede hacer un metodo aparte con un switch de las opciones elegidas
+
+    }
+
+    private void Accion(String accion){
+        switch (accion){
+            case "item":
+                //llamar a vistaMenu para consultar los items con sus usos disponibles
+                //devolver para que Juego() pregunte que items usar(?
+            case "pokemon":
+                //llamar a vistaMenu para consultar los pokemones disponibles con sus respectivas vidas
+                //devolver para que Juego() pregunte que pokemon usar(?
+            case "habilidad":
+                //llamar a vistaMenu para consultar las habilidades
+                //devolver para que Juego() pregunte que habilidad usar(?
+        }
+
     }
 }
