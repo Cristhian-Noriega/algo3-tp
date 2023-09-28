@@ -1,10 +1,11 @@
-package tp1.clases;
+package tp1.clases.modelo;
+
+import java.util.Optional;
 
 public class Batalla {
     private Jugador jugador1;
     private Jugador jugador2;
     private Jugador jugadorActual;
-
 
     public Batalla(Jugador jugador1, Jugador jugador2) {
         this.jugador1 = jugador1;
@@ -19,22 +20,21 @@ public class Batalla {
             return this.jugador2;
         }
     }
-    public Jugador obtenerGanador() {
+
+    public Optional<Jugador> obtenerGanador() {
         if (this.jugador1.tienePokemonesConVida() && this.jugador2.tienePokemonesConVida()){
-            return null;
+            return Optional.empty();
         }
         if (!this.jugador1.tienePokemonesConVida()) {
-            return this.jugador2;
+            return Optional.of(this.jugador2);
         }else{
-            return this.jugador1;
+            return Optional.of(this.jugador1);
         }
     }
 
     public void cambiarTurno() {
-        if (this.jugadorActual == this.jugador1) {
-            this.jugadorActual = this.jugador2;
-        } else {
-            this.jugadorActual = this.jugador1;
-        }
+        jugadorActual = (jugadorActual == jugador1) ? jugador2: jugador1;
     }
+
+
 }
