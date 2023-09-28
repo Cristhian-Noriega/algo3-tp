@@ -3,6 +3,7 @@ package tp1.clases.modelo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
@@ -33,22 +34,10 @@ public class Batalla {
     }
 
     public Optional<Jugador> obtenerGanador() {
-        if (this.jugadoresEnJuego.size() == 1) {
-            return Optional.of(this.jugadoresEnJuego.get(0));
-        }
-
-        ArrayList<Jugador> jugadoresConVida = new ArrayList<>();
-        for (Jugador jugador : this.jugadoresEnJuego) {
-            if (jugador.tienePokemonesConVida()) {
-                jugadoresConVida.add(jugador);
-            }
-        }
-
-        if (jugadoresConVida.size() ==  1) {
-            return Optional.of(jugadoresConVida.get(0));
-        } else {
-            return Optional.empty();
-        }
+        List<Jugador> jugadoresConVida = jugadoresEnJuego.stream()
+                .filter(Jugador::tienePokemonesConVida)
+                .toList();
+        return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0)) : Optional.empty();
     }
 
     public void cambiarTurno() {
