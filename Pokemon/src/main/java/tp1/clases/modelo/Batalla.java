@@ -7,12 +7,10 @@ import java.util.stream.Collectors;
 
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
-    private ArrayList<Jugador> jugadoresEnJuego;
     private int turno;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
-        this.jugadoresEnJuego = jugadores;
         determinarJugadorInicial();
     }
 
@@ -23,10 +21,10 @@ public class Batalla {
     private void determinarJugadorInicial() {
         int primero = 0;
         int mayorVelocidad = 0;
-        for (int i = 0; i < this.jugadoresEnJuego.size(); i++) {
-         if (this.jugadoresEnJuego.get(i).getPokemonActual().getVelocidad() > mayorVelocidad) {
+        for (int i = 0; i < this.jugadores.size(); i++) {
+         if (this.jugadores.get(i).getPokemonActual().getVelocidad() > mayorVelocidad) {
              primero = i;
-             mayorVelocidad = this.jugadoresEnJuego.get(i).getPokemonActual().getVelocidad();
+             mayorVelocidad = this.jugadores.get(i).getPokemonActual().getVelocidad();
          }
         }
 
@@ -34,7 +32,7 @@ public class Batalla {
     }
 
     public Optional<Jugador> obtenerGanador() {
-        List<Jugador> jugadoresConVida = jugadoresEnJuego.stream()
+        List<Jugador> jugadoresConVida = jugadores.stream()
                 .filter(Jugador::tienePokemonesConVida)
                 .toList();
         return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0)) : Optional.empty();
@@ -48,8 +46,9 @@ public class Batalla {
         return this.jugadores.get(this.turno % this.jugadores.size());
     }
 
-    public void rendir(Jugador jugador) {
-        this.jugadoresEnJuego.remove(jugador);
+    public Jugador rendir(Jugador jugador) {
+        this.jugadores.remove(jugador);
+        return this.jugadores.get(0);
     }
 
     public List<Habilidad> getHabilidadesPokemonActual() {
@@ -63,7 +62,7 @@ public class Batalla {
         item.usar(this.getJugadorActual().getPokemonActual());
     }
 
-    public void cambiarPokemon(Pokemon pokemon) {
-        this.getJugadorActual().seleccionarPokemon(pokemon); //creo que seleccionar pokemon debería recibir el pokemon en lugar del índice en la lista
+    public void cambiarPokemon(int pokemon) {
+        this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 }
