@@ -1,6 +1,7 @@
 package tp1.clases;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Jugador {
 
@@ -31,12 +32,13 @@ public class Jugador {
         return nombre;
     }
 
-    public void seleccionarPokemon(int pokeElegido){
+    public Optional<String> seleccionarPokemon(int pokeElegido){
         if (pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto()){
             this.pokemonActual = this.pokemones.get(pokeElegido);
         }else{
-            //devolver error
+            return Optional.of("No se encontro el pokemon seleccionado");
         }
+        return Optional.empty();
     }
 
     public boolean tienePokemonesConVida(){
@@ -46,5 +48,13 @@ public class Jugador {
             }
         }
         return false;
+    }
+
+    public int getVelocidadPokemonActual(){
+        return this.pokemonActual.getVelocidad();
+    }
+
+    public List<Habilidad> getHabilidadesPokemonActual(){
+        return this.pokemonActual.getHabilidades();
     }
 }
