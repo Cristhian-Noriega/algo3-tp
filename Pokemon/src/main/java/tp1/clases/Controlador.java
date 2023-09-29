@@ -39,21 +39,27 @@ public class Controlador {
         }
 
         //definir la variable accion llamando a vistaMenu y pidiendole que especifique quien es op
-        //hacer battala.accion(), tmb se puede hacer un metodo aparte con un switch de las opciones elegidas
+        //hacer battala.accion(), tmb se puede hacer un metodo aparte con un switch de las opciones elegidas (metodo privado Accion(accion))
 
+        this.batalla.cambiarTurno(); //To Do: agregar un if si la partida esta terminada, hacer como metodo privado(? aparte
     }
 
-    private void Accion(String accion){
+    private void Accion(String accion){ //que accion sea un String es momentaneo hasta decidir q va a devolver vistaMenu
         switch (accion){
+            case "ver campo":
+                //llamar a vistaBatalla(?
+                //devolver para que Juego() pregunte que pregunte como seguir(?
             case "item":
-                //llamar a vistaMenu para consultar los items con sus usos disponibles
+                //llamar a vistaMenu(? para consultar los items con sus usos disponibles
                 //devolver para que Juego() pregunte que items usar(?
             case "pokemon":
-                //llamar a vistaMenu para consultar los pokemones disponibles con sus respectivas vidas
+                //llamar a vistaMenu(? para consultar los pokemones disponibles con sus respectivas vidas
                 //devolver para que Juego() pregunte que pokemon usar(?
             case "habilidad":
-                //llamar a vistaMenu para consultar las habilidades
+                //llamar a vistaMenu(? para consultar las habilidades
                 //devolver para que Juego() pregunte que habilidad usar(?
+            case "rendirse":
+                this.batalla.obtenerGanador();
         }
 
     }
