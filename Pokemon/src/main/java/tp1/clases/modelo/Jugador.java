@@ -55,7 +55,7 @@ public class Jugador {
     public List<Habilidad> getHabilidadesPokemonActual(){
         return this.pokemonActual.getHabilidades();
     }
-    public boolean verificarPokemon(int pokeElegido){
+    private boolean verificarPokemon(int pokeElegido){
         return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
     }
 }
