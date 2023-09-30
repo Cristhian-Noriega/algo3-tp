@@ -1,5 +1,11 @@
 package tp1.clases;
 
 public class Main {
-    //comentario
+    Controlador controlador = new Controlador();
+
+    while !controlador.HayGanador(){
+        controlador.ManejarTurno();
+    }
+
+    controlador.MostrarGanador();
 }
