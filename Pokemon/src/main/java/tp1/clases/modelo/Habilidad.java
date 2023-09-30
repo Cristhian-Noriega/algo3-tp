@@ -31,4 +31,10 @@ public abstract class Habilidad {
     public String getInfo() {
         return info;
     }
+
+    public abstract void usar(Pokemon propio, Pokemon ajeno);
+
+    public boolean quedanUsos() {
+        return this.usos >= 1;
+    }
 }
