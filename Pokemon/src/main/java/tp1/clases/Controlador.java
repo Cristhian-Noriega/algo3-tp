@@ -5,22 +5,23 @@ import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import tp1.clases.modelo.Batalla;
+
+import tp1.clases.vista.OpcionesMenu;
 import tp1.clases.vista.VistaMenu;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Stack;
+import java.util.Optional;
 
 public class Controlador {
 
-    private Batalla batalla;
-    private VistaMenu vistaMenu;
+    private final OpcionesMenu acciones = new OpcionesMenu();
+    private final Batalla batalla;
     private final LineReader reader;
     private Boolean juegoTerminado = false;
 
     public Controlador(Batalla batalla) throws IOException {
         this.batalla = batalla;
-        this.vistaMenu = new VistaMenu(); //To Do: completar la vista del menu (que pasarle por parametro, batalla(? )
 
         Terminal terminal = TerminalBuilder.terminal();
         reader = LineReaderBuilder.builder()
@@ -30,27 +31,37 @@ public class Controlador {
 
     public void Jugar(){
 
-        int op = InteraccionConUsuario(vistaMenu.mostrarOpciones());
+        int op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
 
-        //listaOpciones es la lista q me devuelve vistaMenu para poder saber que accion equivale a que opcion
-        List<String> listaOpciones = vistaMenu.getListaOpciones();
-        if (listaOpciones.size() < op) {
-            System.out.println("Opción no valida, fuera de rango");  //no se si deberia estar en el archivo de errores
-            op = InteraccionConUsuario(vistaMenu.mostrarOpciones());
+        if ((acciones.getSize() <= op) | (op <= 0)){
+            op = OpcionNoValida(VistaMenu.mostrarOpciones());
         }
-        String accion = listaOpciones.get(op); // no tiene q ser necesariamente un string
-        String proximasOpciones = siguienteAccion(accion);
 
-        if (accion.equals("rendirse")) {
+        List accion = acciones.getOpcion(op);
+
+        if (accion.get(0).equals("rendirse")) {
             this.juegoTerminado = true;
-            System.out.printf("¡Juego terminado! \n Ganador de la partida: %s", proximasOpciones);
             return;
         }
 
-        op = InteraccionConUsuario(proximasOpciones);
-        ConcretarAccion(accion, op);
+        op = InteraccionConUsuario(accion.get(1).toString()); //quizas rompe devoloviendo doble comillas
 
-        this.batalla.cambiarTurno(); //To Do: agregar un if si la partida esta terminada (si queda solo un jugador con vida)
+        while (true){
+            try {
+                int posicion = op - 1;
+                ConcretarAccion(accion.get(0).toString(), posicion); //quizas rompe devoloviendo doble comillas o con op-1
+                break;
+            } catch (OutOfRangeError err){
+                op = OpcionNoValida((String) accion.get(1));
+            }
+        }
+
+
+        if (this.batalla.finalizada()) {
+            this.juegoTerminado = true;
+            return;
+        }
+        this.batalla.cambiarTurno();
     }
 
     private int InteraccionConUsuario(String opciones) {
@@ -62,42 +73,29 @@ public class Controlador {
             try {
                 op = Integer.parseInt(opcionElegida);
                 break;
-            } catch (NumberFormatException err) { //no se si deberia estar en el archivo de errores
+            } catch (NumberFormatException err) {
                 opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: ");
             }
         }
         return op;
     }
 
-    private String siguienteAccion(String accion){
-        String res = null;
-        switch (accion){
-            case "ver campo":
-                 res = vistaMenu.verCampo(); //¿dsp de esto le vuelve  mostrar las opciones?
-            case "item":
-                res = vistaMenu.verItems();
-            case "pokemon":
-                res = vistaMenu.verPokemones();
-            case "habilidad":
-                res = vistaMenu.verHabilidades();
-            case "rendirse":
-                res = (this.batalla.obtenerGanador()).toString(); //¿agregar mensaje de si esta seguro?
-        }
-        return res;
-    }
-
     private void ConcretarAccion(String accion, int op){
         switch (accion){
-            case "item":
-                //le paso a batalla por parametro la posicion en la que esta el item a usar y batalla se encarga de q el jugador actual use el item
+            case "UsarItems":
                 this.batalla.usarItem(op);
-            case "habilidad":
+            case "UsarHabilidad":
                 this.batalla.usarHabilidad(op);
-            case "pokemon":
+            case "CambiarPokemon":
                 this.batalla.cambiarPokemon(op);
-            case "volver atras":
-                //To Do: le vuelve a mostrar las opciones del menu
+            case "VolverAtras":
+                Jugar();
         }
+    }
+
+    private int OpcionNoValida(String opciones){
+        System.out.println("Opción no valida, fuera de rango");
+        return InteraccionConUsuario(opciones);
     }
 
     public Boolean getJuegoTerminado() {
