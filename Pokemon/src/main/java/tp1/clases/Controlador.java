@@ -8,12 +8,15 @@ import tp1.clases.modelo.Batalla;
 import tp1.clases.vista.VistaMenu;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Stack;
 
 public class Controlador {
 
     private Batalla batalla;
     private VistaMenu vistaMenu;
-    private LineReader reader;
+    private final LineReader reader;
+    private Boolean juegoTerminado = false;
 
     public Controlador(Batalla batalla) throws IOException {
         this.batalla = batalla;
@@ -26,41 +29,78 @@ public class Controlador {
     }
 
     public void Jugar(){
-        //vistaMenu me lo copie del video pero ni idea como va a ser
-        String opcionElegida = reader.readLine("Elija su proxima acción: \n" + vistaMenu.mostrar()); //To Do: determinar como se van a imprimir los mensajes (una vez ya tenga vistaMenu)
 
-        while(true) {
+        int op = InteraccionConUsuario(vistaMenu.mostrarOpciones());
+
+        //listaOpciones es la lista q me devuelve vistaMenu para poder saber que accion equivale a que opcion
+        List<String> listaOpciones = vistaMenu.getListaOpciones();
+        if (listaOpciones.size() < op) {
+            System.out.println("Opción no valida, fuera de rango");  //no se si deberia estar en el archivo de errores
+            op = InteraccionConUsuario(vistaMenu.mostrarOpciones());
+        }
+        String accion = listaOpciones.get(op); // no tiene q ser necesariamente un string
+        String proximasOpciones = siguienteAccion(accion);
+
+        if (accion.equals("rendirse")) {
+            this.juegoTerminado = true;
+            System.out.printf("¡Juego terminado! \n Ganador de la partida: %s", proximasOpciones);
+            return;
+        }
+
+        op = InteraccionConUsuario(proximasOpciones);
+        ConcretarAccion(accion, op);
+
+        this.batalla.cambiarTurno(); //To Do: agregar un if si la partida esta terminada (si queda solo un jugador con vida)
+    }
+
+    private int InteraccionConUsuario(String opciones) {
+
+        String opcionElegida = reader.readLine("Elija su proxima acción: \n" + opciones);
+
+        int op;
+        while (true) {
             try {
-                int op = Integer.parseInt(opcionElegida);
+                op = Integer.parseInt(opcionElegida);
                 break;
             } catch (NumberFormatException err) { //no se si deberia estar en el archivo de errores
                 opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: ");
             }
         }
-
-        //definir la variable accion llamando a vistaMenu y pidiendole que especifique quien es op
-        //hacer battala.accion(), tmb se puede hacer un metodo aparte con un switch de las opciones elegidas (metodo privado Accion(accion))
-
-        this.batalla.cambiarTurno(); //To Do: agregar un if si la partida esta terminada, hacer como metodo privado(? aparte
+        return op;
     }
 
-    private void Accion(String accion){ //que accion sea un String es momentaneo hasta decidir q va a devolver vistaMenu
+    private String siguienteAccion(String accion){
+        String res = null;
         switch (accion){
             case "ver campo":
-                //llamar a vistaBatalla(?
-                //devolver para que Juego() pregunte que pregunte como seguir(?
+                 res = vistaMenu.verCampo(); //¿dsp de esto le vuelve  mostrar las opciones?
             case "item":
-                //llamar a vistaMenu(? para consultar los items con sus usos disponibles
-                //devolver para que Juego() pregunte que items usar(?
+                res = vistaMenu.verItems();
             case "pokemon":
-                //llamar a vistaMenu(? para consultar los pokemones disponibles con sus respectivas vidas
-                //devolver para que Juego() pregunte que pokemon usar(?
+                res = vistaMenu.verPokemones();
             case "habilidad":
-                //llamar a vistaMenu(? para consultar las habilidades
-                //devolver para que Juego() pregunte que habilidad usar(?
+                res = vistaMenu.verHabilidades();
             case "rendirse":
-                this.batalla.obtenerGanador();
+                res = (this.batalla.obtenerGanador()).toString(); //¿agregar mensaje de si esta seguro?
         }
+        return res;
+    }
 
+    private void ConcretarAccion(String accion, int op){
+        switch (accion){
+            case "item":
+                //le paso a batalla por parametro la posicion en la que esta el item a usar y batalla se encarga de q el jugador actual use el item
+                this.batalla.usarItem(op);
+            case "habilidad":
+                this.batalla.usarHabilidad(op);
+            case "pokemon":
+                this.batalla.cambiarPokemon(op);
+            case "volver atras":
+                //To Do: le vuelve a mostrar las opciones del menu
+        }
+    }
+
+    public Boolean getJuegoTerminado() {
+        return juegoTerminado;
     }
 }
