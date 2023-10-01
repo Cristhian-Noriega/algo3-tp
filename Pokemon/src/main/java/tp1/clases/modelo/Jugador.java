@@ -10,7 +10,7 @@ public class Jugador {
     private final List<Item> items;
     private final String nombre;
 
-    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items){
+    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -32,14 +32,14 @@ public class Jugador {
         return nombre;
     }
 
-    public selecconarPokemon(int pokeElegido){
-        if (!this.verificarPokemon(pokeElegido)){
-           throw error.ErrorPokemonInvalido();
+    public void selecconarPokemon(int pokeElegido) {
+        if (!this.verificarPokemon(pokeElegido)) {
+            throw error.ErrorPokemonInvalido();
         }
         this.pokemonActual = this.pokemones.get(pokeElegido);
     }
 
-    public boolean tienePokemonesConVida(){
+    public boolean tienePokemonesConVida() {
         for (Pokemon pokemon : this.pokemones) {
             if (pokemon.getVida() > 0) {
                 return true;
@@ -47,16 +47,17 @@ public class Jugador {
         }
         return false;
     }
-    public int getVelocidadPokemonActual(){
+
+    public int getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();
     }
 
-    public List<Habilidad> getHabilidadesPokemonActual(){
+    public List<Habilidad> getHabilidadesPokemonActual() {
         return this.pokemonActual.getHabilidades();
     }
 
-    public Optional<String> usarItem(int itemElegido){
-        if (!this.verificarItem(itemElegido)){
+    public Optional<String> usarItem(int itemElegido) {
+        if (!this.verificarItem(itemElegido)) {
             return Optional.of("Este item no esta disponible");
         }
 
@@ -64,10 +65,12 @@ public class Jugador {
         item.usar(this.pokemonActual);
         return Optional.empty();
     }
-    private boolean verificarPokemon(int pokeElegido){
+
+    private boolean verificarPokemon(int pokeElegido) {
         return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
     }
-    7private boolean verificarItem(int itemElegido){
+
+    private boolean verificarItem(int itemElegido){
         return itemElegido <= this.items.size();
     }
 }

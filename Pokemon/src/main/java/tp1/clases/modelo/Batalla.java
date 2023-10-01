@@ -1,40 +1,68 @@
 package tp1.clases.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class Batalla {
-    private Jugador jugador1;
-    private Jugador jugador2;
-    private Jugador jugadorActual;
+    private final ArrayList<Jugador> jugadores;
+    private int turno ;
 
-    public Batalla(Jugador jugador1, Jugador jugador2) {
-        this.jugador1 = jugador1;
-        this.jugador2 = jugador2;
-        this.jugadorActual = determinarJugadorInicial();
+    public Batalla(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores ;
+        determinarJugadorInicial() ;
     }
 
-    private Jugador determinarJugadorInicial() {
-        if (this.jugador1.getPokemonActual().getVelocidad() > this.jugador2.getPokemonActual().getVelocidad()) {
-            return this.jugador1;
-        } else {
-            return this.jugador2;
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    private void determinarJugadorInicial() {
+        int primero = 0;
+        int mayorVelocidad = 0;
+        for (int i = 0; i < this.jugadores.size(); i++) {
+            if (this.jugadores.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+                primero = i;
+                mayorVelocidad = this.jugadores.get(i).getVelocidadPokemonActual();            }
         }
+
+        this.turno = primero;
     }
+
+
 
     public Optional<Jugador> obtenerGanador() {
-        if (this.jugador1.tienePokemonesConVida() && this.jugador2.tienePokemonesConVida()){
-            return Optional.empty();
-        }
-        if (!this.jugador1.tienePokemonesConVida()) {
-            return Optional.of(this.jugador2);
-        }else{
-            return Optional.of(this.jugador1);
-        }
+        List<Jugador> jugadoresConVida =  jugadores.stream()
+                .filter(Jugador::tienePokemonesConVida)
+                .toList();
+        return jugadoresConVida.size()  == 1 ? Optional.of(jugadoresConVida.get(0)) : Optional.empty();
     }
 
     public void cambiarTurno() {
-        jugadorActual = (jugadorActual == jugador1) ? jugador2: jugador1;
+        this.turno += 1;
     }
 
+    public Jugador getJugadorActual() {
+        return  this.jugadores.get(this.turno % this.jugadores.size());
+    }
 
+    public Jugador rendir(Jugador jugador) {
+        this.jugadores.remove(jugador) ;
+        return this.jugadores.get(0) ;
+    }
+
+    public List<Habilidad> getHabilidadesPokemonActual() {
+        return this.getJugadorActual().getHabilidadesPokemonActual();
+    }
+    public void usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
+        habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
+    }
+
+    public void usarItem(Item item) {
+        item.usar( this.getJugadorActual().getPokemonActual());
+    }
+
+    public void cambiarPokemon(int pokemon) {
+        this.getJugadorActual().seleccionarPokemon(pokemon);
+    }
 }

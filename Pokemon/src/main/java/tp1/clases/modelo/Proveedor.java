@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Proveedor {
     private final List<List<Pokemon>> listasPokemones;
+  
     private final List<List<Item>> listasItems;
 
     Habilidad hab1 = new HabilidadAtaque("Arañazo", 35, Tipo.NORMAL, 40, "Araña con afiladas garras");
@@ -105,4 +106,5 @@ public class Proveedor {
     public List<List<Item>> getItems(){
         return this.listasItems;
     }
+
 }

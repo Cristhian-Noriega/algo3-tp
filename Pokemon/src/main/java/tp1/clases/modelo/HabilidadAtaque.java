@@ -16,11 +16,17 @@ public class HabilidadAtaque extends Habilidad {
         int nivelAtacante = atacante.getNivel();
         int ataqueAtacante = atacante.getAtaque();
         int defensaDefensor = defensor.getDefensa();
-        double tipoAtaqueEfectividad = TipoPokemon.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
+        double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
         int random = (int) (Math.random()*(255-217+1)+217) / 255;
         int danio = (int) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random);
 
         return danio;
+    }
+
+    @Override
+    public void usar(Pokemon propio, Pokemon ajeno) {
+        int danio = calcularDanioAtaque(propio, ajeno);
+        ajeno.modificarVida((-1)*danio);
     }
 }

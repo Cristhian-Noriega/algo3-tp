@@ -18,10 +18,10 @@ public class ItemVida implements Item {
     @Override
     public void usar(Pokemon pokemon){
         if ((this.vida == 0) && pokemon.estaMuerto()) {
-            pokemon.modificarVida(pokemon.getVidaMaxima());
+            pokemon.modificarVida(pokemon.getVidaMax());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
         } else if (this.vida == 0) {
-            PokemonNoMuertoError(pokemon.getNombre(), this.nombre);
+            PokemonNoMuertoError(pokemon.getNombre(), this.nombre); //TO DO: organizar a donde van a ir los errores
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");

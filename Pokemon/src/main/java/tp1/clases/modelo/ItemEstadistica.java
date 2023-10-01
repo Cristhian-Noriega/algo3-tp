@@ -17,15 +17,16 @@ public class ItemEstadistica implements Item{
 
     @Override
     public void usar(Pokemon pokemon){
+        double porcentajeDeAumento = 0.1;
         switch (this.estadistica){
             case ATAQUE:
-                pokemon.aumentarAtaque(pokemon.getAtaque()*0.1);
+                pokemon.modificarAtaque(pokemon.getAtaque()* porcentajeDeAumento);
                 System.out.println("¡El ataque de " + pokemon.getNombre() + " ha aumentado!");
             case DEFENSA:
-                pokemon.aumentarDefensa(pokemon.getDefensa()*0.1);
+                pokemon.modificarDefensa(pokemon.getDefensa()* porcentajeDeAumento);
                 System.out.println("¡La defensa de " + pokemon.getNombre() + " ha aumentado!");
             case VELOCIDAD:
-                pokemon.aumentarVelocidad(pokemon.getVelocidad()*0.1);
+                pokemon.modificadorVelocidad(pokemon.getVelocidad()* porcentajeDeAumento);
                 System.out.println("¡La velocidad de " + pokemon.getNombre() + " ha aumentado!");
         }
     }
