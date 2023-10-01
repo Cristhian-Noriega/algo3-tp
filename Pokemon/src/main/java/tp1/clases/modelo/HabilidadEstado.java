@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+
 public class HabilidadEstado extends Habilidad {
     final private Estado estado;
 
@@ -13,7 +15,7 @@ public class HabilidadEstado extends Habilidad {
     }
 
     @Override
-    public void usar(Pokemon propio, Pokemon ajeno) {
-     ajeno.setEstado(this.estado);
+    public Error usar(Pokemon propio, Pokemon ajeno) {
+        return ajeno.setEstado(this.estado);
     }
 }

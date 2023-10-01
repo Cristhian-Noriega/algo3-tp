@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -54,15 +56,15 @@ public class Batalla {
     public List<Habilidad> getHabilidadesPokemonActual() {
         return this.getJugadorActual().getHabilidadesPokemonActual();
     }
-    public void usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
-        habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
+    public Error usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
+        return habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
     }
 
-    public void usarItem(Item item) {
-        item.usar( this.getJugadorActual().getPokemonActual());
+    public Error usarItem(Item item) {
+        return item.usar( this.getJugadorActual().getPokemonActual());
     }
 
-    public void cambiarPokemon(int pokemon) {
-        this.getJugadorActual().seleccionarPokemon(pokemon);
+    public Error cambiarPokemon(int pokemon) {
+        return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 }
