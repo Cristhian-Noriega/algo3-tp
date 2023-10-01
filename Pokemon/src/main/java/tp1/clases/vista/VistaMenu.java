@@ -29,7 +29,7 @@ public class VistaMenu {
     }
 
     //el enunciado dice que ademas del nombre se debe imprimir la cantidad de usos restantes del item
-    // no me queda claro porque cada item se puede usar una sola vez
+    // no me queda claro, porque cada item se puede usar una sola vez
     public static String mostrarItems(List<Item> items) {
         StringBuilder listaItems = new StringBuilder("Items disponibles:\n");
         for (int i= 0; i < items.size(); i++) {
