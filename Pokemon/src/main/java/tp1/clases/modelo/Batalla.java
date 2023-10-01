@@ -20,11 +20,10 @@ public class Batalla {
     private void determinarJugadorInicial() {
         int primero = 0;
         int mayorVelocidad = 0;
-        for (int i = 0; i < this.jugadores.size(); i++)  {
-         if (this.jugadores.get(i).getPokemonActual().getVelocidad() > mayorVelocidad) {
-             primero = i;
-             mayorVelocidad = this.jugadores.get(i).getPokemonActual().getVelocidad();
-         }
+        for (int i = 0; i < this.jugadoresEnJuego.size(); i++) {
+            if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+                primero = i;
+                mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
         }
 
         this.turno = primero ;
@@ -51,8 +50,7 @@ public class Batalla {
     }
 
     public List<Habilidad> getHabilidadesPokemonActual() {
-        return this.getJugadorActual().getPokemonActual().getHabilidades() ;
-    }
+        return this.getJugadorActual().getHabilidadesPokemonActual;    }
     public void usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
         habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
     }
