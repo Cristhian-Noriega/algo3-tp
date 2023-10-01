@@ -24,6 +24,7 @@ public class Batalla {
             if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
                 primero = i;
                 mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
+            }
         }
 
         this.turno = primero ;
@@ -50,7 +51,8 @@ public class Batalla {
     }
 
     public List<Habilidad> getHabilidadesPokemonActual() {
-        return this.getJugadorActual().getHabilidadesPokemonActual;    }
+        return this.getJugadorActual().getHabilidadesPokemonActual;
+    }
     public void usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
         habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
     }
