@@ -7,5 +7,5 @@ public class Main {
         controlador.ManejarTurno();
     }
 
-    controlador.MostrarGanador();
+    controlador.MostrarGanador()
 }
