@@ -20,8 +20,9 @@ public class Batalla {
     private void determinarJugadorInicial() {
         int primero = 0;
         int mayorVelocidad = 0;
+
         for (int i = 0; i < this.jugadoresEnJuego.size(); i++) {
-            if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+            if (mayorVelocidad < this.jugadoresEnJuego.get(i).getVelocidadPokemonActual()) {
                 primero = i;
                 mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
             }
