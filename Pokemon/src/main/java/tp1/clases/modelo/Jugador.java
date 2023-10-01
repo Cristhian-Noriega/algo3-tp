@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
+import java.util.Optional;
 
 public class Jugador {
 
@@ -9,7 +9,6 @@ public class Jugador {
     private Pokemon pokemonActual;
     private final List<Item> items;
     private final String nombre;
-    private Jugador oponente; //sacarlo?
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items){
         this.nombre = nombre;
@@ -17,97 +16,49 @@ public class Jugador {
         this.items = items;
     }
 
-    // METODOS PRINCIPALES
-
     public Pokemon getPokemonActual() {
         return pokemonActual;
     }
 
-    public void seleccionarPokemon(int pokeElegido){
-        if (pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto()){
-            this.pokemonActual = this.pokemones.get(pokeElegido);
-        }else{
-            //volver al main
+    public List<Pokemon> getListaPokemones() {
+        return pokemones;
+    }
+
+    public List<Item> getListaItems() {
+        return items;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Optional<String> seleccionarPokemon(int pokeElegido){
+        if (!this.verificarPokemon(pokeElegido)){
+            return Optional.of("El pokemon seleccionado no esta disponible");
         }
+        this.pokemonActual = this.pokemones.get(pokeElegido);
+        return Optional.empty();
     }
-
-    public void atacar(int habilidadElegida){
-        // El metodo de pokemon deberia recibir un numero, que es lo que ingresa el usuario.
-        // Como puse en seleccionar poke. Y dentro de ese metodo, se encarga de verificar que es vabildo y esta disp
-        this.pokemonActual.atacar(habilidadElegida, oponente.pokemonActual);
-    }
-
-    public String rendirse(){
-        return obtenerFrasesGanador() + oponente.nombre + "\n" + obtenerFrasesPerdedor() + this.nombre;
-    }
-
-    public String obtenerCampo(){
-        // ESTA HORRIBLE YA SE
-        String res = "CAMPO DE BATALLA \n";
-
-        res = res.concat("Tu pokemon es: " + this.pokemonActual + "\n" + "Nivel: " +this.pokemonActual.getNivel() + ". Estado: " + this.pokemonActual.getEstado() + ". Vida: " + this.pokemonActual.getVida() + "\n");
-        res = res.concat("El pokemon de tu oponente es: " + oponente.pokemonActual + "\n"+ "Nivel: " + oponente.pokemonActual.getNivel() + ". Estado: " + oponente.pokemonActual.getEstado() + ". Vida: " + oponente.pokemonActual.getVida() + "\n");
-
-        return res;
-    }
-
-    public void aplicarItem(int itemElegido){
-        //terminar
-    }
-    public String mostrarPokemones() {
-        String res = "Tienes los siguientes pokemones disponibles: \n";
-
-        for (int i = 0; i < this.pokemones.size(); i++) {
-            Pokemon pokemonI = this.pokemones.get(i);
-            res = res.concat((i + 1) + ". " + pokemonI + "\n");
-        }
-
-        return res;
-    }
-
-    public String mostrarItems() {
-        String res = "Tienes los siguientes items disponibles: \n";
-
-        Map<Item, Integer> itemsPorCant = this.items.stream()
-                .collect(Collectors.groupingBy(
-                        elemento -> elemento,
-                        Collectors.summingInt(e -> 1)
-                ));
-
-        for (int i = 0; i < this.items.size(); i++) {
-            Item item = this.items.get(i);
-            int cantidad = itemsPorCant.getOrDefault(item, 0);
-            res = res.concat((i + 1) + ". " + item + " (" + cantidad + ")\n");
-        }
-
-        return res;
-    }
-
 
     public boolean tienePokemonesConVida(){
         for (Pokemon pokemon : this.pokemones) {
-            if (pokemon.getVida() < 0) {
-                return false;
+            if (pokemon.getVida() > 0) {
+                return true;
             }
         }
-        return true;
+        return false;
+    }
+  
+    public int getVelocidadPokemonActual(){
+        return this.pokemonActual.getVelocidad();
     }
 
-    //esto chau ?
-
-    private String obtenerFrasesGanador() {
-        String[] elementosG = {"¡Enhorabuena! El ganador es ", "WOW ¡Que partida! Felicitaciones ", "¡Bravo! El ganador de esta partida es ", "¡¡Que gran partida!! Felicitaciones ganador ", "Sigue así ¡Que genio! "};
-        List<String> frasesGanador = new ArrayList<>(Arrays.asList(elementosG));
-        Random random = new Random();
-        int indiceAleatorioG = random.nextInt(frasesGanador.size());
-        return frasesGanador.get(indiceAleatorioG);
+    public List<Habilidad> getHabilidadesPokemonActual(){
+        return this.pokemonActual.getHabilidades();
     }
-    private String obtenerFrasesPerdedor(){
-        String[] elementosP = {"Más suerte la proxima ", "Eres mas fuerte de lo que crees, sigue practicando ", "Te hace falta mas práctica ", "La proxima es tu partida ¡a seguir!", "Arriba ese ánimo ", "Un tropezón no es caída "};
-        List<String> frasesPerdedor = new ArrayList<>(Arrays.asList(elementosP));
-        Random random = new Random();
-        int indiceAleatorioP = random.nextInt(frasesPerdedor.size());
-        return frasesPerdedor.get(indiceAleatorioP);
+  
+    private boolean verificarPokemon(int pokeElegido){
+        return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
     }
 
 }

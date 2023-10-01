@@ -17,7 +17,19 @@ public class Batalla {
         return jugadores;
     }
 
-    
+    private void determinarJugadorInicial() {
+        int primero = 0;
+        int mayorVelocidad = 0;
+        for (int i = 0; i < this.jugadoresEnJuego.size(); i++) {
+           if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+               primero = i;
+               mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
+           }
+        }
+
+        this.turno = primero;
+    }
+
 
     public Optional<Jugador> obtenerGanador() {
         List<Jugador> jugadoresConVida =  jugadores.stream()
