@@ -24,7 +24,7 @@ public class Main {
             // batalla.ObtenerGanador() esta devolviendo un Jugador y resultadoView necesita el nombre. Para que resultadoView
             // se abstraiga de obtener el nombre, que batalla devuelva directo el String del nombre
             Optional<Jugador> res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
-            
+
         } catch (IOException err){
             System.out.println("Hubo un error al inicializar el juego");
             // ??
