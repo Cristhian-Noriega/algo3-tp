@@ -21,14 +21,14 @@ public class Batalla {
         int primero = 0;
         int mayorVelocidad = 0;
         for (int i = 0; i < this.jugadores.size(); i++) {
-           if (this.jugadores.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
-               primero = i;
-               mayorVelocidad = this.jugadores.get(i).getVelocidadPokemonActual();
-           }
+            if (this.jugadores.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+                primero = i;
+                mayorVelocidad = this.jugadores.get(i).getVelocidadPokemonActual();            }
         }
 
         this.turno = primero;
     }
+
 
 
     public Optional<Jugador> obtenerGanador() {
@@ -63,6 +63,6 @@ public class Batalla {
     }
 
     public void cambiarPokemon(int pokemon) {
-         this.getJugadorActual().seleccionarPokemon(pokemon);
+        this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 }

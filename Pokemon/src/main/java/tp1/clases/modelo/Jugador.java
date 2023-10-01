@@ -48,7 +48,7 @@ public class Jugador {
         }
         return false;
     }
-  
+
     public int getVelocidadPokemonActual(){
         return this.pokemonActual.getVelocidad();
     }
@@ -56,7 +56,7 @@ public class Jugador {
     public List<Habilidad> getHabilidadesPokemonActual(){
         return this.pokemonActual.getHabilidades();
     }
-  
+
     private boolean verificarPokemon(int pokeElegido){
         return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
     }
