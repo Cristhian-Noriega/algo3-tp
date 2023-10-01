@@ -23,10 +23,10 @@ public class Batalla {
         int primero = 0;
         int mayorVelocidad = 0;
         for (int i = 0; i < this.jugadoresEnJuego.size(); i++) {
-         if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
-             primero = i;
-             mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
-         }
+           if (this.jugadoresEnJuego.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
+               primero = i;
+               mayorVelocidad = this.jugadoresEnJuego.get(i).getVelocidadPokemonActual();
+           }
         }
 
         this.turno = primero;
