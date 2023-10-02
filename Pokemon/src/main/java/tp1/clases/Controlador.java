@@ -6,19 +6,19 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import tp1.clases.modelo.Batalla;
 
-import tp1.clases.vista.OpcionesMenu;
-import tp1.clases.vista.VistaMenu;
+import tp1.clases.vista.*;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
+
 
 public class Controlador {
 
-    private final OpcionesMenu acciones = new OpcionesMenu();
+
     private final Batalla batalla;
     private final LineReader reader;
     private Boolean juegoTerminado = false;
+    private Comando comando;
 
     public Controlador(Batalla batalla) throws IOException {
         this.batalla = batalla;
@@ -31,36 +31,52 @@ public class Controlador {
 
     public void Jugar(){
 
-        int op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
+        while (true) {
 
-        if ((acciones.getSize() <= op) | (op <= 0)){
-            op = OpcionNoValida(VistaMenu.mostrarOpciones());
-        }
+            int op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
 
-        List accion = acciones.getOpcion(op);
-
-        if (accion.get(0).equals("rendirse")) {
-            this.juegoTerminado = true;
-            return;
-        }
-
-        op = InteraccionConUsuario(accion.get(1).toString()); //quizas rompe devoloviendo doble comillas
-
-        while (true){
-            try {
-                int posicion = op - 1;
-                ConcretarAccion(accion.get(0).toString(), posicion); //quizas rompe devoloviendo doble comillas o con op-1
-                break;
-            } catch (OutOfRangeError err){
-                op = OpcionNoValida((String) accion.get(1));
+            if ((OpcionMenu.values().length <= op) | (op < 0)) {
+                System.out.println("Opción no valida, fuera de rango");
+                op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
             }
+
+            OpcionMenu accion = OpcionMenu.getAccion(op);
+
+            if (Objects.equals(accion, OpcionMenu.VER_CAMPO)){
+                CampoView(this.batalla); //To Do: hacer que campoView reciba batalla
+                continue;
+            }
+
+            if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
+                String jugadorRendido = this.batalla.rendir(this.batalla.getJugadorActual()).getNombre();
+                System.out.printf("El jugador %s se ha rendido.", jugadorRendido);
+                break;
+            }
+
+                String siguienteAccion = SiguienteAccion(accion);
+            op = InteraccionConUsuario(siguienteAccion);
+
+            if (op == -1){ //volver atras **agregar en vistaMenu para todos los verAccion que la opcion cero sea volver atras
+                continue;
+            }
+
+            while (true) {
+                comando.definirOpcion(op);
+                err = comando.ejecutar();
+                if (err == null) {
+                    break;
+                }
+                error.mostrar();
+                op = InteraccionConUsuario(siguienteAccion);
+            }
+            break;
         }
 
-
-        if (this.batalla.finalizada()) {
+        if (this.batalla.obtenerGanador().isPresent()) {
             this.juegoTerminado = true;
             return;
         }
+
         this.batalla.cambiarTurno();
     }
 
@@ -77,26 +93,24 @@ public class Controlador {
                 opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: ");
             }
         }
-        return op;
+        return op-1;
     }
 
-    private void ConcretarAccion(String accion, int op){
+    private String SiguienteAccion(OpcionMenu accion){
         switch (accion){
-            case "UsarItems":
-                this.batalla.usarItem(op);
-            case "UsarHabilidad":
-                this.batalla.usarHabilidad(op);
-            case "CambiarPokemon":
-                this.batalla.cambiarPokemon(op);
-            case "VolverAtras":
-                Jugar();
+            case VER_ITEM:
+                this.comando = new UsarItemComando(this.batalla);
+                return VistaMenu.mostrarItems(this.batalla.getItemsJugadorActual());
+            case VER_HABILIDAD:
+                this.comando = new UsarHabilidadComando(this.batalla);
+                return VistaMenu.mostrarHabilidades(this.batalla.getHabilidadesPokemonActual());
+            case VER_POKEMONES:
+                this.comando = new CambiarPokemonComando(this.batalla);
+                return VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual());
         }
+        return null;
     }
 
-    private int OpcionNoValida(String opciones){
-        System.out.println("Opción no valida, fuera de rango");
-        return InteraccionConUsuario(opciones);
-    }
 
     public Boolean getJuegoTerminado() {
         return juegoTerminado;
