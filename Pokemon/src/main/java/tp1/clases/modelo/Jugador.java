@@ -1,5 +1,8 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonMuerto;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -32,11 +35,13 @@ public class Jugador {
         return nombre;
     }
 
-    public void selecconarPokemon(int pokeElegido) {
-        if (!this.verificarPokemon(pokeElegido)) {
-            throw error.ErrorPokemonInvalido();
+    public Optional<Error> seleccionarPokemon(int pokeElegido){
+        Pokemon nuevoPokemon = this.pokemones.get(pokeElegido);
+        if (nuevoPokemon.estaMuerto()){
+            return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
         }
-        this.pokemonActual = this.pokemones.get(pokeElegido);
+        this.pokemonActual = nuevoPokemon;
+        return Optional.empty();
     }
 
     public boolean tienePokemonesConVida() {
@@ -56,21 +61,4 @@ public class Jugador {
         return this.pokemonActual.getHabilidades();
     }
 
-    public Optional<String> usarItem(int itemElegido) {
-        if (!this.verificarItem(itemElegido)) {
-            return Optional.of("Este item no esta disponible");
-        }
-
-        Item item = this.items.get(itemElegido);
-        item.usar(this.pokemonActual);
-        return Optional.empty();
-    }
-
-    private boolean verificarPokemon(int pokeElegido) {
-        return pokeElegido <= this.pokemones.size() && !this.pokemones.get(pokeElegido).estaMuerto();
-    }
-
-    private boolean verificarItem(int itemElegido){
-        return itemElegido <= this.items.size();
-    }
 }

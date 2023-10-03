@@ -2,6 +2,8 @@ package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
 
+import java.util.Optional;
+
 public abstract class Habilidad {
     //atributos:
     final protected String nombre;
@@ -34,7 +36,7 @@ public abstract class Habilidad {
         return info;
     }
 
-    public abstract Error usar(Pokemon propio, Pokemon ajeno);
+    public abstract Optional<Error> usar(Pokemon propio, Pokemon ajeno);
 
     public boolean quedanUsos() {
         return this.usos >= 1;
