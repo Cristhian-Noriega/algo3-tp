@@ -7,23 +7,21 @@ import tp1.clases.vista.ResultadoView;
 import java.io.IOException;
 
 public class Main {
+    public static void main(String[] args) throws IOException {
+        Inicializador inicializador = new Inicializador();
 
-    Inicializador inicializador = new Inicializador();
+        Batalla batalla = new Batalla(inicializador.getJugadores());
 
-    Batalla batalla = new Batalla(inicializador.getJugadores());
+        Controlador controlador = new Controlador(batalla);
 
-    Controlador controlador = new Controlador(batalla);
+        while (!controlador.getJuegoTerminado())
 
-    while!controlador.getJuegoTerminado()
+        {
+            controlador.Jugar();
+        }
 
-    {
-        controlador.Jugar();
+        String res = ResultadoView.mostrarResultado(batalla.obtenerGanador().toString());
+
+        System.out.println(res);
     }
-
-    String res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
-
-    public Main() throws IOException { //como trabajar el IOException
-    }
-
-    System.out.println(res);
 }

@@ -11,7 +11,6 @@ import tp1.clases.vista.VistaMenu;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 public class Controlador {
 
@@ -40,6 +39,7 @@ public class Controlador {
         List accion = acciones.getOpcion(op);
 
         if (accion.get(0).equals("rendirse")) {
+            this.batalla.rendir(this.batalla.getJugadorActual());
             this.juegoTerminado = true;
             return;
         }
@@ -51,13 +51,13 @@ public class Controlador {
                 int posicion = op - 1;
                 ConcretarAccion(accion.get(0).toString(), posicion); //quizas rompe devoloviendo doble comillas o con op-1
                 break;
-            } catch (OutOfRangeError err){
+            } catch (ArrayIndexOutOfBoundsException err){
                 op = OpcionNoValida((String) accion.get(1));
             }
         }
 
 
-        if (this.batalla.finalizada()) {
+        if (this.batalla.obtenerGanador().isPresent()) {
             this.juegoTerminado = true;
             return;
         }
@@ -83,9 +83,9 @@ public class Controlador {
     private void ConcretarAccion(String accion, int op){
         switch (accion){
             case "UsarItems":
-                this.batalla.usarItem(op);
+                this.batalla.usarItem(op); //usarItem sabe cual item en la lista usar, controlador se abtrae de el item especifico
             case "UsarHabilidad":
-                this.batalla.usarHabilidad(op);
+                this.batalla.usarHabilidad(op); //usarhabilidad ya deberia saber a quien se esta apuntando, es un uno vs uno
             case "CambiarPokemon":
                 this.batalla.cambiarPokemon(op);
             case "VolverAtras":
