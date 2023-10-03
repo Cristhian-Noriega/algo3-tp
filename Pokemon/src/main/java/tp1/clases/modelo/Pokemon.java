@@ -1,6 +1,10 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
+
 import java.util.List;
+import java.util.Optional;
 
 public class Pokemon {
     private final String nombre;
@@ -38,11 +42,18 @@ public class Pokemon {
 
     public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
 
-    public void setEstado(Estado estado) {
+    public Optional<Error> setEstado(Estado estado) {
+        if (this.estado != Estado.NORMAL) {
+            return Optional.of(new ErrorEstadoDistintoDeNormal(this.estado.name()));
+        }
         this.estado = estado;
+        return Optional.empty();
     }
 
-    public void modificarVida(int modificador) { this.vidaActual += modificador; }
+    public void modificarVida(int modificador) {
+        int nuevoValor = this.vidaActual + modificador;
+        this.vidaActual += Math.min(nuevoValor, vidaMax);
+    }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 

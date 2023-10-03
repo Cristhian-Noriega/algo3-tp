@@ -1,6 +1,9 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorHabilidadSinUsos;
+
+import java.util.Optional;
 
 public class HabilidadEstadistica extends Habilidad {
     final private Estadisticas estadistica;
@@ -23,12 +26,16 @@ public class HabilidadEstadistica extends Habilidad {
     }
 
     @Override
-    public Error usar(Pokemon propio, Pokemon ajeno) {
-        if (this.isContraRival()) {
-            return this.modificarEstadistica(ajeno, (-1));
-        } else {
-            return this.modificarEstadistica(propio, 1);
+    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
+        if (!this.quedanUsos()){
+            return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
+        if (this.isContraRival()) {
+            this.modificarEstadistica(ajeno, (-1));
+        } else {
+            this.modificarEstadistica(propio, 1);
+        }
+        return Optional.empty();
     }
 
     private void modificarEstadistica(Pokemon pokemon, int modificador) {
