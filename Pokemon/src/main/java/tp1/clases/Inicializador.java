@@ -33,7 +33,7 @@ public class Inicializador {
         List<List<Item>> items = proveedor.getItems();
 
         for (int i = 1; i <= cantJugadores; i++){
-            String nombre = reader.readLine("Por favor ingrese el nombre del jugador " + i);
+            String nombre = reader.readLine("Por favor ingrese el nombre del jugador " + i + " \n");
             Jugador jugador = new Jugador(nombre, pokemones.get(i-1), items.get(i-1));
             this.jugadores.add(jugador);
         }

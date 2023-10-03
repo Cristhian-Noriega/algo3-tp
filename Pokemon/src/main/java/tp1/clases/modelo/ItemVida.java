@@ -25,14 +25,15 @@ public class ItemVida implements Item {
         if ((this.vida == 0) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMax());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
+            return Optional.empty();
         } else if (this.vida == 0) {
             return Optional.of(new ErrorPokemonNoMuerto(pokemon.getNombre(), this.nombre));
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");
             System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
+            return Optional.empty();
         }
-        return Optional.empty();
     }
 
 }

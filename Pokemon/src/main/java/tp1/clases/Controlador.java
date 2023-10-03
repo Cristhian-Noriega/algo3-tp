@@ -36,7 +36,7 @@ public class Controlador {
 
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
 
-            if ((OpcionMenu.values().length <= op) | (op < 0)) {
+            if ((OpcionMenu.values().length < op) | (op <= 0)) {
                 System.out.println("Opción no valida, fuera de rango");
                 op = interaccionConUsuario(VistaMenu.mostrarOpciones());
             }
@@ -51,7 +51,7 @@ public class Controlador {
 
             if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
                 String jugadorRendido = this.batalla.rendir(this.batalla.getJugadorActual()).getNombre();
-                System.out.printf("El jugador %s se ha rendido.", jugadorRendido);
+                System.out.printf("El jugador %s se ha rendido. \n", jugadorRendido);
                 this.juegoTerminado = true;
                 break;
             }
@@ -66,11 +66,10 @@ public class Controlador {
             while (true) {
                 comando.definirOpcion(op);
                 Optional<Error> err = comando.ejecutar();
-                if (err.isPresent()) { // ver
-                    op = interaccionConUsuario(siguienteAccion);
-                    continue;
+                if (err.isEmpty()) { // ver
+                    break;
                 }
-                break;
+                op = interaccionConUsuario(siguienteAccion);
             }
             break;
         }

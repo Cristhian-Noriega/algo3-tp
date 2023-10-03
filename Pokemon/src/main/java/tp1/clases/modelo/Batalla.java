@@ -84,8 +84,7 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Item item = this.getItemsJugadorActual().get(itemElegido);
-        item.usar(this.getJugadorActual().getPokemonActual());
-        return Optional.empty();
+        return item.usar(this.getJugadorActual().getPokemonActual());
     }
 
     public Optional<Error> cambiarPokemon(int pokemon) {
