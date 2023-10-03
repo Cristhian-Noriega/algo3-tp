@@ -1,9 +1,13 @@
 package tp1.clases.vista;
 
-public interface Comando {
-    void ejecutar();
+import tp1.clases.errores.Error;
 
-    default void definirOpcion(int op){
+import java.util.Optional;
+
+public interface Comando {
+    Optional<Error> ejecutar();
+
+    default void definirOpcion(int op) {
 
     }
 }

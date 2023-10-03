@@ -1,5 +1,10 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonNoMuerto;
+
+import java.util.Optional;
+
 public class ItemVida implements Item {
 
     private final String nombre;
@@ -16,16 +21,18 @@ public class ItemVida implements Item {
     }
 
     @Override
-    public void usar(Pokemon pokemon){
+    public Optional<Error> usar(Pokemon pokemon){
         if ((this.vida == 0) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMax());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
+            return Optional.empty();
         } else if (this.vida == 0) {
-            PokemonNoMuertoError(pokemon.getNombre(), this.nombre); //TO DO: organizar a donde van a ir los errores
+            return Optional.of(new ErrorPokemonNoMuerto(pokemon.getNombre(), this.nombre));
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");
             System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
+            return Optional.empty();
         }
     }
 

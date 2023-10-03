@@ -2,10 +2,8 @@ package tp1.clases.vista;
 
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Item;
-import tp1.clases.modelo.Jugador;
 import tp1.clases.modelo.Pokemon;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class VistaMenu {
@@ -20,19 +18,19 @@ public class VistaMenu {
 
     public static String mostrarPokemones(List<Pokemon> pokemones) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
-        for (int i = 0; i < pokemones.size(); i++) {
+        listaPokemones = agregarOpcionVolverAtras(listaPokemones);
+        for (int i = 1; i < pokemones.size(); i++) {
             Pokemon pokemon = pokemones.get(i);
-            String pokemonInfo = String.format("%d. %s (%d de vida)\n", i, pokemon, pokemon.getVida());
+            String pokemonInfo = String.format("%d. %s (%d de vida)\n", i, pokemon.getNombre(), pokemon.getVida());
             listaPokemones.append(pokemonInfo);
         }
         return listaPokemones.toString();
     }
 
-    //el enunciado dice que ademas del nombre se debe imprimir la cantidad de usos restantes del item
-    // no me queda claro, porque cada item se puede usar una sola vez
     public static String mostrarItems(List<Item> items) {
         StringBuilder listaItems = new StringBuilder("Items disponibles:\n");
-        for (int i= 0; i < items.size(); i++) {
+        listaItems = agregarOpcionVolverAtras(listaItems);
+        for (int i= 1; i < items.size(); i++) {
             String item = String.format("%d. %s\n", i, items.get(i).getNombre());
             listaItems.append(item);
         }
@@ -41,14 +39,18 @@ public class VistaMenu {
 
     public static String mostrarHabilidades(List<Habilidad> habilidades) {
         StringBuilder listaHabilidades = new StringBuilder("Habilidades disponibles: \n");
-        for (int i = 0; i < habilidades.size(); i++) {
+        listaHabilidades = agregarOpcionVolverAtras(listaHabilidades);
+        for (int i = 1; i < habilidades.size(); i++) {
             String habilidad = String.format("%d. %s (usos: %s)\n", i, habilidades.get(i).getNombre(), habilidades.get(i).getUsos());
             listaHabilidades.append(habilidad);
         }
         return listaHabilidades.toString();
     }
 
-
+    private static StringBuilder agregarOpcionVolverAtras(StringBuilder cadena){
+        String volverAtras = String.format("%d. Volver atras\n", 0);
+        return cadena.append(volverAtras);
+    }
 }
 
 

@@ -1,6 +1,9 @@
 package tp1.clases.vista;
 
+import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+
+import java.util.Optional;
 
 public class UsarHabilidadComando implements Comando{
 
@@ -18,7 +21,7 @@ public class UsarHabilidadComando implements Comando{
         this.habilidad = op;
     }
 
-    public void ejecutar(){
-        this.batalla.usarAtaque(this.habilidad);
+    public Optional<Error> ejecutar(){
+        return this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
     }
 }

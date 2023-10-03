@@ -1,6 +1,9 @@
 package tp1.clases.modelo;
 
-import static tp1.clases.modelo.Estado.NORMAL;
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonNormal;
+
+import java.util.Optional;
 
 public class ItemEstado implements Item{
 
@@ -16,11 +19,12 @@ public class ItemEstado implements Item{
     }
 
     @Override
-    public void usar(Pokemon pokemon){
-        if (pokemon.getEstado() == NORMAL) {
-            PokemonNormalError(pokemon.getNombre(), this.nombre); //TO DO: organizar a donde van a ir los errores
+    public Optional<Error> usar(Pokemon pokemon){
+        if (pokemon.getEstado() == Estado.NORMAL) {
+            return Optional.of(new ErrorPokemonNormal(pokemon.getNombre(), this.nombre));
         } else {
-            pokemon.setEstado(NORMAL);
+            pokemon.setEstado(Estado.NORMAL);
+            return Optional.empty();
         }
     }
 

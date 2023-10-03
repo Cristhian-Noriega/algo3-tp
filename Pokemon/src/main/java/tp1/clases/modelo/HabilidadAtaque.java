@@ -1,6 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorHabilidadSinUsos;
 
 import java.util.Optional;
 
@@ -12,14 +13,15 @@ public class HabilidadAtaque extends Habilidad {
         this.poder = poder;
     }
 
+    // no se usa
     public Integer getPoder() {
         return poder;
     }
 
     public int calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
-        int nivelAtacante = atacante.getNivel();
-        int ataqueAtacante = atacante.getAtaque();
-        int defensaDefensor = defensor.getDefensa();
+        double nivelAtacante = atacante.getNivel();
+        double ataqueAtacante = atacante.getAtaque();
+        double defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
         int random = (int) (Math.random()*(255-217+1)+217) / 255;
@@ -29,8 +31,12 @@ public class HabilidadAtaque extends Habilidad {
     }
 
     @Override
-    public Error usar(Pokemon propio, Pokemon ajeno) {
+    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
+        if (!this.quedanUsos()){
+            return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
+        }
         int danio = calcularDanioAtaque(propio, ajeno);
-        return ajeno.modificarVida((-1)*danio);
+        ajeno.modificarVida((-1)*danio);
+        return Optional.empty();
     }
 }
