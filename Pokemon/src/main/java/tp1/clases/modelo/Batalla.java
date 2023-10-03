@@ -1,5 +1,8 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonMuerto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -73,8 +76,13 @@ public class Batalla {
         item.usar( this.getJugadorActual().getPokemonActual());
     }
 
-    public void cambiarPokemon(int pokemon) {
-        this.getJugadorActual().seleccionarPokemon(pokemon);
+    public Error cambiarPokemon(int pokemon) {
+        //ejemplo unicamente, borrar despues:
+        if (pokemon == 1) {
+            return new ErrorPokemonMuerto();
+        }
+        
+        return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
 }
