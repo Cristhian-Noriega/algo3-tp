@@ -1,5 +1,6 @@
 package tp1.clases.vista;
 
+import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Jugador;
 import tp1.clases.modelo.Pokemon;
@@ -8,12 +9,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class VistaMenu {
-    private static List<String> opciones = Arrays.asList("Atacar", "Usar Item", "Ver Pokemones", "Ver campo de batalla", "Rendirse");
     public static String mostrarOpciones() {
         StringBuilder menu = new StringBuilder("Seleccione una opcion:\n");
-        for (int i = 0; i < opciones.size(); i++) {
-            String opcion = String.format("%d. %s\n", i, opciones.get(i));
-            menu.append(opcion);
+        for (OpcionMenu opcion: OpcionMenu.values()){
+            String op = String.format("%d. %s\n", opcion.ordinal()+1, opcion.getDescripcion()); //no me gusta ese +1 :(
+            menu.append(op);
         }
         return menu.toString();
     }
@@ -29,7 +29,7 @@ public class VistaMenu {
     }
 
     //el enunciado dice que ademas del nombre se debe imprimir la cantidad de usos restantes del item
-    // no me queda claro porque cada item se puede usar una sola vez
+    // no me queda claro, porque cada item se puede usar una sola vez
     public static String mostrarItems(List<Item> items) {
         StringBuilder listaItems = new StringBuilder("Items disponibles:\n");
         for (int i= 0; i < items.size(); i++) {
@@ -37,6 +37,15 @@ public class VistaMenu {
             listaItems.append(item);
         }
         return listaItems.toString();
+    }
+
+    public static String mostrarHabilidades(List<Habilidad> habilidades) {
+        StringBuilder listaHabilidades = new StringBuilder("Habilidades disponibles: \n");
+        for (int i = 0; i < habilidades.size(); i++) {
+            String habilidad = String.format("%d. %s (usos: %s)\n", i, habilidades.get(i).getNombre(), habilidades.get(i).getUsos());
+            listaHabilidades.append(habilidad);
+        }
+        return listaHabilidades.toString();
     }
 
 
