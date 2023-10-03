@@ -3,7 +3,9 @@ package tp1.clases.modelo;
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorPokemonMuerto;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class Jugador {
@@ -17,6 +19,7 @@ public class Jugador {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
+        this.pokemonActual = pokemones.get(0);
     }
 
     public Pokemon getPokemonActual() {
@@ -53,7 +56,7 @@ public class Jugador {
         return false;
     }
 
-    public int getVelocidadPokemonActual() {
+    public double getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();
     }
 
@@ -61,4 +64,14 @@ public class Jugador {
         return this.pokemonActual.getHabilidades();
     }
 
+    public Map<String, Object> getDatos(){
+        Map<String, Object> datosPokemonActual = new HashMap<>();
+        datosPokemonActual.put("Pokemon", this.pokemonActual.getNombre());
+        datosPokemonActual.put("Vida Actual", this.pokemonActual.getVida());
+        datosPokemonActual.put("Vida Max", this.pokemonActual.getVidaMax());
+        datosPokemonActual.put("Nivel", this.pokemonActual.getNivel());
+        datosPokemonActual.put("Estado", this.pokemonActual.getEstado());
+
+        return datosPokemonActual;
+    }
 }

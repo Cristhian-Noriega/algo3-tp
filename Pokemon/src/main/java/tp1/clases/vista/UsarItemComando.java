@@ -1,11 +1,14 @@
 package tp1.clases.vista;
 
+import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+
+import java.util.Optional;
 
 public class UsarItemComando implements Comando {
 
     private final Batalla batalla;
-    private int item; //no se si esta bien esto
+    private int item;
 
     public UsarItemComando(Batalla batalla) {
         this.batalla = batalla;
@@ -15,8 +18,7 @@ public class UsarItemComando implements Comando {
     public void definirOpcion(int op){
         this.item = op;
     }
-    public void ejecutar() {
-        this.batalla.usarItem(this.item);
-
+    public Optional<Error> ejecutar() {
+        return this.batalla.usarItem(this.item);
     }
 }

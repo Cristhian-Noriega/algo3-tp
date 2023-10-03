@@ -4,16 +4,16 @@ import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
+import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
-
 import tp1.clases.vista.*;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Optional;
 
 
 public class Controlador {
-
 
     private final Batalla batalla;
     private final LineReader reader;
@@ -32,42 +32,45 @@ public class Controlador {
     public void Jugar(){
 
         while (true) {
+            System.out.printf("Turno de %s \n", this.batalla.getJugadorActual().getNombre());
 
-            int op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
+            int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
 
             if ((OpcionMenu.values().length <= op) | (op < 0)) {
                 System.out.println("Opción no valida, fuera de rango");
-                op = InteraccionConUsuario(VistaMenu.mostrarOpciones());
+                op = interaccionConUsuario(VistaMenu.mostrarOpciones());
             }
 
             OpcionMenu accion = OpcionMenu.getAccion(op);
 
             if (Objects.equals(accion, OpcionMenu.VER_CAMPO)){
-                CampoView(this.batalla); //To Do: hacer que campoView reciba batalla
+                CampoVista campo = new CampoVista();
+                System.out.println(campo.estadoJugador(this.batalla));
                 continue;
             }
 
             if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
                 String jugadorRendido = this.batalla.rendir(this.batalla.getJugadorActual()).getNombre();
                 System.out.printf("El jugador %s se ha rendido.", jugadorRendido);
+                this.juegoTerminado = true;
                 break;
             }
 
-                String siguienteAccion = SiguienteAccion(accion);
-            op = InteraccionConUsuario(siguienteAccion);
+            String siguienteAccion = siguienteAccion(accion);
+            op = interaccionConUsuario(siguienteAccion);
 
-            if (op == -1){ //volver atras **agregar en vistaMenu para todos los verAccion que la opcion cero sea volver atras
+            if (op == 0){ //volver atras
                 continue;
             }
 
             while (true) {
                 comando.definirOpcion(op);
-                err = comando.ejecutar();
-                if (err == null) {
-                    break;
+                Optional<Error> err = comando.ejecutar();
+                if (err.isPresent()) { // ver
+                    op = interaccionConUsuario(siguienteAccion);
+                    continue;
                 }
-                error.mostrar();
-                op = InteraccionConUsuario(siguienteAccion);
+                break;
             }
             break;
         }
@@ -80,9 +83,9 @@ public class Controlador {
         this.batalla.cambiarTurno();
     }
 
-    private int InteraccionConUsuario(String opciones) {
+    private int interaccionConUsuario(String opciones) {
 
-        String opcionElegida = reader.readLine("Elija su proxima acción: \n" + opciones);
+        String opcionElegida = reader.readLine("Elija su proxima acción: \n" + opciones + "\n" );
 
         int op;
         while (true) {
@@ -93,24 +96,26 @@ public class Controlador {
                 opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: ");
             }
         }
-        return op-1;
+        return op;
     }
 
-    private String SiguienteAccion(OpcionMenu accion){
-        switch (accion){
-            case VER_ITEM:
+    private String siguienteAccion(OpcionMenu accion){
+        return switch (accion) {
+            case VER_ITEM -> {
                 this.comando = new UsarItemComando(this.batalla);
-                return VistaMenu.mostrarItems(this.batalla.getItemsJugadorActual());
-            case VER_HABILIDAD:
+                yield VistaMenu.mostrarItems(this.batalla.getItemsJugadorActual());
+            }
+            case VER_HABILIDAD -> {
                 this.comando = new UsarHabilidadComando(this.batalla);
-                return VistaMenu.mostrarHabilidades(this.batalla.getHabilidadesPokemonActual());
-            case VER_POKEMONES:
+                yield VistaMenu.mostrarHabilidades(this.batalla.getHabilidadesPokemonActual());
+            }
+            case VER_POKEMONES -> {
                 this.comando = new CambiarPokemonComando(this.batalla);
-                return VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual());
-        }
-        return null;
+                yield VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual());
+            }
+            default -> null;
+        };
     }
-
 
     public Boolean getJuegoTerminado() {
         return juegoTerminado;

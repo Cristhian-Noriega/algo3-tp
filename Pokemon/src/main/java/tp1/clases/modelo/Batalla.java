@@ -5,6 +5,7 @@ import tp1.clases.errores.ErrorIndiceFueraDeRango;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class Batalla {
@@ -16,13 +17,14 @@ public class Batalla {
         determinarJugadorInicial();
     }
 
+    // se puede borrar este metodo? nadie lo usa
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
 
     private void determinarJugadorInicial() {
         int primero = 0;
-        int mayorVelocidad = 0;
+        double mayorVelocidad = 0.0;
         for (int i = 0; i < this.jugadores.size(); i++) {
             if (this.jugadores.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
                 primero = i;
@@ -33,12 +35,11 @@ public class Batalla {
         this.turno = primero;
     }
 
-
-    public Optional<Jugador> obtenerGanador() {
+    public Optional<String> obtenerGanador() {
         List<Jugador> jugadoresConVida = jugadores.stream()
                 .filter(Jugador::tienePokemonesConVida)
                 .toList();
-        return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0)) : Optional.empty();
+        return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0).getNombre()) : Optional.empty();
     }
 
     public void cambiarTurno() {
@@ -78,17 +79,6 @@ public class Batalla {
         return habilidad.usar(this.getJugadorActual().getPokemonActual(), rival.getPokemonActual());
     }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad) {
-        return this.usarHabilidad(numeroHabilidad, this.getJugadorSiguiente());
-    }
-
-    //es ese wrapper o lo siguiente, no sé cual es mejor:
-    //public void usarHabilidad(int numeroHabilidad) {
-    //    Habilidad habilidad = getHabilidadesPokemonActual().get(numeroHabilidad);
-    //    habilidad.usar(this.getJugadorActual().getPokemonActual(), this.getJugadorSiguiente().getPokemonActual());
-    //}
-    //básicamente es lo mismo, pero quizás no les gusta tener las dos funciones. A mi me parece que queda bien (?)
-
     public Optional<Error> usarItem(int itemElegido) {
         if (itemElegido < 0 || itemElegido >= this.getItemsJugadorActual().size()) {
             return Optional.of(new ErrorIndiceFueraDeRango());
@@ -105,4 +95,7 @@ public class Batalla {
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
+    public Map<String, Object> getDatosJugadorActual(){
+        return this.getJugadorActual().getDatos();
+    }
 }

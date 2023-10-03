@@ -13,6 +13,7 @@ public class HabilidadEstado extends Habilidad {
         this.estado = estado;
     }
 
+    // no se usa
     public Estado getEstado() {
         return estado;
     }

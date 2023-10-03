@@ -2,11 +2,9 @@ package tp1.clases;
 
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Constantes;
-import tp1.clases.modelo.Jugador;
-import tp1.clases.vista.ResultadoView;
+import tp1.clases.vista.ResultadoVista;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class Main {
 
@@ -14,18 +12,15 @@ public class Main {
 
         Inicializador inicializador = new Inicializador();
 
-        Batalla batalla = new Batalla(inicializador.getJugadores());
+        Batalla batalla = new Batalla(inicializador.iniciarJugadores(Constantes.cantidadJugadores));
 
         Controlador controlador = new Controlador(batalla);
 
-        while (!controlador.getJuegoTerminado())
-
-        {
+        while (!controlador.getJuegoTerminado()) {
             controlador.Jugar();
         }
 
-        String res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
-
+        String res = ResultadoVista.mostrarResultado(batalla.obtenerGanador());
 
         System.out.println(res);
     }

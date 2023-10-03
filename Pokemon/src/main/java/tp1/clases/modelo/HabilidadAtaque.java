@@ -13,14 +13,15 @@ public class HabilidadAtaque extends Habilidad {
         this.poder = poder;
     }
 
+    // no se usa
     public Integer getPoder() {
         return poder;
     }
 
     public int calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
-        int nivelAtacante = atacante.getNivel();
-        int ataqueAtacante = atacante.getAtaque();
-        int defensaDefensor = defensor.getDefensa();
+        double nivelAtacante = atacante.getNivel();
+        double ataqueAtacante = atacante.getAtaque();
+        double defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
         int random = (int) (Math.random()*(255-217+1)+217) / 255;

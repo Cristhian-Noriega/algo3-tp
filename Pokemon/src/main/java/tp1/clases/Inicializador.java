@@ -19,6 +19,8 @@ public class Inicializador {
     private ArrayList<Jugador> jugadores;
 
     public Inicializador() throws IOException {
+        this.jugadores = new ArrayList<Jugador>();
+
         Terminal terminal = TerminalBuilder.terminal();
         reader = LineReaderBuilder.builder()
                 .terminal(terminal)
@@ -35,7 +37,7 @@ public class Inicializador {
             Jugador jugador = new Jugador(nombre, pokemones.get(i-1), items.get(i-1));
             this.jugadores.add(jugador);
         }
-
         return this.jugadores;
     }
+
 }

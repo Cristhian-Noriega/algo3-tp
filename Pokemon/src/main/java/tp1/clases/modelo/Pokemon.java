@@ -14,12 +14,12 @@ public class Pokemon {
     private final List<Habilidad> habilidades;
     private int vidaMax;
     private int vidaActual;
-    private int velocidad;
-    private int ataque;
-    private int defensa;
+    private double velocidad;
+    private double ataque;
+    private double defensa;
 
     public Pokemon(String nombre, int nivel, Tipo tipo,
-                   List<Habilidad> habilidades, int vidaMax, int velocidad, int ataque, int defensa) {
+                   List<Habilidad> habilidades, int vidaMax, double velocidad, double ataque, double defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -31,16 +31,15 @@ public class Pokemon {
         this.defensa = defensa;
     }
 
-
     public boolean estaMuerto() {
         return this.vidaActual <= 0;
     }
 
-    public void modificarAtaque(int modificador) { this.ataque += modificador; }
+    public void modificarAtaque(double modificador) { this.ataque += modificador; }
 
-    public void modificarDefensa(int modificador) {this.defensa += modificador; }
+    public void modificarDefensa(double modificador) {this.defensa += modificador; }
 
-    public void modificadorVelocidad(int modificador) { this.velocidad += modificador; }
+    public void modificadorVelocidad(double modificador) { this.velocidad += modificador; }
 
     public Optional<Error> setEstado(Estado estado) {
         if (this.estado != Estado.NORMAL) {
@@ -60,6 +59,7 @@ public class Pokemon {
     public String getNombre() {
         return this.nombre;
     }
+
     public Tipo getTipo() { return this.tipo; }
 
     public int getNivel() {
@@ -72,14 +72,15 @@ public class Pokemon {
 
     public int getVidaMax() { return this.vidaMax; }
 
-    public int getAtaque(){
+    public double getAtaque(){
         return this.ataque;
     }
-    public int getDefensa(){
+
+    public double getDefensa(){
         return this.defensa;
     }
 
-    public int getVelocidad(){
+    public double getVelocidad(){
         return this.velocidad;
     }
 

@@ -17,6 +17,7 @@ public class HabilidadEstadistica extends Habilidad {
         this.porcentaje = Constantes.veinticinco;
     }
 
+    // este metodo no se usa
     public Estadisticas getEstadistica() {
         return estadistica;
     }

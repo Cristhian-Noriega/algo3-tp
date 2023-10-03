@@ -52,29 +52,29 @@ public class Proveedor {
     Habilidad hab22 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
 
 
-    Pokemon poke1 = new Pokemon("Rapidash", 40, Tipo.FUEGO, List.of(hab1, hab2, hab10, hab18), 240, 193, 184, 130);
+    Pokemon poke1 = new Pokemon("Rapidash", 40, Tipo.FUEGO, List.of(hab1, hab2, hab10, hab18), 240, 193.0, 184.0, 130.0);
 
-    Pokemon poke2 = new Pokemon("Toxtricity", 30, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 260, 139, 180, 130);
+    Pokemon poke2 = new Pokemon("Toxtricity", 30, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 260, 139.0, 180.0, 130.0);
 
-    Pokemon poke3 = new Pokemon("Golurk", 43, Tipo.TIERRA, List.of(hab5, hab6, hab13, hab19), 288, 103, 227, 148);
+    Pokemon poke3 = new Pokemon("Golurk", 43, Tipo.TIERRA, List.of(hab5, hab6, hab13, hab19), 288, 103.0, 227.0, 148.0);
 
-    Pokemon poke4 = new Pokemon("Naclastack", 24, Tipo.ROCA, List.of(hab7, hab8, hab14, hab20), 230, 67, 112, 184);
+    Pokemon poke4 = new Pokemon("Naclastack", 24, Tipo.ROCA, List.of(hab7, hab8, hab14, hab20), 230, 67.0, 112.0, 184.0);
 
-    Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 330, 58, 157, 148);
+    Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 330, 58.0, 157.0, 148.0);
 
-    Pokemon poke6 = new Pokemon("Cloyster", 32, Tipo.AGUA, List.of(hab3, hab6, hab16, hab22), 210, 130, 175, 328);
+    Pokemon poke6 = new Pokemon("Cloyster", 32, Tipo.AGUA, List.of(hab3, hab6, hab16, hab22), 210, 130.0, 175.0, 328.0);
 
-    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab9, hab10, hab11, hab21), 188, 121, 98, 81);
+    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab9, hab10, hab11, hab21), 188, 121.0, 98.0, 81.0);
 
-    Pokemon poke8 = new Pokemon("Thundurus", 50, Tipo.ELECTRICO, List.of(hab3, hab1, hab12, hab17), 268, 204, 211, 130);
+    Pokemon poke8 = new Pokemon("Thundurus", 50, Tipo.ELECTRICO, List.of(hab3, hab1, hab12, hab17), 268, 204.0, 211.0, 130.0);
 
-    Pokemon poke9 = new Pokemon("Sandaconda", 36, Tipo.TIERRA, List.of(hab5, hab8, hab13, hab18), 254, 132, 197, 229);
+    Pokemon poke9 = new Pokemon("Sandaconda", 36, Tipo.TIERRA, List.of(hab5, hab8, hab13, hab18), 254, 132.0, 197.0, 229.0);
 
-    Pokemon poke10 = new Pokemon("Kleavor", 44, Tipo.ROCA, List.of(hab5, hab1, hab14, hab19), 250, 157, 247, 175);
+    Pokemon poke10 = new Pokemon("Kleavor", 44, Tipo.ROCA, List.of(hab5, hab1, hab14, hab19), 250, 157.0, 247.0, 175.0);
 
-    Pokemon poke11 = new Pokemon("Fraxure", 38, Tipo.DRAGON, List.of(hab8, hab3, hab15, hab21), 242, 125, 215, 130);
+    Pokemon poke11 = new Pokemon("Fraxure", 38, Tipo.DRAGON, List.of(hab8, hab3, hab15, hab21), 242, 125.0, 215.0, 130.0);
 
-    Pokemon poke12 = new Pokemon("Gastrodon",30 , Tipo.AGUA, List.of(hab2, hab7, hab16, hab22), 332, 74, 153, 126);
+    Pokemon poke12 = new Pokemon("Gastrodon",30 , Tipo.AGUA, List.of(hab2, hab7, hab16, hab22), 332, 74.0, 153.0, 126.0);
 
 
     Item item1 = new ItemEstado("Sacar estado");

@@ -10,7 +10,6 @@ public enum OpcionMenu {
     private int opcion;
     private String descripcion;
 
-
     OpcionMenu(int opcion, String descripcion){
         this.opcion = opcion;
         this.descripcion = descripcion;
@@ -19,7 +18,6 @@ public enum OpcionMenu {
     public int getOpcion() {
         return opcion;
     }
-
 
     public String getDescripcion(){
         return descripcion;
@@ -33,6 +31,5 @@ public enum OpcionMenu {
         }
         return null;
     }
-
 
 }

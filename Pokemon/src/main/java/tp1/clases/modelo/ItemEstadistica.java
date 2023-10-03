@@ -1,5 +1,9 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+
+import java.util.Optional;
+
 public class ItemEstadistica implements Item{
 
     private final String nombre;
@@ -16,7 +20,7 @@ public class ItemEstadistica implements Item{
     }
 
     @Override
-    public void usar(Pokemon pokemon){
+    public Optional<Error> usar(Pokemon pokemon){
         double porcentajeDeAumento = 0.1;
         switch (this.estadistica){
             case ATAQUE:
@@ -29,6 +33,7 @@ public class ItemEstadistica implements Item{
                 pokemon.modificadorVelocidad(pokemon.getVelocidad()* porcentajeDeAumento);
                 System.out.println("¡La velocidad de " + pokemon.getNombre() + " ha aumentado!");
         }
+        return Optional.empty();
     }
 }
 

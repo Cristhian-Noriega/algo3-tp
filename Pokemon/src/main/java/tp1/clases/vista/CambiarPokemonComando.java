@@ -1,6 +1,9 @@
 package tp1.clases.vista;
 
+import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+
+import java.util.Optional;
 
 public class CambiarPokemonComando implements Comando{
 
@@ -16,7 +19,7 @@ public class CambiarPokemonComando implements Comando{
         this.pokemon = op;
     }
 
-    public void ejecutar(){
-         this.batalla.cambiarPokemon(this.pokemon);
+    public Optional<Error> ejecutar(){
+         return this.batalla.cambiarPokemon(this.pokemon);
     }
 }
