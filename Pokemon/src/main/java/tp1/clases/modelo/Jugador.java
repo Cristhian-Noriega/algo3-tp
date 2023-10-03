@@ -13,7 +13,7 @@ public class Jugador {
     private final List<Item> items;
     private final String nombre;
 
-    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items){
+    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -44,7 +44,7 @@ public class Jugador {
         return Optional.empty();
     }
 
-    public boolean tienePokemonesConVida(){
+    public boolean tienePokemonesConVida() {
         for (Pokemon pokemon : this.pokemones) {
             if (pokemon.getVida() > 0) {
                 return true;
@@ -53,11 +53,11 @@ public class Jugador {
         return false;
     }
 
-    public int getVelocidadPokemonActual(){
+    public int getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();
     }
 
-    public List<Habilidad> getHabilidadesPokemonActual(){
+    public List<Habilidad> getHabilidadesPokemonActual() {
         return this.pokemonActual.getHabilidades();
     }
 
