@@ -54,15 +54,26 @@ public class Batalla {
         return this.jugadores.get(0) ;
     }
 
+    public List<Pokemon> getPokemonesJugadorActual(){
+        return this.getJugadorActual().getListaPokemones();
+    }
+
     public List<Habilidad> getHabilidadesPokemonActual() {
         return this.getJugadorActual().getHabilidadesPokemonActual();
     }
-    public Error usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
-        return habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
+
+    public List<Item> getItemsJugadorActual() {
+        return this.getJugadorActual().getListaItems();
     }
 
-    public Error usarItem(Item item) {
-        return item.usar( this.getJugadorActual().getPokemonActual());
+    public void usarAtaque(int habilidadElegida) {
+        Habilidad habilidad = getHabilidadesPokemonActual().get(habilidadElegida); //perdon
+        habilidad.usar( this.getJugadorActual().getPokemonActual(), this.jugadores.get((this.turno+1) % this.jugadores.size()).getPokemonActual());
+    }
+
+    public void usarItem(int itemElegido) {
+        Item item = getItemsJugadorActual().get(itemElegido);
+        item.usar( this.getJugadorActual().getPokemonActual());
     }
 
     public Error cambiarPokemon(int pokemon) {
@@ -73,4 +84,5 @@ public class Batalla {
         
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
+
 }
