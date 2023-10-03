@@ -9,25 +9,24 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Main {
-    public static void main(String[] args) throws IOException{
-        try{
-            Inicializador inicializador = new Inicializador();
-            Batalla batalla = new Batalla(inicializador.iniciarJugadores(Constantes.cantidadJugadores));
-            Controlador controlador = new Controlador(batalla);
 
-            boolean juegoTerminado = false;
-            while (!juegoTerminado){
-                controlador.Jugar();
-                juegoTerminado = controlador.getJuegoTerminado();
-            }
+    public static void main(String[] args) throws IOException {
 
-            // batalla.ObtenerGanador() esta devolviendo un Jugador y resultadoView necesita el nombre. Para que resultadoView
-            // se abstraiga de obtener el nombre, que batalla devuelva directo el String del nombre
-            Optional<Jugador> res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
+        Inicializador inicializador = new Inicializador();
 
-        } catch (IOException err){
-            System.out.println("Hubo un error al inicializar el juego");
-            // ??
+        Batalla batalla = new Batalla(inicializador.getJugadores());
+
+        Controlador controlador = new Controlador(batalla);
+
+        while (!controlador.getJuegoTerminado())
+
+        {
+            controlador.Jugar();
         }
+
+        String res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
+
+
+        System.out.println(res);
     }
 }

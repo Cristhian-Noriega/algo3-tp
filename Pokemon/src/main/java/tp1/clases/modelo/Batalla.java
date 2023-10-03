@@ -1,5 +1,8 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonMuerto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -51,18 +54,35 @@ public class Batalla {
         return this.jugadores.get(0) ;
     }
 
+    public List<Pokemon> getPokemonesJugadorActual(){
+        return this.getJugadorActual().getListaPokemones();
+    }
+
     public List<Habilidad> getHabilidadesPokemonActual() {
         return this.getJugadorActual().getHabilidadesPokemonActual();
     }
-    public void usarAtaque(Habilidad habilidad, Jugador jugadorRival) {
-        habilidad.usar( this.getJugadorActual().getPokemonActual(), jugadorRival.getPokemonActual());
+
+    public List<Item> getItemsJugadorActual() {
+        return this.getJugadorActual().getListaItems();
     }
 
-    public void usarItem(Item item) {
+    public void usarAtaque(int habilidadElegida) {
+        Habilidad habilidad = getHabilidadesPokemonActual().get(habilidadElegida); //perdon
+        habilidad.usar( this.getJugadorActual().getPokemonActual(), this.jugadores.get((this.turno+1) % this.jugadores.size()).getPokemonActual());
+    }
+
+    public void usarItem(int itemElegido) {
+        Item item = getItemsJugadorActual().get(itemElegido);
         item.usar( this.getJugadorActual().getPokemonActual());
     }
 
-    public void cambiarPokemon(int pokemon) {
-        this.getJugadorActual().seleccionarPokemon(pokemon);
+    public Error cambiarPokemon(int pokemon) {
+        //ejemplo unicamente, borrar despues:
+        if (pokemon == 1) {
+            return new ErrorPokemonMuerto();
+        }
+        
+        return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
+
 }

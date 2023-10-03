@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+
 public class HabilidadEstadistica extends Habilidad {
     final private Estadisticas estadistica;
     final private boolean contraRival;
@@ -21,11 +23,11 @@ public class HabilidadEstadistica extends Habilidad {
     }
 
     @Override
-    public void usar(Pokemon propio, Pokemon ajeno) {
+    public Error usar(Pokemon propio, Pokemon ajeno) {
         if (this.isContraRival()) {
-            this.modificarEstadistica(ajeno, (-1));
+            return this.modificarEstadistica(ajeno, (-1));
         } else {
-            this.modificarEstadistica(propio, 1);
+            return this.modificarEstadistica(propio, 1);
         }
     }
 

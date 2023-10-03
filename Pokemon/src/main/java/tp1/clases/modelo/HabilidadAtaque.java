@@ -1,5 +1,9 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.Error;
+
+import java.util.Optional;
+
 public class HabilidadAtaque extends Habilidad {
     final protected Integer poder;
 
@@ -25,8 +29,8 @@ public class HabilidadAtaque extends Habilidad {
     }
 
     @Override
-    public void usar(Pokemon propio, Pokemon ajeno) {
+    public Error usar(Pokemon propio, Pokemon ajeno) {
         int danio = calcularDanioAtaque(propio, ajeno);
-        ajeno.modificarVida((-1)*danio);
+        return ajeno.modificarVida((-1)*danio);
     }
 }
