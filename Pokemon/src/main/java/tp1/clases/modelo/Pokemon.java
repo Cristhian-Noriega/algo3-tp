@@ -1,7 +1,6 @@
 package tp1.clases.modelo;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Pokemon {
     private final String nombre;
@@ -29,49 +28,6 @@ public class Pokemon {
     }
 
 
-    public String verHabilidades() {
-        return "Habilidades de " + this.nombre + ":\n" + generarCadenaHabilidades(this.habilidades);
-    }
-
-    public String verAtaques() {
-        return "Ataques de " + this.nombre + ":\n" +
-                habilidades.stream()
-                        .filter(habilidad -> habilidad instanceof HabilidadAtaque)
-                        .map(habilidad -> habilidad.getNombre() + "-" + habilidad.getInfo())
-                        .collect(Collectors.joining("\n"));
-    }
-
-    private String generarCadenaHabilidades(List<Habilidad> habilidades) {
-        return habilidades.stream()
-                .map(habilidad -> habilidad.getNombre() + "-" + habilidad.getInfo())
-                .collect(Collectors.joining("\n"));
-    }
-
-    public int atacar(Integer indiceAtaque, Pokemon enemigo) {
-        Habilidad ataque = this.habilidades.get(indiceAtaque); // agregue esto para que el Jugador seleccione numero, habilidad como tipo solo se acceden desde clase Pokemon xq es qn las tiene. (emi)
-
-        if (ataque.getUsos() == 0) {
-            throw new NoHayMasAtaquesException();
-        }
-
-        Tipo tipoAtaque = ataque.getTipo();
-        float efectividad = ataque.calcularEfectividad(tipoPokemon, enemigo.obtenerTipo()); //hay que ver si la efectividad la ponemos en ataque o batalla
-        int danio = ataque.calcularDanio(nivelAtacante, ataqueAtacante);
-        int defensaEnemigo = enemigo.getDefensa();
-
-        enemigo.recibirDanio(danio);
-        ataque.usarAtaque();
-
-        return danio;
-    }
-
-    public void recibirDanio(int danio) {
-        vidaActual -= danio;
-        if (this.estaMuerto()) {
-            this.vidaMax = 0;
-        }
-    }
-
     public boolean estaMuerto() {
         return this.vidaActual <= 0;
     }
@@ -86,17 +42,14 @@ public class Pokemon {
         this.estado = estado;
     }
 
-    public void modificarVida(int aumento) { this.vidaActual += aumento; }
+    public void modificarVida(int modificador) { this.vidaActual += modificador; }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
-
-    public Tipo getTipo() {
-        return this.tipo;
-    }
 
     public String getNombre() {
         return this.nombre;
     }
+    public Tipo getTipo() { return this.tipo; }
 
     public int getNivel() {
         return this.nivel;

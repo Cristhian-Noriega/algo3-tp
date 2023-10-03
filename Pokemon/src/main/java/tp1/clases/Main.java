@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
         Inicializador inicializador = new Inicializador();
 
         Batalla batalla = new Batalla(inicializador.getJugadores());
@@ -20,7 +21,8 @@ public class Main {
             controlador.Jugar();
         }
 
-        String res = ResultadoView.mostrarResultado(batalla.obtenerGanador().toString());
+        String res = ResultadoView.mostrarResultado(batalla.obtenerGanador());
+
 
         System.out.println(res);
     }
