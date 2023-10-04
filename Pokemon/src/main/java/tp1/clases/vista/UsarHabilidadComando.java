@@ -2,6 +2,8 @@ package tp1.clases.vista;
 
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Efectividad;
+import tp1.clases.modelo.Tipo;
 
 import java.util.Optional;
 
@@ -22,6 +24,10 @@ public class UsarHabilidadComando implements Comando{
     }
 
     public Optional<Error> ejecutar(){
-        return this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
+        Optional<Error> err = this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
+        if (err.isEmpty()) {
+            //TODO: mostrar mensaje de habilidad
+        }
+        return err;
     }
 }

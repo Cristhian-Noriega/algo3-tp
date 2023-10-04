@@ -32,7 +32,7 @@ public class HabilidadAtaque extends Habilidad {
 
     @Override
     public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
-        if (!this.quedanUsos()){
+        if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
         int danio = calcularDanioAtaque(propio, ajeno);

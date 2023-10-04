@@ -19,6 +19,10 @@ public class UsarItemComando implements Comando {
         this.item = op;
     }
     public Optional<Error> ejecutar() {
-        return this.batalla.usarItem(this.item);
+        Optional<Error> err = this.batalla.usarItem(this.item);
+        if (err.isEmpty()) {
+            //TODO: imprimir mensaje de items
+        }
+        return err;
     }
 }

@@ -28,7 +28,7 @@ public class HabilidadEstadistica extends Habilidad {
 
     @Override
     public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
-        if (!this.quedanUsos()){
+        if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
         if (this.isContraRival()) {
