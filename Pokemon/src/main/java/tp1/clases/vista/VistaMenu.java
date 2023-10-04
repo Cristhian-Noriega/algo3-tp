@@ -4,14 +4,17 @@ import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Pokemon;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 public class VistaMenu {
     public static String mostrarOpciones() {
         StringBuilder menu = new StringBuilder("Seleccione una opcion:\n");
         for (OpcionMenu opcion: OpcionMenu.values()){
-            String op = String.format("%d. %s\n", opcion.ordinal()+1, opcion.getDescripcion()); //no me gusta ese +1 :(
-            menu.append(op);
+            if (opcion.ordinal() > 0) {
+                String op = String.format("%d. %s\n", opcion.ordinal(), opcion.getDescripcion());
+                menu.append(op);
+            }
         }
         return menu.toString();
     }

@@ -31,14 +31,15 @@ public class Controlador {
 
     public void Jugar(){
 
-        while (true) {
+        boolean turnoActivo = true;
+        while (turnoActivo) {
             System.out.printf("Turno de %s \n", this.batalla.getJugadorActual().getNombre());
 
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
 
-            if ((OpcionMenu.values().length < op) | (op <= 0)) {
+            if ((OpcionMenu.values().length <= op) | (op <= 0)) {
                 System.out.println("Opción no valida, fuera de rango");
-                op = interaccionConUsuario(VistaMenu.mostrarOpciones());
+                continue;
             }
 
             OpcionMenu accion = OpcionMenu.getAccion(op);
@@ -50,7 +51,8 @@ public class Controlador {
             }
 
             if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
-                String jugadorRendido = this.batalla.rendir(this.batalla.getJugadorActual()).getNombre();
+                String jugadorRendido = this.batalla.getJugadorActual().getNombre();
+                this.batalla.rendir(this.batalla.getJugadorActual());
                 System.out.printf("El jugador %s se ha rendido. \n", jugadorRendido);
                 this.juegoTerminado = true;
                 break;
@@ -59,19 +61,24 @@ public class Controlador {
             String siguienteAccion = siguienteAccion(accion);
             op = interaccionConUsuario(siguienteAccion);
 
-            if (op == 0){ //volver atras
+            if (op == OpcionMenu.VOLVER_ATRAS.ordinal()){
                 continue;
             }
 
-            while (true) {
-                comando.definirOpcion(op);
+            boolean opcionInvalida = true;
+            while (opcionInvalida) {
+                int posicion = op -1;
+                comando.definirOpcion(posicion);
                 Optional<Error> err = comando.ejecutar();
-                if (err.isEmpty()) { // ver
-                    break;
+                if (err.isPresent()) { // ver
+                    err.get().mostrar();
+                    op = interaccionConUsuario(siguienteAccion);
+                    continue;
                 }
-                op = interaccionConUsuario(siguienteAccion);
+                opcionInvalida = false;
             }
-            break;
+
+            turnoActivo = false;
         }
 
         if (this.batalla.obtenerGanador().isPresent()) {

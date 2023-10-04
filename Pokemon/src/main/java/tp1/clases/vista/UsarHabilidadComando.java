@@ -26,6 +26,7 @@ public class UsarHabilidadComando implements Comando{
     public Optional<Error> ejecutar(){
         Optional<Error> err = this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
         if (err.isEmpty()) {
+            //System.out.print()
             //TODO: mostrar mensaje de habilidad
         }
         return err;

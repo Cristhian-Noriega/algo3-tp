@@ -18,14 +18,19 @@ public class HabilidadAtaque extends Habilidad {
         return poder;
     }
 
-    public int calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
+    private double calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
+
+        int maxRandom =  255;
+        int minRandom = 217;
+
         double nivelAtacante = atacante.getNivel();
         double ataqueAtacante = atacante.getAtaque();
         double defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
-        int random = (int) (Math.random()*(255-217+1)+217) / 255;
-        int danio = (int) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random);
+        double random = (double) ((Math.random()*(maxRandom+1-minRandom))+minRandom)/maxRandom;
+
+        double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random);
 
         return danio;
     }
@@ -35,8 +40,13 @@ public class HabilidadAtaque extends Habilidad {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
-        int danio = calcularDanioAtaque(propio, ajeno);
+        double danio = calcularDanioAtaque(propio, ajeno);
+        System.out.println("daño: " + danio);
         ajeno.modificarVida((-1)*danio);
         return Optional.empty();
+    }
+
+    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) { //estoy probando cosas :)
+        return (this.calcularDanioAtaque(atacante, ajeno) > 0 );
     }
 }

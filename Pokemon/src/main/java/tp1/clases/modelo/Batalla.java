@@ -54,9 +54,8 @@ public class Batalla {
         return this.jugadores.get((this.turno + 1) % this.jugadores.size());
     }
 
-    public Jugador rendir(Jugador jugador) {
+    public void rendir(Jugador jugador) {
         this.jugadores.remove(jugador);
-        return this.jugadores.get(0);
     }
 
     public List<Pokemon> getPokemonesJugadorActual() {

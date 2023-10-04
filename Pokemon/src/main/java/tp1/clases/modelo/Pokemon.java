@@ -50,9 +50,9 @@ public class Pokemon {
         return Optional.empty();
     }
 
-    public void modificarVida(int modificador) {
-        int nuevoValor = this.vidaActual + modificador;
-        this.vidaActual += Math.min(nuevoValor, vidaMax);
+    public void modificarVida(double modificador) {
+        double nuevoValor = this.vidaActual + modificador;
+        this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
