@@ -20,6 +20,10 @@ public class CambiarPokemonComando implements Comando{
     }
 
     public Optional<Error> ejecutar(){
-         return this.batalla.cambiarPokemon(this.pokemon);
+         Optional<Error> err = this.batalla.cambiarPokemon(this.pokemon);
+         if (err.isEmpty()) {
+             System.out.printf("¡%s sale al campo de batalla!\n", this.batalla.getJugadorActual().getPokemonActual().getNombre());
+         }
+         return err;
     }
 }

@@ -6,15 +6,29 @@ import java.util.Map;
 
 public class CampoVista {
 
-    public String estadoJugador(Batalla batalla) {
-        Map<String, Object> datos = batalla.getDatosJugadorActual();
-        int vida = (int) datos.get("Vida Actual");
-        int vidaMaxima = (int) datos.get("Vida Max");
-        int nivel = (int) datos.get("Nivel");
-
+    public static String crearBarraDeVida(int vida, int vidaMaxima) {
         int porcentajeVida = vida / vidaMaxima * 10;
-        String barraDeVida = "|".repeat(Math.max(0, porcentajeVida - 1)) +
+        return "|".repeat(Math.max(0, porcentajeVida - 1)) +
                 " ".repeat(Math.max(0, 10 - porcentajeVida));
-        return String.format("%s \n %s  %d/%d (%s)  Nvl. %d  %s", batalla.getJugadorActual().getNombre(), datos.get("Pokemon"), vida, vidaMaxima, barraDeVida, nivel, datos.get("Estado"));
+    }
+    public String estadoJugador(Batalla batalla) {
+        String campo = "";
+        int contador = 0;
+        for (Map<String, Object> datos: batalla.getDatosJugadores()) {
+            int vida = (int) datos.get("Vida Actual");
+            int vidaMaxima = (int) datos.get("Vida Max");
+
+            String barraDeVida = "(" + crearBarraDeVida(vida, vidaMaxima) + ")";
+
+            campo += "\n" + batalla.getJugadores().get(contador).getNombre() + "\n";
+            campo += datos.get("Pokemon") + "   ";
+            campo += "NVL." + datos.get("Nivel") + "   ";
+            campo += vida + "/" + vidaMaxima + " " + barraDeVida + "   ";
+            campo += datos.get("Estado") + "   \n";
+
+            contador += 1;
+        }
+
+        return campo;
     }
 }

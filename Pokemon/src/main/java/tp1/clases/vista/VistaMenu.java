@@ -16,13 +16,30 @@ public class VistaMenu {
         return menu.toString();
     }
 
+    private static String mostrarEstadoPokemon(Pokemon pokemon) {
+        String informacion = "";
+        String barraDeVida = CampoVista.crearBarraDeVida(pokemon.getVida(), pokemon.getVidaMax());
+        informacion += pokemon.getNombre() + "\n";
+        informacion += pokemon.getVida() + "/" + pokemon.getVidaMax() + " " + "(" + barraDeVida + ")" + "   ";
+        informacion += pokemon.getTipo().name() + "   ";
+        informacion += pokemon.getEstado().name() + "   ";
+        informacion += "NVL." + pokemon.getNivel() + "   ";
+        informacion += "DEF." + pokemon.getDefensa() + "   ";
+        informacion += "ATAQ." + pokemon.getAtaque() + "   ";
+        informacion += "VEL." + pokemon.getVelocidad() + "   \n";
+
+        return informacion;
+    }
+
+
     public static String mostrarPokemones(List<Pokemon> pokemones) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
         listaPokemones = agregarOpcionVolverAtras(listaPokemones);
-        for (int i = 1; i < pokemones.size(); i++) {
-            Pokemon pokemon = pokemones.get(i);
-            String pokemonInfo = String.format("%d. %s (%d de vida)\n", i, pokemon.getNombre(), pokemon.getVida());
+        int contador = 1;
+        for (Pokemon pokemon: pokemones) {
+            String pokemonInfo = contador + ". " + mostrarEstadoPokemon(pokemon);
             listaPokemones.append(pokemonInfo);
+            contador += 1;
         }
         return listaPokemones.toString();
     }
@@ -37,12 +54,25 @@ public class VistaMenu {
         return listaItems.toString();
     }
 
+    public static String mostrarInfoHabilidad(Habilidad habilidad) {
+        String informacion = "";
+        informacion += habilidad.getNombre() + "   ";
+        informacion += habilidad.getTipo().name() + "   ";
+        informacion += "USOS." + habilidad.getUsos() + "   \n";
+        informacion += habilidad.getInfo() + "\n \n";
+        return informacion;
+    }
+
+
     public static String mostrarHabilidades(List<Habilidad> habilidades) {
         StringBuilder listaHabilidades = new StringBuilder("Habilidades disponibles: \n");
         listaHabilidades = agregarOpcionVolverAtras(listaHabilidades);
-        for (int i = 1; i < habilidades.size(); i++) {
-            String habilidad = String.format("%d. %s (usos: %s)\n", i, habilidades.get(i).getNombre(), habilidades.get(i).getUsos());
-            listaHabilidades.append(habilidad);
+        listaHabilidades.append("\n");
+        int contador = 1;
+        for (Habilidad habilidad: habilidades) {
+            String infoHabilidad = contador + ". " +mostrarInfoHabilidad(habilidad);
+            listaHabilidades.append(infoHabilidad);
+            contador += 1;
         }
         return listaHabilidades.toString();
     }

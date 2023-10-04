@@ -97,4 +97,12 @@ public class Batalla {
     public Map<String, Object> getDatosJugadorActual(){
         return this.getJugadorActual().getDatos();
     }
+
+    public List<Map<String, Object>> getDatosJugadores(){
+        List<Map<String, Object>> datos = new ArrayList<>();
+        for (Jugador jugador: this.jugadores) {
+            datos.add(jugador.getDatos());
+        }
+        return datos;
+    }
 }

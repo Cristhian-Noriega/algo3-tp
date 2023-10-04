@@ -35,7 +35,8 @@ public abstract class Habilidad {
 
     public abstract Optional<Error> usar(Pokemon propio, Pokemon ajeno);
 
-    public boolean quedanUsos() {
-        return this.usos >= 1;
+    public boolean sinUsosDisponibles() {
+        return this.usos < 1;
     }
+
 }
