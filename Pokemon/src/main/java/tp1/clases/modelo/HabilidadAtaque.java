@@ -29,8 +29,8 @@ public class HabilidadAtaque extends Habilidad {
         double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
         double random = (double) ((Math.random()*(maxRandom+1-minRandom))+minRandom)/maxRandom;
-
-        double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random);
+        double critico = probabilidad(Constantes.probabilidadDeCritico)? 2: 1;
+        double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
 
         return danio;
     }
