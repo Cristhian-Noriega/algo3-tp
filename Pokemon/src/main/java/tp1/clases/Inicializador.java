@@ -32,11 +32,18 @@ public class Inicializador {
         List<List<Pokemon>> pokemones = proveedor.getPokemones();
         List<List<Item>> items = proveedor.getItems();
 
-        for (int i = 1; i <= cantJugadores; i++){
+        int i = 1;
+        while (i <= cantJugadores){
             String nombre = reader.readLine("Por favor ingrese el nombre del jugador " + i + " \n");
+            if (nombre.length() > 50) {
+                System.out.println("El nombre no puede tener mas de 50 caracteres \n");
+                continue;
+            }
+            i++;
             Jugador jugador = new Jugador(nombre, pokemones.get(i-1), items.get(i-1));
             this.jugadores.add(jugador);
         }
+
         return this.jugadores;
     }
 

@@ -35,6 +35,12 @@ public class Controlador {
         while (turnoActivo) {
             System.out.printf("Turno de %s \n", this.batalla.getJugadorActual().getNombre());
 
+            while (this.batalla.estaMuertoPokemonActual()) {
+                System.out.println("Pokemon muerto, elija otro pokemon: ");
+                int pokemon = interaccionConUsuario(VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual()));
+                this.batalla.cambiarPokemon(pokemon);
+            }
+
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
 
             if ((OpcionMenu.values().length <= op) | (op <= 0)) {
@@ -60,6 +66,8 @@ public class Controlador {
 
             String siguienteAccion = siguienteAccion(accion);
             op = interaccionConUsuario(siguienteAccion);
+
+            op = verificaItem(op, siguienteAccion);
 
             if (op == OpcionMenu.VOLVER_ATRAS.ordinal()){
                 continue;
@@ -121,6 +129,20 @@ public class Controlador {
             }
             default -> null;
         };
+    }
+    
+    private int verificaItem(int op, String siguienteAccion){
+        List listaPokemones = this.batalla.getPokemonesJugadorActual()
+        while (op == (OpcionMenu.VER_ITEM).ordinal()){
+            int opItem = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones));
+            if ((opItem == OpcionMenu.VOLVER_ATRAS.ordinal()) | (opItem >= listaPokemones.length) | (opItem < 0)){
+                op = interaccionConUsuario(siguienteAccion);
+                continue;
+            }
+            this.comando.definirPokemon(opItem);
+            break;
+        }
+        return op;
     }
 
     public Boolean getJuegoTerminado() {

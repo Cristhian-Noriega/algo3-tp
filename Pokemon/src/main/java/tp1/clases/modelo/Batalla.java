@@ -78,12 +78,12 @@ public class Batalla {
         return habilidad.usar(this.getJugadorActual().getPokemonActual(), rival.getPokemonActual());
     }
 
-    public Optional<Error> usarItem(int itemElegido) {
+    public Optional<Error> usarItem(int itemElegido, int pokemon) {
         if (itemElegido < 0 || itemElegido >= this.getItemsJugadorActual().size()) {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Item item = this.getItemsJugadorActual().get(itemElegido);
-        return item.usar(this.getJugadorActual().getPokemonActual());
+        return item.usar(this.getPokemonesJugadorActual().get(pokemon));
     }
 
     public Optional<Error> cambiarPokemon(int pokemon) {
@@ -93,7 +93,8 @@ public class Batalla {
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
-    public Map<String, Object> getDatosJugadorActual(){
+    // podria borrarse tamb?
+    // public Map<String, Object> getDatosJugadorActual(){
         return this.getJugadorActual().getDatos();
     }
 
@@ -103,5 +104,9 @@ public class Batalla {
             datos.add(jugador.getDatos());
         }
         return datos;
+    }
+
+    public boolean estaMuertoPokemonActual(){
+        return this.getJugadorActual().getPokemonActual().estaMuerto();
     }
 }

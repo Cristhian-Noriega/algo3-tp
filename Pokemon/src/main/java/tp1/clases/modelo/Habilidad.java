@@ -39,4 +39,9 @@ public abstract class Habilidad {
         return this.usos < 1;
     }
 
+    public static boolean probabilidad(double probabilidad) {
+        double rand =  Math.random();
+        return rand > probabilidad;
+    }
+
 }

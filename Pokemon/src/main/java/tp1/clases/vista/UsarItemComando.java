@@ -9,9 +9,15 @@ public class UsarItemComando implements Comando {
 
     private final Batalla batalla;
     private int item;
+    private int pokemon;
 
     public UsarItemComando(Batalla batalla) {
         this.batalla = batalla;
+    }
+
+    @Override
+    public void definirPokemon(int pokemon){
+        this.pokemon = pokemon;
     }
 
     @Override
@@ -19,7 +25,7 @@ public class UsarItemComando implements Comando {
         this.item = op;
     }
     public Optional<Error> ejecutar() {
-        Optional<Error> err = this.batalla.usarItem(this.item);
+        Optional<Error> err = this.batalla.usarItem(this.item, this.pokemon);
         if (err.isEmpty()) {
             //TODO: imprimir mensaje de items
         }

@@ -52,6 +52,9 @@ public class Pokemon {
 
     public void modificarVida(double modificador) {
         double nuevoValor = this.vidaActual + modificador;
+        if (nuevoValor <= 0.0){
+            this.vidaActual = 0;
+        }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
