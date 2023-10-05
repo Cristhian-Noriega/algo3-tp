@@ -4,8 +4,9 @@ import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Pokemon;
 
-import java.lang.reflect.Array;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class VistaMenu {
     public static String mostrarOpciones() {
@@ -48,10 +49,21 @@ public class VistaMenu {
     }
 
     public static String mostrarItems(List<Item> items) {
+        Map<String, Long> mapCantidadItems = items.stream().
+                collect(Collectors.groupingBy(
+                        Item::getNombre,
+                        Collectors.counting()
+                ));
+
         StringBuilder listaItems = new StringBuilder("Items disponibles:\n");
         listaItems = agregarOpcionVolverAtras(listaItems);
-        for (int i= 1; i < items.size(); i++) {
-            String item = String.format("%d. %s\n", i, items.get(i).getNombre());
+
+        int i = 1;
+        for (Map.Entry<String, Long> entry : mapCantidadItems.entrySet()) {
+            String nombreItem = entry.getKey();
+            Long cantidad = entry.getValue();
+            String item = String.format("%d. %s - cantidad: %d\n", i, nombreItem, cantidad);
+            i++;
             listaItems.append(item);
         }
         return listaItems.toString();

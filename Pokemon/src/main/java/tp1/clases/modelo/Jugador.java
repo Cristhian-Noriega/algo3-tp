@@ -64,6 +64,10 @@ public class Jugador {
         return this.pokemonActual.getHabilidades();
     }
 
+    public void eliminarItem(Item item){
+        this.items.remove(item);
+    }
+
     public Map<String, Object> getDatos(){
         Map<String, Object> datosPokemonActual = new HashMap<>();
         datosPokemonActual.put("Pokemon", this.pokemonActual.getNombre());

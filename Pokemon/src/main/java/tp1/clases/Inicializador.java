@@ -39,8 +39,8 @@ public class Inicializador {
                 System.out.println("El nombre no puede tener mas de 50 caracteres \n");
                 continue;
             }
-            i++;
             Jugador jugador = new Jugador(nombre, pokemones.get(i-1), items.get(i-1));
+            i++;
             this.jugadores.add(jugador);
         }
 
