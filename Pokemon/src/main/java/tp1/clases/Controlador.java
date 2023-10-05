@@ -22,8 +22,11 @@ public class Controlador {
     private Boolean juegoTerminado = false;
     private Comando comando;
 
-    public Controlador(Batalla batalla) throws IOException {
+    private final ControladorEstados controladorEstados;
+
+    public Controlador(Batalla batalla, ControladorEstados controladorEstados) throws IOException {
         this.batalla = batalla;
+        this.controladorEstados = controladorEstados;
 
         Terminal terminal = TerminalBuilder.terminal();
         reader = LineReaderBuilder.builder()
@@ -32,7 +35,8 @@ public class Controlador {
     }
 
     public void Jugar(){
-
+        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual().getPokemonActual(), this.batalla.getJugadorActual(), this.batalla.getTurno());
+        // if puedeUsarHabilidad -> usarla; else -> siguienteTurno; esto si elige usar una habilidad
         boolean turnoActivo = true;
         while (turnoActivo) {
             System.out.printf("Turno de %s \n", this.batalla.getJugadorActual().getNombre());
@@ -44,8 +48,8 @@ public class Controlador {
             }
 
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
-            //pruebo sacar el igual al length
-            if ((OpcionMenu.values().length < op) | (op <= 0)) {
+
+            if ((OpcionMenu.values().length <= op) | (op <= 0)) {
                 System.out.println("Opción no valida, fuera de rango");
                 continue;
             }
@@ -66,27 +70,44 @@ public class Controlador {
                 break;
             }
 
-            String siguienteAccion = siguienteAccion(accion);
-            op = interaccionConUsuario(siguienteAccion);
-
-            op = verificaItem(op, siguienteAccion, accion);
-
-            if (op - 1 == OpcionMenu.VOLVER_ATRAS.ordinal()){
-                continue;
-            }
-
+            boolean volverAtras = false;
             boolean opcionInvalida = true;
             while (opcionInvalida) {
-                int posicion = op - 1;
+
+                accion = OpcionMenu.getAccion(op);
+
+                String siguienteAccion = siguienteAccion(accion);
+                int opSig = interaccionConUsuario(siguienteAccion);
+
+                if (op == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
+                    break;
+                }
+
+                opSig = verificaItem(opSig, siguienteAccion, accion);
+
+                if (opSig == OpcionMenu.VOLVER_ATRAS.ordinal()){
+                    volverAtras = true;
+                    break;
+                }
+
+                int posicion = opSig - 1;
                 comando.definirOpcion(posicion);
                 Optional<Error> err = comando.ejecutar();
 
-                if (err.isPresent()) { // ver
+                if (err.isPresent()) {
                     err.get().mostrar();
-                    op = interaccionConUsuario(siguienteAccion);
                     continue;
                 }
+
                 opcionInvalida = false;
+            }
+
+            if (volverAtras){
+                continue;
+            }
+
+            if (opcionInvalida && !puedeUsarHabilidad){
+                break;
             }
 
             turnoActivo = false;
@@ -122,7 +143,7 @@ public class Controlador {
                 yield VistaMenu.mostrarItems(this.batalla.getItemsJugadorActual());
             }
             case VER_HABILIDAD -> {
-                this.comando = new UsarHabilidadComando(this.batalla);
+                this.comando = new UsarHabilidadComando(this.batalla, controladorEstados);
                 yield VistaMenu.mostrarHabilidades(this.batalla.getHabilidadesPokemonActual());
             }
             case VER_POKEMONES -> {
@@ -137,16 +158,18 @@ public class Controlador {
         List<Pokemon> listaPokemones = this.batalla.getPokemonesJugadorActual();
 
         while (accion == OpcionMenu.VER_ITEM){
-            // Siento q habria q poner algo asi para que quede claro, pero no se imprime bien
-            // System.out.println("Elija el pokemon para aplicarle el item");
+            if (op == OpcionMenu.VOLVER_ATRAS.ordinal()){
+                break;
+            }
+            System.out.println("Elija el pokemon al cual aplicarle el item");
             int opItem = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones));
 
-            if ((opItem >= listaPokemones.size()) | (opItem < 0)){
+            if ((opItem >= listaPokemones.size()) | (opItem <= 0)){
                 if (opItem != OpcionMenu.VOLVER_ATRAS.ordinal()){
                     System.out.println("Opción no valida, fuera de rango");
+                    continue;
                 }
-                //Saque esto pq para mi deberia mostrarle las opciones d poke de nuevo, no volver atras y mostrarle los items.
-                //op = interaccionConUsuario(siguienteAccion);
+                op = interaccionConUsuario(siguienteAccion);
                 continue;
             }
             this.comando.definirPokemon(opItem-1);

@@ -1,5 +1,6 @@
 package tp1.clases.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Proveedor {
@@ -7,23 +8,23 @@ public class Proveedor {
   
     private final List<List<Item>> listasItems;
 
-    Habilidad hab1 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 40, "Araña con afiladas garras");
+    Habilidad hab1 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 100, "Araña con afiladas garras");
 
     Habilidad hab2 = new HabilidadAtaque("Cascada", 5, Tipo.AGUA, 80, "Embiste con gran impulso que puede hacer retroceder");
 
-    Habilidad hab3 = new HabilidadAtaque("Demolicion", 15, Tipo.LUCHA, 75, "Potente ataque que tambien es capaz de destruir barreras");
+    Habilidad hab3 = new HabilidadAtaque("Demolicion", 15, Tipo.LUCHA, 130, "Potente ataque que tambien es capaz de destruir barreras");
 
     Habilidad hab4 = new HabilidadAtaque("Ala Bis", 10, Tipo.VOLADOR, 40, "Ataca al adversario golpeandolo dos veces con las alas");
 
     Habilidad hab5 = new HabilidadAtaque("Antiaereo", 15, Tipo.ROCA, 50, "Ataca lanzando una piedra o proyctil");
 
-    Habilidad hab6 = new HabilidadAtaque("Bucle Arena", 15, Tipo.TIERRA, 35, "Enreda al objetivo en un remolino de arena");
+    Habilidad hab6 = new HabilidadAtaque("Bucle Arena", 15, Tipo.TIERRA, 200, "Enreda al objetivo en un remolino de arena");
 
-    Habilidad hab7 = new HabilidadAtaque("Garra Umbria", 15, Tipo.FANTASMA, 70, "Ataca cpm una garra afilada hecha de sombras");
+    Habilidad hab7 = new HabilidadAtaque("Garra Umbria", 15, Tipo.FANTASMA, 200, "Ataca cpm una garra afilada hecha de sombras");
 
-    Habilidad hab8 = new HabilidadAtaque("Corte Furia", 20, Tipo.BICHO, 40, "Ataque con una guadaña");
+    Habilidad hab8 = new HabilidadAtaque("Corte Furia", 20, Tipo.BICHO, 150, "Ataque con una guadaña");
 
-    Habilidad hab9 = new HabilidadAtaque("Cabezazo Zen", 15, Tipo.PSIQUICO, 80, "COncentra su energia psiquica en la cabeza para golpear");
+    Habilidad hab9 = new HabilidadAtaque("Cabezazo Zen", 15, Tipo.PSIQUICO, 180, "COncentra su energia psiquica en la cabeza para golpear");
 
     Habilidad hab10 = new HabilidadEstadistica("Amnesia", 20, Tipo.PSIQUICO, "El usuario olvida sus preocupaciones y aumenta mucho sus defensas", Estadisticas.DEFENSA, false);
 
@@ -96,7 +97,23 @@ public class Proveedor {
     public Proveedor() {
         // Lista = (lista items/pokemones jugador 1, lista items/pokemones jugador 2)
         this.listasPokemones = List.of(List.of(poke1, poke2, poke3, poke4, poke5, poke6), List.of(poke7, poke8, poke9, poke10, poke11, poke12));
-        this.listasItems = List.of(List.of(item1, item2, item4, item6, item8, item6), List.of(item1, item3, item5, item7, item1, item5));
+        this.listasItems = new ArrayList<List<Item>>();
+        List<Item> listaItems1 = new ArrayList<Item>();
+        listaItems1.add(item1);
+        listaItems1.add(item2);
+        listaItems1.add(item4);
+        listaItems1.add(item6);
+        listaItems1.add(item8);
+        listaItems1.add(item6);
+        List<Item> listaItems2 = new ArrayList<Item>();
+        listaItems2.add(item1);
+        listaItems2.add(item3);
+        listaItems2.add(item5);
+        listaItems2.add(item7);
+        listaItems2.add(item1);
+        listaItems2.add(item5);
+        this.listasItems.add(listaItems1);
+        this.listasItems.add(listaItems2);
     }
 
     public List<List<Pokemon>> getPokemones() {
