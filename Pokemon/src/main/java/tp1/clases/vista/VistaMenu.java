@@ -39,6 +39,7 @@ public class VistaMenu {
     public static String mostrarPokemones(List<Pokemon> pokemones) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
         listaPokemones = agregarOpcionVolverAtras(listaPokemones);
+
         int contador = 1;
         for (Pokemon pokemon: pokemones) {
             String pokemonInfo = contador + ". " + mostrarEstadoPokemon(pokemon);
@@ -78,11 +79,12 @@ public class VistaMenu {
         return informacion;
     }
 
-
     public static String mostrarHabilidades(List<Habilidad> habilidades) {
         StringBuilder listaHabilidades = new StringBuilder("Habilidades disponibles: \n");
         listaHabilidades = agregarOpcionVolverAtras(listaHabilidades);
-        listaHabilidades.append("\n");
+        // listaHabilidades.append("\n");
+        // Solo habilidades tiene un \n desps de cada opcion, o q lo tengan todos o ninguno xq queda inconsistente.
+
         int contador = 1;
         for (Habilidad habilidad: habilidades) {
             String infoHabilidad = contador + ". " +mostrarInfoHabilidad(habilidad);

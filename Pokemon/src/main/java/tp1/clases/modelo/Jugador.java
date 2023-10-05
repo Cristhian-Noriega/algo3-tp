@@ -12,7 +12,7 @@ public class Jugador {
 
     private final List<Pokemon> pokemones;
     private Pokemon pokemonActual;
-    private final List<Item> items;
+    private List<Item> items;
     private final String nombre;
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
@@ -65,7 +65,9 @@ public class Jugador {
     }
 
     public void eliminarItem(Item item){
-        this.items.remove(item);
+        this.items = items.stream()
+                .filter(itemAct -> !itemAct.equals(item))
+                .toList();
     }
 
     public Map<String, Object> getDatos(){
