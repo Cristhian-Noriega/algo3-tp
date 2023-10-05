@@ -10,6 +10,8 @@ public class ItemVida implements Item {
     private final String nombre;
     private final int vida;
 
+    int REVIVIR = 0;
+
     public ItemVida(String nombre, int vida){ //si vida es 0 entonces es pocion para revivir
         this.nombre = nombre;
         this.vida = vida;
@@ -22,11 +24,11 @@ public class ItemVida implements Item {
 
     @Override
     public Optional<Error> usar(Pokemon pokemon){
-        if ((this.vida == 0) && pokemon.estaMuerto()) {
+        if ((this.vida == REVIVIR) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMax());
             System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
             return Optional.empty();
-        } else if (this.vida == 0) {
+        } else if (this.vida == REVIVIR) {
             return Optional.of(new ErrorPokemonNoMuerto(pokemon.getNombre(), this.nombre));
         } else {
             pokemon.modificarVida(this.vida);

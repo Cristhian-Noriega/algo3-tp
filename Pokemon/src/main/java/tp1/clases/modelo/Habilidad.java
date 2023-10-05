@@ -9,12 +9,14 @@ public abstract class Habilidad {
     protected Integer usos;
     final protected Tipo tipo;
     final protected String info;
+    final protected Categoria categoria;
 
-    public Habilidad(String nombre, Integer usos, Tipo tipo, String info) {
+    public Habilidad(String nombre, Integer usos, Tipo tipo, String info, Categoria categoria) {
         this.nombre = nombre;
         this.usos = usos;
         this.tipo = tipo;
         this.info = info;
+        this.categoria = categoria;
     }
 
     public String getNombre(){
@@ -41,7 +43,11 @@ public abstract class Habilidad {
 
     public static boolean probabilidad(double probabilidad) {
         double rand =  Math.random();
-        return rand > probabilidad;
+        return rand <= probabilidad;
+    }
+
+    public Categoria getCategoria() {
+        return this.categoria;
     }
 
 }

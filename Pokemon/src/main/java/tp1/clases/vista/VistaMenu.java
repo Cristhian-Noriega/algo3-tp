@@ -24,7 +24,7 @@ public class VistaMenu {
         String informacion = "";
         String barraDeVida = CampoVista.crearBarraDeVida(pokemon.getVida(), pokemon.getVidaMax());
         informacion += pokemon.getNombre() + "\n";
-        informacion += pokemon.getVida() + "/" + pokemon.getVidaMax() + " " + "(" + barraDeVida + ")" + "   ";
+        informacion += pokemon.getVida() + "/" + pokemon.getVidaMax() + " " + barraDeVida + "   ";
         informacion += pokemon.getTipo().name() + "   ";
         informacion += pokemon.getEstado().name() + "   ";
         informacion += "NVL." + pokemon.getNivel() + "   ";
@@ -49,7 +49,13 @@ public class VistaMenu {
         return listaPokemones.toString();
     }
 
+    public static void imprimir(Item x) {
+        System.out.println(x.getNombre());
+    }
+
     public static String mostrarItems(List<Item> items) {
+        items.forEach(VistaMenu::imprimir);
+
         Map<String, Long> mapCantidadItems = items.stream().
                 collect(Collectors.groupingBy(
                         Item::getNombre,

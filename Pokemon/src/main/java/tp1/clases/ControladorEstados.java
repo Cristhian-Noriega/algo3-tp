@@ -1,31 +1,31 @@
 package tp1.clases;
 
-import tp1.clases.modelo.Constantes;
-import tp1.clases.modelo.Estado;
-import tp1.clases.modelo.Habilidad;
-import tp1.clases.modelo.Pokemon;
+import tp1.clases.modelo.*;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ControladorEstados {
-    private final List<Integer> turnoInicialEstados;
+    private final HashMap<Jugador, Integer> turnoInicialEstados;
 
-    public ControladorEstados() {
-        this.turnoInicialEstados = new ArrayList<Integer>();
+    public ControladorEstados(List<Jugador> jugadores) {
+        this.turnoInicialEstados = new HashMap<Jugador, Integer>();
+        for (Jugador jugador : jugadores){
+            this.turnoInicialEstados.put(jugador, 0);
+        }
     }
 
-    public void setTurnoInicial(int jugador, int turnoActual) {
-        this.turnoInicialEstados.set(jugador, turnoActual); //no estoy segura si este es el método que quiero usar
+    public void setTurnoInicial(Jugador jugador, int turnoActual) {
+        this.turnoInicialEstados.put(jugador, turnoActual);
     }
 
-    public boolean controlarEstado(Pokemon pokemon, int jugador, int turnoActual){
+    public boolean controlarEstado(Pokemon pokemon, Jugador jugador, int turnoActual){
         this.despertar(pokemon, jugador, turnoActual);
         this.envenenar(pokemon);
         return this.paralizar(pokemon);
     }
 
-    public void despertar(Pokemon pokemon, int jugador, int turnoActual) {
+    public void despertar(Pokemon pokemon, Jugador jugador, int turnoActual) {
         if (pokemon.getEstado() != Estado.DORMIDO) {
             return;
         }
@@ -41,6 +41,7 @@ public class ControladorEstados {
         }
 
         double valor = Constantes.cinco * pokemon.getVidaMax();
+        System.out.println("vida a restar por envenenado " + valor);
         pokemon.modificarVida((-1)*valor);
     }
 
@@ -50,7 +51,5 @@ public class ControladorEstados {
         }
         return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
     }
-
-    //public boolean puedeUsar
 
 }

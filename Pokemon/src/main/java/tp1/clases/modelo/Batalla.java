@@ -83,6 +83,7 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Item item = this.getItemsJugadorActual().get(itemElegido);
+        System.out.println(item.getNombre());
         Optional<Error> err = item.usar(this.getPokemonesJugadorActual().get(pokemon));
         if (err.isEmpty()){
             this.getJugadorActual().eliminarItem(item);
@@ -113,4 +114,9 @@ public class Batalla {
     public boolean estaMuertoPokemonActual(){
         return this.getJugadorActual().getPokemonActual().estaMuerto();
     }
+
+    public int getTurno() {
+        return this.turno;
+    }
+
 }

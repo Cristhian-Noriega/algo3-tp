@@ -7,10 +7,20 @@ import java.util.Map;
 public class CampoVista {
 
     public static String crearBarraDeVida(int vida, int vidaMaxima) {
-        int porcentajeVida = vida / vidaMaxima * 10;
-        return "|".repeat(Math.max(0, porcentajeVida - 1)) +
-                " ".repeat(Math.max(0, 10 - porcentajeVida));
+        double porcentajeVida = ((double) vida / (double) vidaMaxima) * 10;
+        String barra = "(";
+        for (double i=0; i < porcentajeVida; i++) {
+            barra += "|";
+        }
+
+        for (double i = porcentajeVida; i < 10; i++) {
+            barra += " ";
+        }
+
+        barra += ")";
+        return barra;
     }
+
     public String estadoJugador(Batalla batalla) {
         StringBuilder campo = new StringBuilder();
         int contador = 0;
@@ -18,7 +28,7 @@ public class CampoVista {
             int vida = (int) datos.get("Vida Actual");
             int vidaMaxima = (int) datos.get("Vida Max");
 
-            String barraDeVida = "(" + crearBarraDeVida(vida, vidaMaxima) + ")";
+            String barraDeVida = crearBarraDeVida(vida, vidaMaxima);
 
             campo.append("\n").append(batalla.getJugadores().get(contador).getNombre()).append("\n");
             campo.append(datos.get("Pokemon")).append("   ");

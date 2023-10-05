@@ -9,7 +9,7 @@ public class HabilidadEstado extends Habilidad {
     final private Estado estado;
 
     public HabilidadEstado(String nombre, Integer usos, Tipo tipo, String info, Estado estado) {
-        super(nombre, usos, tipo, info);
+        super(nombre, usos, tipo, info, Categoria.ESTADO);
         this.estado = estado;
     }
 
