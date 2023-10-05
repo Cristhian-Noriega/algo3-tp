@@ -44,8 +44,8 @@ public class Controlador {
             }
 
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
-
-            if ((OpcionMenu.values().length <= op) | (op <= 0)) {
+            //pruebo sacar el igual al length
+            if ((OpcionMenu.values().length < op) | (op <= 0)) {
                 System.out.println("Opción no valida, fuera de rango");
                 continue;
             }
@@ -69,9 +69,9 @@ public class Controlador {
             String siguienteAccion = siguienteAccion(accion);
             op = interaccionConUsuario(siguienteAccion);
 
-            op = verificaItem(op, siguienteAccion);
+            op = verificaItem(op, siguienteAccion, accion);
 
-            if (op == OpcionMenu.VOLVER_ATRAS.ordinal()){
+            if (op - 1 == OpcionMenu.VOLVER_ATRAS.ordinal()){
                 continue;
             }
 
@@ -80,6 +80,7 @@ public class Controlador {
                 int posicion = op - 1;
                 comando.definirOpcion(posicion);
                 Optional<Error> err = comando.ejecutar();
+
                 if (err.isPresent()) { // ver
                     err.get().mostrar();
                     op = interaccionConUsuario(siguienteAccion);
@@ -100,7 +101,6 @@ public class Controlador {
     }
 
     private int interaccionConUsuario(String opciones) {
-
         String opcionElegida = reader.readLine("Elija su proxima acción: \n" + opciones + "\n" );
 
         int op;
@@ -133,18 +133,23 @@ public class Controlador {
         };
     }
     
-    private int verificaItem(int op, String siguienteAccion){
+    private int verificaItem(int op, String siguienteAccion, OpcionMenu accion){
         List<Pokemon> listaPokemones = this.batalla.getPokemonesJugadorActual();
-        while (op == (OpcionMenu.VER_ITEM).ordinal()){
+
+        while (accion == OpcionMenu.VER_ITEM){
+            // Siento q habria q poner algo asi para que quede claro, pero no se imprime bien
+            // System.out.println("Elija el pokemon para aplicarle el item");
             int opItem = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones));
+
             if ((opItem >= listaPokemones.size()) | (opItem < 0)){
                 if (opItem != OpcionMenu.VOLVER_ATRAS.ordinal()){
                     System.out.println("Opción no valida, fuera de rango");
                 }
-                op = interaccionConUsuario(siguienteAccion);
+                //Saque esto pq para mi deberia mostrarle las opciones d poke de nuevo, no volver atras y mostrarle los items.
+                //op = interaccionConUsuario(siguienteAccion);
                 continue;
             }
-            this.comando.definirPokemon(opItem);
+            this.comando.definirPokemon(opItem-1);
             break;
         }
         return op;

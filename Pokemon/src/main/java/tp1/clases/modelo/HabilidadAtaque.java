@@ -41,7 +41,8 @@ public class HabilidadAtaque extends Habilidad {
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
         double danio = calcularDanioAtaque(propio, ajeno);
-        System.out.println("daño: " + danio);
+        int danioRedondeado = (int) danio;
+        System.out.println("daño: " + danioRedondeado);
         ajeno.modificarVida((-1)*danio);
         if (this.esEfectivo(propio, ajeno)){
             System.out.println("Que eficaz!");

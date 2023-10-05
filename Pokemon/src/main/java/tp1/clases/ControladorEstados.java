@@ -50,4 +50,7 @@ public class ControladorEstados {
         }
         return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
     }
+
+    //public boolean puedeUsar
+
 }
