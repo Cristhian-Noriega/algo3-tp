@@ -52,8 +52,61 @@ public class Proveedor {
 
     Habilidad hab22 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
 
+    Habilidad hab23 = new HabilidadAtaque("Antiaereo", 15, Tipo.ROCA, 50, "Ataca lanzando una piedra o proyctil");
 
-    Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab1, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
+    Habilidad hab24 = new HabilidadAtaque("Antiaereo", 15, Tipo.ROCA, 50, "Ataca lanzando una piedra o proyctil");
+
+    Habilidad hab25 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 100, "Araña con afiladas garras");
+
+    Habilidad hab26 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 100, "Araña con afiladas garras");
+
+    Habilidad hab27 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 100, "Araña con afiladas garras");
+
+    Habilidad hab28 = new HabilidadAtaque("Cascada", 5, Tipo.AGUA, 80, "Embiste con gran impulso que puede hacer retroceder");
+
+    Habilidad hab29 = new HabilidadAtaque("Demolicion", 15, Tipo.LUCHA, 130, "Potente ataque que tambien es capaz de destruir barreras");
+
+    Habilidad hab30 = new HabilidadAtaque("Demolicion", 15, Tipo.LUCHA, 130, "Potente ataque que tambien es capaz de destruir barreras");
+
+    Habilidad hab31 = new HabilidadAtaque("Demolicion", 15, Tipo.LUCHA, 130, "Potente ataque que tambien es capaz de destruir barreras");
+
+    Habilidad hab32 = new HabilidadAtaque("Bucle Arena", 15, Tipo.TIERRA, 200, "Enreda al objetivo en un remolino de arena");
+
+    Habilidad hab33 = new HabilidadAtaque("Garra Umbria", 15, Tipo.FANTASMA, 200, "Ataca cpm una garra afilada hecha de sombras");
+
+    Habilidad hab34 = new HabilidadAtaque("Corte Furia", 20, Tipo.BICHO, 150, "Ataque con una guadaña");
+
+    Habilidad hab35 = new HabilidadAtaque("Corte Furia", 20, Tipo.BICHO, 150, "Ataque con una guadaña");
+
+    Habilidad hab36 = new HabilidadAtaque("Cabezazo Zen", 15, Tipo.PSIQUICO, 180, "COncentra su energia psiquica en la cabeza para golpear");
+
+    Habilidad hab37 = new HabilidadEstadistica("Amnesia", 20, Tipo.PSIQUICO, "El usuario olvida sus preocupaciones y aumenta mucho sus defensas", Estadisticas.DEFENSA, false);
+
+    Habilidad hab38 = new HabilidadEstadistica("Danza Pluma", 15, Tipo.VOLADOR, "Envuelve al objetivo cpn un manto de plumas para reducir mucho su ataque", Estadisticas.ATAQUE, true);
+
+    Habilidad hab39 = new HabilidadEstadistica("Acua aro", 20, Tipo.AGUA, "Un manto de agua cubre al usuario", Estadisticas.ATAQUE, false);
+
+    Habilidad hab40 = new HabilidadEstadistica("Rabia", 5, Tipo.FANTASMA, "Debilita al objetivo", Estadisticas.DEFENSA, true);
+
+    Habilidad hab41 = new HabilidadEstadistica("Fertilizantes", 10, Tipo.TIERRA, "Labra la tierra haciendo que sea mas facil cultivarla logrando que aumente mucho el ataque", Estadisticas.ATAQUE, false);
+
+    Habilidad hab42 = new HabilidadEstadistica("Cañon armadura", 5, Tipo.FUEGO, "Baja la defensa del rival", Estadisticas.DEFENSA, true);
+
+    Habilidad hab43 = new HabilidadEstado("Bostezo", 10, Tipo.NORMAL, "Gran bostezo que induce al sueño del enemigo", Estado.DORMIDO);
+
+    Habilidad hab44 = new HabilidadEstado("Gas venenoso", 7, Tipo.VENENO,"Lanza una nube de gas toxico a los rivales", Estado.ENVENENADO);
+
+    Habilidad hab45 = new HabilidadEstado("Somnifero", 15, Tipo.PLANTA, "Esparce polvo que duerme al objetivo", Estado.DORMIDO);
+
+    Habilidad hab46 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
+
+    Habilidad hab47 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
+
+    Habilidad hab48 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
+
+
+
+    Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
 
     Pokemon poke2 = new Pokemon("Toxtricity", 18, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 98, 139.0, 180.0, 130.0);
 
@@ -63,19 +116,19 @@ public class Proveedor {
 
     Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
 
-    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab3, hab6, hab16, hab22), 115, 130.0, 175.0, 328.0);
+    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab16, hab22), 115, 130.0, 175.0, 328.0);
 
-    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab9, hab10, hab11, hab21), 80, 121.0, 98.0, 81.0);
+    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab38, hab46), 80, 121.0, 98.0, 81.0);
 
-    Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab3, hab1, hab12, hab17), 132, 204.0, 211.0, 130.0);
+    Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 
-    Pokemon poke9 = new Pokemon("Sandaconda", 18, Tipo.TIERRA, List.of(hab5, hab8, hab13, hab18), 126, 132.0, 197.0, 229.0);
+    Pokemon poke9 = new Pokemon("Sandaconda", 18, Tipo.TIERRA, List.of(hab23, hab34, hab39, hab44), 126, 132.0, 197.0, 229.0);
 
-    Pokemon poke10 = new Pokemon("Kleavor", 12, Tipo.ROCA, List.of(hab5, hab1, hab14, hab19), 130, 157.0, 247.0, 175.0);
+    Pokemon poke10 = new Pokemon("Kleavor", 12, Tipo.ROCA, List.of(hab24, hab27, hab40, hab45), 130, 157.0, 247.0, 175.0);
 
-    Pokemon poke11 = new Pokemon("Fraxure", 16, Tipo.DRAGON, List.of(hab8, hab3, hab15, hab21), 117, 125.0, 215.0, 130.0);
+    Pokemon poke11 = new Pokemon("Fraxure", 16, Tipo.DRAGON, List.of(hab35, hab31, hab41, hab47), 117, 125.0, 215.0, 130.0);
 
-    Pokemon poke12 = new Pokemon("Gastrodon",15 , Tipo.AGUA, List.of(hab2, hab7, hab16, hab22), 158, 74.0, 153.0, 126.0);
+    Pokemon poke12 = new Pokemon("Gastrodon",15 , Tipo.AGUA, List.of(hab28, hab33, hab42, hab48), 158, 74.0, 153.0, 126.0);
 
 
     Item item1 = new ItemEstado("Sacar estado");

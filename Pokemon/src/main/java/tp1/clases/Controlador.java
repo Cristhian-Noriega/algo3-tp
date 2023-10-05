@@ -34,45 +34,41 @@ public class Controlador {
                 .build();
     }
 
-    public void Jugar(){
-        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual().getPokemonActual(), this.batalla.getJugadorActual(), this.batalla.getTurno());
-        // if puedeUsarHabilidad -> usarla; else -> siguienteTurno; esto si elige usar una habilidad
+    public void Jugar() {
+        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual());
+
         boolean turnoActivo = true;
         while (turnoActivo) {
-            System.out.printf("Turno de %s \n", this.batalla.getJugadorActual().getNombre());
+            System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
 
-            while (this.batalla.estaMuertoPokemonActual()) {
-                System.out.println("Pokemon muerto, elija otro pokemon: ");
-                int pokemon = interaccionConUsuario(VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual()));
-                this.batalla.cambiarPokemon(pokemon);
+            if (this.batalla.estaMuertoPokemonActual()) {
+                this.seleccionarPokemonVivo();
+                break;
             }
 
             int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
 
-            if ((OpcionMenu.values().length <= op) | (op <= 0)) {
-                System.out.println("Opción no valida, fuera de rango");
+            if (!opcionValida(op)) {
                 continue;
             }
 
             OpcionMenu accion = OpcionMenu.getAccion(op);
 
-            if (Objects.equals(accion, OpcionMenu.VER_CAMPO)){
+            if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
                 CampoVista campo = new CampoVista();
                 System.out.println(campo.estadoJugador(this.batalla));
                 continue;
             }
 
             if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
-                String jugadorRendido = this.batalla.getJugadorActual().getNombre();
-                this.batalla.rendir(this.batalla.getJugadorActual());
-                System.out.printf("El jugador %s se ha rendido. \n", jugadorRendido);
-                this.juegoTerminado = true;
+                this.juegoTerminado = seRindio();
                 break;
             }
 
+
             boolean volverAtras = false;
-            boolean opcionInvalida = true;
-            while (opcionInvalida) {
+            boolean tieneQueElegir = true;
+            while (tieneQueElegir) {
 
                 accion = OpcionMenu.getAccion(op);
 
@@ -83,11 +79,15 @@ public class Controlador {
                     break;
                 }
 
-                opSig = verificaItem(opSig, siguienteAccion, accion);
+                opSig = aplicarItemPokemon(opSig, siguienteAccion, accion);
 
                 if (opSig == OpcionMenu.VOLVER_ATRAS.ordinal()){
                     volverAtras = true;
                     break;
+                }
+
+                if (!opcionValida(opSig)) {
+                    continue;
                 }
 
                 int posicion = opSig - 1;
@@ -99,14 +99,14 @@ public class Controlador {
                     continue;
                 }
 
-                opcionInvalida = false;
+                tieneQueElegir = false;
             }
 
             if (volverAtras){
                 continue;
             }
 
-            if (opcionInvalida && !puedeUsarHabilidad){
+            if (tieneQueElegir && !puedeUsarHabilidad){
                 break;
             }
 
@@ -121,8 +121,37 @@ public class Controlador {
         this.batalla.cambiarTurno();
     }
 
+    private boolean opcionValida(int opcion) {
+        if (opcion <= 0 || opcion > OpcionMenu.values().length){
+            System.out.println("Opcion fuera de rango");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean seRindio(){
+            String jugadorRendido = this.batalla.getJugadorActual().getNombre();
+            this.batalla.rendir(this.batalla.getJugadorActual());
+            System.out.printf("El jugador %s se ha rendido. \n", jugadorRendido);
+            return true;
+    }
+
+    public void seleccionarPokemonVivo() {
+        List<Pokemon> pokemones = this.batalla.getPokemonesJugadorActual();
+        while (this.batalla.estaMuertoPokemonActual()) {
+            System.out.println("Pokemon debilitado, elija otro pokemon: ");
+            int pokemon = interaccionConUsuario(VistaMenu.mostrarPokemones(pokemones, false));
+            if (pokemon <= 0 || pokemon > pokemones.size()){
+                System.out.println("Opcion fuera de rango");
+                continue;
+            }
+            this.batalla.cambiarPokemon(pokemon-1);
+        }
+    }
+
     private int interaccionConUsuario(String opciones) {
-        String opcionElegida = reader.readLine("Elija su proxima acción: \n" + opciones + "\n" );
+        System.out.printf("Elija su proxima acción: \n%s", opciones);
+        String opcionElegida = reader.readLine();
 
         int op;
         while (true) {
@@ -130,7 +159,8 @@ public class Controlador {
                 op = Integer.parseInt(opcionElegida);
                 break;
             } catch (NumberFormatException err) {
-                opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: \n");
+                System.out.println("Acción no valida, ingrese el numero de acción elejida:\n\n");
+                opcionElegida = reader.readLine();
             }
         }
         return op;
@@ -139,8 +169,8 @@ public class Controlador {
     private String siguienteAccion(OpcionMenu accion){
         return switch (accion) {
             case VER_ITEM -> {
-                this.comando = new UsarItemComando(this.batalla);
-                yield VistaMenu.mostrarItems(this.batalla.getItemsJugadorActual());
+                this.comando = new UsarItemComando(this.batalla, controladorEstados);
+                yield VistaMenu.mostrarItems(this.batalla.getMapItemsJugadorActual(), this.batalla.getItemsJugadorActual());
             }
             case VER_HABILIDAD -> {
                 this.comando = new UsarHabilidadComando(this.batalla, controladorEstados);
@@ -148,13 +178,13 @@ public class Controlador {
             }
             case VER_POKEMONES -> {
                 this.comando = new CambiarPokemonComando(this.batalla);
-                yield VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual());
+                yield VistaMenu.mostrarPokemones(this.batalla.getPokemonesJugadorActual(), true);
             }
             default -> null;
         };
     }
     
-    private int verificaItem(int op, String siguienteAccion, OpcionMenu accion){
+    private int aplicarItemPokemon(int op, String siguienteAccion, OpcionMenu accion){
         List<Pokemon> listaPokemones = this.batalla.getPokemonesJugadorActual();
 
         while (accion == OpcionMenu.VER_ITEM){
@@ -162,17 +192,17 @@ public class Controlador {
                 break;
             }
             System.out.println("Elija el pokemon al cual aplicarle el item");
-            int opItem = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones));
+            int opPoke = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones, true));
 
-            if ((opItem >= listaPokemones.size()) | (opItem <= 0)){
-                if (opItem != OpcionMenu.VOLVER_ATRAS.ordinal()){
+            if ((opPoke >= listaPokemones.size()) | (opPoke <= 0)){
+                if (opPoke != OpcionMenu.VOLVER_ATRAS.ordinal()){
                     System.out.println("Opción no valida, fuera de rango");
                     continue;
                 }
                 op = interaccionConUsuario(siguienteAccion);
                 continue;
             }
-            this.comando.definirPokemon(opItem-1);
+            this.comando.definirPokemon(opPoke-1);
             break;
         }
         return op;

@@ -14,7 +14,7 @@ public class Main {
 
         Batalla batalla = new Batalla(inicializador.iniciarJugadores(Constantes.cantidadJugadores));
 
-        ControladorEstados controladorEstados = new ControladorEstados(batalla.getJugadores());
+        ControladorEstados controladorEstados = new ControladorEstados(batalla);
 
         Controlador controlador = new Controlador(batalla, controladorEstados);
 
