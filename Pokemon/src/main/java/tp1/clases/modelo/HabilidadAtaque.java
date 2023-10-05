@@ -43,6 +43,12 @@ public class HabilidadAtaque extends Habilidad {
         double danio = calcularDanioAtaque(propio, ajeno);
         System.out.println("daño: " + danio);
         ajeno.modificarVida((-1)*danio);
+        if (this.esEfectivo(propio, ajeno)){
+            System.out.println("Que eficaz!");
+        } else {
+            System.out.println(ajeno.getNombre() + "ni se inmuta!");
+        }
+        super.usos -= 1;
         return Optional.empty();
     }
 

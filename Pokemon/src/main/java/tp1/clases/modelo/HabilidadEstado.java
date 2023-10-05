@@ -23,6 +23,7 @@ public class HabilidadEstado extends Habilidad {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
+        super.usos -= 1;
         return ajeno.setEstado(this.estado);
     }
 }

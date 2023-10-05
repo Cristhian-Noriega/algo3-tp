@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public abstract class Habilidad {
     final protected String nombre;
-    final protected Integer usos;
+    protected Integer usos;
     final protected Tipo tipo;
     final protected String info;
 

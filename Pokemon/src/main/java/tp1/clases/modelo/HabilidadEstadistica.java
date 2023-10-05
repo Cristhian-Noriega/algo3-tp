@@ -33,9 +33,12 @@ public class HabilidadEstadistica extends Habilidad {
         }
         if (this.isContraRival()) {
             this.modificarEstadistica(ajeno, (-1));
+            System.out.println(ajeno.getNombre() + " ha disminuido su " + this.estadistica.toString().toLowerCase());
         } else {
             this.modificarEstadistica(propio, 1);
+            System.out.println(propio.getNombre() + " ha aunmentdo su " + this.estadistica.toString().toLowerCase());
         }
+        super.usos -= 1;
         return Optional.empty();
     }
 

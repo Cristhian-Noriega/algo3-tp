@@ -83,7 +83,11 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Item item = this.getItemsJugadorActual().get(itemElegido);
-        return item.usar(this.getPokemonesJugadorActual().get(pokemon));
+        Optional<Error> err = item.usar(this.getPokemonesJugadorActual().get(pokemon));
+        if (err.isEmpty()){
+            this.getJugadorActual().eliminarItem(item);
+        }
+        return err;
     }
 
     public Optional<Error> cambiarPokemon(int pokemon) {
@@ -95,8 +99,8 @@ public class Batalla {
 
     // podria borrarse tamb?
     // public Map<String, Object> getDatosJugadorActual(){
-        return this.getJugadorActual().getDatos();
-    }
+    //    return this.getJugadorActual().getDatos();
+    //}
 
     public List<Map<String, Object>> getDatosJugadores(){
         List<Map<String, Object>> datos = new ArrayList<>();

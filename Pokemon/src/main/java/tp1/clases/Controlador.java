@@ -6,9 +6,11 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Pokemon;
 import tp1.clases.vista.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -75,7 +77,7 @@ public class Controlador {
 
             boolean opcionInvalida = true;
             while (opcionInvalida) {
-                int posicion = op -1;
+                int posicion = op - 1;
                 comando.definirOpcion(posicion);
                 Optional<Error> err = comando.ejecutar();
                 if (err.isPresent()) { // ver
@@ -107,7 +109,7 @@ public class Controlador {
                 op = Integer.parseInt(opcionElegida);
                 break;
             } catch (NumberFormatException err) {
-                opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: ");
+                opcionElegida = reader.readLine("Acción no valida, ingrese el numero de acción elejida: \n");
             }
         }
         return op;
@@ -132,10 +134,13 @@ public class Controlador {
     }
     
     private int verificaItem(int op, String siguienteAccion){
-        List listaPokemones = this.batalla.getPokemonesJugadorActual()
+        List<Pokemon> listaPokemones = this.batalla.getPokemonesJugadorActual();
         while (op == (OpcionMenu.VER_ITEM).ordinal()){
             int opItem = interaccionConUsuario(VistaMenu.mostrarPokemones(listaPokemones));
-            if ((opItem == OpcionMenu.VOLVER_ATRAS.ordinal()) | (opItem >= listaPokemones.length) | (opItem < 0)){
+            if ((opItem >= listaPokemones.size()) | (opItem < 0)){
+                if (opItem != OpcionMenu.VOLVER_ATRAS.ordinal()){
+                    System.out.println("Opción no valida, fuera de rango");
+                }
                 op = interaccionConUsuario(siguienteAccion);
                 continue;
             }

@@ -47,6 +47,7 @@ public class Pokemon {
             return Optional.of(new ErrorEstadoDistintoDeNormal(this.estado.name()));
         }
         this.estado = estado;
+        System.out.println(this.getNombre() + " ha cambiado su estado a " + estado.toString().toLowerCase());
         return Optional.empty();
     }
 
