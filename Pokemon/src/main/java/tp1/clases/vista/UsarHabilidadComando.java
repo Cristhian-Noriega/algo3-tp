@@ -29,7 +29,7 @@ public class UsarHabilidadComando implements Comando{
         Optional<Error> err = this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
         if ((batalla.getHabilidadesPokemonActual().get(this.habilidad).getCategoria() == Categoria.ESTADO) && (err.isEmpty())) {
             Jugador jugadorSiguiente = this.batalla.getJugadorSiguiente();
-            controladorEstados.setTurnoInicial(jugadorSiguiente, this.batalla.getTurno());
+            controladorEstados.setTurnoInicial(jugadorSiguiente);
         }
         return err;
     }

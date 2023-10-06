@@ -6,7 +6,6 @@ import tp1.clases.modelo.Pokemon;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class VistaMenu {
     public static String mostrarOpciones() {
@@ -36,9 +35,11 @@ public class VistaMenu {
     }
 
 
-    public static String mostrarPokemones(List<Pokemon> pokemones) {
+    public static String mostrarPokemones(List<Pokemon> pokemones, boolean conVolverAtras) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
-        listaPokemones = agregarOpcionVolverAtras(listaPokemones);
+        if (conVolverAtras){
+            listaPokemones = agregarOpcionVolverAtras(listaPokemones);
+        }
 
         int contador = 1;
         for (Pokemon pokemon: pokemones) {
@@ -53,26 +54,18 @@ public class VistaMenu {
         System.out.println(x.getNombre());
     }
 
-    public static String mostrarItems(List<Item> items) {
-        items.forEach(VistaMenu::imprimir);
-
-        Map<String, Long> mapCantidadItems = items.stream().
-                collect(Collectors.groupingBy(
-                        Item::getNombre,
-                        Collectors.counting()
-                ));
-
+    public static String mostrarItems(Map<String, Long> mapCantidadItems, List<Item> items) {
         StringBuilder listaItems = new StringBuilder("Items disponibles:\n");
         listaItems = agregarOpcionVolverAtras(listaItems);
 
         int i = 1;
-        for (Map.Entry<String, Long> entry : mapCantidadItems.entrySet()) {
-            String nombreItem = entry.getKey();
-            Long cantidad = entry.getValue();
-            String item = String.format("%d. %s - cantidad: %d\n", i, nombreItem, cantidad);
+        for (Item item : items) {
+            Long cantidad = mapCantidadItems.get(item.getNombre());
+            String itemAct = String.format("%d. %s - cantidad: %d\n", i, item.getNombre(), cantidad);
             i++;
-            listaItems.append(item);
+            listaItems.append(itemAct);
         }
+
         return listaItems.toString();
     }
 
@@ -81,7 +74,7 @@ public class VistaMenu {
         informacion += habilidad.getNombre() + "   ";
         informacion += habilidad.getTipo().name() + "   ";
         informacion += "USOS." + habilidad.getUsos() + "   \n";
-        informacion += habilidad.getInfo() + "\n \n";
+        informacion += "   " + habilidad.getInfo() + "\n";
         return informacion;
     }
 

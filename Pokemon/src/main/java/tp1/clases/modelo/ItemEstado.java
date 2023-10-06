@@ -8,6 +8,7 @@ import java.util.Optional;
 public class ItemEstado implements Item{
 
     private final String nombre;
+    private final Categoria categoria = Categoria.ESTADO;
 
     public ItemEstado(String nombre){
         this.nombre = nombre;
@@ -19,6 +20,11 @@ public class ItemEstado implements Item{
     }
 
     @Override
+    public Categoria getCategoria() {
+        return this.categoria;
+    }
+    
+    @Override
     public Optional<Error> usar(Pokemon pokemon){
         if (pokemon.getEstado() == Estado.NORMAL) {
             return Optional.of(new ErrorPokemonNormal(pokemon.getNombre(), this.nombre));
@@ -27,5 +33,6 @@ public class ItemEstado implements Item{
             return Optional.empty();
         }
     }
+
 
 }

@@ -2,6 +2,7 @@ package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorIndiceFueraDeRango;
+import tp1.clases.errores.ErrorItemNoValido;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,6 @@ public class Batalla {
         determinarJugadorInicial();
     }
 
-    // se puede borrar este metodo? nadie lo usa
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
@@ -66,8 +66,11 @@ public class Batalla {
         return this.getJugadorActual().getHabilidadesPokemonActual();
     }
 
-    public List<Item> getItemsJugadorActual() {
+    public List<Item> getItemsJugadorActual(){
         return this.getJugadorActual().getListaItems();
+    }
+    public Map<String, Long> getMapItemsJugadorActual() {
+        return this.getJugadorActual().getMapCantidadItems();
     }
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Jugador rival) {
@@ -83,7 +86,9 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Item item = this.getItemsJugadorActual().get(itemElegido);
-        System.out.println(item.getNombre());
+        if (this.getMapItemsJugadorActual().get(item.getNombre()) <= 0 ){
+            return Optional.of(new ErrorItemNoValido(item.getNombre()));
+        }
         Optional<Error> err = item.usar(this.getPokemonesJugadorActual().get(pokemon));
         if (err.isEmpty()){
             this.getJugadorActual().eliminarItem(item);
@@ -98,10 +103,6 @@ public class Batalla {
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
-    // podria borrarse tamb?
-    // public Map<String, Object> getDatosJugadorActual(){
-    //    return this.getJugadorActual().getDatos();
-    //}
 
     public List<Map<String, Object>> getDatosJugadores(){
         List<Map<String, Object>> datos = new ArrayList<>();

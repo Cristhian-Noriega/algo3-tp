@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Jugador {
 
@@ -14,11 +15,13 @@ public class Jugador {
     private Pokemon pokemonActual;
     private final List<Item> items;
     private final String nombre;
+    private Map<String, Long> mapCantidadItems;
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
         this.nombre = nombre;
         this.pokemones = pokemones;
-        this.items = items;
+        this.mapCantidadItems = this.contarFrecuenciaItems(items);
+        this.items = this.organizarItems(items);
         this.pokemonActual = pokemones.get(0);
     }
 
@@ -64,8 +67,12 @@ public class Jugador {
         return this.pokemonActual.getHabilidades();
     }
 
+    public Map<String, Long> getMapCantidadItems(){
+        return this.mapCantidadItems;
+    }
+
     public void eliminarItem(Item item){
-        this.items.remove(item);
+        this.mapCantidadItems.put(item.getNombre(), this.mapCantidadItems.get(item.getNombre())-1);
     }
 
     public Map<String, Object> getDatos(){
@@ -77,5 +84,18 @@ public class Jugador {
         datosPokemonActual.put("Estado", this.pokemonActual.getEstado());
 
         return datosPokemonActual;
+    }
+
+    private Map<String, Long> contarFrecuenciaItems(List<Item> items) {
+        return items.stream().
+                collect(Collectors.groupingBy(
+                        Item::getNombre,
+                        Collectors.counting()
+                ));
+    }
+    private List<Item> organizarItems(List<Item> items) {
+        return items.stream().
+                distinct().
+                toList();
     }
 }
