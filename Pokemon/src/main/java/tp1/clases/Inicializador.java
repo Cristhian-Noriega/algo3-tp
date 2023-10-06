@@ -16,7 +16,7 @@ import java.util.List;
 public class Inicializador {
     private final LineReader reader;
 
-    private ArrayList<Jugador> jugadores;
+    private final ArrayList<Jugador> jugadores;
 
     public Inicializador() throws IOException {
         this.jugadores = new ArrayList<Jugador>();
