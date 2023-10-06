@@ -1,6 +1,6 @@
-package tp1.clases.comandos;
+package tp1.clases.controlador.comandos;
 
-import tp1.clases.ControladorEstados;
+import tp1.clases.controlador.ControladorEstados;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Categoria;

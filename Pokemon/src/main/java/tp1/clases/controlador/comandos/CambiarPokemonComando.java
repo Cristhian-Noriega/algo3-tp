@@ -1,4 +1,4 @@
-package tp1.clases.comandos;
+package tp1.clases.controlador.comandos;
 
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;

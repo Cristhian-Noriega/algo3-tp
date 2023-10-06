@@ -1,13 +1,13 @@
-package tp1.clases;
+package tp1.clases.controlador;
 
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
-import tp1.clases.comandos.CambiarPokemonComando;
-import tp1.clases.comandos.Comando;
-import tp1.clases.comandos.UsarHabilidadComando;
-import tp1.clases.comandos.UsarItemComando;
+import tp1.clases.controlador.comandos.CambiarPokemonComando;
+import tp1.clases.controlador.comandos.Comando;
+import tp1.clases.controlador.comandos.UsarHabilidadComando;
+import tp1.clases.controlador.comandos.UsarItemComando;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Pokemon;
@@ -21,7 +21,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 
-public class Controlador {
+public class ControladorJuego {
 
     private final Batalla batalla;
     private final LineReader reader;
@@ -30,7 +30,7 @@ public class Controlador {
 
     private final ControladorEstados controladorEstados;
 
-    public Controlador(Batalla batalla, ControladorEstados controladorEstados) throws IOException {
+    public ControladorJuego(Batalla batalla, ControladorEstados controladorEstados) throws IOException {
         this.batalla = batalla;
         this.controladorEstados = controladorEstados;
 

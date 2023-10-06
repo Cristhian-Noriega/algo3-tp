@@ -1,4 +1,4 @@
-package tp1.clases;
+package tp1.clases.controlador;
 
 import tp1.clases.modelo.*;
 
