@@ -5,7 +5,6 @@ import tp1.clases.errores.Error;
 import java.util.Optional;
 
 public class ItemEstadistica implements Item{
-
     private final String nombre;
     private final Estadisticas estadistica;
     private final Categoria categoria = Categoria.ESTADISTICA;

@@ -1,4 +1,4 @@
-package tp1.clases.vista;
+package tp1.clases.comandos;
 
 import tp1.clases.ControladorEstados;
 import tp1.clases.errores.Error;
@@ -8,17 +8,16 @@ import tp1.clases.modelo.Jugador;
 
 import java.util.Optional;
 
-public class UsarHabilidadComando implements Comando{
+public class UsarHabilidadComando implements Comando {
 
     private final Batalla batalla;
-    private ControladorEstados controladorEstados;
+    private final ControladorEstados controladorEstados;
     private int habilidad;
 
     public UsarHabilidadComando(Batalla batalla, ControladorEstados controladorEstados) {
         this.batalla = batalla;
         this.controladorEstados = controladorEstados;
     }
-
 
     @Override
     public void definirOpcion(int op){

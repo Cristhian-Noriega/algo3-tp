@@ -12,7 +12,7 @@ public class Pokemon {
     private Estado estado;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
-    private int vidaMax;
+    private final int vidaMax;
     private int vidaActual;
     private double velocidad;
     private double ataque;

@@ -1,4 +1,4 @@
-package tp1.clases.vista;
+package tp1.clases.comandos;
 
 import tp1.clases.ControladorEstados;
 import tp1.clases.errores.Error;

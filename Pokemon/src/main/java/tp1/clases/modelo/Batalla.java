@@ -69,6 +69,7 @@ public class Batalla {
     public List<Item> getItemsJugadorActual(){
         return this.getJugadorActual().getListaItems();
     }
+
     public Map<String, Long> getMapItemsJugadorActual() {
         return this.getJugadorActual().getMapCantidadItems();
     }
@@ -102,7 +103,6 @@ public class Batalla {
         }
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
-
 
     public List<Map<String, Object>> getDatosJugadores(){
         List<Map<String, Object>> datos = new ArrayList<>();

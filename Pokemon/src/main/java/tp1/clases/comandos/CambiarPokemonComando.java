@@ -1,11 +1,11 @@
-package tp1.clases.vista;
+package tp1.clases.comandos;
 
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
 
 import java.util.Optional;
 
-public class CambiarPokemonComando implements Comando{
+public class CambiarPokemonComando implements Comando {
 
     private final Batalla batalla;
     private int pokemon;

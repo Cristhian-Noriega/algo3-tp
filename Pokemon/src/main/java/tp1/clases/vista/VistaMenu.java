@@ -34,7 +34,6 @@ public class VistaMenu {
         return informacion;
     }
 
-
     public static String mostrarPokemones(List<Pokemon> pokemones, boolean conVolverAtras) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
         if (conVolverAtras){
@@ -48,10 +47,6 @@ public class VistaMenu {
             contador += 1;
         }
         return listaPokemones.toString();
-    }
-
-    public static void imprimir(Item x) {
-        System.out.println(x.getNombre());
     }
 
     public static String mostrarItems(Map<String, Long> mapCantidadItems, List<Item> items) {
@@ -81,8 +76,6 @@ public class VistaMenu {
     public static String mostrarHabilidades(List<Habilidad> habilidades) {
         StringBuilder listaHabilidades = new StringBuilder("Habilidades disponibles: \n");
         listaHabilidades = agregarOpcionVolverAtras(listaHabilidades);
-        // listaHabilidades.append("\n");
-        // Solo habilidades tiene un \n desps de cada opcion, o q lo tengan todos o ninguno xq queda inconsistente.
 
         int contador = 1;
         for (Habilidad habilidad: habilidades) {

@@ -13,11 +13,6 @@ public class HabilidadEstado extends Habilidad {
         this.estado = estado;
     }
 
-    // no se usa
-    public Estado getEstado() {
-        return estado;
-    }
-
     @Override
     public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
         if (this.sinUsosDisponibles()){

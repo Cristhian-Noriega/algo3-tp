@@ -13,11 +13,6 @@ public class HabilidadAtaque extends Habilidad {
         this.poder = poder;
     }
 
-    // no se usa
-    public Integer getPoder() {
-        return poder;
-    }
-
     private double calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
         double nivelAtacante = atacante.getNivel();
         double ataqueAtacante = atacante.getAtaque();
@@ -37,7 +32,6 @@ public class HabilidadAtaque extends Habilidad {
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
         double danio = calcularDanioAtaque(propio, ajeno);
-        int danioRedondeado = (int) danio;
         ajeno.modificarVida((-1)*danio);
 
         if (this.esEfectivo(propio, ajeno)){

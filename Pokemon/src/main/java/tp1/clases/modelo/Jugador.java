@@ -15,7 +15,7 @@ public class Jugador {
     private Pokemon pokemonActual;
     private final List<Item> items;
     private final String nombre;
-    private Map<String, Long> mapCantidadItems;
+    private final Map<String, Long> mapCantidadItems;
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
         this.nombre = nombre;
