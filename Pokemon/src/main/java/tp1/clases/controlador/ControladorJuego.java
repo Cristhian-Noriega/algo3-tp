@@ -41,28 +41,25 @@ public class ControladorJuego {
     }
 
     public void Jugar() {
-        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual());
 
-        boolean turnoActivo = true;
-        while (turnoActivo) {
+        while (!juegoTerminado) {
             System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
 
             if (this.batalla.estaMuertoPokemonActual()) {
-                this.seleccionarPokemonVivo();
-                break;
-            }
-
-            int op = interaccionConUsuario(VistaMenu.mostrarOpciones());
-
-            if (!opcionValida(op)) {
+                seleccionarPokemonVivo();
                 continue;
             }
 
-            OpcionMenu accion = OpcionMenu.getAccion(op);
+            int opcion = interaccionConUsuario(VistaMenu.mostrarOpciones());
+
+            if (!opcionValida(opcion)) {
+                continue;
+            }
+
+            OpcionMenu accion = OpcionMenu.getAccion(opcion);
 
             if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
-                CampoVista campo = new CampoVista();
-                System.out.println(campo.estadoJugador(this.batalla));
+                mostrarCampo();
                 continue;
             }
 
@@ -71,63 +68,62 @@ public class ControladorJuego {
                 break;
             }
 
+            if (realizarTurno(accion)) {
+                avanzarTurno();
+            }
+        }
+    }
 
-            boolean volverAtras = false;
-            boolean tieneQueElegir = true;
-            while (tieneQueElegir) {
 
-                accion = OpcionMenu.getAccion(op);
-                String siguienteAccion = siguienteAccion(accion);
-                int opSig = interaccionConUsuario(siguienteAccion);
+    private boolean realizarTurno(OpcionMenu accion){
+        while (true) {
+            String siguienteAccion = siguienteAccion(accion);
+            int opcionSiguiente = interaccionConUsuario(siguienteAccion);
 
-                if (op == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
-                    break;
-                }
-
-                opSig = aplicarItemPokemon(opSig, siguienteAccion, accion);
-
-                if (opSig == OpcionMenu.VOLVER_ATRAS.ordinal()){
-                    volverAtras = true;
-                    break;
-                }
-
-                if (!opcionValida(opSig)) {
-                    continue;
-                }
-
-                int posicion = opSig - 1;
-                comando.definirOpcion(posicion);
-                Optional<Error> err = comando.ejecutar();
-
-                if (err.isPresent()) {
-                    err.get().mostrar();
-                    continue;
-                }
-
-                tieneQueElegir = false;
+            if (opcionSiguiente == OpcionMenu.VOLVER_ATRAS.ordinal()){
+                return false;
             }
 
-            if (volverAtras){
+            if (accion == OpcionMenu.VER_ITEM){
+                opcionSiguiente = aplicarItemPokemon(opcionSiguiente, siguienteAccion, accion);
+            }
+
+            if (opcionSiguiente == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad()) {
+                return false;
+            }
+
+            int posicion = opcionSiguiente - 1;
+            comando.definirOpcion(posicion);
+            Optional<Error> err = comando.ejecutar();
+
+            if (err.isPresent()) {
+                err.get().mostrar();
                 continue;
             }
+            return true;
 
-            if (tieneQueElegir && !puedeUsarHabilidad){
-                break;
-            }
-
-            turnoActivo = false;
         }
+    }
 
+    private void mostrarCampo() {
+        CampoVista campo = new CampoVista();
+        System.out.println(campo.estadoJugador(batalla));
+    }
+
+    private boolean puedeUsarHabilidad() {
+        return this.controladorEstados.controlarEstado(this.batalla.getJugadorActual());
+    }
+
+    private void avanzarTurno() {
         if (this.batalla.obtenerGanador().isPresent()) {
             this.juegoTerminado = true;
-            return;
+        } else {
+            this.batalla.cambiarTurno();
         }
-
-        this.batalla.cambiarTurno();
     }
 
     private boolean opcionValida(int opcion) {
-        if (opcion <= 0 || opcion > OpcionMenu.values().length){
+        if (opcion < 0 || opcion > OpcionMenu.values().length){
             System.out.println("Opcion fuera de rango");
             return false;
         }
@@ -154,21 +150,21 @@ public class ControladorJuego {
         }
     }
 
+
     private int interaccionConUsuario(String opciones) {
         System.out.printf("Elija su proxima acción: \n%s", opciones);
-        String opcionElegida = reader.readLine();
 
-        int op;
+        int opcion;
         while (true) {
             try {
-                op = Integer.parseInt(opcionElegida);
+                String opcionElegida = reader.readLine();
+                opcion = Integer.parseInt(opcionElegida);
                 break;
             } catch (NumberFormatException err) {
                 System.out.println("Acción no valida, ingrese el numero de acción elejida:\n\n");
-                opcionElegida = reader.readLine();
             }
         }
-        return op;
+        return opcion;
     }
 
     private String siguienteAccion(OpcionMenu accion){
