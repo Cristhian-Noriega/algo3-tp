@@ -12,7 +12,7 @@ public class Pokemon {
     private Estado estado;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
-    private int vidaMax;
+    private final int vidaMax;
     private int vidaActual;
     private double velocidad;
     private double ataque;
@@ -43,18 +43,18 @@ public class Pokemon {
     public void modificadorVelocidad(double modificador) { this.velocidad += modificador; }
 
     public Optional<Error> setEstado(Estado estado) {
-        if (this.estado != Estado.NORMAL) {
+        if ((this.estado != Estado.NORMAL) && (estado != Estado.NORMAL)) {
             return Optional.of(new ErrorEstadoDistintoDeNormal(this.estado.name()));
         }
         this.estado = estado;
-        System.out.println(this.getNombre() + " ha cambiado su estado a " + estado.toString().toLowerCase());
+        System.out.println(this.getNombre() + " ha cambiado su estado a \n" + estado.toString().toLowerCase());
         return Optional.empty();
     }
 
     public void modificarVida(double modificador) {
         double nuevoValor = this.vidaActual + modificador;
         if (nuevoValor <= 0.0){
-            this.vidaActual = 0;
+            nuevoValor = 0;
         }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }

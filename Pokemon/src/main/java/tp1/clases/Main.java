@@ -1,5 +1,7 @@
 package tp1.clases;
 
+import tp1.clases.controlador.ControladorEstados;
+import tp1.clases.controlador.ControladorJuego;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Constantes;
 import tp1.clases.vista.ResultadoVista;
@@ -14,9 +16,9 @@ public class Main {
 
         Batalla batalla = new Batalla(inicializador.iniciarJugadores(Constantes.cantidadJugadores));
 
-        ControladorEstados controladorEstados = new ControladorEstados(batalla.getJugadores());
+        ControladorEstados controladorEstados = new ControladorEstados(batalla);
 
-        Controlador controlador = new Controlador(batalla, controladorEstados);
+        ControladorJuego controlador = new ControladorJuego(batalla, controladorEstados);
 
         while (!controlador.getJuegoTerminado()) {
             controlador.Jugar();

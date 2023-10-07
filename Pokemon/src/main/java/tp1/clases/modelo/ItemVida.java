@@ -1,6 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorPokemonMuerto;
 import tp1.clases.errores.ErrorPokemonNoMuerto;
 
 import java.util.Optional;
@@ -9,6 +10,7 @@ public class ItemVida implements Item {
 
     private final String nombre;
     private final int vida;
+    private final Categoria categoria = Categoria.VIDA;
 
     int REVIVIR = 0;
 
@@ -23,6 +25,11 @@ public class ItemVida implements Item {
     }
 
     @Override
+    public Categoria getCategoria() {
+        return this.categoria;
+    }
+
+    @Override
     public Optional<Error> usar(Pokemon pokemon){
         if ((this.vida == REVIVIR) && pokemon.estaMuerto()) {
             pokemon.modificarVida(pokemon.getVidaMax());
@@ -30,6 +37,8 @@ public class ItemVida implements Item {
             return Optional.empty();
         } else if (this.vida == REVIVIR) {
             return Optional.of(new ErrorPokemonNoMuerto(pokemon.getNombre(), this.nombre));
+        } else if (pokemon.estaMuerto()) {
+            return Optional.of(new ErrorPokemonMuerto(pokemon.getNombre()));
         } else {
             pokemon.modificarVida(this.vida);
             System.out.println("¡" + this.nombre + " ha sido usada!");

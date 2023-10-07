@@ -16,7 +16,7 @@ import java.util.List;
 public class Inicializador {
     private final LineReader reader;
 
-    private ArrayList<Jugador> jugadores;
+    private final ArrayList<Jugador> jugadores;
 
     public Inicializador() throws IOException {
         this.jugadores = new ArrayList<Jugador>();
@@ -34,7 +34,8 @@ public class Inicializador {
 
         int i = 1;
         while (i <= cantJugadores){
-            String nombre = reader.readLine("Por favor ingrese el nombre del jugador " + i + " \n");
+            System.out.println("Por favor ingrese el nombre del jugador " + i);
+            String nombre = reader.readLine();
             if (nombre.length() > 50) {
                 System.out.println("El nombre no puede tener mas de 50 caracteres \n");
                 continue;
