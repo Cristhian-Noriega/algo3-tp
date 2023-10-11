@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Pokemon.jar">
-    <output-path>$PROJECT_DIR$/Pokemon/out/artifacts/Pokemon_jar</output-path>
-    <root id="archive" name="Pokemon.jar">
-      <element id="module-output" name="Pokemon" />
-      <element id="library" level="project" name="Maven: org.jline:jline:3.23.0" />
-    </root>
-  </artifact>
-</component>
