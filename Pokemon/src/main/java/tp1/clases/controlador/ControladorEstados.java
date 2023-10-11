@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class ControladorEstados {
     private final HashMap<Jugador, Integer> turnoInicialEstados;
-    private Batalla batalla;
+    private final Batalla batalla;
 
     public ControladorEstados(Batalla batalla) {
         this.batalla = batalla;

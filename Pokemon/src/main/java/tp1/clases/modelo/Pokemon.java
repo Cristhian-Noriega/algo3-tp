@@ -56,7 +56,7 @@ public class Pokemon {
         if (nuevoValor <= 0.0){
             nuevoValor = 0;
         }
-        this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
+        this.vidaActual = (int) Math.min(nuevoValor, vidaMax);
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
