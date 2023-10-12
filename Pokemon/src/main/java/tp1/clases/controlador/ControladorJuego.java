@@ -200,7 +200,7 @@ public class ControladorJuego {
                     continue;
                 }
                 op = interaccionConUsuario(siguienteAccion);
-                continue;
+                continue ;
             }
             this.comando.definirPokemon(opPoke-1);
             break;
