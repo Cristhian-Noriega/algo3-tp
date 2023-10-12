@@ -74,7 +74,6 @@ public class ControladorJuego {
         }
     }
 
-
     private boolean realizarTurno(OpcionMenu accion){
         while (true) {
             String siguienteAccion = siguienteAccion(accion);
@@ -123,7 +122,7 @@ public class ControladorJuego {
     }
 
     private boolean opcionValida(int opcion) {
-        if (opcion < 0 || opcion > OpcionMenu.values().length){
+        if (opcion <= 0 || opcion > OpcionMenu.values().length){
             System.out.println("Opcion fuera de rango");
             return false;
         }

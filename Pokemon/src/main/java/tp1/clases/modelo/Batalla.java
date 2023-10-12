@@ -11,28 +11,15 @@ import java.util.Optional;
 
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
-    private int turno;
+    private final AdministradorDeTurnos administradorTurnos;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
-        determinarJugadorInicial();
+        this.administradorTurnos = new AdministradorDeTurnos(jugadores);
     }
 
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
-    }
-
-    private void determinarJugadorInicial() {
-        int primero = 0;
-        double mayorVelocidad = 0.0;
-        for (int i = 0; i < this.jugadores.size(); i++) {
-            if (this.jugadores.get(i).getVelocidadPokemonActual() > mayorVelocidad) {
-                primero = i;
-                mayorVelocidad = this.jugadores.get(i).getVelocidadPokemonActual();
-            }
-        }
-
-        this.turno = primero;
     }
 
     public Optional<String> obtenerGanador() {
@@ -43,15 +30,15 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
-        this.turno += 1;
+        administradorTurnos.siguienteTurno();
     }
 
     public Jugador getJugadorActual() {
-        return this.jugadores.get(this.turno % this.jugadores.size());
+        return administradorTurnos.getJugadorActual();
     }
 
     public Jugador getJugadorSiguiente() {
-        return this.jugadores.get((this.turno + 1) % this.jugadores.size());
+        return administradorTurnos.getJugadorSiguiente();
     }
 
     public void rendir(Jugador jugador) {
@@ -116,8 +103,8 @@ public class Batalla {
         return this.getJugadorActual().getPokemonActual().estaMuerto();
     }
 
-    public int getTurno() {
-        return this.turno;
+    public int getTurno(){
+        return administradorTurnos.getTurno(); //esta mal esto, porque con el
+        //admin de turnos no tiene sentido hacer batalla.get turno,  lo dejo momentaneamente
     }
-
 }
