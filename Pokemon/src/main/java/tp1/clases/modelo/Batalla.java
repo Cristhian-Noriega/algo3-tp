@@ -106,5 +106,8 @@ public class Batalla {
     public int getTurno(){
         return administradorTurnos.getTurno(); //esta mal esto, porque con el
         //admin de turnos no tiene sentido hacer batalla.get turno,  lo dejo momentaneamente
+        //aunque si lo queremos usar en controlador estados(el unico lugar que se usa),
+        // deberiamos tener el admin de turnos en controlador estados
+        //solo por este metodo, raro
     }
 }
