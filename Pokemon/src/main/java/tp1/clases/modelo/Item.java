@@ -8,5 +8,5 @@ public interface Item {
     //La interface Item existe para poder agrupar todos los items (ej hacer una lista de items)
     public String getNombre();
     public Optional<Error> usar(Pokemon pokemon);
-    public Categoria getCategoria();
+    public Categoria getCategoria() ;
 }
