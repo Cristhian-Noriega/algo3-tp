@@ -8,11 +8,7 @@ public abstract class Error {
 
 
     public void mostrar() {
-        System.out.println(mensaje) ;
-<<<<<<< HEAD
-
-=======
->>>>>>> main
+        System.out.println(mensaje);
     }
 
 }

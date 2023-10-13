@@ -1,6 +1,7 @@
 package tp1.clases.controlador;
 
-public class MenuHabilidades extends Menu {
+public class MenuPrincipal extends Menu {
+
 
     public void actualizarMenu(){
 
@@ -10,4 +11,8 @@ public class MenuHabilidades extends Menu {
 
     }
 
+    public void procesarEntrada(int opcion) {
+
+
+    }
 }

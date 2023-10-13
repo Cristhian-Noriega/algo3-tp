@@ -1,21 +1,14 @@
 package tp1.clases.controlador;
 
-public class MenuPokemones extends EstadoMenu {
-    @Override
-    public void concretar() {
+public class MenuPokemones extends Menu {
+
+
+    public void actualizarMenu(){
 
     }
 
-    @Override
-    public void mostrarAcciones() {
+    public void mostrarOpciones(){
 
     }
-
-    @Override
-    public void retroceder() {
-
-    }
-
-
 
 }
