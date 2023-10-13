@@ -4,10 +4,9 @@ import tp1.clases.vista.VistaMenu;
 
 public abstract class Menu {
 
-    private VistaMenu vistaMenu;
-    public void actualizarMenu() {
 
-    }
+    public abstract void procesarOpcion(int opcion);
+
     public abstract void mostrarOpciones();
 
 

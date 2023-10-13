@@ -23,10 +23,8 @@ public class ControladorMenu {
         if (!pilaMenu.isEmpty()){
             return pilaMenu.peek();
         }
-        return null;
+        return null; //si la pila esta vacia nos mandamos una cagada
     }
-
-
 
 
  }

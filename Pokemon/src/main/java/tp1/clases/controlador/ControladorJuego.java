@@ -43,8 +43,8 @@ public class ControladorJuego {
     }
 
     public void Jugar() {
+        System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
         while (!juegoTerminado) {
-            System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
 
             if (this.batalla.estaMuertoPokemonActual()) {
                 seleccionarPokemonVivo();
@@ -52,7 +52,10 @@ public class ControladorJuego {
                 continue;
             }
 
+
+
             int opcion = interaccionConUsuario(VistaMenu.mostrarOpciones());
+            //crear pila de menus
 
             if (!opcionValida(opcion)) {
                 continue;
@@ -92,14 +95,26 @@ public void Jugar2() {
 
         int opcion = interaccionConUsuario(menuActual.mostrarOpciones());
 
-//        if (opcion == OpcionMenu.VOLVER_ATRAS.ordinal()) {
-//            this.estadoMenu.retroceder();
-//            continue;
-//        }
+        menuActual.procesarOpcion(opcion);
 
         if (!opcionValida(opcion)){
             continue;
         }
+
+        OpcionMenu accion = OpcionMenu.getAccion(opcion);
+
+        if (opcion == OpcionMenu.VOLVER_ATRAS.ordinal()) {
+            controladorMenu.retroceder();
+            continue;
+        }
+
+
+
+        controladorMenu.actualizarMenu(accion);
+
+
+
+
 
         menuActual.actualizarMenu(opcion);
 
@@ -116,26 +131,38 @@ public void Jugar2() {
 
         while (true) {
             setComando(accion);
-            String opcionesDisponibles = this.comando.mostrar();
+            //agregar a pilaMenus el menu actualmente en uso
+            String opcionesDisponibles = this.comando.mostrar(); //Menu opciones = pilaMenus.obtenerMenuActual()
+            //comando dejaria de tener un mostrar y seria unicamente para la ejecucion de la accion
 
-            int opcionSiguiente = interaccionConUsuario(opcionesDisponibles);
+            int opcionSiguiente = interaccionConUsuario(opcionesDisponibles); //opcionesDisponobles.mostrarOpciones()
 
-            if (opcionSiguiente == OpcionMenu.VOLVER_ATRAS.ordinal()){
+
+            if (opcionSiguiente == OpcionMenu.VOLVER_ATRAS.ordinal()){ //&& accion != item
+                //pilaMenus desapilar
                 return false;
-            }
+            } //else if op = volver { pilaMenus.Desapilar; continue;
 
             if (!opcionValida(opcionSiguiente)){
                 continue;
             }
 
+            //pilaMenus apilar
+
             if (accion == OpcionMenu.VER_ITEM){
-                opcionSiguiente = aplicarItemPokemon(opcionSiguiente, opcionesDisponibles, accion);
+                opcionSiguiente = aplicarItemPokemon(opcionSiguiente, opcionesDisponibles, accion); //opcionesDisponobles.mostrarOpciones()
                 if (opcionSiguiente == OpcionMenu.VOLVER_ATRAS.ordinal()) {
                     return false;
                 }
             }
 
-            if (opcionSiguiente == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
+            if (accion == OpcionMenu.VER_ITEM){
+                pilaMenus.Apilar(menuPokemon);
+                continue;
+            }
+
+
+                if (opcionSiguiente == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
                 System.out.println("No puede usar la habilidad.");
                 return false;
             }
@@ -226,7 +253,7 @@ public void Jugar2() {
             }
         };
     }
-    
+
     private int aplicarItemPokemon(int opcion, String siguienteAccion, OpcionMenu accion){
         List<Pokemon> listaPokemones = this.batalla.getPokemonesJugadorActual();
 
