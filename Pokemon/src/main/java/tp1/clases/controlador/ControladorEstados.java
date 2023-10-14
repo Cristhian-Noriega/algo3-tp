@@ -37,10 +37,14 @@ public class ControladorEstados {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
 =======
         if (Random.probabilidad(Constantes.veinticincoPorCiento * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
 >>>>>>> 270de4e (bosquejo inicial climas)
+=======
+        if (Random.probabilidad(Constantes.probabilidadDespertar * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
+>>>>>>> f6730ce (cambio constantes)
             pokemon.setEstado(Estado.NORMAL);
         }
 
@@ -55,7 +59,7 @@ public class ControladorEstados {
             return;
         }
 
-        double valor = Constantes.cincoPorCiento * pokemon.getVidaMax();
+        double valor = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
         pokemon.modificarVida((-1)*valor);
     }
 

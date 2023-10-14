@@ -22,7 +22,7 @@ public enum Clima {
 
     public double mejorarAtaque(Pokemon pokemon, double danio) {
         if (this.tiposFavorecidos.contains(pokemon.getTipo())) {
-            return (danio * Constantes.diezPorCiento) + danio;
+            return (danio * Constantes.modificacionPorClima) + danio;
         }
         return danio;
     }
@@ -30,7 +30,7 @@ public enum Clima {
     public void lastimar(Pokemon pokemon) {
         if (this == Clima.HURACAN || this == Clima.TORMENTA_DE_ARENA || this == Clima.TORMENTA_DE_RAYOS) {
             if (!this.getTiposFavorecidos().contains(pokemon.getTipo())) {
-                pokemon.modificarVida((-1) * (pokemon.getVidaMax() * Constantes.tresPorCiento));
+                pokemon.modificarVida((-1) * (pokemon.getVidaMax() * Constantes.disminucionPorClima));
             }
         }
     }
