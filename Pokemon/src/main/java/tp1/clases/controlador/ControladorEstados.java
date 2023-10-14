@@ -32,7 +32,7 @@ public class ControladorEstados {
             return true;
         }
 
-        if (Random.probabilidad(Constantes.veinticincoPorCiento * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
+        if (Random.probabilidad(Constantes.probabilidadDespertar * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
             pokemon.setEstado(Estado.NORMAL);
         }
 
@@ -44,7 +44,7 @@ public class ControladorEstados {
             return;
         }
 
-        double valor = Constantes.cincoPorCiento * pokemon.getVidaMax();
+        double valor = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
         pokemon.modificarVida((-1)*valor);
     }
 

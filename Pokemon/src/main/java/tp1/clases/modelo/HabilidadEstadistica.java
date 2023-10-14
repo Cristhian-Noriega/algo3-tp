@@ -14,7 +14,7 @@ public class HabilidadEstadistica extends Habilidad {
         super(nombre, usos, tipo, info, Categoria.ESTADISTICA);
         this.estadistica = estadistica;
         this.contraRival = contraRival;
-        this.porcentaje = Constantes.veinticincoPorCiento;
+        this.porcentaje = Constantes.porcentajeDeModificacion;
     }
 
     public boolean isContraRival() {

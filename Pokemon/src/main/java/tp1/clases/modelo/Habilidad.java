@@ -34,15 +34,13 @@ public abstract class Habilidad {
     public String getInfo() {
         return info;
     }
-
+    public Categoria getCategoria() {
+        return this.categoria;
+    }
     public abstract Optional<Error> usar(Pokemon propio, Pokemon ajeno);
 
     public boolean sinUsosDisponibles() {
         return this.usos < 1;
-    }
-
-    public Categoria getCategoria() {
-        return this.categoria;
     }
 
 }
