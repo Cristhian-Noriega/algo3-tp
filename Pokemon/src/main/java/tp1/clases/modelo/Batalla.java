@@ -12,10 +12,12 @@ import java.util.Optional;
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
+    private Clima clima;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
+
     }
 
     public ArrayList<Jugador> getJugadores() {

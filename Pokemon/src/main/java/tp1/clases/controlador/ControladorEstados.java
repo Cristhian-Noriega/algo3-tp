@@ -26,24 +26,36 @@ public class ControladorEstados {
         return this.paralizar(jugador.getPokemonActual());
     }
 
+<<<<<<< HEAD
     public void despertar(Jugador jugador, int turnoActual) {
+=======
+    public boolean despertar(Jugador jugador) {
+>>>>>>> 270de4e (bosquejo inicial climas)
         Pokemon pokemon = jugador.getPokemonActual();
         if (pokemon.getEstado() != Estado.DORMIDO) {
-            return;
+            return true;
         }
 
+<<<<<<< HEAD
         if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
+=======
+        if (Random.probabilidad(Constantes.veinticincoPorCiento * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
+>>>>>>> 270de4e (bosquejo inicial climas)
             pokemon.setEstado(Estado.NORMAL);
         }
-    }
-    
 
+<<<<<<< HEAD
+=======
+        return pokemon.getEstado() == Estado.NORMAL;
+    }
+
+>>>>>>> 270de4e (bosquejo inicial climas)
     public void envenenar(Pokemon pokemon) {
         if (pokemon.getEstado() != Estado.ENVENENADO) {
             return;
         }
 
-        double valor = Constantes.cinco * pokemon.getVidaMax();
+        double valor = Constantes.cincoPorCiento * pokemon.getVidaMax();
         pokemon.modificarVida((-1)*valor);
     }
 
@@ -51,7 +63,7 @@ public class ControladorEstados {
         if (pokemon.getEstado() != Estado.PARALIZADO) {
             return true;
         }
-        return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
+        return (Random.probabilidad(Constantes.probabilidadParalizado));
     }
 
 }
