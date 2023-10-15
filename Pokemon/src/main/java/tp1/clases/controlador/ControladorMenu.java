@@ -17,14 +17,11 @@ public class ControladorMenu {
         if (!pilaMenu.isEmpty()){
             pilaMenu.pop();
         }
-
     }
     public Menu obtenerMenuActual(){
-        if (!pilaMenu.isEmpty()){
-            return pilaMenu.peek();
+        if (pilaMenu.isEmpty()){
+            return null;
         }
-        return null; //si la pila esta vacia nos mandamos una cagada
+        return pilaMenu.peek();
     }
-
-
  }

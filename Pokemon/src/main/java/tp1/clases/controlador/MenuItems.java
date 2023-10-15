@@ -15,9 +15,9 @@ public class MenuItems extends Menu {
 
     private List<Item> items;
 
+
     public MenuItems(Map<String, Long> mapCantidadItems,List<Item> items){
         this.mapCantidadItems = mapCantidadItems;
-
         this.items = items;
 
     }
@@ -29,4 +29,5 @@ public class MenuItems extends Menu {
     public int cantidadOpciones(){
         return this.items.size();
     }
+
 }

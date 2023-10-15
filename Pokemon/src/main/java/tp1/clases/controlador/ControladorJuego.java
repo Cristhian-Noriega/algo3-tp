@@ -14,6 +14,7 @@ import tp1.clases.modelo.Pokemon;
 import tp1.clases.vista.CampoVista;
 import tp1.clases.vista.OpcionMenu;
 
+import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -46,9 +47,10 @@ public class ControladorJuego {
         OpcionMenu accion = null;
         boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual(), this.batalla.getTurno());
 
-        System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
+
 
         while (turnoActivo){
+            System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
             //si el no hay pokemon vivo al empezar el turno, debe seleccionar un  pokemon
             //y se pasa el turno
             if (this.batalla.estaMuertoPokemonActual()) {
@@ -57,7 +59,7 @@ public class ControladorJuego {
                 break;
             }
 
-            //obtengo el menu actual en el que esta el jugador
+            //obtengo el menu actual en el que esta el jugador y su opcion elegida
             Menu menuActual = this.controladorMenu.obtenerMenuActual();
             int opcionElegida = interaccionConUsuario(menuActual);
 
@@ -69,7 +71,6 @@ public class ControladorJuego {
             //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
             if (menuActual instanceof MenuPrincipal){
                 accion = OpcionMenu.getAccion(opcionElegida);
-
                 //muestra el campo de batalla y vuelve al inicio para seguir con el turno
                 if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
                     CampoVista campo = new CampoVista();
@@ -85,6 +86,7 @@ public class ControladorJuego {
 
                 //setteo el comando segun la accion seleccionada
                 setComando(accion);
+                continue;
             }
 
             // si la opcion elegida es volver atras, voy al menu anterior con el controlador de menus
@@ -95,9 +97,19 @@ public class ControladorJuego {
 
             //en caso de que la accion elegida sea usar un item pero todavia no se mostraron los pokemones disponibles
             //se agrega el menu de pokemones al controlador de menu para mostrar las opciones posibles
-            if (accion.equals(OpcionMenu.VER_ITEM) && (this.controladorMenu.obtenerMenuActual() instanceof MenuItems)){
+            if ((accion.equals(OpcionMenu.VER_ITEM)) || (this.controladorMenu.obtenerMenuActual() instanceof MenuItems)) {
                 this.controladorMenu.actualizarMenu(new MenuPokemones(this.batalla.getPokemonesJugadorActual(), true));
-                continue;
+                System.out.println("Seleccione el pokemon al cual aplicarle el item");
+                int pokemonElegido = interaccionConUsuario(this.controladorMenu.obtenerMenuActual());
+                if (!opcionValida(pokemonElegido, this.controladorMenu.obtenerMenuActual().cantidadOpciones())) {
+                    System.out.println("ENTRO ACA!!!!");
+                    continue;
+                }
+                if (pokemonElegido == OpcionMenu.VOLVER_ATRAS.ordinal()){
+                    this.controladorMenu.retroceder();
+                    continue;
+                }
+                this.comando.definirPokemon(pokemonElegido-1);
             }
 
             //se verifica si el jugador puede usar sus habilidades, en caso de que se haya elegido la opcion de usar habilidad
@@ -105,7 +117,6 @@ public class ControladorJuego {
                 System.out.println("No puede usar la habilidad.");
                 continue;
             }
-
 
             int posicion = opcionElegida - 1;
             this.comando.definirOpcion(posicion);
@@ -117,14 +128,23 @@ public class ControladorJuego {
                 err.get().mostrar();
                 continue;
             }
-
+            this.avanzarTurno();
             turnoActivo = false;
         }
 
     }
 
+    private void avanzarTurno() {
+        if (this.batalla.obtenerGanador().isPresent()) {
+            this.juegoTerminado = true;
+        } else {
+            this.batalla.cambiarTurno();
+        }
+    }
+
+
     private int interaccionConUsuario(Menu menu) {
-        System.out.println("Elija su proxima acción: \n");
+        System.out.println("Elija su proxima acción:");
         menu.mostrarOpciones();
 
         int opcion;
@@ -155,7 +175,7 @@ public class ControladorJuego {
     }
 
     private boolean opcionValida(int opcion, int cantOpciones) {
-        if (opcion <= 0 || opcion > cantOpciones){
+        if (opcion < 0 || opcion > cantOpciones){
             System.out.println("Opcion fuera de rango");
             return false;
         }

@@ -14,9 +14,6 @@ public class MenuHabilidades extends Menu {
         this.habilidades = habilidades;
     }
 
-//    public void procesarOpcion(int opcion){
-//
-//    }
 
     public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarHabilidades(this.habilidades));

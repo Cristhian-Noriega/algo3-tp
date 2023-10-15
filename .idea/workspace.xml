@@ -8,16 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf1ac6cc-6f6c-4eae-949e-329420c34987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuegoV2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuHabilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuHabilidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/vista/VistaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/vista/VistaMenu.java" afterDir="false" />
     </list>
     <list id="5c484c3c-372c-4d62-a021-e517956090fa" name="Changes by emilia" comment="" />
     <list id="8fb8d6ec-bd66-4374-b17b-22e300847514" name="Changes by lu" comment="" />
@@ -74,27 +74,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Rebasing refactor",
-    "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing refactor&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cristhian/algoritmos3/algo3-tp/Pokemon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -130,7 +130,8 @@
       <workItem from="1697199560231" duration="10159000" />
       <workItem from="1697234098685" duration="8570000" />
       <workItem from="1697306731658" duration="19084000" />
-      <workItem from="1697327395448" duration="3930000" />
+      <workItem from="1697327395448" duration="5122000" />
+      <workItem from="1697372173753" duration="23003000" />
     </task>
     <servers />
   </component>

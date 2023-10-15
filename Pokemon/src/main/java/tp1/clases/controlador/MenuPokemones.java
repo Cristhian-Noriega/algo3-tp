@@ -16,11 +16,8 @@ public class MenuPokemones extends Menu {
         this.pokemones = pokemones;
     }
 
-//    public void procesarOpcion(int opcion){
-//
-//    }
 
-    public void mostrarOpciones(){ //no olvidar la opcion conVolverAtras
+    public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarPokemones(this.pokemones, this.conVolverAtras));
     }
 
