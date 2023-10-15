@@ -14,22 +14,7 @@ import java.util.Map;
 
 public class MenuPrincipal extends Menu {
 
-
-//    private Map<OpcionMenu, Runnable> acciones = new HashMap<>();
-
     public MenuPrincipal() {}
-//        acciones.put(OpcionMenu.VER_CAMPO, () -> {
-//            CampoVista campo = new CampoVista();
-//        });
-//        acciones.put(OpcionMenu.VER_POKEMONES, () -> {
-//
-//        })
-
-//    public void procesarOpcion(int opcion){
-//
-//
-//    }
-
 
     public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarOpciones());
