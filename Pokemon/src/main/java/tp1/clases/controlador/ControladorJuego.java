@@ -109,6 +109,7 @@ public class ControladorJuego {
             //se verifica si el jugador puede usar sus habilidades, en caso de que se haya elegido la opcion de usar habilidad
             if (opcionElegida == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
                 System.out.println("No puede usar la habilidad.");
+                this.avanzarTurno();
                 continue;
             }
 
