@@ -101,15 +101,9 @@ public class ControladorJuego {
                 this.controladorMenu.actualizarMenu(new MenuPokemones(this.batalla.getPokemonesJugadorActual(), true));
                 System.out.println("Seleccione el pokemon al cual aplicarle el item");
                 int pokemonElegido = interaccionConUsuario(this.controladorMenu.obtenerMenuActual());
-                if (!opcionValida(pokemonElegido, this.controladorMenu.obtenerMenuActual().cantidadOpciones())) {
-                    System.out.println("ENTRO ACA!!!!");
+                if (!seleccionoPokemonItem(pokemonElegido)){
                     continue;
                 }
-                if (pokemonElegido == OpcionMenu.VOLVER_ATRAS.ordinal()){
-                    this.controladorMenu.retroceder();
-                    continue;
-                }
-                this.comando.definirPokemon(pokemonElegido-1);
             }
 
             //se verifica si el jugador puede usar sus habilidades, en caso de que se haya elegido la opcion de usar habilidad
@@ -132,6 +126,19 @@ public class ControladorJuego {
             turnoActivo = false;
         }
 
+    }
+
+    private boolean seleccionoPokemonItem(int pokemonElegido){
+        if (!opcionValida(pokemonElegido, this.controladorMenu.obtenerMenuActual().cantidadOpciones())) {
+            return false;
+        }
+        if (pokemonElegido == OpcionMenu.VOLVER_ATRAS.ordinal()){
+            this.controladorMenu.retroceder();
+            return false;
+        }
+        this.comando.definirPokemon(pokemonElegido-1);
+        this.controladorMenu.retroceder();
+        return true;
     }
 
     private void avanzarTurno() {
