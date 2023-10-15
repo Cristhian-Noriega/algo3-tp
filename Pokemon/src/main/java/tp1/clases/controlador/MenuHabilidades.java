@@ -2,25 +2,28 @@ package tp1.clases.controlador;
 
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.vista.OpcionMenu;
+import tp1.clases.vista.VistaMenu;
 
 import java.util.List;
 
 public class MenuHabilidades extends Menu {
 
-    public void procesarOpcion(int opcion){
-        if (opcion == OpcionMenu.VOLVER_ATRAS.ordinal()){
-            return new MenuPrincipal();
-        }else{
-            //
-        }
+    private final List<Habilidad> habilidades;
+
+    public MenuHabilidades(List<Habilidad> habilidades){
+        this.habilidades = habilidades;
     }
+
+//    public void procesarOpcion(int opcion){
+//
+//    }
 
     public void mostrarOpciones(){
-
+        System.out.println(VistaMenu.mostrarHabilidades(this.habilidades));
     }
 
-    public void retroceder(){
-
+    public int cantidadOpciones(){
+        return this.habilidades.size();
     }
 
 }
