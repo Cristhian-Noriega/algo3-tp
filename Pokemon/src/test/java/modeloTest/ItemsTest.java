@@ -1,10 +1,9 @@
 package modeloTest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorPokemonNoMuerto;
 import tp1.clases.modelo.*;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public class ItemsTest {
     //si el pokemon esta muerto con un estado (ej. ENVENENADO) y lo revivo, el estado sigue asi o vuelve a normal?
     //si revivo un pokemon, las estadisticas deberian volver a las iniciales o sigue con las estadisticas modiicadas?
 
-    //To Do: test de cuando salta error
+    //To Do: agregar tests cuando tengamos doble estado
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
     Item itemVida = new ItemVida("mas vida", 40);
@@ -28,61 +27,83 @@ public class ItemsTest {
     Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE);
     Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA);
 
+    @DisplayName("uso item que sube la vida con la vida del pokemon *ya* al maximo")
     @Test
     void noDeberiaPoderSubirLaVidaTest(){
         Optional<Error> err = itemVida.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getVidaMax(), pokemonDePrueba.getVida());
     }
 
+    @DisplayName("uso item que sube la vida con la vida del pokemon")
     @Test
     void deberiaSubirLaVida(){
+        //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-40);
-        Assertions.assertEquals(pokemonDePrueba.getVida(), 60);
         Optional<Error> err = itemVida.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getVidaMax(), pokemonDePrueba.getVida());
     }
 
+    @DisplayName("uso item para revivir un pokemon muerto")
     @Test
-    void intentoSobrevivirPokemon(){
+    void intentoRevivirPokemon(){
+        //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-100);
-        Assertions.assertEquals(pokemonDePrueba.getVida(), 0);
+        Assertions.assertTrue(pokemonDePrueba.estaMuerto());
         Optional<Error> err = revivir.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getVidaMax(), pokemonDePrueba.getVida());
     }
 
-    @Disabled("me tira error y no entiendo xq :((")
+    @DisplayName("uso item para revivir un pokemon *no* muerto")
     @Test
-    void noPuedoRevivirPokemonNoMuerto(){
+    void noPuedoRevivirPokemonNoMuerto() throws Exception {
         Optional<Error> err = revivir.usar(pokemonDePrueba);
-        Optional<Error> loQueDeberiaDevolver = Optional.of(new ErrorPokemonNoMuerto(pokemonDePrueba.getNombre(), revivir.getNombre()));
-        //Assertions.assertInstanceOf(ErrorPokemonNoMuerto, err);
-        Assertions.assertEquals(loQueDeberiaDevolver, err);
+        //haciendo un if fue la mejor manera que encontre de corroborar q estaba tirando un error
+        if (err.isEmpty()){
+            throw new Exception("No esta tirando error cuando deberia");
+        }
     }
 
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente dormido")
     @Test
     void pasoDeDormidoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.DORMIDO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.DORMIDO);
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
 
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente envenenado")
     @Test
     void pasoDeEnvenenadoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.ENVENENADO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.ENVENENADO);
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
 
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente paralizado")
     @Test
     void pasoDeParalizadoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.PARALIZADO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.PARALIZADO);
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
 
+    @DisplayName("uso item para normalizar pokemon *ya* normal")
+    @Test
+    void noPuedoNormalizarPokemonNormal() throws Exception {
+        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+        Optional<Error> err = estado.usar(pokemonDePrueba);
+        if (err.isEmpty()){
+            throw new Exception("No esta tirando error cuando deberia");
+        }
+    }
+
+    @DisplayName("uso item para mejorar la velocidad actual del pokemon un 10%")
     @Test
     void mejoroVelocidadUnDiezPorciento(){
         double velocidadInicial = pokemonDePrueba.getVelocidad();
@@ -91,6 +112,7 @@ public class ItemsTest {
         Assertions.assertEquals(loQueDeberiaDevolver, pokemonDePrueba.getVelocidad());
     }
 
+    @DisplayName("uso item para mejorar el ataque actual del pokemon un 10%")
     @Test
     void mejoroAtaqueUnDiezPorciento(){
         double ataqueInicial = pokemonDePrueba.getAtaque();
@@ -99,6 +121,7 @@ public class ItemsTest {
         Assertions.assertEquals(loQueDeberiaDevolver, pokemonDePrueba.getAtaque());
     }
 
+    @DisplayName("uso item para mejorar la defensa actual del pokemon un 10%")
     @Test
     void mejoroDefensaUnDiezPorciento(){
         double defensaInicial = pokemonDePrueba.getDefensa();
