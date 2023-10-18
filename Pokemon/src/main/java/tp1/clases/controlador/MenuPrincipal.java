@@ -21,6 +21,6 @@ public class MenuPrincipal extends Menu {
     }
 
     public int cantidadOpciones(){
-        return OpcionMenu.values().length;
+        return OpcionMenu.values().length - 1;
     }
 }

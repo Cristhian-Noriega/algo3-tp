@@ -4,7 +4,6 @@
     import tp1.clases.errores.Error;
     import tp1.clases.modelo.Batalla;
     import tp1.clases.modelo.Categoria;
-    import tp1.clases.vista.VistaMenu;
 
     import java.util.Optional;
 
@@ -36,10 +35,5 @@
                   this.controladorEstados.setTurnoInicial(this.batalla.getJugadorActual(), batalla.getTurno());
             }
             return err;
-        }
-
-        @Override
-        public String mostrar() {
-            return VistaMenu.mostrarItems(this.batalla.getMapItemsJugadorActual(), this.batalla.getItemsJugadorActual());
         }
     }

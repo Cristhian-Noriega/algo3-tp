@@ -6,7 +6,6 @@ import java.util.Optional;
 
 public interface Comando {
     Optional<Error> ejecutar();
-    String mostrar();
 
     default void definirPokemon(int pokemon) {}
 

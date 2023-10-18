@@ -7,10 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 public class MenuItems extends Menu {
-
-//    public void procesarOpcion(int opcion){
-//
-//    }
     private Map<String, Long> mapCantidadItems;
 
     private List<Item> items;

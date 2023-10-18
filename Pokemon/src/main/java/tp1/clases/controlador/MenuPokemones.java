@@ -7,8 +7,8 @@ import java.util.List;
 
 public class MenuPokemones extends Menu {
 
-    private Boolean conVolverAtras;
-    private List<Pokemon> pokemones;
+    private final Boolean conVolverAtras;
+    private final List<Pokemon> pokemones;
 
 
     public MenuPokemones(List<Pokemon> pokemones, Boolean conVolverAtras){

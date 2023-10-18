@@ -5,41 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuHabilidades.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Pokemon_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEstados.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEstados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/Comando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/Comando.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/errores/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/errores/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/CondicionEstado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estadisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estadisticas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EstadoDormido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/vista/VistaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/vista/VistaMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorEstados.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorEstados.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorJuego$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorJuego$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorJuego.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/ControladorJuego.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/Comando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/Comando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/errores/Error.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/errores/Error.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/CondicionEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/EstadoDormido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/vista/VistaMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,24 +64,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging refactoring",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="algo3-tp" />
@@ -124,7 +115,9 @@
       <workItem from="1697593800675" duration="295000" />
       <workItem from="1697594124742" duration="740000" />
       <workItem from="1697594894451" duration="88000" />
-      <workItem from="1697595000361" duration="731000" />
+      <workItem from="1697595000361" duration="830000" />
+      <workItem from="1697595858771" duration="2422000" />
+      <workItem from="1697633153866" duration="1117000" />
     </task>
     <servers />
   </component>

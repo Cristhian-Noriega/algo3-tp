@@ -1,6 +1,5 @@
     package tp1.clases.controlador;
 
-<<<<<<< HEAD
     import org.jline.reader.LineReader;
     import org.jline.reader.LineReaderBuilder;
     import org.jline.terminal.Terminal;
@@ -14,34 +13,11 @@
     import tp1.clases.modelo.Pokemon;
     import tp1.clases.vista.CampoVista;
     import tp1.clases.vista.OpcionMenu;
-    import tp1.clases.vista.VistaMenu;
 
     import java.io.IOException;
     import java.util.List;
     import java.util.Objects;
     import java.util.Optional;
-
-
-    =======
-import org.jline.reader.LineReader;
-import org.jline.reader.LineReaderBuilder;
-import org.jline.terminal.Terminal;
-import org.jline.terminal.TerminalBuilder;
-import tp1.clases.controlador.comandos.CambiarPokemonComando;
-import tp1.clases.controlador.comandos.Comando;
-import tp1.clases.controlador.comandos.UsarHabilidadComando;
-import tp1.clases.controlador.comandos.UsarItemComando;
-import tp1.clases.errores.Error;
-import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Pokemon;
-import tp1.clases.vista.CampoVista;
-import tp1.clases.vista.OpcionMenu;
-
-import javax.sound.midi.SysexMessage;
-import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 public class ControladorJuego {
 
@@ -242,4 +218,3 @@ public class ControladorJuego {
     }
 
 }
->>>>>>> refactor
