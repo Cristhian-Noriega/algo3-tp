@@ -48,7 +48,7 @@ public class Pokemon {
         }
         this.estado = estado;
         System.out.println(this.getNombre() + " ha cambiado su estado a \n" + estado.toString().toLowerCase());
-        return Optional.empty();
+        return Optional.empty() ;
     }
 
     public void modificarVida(double modificador) {
@@ -56,7 +56,7 @@ public class Pokemon {
         if (nuevoValor <= 0.0){
             nuevoValor = 0;
         }
-        this.vidaActual = (int) Math.min(nuevoValor, vidaMax);
+        this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }

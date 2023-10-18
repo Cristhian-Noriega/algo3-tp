@@ -19,11 +19,11 @@ public class HabilidadAtaque extends Habilidad {
         double defensaDefensor = defensor.getDefensa();
         double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
         double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
-        double random = ((Math.random()*(Constantes.maxRandom+1-Constantes.minRandom))+Constantes.minRandom) /Constantes.maxRandom;
+        double random = (double) ((Math.random()*(Constantes.maxRandom+1-Constantes.minRandom))+Constantes.minRandom)/Constantes.maxRandom;
         double critico = probabilidad(Constantes.probabilidadDeCritico)? 2: 1;
-        double danio = (((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico;
+        double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
 
-        return danio;
+        return danio ;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class HabilidadAtaque extends Habilidad {
         }
         double danio = calcularDanioAtaque(propio, ajeno);
         ajeno.modificarVida((-1)*danio);
-        System.out.println(propio.getNombre() + "ataca con" + this.getNombre() + "a" + ajeno.getNombre());
+
         if (this.esEfectivo(propio, ajeno)){
             System.out.println("¡Qué eficaz!\n");
         } else {

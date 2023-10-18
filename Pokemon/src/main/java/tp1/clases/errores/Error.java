@@ -1,10 +1,11 @@
 package tp1.clases.errores;
 
 public abstract class Error {
-    private final String mensaje;
+    private String mensaje;
     public Error(String mensaje) {
-        this.mensaje = mensaje;
+        this.mensaje = mensaje ;
     }
+
 
     public void mostrar() {
         System.out.println(mensaje);
