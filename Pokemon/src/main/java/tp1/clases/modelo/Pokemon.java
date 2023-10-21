@@ -2,6 +2,7 @@ package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
+import tp1.clases.errores.ErrorIndiceFueraDeRango;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +32,15 @@ public class Pokemon {
         this.defensa = defensa;
         this.estado = Estado.NORMAL;
     }
+
+    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
+        if (numeroHabilidad < 0 || numeroHabilidad >= this.habilidades.size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
+        Habilidad habilidad = this.habilidades.get(numeroHabilidad);
+        return habilidad.usar(this, rival);
+    }
+
 
     public boolean estaMuerto() {
         return this.vidaActual <= 0;
