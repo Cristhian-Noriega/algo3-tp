@@ -21,7 +21,7 @@ public class Main {
         ControladorJuego controlador = new ControladorJuego(batalla, controladorEstados);
 
         while (!controlador.getJuegoTerminado()) {
-            controlador.Jugar();
+            controlador.JugarTurno();
         }
 
         String res = ResultadoVista.mostrarResultado(batalla.obtenerGanador());

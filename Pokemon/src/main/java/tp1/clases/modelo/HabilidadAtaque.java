@@ -43,7 +43,7 @@ public class HabilidadAtaque extends Habilidad {
         return Optional.empty();
     }
 
-    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) { //estoy probando cosas :)
+    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) {
         return (this.calcularDanioAtaque(atacante, ajeno) > 0 );
     }
 }
