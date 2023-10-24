@@ -9,7 +9,7 @@ public enum Clima {
     NIEBLA(List.of(Tipo.FANTASMA, Tipo.PSIQUICO)),
     TORMENTA_DE_RAYOS(List.of(Tipo.ELECTRICO)),
     HURACAN(List.of(Tipo.VOLADOR)),
-    NORMAL(null);
+    SIN_CLIMA(null);
 
     private final List<Tipo> tiposFavorecidos;
 

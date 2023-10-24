@@ -22,12 +22,10 @@ public class AdministradorDeClima {
     }
 
     public void limpiarClima() {
-        this.climaActual = Clima.NORMAL;
+        this.climaActual = Clima.SIN_CLIMA;
     }
 
     public void mejoraAtaque(Habilidad habilidad) {
-        if (habilidad.getCategoria() == Categoria.ATAQUE && this.climaActual != Clima.NORMAL) {
-
-        }
+        if (habilidad.getCategoria() == Categoria.ATAQUE && this.climaActual != Clima.SIN_CLIMA) {}
     }
 }
