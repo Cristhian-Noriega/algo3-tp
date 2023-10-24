@@ -36,6 +36,7 @@ public class ControladorEstados {
             pokemon.setEstado(Estado.NORMAL);
         }
     }
+    
 
     public void envenenar(Pokemon pokemon) {
         if (pokemon.getEstado() != Estado.ENVENENADO) {
