@@ -27,15 +27,20 @@ public class ControladorEstados {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void despertar(Jugador jugador, int turnoActual) {
 =======
     public boolean despertar(Jugador jugador) {
 >>>>>>> 270de4e (bosquejo inicial climas)
+=======
+    public boolean despertar(Jugador jugador) {
+>>>>>>> 4f5c1277241255de37e7d486195a94fc4e99bf77
         Pokemon pokemon = jugador.getPokemonActual();
         if (pokemon.getEstado() != Estado.DORMIDO) {
             return true;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
@@ -50,6 +55,12 @@ public class ControladorEstados {
 
 <<<<<<< HEAD
 =======
+=======
+        if (Random.probabilidad(Constantes.probabilidadDespertar * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
+            pokemon.setEstado(Estado.NORMAL);
+        }
+
+>>>>>>> 4f5c1277241255de37e7d486195a94fc4e99bf77
         return pokemon.getEstado() == Estado.NORMAL;
     }
 
