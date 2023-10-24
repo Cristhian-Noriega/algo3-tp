@@ -8,7 +8,8 @@ public enum Clima {
     TORMENTA_DE_ARENA(List.of(Tipo.TIERRA, Tipo.ROCA)),
     NIEBLA(List.of(Tipo.FANTASMA, Tipo.PSIQUICO)),
     TORMENTA_DE_RAYOS(List.of(Tipo.ELECTRICO)),
-    HURACAN(List.of(Tipo.VOLADOR));
+    HURACAN(List.of(Tipo.VOLADOR)),
+    NORMAL(null);
 
     private final List<Tipo> tiposFavorecidos;
 
@@ -20,14 +21,14 @@ public enum Clima {
         return tiposFavorecidos;
     }
 
-    public double mejorarAtaque(Pokemon pokemon, double danio) {
-        if (this.tiposFavorecidos.contains(pokemon.getTipo())) {
+    public double mejorarAtaque(Tipo tipo, double danio) {
+        if (this.tiposFavorecidos.contains(tipo)) {
             return (danio * Constantes.modificacionPorClima) + danio;
         }
         return danio;
     }
 
-    public void lastimar(Pokemon pokemon) {
+    public void lastimarPorClima(Pokemon pokemon) {
         if (this == Clima.HURACAN || this == Clima.TORMENTA_DE_ARENA || this == Clima.TORMENTA_DE_RAYOS) {
             if (!this.getTiposFavorecidos().contains(pokemon.getTipo())) {
                 pokemon.modificarVida((-1) * (pokemon.getVidaMax() * Constantes.disminucionPorClima));
@@ -35,7 +36,7 @@ public enum Clima {
         }
     }
 
-    public static Clima getClima() {
+    public static Clima getClimaRandom() {
         if (Random.probabilidad(Constantes.probabilidadConClima)) {
             int clima = Random.getRandom(0, 6);
             for (Clima c: Clima.values()) {
