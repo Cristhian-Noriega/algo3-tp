@@ -1,9 +1,12 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorAtacarEstandoDormido;
 import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
 import tp1.clases.errores.ErrorIndiceFueraDeRango;
+import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +14,11 @@ public class Pokemon {
     private final String nombre;
     private final int nivel;
     private Estado estado;
+    private final List<EstadoPokemon> estadosActivos;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
+
+    private final boolean puedeUsarHabilidad;
     private final int vidaMax;
     private int vidaActual;
     private double velocidad;
@@ -24,6 +30,7 @@ public class Pokemon {
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
+        this.estadosActivos = new ArrayList<>();
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaMax;
@@ -38,8 +45,13 @@ public class Pokemon {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Habilidad habilidad = this.habilidades.get(numeroHabilidad);
+
+        if (!puedeUsarHabilidad(habilidad)){
+            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.nombre));
+        }
         return habilidad.usar(this, rival);
     }
+
 
 
     public boolean estaMuerto() {
@@ -68,6 +80,30 @@ public class Pokemon {
         }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
+
+    public boolean puedeUsarHabilidad(Habilidad habilidad) {
+        for (EstadoPokemon estado : this.estadosActivos) {
+            if (!estado.puedeUsarHabilidad(habilidad)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public void aplicarEfectoEstado(){
+        for (EstadoPokemon estadoPokemon: this.estadosActivos){
+            estadoPokemon.aplicarEstado(this);
+        }
+    }
+    public void agregarEstado(EstadoPokemon estado){
+        this.estadosActivos.add(estado);
+    }
+
+    public void eliminarEstado(EstadoPokemon estado){
+        this.estadosActivos.remove(estado);
+    }
+
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
 

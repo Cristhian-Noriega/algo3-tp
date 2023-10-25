@@ -15,12 +15,12 @@ public class ControladorEstados {
             this.turnoInicialEstados.put(jugador, 0);
         }
     }
-
+//controlador estados deberia controlar solo los estados que posea el pokemon en ese momento
     public void setTurnoInicial(Jugador jugador, int turnoActual) {
         this.turnoInicialEstados.put(jugador, turnoActual);
     }
 
-    public boolean controlarEstado(Jugador jugador, int turnoActual){
+    public boolean controlarEstado(Jugador jugador, int turnoActual){ //controlador de estados controlatods los estados del pokemon
         this.despertar(jugador, turnoActual);
         this.envenenar(jugador.getPokemonActual());
         return this.paralizar(jugador.getPokemonActual());
@@ -51,6 +51,10 @@ public class ControladorEstados {
             return true;
         }
         return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
+    }
+
+    public boolean confundir(Pokemon pokemon){
+
     }
 
 }
