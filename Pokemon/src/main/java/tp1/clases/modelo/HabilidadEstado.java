@@ -18,7 +18,10 @@ public class HabilidadEstado extends Habilidad {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
-        super.usos -= 1;
-        return ajeno.setEstado(this.estado);
+        Optional<Error> err =  ajeno.setEstado(this.estado);
+        if (err.isEmpty()){
+            super.usos -= 1;
+        }
+        return err;
     }
 }

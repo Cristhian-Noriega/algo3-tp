@@ -34,7 +34,7 @@ public class VistaMenu {
         return informacion;
     }
 
-    public static String mostrarPokemones(List<Pokemon> pokemones, boolean conVolverAtras) {
+    public static String mostrarPokemones(List<Pokemon> pokemones, Boolean conVolverAtras) {
         StringBuilder listaPokemones = new StringBuilder("Pokemones disponibles:\n");
         if (conVolverAtras){
             listaPokemones = agregarOpcionVolverAtras(listaPokemones);

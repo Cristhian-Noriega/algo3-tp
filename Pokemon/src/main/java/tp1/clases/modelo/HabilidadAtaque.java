@@ -23,7 +23,7 @@ public class HabilidadAtaque extends Habilidad {
         double critico = probabilidad(Constantes.probabilidadDeCritico)? 2: 1;
         double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
 
-        return danio;
+        return danio ;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class HabilidadAtaque extends Habilidad {
         return Optional.empty();
     }
 
-    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) { //estoy probando cosas :)
+    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) {
         return (this.calcularDanioAtaque(atacante, ajeno) > 0 );
     }
 }

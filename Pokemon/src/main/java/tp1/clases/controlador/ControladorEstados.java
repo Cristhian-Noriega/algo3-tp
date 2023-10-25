@@ -16,23 +16,23 @@ public class ControladorEstados {
         }
     }
 
-    public void setTurnoInicial(Jugador jugador) {
-        this.turnoInicialEstados.put(jugador, batalla.getTurno());
+    public void setTurnoInicial(Jugador jugador, int turnoActual) {
+        this.turnoInicialEstados.put(jugador, turnoActual);
     }
 
-    public boolean controlarEstado(Jugador jugador){
-        this.despertar(jugador);
+    public boolean controlarEstado(Jugador jugador, int turnoActual){
+        this.despertar(jugador, turnoActual);
         this.envenenar(jugador.getPokemonActual());
         return this.paralizar(jugador.getPokemonActual());
     }
 
-    public void despertar(Jugador jugador) {
+    public void despertar(Jugador jugador, int turnoActual) {
         Pokemon pokemon = jugador.getPokemonActual();
         if (pokemon.getEstado() != Estado.DORMIDO) {
             return;
         }
 
-        if (Habilidad.probabilidad(Constantes.veinticinco * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
+        if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
             pokemon.setEstado(Estado.NORMAL);
         }
     }
