@@ -45,10 +45,6 @@ public class Pokemon {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Habilidad habilidad = this.habilidades.get(numeroHabilidad);
-
-//        if (!puedeUsarHabilidad(habilidad)){
-//            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.nombre));
-//        }
         return habilidad.usar(this, rival);
     }
 
@@ -92,25 +88,12 @@ public class Pokemon {
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
-//    public boolean puedeUsarHabilidad(Habilidad habilidad) {
-//        for (EstadoPokemon estado : this.estadosActivos) {
-//            if (!estado.puedeUsarHabilidad(habilidad)) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-
-
     public void aplicarEfectoEstado(){
-        for (Estado estadoPokemon: this.estados){
-            return;
+        for (PokemonDecorator estados: this.decoradores){
+            estados.aplicarEfectoEstado();
         }
     }
     public void agregarEstado(Estado estado){
-//        if ((this.estados.size() == 1) && (this.estados.get(0) == Estado)){
-//
-//        }
         this.estados.add(estado);
         System.out.printf("%s ahora paso a estado %s",this.nombre, estado.toString());
     }
@@ -123,8 +106,6 @@ public class Pokemon {
     public boolean tieneEstado(Estado estado){
         return this.estados.contains(estado);
     }
-
-
 
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }

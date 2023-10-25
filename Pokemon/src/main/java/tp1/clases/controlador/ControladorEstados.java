@@ -5,20 +5,20 @@ import tp1.clases.modelo.*;
 import java.util.HashMap;
 
 public class ControladorEstados {
-    private final HashMap<Jugador, Integer> turnoInicialEstados;
+//    private final HashMap<Jugador, Integer> turnoInicialEstados;
     private Batalla batalla;
 
     public ControladorEstados(Batalla batalla) {
         this.batalla = batalla;
-        this.turnoInicialEstados = new HashMap<Jugador, Integer>();
-        for (Jugador jugador : batalla.getJugadores()){
-            this.turnoInicialEstados.put(jugador, 0);
-        }
+//        this.turnoInicialEstados = new HashMap<Jugador, Integer>();
+//        for (Jugador jugador : batalla.getJugadores()){
+//            this.turnoInicialEstados.put(jugador, 0);
+//        }
     }
 //controlador estados deberia controlar solo los estados que posea el pokemon en ese momento
-    public void setTurnoInicial(Jugador jugador, int turnoActual) {
-        this.turnoInicialEstados.put(jugador, turnoActual);
-    }
+//    public void setTurnoInicial(Jugador jugador, int turnoActual) {
+//        this.turnoInicialEstados.put(jugador, turnoActual);
+//    }
 
     public boolean controlarEstado(Jugador jugador, int turnoActual){
         Pokemon pokemon = jugador.getPokemonActual();
