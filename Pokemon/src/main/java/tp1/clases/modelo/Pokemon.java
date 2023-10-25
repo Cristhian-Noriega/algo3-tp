@@ -1,7 +1,6 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorAtacarEstandoDormido;
 import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
 import tp1.clases.errores.ErrorIndiceFueraDeRango;
 import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
@@ -14,11 +13,11 @@ public class Pokemon {
     private final String nombre;
     private final int nivel;
     private Estado estado;
-    private final List<EstadoPokemon> estadosActivos;
+    private final List<Estado> estados;
+    private List<PokemonDecorator> decoradores;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
 
-    private final boolean puedeUsarHabilidad;
     private final int vidaMax;
     private int vidaActual;
     private double velocidad;
@@ -30,7 +29,8 @@ public class Pokemon {
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
-        this.estadosActivos = new ArrayList<>();
+        this.estados = new ArrayList<>();
+        this.decoradores = new ArrayList<>();
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaMax;
@@ -46,12 +46,23 @@ public class Pokemon {
         }
         Habilidad habilidad = this.habilidades.get(numeroHabilidad);
 
-        if (!puedeUsarHabilidad(habilidad)){
-            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.nombre));
-        }
+//        if (!puedeUsarHabilidad(habilidad)){
+//            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.nombre));
+//        }
         return habilidad.usar(this, rival);
     }
 
+    public void aplicarDecorador(PokemonDecorator decorador){
+        if (!this.tieneDecorador(decorador)){
+            this.decoradores.add(decorador);
+        }
+    }
+
+    public boolean tieneDecorador(PokemonDecorator decorador){
+//        return this.decoradores.stream()
+//                .anyMatch(decorator -> decorator.getClass() == decorador.getClass());
+        return this.decoradores.contains(decorador);
+    }
 
 
     public boolean estaMuerto() {
@@ -81,28 +92,39 @@ public class Pokemon {
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
-    public boolean puedeUsarHabilidad(Habilidad habilidad) {
-        for (EstadoPokemon estado : this.estadosActivos) {
-            if (!estado.puedeUsarHabilidad(habilidad)) {
-                return false;
-            }
-        }
-        return true;
-    }
+//    public boolean puedeUsarHabilidad(Habilidad habilidad) {
+//        for (EstadoPokemon estado : this.estadosActivos) {
+//            if (!estado.puedeUsarHabilidad(habilidad)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
 
     public void aplicarEfectoEstado(){
-        for (EstadoPokemon estadoPokemon: this.estadosActivos){
-            estadoPokemon.aplicarEstado(this);
+        for (Estado estadoPokemon: this.estados){
+            return;
         }
     }
-    public void agregarEstado(EstadoPokemon estado){
-        this.estadosActivos.add(estado);
+    public void agregarEstado(Estado estado){
+//        if ((this.estados.size() == 1) && (this.estados.get(0) == Estado)){
+//
+//        }
+        this.estados.add(estado);
+        System.out.printf("%s ahora paso a estado %s",this.nombre, estado.toString());
     }
 
-    public void eliminarEstado(EstadoPokemon estado){
-        this.estadosActivos.remove(estado);
+    public void eliminarEstado(Estado estado){
+        this.estados.remove(estado);
+        System.out.printf("%s ha de dejado de estar %s",this.nombre, estado.toString());
     }
+
+    public boolean tieneEstado(Estado estado){
+        return this.estados.contains(estado);
+    }
+
+
 
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }

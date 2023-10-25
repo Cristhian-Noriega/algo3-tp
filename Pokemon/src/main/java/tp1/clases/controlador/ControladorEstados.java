@@ -20,7 +20,23 @@ public class ControladorEstados {
         this.turnoInicialEstados.put(jugador, turnoActual);
     }
 
-    public boolean controlarEstado(Jugador jugador, int turnoActual){ //controlador de estados controlatods los estados del pokemon
+    public boolean controlarEstado(Jugador jugador, int turnoActual){
+        Pokemon pokemon = jugador.getPokemonActual();
+        if (pokemon.tieneEstado(Estado.PARALIZADO)){
+            pokemon.aplicarDecorador(new ParalizadoDecorator(pokemon));
+        }
+        if (pokemon.tieneEstado(Estado.ENVENENADO)){
+            pokemon.aplicarDecorador(new EnvenenadoDecorator(pokemon));
+        }
+        if (pokemon.tieneEstado(Estado.DORMIDO)){
+            pokemon.aplicarDecorador(new ParalizadoDecorator(pokemon));
+        }
+        if (pokemon.tieneEstado(Estado.CONFUNDIDO)){
+            pokemon.aplicarDecorador(new ConfundidoDecorator(pokemon));
+        }
+
+
+        //controlador de estados controlatods los estados del pokemon
         this.despertar(jugador, turnoActual);
         this.envenenar(jugador.getPokemonActual());
         return this.paralizar(jugador.getPokemonActual());
@@ -54,6 +70,7 @@ public class ControladorEstados {
     }
 
     public boolean confundir(Pokemon pokemon){
+        return true;
 
     }
 

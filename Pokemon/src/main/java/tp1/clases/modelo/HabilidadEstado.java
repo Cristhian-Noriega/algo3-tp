@@ -22,6 +22,7 @@ public class HabilidadEstado extends Habilidad {
         if (err.isEmpty()){
             super.usos -= 1;
         }
+
         return err;
     }
 }
