@@ -39,6 +39,7 @@ public class ItemsTest {
     void deberiaSubirLaVida(){
         //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-40);
+
         Optional<Error> err = itemVida.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getVidaMax(), pokemonDePrueba.getVida());
     }
@@ -49,18 +50,16 @@ public class ItemsTest {
         //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-100);
         Assertions.assertTrue(pokemonDePrueba.estaMuerto());
+
         Optional<Error> err = revivir.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getVidaMax(), pokemonDePrueba.getVida());
     }
 
     @DisplayName("uso item para revivir un pokemon *no* muerto")
     @Test
-    void noPuedoRevivirPokemonNoMuerto() throws Exception {
+    void noPuedoRevivirPokemonNoMuerto(){
         Optional<Error> err = revivir.usar(pokemonDePrueba);
-        //haciendo un if fue la mejor manera que encontre de corroborar q estaba tirando un error
-        if (err.isEmpty()){
-            throw new Exception("No esta tirando error cuando deberia");
-        }
+        Assertions.assertTrue(err.isPresent());
     }
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente dormido")
@@ -69,6 +68,7 @@ public class ItemsTest {
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.DORMIDO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.DORMIDO);
+
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
@@ -79,6 +79,7 @@ public class ItemsTest {
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.ENVENENADO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.ENVENENADO);
+
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
@@ -89,18 +90,18 @@ public class ItemsTest {
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.PARALIZADO);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.PARALIZADO);
+
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
     }
 
     @DisplayName("uso item para normalizar pokemon *ya* normal")
     @Test
-    void noPuedoNormalizarPokemonNormal() throws Exception {
+    void noPuedoNormalizarPokemonNormal(){
         Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+
         Optional<Error> err = estado.usar(pokemonDePrueba);
-        if (err.isEmpty()){
-            throw new Exception("No esta tirando error cuando deberia");
-        }
+        Assertions.assertTrue(err.isPresent());
     }
 
     @DisplayName("uso item para mejorar la velocidad actual del pokemon un 10%")
@@ -108,6 +109,7 @@ public class ItemsTest {
     void mejoroVelocidadUnDiezPorciento(){
         double velocidadInicial = pokemonDePrueba.getVelocidad();
         double loQueDeberiaDevolver = ((velocidadInicial*0.1) + velocidadInicial);
+
         Optional<Error> err = velocidad.usar(pokemonDePrueba);
         Assertions.assertEquals(loQueDeberiaDevolver, pokemonDePrueba.getVelocidad());
     }
@@ -117,6 +119,7 @@ public class ItemsTest {
     void mejoroAtaqueUnDiezPorciento(){
         double ataqueInicial = pokemonDePrueba.getAtaque();
         double loQueDeberiaDevolver = ((ataqueInicial*0.1) + ataqueInicial);
+
         Optional<Error> err = ataque.usar(pokemonDePrueba);
         Assertions.assertEquals(loQueDeberiaDevolver, pokemonDePrueba.getAtaque());
     }
@@ -126,6 +129,7 @@ public class ItemsTest {
     void mejoroDefensaUnDiezPorciento(){
         double defensaInicial = pokemonDePrueba.getDefensa();
         double loQueDeberiaDevolver = ((defensaInicial*0.1) + defensaInicial);
+
         Optional<Error> err = defensa.usar(pokemonDePrueba);
         Assertions.assertEquals(loQueDeberiaDevolver, pokemonDePrueba.getDefensa());
     }

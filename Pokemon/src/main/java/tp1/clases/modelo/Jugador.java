@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorPokemonMuerto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -42,9 +42,15 @@ public class Jugador {
     }
 
     public Optional<Error> seleccionarPokemon(int pokeElegido){
+        if (pokeElegido < 0 | pokeElegido >= this.pokemones.size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
         Pokemon nuevoPokemon = this.pokemones.get(pokeElegido);
         if (nuevoPokemon.estaMuerto()){
             return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
+        }
+        if (nuevoPokemon == pokemonActual){
+            return Optional.of(new ErrorCambiarPokemonEnBatalla(pokemonActual.getNombre()));
         }
         this.pokemonActual = nuevoPokemon;
         return Optional.empty();
@@ -52,12 +58,28 @@ public class Jugador {
 
     public boolean tienePokemonesConVida() {
         for (Pokemon pokemon : this.pokemones) {
-            if (pokemon.getVida() > 0) {
+            if (!pokemon.estaMuerto()) {
                 return true;
             }
         }
         return false;
     }
+
+    public Optional<Error> usarItem(int itemElegido, int pokemon) {
+        if (itemElegido < 0 || itemElegido >= this.items.size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
+        Item item = this.items.get(itemElegido);
+        if (this.mapCantidadItems.get(item.getNombre()) <= 0){
+            return Optional.of(new ErrorItemNoValido(item.getNombre()));
+        }
+        Optional<Error> err = item.usar(this.pokemones.get(pokemon));
+        if (err.isEmpty()){
+            this.eliminarItem(item);
+        }
+        return err;
+    }
+
 
     public double getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();
