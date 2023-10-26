@@ -139,13 +139,13 @@ public class Proveedor {
 
     Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD);
 
-    Item item5 = new ItemVida("Pocion", 20);
+    Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0);
 
-    Item item6 = new ItemVida("Mega Pocion", 50);
+    Item item6 = new ItemRestauracionVida("Mega Pocion", 50);
 
-    Item item7 = new ItemVida("Hiper Pocion", 100);
+    Item item7 = new ItemRestauracionVida("Hiper Pocion", 100);
 
-    Item item8 = new ItemVida("Revivir", 0);
+    Item item8 = new ItemRevivir("Revivir", 0);
 
     public Proveedor() {
         // Lista = (lista items/pokemones jugador 1, lista items/pokemones jugador 2)

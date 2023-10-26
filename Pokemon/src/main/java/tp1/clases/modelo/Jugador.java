@@ -21,7 +21,7 @@ public class Jugador {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.mapCantidadItems = this.contarFrecuenciaItems(items);
-        this.items = this.organizarItems(items);
+        this.items = this.organizarItems(items, mapCantidadItems);
         this.pokemonActual = pokemones.get(0);
     }
 
@@ -93,7 +93,12 @@ public class Jugador {
                         Collectors.counting()
                 ));
     }
-    private List<Item> organizarItems(List<Item> items) {
+    private List<Item> organizarItems(List<Item> items, Map<String, Long> frecuencias) {
+        //esta hardodeado, cuadno agreguemos el JSON, dependiendo si ponemos un ID o algo vemos como quedaria bien. 
+        if (frecuencias.containsKey("Molesta Alumnos") && frecuencias.get("Molesta Alumnos") > 1){
+            frecuencias.put("Molesta Alumnos", 1L);
+        }
+
         return items.stream().
                 distinct().
                 toList();

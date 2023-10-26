@@ -14,7 +14,6 @@ import tp1.clases.modelo.Pokemon;
 import tp1.clases.vista.CampoVista;
 import tp1.clases.vista.OpcionMenu;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -69,7 +68,7 @@ public class ControladorJuego {
             }
 
             //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
-            if (menuActual instanceof MenuPrincipal){
+            if (menuActual instanceof MenuPrincipal){ // TODO: cambiar esto
                 accion = OpcionMenu.getAccion(opcionElegida);
                 //muestra el campo de batalla y vuelve al inicio para seguir con el turno
                 if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
