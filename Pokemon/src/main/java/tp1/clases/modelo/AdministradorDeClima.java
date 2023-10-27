@@ -5,9 +5,14 @@ import java.util.List;
 public class AdministradorDeClima {
     private Clima climaActual;
     private int turnoInicial;
+    private int turnoActual;
 
     public AdministradorDeClima() {
         this.climaActual = Clima.getClimaRandom();
+    }
+
+    public void ActualizarTurno() {
+        this.turnoActual += 1;
     }
 
     public void afectarJugadores(List<Jugador> jugadores) {
@@ -16,8 +21,8 @@ public class AdministradorDeClima {
         }
     }
 
-    public void cambiaClima(Clima clima, int turno) {
-        this.turnoInicial = turno;
+    public void cambiarClima(Clima clima) {
+        this.turnoInicial = this.turnoActual;
         this.climaActual = clima;
     }
 
@@ -25,7 +30,4 @@ public class AdministradorDeClima {
         this.climaActual = Clima.SIN_CLIMA;
     }
 
-    public void mejoraAtaque(Habilidad habilidad) {
-        if (habilidad.getCategoria() == Categoria.ATAQUE && this.climaActual != Clima.SIN_CLIMA) {}
-    }
 }

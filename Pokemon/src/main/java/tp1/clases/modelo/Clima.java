@@ -20,11 +20,9 @@ public enum Clima {
     public List<Tipo> getTiposFavorecidos() {
         return tiposFavorecidos;
     }
-    public double mejorarAtaque(Tipo tipo, double danio) {
-        if (this.tiposFavorecidos.contains(tipo)) {
-            return (danio * Constantes.modificacionPorClima) + danio;
-        }
-        return danio;
+
+    public boolean favorece(Tipo tipo) {
+        return this.tiposFavorecidos.contains(tipo);
     }
 
     public void lastimarPorClima(Pokemon pokemon) {
