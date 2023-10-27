@@ -31,9 +31,9 @@
 
         public Optional<Error> ejecutar() {
             Optional<Error> err = this.batalla.usarItem(this.item, this.pokemon);
-            if (err.isEmpty() && (this.batalla.getItemsJugadorActual().get(item).getCategoria() == Categoria.ESTADO)) {
-                  this.controladorEstados.setTurnoInicial(this.batalla.getJugadorActual(), batalla.getTurno());
-            }
+//            if (err.isEmpty() && (this.batalla.getItemsJugadorActual().get(item).getCategoria() == Categoria.ESTADO)) {
+//                  this.controladorEstados.setTurnoInicial(this.batalla.getJugadorActual(), batalla.getTurno());
+//            }
             return err;
         }
     }

@@ -9,6 +9,8 @@
     import tp1.clases.controlador.comandos.UsarHabilidadComando;
     import tp1.clases.controlador.comandos.UsarItemComando;
     import tp1.clases.errores.Error;
+    import tp1.clases.errores.ErrorNoPuedeAtacarDormido;
+    import tp1.clases.errores.ErrorNoPuedeUsarHabilidadParalizado;
     import tp1.clases.modelo.Batalla;
     import tp1.clases.modelo.Pokemon;
     import tp1.clases.vista.CampoVista;
@@ -44,8 +46,7 @@ public class ControladorJuego {
         this.controladorMenu = new ControladorMenu();
         boolean turnoActivo = true;
         OpcionMenu accion = null;
-        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual(), this.batalla.getTurno());
-
+        this.controladorEstados.controlarEstados(this.batalla.getJugadorActual());
 
 
         while (turnoActivo){
@@ -106,11 +107,11 @@ public class ControladorJuego {
             }
 
             //se verifica si el jugador puede usar sus habilidades, en caso de que se haya elegido la opcion de usar habilidad
-            if (opcionElegida == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
-                System.out.println("No puede usar la habilidad.");
-                this.avanzarTurno();
-                continue;
-            }
+//            if (opcionElegida == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
+//                System.out.println("No puede usar la habilidad.");
+//                this.avanzarTurno();
+//                continue;
+//            }
 
             int posicion = opcionElegida - 1;
             this.comando.definirOpcion(posicion);
@@ -119,6 +120,11 @@ public class ControladorJuego {
             Optional<Error> err = this.comando.ejecutar();
 
             if (err.isPresent()) {
+                if ((err.get() instanceof ErrorNoPuedeUsarHabilidadParalizado)){
+                    err.get().mostrar();
+                    this.avanzarTurno();
+                    continue;
+                }
                 err.get().mostrar();
                 continue;
             }

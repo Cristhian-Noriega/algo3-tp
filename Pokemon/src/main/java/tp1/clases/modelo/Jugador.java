@@ -80,6 +80,11 @@ public class Jugador {
         return err;
     }
 
+    public void setPokemonActual(Pokemon pokemon){
+        int indice = this.pokemones.indexOf(this.pokemonActual);
+//        this.pokemones.set(indice, pokemon);
+        this.pokemonActual = pokemon;
+    }
 
     public double getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();

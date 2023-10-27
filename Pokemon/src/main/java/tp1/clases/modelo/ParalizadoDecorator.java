@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
+import tp1.clases.errores.ErrorNoPuedeUsarHabilidadParalizado;
 
 import java.util.Optional;
 
@@ -11,14 +11,14 @@ public class ParalizadoDecorator extends PokemonDecorator{
     }
 
     @Override
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
-        if (!Habilidad.probabilidad(Constantes.probabilidadParalizado)){
-            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.getNombre()));
+    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival) {
+        if (!Habilidad.probabilidad(Constantes.probabilidadParalizado)) {
+            return Optional.of(new ErrorNoPuedeUsarHabilidadParalizado(this.getNombre()));
+        } else {
+            return super.usarHabilidad(numeroHabilidad, rival);
         }
-        return super.usarHabilidad(numeroHabilidad, rival);
     }
 
-    @Override
     public void aplicarEfectoEstado() { //dummy
     }
 }

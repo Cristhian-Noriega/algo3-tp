@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
+import tp1.clases.errores.ErrorNoPuedeAtacarDormido;
 
 import java.util.Optional;
 
@@ -17,19 +17,19 @@ public class DormidoDecorator extends PokemonDecorator {
     @Override
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival) {
         Habilidad habilidad = pokemonDecorado.getHabilidades().get(numeroHabilidad);
+        System.out.println("ACASO ENTRO ACA?");
         if (habilidad.getCategoria() == Categoria.ATAQUE) {
-            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.getNombre()));
+            return Optional.of(new ErrorNoPuedeAtacarDormido(this.getNombre()));
+        } else {
+            return super.usarHabilidad(numeroHabilidad, rival);
         }
-        return super.usarHabilidad(numeroHabilidad, rival);
     }
 
-    @Override
     public void aplicarEfectoEstado() {
         this.turnosDormido++;
         double probabibilidadDespertar = Constantes.veinticinco + Constantes.veinticinco * this.turnosDormido;
         if (Habilidad.probabilidad(probabibilidadDespertar)){
             super.eliminarEstado(Estado.DORMIDO);
         }
-        super.aplicarEfectoEstado();
     }
 }

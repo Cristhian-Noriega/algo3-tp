@@ -7,10 +7,10 @@ public class EnvenenadoDecorator extends PokemonDecorator {
         super(pokemon);
     }
 
-    @Override
     public void aplicarEfectoEstado() {
         double danio = Constantes.cinco * pokemonDecorado.getVidaMax();
-        pokemonDecorado.modificarVida((-1)*danio);
+        super.modificarVida((-1)*danio);
+        System.out.printf("%s ha perdido vida por estar envenenado\n",this.pokemonDecorado.getNombre());
     }
 }
 

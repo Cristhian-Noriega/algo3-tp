@@ -1,7 +1,6 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
 
 import java.util.Optional;
 
@@ -24,7 +23,6 @@ public class ConfundidoDecorator extends PokemonDecorator{
         }
         return super.usarHabilidad(numeroHabilidad, rival);
     }
-    @Override
     public void aplicarEfectoEstado() {
         this.turnosConfundido++;
         if (this.turnosConfundido == 3){

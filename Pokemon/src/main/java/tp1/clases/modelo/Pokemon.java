@@ -3,7 +3,6 @@ package tp1.clases.modelo;
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
 import tp1.clases.errores.ErrorIndiceFueraDeRango;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +11,8 @@ import java.util.Optional;
 public class Pokemon {
     private final String nombre;
     private final int nivel;
-    private Estado estado;
+    Estado estado;
     private final List<Estado> estados;
-    private List<PokemonDecorator> decoradores;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
 
@@ -30,7 +28,6 @@ public class Pokemon {
         this.nivel = nivel;
         this.tipo = tipo;
         this.estados = new ArrayList<>();
-        this.decoradores = new ArrayList<>();
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaMax;
@@ -48,19 +45,6 @@ public class Pokemon {
         return habilidad.usar(this, rival);
     }
 
-    public void aplicarDecorador(PokemonDecorator decorador){
-        if (!this.tieneDecorador(decorador)){
-            this.decoradores.add(decorador);
-        }
-    }
-
-    public boolean tieneDecorador(PokemonDecorator decorador){
-//        return this.decoradores.stream()
-//                .anyMatch(decorator -> decorator.getClass() == decorador.getClass());
-        return this.decoradores.contains(decorador);
-    }
-
-
     public boolean estaMuerto() {
         return this.vidaActual <= 0;
     }
@@ -75,9 +59,13 @@ public class Pokemon {
         if ((this.estado != Estado.NORMAL) && (estado != Estado.NORMAL)) {
             return Optional.of(new ErrorEstadoDistintoDeNormal(this.estado.name()));
         }
+
         this.estado = estado;
-        System.out.println(this.getNombre() + " ha cambiado su estado a \n" + estado.toString().toLowerCase());
+        System.out.println(this.getNombre() + " ha cambiado su estado a " + estado.toString().toLowerCase());
         return Optional.empty() ;
+    }
+
+    public void aplicarEfectoEstado(){
     }
 
     public void modificarVida(double modificador) {
@@ -88,11 +76,6 @@ public class Pokemon {
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
-    public void aplicarEfectoEstado(){
-        for (PokemonDecorator estados: this.decoradores){
-            estados.aplicarEfectoEstado();
-        }
-    }
     public void agregarEstado(Estado estado){
         this.estados.add(estado);
         System.out.printf("%s ahora paso a estado %s",this.nombre, estado.toString());
@@ -104,7 +87,7 @@ public class Pokemon {
     }
 
     public boolean tieneEstado(Estado estado){
-        return this.estados.contains(estado);
+        return this.estado == estado;
     }
 
 

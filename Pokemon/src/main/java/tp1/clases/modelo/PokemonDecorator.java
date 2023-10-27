@@ -17,9 +17,14 @@ public abstract class PokemonDecorator extends Pokemon {
                 pokemon.getAtaque(),
                 pokemon.getDefensa());
         this.pokemonDecorado = pokemon;
+        this.estado = pokemon.getEstado();
     }
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival) {
         return pokemonDecorado.usarHabilidad(numeroHabilidad, rival);
+    }
+
+    public void aplicarEfectoEstado(){
+        pokemonDecorado.aplicarEfectoEstado();
     }
 }
