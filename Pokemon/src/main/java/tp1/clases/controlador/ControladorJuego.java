@@ -46,7 +46,6 @@ public class ControladorJuego {
         boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual(), this.batalla.getTurno());
 
 
-
         while (turnoActivo){
             System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
             //si el no hay pokemon vivo al empezar el turno, debe seleccionar un  pokemon
@@ -150,7 +149,7 @@ public class ControladorJuego {
     }
 
 
-    private int interaccionConUsuario(Menu menu) {
+    public int interaccionConUsuario(Menu menu) {
         System.out.println("Elija su proxima acción:");
         menu.mostrarOpciones();
 
@@ -167,7 +166,7 @@ public class ControladorJuego {
         return opcion;
     }
 
-    public void seleccionarPokemonVivo() {
+    private void seleccionarPokemonVivo() {
         List<Pokemon> pokemones = this.batalla.getPokemonesJugadorActual();
         Menu opcinesDePokemon = new MenuPokemones(pokemones, false);
         while (this.batalla.estaMuertoPokemonActual()) {
