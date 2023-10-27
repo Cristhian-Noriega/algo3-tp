@@ -15,20 +15,16 @@ public class ControladorEstados {
     public void controlarEstados(Jugador jugador) {
         Pokemon pokemon = jugador.getPokemonActual();
         if (pokemon.tieneEstado(Estado.PARALIZADO)) {
-           Pokemon pokemonParalizado = new ParalizadoDecorator(pokemon);
-            jugador.setPokemonActual(pokemonParalizado);
+            jugador.setPokemonActual(new ParalizadoDecorator(pokemon));
         }
         if (pokemon.tieneEstado(Estado.ENVENENADO)) {
-            Pokemon pokemonEnvenenado = new EnvenenadoDecorator(pokemon);
-            jugador.setPokemonActual(pokemonEnvenenado);
+            jugador.setPokemonActual(new EnvenenadoDecorator(pokemon));
         }
         if (pokemon.tieneEstado(Estado.DORMIDO)) {
-            Pokemon pokemonDormido = new DormidoDecorator(pokemon);
-            jugador.setPokemonActual(pokemonDormido);
+            jugador.setPokemonActual(new DormidoDecorator(pokemon));
         }
         if (pokemon.tieneEstado(Estado.CONFUNDIDO)) {
-            Pokemon pokemonConfundido = new ConfundidoDecorator(pokemon);
-            jugador.setPokemonActual(pokemonConfundido);
+            jugador.setPokemonActual(new ConfundidoDecorator(pokemon));
         }
         jugador.getPokemonActual().aplicarEfectoEstado();
         this.batalla.getJugadorSiguiente().getPokemonActual().aplicarEfectoEstado();
