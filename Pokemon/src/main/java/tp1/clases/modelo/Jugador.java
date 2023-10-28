@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorPokemonMuerto;
+import tp1.clases.errores.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Jugador {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.mapCantidadItems = this.contarFrecuenciaItems(items);
-        this.items = this.organizarItems(items, mapCantidadItems);
+        this.items = this.organizarItems(items);
         this.pokemonActual = pokemones.get(0);
     }
 
@@ -42,9 +42,15 @@ public class Jugador {
     }
 
     public Optional<Error> seleccionarPokemon(int pokeElegido){
+        if (pokeElegido < 0 | pokeElegido >= this.pokemones.size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
         Pokemon nuevoPokemon = this.pokemones.get(pokeElegido);
         if (nuevoPokemon.estaMuerto()){
             return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
+        }
+        if (nuevoPokemon == pokemonActual){
+            return Optional.of(new ErrorCambiarPokemonEnBatalla(pokemonActual.getNombre()));
         }
         this.pokemonActual = nuevoPokemon;
         return Optional.empty();
@@ -52,12 +58,28 @@ public class Jugador {
 
     public boolean tienePokemonesConVida() {
         for (Pokemon pokemon : this.pokemones) {
-            if (pokemon.getVida() > 0) {
+            if (!pokemon.estaMuerto()) {
                 return true;
             }
         }
         return false;
     }
+
+    public Optional<Error> usarItem(int itemElegido, int pokemon) {
+        if (itemElegido < 0 || itemElegido >= this.items.size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
+        Item item = this.items.get(itemElegido);
+        if (this.mapCantidadItems.get(item.getNombre()) <= 0){
+            return Optional.of(new ErrorItemNoValido(item.getNombre()));
+        }
+        Optional<Error> err = item.usar(this.pokemones.get(pokemon));
+        if (err.isEmpty()){
+            this.eliminarItem(item);
+        }
+        return err;
+    }
+
 
     public double getVelocidadPokemonActual() {
         return this.pokemonActual.getVelocidad();
@@ -93,12 +115,7 @@ public class Jugador {
                         Collectors.counting()
                 ));
     }
-    private List<Item> organizarItems(List<Item> items, Map<String, Long> frecuencias) {
-        //esta hardodeado, cuadno agreguemos el JSON, dependiendo si ponemos un ID o algo vemos como quedaria bien. 
-        if (frecuencias.containsKey("Molesta Alumnos") && frecuencias.get("Molesta Alumnos") > 1){
-            frecuencias.put("Molesta Alumnos", 1L);
-        }
-
+    private List<Item> organizarItems(List<Item> items) {
         return items.stream().
                 distinct().
                 toList();
