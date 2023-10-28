@@ -36,7 +36,6 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.ataque = ataque;
         this.defensa = defensa;
-//        this.estado = Estado.NORMAL;
     }
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
