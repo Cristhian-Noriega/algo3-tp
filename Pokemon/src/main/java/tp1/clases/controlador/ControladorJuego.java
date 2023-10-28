@@ -123,6 +123,7 @@ public class ControladorJuego {
                 if ((err.get() instanceof ErrorNoPuedeUsarHabilidadParalizado)){
                     err.get().mostrar();
                     this.avanzarTurno();
+                    turnoActivo = false;
                     continue;
                 }
                 err.get().mostrar();

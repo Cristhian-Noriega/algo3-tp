@@ -17,7 +17,6 @@ public class DormidoDecorator extends PokemonDecorator {
     @Override
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival) {
         Habilidad habilidad = pokemonDecorado.getHabilidades().get(numeroHabilidad);
-        System.out.println("ACASO ENTRO ACA?");
         if (habilidad.getCategoria() == Categoria.ATAQUE) {
             return Optional.of(new ErrorNoPuedeAtacarDormido(this.getNombre()));
         } else {

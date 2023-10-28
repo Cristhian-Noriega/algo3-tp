@@ -2,6 +2,7 @@ package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public abstract class PokemonDecorator extends Pokemon {
@@ -17,8 +18,11 @@ public abstract class PokemonDecorator extends Pokemon {
                 pokemon.getAtaque(),
                 pokemon.getDefensa());
         this.pokemonDecorado = pokemon;
-        this.estado = pokemon.getEstado();
+        this.vidaActual = pokemon.getVida();
+        this.estados = pokemon.getEstados();
+
     }
+
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival) {
         return pokemonDecorado.usarHabilidad(numeroHabilidad, rival);

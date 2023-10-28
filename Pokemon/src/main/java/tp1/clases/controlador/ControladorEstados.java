@@ -14,62 +14,38 @@ public class ControladorEstados {
 
     public void controlarEstados(Jugador jugador) {
         Pokemon pokemon = jugador.getPokemonActual();
+
+//        EstadosComposite estadosComposite = new EstadosComposite(pokemon);
         if (pokemon.tieneEstado(Estado.PARALIZADO)) {
-            jugador.setPokemonActual(new ParalizadoDecorator(pokemon));
+            pokemon = new ParalizadoDecorator(pokemon);
+            jugador.setPokemonActual(pokemon);
+            System.out.println(jugador.getPokemonActual().getVida());
+//            estadosComposite.agregarDecorator(new ParalizadoDecorator(pokemon));
+//            jugador.setPokemonActual(estadosComposite);
         }
         if (pokemon.tieneEstado(Estado.ENVENENADO)) {
-            jugador.setPokemonActual(new EnvenenadoDecorator(pokemon));
+            pokemon = new EnvenenadoDecorator(pokemon);
+            jugador.setPokemonActual(pokemon);
+//            estadosComposite.agregarDecorator(new EnvenenadoDecorator(pokemon));
+//            jugador.setPokemonActual(estadosComposite);
         }
         if (pokemon.tieneEstado(Estado.DORMIDO)) {
-            jugador.setPokemonActual(new DormidoDecorator(pokemon));
+            pokemon = new DormidoDecorator(pokemon);
+            jugador.setPokemonActual(pokemon);
+//            estadosComposite.agregarDecorator(new DormidoDecorator(pokemon));
+//            jugador.setPokemonActual(estadosComposite);
         }
         if (pokemon.tieneEstado(Estado.CONFUNDIDO)) {
-            jugador.setPokemonActual(new ConfundidoDecorator(pokemon));
+            pokemon = new ConfundidoDecorator(pokemon);
+            jugador.setPokemonActual(pokemon);
+//            estadosComposite.agregarDecorator(new ConfundidoDecorator(pokemon));
+//            jugador.setPokemonActual(estadosComposite);
         }
+//        jugador.getPokemonActual().aplicarEfectoEstado();
         jugador.getPokemonActual().aplicarEfectoEstado();
         this.batalla.getJugadorSiguiente().getPokemonActual().aplicarEfectoEstado();
     }
+}
 
-
-
-
-
-        //controlador de estados controlatods los estados del pokemon
-//        this.despertar(jugador, turnoActual);
-//        this.envenenar(jugador.getPokemonActual());
-//        return this.paralizar(jugador.getPokemonActual());
-    }
-
-//    public void despertar(Jugador jugador, int turnoActual) {
-//        Pokemon pokemon = jugador.getPokemonActual();
-//        if (pokemon.getEstado() != Estado.DORMIDO) {
-//            return;
-//        }
-//
-//        if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
-//            pokemon.setEstado(Estado.NORMAL);
-//        }
-//    }
-//
-//    public void envenenar(Pokemon pokemon) {
-//        if (pokemon.getEstado() != Estado.ENVENENADO) {
-//            return;
-//        }
-//
-//        double valor = Constantes.cinco * pokemon.getVidaMax();
-//        pokemon.modificarVida((-1)*valor);
-//    }
-//
-//    public boolean paralizar(Pokemon pokemon) {
-//        if (pokemon.getEstado() != Estado.PARALIZADO) {
-//            return true;
-//        }
-//        return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
-//    }
-//
-//    public boolean confundir(Pokemon pokemon){
-//        return true;
-//
-//    }
 
 

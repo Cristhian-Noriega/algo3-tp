@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Proveedor {
-    private final List<List<Pokemon>> listasPokemones;
+    private final List<ArrayList<Pokemon>> listasPokemones;
   
     private final List<List<Item>> listasItems;
 
@@ -149,7 +149,16 @@ public class Proveedor {
 
     public Proveedor() {
         // Lista = (lista items/pokemones jugador 1, lista items/pokemones jugador 2)
-        this.listasPokemones = List.of(List.of(poke1, poke2, poke3, poke4, poke5, poke6), List.of(poke7, poke8, poke9, poke10, poke11, poke12));
+
+        List<Pokemon> listaPokemones1 = List.of(poke1, poke2, poke3, poke4, poke5, poke6);
+        List<Pokemon> listaPokemones2 = List.of(poke7, poke8, poke9, poke10, poke11, poke12);
+
+        ArrayList<Pokemon> lista1 = new ArrayList<>();
+        lista1.addAll(listaPokemones1);
+        ArrayList<Pokemon> lista2 = new ArrayList<>();
+        lista2.addAll(listaPokemones2);
+
+        this.listasPokemones = List.of(lista1,lista2);
         this.listasItems = new ArrayList<List<Item>>();
         List<Item> listaItems1 = new ArrayList<Item>();
         listaItems1.add(item1);
@@ -169,7 +178,7 @@ public class Proveedor {
         this.listasItems.add(listaItems2);
     }
 
-    public List<List<Pokemon>> getPokemones() {
+    public List<ArrayList<Pokemon>> getPokemones() {
         return this.listasPokemones;
     }
 

@@ -3,21 +3,18 @@ package tp1.clases.modelo;
 import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Jugador {
 
-    private final List<Pokemon> pokemones;
+    private ArrayList<Pokemon> pokemones;
     private Pokemon pokemonActual;
     private final List<Item> items;
     private final String nombre;
     private final Map<String, Long> mapCantidadItems;
 
-    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items) {
+    public Jugador(String nombre, ArrayList<Pokemon> pokemones, List<Item> items) {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.mapCantidadItems = this.contarFrecuenciaItems(items);
@@ -82,7 +79,7 @@ public class Jugador {
 
     public void setPokemonActual(Pokemon pokemon){
         int indice = this.pokemones.indexOf(this.pokemonActual);
-//        this.pokemones.set(indice, pokemon);
+        this.pokemones.set(indice, pokemon);
         this.pokemonActual = pokemon;
     }
 
@@ -108,7 +105,7 @@ public class Jugador {
         datosPokemonActual.put("Vida Actual", this.pokemonActual.getVida());
         datosPokemonActual.put("Vida Max", this.pokemonActual.getVidaMax());
         datosPokemonActual.put("Nivel", this.pokemonActual.getNivel());
-        datosPokemonActual.put("Estado", this.pokemonActual.getEstado());
+        datosPokemonActual.put("Estado", this.pokemonActual.getEstados());
 
         return datosPokemonActual;
     }

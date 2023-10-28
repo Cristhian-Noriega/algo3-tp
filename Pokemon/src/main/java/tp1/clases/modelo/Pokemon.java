@@ -7,17 +7,17 @@ import tp1.clases.errores.ErrorIndiceFueraDeRango;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Pokemon {
     private final String nombre;
     private final int nivel;
-    Estado estado;
-    private final List<Estado> estados;
+    List<Estado> estados;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
 
     private final int vidaMax;
-    private int vidaActual;
+    int vidaActual;
     private double velocidad;
     private double ataque;
     private double defensa;
@@ -28,13 +28,14 @@ public class Pokemon {
         this.nivel = nivel;
         this.tipo = tipo;
         this.estados = new ArrayList<>();
+        this.estados.add(Estado.NORMAL);
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaMax;
         this.velocidad = velocidad;
         this.ataque = ataque;
         this.defensa = defensa;
-        this.estado = Estado.NORMAL;
+//        this.estado = Estado.NORMAL;
     }
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
@@ -56,12 +57,18 @@ public class Pokemon {
     public void modificadorVelocidad(double modificador) { this.velocidad += modificador; }
 
     public Optional<Error> setEstado(Estado estado) {
-        if ((this.estado != Estado.NORMAL) && (estado != Estado.NORMAL)) {
-            return Optional.of(new ErrorEstadoDistintoDeNormal(this.estado.name()));
+        if (estado == Estado.NORMAL) {
+            estados.clear();
+            estados.add(estado);
+        } else if (estados.contains(estado)){
+            return Optional.of(new ErrorEstadoDistintoDeNormal(estado.name()));
+        } else if (estados.contains(Estado.NORMAL)){
+            estados.clear();
+            estados.add(estado);
+        }else{
+            estados.add(estado);
         }
-
-        this.estado = estado;
-        System.out.println(this.getNombre() + " ha cambiado su estado a " + estado.toString().toLowerCase());
+        System.out.println(this.getNombre() + " ahora esta " + estado.name());
         return Optional.empty() ;
     }
 
@@ -76,18 +83,17 @@ public class Pokemon {
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
-    public void agregarEstado(Estado estado){
-        this.estados.add(estado);
-        System.out.printf("%s ahora paso a estado %s",this.nombre, estado.toString());
+
+    public boolean tieneEstado(Estado estado){
+        return this.estados.contains(estado);
     }
 
     public void eliminarEstado(Estado estado){
         this.estados.remove(estado);
-        System.out.printf("%s ha de dejado de estar %s",this.nombre, estado.toString());
-    }
-
-    public boolean tieneEstado(Estado estado){
-        return this.estado == estado;
+        System.out.println(this.nombre + " ha dejado de estar " + estado.name());
+        if (this.estados.isEmpty()){
+            this.estados.add(Estado.NORMAL);
+        }
     }
 
 
@@ -120,8 +126,13 @@ public class Pokemon {
     public double getVelocidad(){
         return this.velocidad;
     }
+    public List<Estado> getEstados() {
+        return this.estados;
+    }
 
-    public Estado getEstado() {
-        return this.estado;
+    public String getEstadosString() {
+        return this.estados.stream()
+                .map(Enum::name)
+                .collect(Collectors.joining(" "));
     }
 }
