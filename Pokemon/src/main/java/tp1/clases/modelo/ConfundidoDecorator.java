@@ -24,9 +24,9 @@ public class ConfundidoDecorator extends PokemonDecorator{
         return super.usarHabilidad(numeroHabilidad, rival);
     }
     public void aplicarEfectoEstado() {
-        this.turnosConfundido++;
         if (this.turnosConfundido == 3){
             pokemonDecorado.eliminarEstado(Estado.CONFUNDIDO);
         }
+        this.turnosConfundido++;
     }
 }

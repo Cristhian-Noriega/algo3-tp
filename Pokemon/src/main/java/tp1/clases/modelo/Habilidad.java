@@ -50,4 +50,6 @@ public abstract class Habilidad {
         return this.categoria;
     }
 
+    public void restarUso() { this.usos--;}
+
 }
