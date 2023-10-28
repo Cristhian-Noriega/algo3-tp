@@ -68,7 +68,7 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Habilidad habilidad = getHabilidadesPokemonActual().get(numeroHabilidad);
-        return habilidad.usar(this.getJugadorActual().getPokemonActual(), rival.getPokemonActual());
+        return habilidad.usar();
     }
 
     public Optional<Error> usarItem(int itemElegido, int pokemon) {

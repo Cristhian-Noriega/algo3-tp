@@ -11,6 +11,10 @@ public class AdministradorDeClima {
         this.climaActual = Clima.getClimaRandom();
     }
 
+    public Clima getClimaActual() {
+        return this.climaActual;
+    }
+
     public void ActualizarTurno() {
         this.turnoActual += 1;
     }

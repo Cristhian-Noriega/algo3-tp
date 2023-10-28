@@ -14,14 +14,15 @@ public class HabilidadEstado extends Habilidad {
     }
 
     @Override
-    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
+    public Optional<Error> usar() {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
-        Optional<Error> err =  ajeno.setEstado(this.estado);
-        if (err.isEmpty()){
-            super.usos -= 1;
-        }
-        return err;
+
+        this.pokemonRival.setEstado(this.estado);
+        System.out.println(this.pokemonRival.getNombre() + " ha sido " + this.estado.toString());
+
+        this.restarUso();
+        return Optional.empty();
     }
 }

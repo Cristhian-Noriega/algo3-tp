@@ -13,37 +13,41 @@ public class HabilidadAtaque extends Habilidad {
         this.poder = poder;
     }
 
-    private double calcularDanioAtaque(Pokemon atacante, Pokemon defensor) {
-        double nivelAtacante = atacante.getNivel();
-        double ataqueAtacante = atacante.getAtaque();
-        double defensaDefensor = defensor.getDefensa();
-        double tipoAtaqueEfectividad = Efectividad.getEfectividad(atacante.getTipo().ordinal(), defensor.getTipo().ordinal());
-        double mismoTipo = (atacante.getTipo() == this.tipo)? 1.5: 1;
+    private double calcularDanioAtaque() {
+        double nivelAtacante = this.pokemonAtacante.getNivel();
+        double ataqueAtacante = this.pokemonAtacante.getAtaque();
+        double defensaDefensor = this.pokemonRival.getDefensa();
+        double tipoAtaqueEfectividad = Efectividad.getEfectividad(this.pokemonAtacante.getTipo().ordinal(), this.pokemonRival.getTipo().ordinal());
+        double mismoTipo = (this.pokemonAtacante.getTipo() == this.tipo)? 1.5: 1;
         double random = (double) ((Math.random()*(Constantes.maxRandom+1-Constantes.minRandom))+Constantes.minRandom)/Constantes.maxRandom;
         double critico = Random.probabilidad(Constantes.probabilidadDeCritico) ? 2: 1;
         double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
-
+        if (this.getClimaActual().favorece(this.pokemonAtacante.getTipo())) {
+            return danio + (danio * Constantes.modificacionPorClima);
+        }
         return danio;
     }
 
     @Override
-    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
+    public Optional<Error> usar() {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
-        double danio = calcularDanioAtaque(propio, ajeno);
-        ajeno.modificarVida((-1)*danio);
 
-        if (this.esEfectivo(propio, ajeno)){
+        double danio = calcularDanioAtaque();
+        this.pokemonRival.modificarVida((-1)*danio);
+
+        if (this.esEfectivo()){
             System.out.println("¡Qué eficaz!\n");
         } else {
-            System.out.println("¡" + ajeno.getNombre() + "ni se inmuta!\n");
+            System.out.println("¡" + this.pokemonRival.getNombre() + "ni se inmuta!\n");
         }
-        super.usos -= 1;
+
+        this.restarUso();
         return Optional.empty();
     }
 
-    public boolean esEfectivo(Pokemon atacante, Pokemon ajeno) {
-        return (this.calcularDanioAtaque(atacante, ajeno) > 0 );
+    public boolean esEfectivo() {
+        return (this.calcularDanioAtaque() > 0 );
     }
 }

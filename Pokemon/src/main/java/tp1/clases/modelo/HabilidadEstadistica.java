@@ -22,18 +22,20 @@ public class HabilidadEstadistica extends Habilidad {
     }
 
     @Override
-    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
+    public Optional<Error> usar() {
         if (this.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
         }
+
         if (this.isContraRival()) {
-            this.modificarEstadistica(ajeno, (-1));
-            System.out.println(ajeno.getNombre() + " ha disminuido su " + this.estadistica.toString().toLowerCase());
+            this.modificarEstadistica(this.pokemonRival, (-1));
+            System.out.println(this.pokemonRival.getNombre() + " ha disminuido su " + this.estadistica.toString().toLowerCase());
         } else {
-            this.modificarEstadistica(propio, 1);
-            System.out.println(propio.getNombre() + " ha aunmentdo su " + this.estadistica.toString().toLowerCase());
+            this.modificarEstadistica(this.pokemonAtacante, 1);
+            System.out.println(this.pokemonAtacante.getNombre() + " ha aunmentdo su " + this.estadistica.toString().toLowerCase());
         }
-        super.usos -= 1;
+
+        this.restarUso();
         return Optional.empty();
     }
 
