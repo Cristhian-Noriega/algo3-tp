@@ -6,6 +6,66 @@
   <component name="ChangeListManager">
     <list default="true" id="faa3209b-5150-4917-8e65-1e86ef7416ac" name="Changes" comment="&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CategoriaMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEstados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuHabilidades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPokemones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/Comando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/Error.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorCambiarPokemonEnBatalla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorEstadoDistintoDeNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorHabilidadSinUsos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorIndiceFueraDeRango.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonMuerto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonNoMuerto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Efectividad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estadisticas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemVida.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Tipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/CampoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/OpcionMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/ResultadoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/InicializadorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ProbandoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/controladorTest/ControladorJuegoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/controladorTest/ControladorMenuTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/BatallaTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/HabilidadesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/ItemsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/JugadorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/PokemonTest.class" beforeDir="false" />
     </list>
     <list id="a80fe8b4-d52a-498c-b558-dad374f08d15" name="Changes by melina" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +126,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
@@ -221,7 +281,7 @@
       <workItem from="1698691168181" duration="2159000" />
       <workItem from="1698693387960" duration="594000" />
       <workItem from="1698693987117" duration="333000" />
-      <workItem from="1698694325090" duration="382000" />
+      <workItem from="1698694325090" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;creo ItemsTest&quot;">
       <option name="closed" value="true" />
