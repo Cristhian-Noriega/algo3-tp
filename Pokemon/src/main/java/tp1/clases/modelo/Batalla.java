@@ -1,6 +1,8 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorIndiceFueraDeRango;
+import tp1.clases.errores.ErrorItemNoValido;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +13,12 @@ public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
 
+    private final AdministradorDeClima administradorDeClima;
+
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
+        this.administradorDeClima = new AdministradorDeClima();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -28,7 +33,9 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
-        administradorTurnos.siguienteTurno();
+        this.administradorDeClima.afectarJugadores(this.getJugadores());
+        this.administradorTurnos.siguienteTurno();
+        this.administradorDeClima.ActualizarTurno();
     }
 
     public Jugador getJugadorActual() {
@@ -59,18 +66,34 @@ public class Batalla {
         return this.getJugadorActual().getMapCantidadItems();
     }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Jugador rival) {
-        Pokemon pokemonJugadorActual = this.getJugadorActual().getPokemonActual();
-        Pokemon pokemonJugadorRival = rival.getPokemonActual();
-        return pokemonJugadorActual.usarHabilidad(numeroHabilidad, pokemonJugadorRival);
+    public Optional<Error> usarHabilidad(int numeroHabilidad) {
+        if (numeroHabilidad < 0 || numeroHabilidad >= this.getHabilidadesPokemonActual().size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
+        Habilidad habilidad = getHabilidadesPokemonActual().get(numeroHabilidad);
+        habilidad.setAmbiente(administradorDeClima, List.of((Pokemon) this.jugadores.stream().map(Jugador::getPokemonActual)));
+        return habilidad.usar();
     }
 
     public Optional<Error> usarItem(int itemElegido, int pokemon) {
-        return this.getJugadorActual().usarItem(itemElegido, pokemon);
-
+        if (itemElegido < 0 || itemElegido >= this.getItemsJugadorActual().size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
+        Item item = this.getItemsJugadorActual().get(itemElegido);
+        if (this.getMapItemsJugadorActual().get(item.getNombre()) <= 0 ){
+            return Optional.of(new ErrorItemNoValido(item.getNombre()));
+        }
+        Optional<Error> err = item.usar(this.getPokemonesJugadorActual().get(pokemon));
+        if (err.isEmpty()){
+            this.getJugadorActual().eliminarItem(item);
+        }
+        return err;
     }
 
     public Optional<Error> cambiarPokemon(int pokemon) {
+        if (pokemon < 0 | pokemon >= this.getPokemonesJugadorActual().size()) {
+            return Optional.of(new ErrorIndiceFueraDeRango());
+        }
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
@@ -89,8 +112,5 @@ public class Batalla {
     public int getTurno(){
         return administradorTurnos.getTurno(); //esta mal esto, porque con el
         //admin de turnos no tiene sentido hacer batalla.get turno,  lo dejo momentaneamente
-        //aunque si lo queremos usar en controlador estados(el unico lugar que se usa),
-        // deberiamos tener el admin de turnos en controlador estados
-        //solo por este metodo, raro
     }
 }
