@@ -1,7 +1,6 @@
 package tp1.clases.controlador;
 
 import tp1.clases.modelo.Habilidad;
-import tp1.clases.vista.OpcionMenu;
 import tp1.clases.vista.VistaMenu;
 
 import java.util.List;
@@ -12,8 +11,8 @@ public class MenuHabilidades extends Menu {
 
     public MenuHabilidades(List<Habilidad> habilidades){
         this.habilidades = habilidades;
+        super.categoria = CategoriaMenu.HABILIDADES;
     }
-
 
     public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarHabilidades(this.habilidades));
@@ -21,6 +20,10 @@ public class MenuHabilidades extends Menu {
 
     public int cantidadOpciones(){
         return this.habilidades.size();
+    }
+
+    public CategoriaMenu getCategoria(){
+        return super.categoria;
     }
 
 }

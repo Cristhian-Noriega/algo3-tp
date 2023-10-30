@@ -7,21 +7,25 @@ import java.util.List;
 
 public class MenuPokemones extends Menu {
 
-    private Boolean conVolverAtras;
-    private List<Pokemon> pokemones;
+    private final Boolean conVolverAtras;
+    private final List<Pokemon> pokemones;
 
 
     public MenuPokemones(List<Pokemon> pokemones, Boolean conVolverAtras){
         this.conVolverAtras = conVolverAtras;
         this.pokemones = pokemones;
+        super.categoria = CategoriaMenu.POKEMONES;
     }
-
 
     public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarPokemones(this.pokemones, this.conVolverAtras));
     }
 
-   public int cantidadOpciones(){
+    public int cantidadOpciones(){
         return pokemones.size();
-   }
+    }
+
+    public CategoriaMenu getCategoria(){
+        return super.categoria;
+    }
 }
