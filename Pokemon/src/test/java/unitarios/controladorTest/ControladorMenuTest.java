@@ -1,10 +1,11 @@
-package modeloTest;
+package unitarios.controladorTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tp1.clases.controlador.*;
+import tp1.clases.modelo.Batalla;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -15,7 +16,8 @@ public class ControladorMenuTest {
 
     @BeforeEach
     public void setUp(){
-        controlMenu = new ControladorMenu();
+        Batalla batalla = mock(Batalla.class);
+        controlMenu = new ControladorMenu(batalla);
     }
 
     @DisplayName("Verifico que al inicializar el controlador Menu, el menu inicial sea el principal")

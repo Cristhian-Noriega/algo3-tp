@@ -32,7 +32,7 @@ public class ControladorEstados {
             return;
         }
 
-        if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
+        if (Random.probabilidad(Constantes.probabilidadDespertar * (turnoActual - turnoInicialEstados.get(jugador)))) {
             pokemon.setEstado(Estado.NORMAL);
         }
     }
@@ -42,7 +42,7 @@ public class ControladorEstados {
             return;
         }
 
-        double valor = Constantes.cinco * pokemon.getVidaMax();
+        double valor = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
         pokemon.modificarVida((-1)*valor);
     }
 
@@ -50,7 +50,7 @@ public class ControladorEstados {
         if (pokemon.getEstado() != Estado.PARALIZADO) {
             return true;
         }
-        return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
+        return (Random.probabilidad(Constantes.probabilidadParalizado));
     }
 
 }

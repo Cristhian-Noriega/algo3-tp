@@ -1,4 +1,4 @@
-package modeloTest;
+package unitarios.modeloTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -67,7 +67,7 @@ public class BatallaTest {
         when(batalla.getJugadorActual().getPokemonActual()).thenReturn(pokePropio);
         when(batalla.getJugadorActual().getPokemonActual()).thenReturn(pokeRival);
 
-        batalla.usarHabilidad(0, batalla.getJugadorActual());
+        batalla.usarHabilidad(0);
 
         verify(batalla.getJugadorActual().getPokemonActual()).usarHabilidad(0, batalla.getJugadorActual().getPokemonActual());
     }
@@ -127,6 +127,5 @@ public class BatallaTest {
         // idem con get datos jugadores
         // creo q es xq itera listas y crea nuevas listas ahi adentro q no tengo manera d acceder o mockear
     }
-
 
 }
