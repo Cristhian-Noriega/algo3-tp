@@ -14,7 +14,6 @@ import tp1.clases.modelo.Pokemon;
 import tp1.clases.vista.CampoVista;
 import tp1.clases.vista.OpcionMenu;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +31,6 @@ public class ControladorJuego {
     public ControladorJuego(Batalla batalla, ControladorEstados controladorEstados) throws IOException {
         this.batalla = batalla;
         this.controladorEstados = controladorEstados;
-        this.controladorMenu = new ControladorMenu();
 
         Terminal terminal = TerminalBuilder.terminal();
         reader = LineReaderBuilder.builder()
@@ -42,11 +40,10 @@ public class ControladorJuego {
 
     public void JugarTurno() {
 
-        this.controladorMenu = new ControladorMenu();
+        this.controladorMenu = new ControladorMenu(batalla);
         boolean turnoActivo = true;
         OpcionMenu accion = null;
         boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual(), this.batalla.getTurno());
-
 
 
         while (turnoActivo){
@@ -68,8 +65,9 @@ public class ControladorJuego {
                 continue;
             }
 
+
             //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
-            if (menuActual instanceof MenuPrincipal){
+            if (menuActual.getCategoria().equals(CategoriaMenu.PRINCIPAL)){
                 accion = OpcionMenu.getAccion(opcionElegida);
                 //muestra el campo de batalla y vuelve al inicio para seguir con el turno
                 if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
@@ -97,7 +95,7 @@ public class ControladorJuego {
 
             //en caso de que la accion elegida sea usar un item pero todavia no se mostraron los pokemones disponibles
             //se agrega el menu de pokemones al controlador de menu para mostrar las opciones posibles
-            if ((accion.equals(OpcionMenu.VER_ITEM)) || (this.controladorMenu.obtenerMenuActual() instanceof MenuItems)) {
+            if ((accion.equals(OpcionMenu.VER_ITEM)) || (menuActual.getCategoria().equals(CategoriaMenu.ITEMS))) {
                 this.controladorMenu.actualizarMenu(new MenuPokemones(this.batalla.getPokemonesJugadorActual(), true));
                 System.out.println("Seleccione el pokemon al cual aplicarle el item");
                 int pokemonElegido = interaccionConUsuario(this.controladorMenu.obtenerMenuActual());
@@ -110,7 +108,7 @@ public class ControladorJuego {
             if (opcionElegida == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
                 System.out.println("No puede usar la habilidad.");
                 this.avanzarTurno();
-                continue;
+                break;
             }
 
             int posicion = opcionElegida - 1;
@@ -151,7 +149,7 @@ public class ControladorJuego {
     }
 
 
-    private int interaccionConUsuario(Menu menu) {
+    public int interaccionConUsuario(Menu menu) {
         System.out.println("Elija su proxima acción:");
         menu.mostrarOpciones();
 
@@ -168,7 +166,7 @@ public class ControladorJuego {
         return opcion;
     }
 
-    public void seleccionarPokemonVivo() {
+    private void seleccionarPokemonVivo() {
         List<Pokemon> pokemones = this.batalla.getPokemonesJugadorActual();
         Menu opcinesDePokemon = new MenuPokemones(pokemones, false);
         while (this.batalla.estaMuertoPokemonActual()) {

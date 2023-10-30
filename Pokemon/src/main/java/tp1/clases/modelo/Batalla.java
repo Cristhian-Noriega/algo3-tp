@@ -66,7 +66,7 @@ public class Batalla {
         return this.getJugadorActual().getMapCantidadItems();
     }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Jugador rival) {
+    public Optional<Error> usarHabilidad(int numeroHabilidad) {
         if (numeroHabilidad < 0 || numeroHabilidad >= this.getHabilidadesPokemonActual().size()) {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }

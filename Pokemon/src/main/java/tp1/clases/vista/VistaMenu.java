@@ -91,5 +91,3 @@ public class VistaMenu {
         return cadena.append(volverAtras);
     }
 }
-
-
