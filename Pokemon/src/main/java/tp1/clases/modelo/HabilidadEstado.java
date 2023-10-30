@@ -15,9 +15,6 @@ public class HabilidadEstado extends Habilidad {
 
     @Override
     public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
-//        if (this.sinUsosDisponibles()){
-//            return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
-//        }
         Optional<Error> err =  ajeno.setEstado(this.estado);
         if (err.isEmpty()){
             super.usos -= 1;

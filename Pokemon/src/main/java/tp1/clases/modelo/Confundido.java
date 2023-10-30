@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class Confundido implements EstadosComportamiento{
 
-    private int turnosConfundido;
+    private int turnosConfundido = 0;
 
     @Override
     public void aplicarEfecto(Pokemon pokemon) {

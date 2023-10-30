@@ -68,7 +68,6 @@ public class Pokemon {
     }
 
     public void aplicarEfectoEstados(){
-        List<Estado> estadosELiminar = new ArrayList<>();
 
         for (Estado estado: this.estados){
             EstadosComportamiento estadoComportamiento = estado.getEstado();

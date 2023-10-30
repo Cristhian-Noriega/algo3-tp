@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Jugador {
 
-    private ArrayList<Pokemon> pokemones;
+    private final ArrayList<Pokemon> pokemones;
     private Pokemon pokemonActual;
     private final List<Item> items;
     private final String nombre;
@@ -75,13 +75,6 @@ public class Jugador {
             this.eliminarItem(item);
         }
         return err;
-    }
-
-    public void setPokemonActual(Pokemon pokemon){
-        System.out.println("ESTOY CAMBIANDO AL POKEMON");
-        int indice = this.pokemones.indexOf(this.pokemonActual);
-        this.pokemones.set(indice, pokemon);
-        this.pokemonActual = pokemon;
     }
 
     public double getVelocidadPokemonActual() {
