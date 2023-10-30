@@ -7,7 +7,7 @@ public enum Estado {
     ENVENENADO(new Envenenado()),
     CONFUNDIDO(new Confundido());
 
-    private EstadosComportamiento estado;
+    private final EstadosComportamiento estado;
 
     Estado(EstadosComportamiento estado){
         this.estado = estado;

@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="" />
+    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ConfundidoDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/DormidoDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EnvenenadoDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Estado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ParalizadoDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/PokemonDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Estado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +128,7 @@
       <workItem from="1698583524330" duration="2455000" />
       <workItem from="1698608373511" duration="17843000" />
       <workItem from="1698631376542" duration="7001000" />
-      <workItem from="1698668599825" duration="8739000" />
+      <workItem from="1698668599825" duration="12213000" />
     </task>
     <servers />
   </component>
@@ -148,11 +158,6 @@
           <option name="timeStamp" value="2" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ParalizadoDecorator.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java</url>
           <line>24</line>
           <option name="timeStamp" value="30" />
@@ -166,15 +171,6 @@
           <url>file://$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java</url>
           <line>18</line>
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ParalizadoDecorator.java</url>
-          <line>28</line>
-          <properties class="tp1.clases.modelo.ParalizadoDecorator">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
