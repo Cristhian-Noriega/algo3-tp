@@ -78,6 +78,7 @@ public class Jugador {
     }
 
     public void setPokemonActual(Pokemon pokemon){
+        System.out.println("ESTOY CAMBIANDO AL POKEMON");
         int indice = this.pokemones.indexOf(this.pokemonActual);
         this.pokemones.set(indice, pokemon);
         this.pokemonActual = pokemon;

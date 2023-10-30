@@ -50,7 +50,7 @@ public class Proveedor {
 
     Habilidad hab21 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
 
-    Habilidad hab22 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
+    Habilidad hab22 = new HabilidadEstado("Supersonico", 20, Tipo.NORMAL, "Genera ondas sonoras extrañas que confuden al enemigo", Estado.CONFUNDIDO);
 
     Habilidad hab23 = new HabilidadAtaque("Antiaereo", 15, Tipo.ROCA, 50, "Ataca lanzando una piedra o proyctil");
 
@@ -100,7 +100,7 @@ public class Proveedor {
 
     Habilidad hab46 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
 
-    Habilidad hab47 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
+    Habilidad hab47 = new HabilidadEstado("Danza caos", 20, Tipo.NORMAL, "EL usuario realiza una danza tambaleante que confunde al rival", Estado.CONFUNDIDO);
 
     Habilidad hab48 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
 

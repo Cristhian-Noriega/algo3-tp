@@ -37,7 +37,7 @@ public class HabilidadAtaque extends Habilidad {
         if (this.esEfectivo(propio, ajeno)){
             System.out.println("¡Qué eficaz!\n");
         } else {
-            System.out.println("¡" + ajeno.getNombre() + "ni se inmuta!\n");
+            System.out.println("¡" + ajeno.getNombre() + " ni se inmuta!\n");
         }
         super.usos -= 1;
         return Optional.empty();
