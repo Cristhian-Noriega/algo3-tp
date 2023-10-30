@@ -8,15 +8,7 @@ public abstract class Error {
 
 
     public void mostrar() {
-<<<<<<< HEAD
         System.out.println(mensaje);
-=======
-        System.out.println(mensaje) ;
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a54180 (agrego archivos)
->>>>>>> c456a89 (agrego archivos)
     }
 
 }
