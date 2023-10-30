@@ -25,7 +25,7 @@ public class Confundido implements EstadosComportamiento{
         if (seAutolesiona){
             double danio = 0.15 * pokemon.getVidaMax();
             pokemon.modificarVida((-1) * danio);
-            System.out.printf("%s esta cofundido y se autolesiono", pokemon.getNombre());
+            System.out.printf("%s esta cofundido y se autolesiono\n", pokemon.getNombre());
         }
         return Optional.empty();
     }

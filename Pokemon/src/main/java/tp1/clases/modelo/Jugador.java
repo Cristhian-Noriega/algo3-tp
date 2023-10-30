@@ -99,7 +99,7 @@ public class Jugador {
         datosPokemonActual.put("Vida Actual", this.pokemonActual.getVida());
         datosPokemonActual.put("Vida Max", this.pokemonActual.getVidaMax());
         datosPokemonActual.put("Nivel", this.pokemonActual.getNivel());
-        datosPokemonActual.put("Estado", this.pokemonActual.getEstados());
+        datosPokemonActual.put("Estado", this.pokemonActual.getEstadosString());
 
         return datosPokemonActual;
     }

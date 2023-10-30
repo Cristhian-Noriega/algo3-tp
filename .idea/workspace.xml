@@ -6,18 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEstados.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEstados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/HabilidadEstado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/ItemEstado.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,7 @@
       <workItem from="1698583524330" duration="2455000" />
       <workItem from="1698608373511" duration="17843000" />
       <workItem from="1698631376542" duration="7001000" />
-      <workItem from="1698668599825" duration="17631000" />
+      <workItem from="1698668599825" duration="21659000" />
     </task>
     <servers />
   </component>
