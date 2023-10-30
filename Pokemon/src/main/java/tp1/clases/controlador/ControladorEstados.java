@@ -26,51 +26,23 @@ public class ControladorEstados {
         return this.paralizar(jugador.getPokemonActual());
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void despertar(Jugador jugador, int turnoActual) {
-=======
-    public boolean despertar(Jugador jugador) {
->>>>>>> 270de4e (bosquejo inicial climas)
-=======
-    public boolean despertar(Jugador jugador) {
->>>>>>> 4f5c1277241255de37e7d486195a94fc4e99bf77
         Pokemon pokemon = jugador.getPokemonActual();
         if (pokemon.getEstado() != Estado.DORMIDO) {
-            return true;
+            return;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (Habilidad.probabilidad(Constantes.veinticinco * (turnoActual - turnoInicialEstados.get(jugador)))) {
-=======
-        if (Random.probabilidad(Constantes.veinticincoPorCiento * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
->>>>>>> 270de4e (bosquejo inicial climas)
-=======
-        if (Random.probabilidad(Constantes.probabilidadDespertar * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
->>>>>>> f6730ce (cambio constantes)
             pokemon.setEstado(Estado.NORMAL);
         }
-
-<<<<<<< HEAD
-=======
-=======
-        if (Random.probabilidad(Constantes.probabilidadDespertar * (batalla.getTurno() - turnoInicialEstados.get(jugador)))) {
-            pokemon.setEstado(Estado.NORMAL);
-        }
-
->>>>>>> 4f5c1277241255de37e7d486195a94fc4e99bf77
-        return pokemon.getEstado() == Estado.NORMAL;
     }
 
->>>>>>> 270de4e (bosquejo inicial climas)
     public void envenenar(Pokemon pokemon) {
         if (pokemon.getEstado() != Estado.ENVENENADO) {
             return;
         }
 
-        double valor = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
+        double valor = Constantes.cinco * pokemon.getVidaMax();
         pokemon.modificarVida((-1)*valor);
     }
 
@@ -78,7 +50,7 @@ public class ControladorEstados {
         if (pokemon.getEstado() != Estado.PARALIZADO) {
             return true;
         }
-        return (Random.probabilidad(Constantes.probabilidadParalizado));
+        return (Habilidad.probabilidad(Constantes.probabilidadParalizado));
     }
 
 }
