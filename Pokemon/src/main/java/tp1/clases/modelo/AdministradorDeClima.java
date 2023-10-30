@@ -15,7 +15,7 @@ public class AdministradorDeClima {
         return this.climaActual;
     }
 
-    public void ActualizarTurno() {
+    public void ActualizarTurno(){
         if (this.turnoActual - this.turnoInicial >= 5) {
             this.limpiarClima();
         }
@@ -36,5 +36,4 @@ public class AdministradorDeClima {
     public void limpiarClima() {
         this.climaActual = Clima.SIN_CLIMA;
     }
-
 }

@@ -15,10 +15,6 @@ public class HabilidadEstado extends Habilidad {
 
     @Override
     public Optional<Error> usar() {
-        if (this.sinUsosDisponibles()){
-            return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
-        }
-
         this.pokemonRival.setEstado(this.estado);
         System.out.println(this.pokemonRival.getNombre() + " ha sido " + this.estado.toString());
 

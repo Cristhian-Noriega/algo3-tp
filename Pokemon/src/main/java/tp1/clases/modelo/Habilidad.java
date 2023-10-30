@@ -5,7 +5,7 @@ import tp1.clases.errores.Error;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Habilidad {
+public abstract class Habilidad{
     final protected String nombre;
     protected Integer usos;
     final protected Tipo tipo;
@@ -14,8 +14,6 @@ public abstract class Habilidad {
     protected AdministradorDeClima administradorDeClima;
     protected Pokemon pokemonAtacante;
     protected Pokemon pokemonRival;
-
-
     public Habilidad(String nombre, Integer usos, Tipo tipo, String info, Categoria categoria) {
         this.nombre = nombre;
         this.usos = usos;
@@ -23,19 +21,15 @@ public abstract class Habilidad {
         this.info = info;
         this.categoria = categoria;
     }
-
     public String getNombre(){
         return nombre;
     }
-
     public Integer getUsos(){
         return usos;
     }
-
     public Tipo getTipo() {
         return tipo;
     }
-
     public String getInfo() {
         return info;
     }

@@ -14,10 +14,6 @@ public class HabilidadClima extends Habilidad {
 
     @Override
     public Optional<Error> usar() {
-        if (this.sinUsosDisponibles()) {
-            return Optional.of(new ErrorHabilidadSinUsos(this.getNombre()));
-        }
-
         this.administradorDeClima.cambiarClima(this.clima);
         System.out.println(this.pokemonAtacante.getNombre() + " ha cambiado el clima a " + this.clima.toString());
 

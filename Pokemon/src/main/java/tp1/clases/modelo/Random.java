@@ -5,7 +5,6 @@ public class Random {
         double rand = Math.random();
         return rand <= probabilidad;
     }
-
     public static int getRandom(int inicio, int fin) {
         return inicio + ((int) (Math.random() * (fin - inicio)));
     }

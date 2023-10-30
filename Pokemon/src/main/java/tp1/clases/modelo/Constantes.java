@@ -3,10 +3,6 @@ package tp1.clases.modelo;
 public class Constantes {
     public static double porcentajeDeModificacion = 0.25;
     public static double modificacionPorClima = 0.10;
-<<<<<<< HEAD
-=======
-    public static double porcentajeDeEnvenenamiento = 0.05;
->>>>>>> 4f5c1277241255de37e7d486195a94fc4e99bf77
     public static double disminucionPorClima = 0.03;
     public static int cantidadJugadores = 2;
     public static double porcentajeDeEnvenamiento = 0.05;

@@ -7,12 +7,10 @@ import java.util.Optional;
 
 public class HabilidadAtaque extends Habilidad {
     final protected Integer poder;
-
     public HabilidadAtaque(String nombre, Integer usos, Tipo tipo, Integer poder, String info) {
         super(nombre, usos, tipo, info, Categoria.ATAQUE);
         this.poder = poder;
     }
-
     private double calcularDanioAtaque() {
         double nivelAtacante = this.pokemonAtacante.getNivel();
         double ataqueAtacante = this.pokemonAtacante.getAtaque();
@@ -27,14 +25,10 @@ public class HabilidadAtaque extends Habilidad {
         }
         return danio;
     }
-
     @Override
     public Optional<Error> usar() {
-        if (this.sinUsosDisponibles()){
-            return Optional.of(new ErrorHabilidadSinUsos(this.nombre));
-        }
-
         double danio = calcularDanioAtaque();
+
         this.pokemonRival.modificarVida((-1)*danio);
 
         if (this.esEfectivo()){

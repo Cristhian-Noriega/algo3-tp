@@ -33,6 +33,7 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
+        this.administradorDeClima.afectarJugadores(this.getJugadores());
         this.administradorTurnos.siguienteTurno();
         this.administradorDeClima.ActualizarTurno();
     }
