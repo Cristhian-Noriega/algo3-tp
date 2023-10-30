@@ -16,6 +16,9 @@ public class AdministradorDeClima {
     }
 
     public void ActualizarTurno() {
+        if (this.turnoActual - this.turnoInicial >= 5) {
+            this.limpiarClima();
+        }
         this.turnoActual += 1;
     }
 

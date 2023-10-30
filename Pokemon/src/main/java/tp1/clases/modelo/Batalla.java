@@ -12,12 +12,13 @@ import java.util.Optional;
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
-    private Clima clima;
+
+    private final AdministradorDeClima administradorDeClima;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
-
+        this.administradorDeClima = new AdministradorDeClima();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -32,7 +33,8 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
-        administradorTurnos.siguienteTurno();
+        this.administradorTurnos.siguienteTurno();
+        this.administradorDeClima.ActualizarTurno();
     }
 
     public Jugador getJugadorActual() {
@@ -68,6 +70,7 @@ public class Batalla {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
         Habilidad habilidad = getHabilidadesPokemonActual().get(numeroHabilidad);
+        habilidad.setAmbiente(administradorDeClima, List.of((Pokemon) this.jugadores.stream().map(Jugador::getPokemonActual)));
         return habilidad.usar();
     }
 
