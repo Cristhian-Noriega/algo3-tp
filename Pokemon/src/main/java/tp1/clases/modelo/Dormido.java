@@ -10,6 +10,10 @@ public class Dormido implements EstadosComportamiento {
 
     private int turnosDormido;
 
+    public Dormido(int turnosDormido){
+        this.turnosDormido = turnosDormido;
+    }
+
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
         double probabibilidadDespertar = Constantes.veinticinco + Constantes.veinticinco * this.turnosDormido;

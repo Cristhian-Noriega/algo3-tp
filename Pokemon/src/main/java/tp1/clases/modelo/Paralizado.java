@@ -7,7 +7,10 @@ import java.util.Optional;
 
 public class Paralizado implements EstadosComportamiento{
 
-
+    private int turnosParalizado;
+    public Paralizado(int turnosParalizado){
+        this.turnosParalizado = turnosParalizado;
+    }
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
     }

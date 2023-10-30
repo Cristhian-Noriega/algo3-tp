@@ -8,16 +8,18 @@ import tp1.clases.errores.ErrorIndiceFueraDeRango;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Pokemon {
+ public class Pokemon {
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
+
+    private final HashMap<Estado, EstadosComportamiento> estadosComportamientos;
     private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
 
     private final int vidaMax;
-    int vidaActual;
+    private int vidaActual;
     private double velocidad;
     private double ataque;
     private double defensa;
@@ -30,6 +32,8 @@ public class Pokemon {
         this.estados = new ArrayList<>();
         this.estados.add(Estado.NORMAL);
         this.estadosParaEliminar = new ArrayList<>();
+        this.estadosComportamientos = new HashMap<>();
+        this.estadosComportamientos.put(Estado.NORMAL, null);
         this.habilidades = habilidades;
         this.vidaMax = vidaMax;
         this.vidaActual = vidaMax;
@@ -56,9 +60,9 @@ public class Pokemon {
     private Optional<Error> usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
         Optional<Error> resultado = Optional.empty();
         for (Estado estado : this.estados) {
-            EstadosComportamiento estadoComportamiento = estado.getEstado();
+            EstadosComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
-                Optional<Error> error = estado.getEstado().usarHabilidad(numeroHabilidad, pokemon);
+                Optional<Error> error = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
                 if (error.isPresent()) {
                     resultado = resultado.or(() -> error);
                 }
@@ -70,7 +74,7 @@ public class Pokemon {
     public void aplicarEfectoEstados(){
 
         for (Estado estado: this.estados){
-            EstadosComportamiento estadoComportamiento = estado.getEstado();
+            EstadosComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
                 estadoComportamiento.aplicarEfecto(this);
 
@@ -104,6 +108,11 @@ public class Pokemon {
             estados.add(estado);
         }else{
             estados.add(estado);
+        }
+        EstadosComportamiento estadoComportamiento = estadosComportamientos.get(estado);
+        if (estadoComportamiento == null) {
+            estadoComportamiento = EstadoFactory.crearEstado(estado);
+            estadosComportamientos.put(estado, estadoComportamiento);
         }
         System.out.println(this.getNombre() + " ahora esta " + estado.name());
         return Optional.empty() ;
