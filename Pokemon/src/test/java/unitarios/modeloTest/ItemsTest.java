@@ -1,4 +1,4 @@
-package modeloTest;
+package unitarios.modeloTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -20,8 +20,8 @@ public class ItemsTest {
     //To Do: agregar tests cuando tengamos doble estado
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
-    Item itemVida = new ItemVida("mas vida", 40);
-    Item revivir = new ItemVida("revivir", 0);
+    Item itemVida = new ItemRestauracionVida("mas vida", 40);
+    Item revivir = new ItemRestauracionVida("revivir", 0);
     Item estado = new ItemEstado("recupero estado");
     Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD);
     Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE);

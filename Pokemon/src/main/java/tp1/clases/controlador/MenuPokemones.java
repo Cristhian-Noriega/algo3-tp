@@ -17,14 +17,13 @@ public class MenuPokemones extends Menu {
         super.categoria = CategoriaMenu.POKEMONES;
     }
 
-
     public void mostrarOpciones(){
         System.out.println(VistaMenu.mostrarPokemones(this.pokemones, this.conVolverAtras));
     }
 
-   public int cantidadOpciones(){
+    public int cantidadOpciones(){
         return pokemones.size();
-   }
+    }
 
     public CategoriaMenu getCategoria(){
         return super.categoria;

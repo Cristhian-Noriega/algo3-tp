@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
+import tp1.clases.errores.*;
 
 import java.util.HashMap;
 import java.util.List;

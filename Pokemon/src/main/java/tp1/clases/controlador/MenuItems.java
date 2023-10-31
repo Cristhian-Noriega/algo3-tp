@@ -12,7 +12,6 @@ public class MenuItems extends Menu {
 
     private final List<Item> items;
 
-
     public MenuItems(Map<String, Long> mapCantidadItems,List<Item> items){
         this.mapCantidadItems = mapCantidadItems;
         this.items = items;

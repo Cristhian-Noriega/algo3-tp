@@ -10,5 +10,4 @@ public abstract class Menu {
 
     public abstract CategoriaMenu getCategoria();
 
-
 }

@@ -67,6 +67,7 @@ public class ControladorJuego {
 
 
             //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
+
             if (menuActual.getCategoria().equals(CategoriaMenu.PRINCIPAL)){
                 accion = OpcionMenu.getAccion(opcionElegida);
                 //muestra el campo de batalla y vuelve al inicio para seguir con el turno

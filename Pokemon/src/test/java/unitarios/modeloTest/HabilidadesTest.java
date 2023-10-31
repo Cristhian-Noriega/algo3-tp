@@ -1,4 +1,4 @@
-package modeloTest;
+package unitarios.modeloTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -34,7 +34,7 @@ public class HabilidadesTest {
     @DisplayName("uso habilidad de ataque para hacerle daño al pokemon enemigo")
     @Test
     void vidaDeEnemigoDisminuye(){
-        Optional<Error> err = danio.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = danio.usar();
         Assertions.assertTrue(conejilloDeIndias.getVida() < conejilloDeIndias.getVidaMax());
     }
 
@@ -43,7 +43,7 @@ public class HabilidadesTest {
     void pokeAumentaSuAtaque(){
         double ataqueInicial = rataDeLaboratorio.getAtaque();
 
-        Optional<Error> err = aumentaAtaque.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = aumentaAtaque.usar();
         Assertions.assertTrue(rataDeLaboratorio.getAtaque() > ataqueInicial);
     }
 
@@ -52,7 +52,7 @@ public class HabilidadesTest {
     void ataqueEnemigoDisminuye(){
         double ataqueInicial = conejilloDeIndias.getAtaque();
 
-        Optional<Error> err = disminuyeAtaque.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = disminuyeAtaque.usar();
         Assertions.assertTrue(conejilloDeIndias.getAtaque() < ataqueInicial);
     }
 
@@ -63,7 +63,7 @@ public class HabilidadesTest {
         rataDeLaboratorio.modificarVida(-40);
         double vidaInicial = rataDeLaboratorio.getVida();
 
-        Optional<Error> err = aumentaVida.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = aumentaVida.usar();
         Assertions.assertTrue(rataDeLaboratorio.getVida() > vidaInicial);
     }
 
@@ -72,7 +72,7 @@ public class HabilidadesTest {
     void pokeAumentaSuDefensa(){
         double defensaInicial = rataDeLaboratorio.getDefensa();
 
-        Optional<Error> err = aumentaDefensa.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = aumentaDefensa.usar();
         Assertions.assertTrue(rataDeLaboratorio.getDefensa() > defensaInicial);
     }
 
@@ -81,28 +81,28 @@ public class HabilidadesTest {
     void defensaEnemigoDisminuye(){
         double defensaInicial = conejilloDeIndias.getDefensa();
 
-        Optional<Error> err = disminuyeDefensa.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = disminuyeDefensa.usar();
         Assertions.assertTrue(conejilloDeIndias.getDefensa() < defensaInicial);
     }
 
     @DisplayName("uso habilidad de estado para dormir al pokemon enemigo")
     @Test
     void duermoEnemigo(){
-        Optional<Error> err = dormir.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = dormir.usar();
         Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.DORMIDO);
     }
 
     @DisplayName("uso habilidad de estado para paralizar al pokemon enemigo")
     @Test
     void paralizoEnemigo(){
-        Optional<Error> err = paralizar.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = paralizar.usar();
         Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.PARALIZADO);
     }
 
     @DisplayName("uso habilidad de estado para envenenar al pokemon enemigo")
     @Test
     void envenenoEnemigo(){
-        Optional<Error> err = envenenar.usar(rataDeLaboratorio, conejilloDeIndias);
+        Optional<Error> err = envenenar.usar();
         Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.ENVENENADO);
     }
 
@@ -110,13 +110,13 @@ public class HabilidadesTest {
     @Test
     void habilidadAtaqueSinUsosDisponibles(){
         //uso el unico uso de esta habilidad
-        Optional<Error> error = danio.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> error = danio.usar();
 
         //compruebo que no tenga mas usos
         Assertions.assertTrue(danio.sinUsosDisponibles());
 
         //pruebo usandola de nuevo
-        Optional<Error> err = danio.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> err = danio.usar();
         Assertions.assertTrue(err.isPresent());
     }
 
@@ -124,13 +124,13 @@ public class HabilidadesTest {
     @Test
     void habilidadEstadisticaSinUsosDisponibles(){
         //uso el unico uso de esta habilidad
-        Optional<Error> error = aumentaAtaque.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> error = aumentaAtaque.usar();
 
         //compruebo que no tenga mas usos
         Assertions.assertTrue(aumentaAtaque.sinUsosDisponibles());
 
         //pruebo usandola de nuevo
-        Optional<Error> err = aumentaAtaque.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> err = aumentaAtaque.usar();
         Assertions.assertTrue(err.isPresent());
     }
 
@@ -138,13 +138,13 @@ public class HabilidadesTest {
     @Test
     void habilidadEstadoSinUsosDisponibles(){
         //uso el unico uso de esta habilidad
-        Optional<Error> error = dormir.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> error = dormir.usar();
 
         //compruebo que no tenga mas usos
         Assertions.assertTrue(dormir.sinUsosDisponibles());
 
         //pruebo usandola de nuevo
-        Optional<Error> err = dormir.usar(conejilloDeIndias, rataDeLaboratorio);
+        Optional<Error> err = dormir.usar();
         Assertions.assertTrue(err.isPresent());
     }
 
