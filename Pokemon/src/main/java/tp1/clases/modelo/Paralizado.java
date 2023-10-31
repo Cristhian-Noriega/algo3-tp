@@ -8,20 +8,24 @@ import java.util.Optional;
 public class Paralizado implements EstadosComportamiento{
 
     private int turnosParalizado;
+
     public Paralizado(int turnosParalizado){
         this.turnosParalizado = turnosParalizado;
     }
+
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
     }
+
     @Override
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon pokemon){
+    public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon){
         Habilidad habilidad = pokemon.getHabilidades().get(numeroHabilidad);
-        if (!Habilidad.probabilidad(Constantes.probabilidadParalizado)) {
+        if (!Random.probabilidad(Constantes.probabilidadParalizado)) {
             habilidad.restarUso();
-            return Optional.of(new ErrorNoPuedeUsarHabilidadParalizado(pokemon.getNombre()));
+            System.out.printf("%s esta paralizado, no pudo usar la habilidad\n", pokemon.getNombre());
+            return false;
         }
-        return Optional.empty();
+        return true;
 
     }
 }

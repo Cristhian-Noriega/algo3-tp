@@ -1,11 +1,13 @@
 package tp1.clases.controlador;
 
+import tp1.clases.modelo.Batalla;
+
 import java.util.Stack;
 
 public class ControladorMenu {
-    private Stack<Menu> pilaMenu = new Stack<>();
+    private final Stack<Menu> pilaMenu = new Stack<>();
 
-    public ControladorMenu(){
+    public ControladorMenu(Batalla batalla){
         this.pilaMenu.push(new MenuPrincipal());
     }
 
@@ -14,7 +16,7 @@ public class ControladorMenu {
     }
 
     public void retroceder(){
-        if (!pilaMenu.isEmpty()){
+        if (!pilaMenu.isEmpty() && pilaMenu.size() > 1){
             pilaMenu.pop();
         }
     }

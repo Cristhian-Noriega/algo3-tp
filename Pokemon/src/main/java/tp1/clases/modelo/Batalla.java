@@ -13,9 +13,12 @@ public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
 
+    private final AdministradorDeClima administradorDeClima;
+
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
+        this.administradorDeClima = new AdministradorDeClima();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -30,7 +33,9 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
-        administradorTurnos.siguienteTurno();
+        this.administradorDeClima.afectarJugadores(this.getJugadores());
+        this.administradorTurnos.siguienteTurno();
+        this.administradorDeClima.ActualizarTurno();
     }
 
     public Jugador getJugadorActual() {
@@ -61,10 +66,11 @@ public class Batalla {
         return this.getJugadorActual().getMapCantidadItems();
     }
 
+
     public Optional<Error> usarHabilidad(int numeroHabilidad, Jugador rival) {
         Pokemon pokemonJugadorActual = this.getJugadorActual().getPokemonActual();
         Pokemon pokemonJugadorRival = rival.getPokemonActual();
-        return pokemonJugadorActual.usarHabilidad(numeroHabilidad, pokemonJugadorRival);
+        return pokemonJugadorActual.usarHabilidad(numeroHabilidad, pokemonJugadorRival, administradorDeClima);
     }
 
     public Optional<Error> usarItem(int itemElegido, int pokemon) {
@@ -88,11 +94,7 @@ public class Batalla {
         return this.getJugadorActual().getPokemonActual().estaMuerto();
     }
 
-    public int getTurno(){
-        return administradorTurnos.getTurno(); //esta mal esto, porque con el
-        //admin de turnos no tiene sentido hacer batalla.get turno,  lo dejo momentaneamente
-        //aunque si lo queremos usar en controlador estados(el unico lugar que se usa),
-        // deberiamos tener el admin de turnos en controlador estados
-        //solo por este metodo, raro
+    public Clima getClima(){
+        return administradorDeClima.getClimaActual();
     }
 }

@@ -1,22 +1,18 @@
     package tp1.clases.controlador.comandos;
 
-    import tp1.clases.controlador.ControladorEstados;
     import tp1.clases.errores.Error;
     import tp1.clases.modelo.Batalla;
-    import tp1.clases.modelo.Categoria;
 
     import java.util.Optional;
 
     public class UsarItemComando implements Comando {
 
         private final Batalla batalla;
-        private final ControladorEstados controladorEstados;
         private int item;
         private int pokemon;
 
-        public UsarItemComando(Batalla batalla, ControladorEstados controladorEstados) {
+        public UsarItemComando(Batalla batalla) {
             this.batalla = batalla;
-            this.controladorEstados = controladorEstados;
         }
 
         @Override

@@ -1,23 +1,25 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
-import tp1.clases.errores.ErrorHabilidadSinUsos;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
+import tp1.clases.errores.ErrorMismoEstado;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import tp1.clases.errores.ErrorIndiceFueraDeRango;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
  public class Pokemon {
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
-
     private final HashMap<Estado, EstadosComportamiento> estadosComportamientos;
     private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
-
     private final int vidaMax;
     private int vidaActual;
     private double velocidad;
@@ -42,33 +44,36 @@ import java.util.stream.Collectors;
         this.defensa = defensa;
     }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
+    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival, AdministradorDeClima administradorDeClima){
         if (numeroHabilidad < 0 || numeroHabilidad >= this.habilidades.size()) {
             return Optional.of(new ErrorIndiceFueraDeRango());
         }
+
         Habilidad habilidad = this.habilidades.get(numeroHabilidad);
         if (habilidad.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(habilidad.getNombre()));
         }
-        Optional<Error> errorDeEstado = this.usarHabilidadEstados(numeroHabilidad, this);
-        if(errorDeEstado.isPresent()){
-            return errorDeEstado;
+
+        Boolean pudoUsarse = this.usarHabilidadEstados(numeroHabilidad, this);
+        if(!pudoUsarse){
+            return Optional.empty();
         }
-        return habilidad.usar(this, rival);
+
+        habilidad.setAmbiente(administradorDeClima, List.of(this, rival));
+        return habilidad.usar();
     }
 
-    private Optional<Error> usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
-        Optional<Error> resultado = Optional.empty();
+    private Boolean usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
         for (Estado estado : this.estados) {
             EstadosComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
-                Optional<Error> error = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
-                if (error.isPresent()) {
-                    resultado = resultado.or(() -> error);
+                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
+                if (!puedeUsarHabilidad) {
+                    return false;
                 }
             }
         }
-        return resultado;
+        return true;
     }
 
     public void aplicarEfectoEstados(){
@@ -102,7 +107,7 @@ import java.util.stream.Collectors;
             estados.clear();
             estados.add(estado);
         } else if (estados.contains(estado)){
-            return Optional.of(new ErrorEstadoDistintoDeNormal(estado.name()));
+            return Optional.of(new ErrorMismoEstado(estado.name()));
         } else if (estados.contains(Estado.NORMAL)){
             estados.clear();
             estados.add(estado);
@@ -114,24 +119,22 @@ import java.util.stream.Collectors;
             estadoComportamiento = EstadoFactory.crearEstado(estado);
             estadosComportamientos.put(estado, estadoComportamiento);
         }
-        System.out.println(this.getNombre() + " ahora esta " + estado.name());
+        System.out.println(this.getNombre() + " ahora esta " + estado.name().toLowerCase());
         return Optional.empty() ;
     }
 
 
     public void modificarVida(double modificador) {
         double nuevoValor = this.vidaActual + modificador;
-        if (nuevoValor <= 0.0){
+        if (nuevoValor <= 0.0) {
             nuevoValor = 0;
         }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
 
-
-
     public void eliminarEstado(Estado estado) {
         this.estadosParaEliminar.add(estado);
-        System.out.println(this.nombre + " ha dejado de estar " + estado.name());
+        System.out.println(this.nombre + " ha dejado de estar " + estado.name().toLowerCase());
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
@@ -163,9 +166,6 @@ import java.util.stream.Collectors;
     public double getVelocidad(){
         return this.velocidad;
     }
-    public List<Estado> getEstados() {
-        return this.estados;
-    }
 
     public String getEstadosString() {
         return this.estados.stream()
@@ -173,5 +173,7 @@ import java.util.stream.Collectors;
                 .collect(Collectors.joining(" "));
     }
 
-
+    public List<Estado> getEstados(){
+        return this.estados;
+    }
 }

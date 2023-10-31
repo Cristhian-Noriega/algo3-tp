@@ -1,22 +1,17 @@
 package tp1.clases.controlador.comandos;
 
-import tp1.clases.controlador.ControladorEstados;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Categoria;
-import tp1.clases.modelo.Jugador;
 
 import java.util.Optional;
 
 public class UsarHabilidadComando implements Comando {
 
     private final Batalla batalla;
-    private final ControladorEstados controladorEstados;
     private int habilidad;
 
-    public UsarHabilidadComando(Batalla batalla, ControladorEstados controladorEstados) {
+    public UsarHabilidadComando(Batalla batalla) {
         this.batalla = batalla;
-        this.controladorEstados = controladorEstados;
     }
 
     @Override

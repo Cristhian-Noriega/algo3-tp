@@ -24,13 +24,13 @@ public class Confundido implements EstadosComportamiento{
     }
 
     @Override
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon pokemon) {
-        boolean seAutolesiona = Habilidad.probabilidad(1.0/3.0);
+    public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon) {
+        boolean seAutolesiona = Random.probabilidad(1.0/3.0);
         if (seAutolesiona){
             double danio = 0.15 * pokemon.getVidaMax();
             pokemon.modificarVida((-1) * danio);
             System.out.printf("%s esta cofundido y se autolesiono\n", pokemon.getNombre());
         }
-        return Optional.empty();
+        return true;
     }
 }

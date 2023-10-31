@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorHabilidadSinUsos;
+import tp1.clases.errores.ErrorMismoEstado;
 
 import java.util.Optional;
 
@@ -14,12 +14,12 @@ public class HabilidadEstado extends Habilidad {
     }
 
     @Override
-    public Optional<Error> usar(Pokemon propio, Pokemon ajeno) {
-        Optional<Error> err =  ajeno.setEstado(this.estado);
-        if (err.isEmpty()){
-            super.usos -= 1;
+    public Optional<Error> usar() {
+        if (this.pokemonRival.getEstados().contains(this.estado)) {
+            return Optional.of(new ErrorMismoEstado(this.estado.toString().toLowerCase()));
         }
-
-        return err;
+        this.pokemonRival.setEstado(this.estado);
+        this.restarUso();
+        return Optional.empty();
     }
 }

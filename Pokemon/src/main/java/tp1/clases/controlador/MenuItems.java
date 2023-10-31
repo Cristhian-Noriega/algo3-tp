@@ -7,15 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 public class MenuItems extends Menu {
-    private Map<String, Long> mapCantidadItems;
-
-    private List<Item> items;
-
+    private final Map<String, Long> mapCantidadItems;
+    private final List<Item> items;
 
     public MenuItems(Map<String, Long> mapCantidadItems,List<Item> items){
         this.mapCantidadItems = mapCantidadItems;
         this.items = items;
-
+        super.categoria = CategoriaMenu.ITEMS;
     }
 
     public void mostrarOpciones(){
@@ -24,6 +22,10 @@ public class MenuItems extends Menu {
 
     public int cantidadOpciones(){
         return this.items.size();
+    }
+
+    public CategoriaMenu getCategoria(){
+        return super.categoria;
     }
 
 }

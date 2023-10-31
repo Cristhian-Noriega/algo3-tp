@@ -5,3 +5,4 @@ public class ErrorCambiarPokemonEnBatalla extends Error{
         super(String.format("%s ya esta en el campo de batalla, elija otro pokemon", pokemonEnBatalla));
     }
 }
+

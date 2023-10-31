@@ -26,10 +26,11 @@ public class ItemEstado implements Item{
     
     @Override
     public Optional<Error> usar(Pokemon pokemon){
-            pokemon.setEstado(Estado.NORMAL);
-            return Optional.empty();
+        if (pokemon.getEstados().contains(Estado.NORMAL)) {
+            return Optional.of(new ErrorPokemonNormal(pokemon.getNombre(), this.nombre));
+        }
+        pokemon.setEstado(Estado.NORMAL);
+        return Optional.empty();
     }
-
-
 
 }

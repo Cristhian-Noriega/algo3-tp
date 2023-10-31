@@ -104,6 +104,9 @@ public class Proveedor {
 
     Habilidad hab48 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
 
+    Habilidad hab49 = new HabilidadClima("Lluvia Mágica", 20, Tipo.AGUA, "Lanza una lluvia que convierte el campo en un cuento de hadas", Clima.LLUVIA);
+
+    Habilidad hab50 = new HabilidadClima("Dia de playa", 20, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO);
 
 
     Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
@@ -116,9 +119,9 @@ public class Proveedor {
 
     Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
 
-    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab16, hab22), 115, 130.0, 175.0, 328.0);
+    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
 
-    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab38, hab46), 80, 121.0, 98.0, 81.0);
+    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
 
     Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 
@@ -139,13 +142,13 @@ public class Proveedor {
 
     Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD);
 
-    Item item5 = new ItemVida("Pocion", 20);
+    Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0);
 
-    Item item6 = new ItemVida("Mega Pocion", 50);
+    Item item6 = new ItemRestauracionVida("Mega Pocion", 50);
 
-    Item item7 = new ItemVida("Hiper Pocion", 100);
+    Item item7 = new ItemRestauracionVida("Hiper Pocion", 100);
 
-    Item item8 = new ItemVida("Revivir", 0);
+    Item item8 = new ItemRevivir("Revivir", 0);
 
     public Proveedor() {
         // Lista = (lista items/pokemones jugador 1, lista items/pokemones jugador 2)
@@ -172,7 +175,7 @@ public class Proveedor {
         listaItems2.add(item3);
         listaItems2.add(item5);
         listaItems2.add(item7);
-        listaItems2.add(item1);
+        listaItems2.add(item7);
         listaItems2.add(item5);
         this.listasItems.add(listaItems1);
         this.listasItems.add(listaItems2);
