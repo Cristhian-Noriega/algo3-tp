@@ -89,21 +89,21 @@ public class HabilidadesTest {
     @Test
     void duermoEnemigo(){
         Optional<Error> err = dormir.usar();
-        Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.DORMIDO);
+        Assertions.assertTrue(conejilloDeIndias.getEstados().contains(Estado.DORMIDO));
     }
 
     @DisplayName("uso habilidad de estado para paralizar al pokemon enemigo")
     @Test
     void paralizoEnemigo(){
         Optional<Error> err = paralizar.usar();
-        Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.PARALIZADO);
+        Assertions.assertTrue(conejilloDeIndias.getEstados().contains(Estado.PARALIZADO));
     }
 
     @DisplayName("uso habilidad de estado para envenenar al pokemon enemigo")
     @Test
     void envenenoEnemigo(){
         Optional<Error> err = envenenar.usar();
-        Assertions.assertEquals(conejilloDeIndias.getEstado(), Estado.ENVENENADO);
+        Assertions.assertTrue(conejilloDeIndias.getEstados().contains(Estado.ENVENENADO));
     }
 
     @DisplayName("intento usar dos veces la habilidad danio pero esta solo tiene un unico uso")

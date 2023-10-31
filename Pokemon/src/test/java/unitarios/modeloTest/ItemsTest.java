@@ -12,7 +12,6 @@ import java.util.Optional;
 
 public class ItemsTest {
 
-
     //dudas:
     //si el pokemon esta muerto con un estado (ej. ENVENENADO) y lo revivo, el estado sigue asi o vuelve a normal?
     //si revivo un pokemon, las estadisticas deberian volver a las iniciales o sigue con las estadisticas modiicadas?
@@ -67,10 +66,10 @@ public class ItemsTest {
     void pasoDeDormidoANormal(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.DORMIDO);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.DORMIDO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.DORMIDO));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
     }
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente envenenado")
@@ -78,10 +77,10 @@ public class ItemsTest {
     void pasoDeEnvenenadoANormal(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.ENVENENADO);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.ENVENENADO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.ENVENENADO));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
     }
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente paralizado")
@@ -89,16 +88,16 @@ public class ItemsTest {
     void pasoDeParalizadoANormal(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.PARALIZADO);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.PARALIZADO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.PARALIZADO));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
     }
 
     @DisplayName("uso item para normalizar pokemon *ya* normal")
     @Test
     void noPuedoNormalizarPokemonNormal(){
-        Assertions.assertEquals(pokemonDePrueba.getEstado(), Estado.NORMAL);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertTrue(err.isPresent());

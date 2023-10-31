@@ -26,7 +26,7 @@ public class ItemEstado implements Item{
     
     @Override
     public Optional<Error> usar(Pokemon pokemon){
-        if (pokemon.getEstado() == Estado.NORMAL) {
+        if (pokemon.getEstados().contains(Estado.NORMAL)) {
             return Optional.of(new ErrorPokemonNormal(pokemon.getNombre(), this.nombre));
         }
         pokemon.setEstado(Estado.NORMAL);

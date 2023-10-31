@@ -21,6 +21,7 @@ public class HabilidadAtaque extends Habilidad {
         double critico = Random.probabilidad(Constantes.probabilidadDeCritico) ? 2: 1;
         double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
         if (this.getClimaActual().favorece(this.pokemonAtacante.getTipo())) {
+            System.out.println(this.pokemonAtacante.getNombre() + " ha mejorado su ataque gracias al clima actual.");
             return danio + (danio * Constantes.modificacionPorClima);
         }
         return danio;
@@ -28,20 +29,19 @@ public class HabilidadAtaque extends Habilidad {
     @Override
     public Optional<Error> usar() {
         double danio = calcularDanioAtaque();
-
         this.pokemonRival.modificarVida((-1)*danio);
 
-        if (this.esEfectivo()){
-            System.out.println("¡Qué eficaz!\n");
+        if (this.esEfectivo(danio)){
+            System.out.println(this.pokemonAtacante.getNombre() + " ha atacado a " + this.pokemonRival.getNombre() + " ¡Qué eficaz!\n");
         } else {
-            System.out.println("¡" + this.pokemonRival.getNombre() + "ni se inmuta!\n");
+            System.out.println("¡" + this.pokemonRival.getNombre() + " ni se inmuta!\n");
         }
 
         this.restarUso();
         return Optional.empty();
     }
 
-    public boolean esEfectivo() {
-        return (this.calcularDanioAtaque() > 0 );
+    public boolean esEfectivo(double danio) {
+        return (danio > 0 );
     }
 }

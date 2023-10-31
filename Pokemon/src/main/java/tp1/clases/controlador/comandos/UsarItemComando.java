@@ -1,23 +1,18 @@
     package tp1.clases.controlador.comandos;
 
-    import tp1.clases.controlador.ControladorEstados;
     import tp1.clases.errores.Error;
     import tp1.clases.modelo.Batalla;
-    import tp1.clases.modelo.Categoria;
-    import tp1.clases.vista.VistaMenu;
 
     import java.util.Optional;
 
     public class UsarItemComando implements Comando {
 
         private final Batalla batalla;
-        private final ControladorEstados controladorEstados;
         private int item;
         private int pokemon;
 
-        public UsarItemComando(Batalla batalla, ControladorEstados controladorEstados) {
+        public UsarItemComando(Batalla batalla) {
             this.batalla = batalla;
-            this.controladorEstados = controladorEstados;
         }
 
         @Override
@@ -31,15 +26,6 @@
         }
 
         public Optional<Error> ejecutar() {
-            Optional<Error> err = this.batalla.usarItem(this.item, this.pokemon);
-            if (err.isEmpty() && (this.batalla.getItemsJugadorActual().get(item).getCategoria() == Categoria.ESTADO)) {
-                  this.controladorEstados.setTurnoInicial(this.batalla.getJugadorActual(), batalla.getTurno());
-            }
-            return err;
-        }
-
-        @Override
-        public String mostrar() {
-            return VistaMenu.mostrarItems(this.batalla.getMapItemsJugadorActual(), this.batalla.getItemsJugadorActual());
+            return this.batalla.usarItem(this.item, this.pokemon);
         }
     }

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +17,8 @@ public class JugadorTest {
     Pokemon otroPokeVivo = new Pokemon("El otroPokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0);
 
     Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA);
-    Jugador jugador = new Jugador("puppet", List.of(pokeVivo, pokeMuerto, otroPokeVivo), List.of(defensa));
+    ArrayList<Pokemon> pokemones = new ArrayList<>(Arrays.asList(pokeVivo, pokeMuerto, otroPokeVivo));
+    Jugador jugador = new Jugador("puppet", pokemones, List.of(defensa));
 
     @Test
     void seleccionarPokemonFueraDeRango(){

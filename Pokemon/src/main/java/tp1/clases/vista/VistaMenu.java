@@ -25,7 +25,7 @@ public class VistaMenu {
         informacion += pokemon.getNombre() + "\n";
         informacion += pokemon.getVida() + "/" + pokemon.getVidaMax() + " " + barraDeVida + "   ";
         informacion += pokemon.getTipo().name() + "   ";
-        informacion += pokemon.getEstado().name() + "   ";
+        informacion += pokemon.getEstadosString() + "   ";
         informacion += "NVL." + pokemon.getNivel() + "   ";
         informacion += "DEF." + pokemon.getDefensa() + "   ";
         informacion += "ATAQ." + pokemon.getAtaque() + "   ";

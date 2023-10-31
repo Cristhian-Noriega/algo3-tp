@@ -25,15 +25,13 @@ public class ControladorJuego {
     private final LineReader reader;
     private Boolean juegoTerminado = false;
     private Comando comando;
-    private final ControladorEstados controladorEstados;
     private ControladorMenu controladorMenu;
 
-    public ControladorJuego(Batalla batalla, ControladorEstados controladorEstados) throws IOException {
+    public ControladorJuego(Batalla batalla) throws IOException {
         this.batalla = batalla;
-        this.controladorEstados = controladorEstados;
 
         Terminal terminal = TerminalBuilder.terminal();
-        reader = LineReaderBuilder.builder()
+        this.reader = LineReaderBuilder.builder()
                 .terminal(terminal)
                 .build();
     }
@@ -43,8 +41,10 @@ public class ControladorJuego {
         this.controladorMenu = new ControladorMenu(batalla);
         boolean turnoActivo = true;
         OpcionMenu accion = null;
-        boolean puedeUsarHabilidad = this.controladorEstados.controlarEstado(this.batalla.getJugadorActual(), this.batalla.getTurno());
 
+        Pokemon pokemon = this.batalla.getJugadorActual().getPokemonActual();
+        pokemon.aplicarEfectoEstados();
+        this.batalla.getJugadorSiguiente().getPokemonActual().aplicarEfectoEstados();
 
         while (turnoActivo){
             System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
@@ -64,7 +64,6 @@ public class ControladorJuego {
             if (!opcionValida(opcionElegida, menuActual.cantidadOpciones())) {
                 continue;
             }
-
 
             //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
 
@@ -105,12 +104,6 @@ public class ControladorJuego {
                 }
             }
 
-            //se verifica si el jugador puede usar sus habilidades, en caso de que se haya elegido la opcion de usar habilidad
-            if (opcionElegida == OpcionMenu.VER_HABILIDAD.ordinal() && !puedeUsarHabilidad) {
-                System.out.println("No puede usar la habilidad.");
-                this.avanzarTurno();
-                break;
-            }
 
             int posicion = opcionElegida - 1;
             this.comando.definirOpcion(posicion);
@@ -125,7 +118,6 @@ public class ControladorJuego {
             this.avanzarTurno();
             turnoActivo = false;
         }
-
     }
 
     private boolean seleccionoPokemonItem(int pokemonElegido){
@@ -199,11 +191,11 @@ public class ControladorJuego {
     private void setComando(OpcionMenu accion){
         switch (accion) {
             case VER_ITEM -> {
-                this.comando = new UsarItemComando(this.batalla, controladorEstados);
+                this.comando = new UsarItemComando(this.batalla);
                 this.controladorMenu.actualizarMenu(new MenuItems(this.batalla.getMapItemsJugadorActual(), this.batalla.getItemsJugadorActual()));
             }
             case VER_HABILIDAD -> {
-                this.comando = new UsarHabilidadComando(this.batalla, controladorEstados);
+                this.comando = new UsarHabilidadComando(this.batalla);
                 this.controladorMenu.actualizarMenu(new MenuHabilidades(this.batalla.getHabilidadesPokemonActual()));
             }
             case VER_POKEMONES -> {

@@ -1,6 +1,6 @@
 package unitarios.modeloTest;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.*;

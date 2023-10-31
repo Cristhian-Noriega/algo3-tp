@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Proveedor {
-    private final List<List<Pokemon>> listasPokemones;
+    private final List<ArrayList<Pokemon>> listasPokemones;
   
     private final List<List<Item>> listasItems;
 
@@ -50,7 +50,7 @@ public class Proveedor {
 
     Habilidad hab21 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
 
-    Habilidad hab22 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
+    Habilidad hab22 = new HabilidadEstado("Supersonico", 20, Tipo.NORMAL, "Genera ondas sonoras extrañas que confuden al enemigo", Estado.CONFUNDIDO);
 
     Habilidad hab23 = new HabilidadAtaque("Antiaereo", 15, Tipo.ROCA, 50, "Ataca lanzando una piedra o proyctil");
 
@@ -100,10 +100,13 @@ public class Proveedor {
 
     Habilidad hab46 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
 
-    Habilidad hab47 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
+    Habilidad hab47 = new HabilidadEstado("Danza caos", 20, Tipo.NORMAL, "EL usuario realiza una danza tambaleante que confunde al rival", Estado.CONFUNDIDO);
 
     Habilidad hab48 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
 
+    Habilidad hab49 = new HabilidadClima("Lluvia Mágica", 20, Tipo.AGUA, "Lanza una lluvia que convierte el campo en un cuento de hadas", Clima.LLUVIA);
+
+    Habilidad hab50 = new HabilidadClima("Dia de playa", 20, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO);
 
 
     Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
@@ -116,9 +119,9 @@ public class Proveedor {
 
     Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
 
-    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab16, hab22), 115, 130.0, 175.0, 328.0);
+    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
 
-    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab38, hab46), 80, 121.0, 98.0, 81.0);
+    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
 
     Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 
@@ -149,7 +152,16 @@ public class Proveedor {
 
     public Proveedor() {
         // Lista = (lista items/pokemones jugador 1, lista items/pokemones jugador 2)
-        this.listasPokemones = List.of(List.of(poke1, poke2, poke3, poke4, poke5, poke6), List.of(poke7, poke8, poke9, poke10, poke11, poke12));
+
+        List<Pokemon> listaPokemones1 = List.of(poke1, poke2, poke3, poke4, poke5, poke6);
+        List<Pokemon> listaPokemones2 = List.of(poke7, poke8, poke9, poke10, poke11, poke12);
+
+        ArrayList<Pokemon> lista1 = new ArrayList<>();
+        lista1.addAll(listaPokemones1);
+        ArrayList<Pokemon> lista2 = new ArrayList<>();
+        lista2.addAll(listaPokemones2);
+
+        this.listasPokemones = List.of(lista1,lista2);
         this.listasItems = new ArrayList<List<Item>>();
         List<Item> listaItems1 = new ArrayList<Item>();
         listaItems1.add(item1);
@@ -163,13 +175,13 @@ public class Proveedor {
         listaItems2.add(item3);
         listaItems2.add(item5);
         listaItems2.add(item7);
-        listaItems2.add(item1);
+        listaItems2.add(item7);
         listaItems2.add(item5);
         this.listasItems.add(listaItems1);
         this.listasItems.add(listaItems2);
     }
 
-    public List<List<Pokemon>> getPokemones() {
+    public List<ArrayList<Pokemon>> getPokemones() {
         return this.listasPokemones;
     }
 
