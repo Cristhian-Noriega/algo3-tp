@@ -1,0 +1,53 @@
+[
+  [
+    {
+      "categoria": "ESTADO",
+      "nombre": "Sacar estado"
+    },
+    {
+      "categoria": "ESTADISTICA",
+      "nombre": "Jugo de apio"
+    },
+    {
+      "categoria": "ESTADISTICA",
+      "nombre": "Red Bull"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Mega Pocion"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Revivir"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Mega Pocion"
+    }
+  ],[
+    {
+      "categoria": "ESTADO",
+      "nombre": "Sacar estado"
+    },
+    {
+      "categoria": "ESTADISTICA",
+      "nombre": "Batido proteico"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Pocion"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Hiper Pocion"
+    },
+    {
+      "categoria": "ESTADO",
+      "nombre": "Sacar estado"
+    },
+    {
+      "categoria": "VIDA",
+      "nombre": "Pocion"
+    }
+  ]
+]

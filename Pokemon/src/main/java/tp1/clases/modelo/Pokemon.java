@@ -1,9 +1,9 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorEstadoDistintoDeNormal;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
-// import tp1.clases.errores.ErrorNoPuedeUsarHabilidad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +24,10 @@ public class Pokemon {
     private double ataque;
     private double defensa;
 
-    public Pokemon(String nombre, int nivel, Tipo tipo,
-                   List<Habilidad> habilidades, int vidaMax, double velocidad, double ataque, double defensa) {
+    @JsonCreator
+    public Pokemon(@JsonProperty("nombre") String nombre, @JsonProperty("nivel") int nivel, @JsonProperty("tipo") Tipo tipo,
+                   @JsonProperty("habilidades") List<Habilidad> habilidades, @JsonProperty("vidaMax") int vidaMax, @JsonProperty("velocidad") double velocidad,
+                   @JsonProperty("ataque") double ataque, @JsonProperty("defensa") double defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -40,17 +42,6 @@ public class Pokemon {
         this.estado = Estado.NORMAL;
     }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival){
-        if (numeroHabilidad < 0 || numeroHabilidad >= this.habilidades.size()) {
-            return Optional.of(new ErrorIndiceFueraDeRango());
-        }
-        Habilidad habilidad = this.habilidades.get(numeroHabilidad);
-
-//        if (!puedeUsarHabilidad(habilidad)){
-//            return Optional.of(new ErrorNoPuedeUsarHabilidad(this.nombre));
-//        }
-        return habilidad.usar(this, rival);
-    }
 
 //    public void aplicarDecorador(PokemonDecorator decorador){
 //        if (!this.tieneDecorador(decorador)){
@@ -91,15 +82,6 @@ public class Pokemon {
         }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
-
-//    public boolean puedeUsarHabilidad(Habilidad habilidad) {
-//        for (EstadoPokemon estado : this.estadosActivos) {
-//            if (!estado.puedeUsarHabilidad(habilidad)) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
 
 
     public void aplicarEfectoEstado(){

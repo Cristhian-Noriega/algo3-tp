@@ -1,5 +1,6 @@
 package tp1.clases.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public enum Clima {
@@ -9,7 +10,7 @@ public enum Clima {
     NIEBLA(List.of(Tipo.FANTASMA, Tipo.PSIQUICO)),
     TORMENTA_DE_RAYOS(List.of(Tipo.ELECTRICO)),
     HURACAN(List.of(Tipo.VOLADOR)),
-    SIN_CLIMA(List.of((Tipo) null));
+    SIN_CLIMA(new ArrayList<Tipo>());
 
     private final List<Tipo> tiposFavorecidos;
 

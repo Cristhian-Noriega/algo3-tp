@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
 import java.util.List;
@@ -14,7 +16,9 @@ public abstract class Habilidad{
     protected AdministradorDeClima administradorDeClima;
     protected Pokemon pokemonAtacante;
     protected Pokemon pokemonRival;
-    public Habilidad(String nombre, Integer usos, Tipo tipo, String info, Categoria categoria) {
+    @JsonCreator
+    public Habilidad(@JsonProperty("nombre") String nombre,@JsonProperty("usos") Integer usos, @JsonProperty("tipo") Tipo tipo,
+                     @JsonProperty("info") String info, @JsonProperty("categoria") Categoria categoria) {
         this.nombre = nombre;
         this.usos = usos;
         this.tipo = tipo;
@@ -70,3 +74,29 @@ public abstract class Habilidad{
         this.setPokemonRival(pokemonesActuales.get(1));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
