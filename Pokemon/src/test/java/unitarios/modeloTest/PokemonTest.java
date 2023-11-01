@@ -12,8 +12,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class PokemonTest {
-    //To Do: test de estados y test habilidades e items con estados
-
     Habilidad aumentaDefensa = new HabilidadEstadistica("Amnesia", 1, Tipo.PSIQUICO, "Aumenta sus defensas", Estadisticas.DEFENSA, false);
     Pokemon pokeVivo = new Pokemon("pokeVivo", 18, Tipo.HIELO, List.of(aumentaDefensa), 98, 139.0, 180.0, 130.0);
     Pokemon pokeMuerto = new Pokemon("pokeMuerto", 20, Tipo.BICHO, List.of(), 0, 193.0, 184.0, 130.0);
@@ -58,7 +56,29 @@ public class PokemonTest {
 
     }
 
-    //faltan test de habilidad cuando tiene un estado
+    @Test
+    void usarHabilidadEstandoDormido(){
+        AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
+        pokeVivo.setEstado(Estado.DORMIDO);
+        double vidaInicial = otroPokeVivo.getVida();
+
+        Optional<Error> error = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(error.isEmpty());
+        Assertions.assertEquals(vidaInicial, otroPokeVivo.getVida());
+    }
+
+    @Test
+    void aplicarEfectoEstadoEnvenenado(){
+        double vidaInicial = pokeVivo.getVida();
+        pokeVivo.setEstado(Estado.ENVENENADO);
+
+        //paso el turno
+        pokeVivo.aplicarEfectoEstados();
+
+        pokeVivo.aplicarEfectoEstados();
+        Assertions.assertTrue(vidaInicial > pokeVivo.getVida());
+    }
 
 
     @Test

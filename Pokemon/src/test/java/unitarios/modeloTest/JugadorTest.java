@@ -77,6 +77,8 @@ public class JugadorTest {
     void usarItemNoDisponible(){
         int itemDefensa = 0; //posicion en la lista
         int pokemonActual = 0; //pokemon inicial es el primero en la lista y esta con vida
+
+        //uso el unico itemDefensa que tengo
         jugador.usarItem(itemDefensa, pokemonActual);
 
         Optional<Error> err = jugador.usarItem(itemDefensa, pokemonActual);

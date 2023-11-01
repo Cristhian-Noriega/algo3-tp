@@ -5,115 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faa3209b-5150-4917-8e65-1e86ef7416ac" name="Changes" comment="&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorMismoClima.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorMismoEstado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorNoPuedeAtacarDormido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorNoPuedeUsarHabilidadParalizado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Confundido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Dormido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Envenenado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/EstadoFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/EstadosComportamiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRevivir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Paralizado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitarios/controladorTest/ControladorMenuTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorDeTrunosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/BatallaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/DatosPokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Inicializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Inicializador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CategoriaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CategoriaMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEstados.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuHabilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuHabilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPokemones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/Comando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/Comando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorCambiarPokemonEnBatalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorCambiarPokemonEnBatalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorEstadoDistintoDeNormal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Clima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Habilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadClima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadClima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemVida.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/CampoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/CampoVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/VistaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/VistaMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InicializadorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controladorTest/ControladorMenuTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/AdministradorClimaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/BatallaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/HabilidadesTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modeloTest/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEstados.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuHabilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuHabilidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPokemones.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPokemones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/Comando.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/Comando.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorEstadoDistintoDeNormal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Clima.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Clima.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadClima.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadClima.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemVida.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Tipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Tipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/CampoVista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/vista/CampoVista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/InicializadorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/controladorTest/ControladorMenuTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/AdministradorClimaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/modeloTest/AdministradorClimaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/BatallaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/HabilidadesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/ItemsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/JugadorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/modeloTest/PokemonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/PokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/PokemonTest.class" afterDir="false" />
     </list>
     <list id="a80fe8b4-d52a-498c-b558-dad374f08d15" name="Changes by melina" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,28 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging test&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "test",
+    "jdk.selected.JAVA_MODULE": "jbr-17",
+    "last_opened_file_path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="tp1.clases.controlador" />
@@ -188,38 +90,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PokemonTest.usarHabilidadSinUsosDisponibles">
-    <configuration name="AdministradorDeTrunosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pokemon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unitarios.modeloTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.AdministradorDeTrunosTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BatallaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pokemon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unitarios.modeloTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.BatallaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.JugadorTest.seleccionarPokemonNoDisponible">
+    <configuration name="JugadorTest.seleccionarPokemonNoDisponible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
       <extension name="coverage">
         <pattern>
@@ -229,7 +101,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
       <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.JugadorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="seleccionarPokemonNoDisponible" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,6 +118,38 @@
       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
       <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest.aplicarEfectoEstadoEnvenenado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+      <option name="METHOD_NAME" value="aplicarEfectoEstadoEnvenenado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest.usarHabilidadEstandoDormido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+      <option name="METHOD_NAME" value="usarHabilidadEstandoDormido" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -267,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JugadorTest.seleccionarPokemonNoDisponible" />
+        <item itemvalue="JUnit.PokemonTest.aplicarEfectoEstadoEnvenenado" />
+        <item itemvalue="JUnit.PokemonTest.usarHabilidadEstandoDormido" />
         <item itemvalue="JUnit.PokemonTest.usarHabilidadSinUsosDisponibles" />
         <item itemvalue="JUnit.PokemonTest" />
-        <item itemvalue="JUnit.JugadorTest" />
-        <item itemvalue="JUnit.BatallaTest" />
-        <item itemvalue="JUnit.AdministradorDeTrunosTest" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +223,8 @@
       <workItem from="1698694325090" duration="18318000" />
       <workItem from="1698756681820" duration="8503000" />
       <workItem from="1698797110448" duration="1674000" />
-      <workItem from="1698803992961" duration="1059000" />
+      <workItem from="1698803992961" duration="1454000" />
+      <workItem from="1698863051062" duration="4986000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;creo ItemsTest&quot;">
       <option name="closed" value="true" />

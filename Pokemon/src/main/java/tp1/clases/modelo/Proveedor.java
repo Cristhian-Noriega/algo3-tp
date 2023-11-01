@@ -49,7 +49,7 @@ public class Proveedor {
         Habilidad hab19 = new HabilidadEstado("Somnifero", 15, Tipo.PLANTA, "Esparce polvo que duerme al objetivo", Estado.DORMIDO);
 
         Habilidad hab20 = new HabilidadEstado("Hilo venenoso", 20, Tipo.VENENO, "Ataca al enemigo con hilillos venenosos", Estado.ENVENENADO);
-    Habilidad hab22 = new HabilidadEstado("Supersonico", 20, Tipo.NORMAL, "Genera ondas sonoras extrañas que confuden al enemigo", Estado.CONFUNDIDO);
+        Habilidad hab22 = new HabilidadEstado("Supersonico", 20, Tipo.NORMAL, "Genera ondas sonoras extrañas que confuden al enemigo", Estado.CONFUNDIDO);
 
         Habilidad hab21 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
 
@@ -94,18 +94,13 @@ public class Proveedor {
         Habilidad hab42 = new HabilidadEstadistica("Cañon armadura", 5, Tipo.FUEGO, "Baja la defensa del rival", Estadisticas.DEFENSA, true);
 
         Habilidad hab43 = new HabilidadEstado("Bostezo", 10, Tipo.NORMAL, "Gran bostezo que induce al sueño del enemigo", Estado.DORMIDO);
-
         Habilidad hab44 = new HabilidadEstado("Gas venenoso", 7, Tipo.VENENO,"Lanza una nube de gas toxico a los rivales", Estado.ENVENENADO);
-
         Habilidad hab45 = new HabilidadEstado("Somnifero", 15, Tipo.PLANTA, "Esparce polvo que duerme al objetivo", Estado.DORMIDO);
-    Habilidad hab47 = new HabilidadEstado("Danza caos", 20, Tipo.NORMAL, "EL usuario realiza una danza tambaleante que confunde al rival", Estado.CONFUNDIDO);
         Habilidad hab46 = new HabilidadEstado("Onda Trueno", 20, Tipo.ELECTRICO, "Una ligera descarga que paraliza al enemigo", Estado.PARALIZADO);
-
-    Habilidad hab49 = new HabilidadClima("Lluvia Mágica", 20, Tipo.AGUA, "Lanza una lluvia que convierte el campo en un cuento de hadas", Clima.LLUVIA);
-
-    Habilidad hab50 = new HabilidadClima("Dia de playa", 20, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO);
-
+        Habilidad hab47 = new HabilidadEstado("Danza caos", 20, Tipo.NORMAL, "EL usuario realiza una danza tambaleante que confunde al rival", Estado.CONFUNDIDO);
         Habilidad hab48 = new HabilidadEstado("Chispa", 20, Tipo.ELECTRICO, "Ataque electrico que puede paralizar", Estado.PARALIZADO);
+        Habilidad hab49 = new HabilidadClima("Lluvia Mágica", 20, Tipo.AGUA, "Lanza una lluvia que convierte el campo en un cuento de hadas", Clima.LLUVIA);
+        Habilidad hab50 = new HabilidadClima("Dia de playa", 20, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO);
 
 
 
@@ -118,9 +113,9 @@ public class Proveedor {
         Pokemon poke4 = new Pokemon("Naclastack", 24, Tipo.ROCA, List.of(hab7, hab8, hab14, hab20), 111, 67.0, 112.0, 184.0);
 
         Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
-    Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
+        Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
 
-    Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
+        Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
 
         Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 
