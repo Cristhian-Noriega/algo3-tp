@@ -16,7 +16,7 @@ public class ControladorMenu {
     }
 
     public void retroceder(){
-        if (!pilaMenu.isEmpty()){
+        if (!pilaMenu.isEmpty() && pilaMenu.size() > 1){
             pilaMenu.pop();
         }
     }

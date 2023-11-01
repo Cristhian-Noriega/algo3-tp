@@ -7,11 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MenuItems extends Menu {
-
     private final Map<String, Long> mapCantidadItems;
-
     private final List<Item> items;
-
 
     public MenuItems(Map<String, Long> mapCantidadItems,List<Item> items){
         this.mapCantidadItems = mapCantidadItems;

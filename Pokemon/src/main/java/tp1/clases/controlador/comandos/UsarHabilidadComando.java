@@ -1,23 +1,17 @@
 package tp1.clases.controlador.comandos;
 
-import tp1.clases.controlador.ControladorEstados;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Categoria;
-import tp1.clases.modelo.Jugador;
-import tp1.clases.vista.VistaMenu;
 
 import java.util.Optional;
 
 public class UsarHabilidadComando implements Comando {
 
     private final Batalla batalla;
-    private final ControladorEstados controladorEstados;
     private int habilidad;
 
-    public UsarHabilidadComando(Batalla batalla, ControladorEstados controladorEstados) {
+    public UsarHabilidadComando(Batalla batalla) {
         this.batalla = batalla;
-        this.controladorEstados = controladorEstados;
     }
 
     @Override
@@ -26,16 +20,6 @@ public class UsarHabilidadComando implements Comando {
     }
 
     public Optional<Error> ejecutar(){
-        Optional<Error> err = this.batalla.usarHabilidad(this.habilidad);
-        if ((batalla.getHabilidadesPokemonActual().get(this.habilidad).getCategoria() == Categoria.ESTADO) && (err.isEmpty())) {
-            Jugador jugadorSiguiente = this.batalla.getJugadorSiguiente();
-            controladorEstados.setTurnoInicial(jugadorSiguiente, batalla.getTurno());
-        }
-        return err;
-    }
-
-    @Override
-    public String mostrar() {
-        return VistaMenu.mostrarHabilidades(this.batalla.getHabilidadesPokemonActual());
+        return this.batalla.usarHabilidad(this.habilidad, this.batalla.getJugadorSiguiente());
     }
 }

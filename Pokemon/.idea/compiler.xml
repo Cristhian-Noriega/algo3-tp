@@ -9,8 +9,5 @@
         <module name="Pokemon" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="resources" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

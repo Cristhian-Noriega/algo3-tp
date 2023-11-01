@@ -1,7 +1,7 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorHabilidadSinUsos;
+import tp1.clases.errores.ErrorMismoEstado;
 
 import java.util.Optional;
 
@@ -15,9 +15,10 @@ public class HabilidadEstado extends Habilidad {
 
     @Override
     public Optional<Error> usar() {
+        if (this.pokemonRival.getEstados().contains(this.estado)) {
+            return Optional.of(new ErrorMismoEstado(this.estado.toString().toLowerCase()));
+        }
         this.pokemonRival.setEstado(this.estado);
-        System.out.println(this.pokemonRival.getNombre() + " ha sido " + this.estado.toString());
-
         this.restarUso();
         return Optional.empty();
     }

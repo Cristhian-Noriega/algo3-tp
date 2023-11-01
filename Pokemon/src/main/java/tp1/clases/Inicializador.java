@@ -29,7 +29,7 @@ public class Inicializador {
 
     public ArrayList<Jugador> iniciarJugadores(int cantJugadores){
         Proveedor proveedor = new Proveedor();
-        List<List<Pokemon>> pokemones = proveedor.getPokemones();
+        List<ArrayList<Pokemon>> pokemones = proveedor.getPokemones();
         List<List<Item>> items = proveedor.getItems();
 
         int i = 1;

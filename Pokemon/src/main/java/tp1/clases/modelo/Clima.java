@@ -10,7 +10,7 @@ public enum Clima {
     NIEBLA(List.of(Tipo.FANTASMA, Tipo.PSIQUICO)),
     TORMENTA_DE_RAYOS(List.of(Tipo.ELECTRICO)),
     HURACAN(List.of(Tipo.VOLADOR)),
-    SIN_CLIMA(new ArrayList<Tipo>());
+    SIN_CLIMA(List.of(Tipo.NINGUNO));
 
     private final List<Tipo> tiposFavorecidos;
 
@@ -44,6 +44,7 @@ public enum Clima {
             }
         }
 
-        return null;
+        return Clima.SIN_CLIMA;
     }
+
 }

@@ -22,6 +22,7 @@ public class HabilidadEstadistica extends Habilidad {
     }
 
     @Override
+
     public Optional<Error> usar() {
         if (this.isContraRival()) {
             this.modificarEstadistica(this.pokemonRival, (-1));
