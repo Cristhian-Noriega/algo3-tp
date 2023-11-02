@@ -1,10 +1,5 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeAtacarDormido;
-
-import java.util.Optional;
-
 public class Confundido implements EstadosComportamiento{
 
     private int turnosConfundido;
@@ -32,5 +27,9 @@ public class Confundido implements EstadosComportamiento{
             System.out.printf("%s esta cofundido y se autolesiono\n", pokemon.getNombre());
         }
         return true;
+    }
+    @Override
+    public int getTurnos() {
+        return turnosConfundido;
     }
 }

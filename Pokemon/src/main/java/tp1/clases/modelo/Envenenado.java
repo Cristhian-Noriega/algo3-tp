@@ -1,9 +1,5 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.Error;
-
-import java.util.Optional;
-
 public class Envenenado implements EstadosComportamiento{
 
     private int turnosEnvenenado;
@@ -22,5 +18,10 @@ public class Envenenado implements EstadosComportamiento{
     @Override
     public Boolean usarHabilidad(int numeroHabilidad, Pokemon rival){
         return true;
+    }
+
+    @Override
+    public int getTurnos(){
+        return turnosEnvenenado;
     }
 }

@@ -1,8 +1,6 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
-import tp1.clases.errores.ErrorItemNoValido;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.Optional;
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
-
     private final AdministradorDeClima administradorDeClima;
 
     public Batalla(ArrayList<Jugador> jugadores) {
@@ -75,7 +72,6 @@ public class Batalla {
 
     public Optional<Error> usarItem(int itemElegido, int pokemon) {
         return this.getJugadorActual().usarItem(itemElegido, pokemon);
-
     }
 
     public Optional<Error> cambiarPokemon(int pokemon) {
@@ -96,5 +92,9 @@ public class Batalla {
 
     public Clima getClima(){
         return administradorDeClima.getClimaActual();
+    }
+
+    public AdministradorDeClima getAdministradorDeClima(){
+        return this.administradorDeClima;
     }
 }
