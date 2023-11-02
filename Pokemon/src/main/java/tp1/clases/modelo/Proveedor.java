@@ -9,7 +9,6 @@ public class Proveedor {
     private final List<List<Item>> listasItems;
 
 
-
         Habilidad hab1 = new HabilidadAtaque("Arañazo", 2, Tipo.NORMAL, 100, "Araña con afiladas garras");
 
         Habilidad hab2 = new HabilidadAtaque("Cascada", 5, Tipo.AGUA, 80, "Embiste con gran impulso que puede hacer retroceder");
@@ -128,13 +127,6 @@ public class Proveedor {
         Pokemon poke12 = new Pokemon("Gastrodon",15 , Tipo.AGUA, List.of(hab28, hab33, hab42, hab48), 158, 74.0, 153.0, 126.0);
 
 
-//        String pathA = "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/pokemones.json";
-////        String pathB = "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/pokemonesB.json";
-////
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        // Serializacion
-//        objectMapper.writeValue(new File(pathA), pokemones);
-////        objectMapper.writeValue(new File(pathB), pokemonesB);
 
         Item item1 = new ItemEstado("Sacar estado");
 
@@ -144,11 +136,6 @@ public class Proveedor {
 
         Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD);
 
-
-
-//        String pathB = "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/items.json";
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.writeValue(new File(pathB), listasItems);
 
     Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0);
 

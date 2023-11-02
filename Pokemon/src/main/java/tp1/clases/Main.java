@@ -26,11 +26,6 @@ public class Main {
 
         System.out.println(res);
 
-//        List<ResultadosJugador> informe = controlador.crearInforme();
-//        //hacer que el path sea generico
-//        String path = "/Pokemon/resources/informe.json";
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.writeValue(new File(path), informe);
 
     }
 }

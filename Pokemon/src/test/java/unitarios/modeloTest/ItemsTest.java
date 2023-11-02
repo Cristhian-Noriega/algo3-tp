@@ -12,15 +12,10 @@ import java.util.Optional;
 
 public class ItemsTest {
 
-    //dudas:
-    //si el pokemon esta muerto con un estado (ej. ENVENENADO) y lo revivo, el estado sigue asi o vuelve a normal?
-    //si revivo un pokemon, las estadisticas deberian volver a las iniciales o sigue con las estadisticas modiicadas?
-
-    //To Do: agregar tests cuando tengamos doble estado
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
     Item itemVida = new ItemRestauracionVida("mas vida", 40);
-    Item revivir = new ItemRestauracionVida("revivir", 0);
+    Item revivir = new ItemRevivir("revivir", 0);
     Item estado = new ItemEstado("recupero estado");
     Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD);
     Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE);

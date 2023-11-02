@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faa3209b-5150-4917-8e65-1e86ef7416ac" name="Changes" comment="&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/DatosPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/items.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/pokemones.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/DatosPokemon.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/PokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/PokemonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class" afterDir="false" />
     </list>
     <list id="a80fe8b4-d52a-498c-b558-dad374f08d15" name="Changes by melina" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,29 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "test",
-    "jdk.selected.JAVA_MODULE": "jbr-17",
-    "last_opened_file_path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="tp1.clases.controlador" />
@@ -90,7 +93,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JugadorTest.seleccionarPokemonNoDisponible">
+  <component name="RunManager" selected="JUnit.ItemsTest">
+    <configuration name="ItemsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JugadorTest.seleccionarPokemonNoDisponible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
       <extension name="coverage">
@@ -103,21 +121,6 @@
       <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.JugadorTest" />
       <option name="METHOD_NAME" value="seleccionarPokemonNoDisponible" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PokemonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pokemon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unitarios.modeloTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ItemsTest" />
         <item itemvalue="JUnit.JugadorTest.seleccionarPokemonNoDisponible" />
         <item itemvalue="JUnit.PokemonTest.aplicarEfectoEstadoEnvenenado" />
         <item itemvalue="JUnit.PokemonTest.usarHabilidadEstandoDormido" />
         <item itemvalue="JUnit.PokemonTest.usarHabilidadSinUsosDisponibles" />
-        <item itemvalue="JUnit.PokemonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +227,8 @@
       <workItem from="1698756681820" duration="8503000" />
       <workItem from="1698797110448" duration="1674000" />
       <workItem from="1698803992961" duration="1454000" />
-      <workItem from="1698863051062" duration="4986000" />
+      <workItem from="1698863051062" duration="5850000" />
+      <workItem from="1698931090339" duration="1506000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;creo ItemsTest&quot;">
       <option name="closed" value="true" />

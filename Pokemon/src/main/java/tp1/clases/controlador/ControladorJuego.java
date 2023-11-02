@@ -11,7 +11,6 @@ import tp1.clases.controlador.comandos.UsarItemComando;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.ResultadosJugador;
 import tp1.clases.vista.CampoVista;
 import tp1.clases.vista.OpcionMenu;
 
@@ -210,9 +209,5 @@ public class ControladorJuego {
         return this.juegoTerminado;
     }
 
-    public List<ResultadosJugador> crearInforme(){
-        //aca hago dos ResultadosJugado, uno para cada jugador
-        //lo meto en una lista y le paso la lista al main
-    }
 
 }
