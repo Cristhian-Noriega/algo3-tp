@@ -36,7 +36,7 @@ public class ControladorJuego {
                 .build();
     }
 
-    public void JugarTurno() {
+    public void jugarTurno() {
 
         this.controladorMenu = new ControladorMenu(batalla);
         boolean turnoActivo = true;
