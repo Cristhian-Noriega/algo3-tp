@@ -226,7 +226,7 @@ public class BatallaIntegracionTest {
         Assertions.assertEquals(Clima.SIN_CLIMA, batalla.getClima());
         Assertions.assertFalse(pokeDormido.getEstados().contains(Estado.DORMIDO));
 
-        // El jugador2 se rinde y gana el jugador1
+        // El jugador2 se rinde
         batalla.rendir(batalla.getJugadorActual());
         Assertions.assertEquals(Optional.of(batalla.getJugadorSiguiente().getNombre()), batalla.obtenerGanador());
     }
