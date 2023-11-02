@@ -29,8 +29,8 @@ public class BatallaIntegracionTest {
         listaItems1.add(item2);
         listaItems1.add(item3);
 
-        Pokemon poke1 = new Pokemon("Naclastack", 7, Tipo.ROCA, List.of(hab1, hab2), 60, 93.0, 102.0, 84.0);
-        Pokemon poke2 = new Pokemon("Rapidash", 6, Tipo.FUEGO, List.of(hab3, hab4), 70, 67.0, 94.0, 50.0);
+        Pokemon poke1 = new Pokemon("Naclastack", 7, Tipo.ROCA, List.of(hab1, hab2), 35, 93.0, 152.0, 74.0);
+        Pokemon poke2 = new Pokemon("Rapidash", 6, Tipo.FUEGO, List.of(hab3, hab4), 42, 67.0, 110.0, 50.0);
         ArrayList<Pokemon> listaPokes1 = new ArrayList<>(List.of(poke1, poke2));
 
         Jugador jugador1 = new Jugador("Pepito", listaPokes1, listaItems1);
@@ -49,9 +49,10 @@ public class BatallaIntegracionTest {
         listaItems2.add(item5);
         listaItems2.add(item6);
 
-        Pokemon poke3 = new Pokemon("Fraxure", 6, Tipo.DRAGON, List.of(hab5, hab6), 59, 75.0, 99.0, 52.0);
-        Pokemon poke4 = new Pokemon("Gastrodon",5 , Tipo.AGUA, List.of(hab7, hab8), 68, 64.0, 113.0, 76.0);
-        ArrayList<Pokemon> listaPokes2 = new ArrayList<>(List.of(poke3, poke4));
+        Pokemon poke3 = new Pokemon("Fraxure", 6, Tipo.DRAGON, List.of(hab5, hab6), 80, 95.0, 120.0, 48.0);
+        Pokemon poke4 = new Pokemon("Gastrodon",5 , Tipo.AGUA, List.of(hab7, hab8), 50, 64.0, 113.0, 70.0);
+        Pokemon poke5 = new Pokemon("Mini Pikachu", 4, Tipo.FANTASMA, List.of(hab1), 1, 30, 80, 34);
+        ArrayList<Pokemon> listaPokes2 = new ArrayList<>(List.of(poke3, poke4, poke5));
 
         Jugador jugador2 = new Jugador("Fulanito", listaPokes2, listaItems2);
 
@@ -63,22 +64,39 @@ public class BatallaIntegracionTest {
         jugadores = setUp();
         batalla = new Batalla(jugadores);
 
-        // El jugador inicial es Pepito (1), ya que su pokemon actual tiene mayor velocidad que el de Fulanito
-        Assertions.assertEquals(jugadores.get(0), batalla.getJugadorActual());
+        // El jugador inicial es Fulanito(2), ya que su pokemon actual tiene mayor velocidad que el de Fulanito
+        Assertions.assertEquals(jugadores.get(1), batalla.getJugadorActual());
+
+        // El jugador2 cambia de pokemon
+        Pokemon pokeAct = batalla.getJugadorActual().getPokemonActual();
+        batalla.cambiarPokemon(2);
+        Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
+
+        batalla.cambiarTurno();
 
         // Pruebo que el jugador1 actual use una habilidad (Arañazo-->habilidad ataque)
         batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
         // Aun no hay ganador, pero el pokemon del jugador rival fue atacado.
         Assertions.assertEquals(Optional.empty(), batalla.obtenerGanador());
-        Pokemon pokeRival = batalla.getJugadorSiguiente().getPokemonActual();
-        Assertions.assertTrue(pokeRival.getVida() < pokeRival.getVidaMax());
+        Assertions.assertTrue(batalla.getJugadorSiguiente().getPokemonActual().estaMuerto());
+
+        batalla.cambiarTurno();
+
+        // El jugador 2 debe cambiar de Pokemon
+        batalla.cambiarPokemon(0);
+        batalla.cambiarTurno();
+
+        // EL jugador1 intenta usar item estado, pero no tiene estado
+        Optional<Error> err = batalla.usarItem(0, 0);
+        Assertions.assertNotEquals(Optional.empty(), err);
 
         batalla.cambiarTurno();
 
         // Pruebo que el jugador2 actual use un item (Jugo de apio-->item estadistica)
-        Pokemon pokeAct = batalla.getJugadorActual().getPokemonActual();
+        pokeAct = batalla.getJugadorActual().getListaPokemones().get(0);
         double defensaPokeAct = pokeAct.getDefensa();
         batalla.usarItem(0, 0);
+        System.out.printf("El jugador acutal es %s, su defensa era %s y ahora es %s \n", pokeAct.getNombre(), defensaPokeAct, pokeAct.getDefensa());
         // Verifico que la defensa haya mejorado
         Assertions.assertTrue(pokeAct.getDefensa() > defensaPokeAct);
 
@@ -127,11 +145,13 @@ public class BatallaIntegracionTest {
 
         // Pruebo que el jugador1 le cambie el estado al jugador2
         batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
-        Assertions.assertTrue(batalla.getJugadorSiguiente().getPokemonActual().getEstados().contains(Estado.DORMIDO));
+        Pokemon pokeDormido = batalla.getJugadorSiguiente().getPokemonActual();
+        Assertions.assertTrue(pokeDormido.getEstados().contains(Estado.DORMIDO));
 
         vidaPokeJug1 = batalla.getJugadorActual().getPokemonActual().getVida();
         vidaPokeJug2 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
         batalla.cambiarTurno();
+        pokeDormido.aplicarEfectoEstados();
 
         // Verifica que el clima afecte la vida de ambos pokemones (turnos con clima = 2, posibles turnos jug2 dormido= 1)
         modificadorPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVidaMax() * 0.03;
@@ -140,12 +160,13 @@ public class BatallaIntegracionTest {
         Assertions.assertEquals((int) (vidaPokeJug2 - modificadorPokeJug2), batalla.getJugadorActual().getPokemonActual().getVida());
 
         // Pruebo que el jugador2 no pueda usar un item revivir ya que esta muerto
-        Optional<Error> err = batalla.usarItem(2, 0);
+        err = batalla.usarItem(2, 0);
         Assertions.assertNotEquals(Optional.empty(), err);
 
         vidaPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
         vidaPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVida();
         batalla.cambiarTurno();
+        pokeDormido.aplicarEfectoEstados();
 
         // Verifica que el clima afecte la vida de ambos pokemones (turnos con clima = 3, posibles turnos jug2 dormido= 2)
         modificadorPokeJug1 = batalla.getJugadorActual().getPokemonActual().getVidaMax() * 0.03;
@@ -160,11 +181,54 @@ public class BatallaIntegracionTest {
         Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
         Assertions.assertEquals(batalla.getJugadorActual().getPokemonActual(), batalla.getJugadorActual().getListaPokemones().get(0));
 
+        vidaPokeJug1 = batalla.getJugadorActual().getPokemonActual().getVida();
+        vidaPokeJug2 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
         batalla.cambiarTurno();
+        pokeDormido.aplicarEfectoEstados();
 
+        // Verifica que el clima afecte la vida de ambos pokemones (turnos con clima = 4, posibles turnos jug2 dormido= 3)
+        modificadorPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVidaMax() * 0.03;
+        modificadorPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVidaMax() * 0.03;
+        Assertions.assertEquals((int) (vidaPokeJug1 - modificadorPokeJug1), batalla.getJugadorSiguiente().getPokemonActual().getVida());
+        Assertions.assertEquals((int) (vidaPokeJug2 - modificadorPokeJug2), batalla.getJugadorActual().getPokemonActual().getVida());
 
-        System.out.println(batalla.getJugadorActual().getPokemonActual().getVida());
-        System.out.println(batalla.getJugadorSiguiente().getPokemonActual().getVida());
+        // Pruebo que el jugador2 use un item (no puede usar habilidades estando dormido)
+        vidaPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVida();
+        modificadorPokeJug2 = (double) batalla.getJugadorActual().getPokemonActual().getVidaMax() / 3;
+        batalla.usarItem(1, 1);
+        int nuevaVidaPoke2 = (int)(vidaPokeJug2 + modificadorPokeJug2);
+        // verificamos que la nueva vida no supere la maxima, en otro caso la nueva vida es la maxima.
+        if (nuevaVidaPoke2 > batalla.getJugadorActual().getPokemonActual().getVidaMax()){
+            nuevaVidaPoke2 = batalla.getJugadorActual().getPokemonActual().getVidaMax();
+        }
+        Assertions.assertEquals(nuevaVidaPoke2, batalla.getJugadorActual().getPokemonActual().getVida());
+
+        vidaPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
+        vidaPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVida();
+        batalla.cambiarTurno();
+        pokeDormido.aplicarEfectoEstados();
+
+        // Verifica que el clima afecte la vida de ambos pokemones (turnos con clima = 4, posibles turnos jug2 dormido= 4)
+        modificadorPokeJug1 = batalla.getJugadorActual().getPokemonActual().getVidaMax() * 0.03;
+        modificadorPokeJug2 = batalla.getJugadorSiguiente().getPokemonActual().getVidaMax() * 0.03;
+        Assertions.assertEquals((int) (vidaPokeJug1 - modificadorPokeJug1), batalla.getJugadorActual().getPokemonActual().getVida());
+        Assertions.assertEquals((int) (vidaPokeJug2 - modificadorPokeJug2), batalla.getJugadorSiguiente().getPokemonActual().getVida());
+
+        // Pruebo que el jugador1 ataque al pokemon del jugador2
+        vidaPokeJug2 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
+        batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
+        Assertions.assertTrue(vidaPokeJug2 > batalla.getJugadorSiguiente().getPokemonActual().getVida());
+
+        batalla.cambiarTurno();
+        pokeDormido.aplicarEfectoEstados();
+        // (turnos con clima = 5, posibles turnos jug2 dormido= 5)
+        // El clima y el estado dormido del jugador2 deben irse
+        Assertions.assertEquals(Clima.SIN_CLIMA, batalla.getClima());
+        Assertions.assertFalse(pokeDormido.getEstados().contains(Estado.DORMIDO));
+
+        // El jugador2 se rinde y gana el jugador1
+        batalla.rendir(batalla.getJugadorActual());
+        Assertions.assertEquals(Optional.of(batalla.getJugadorSiguiente().getNombre()), batalla.obtenerGanador());
     }
 
 }
