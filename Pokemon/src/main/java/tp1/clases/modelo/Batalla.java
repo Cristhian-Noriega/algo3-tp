@@ -10,7 +10,6 @@ import java.util.Optional;
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
     private final AdministradorDeTurnos administradorTurnos;
-
     private final AdministradorDeClima administradorDeClima;
 
     public Batalla(ArrayList<Jugador> jugadores) {

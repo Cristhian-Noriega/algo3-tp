@@ -16,25 +16,40 @@ public class AdministradorDeTrunosTest {
     private AdministradorDeTurnos admn;
     private List<Jugador>  jugadores;
 
+    private Jugador jugadorA;
+    private Jugador jugadorB;
+
 
      @BeforeEach
      public void setUp(){
-         Jugador jugadorA = mock(Jugador.class);
-         Jugador jugadorB =  mock(Jugador.class);
+         jugadorA = mock(Jugador.class);
+         jugadorB =  mock(Jugador.class);
          jugadores = List.of(jugadorA, jugadorB);
-         this.admn = new AdministradorDeTurnos(jugadores);
-
-         when(jugadores.get(0).getVelocidadPokemonActual()).thenReturn(10.0);
-         when(jugadores.get(1).getVelocidadPokemonActual()).thenReturn(5.0);
-
-         admn.determinarJugadorIncial();
+         admn = new AdministradorDeTurnos(jugadores);
      }
 
     @DisplayName("Verifica que jugador inicial es aquel con el pokemon mas veloz y turno inicial es el indice d dicho jugador")
     @Test
-    public void determinaJugadorInicialAlMasVeloz(){
+    public void determinaJugadorInicialAlMasVeloz() {
+         for (int i = 0; i<jugadorA.getListaPokemones().size(); i++){
+             when(jugadorA.getVelocidadPokemonActual()).thenReturn(10.0);
+             when(jugadorB.getVelocidadPokemonActual()).thenReturn(5.0);
+         }
+        admn.determinarJugadorIncial();
+
         Assertions.assertEquals(jugadores.get(0), this.admn.getJugadorActual());
         Assertions.assertEquals(0, this.admn.getTurno());
+    }
+
+    @DisplayName("Verifica que jugador inicial es aquel con el pokemon mas vezlos en el campo, es decir el actual")
+    @Test
+    public void determinaJugadorInicialAlMasVelozAlReves(){
+        when(jugadorA.getVelocidadPokemonActual()).thenReturn(10.0);
+        when(jugadorB.getVelocidadPokemonActual()).thenReturn(15.0);
+        admn.determinarJugadorIncial();
+
+        Assertions.assertEquals(jugadores.get(1), this.admn.getJugadorActual());
+        Assertions.assertEquals(1, this.admn.getTurno());
     }
 
     @DisplayName("Verifica que el siguiente jugador, luego de inicializar los turnos, sea el menos veloz")

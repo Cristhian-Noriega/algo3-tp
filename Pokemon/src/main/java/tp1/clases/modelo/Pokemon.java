@@ -1,16 +1,15 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorHabilidadSinUsos;
+import tp1.clases.errores.ErrorIndiceFueraDeRango;
 import tp1.clases.errores.ErrorMismoEstado;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
  public class Pokemon {
     private final String nombre;
