@@ -1,6 +1,10 @@
 package tp1.clases.modelo;
 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
+
 import tp1.clases.errores.ErrorHabilidadSinUsos;
 import tp1.clases.errores.ErrorIndiceFueraDeRango;
 import tp1.clases.errores.ErrorMismoEstado;
@@ -25,8 +29,10 @@ import java.util.stream.Collectors;
     private double ataque;
     private double defensa;
 
-    public Pokemon(String nombre, int nivel, Tipo tipo,
-                   List<Habilidad> habilidades, int vidaMax, double velocidad, double ataque, double defensa) {
+    @JsonCreator
+    public Pokemon(@JsonProperty("nombre") String nombre, @JsonProperty("nivel") int nivel, @JsonProperty("tipo") Tipo tipo,
+                   @JsonProperty("habilidades") List<Habilidad> habilidades, @JsonProperty("vidaMax") int vidaMax, @JsonProperty("velocidad") double velocidad,
+                   @JsonProperty("ataque") double ataque, @JsonProperty("defensa") double defensa) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -130,6 +136,7 @@ import java.util.stream.Collectors;
         }
         this.vidaActual = (int) Math.min(nuevoValor, (double) vidaMax);
     }
+
 
     public void eliminarEstado(Estado estado) {
         this.estadosParaEliminar.add(estado);

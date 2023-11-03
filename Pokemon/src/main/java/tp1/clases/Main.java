@@ -24,5 +24,7 @@ public class Main {
         String res = ResultadoVista.mostrarResultado(batalla.obtenerGanador());
 
         System.out.println(res);
+
+
     }
 }

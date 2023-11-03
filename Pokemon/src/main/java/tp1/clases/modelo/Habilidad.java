@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
 import java.util.List;
@@ -94,3 +96,29 @@ public abstract class Habilidad{
         this.setPokemonRival(pokemonesActuales.get(1));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
