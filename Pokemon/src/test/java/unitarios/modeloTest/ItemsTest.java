@@ -20,7 +20,7 @@ public class ItemsTest {
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
     Item itemVida = new ItemRestauracionVida("mas vida", 40);
-    Item revivir = new ItemRestauracionVida("revivir", 0);
+    Item revivir = new ItemRevivir("revivir", 0);
     Item estado = new ItemEstado("recupero estado");
     Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD);
     Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE);
@@ -92,6 +92,34 @@ public class ItemsTest {
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
+    }
+
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente confundido")
+    @Test
+    void pasoDeConfundidoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
+        pokemonDePrueba.setEstado(Estado.CONFUNDIDO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.CONFUNDIDO));
+
+        Optional<Error> err = estado.usar(pokemonDePrueba);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
+    }
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente con todos los estados")
+    @Test
+    void pasoDeTodosLosEstadosANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
+        pokemonDePrueba.setEstado(Estado.DORMIDO);
+        pokemonDePrueba.setEstado(Estado.ENVENENADO);
+        pokemonDePrueba.setEstado(Estado.PARALIZADO);
+        pokemonDePrueba.setEstado(Estado.CONFUNDIDO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.DORMIDO));
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.ENVENENADO));
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.PARALIZADO));
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.CONFUNDIDO));
+
+        Optional<Error> err = estado.usar(pokemonDePrueba);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
+        Assertions.assertEquals(1, pokemonDePrueba.getEstados().size());
     }
 
     @DisplayName("uso item para normalizar pokemon *ya* normal")

@@ -103,17 +103,16 @@ import java.util.Optional;
     public void modificadorVelocidad(double modificador) { this.velocidad += modificador; }
 
     public Optional<Error> setEstado(Estado estado) {
-        if (estado == Estado.NORMAL) {
-            estados.clear();
-            estados.add(estado);
-        } else if (estados.contains(estado)){
+        if (estados.contains(estado)){
             return Optional.of(new ErrorMismoEstado(estado.name()));
-        } else if (estados.contains(Estado.NORMAL)){
+        }
+        if ((estado == Estado.NORMAL) || (estados.contains(Estado.NORMAL))){
             estados.clear();
             estados.add(estado);
-        }else{
+        } else {
             estados.add(estado);
         }
+
         EstadosComportamiento estadoComportamiento = estadosComportamientos.get(estado);
         if (estadoComportamiento == null) {
             estadoComportamiento = EstadoFactory.crearEstado(estado);
