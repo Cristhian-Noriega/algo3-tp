@@ -30,7 +30,7 @@ public class AdministradorDeTrunosTest {
 
     @DisplayName("Verifica que jugador inicial es aquel con el pokemon mas veloz y turno inicial es el indice d dicho jugador")
     @Test
-    public void determinaJugadorInicialAlMasVeloz() {
+    public void determinaJugadorInicialAlMasVelozTest() {
          for (int i = 0; i<jugadorA.getListaPokemones().size(); i++){
              when(jugadorA.getVelocidadPokemonActual()).thenReturn(10.0);
              when(jugadorB.getVelocidadPokemonActual()).thenReturn(5.0);
@@ -43,7 +43,7 @@ public class AdministradorDeTrunosTest {
 
     @DisplayName("Verifica que jugador inicial es aquel con el pokemon mas vezlos en el campo, es decir el actual")
     @Test
-    public void determinaJugadorInicialAlMasVelozAlReves(){
+    public void determinaJugadorInicialAlMasVelozAlRevesTest(){
         when(jugadorA.getVelocidadPokemonActual()).thenReturn(10.0);
         when(jugadorB.getVelocidadPokemonActual()).thenReturn(15.0);
         admn.determinarJugadorIncial();

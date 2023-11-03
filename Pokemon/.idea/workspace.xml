@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c2771a0-e747-46af-a769-a63f38ff4a1c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/controladorTest/ControladorMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/controladorTest/ControladorMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorDeTrunosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorDeTrunosTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/BatallaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
+    </list>
+    <list id="dfdd7e6e-e216-4e4e-a79e-373566d5f01e" name="Changes by cristhian" comment="" />
+    <list id="2b5e5a1f-2840-4e65-b327-fb96992bb477" name="Changes by lu" comment="" />
+    <list id="3751b41f-e527-4cd1-ad54-91563f976b77" name="Changes by melina" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2VP2b1LkpEQeAvA97Z1pAE5HtMB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;masTests&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/emilia/Desktop/Algo3/TP/algo3-tp/Pokemon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="tp1.clases" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ControladorMenuTest">
+    <configuration name="BatallaIntegracionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integracion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="PACKAGE_NAME" value="integracion" />
+      <option name="MAIN_CLASS_NAME" value="integracion.BatallaIntegracionTest" />
+      <option name="METHOD_NAME" value="juegoCortoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControladorMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.controladorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.controladorTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.controladorTest.ControladorMenuTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControladorMenuTest.verificoAgregarMenuHabilidades" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.controladorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.controladorTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.controladorTest.ControladorMenuTest" />
+      <option name="METHOD_NAME" value="verificoAgregarMenuHabilidades" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControladorMenuTest.verificoAgregarMenuItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.controladorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.controladorTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.controladorTest.ControladorMenuTest" />
+      <option name="METHOD_NAME" value="verificoAgregarMenuItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControladorMenuTest.verificoAgregarMenuPokemones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.controladorTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.controladorTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.controladorTest.ControladorMenuTest" />
+      <option name="METHOD_NAME" value="verificoAgregarMenuPokemones" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ControladorMenuTest" />
+        <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuItems" />
+        <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuPokemones" />
+        <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuHabilidades" />
+        <item itemvalue="JUnit.PokemonTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c2771a0-e747-46af-a769-a63f38ff4a1c" name="Changes" comment="" />
+      <created>1694723464818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694723464818</updated>
+      <workItem from="1694723466029" duration="3027000" />
+      <workItem from="1694777343566" duration="3178000" />
+      <workItem from="1694866208849" duration="5300000" />
+      <workItem from="1694905662467" duration="2200000" />
+      <workItem from="1695065932757" duration="5771000" />
+      <workItem from="1695072356165" duration="2653000" />
+      <workItem from="1695132333815" duration="2317000" />
+      <workItem from="1695326989892" duration="2424000" />
+      <workItem from="1695727814952" duration="776000" />
+      <workItem from="1695729092303" duration="6409000" />
+      <workItem from="1695748399493" duration="1627000" />
+      <workItem from="1695839241465" duration="919000" />
+      <workItem from="1695930304144" duration="45000" />
+      <workItem from="1695992461526" duration="1754000" />
+      <workItem from="1696078390673" duration="270000" />
+      <workItem from="1696078708987" duration="114000" />
+      <workItem from="1696079278731" duration="1105000" />
+      <workItem from="1696095722075" duration="4735000" />
+      <workItem from="1696190940976" duration="7436000" />
+      <workItem from="1696273649851" duration="10000" />
+      <workItem from="1696345251709" duration="83000" />
+      <workItem from="1696345390822" duration="10237000" />
+      <workItem from="1696440773759" duration="8000" />
+      <workItem from="1696442911260" duration="3786000" />
+      <workItem from="1696447178950" duration="2154000" />
+      <workItem from="1696505809947" duration="5815000" />
+      <workItem from="1696528952900" duration="11097000" />
+      <workItem from="1696604566929" duration="2422000" />
+      <workItem from="1696646000517" duration="4556000" />
+      <workItem from="1696686308779" duration="1979000" />
+      <workItem from="1697324034747" duration="3045000" />
+      <workItem from="1697801757940" duration="91000" />
+      <workItem from="1697893578675" duration="3840000" />
+      <workItem from="1697931519522" duration="3998000" />
+      <workItem from="1698150140640" duration="1607000" />
+      <workItem from="1698333009355" duration="8830000" />
+      <workItem from="1698428559769" duration="6290000" />
+      <workItem from="1698500685830" duration="5544000" />
+      <workItem from="1698666460749" duration="4141000" />
+      <workItem from="1698671982509" duration="4256000" />
+      <workItem from="1698698380634" duration="2125000" />
+      <workItem from="1698701083844" duration="805000" />
+      <workItem from="1698720022157" duration="182000" />
+      <workItem from="1698758808933" duration="939000" />
+      <workItem from="1698759850848" duration="343000" />
+      <workItem from="1698781308833" duration="749000" />
+      <workItem from="1698782669409" duration="11379000" />
+      <workItem from="1698798420264" duration="3718000" />
+      <workItem from="1698938720448" duration="21291000" />
+      <workItem from="1698961302158" duration="470000" />
+      <workItem from="1699031498189" duration="2292000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

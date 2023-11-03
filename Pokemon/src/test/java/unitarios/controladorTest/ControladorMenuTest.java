@@ -6,9 +6,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tp1.clases.controlador.*;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Habilidad;
+import tp1.clases.modelo.Item;
+import tp1.clases.modelo.Pokemon;
+
+import java.util.List;
+import java.util.Map;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class ControladorMenuTest {
 
@@ -22,82 +27,59 @@ public class ControladorMenuTest {
 
     @DisplayName("Verifico que al inicializar el controlador Menu, el menu inicial sea el principal")
     @Test
-    public void verificoMenuInicial(){
+    public void verificoMenuInicialTest(){
         Assertions.assertEquals(CategoriaMenu.PRINCIPAL, controlMenu.obtenerMenuActual().getCategoria());
     }
 
     @DisplayName("Verifico que se agregue correctamente el nuevo menuHabilidades")
     @Test
-    public void verificoAgregarMenuHabilidades(){
-        MenuHabilidades menuHabil = mock(MenuHabilidades.class);
+    public void verificoAgregarMenuHabilidadesTest(){
+        MenuHabilidades menuHabil = new MenuHabilidades(List.of(mock(Habilidad.class)));
         controlMenu.actualizarMenu(menuHabil);
 
-        // muy hardcodeado??
-
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.HABILIDADES);
         Assertions.assertEquals(CategoriaMenu.HABILIDADES, controlMenu.obtenerMenuActual().getCategoria());
     }
 
     @DisplayName("Verifico que se agregue correctamente el nuevo menuPokemones")
     @Test
-    public void verificoAgregarMenuPokemones(){
-        MenuPokemones menuPoke = mock(MenuPokemones.class);
+    public void verificoAgregarMenuPokemonesTest(){
+        MenuPokemones menuPoke = new MenuPokemones(List.of(mock(Pokemon.class)), false);
         controlMenu.actualizarMenu(menuPoke);
 
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.POKEMONES);
         Assertions.assertEquals(CategoriaMenu.POKEMONES, controlMenu.obtenerMenuActual().getCategoria());
     }
 
     @DisplayName("Verifico que se agregue correctamente el nuevo menuPokemonesItems")
     @Test
-    public void verificoAgregarMenuItems(){
-        MenuItems menuItem = mock(MenuItems.class);
+    public void verificoAgregarMenuItemsTest(){
+        MenuItems menuItem = new MenuItems(Map.of("Item", 0L), List.of(mock(Item.class)));
         controlMenu.actualizarMenu(menuItem);
 
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.ITEMS);
         Assertions.assertEquals(CategoriaMenu.ITEMS, controlMenu.obtenerMenuActual().getCategoria());
     }
 
     @DisplayName("Agrego varios menu y retrocedo, verificando el actual")
     @Test
     public void agregarYEliminarMenuTest(){
-        MenuItems menuItem = mock(MenuItems.class);
+        MenuItems menuItem = new MenuItems(Map.of("Item", 0L), List.of(mock(Item.class)));
         controlMenu.actualizarMenu(menuItem);
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.ITEMS);
         Assertions.assertEquals(CategoriaMenu.ITEMS, controlMenu.obtenerMenuActual().getCategoria());
 
-        MenuPrincipal menuPrincip = mock(MenuPrincipal.class);
+        MenuPrincipal menuPrincip = new MenuPrincipal();
         controlMenu.actualizarMenu(menuPrincip);
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.PRINCIPAL);
         Assertions.assertEquals(CategoriaMenu.PRINCIPAL, controlMenu.obtenerMenuActual().getCategoria());
 
         controlMenu.retroceder();
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.ITEMS);
         Assertions.assertEquals(CategoriaMenu.ITEMS, controlMenu.obtenerMenuActual().getCategoria());
 
-        MenuPokemones menuPoke = mock(MenuPokemones.class);
+        MenuPokemones menuPoke = new MenuPokemones(List.of(mock(Pokemon.class)), true);
         controlMenu.actualizarMenu(menuPoke);
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.POKEMONES);
         Assertions.assertEquals(CategoriaMenu.POKEMONES, controlMenu.obtenerMenuActual().getCategoria());
-    }
-
-    @DisplayName("Agrego varios menu iguales y se puede")
-    // esto debería poderse? Es raro, sino elimino el test.
-    // Osea en el codigo nunca lo vamos a hacer, pero si retrocediera quedaria en el mismo lugar
-    // Osea en el codigo nunca lo vamos a hacer, pero si retrocediera quedaria en el mismo lugar
-    @Test
-    public void agregarMismoMenuVariasVeces() {
-        MenuHabilidades menuHabi = mock(MenuHabilidades.class);
-        controlMenu.actualizarMenu(menuHabi);
-        controlMenu.actualizarMenu(menuHabi);
-
-        when(controlMenu.obtenerMenuActual().getCategoria()).thenReturn(CategoriaMenu.HABILIDADES);
-        Assertions.assertEquals(CategoriaMenu.HABILIDADES, controlMenu.obtenerMenuActual().getCategoria());
     }
 
     @DisplayName("Retrocedo sin agregar ningun menu, y no se puede")
     @Test
-    public void retrocederNoQuedaVacio() {
+    public void retrocederNoQuedaVacioTest() {
         controlMenu.retroceder();
 
         Assertions.assertNotNull(controlMenu.obtenerMenuActual());
@@ -105,7 +87,7 @@ public class ControladorMenuTest {
 
     @DisplayName("Retrocedo dos veces sin agregar ningun menu, y no se puede quedar sin menuActual")
     @Test
-    public void retrocederDosNoQuedaVacio() {
+    public void retrocederDosNoQuedaVacioTest() {
         controlMenu.retroceder();
         controlMenu.retroceder();
 
