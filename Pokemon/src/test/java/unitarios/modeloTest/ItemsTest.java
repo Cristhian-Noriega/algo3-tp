@@ -30,7 +30,7 @@ public class ItemsTest {
 
     @DisplayName("uso item que sube la vida con la vida del pokemon")
     @Test
-    void deberiaSubirLaVida(){
+    void deberiaSubirLaVidaTest(){
         //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-40);
 
@@ -40,7 +40,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para revivir un pokemon muerto")
     @Test
-    void intentoRevivirPokemon(){
+    void intentoRevivirPokemonTest(){
         //inicializo bajando la vida del poke para poder hacer la prueba
         pokemonDePrueba.modificarVida(-100);
         Assertions.assertTrue(pokemonDePrueba.estaMuerto());
@@ -51,14 +51,14 @@ public class ItemsTest {
 
     @DisplayName("uso item para revivir un pokemon *no* muerto")
     @Test
-    void noPuedoRevivirPokemonNoMuerto(){
+    void noPuedoRevivirPokemonNoMuertoTest(){
         Optional<Error> err = revivir.usar(pokemonDePrueba);
         Assertions.assertTrue(err.isPresent());
     }
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente dormido")
     @Test
-    void pasoDeDormidoANormal(){
+    void pasoDeDormidoANormalTest(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.DORMIDO);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.DORMIDO));
@@ -69,7 +69,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente envenenado")
     @Test
-    void pasoDeEnvenenadoANormal(){
+    void pasoDeEnvenenadoANormalTest(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.ENVENENADO);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.ENVENENADO));
@@ -80,7 +80,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para normalizar el estado del pokemon acualmente paralizado")
     @Test
-    void pasoDeParalizadoANormal(){
+    void pasoDeParalizadoANormalTest(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.PARALIZADO);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.PARALIZADO));
@@ -91,7 +91,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para normalizar pokemon *ya* normal")
     @Test
-    void noPuedoNormalizarPokemonNormal(){
+    void noPuedoNormalizarPokemonNormalTest(){
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
@@ -100,7 +100,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para mejorar la velocidad actual del pokemon un 10%")
     @Test
-    void mejoroVelocidadUnDiezPorciento(){
+    void mejoroVelocidadUnDiezPorcientoTest(){
         double velocidadInicial = pokemonDePrueba.getVelocidad();
         double loQueDeberiaDevolver = ((velocidadInicial*0.1) + velocidadInicial);
 
@@ -110,7 +110,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para mejorar el ataque actual del pokemon un 10%")
     @Test
-    void mejoroAtaqueUnDiezPorciento(){
+    void mejoroAtaqueUnDiezPorcientoTest(){
         double ataqueInicial = pokemonDePrueba.getAtaque();
         double loQueDeberiaDevolver = ((ataqueInicial*0.1) + ataqueInicial);
 
@@ -120,7 +120,7 @@ public class ItemsTest {
 
     @DisplayName("uso item para mejorar la defensa actual del pokemon un 10%")
     @Test
-    void mejoroDefensaUnDiezPorciento(){
+    void mejoroDefensaUnDiezPorcientoTest(){
         double defensaInicial = pokemonDePrueba.getDefensa();
         double loQueDeberiaDevolver = ((defensaInicial*0.1) + defensaInicial);
 

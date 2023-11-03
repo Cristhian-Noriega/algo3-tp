@@ -20,7 +20,7 @@ public class HabilidadesTest {
     AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
     @DisplayName("uso habilidad de ataque para hacerle daño al pokemon enemigo")
     @Test
-    void vidaDeEnemigoDisminuye(){
+    void vidaDeEnemigoDisminuyeTest(){
         Habilidad danio = new HabilidadAtaque("Arañazo", 1, Tipo.NORMAL, 100, "Hace daño al pokemon contrario");
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         danio.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
@@ -31,7 +31,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estadistica de ataque para aumentar el ataque del pokemon")
     @Test
-    void pokeAumentaSuAtaque(){
+    void pokeAumentaSuAtaqueTest(){
         Habilidad aumentaAtaque = new HabilidadEstadistica("Acua aro", 1, Tipo.AGUA, "Aumenta el ataque del pokemon", Estadisticas.ATAQUE, false);
         double ataqueInicial = rataDeLaboratorio.getAtaque();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
@@ -43,7 +43,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estadistica de ataque para disminuir el ataque del pokemon enemigo")
     @Test
-    void ataqueEnemigoDisminuye(){
+    void ataqueEnemigoDisminuyeTest(){
         double ataqueInicial = conejilloDeIndias.getAtaque();
         Habilidad disminuyeAtaque = new HabilidadEstadistica("Danza Pluma", 1, Tipo.VOLADOR, "Disminuye el ataque del enemigo", Estadisticas.ATAQUE, true);
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
@@ -55,7 +55,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estadistica de vida para aumentar la vida del pokemon")
     @Test
-    void pokeAumentaSuVida(){
+    void pokeAumentaSuVidaTest(){
         //inicializo bajando la vida del poke para poder hacer la prueba
         rataDeLaboratorio.modificarVida(-40);
         double vidaInicial = rataDeLaboratorio.getVida();
@@ -68,7 +68,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estadistica de defensa para aumentar la defensa del pokemon")
     @Test
-    void pokeAumentaSuDefensa(){
+    void pokeAumentaSuDefensaTest(){
         double defensaInicial = rataDeLaboratorio.getDefensa();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         Habilidad aumentaDefensa = new HabilidadEstadistica("Amnesia", 1, Tipo.PSIQUICO, "Aumenta sus defensas", Estadisticas.DEFENSA, false);
@@ -80,7 +80,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estadistica de defensa para disminuir la defensa del pokemon enemigo")
     @Test
-    void defensaEnemigoDisminuye(){
+    void defensaEnemigoDisminuyeTest(){
         double defensaInicial = conejilloDeIndias.getDefensa();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         Habilidad disminuyeDefensa = new HabilidadEstadistica("Rabia", 1, Tipo.FANTASMA, "Debilita la defensa del objetivo", Estadisticas.DEFENSA, true);
@@ -92,7 +92,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estado para dormir al pokemon enemigo")
     @Test
-    void duermoEnemigo(){
+    void duermoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         Habilidad dormir = new HabilidadEstado("Somnifero", 1, Tipo.PLANTA, "Duerme al objetivo", Estado.DORMIDO);
         dormir.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
@@ -104,7 +104,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estado para paralizar al pokemon enemigo")
     @Test
-    void paralizoEnemigo(){
+    void paralizoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         Habilidad paralizar = new HabilidadEstado("Chispa", 1, Tipo.ELECTRICO, "Paraliza al enemigo", Estado.PARALIZADO);
         paralizar.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
@@ -115,7 +115,7 @@ public class HabilidadesTest {
 
     @DisplayName("uso habilidad de estado para envenenar al pokemon enemigo")
     @Test
-    void envenenoEnemigo(){
+    void envenenoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         Habilidad envenenar = new HabilidadEstado("Hilo venenoso", 1, Tipo.VENENO, "Ataca al enemigo con hilillos venenosos", Estado.ENVENENADO);
         envenenar.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
@@ -125,7 +125,7 @@ public class HabilidadesTest {
     }
 
     @Test
-    void cambioDeClima(){
+    void cambioDeClimaTest(){
         AdministradorDeClima administradorDeClima = new AdministradorDeClima();
         administradorDeClima.cambiarClima(Clima.SIN_CLIMA);
         Habilidad arena = new HabilidadClima("tormenta de arena", 1, Tipo.TIERRA, "", Clima.TORMENTA_DE_ARENA);
