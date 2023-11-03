@@ -1,7 +1,6 @@
 package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorHabilidadSinUsos;
 
 import java.util.Optional;
 

@@ -36,7 +36,7 @@ public class ControladorJuego {
                 .build();
     }
 
-    public void JugarTurno() {
+    public void jugarTurno() {
 
         this.controladorMenu = new ControladorMenu(batalla);
         boolean turnoActivo = true;
@@ -48,53 +48,43 @@ public class ControladorJuego {
 
         while (turnoActivo){
             System.out.printf("Turno de %s \n \n", this.batalla.getJugadorActual().getNombre());
-            //si el no hay pokemon vivo al empezar el turno, debe seleccionar un  pokemon
-            //y se pasa el turno
+
             if (this.batalla.estaMuertoPokemonActual()) {
                 seleccionarPokemonVivo();
                 this.batalla.cambiarTurno();
                 break;
             }
 
-            //obtengo el menu actual en el que esta el jugador y su opcion elegida
             Menu menuActual = this.controladorMenu.obtenerMenuActual();
             int opcionElegida = interaccionConUsuario(menuActual);
 
-            //verifico si la opcion es valida
             if (!opcionValida(opcionElegida, menuActual.cantidadOpciones())) {
                 continue;
             }
 
-            //me fijo que el menu actual sea el menu principal, si lo es, obtengo la opcion seleccionada
-
             if (menuActual.getCategoria().equals(CategoriaMenu.PRINCIPAL)){
                 accion = OpcionMenu.getAccion(opcionElegida);
-                //muestra el campo de batalla y vuelve al inicio para seguir con el turno
+
                 if (Objects.equals(accion, OpcionMenu.VER_CAMPO)) {
                     CampoVista campo = new CampoVista();
                     System.out.println(campo.estadoJugador(batalla));
                     continue;
                 }
 
-                //si la opcion es rendirse, el juego se termina y salgo del while
                 if (Objects.equals(accion, OpcionMenu.RENDIRSE)) {
                     this.juegoTerminado = seRindio();
                     break;
                 }
 
-                //setteo el comando segun la accion seleccionada
                 setComando(accion);
                 continue;
             }
 
-            // si la opcion elegida es volver atras, voy al menu anterior con el controlador de menus
             if (opcionElegida == OpcionMenu.VOLVER_ATRAS.ordinal()) {
                 this.controladorMenu.retroceder();
                 continue;
             }
 
-            //en caso de que la accion elegida sea usar un item pero todavia no se mostraron los pokemones disponibles
-            //se agrega el menu de pokemones al controlador de menu para mostrar las opciones posibles
             if ((accion.equals(OpcionMenu.VER_ITEM)) || (menuActual.getCategoria().equals(CategoriaMenu.ITEMS))) {
                 this.controladorMenu.actualizarMenu(new MenuPokemones(this.batalla.getPokemonesJugadorActual(), true));
                 System.out.println("Seleccione el pokemon al cual aplicarle el item");
@@ -104,11 +94,9 @@ public class ControladorJuego {
                 }
             }
 
-
             int posicion = opcionElegida - 1;
             this.comando.definirOpcion(posicion);
 
-            //ejecuto el comando segun la traduccion con la opcion elegida
             Optional<Error> err = this.comando.ejecutar();
 
             if (err.isPresent()) {
@@ -208,5 +196,4 @@ public class ControladorJuego {
     public boolean getJuegoTerminado() {
         return this.juegoTerminado;
     }
-
 }

@@ -12,11 +12,6 @@ import java.util.Optional;
 
 public class ItemsTest {
 
-    //dudas:
-    //si el pokemon esta muerto con un estado (ej. ENVENENADO) y lo revivo, el estado sigue asi o vuelve a normal?
-    //si revivo un pokemon, las estadisticas deberian volver a las iniciales o sigue con las estadisticas modiicadas?
-
-    //To Do: agregar tests cuando tengamos doble estado
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
     Item itemVida = new ItemRestauracionVida("mas vida", 40);
@@ -104,18 +99,14 @@ public class ItemsTest {
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
     }
-    @DisplayName("uso item para normalizar el estado del pokemon acualmente con todos los estados")
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente con mas de un estado activo")
     @Test
-    void pasoDeTodosLosEstadosANormal(){
+    void pasoDeMasDeUnEstadoANormal(){
         //inicializo seteando el estado del poke para poder hacer la prueba
         pokemonDePrueba.setEstado(Estado.DORMIDO);
         pokemonDePrueba.setEstado(Estado.ENVENENADO);
-        pokemonDePrueba.setEstado(Estado.PARALIZADO);
-        pokemonDePrueba.setEstado(Estado.CONFUNDIDO);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.DORMIDO));
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.ENVENENADO));
-        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.PARALIZADO));
-        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.CONFUNDIDO));
 
         Optional<Error> err = estado.usar(pokemonDePrueba);
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));

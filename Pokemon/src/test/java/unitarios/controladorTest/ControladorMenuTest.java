@@ -29,8 +29,8 @@ public class ControladorMenuTest {
     @DisplayName("Verifico que se agregue correctamente el nuevo menuHabilidades")
     @Test
     public void verificoAgregarMenuHabilidades(){
-        MenuHabilidades menuHabil = mock(MenuHabilidades.class);
-        controlMenu.actualizarMenu(menuHabil);
+        MenuHabilidades menuHabilidades = mock(MenuHabilidades.class);
+        controlMenu.actualizarMenu(menuHabilidades);
 
         // muy hardcodeado??
 

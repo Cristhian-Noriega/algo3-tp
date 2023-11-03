@@ -1,41 +1,85 @@
 package unitarios.modeloTest;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.*;
 
 import java.util.List;
 import java.util.Optional;
 
-public class PokemonTest {
-    //To Do: test de estados y test habilidades e items con estados
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+public class PokemonTest {
     Habilidad aumentaDefensa = new HabilidadEstadistica("Amnesia", 1, Tipo.PSIQUICO, "Aumenta sus defensas", Estadisticas.DEFENSA, false);
     Pokemon pokeVivo = new Pokemon("pokeVivo", 18, Tipo.HIELO, List.of(aumentaDefensa), 98, 139.0, 180.0, 130.0);
     Pokemon pokeMuerto = new Pokemon("pokeMuerto", 20, Tipo.BICHO, List.of(), 0, 193.0, 184.0, 130.0);
     Pokemon otroPokeVivo = new Pokemon("El otroPokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0);
 
-//    @Test
-//    public void usarHabilidadDisponible(){
-//        double defensaInicial = pokeVivo.getDefensa();
-//
-//        Optional<Error> err = pokeVivo.usarHabilidad(0, otroPokeVivo);
-//        Assertions.assertTrue(err.isEmpty());
-//        //confirmo que haga algo
-//        Assertions.assertNotEquals(defensaInicial, pokeVivo.getDefensa());
-//    }
+    @Test
+    public void usarHabilidadDisponible(){
+        double defensaInicial = pokeVivo.getDefensa();
+        AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
 
-//    @Test
-//    public void usarHabilidadFueraDeRango(){
-//        Optional<Error> error = pokeVivo.usarHabilidad(-1, otroPokeVivo);
-//        Assertions.assertTrue(error.isPresent());
-//
-//        Optional<Error> err = pokeVivo.usarHabilidad(1, otroPokeVivo);
-//        Assertions.assertTrue(err.isPresent());
-//    }
+        Optional<Error> err = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(err.isEmpty());
 
-    //faltan test de habilidad cuando tiene un estado
+        //confirmo que haga algo
+        Assertions.assertNotEquals(defensaInicial, pokeVivo.getDefensa());
+    }
+
+    @Test
+    public void usarHabilidadFueraDeRango(){
+        AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
+
+        Optional<Error> error = pokeVivo.usarHabilidad(-1, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(error.isPresent());
+
+        Optional<Error> err = pokeVivo.usarHabilidad(1, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(err.isPresent());
+    }
+
+
+    @Test
+    void usarHabilidadSinUsosDisponibles(){
+        AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
+
+        //uso la habilidad para sacarle su ultimo uso
+        Optional<Error> err = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(err.isEmpty());
+
+        Optional<Error> error = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(error.isPresent());
+
+    }
+
+    @Test
+    void usarHabilidadEstandoDormido(){
+        AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
+        pokeVivo.setEstado(Estado.DORMIDO);
+        double vidaInicial = otroPokeVivo.getVida();
+
+        Optional<Error> error = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
+        Assertions.assertTrue(error.isEmpty());
+        Assertions.assertEquals(vidaInicial, otroPokeVivo.getVida());
+    }
+
+    @Test
+    void aplicarEfectoEstadoEnvenenado(){
+        double vidaInicial = pokeVivo.getVida();
+        pokeVivo.setEstado(Estado.ENVENENADO);
+
+        //paso el turno
+        pokeVivo.aplicarEfectoEstados();
+
+        pokeVivo.aplicarEfectoEstados();
+        Assertions.assertTrue(vidaInicial > pokeVivo.getVida());
+    }
 
 
     @Test

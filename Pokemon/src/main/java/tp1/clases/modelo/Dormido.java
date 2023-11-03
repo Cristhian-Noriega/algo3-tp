@@ -1,12 +1,6 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeAtacarDormido;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidadParalizado;
-
-import java.util.Optional;
-
-public class Dormido implements EstadosComportamiento {
+public class Dormido implements EstadoComportamiento {
 
     private int turnosDormido;
 
@@ -31,5 +25,10 @@ public class Dormido implements EstadosComportamiento {
         System.out.printf("%s no puede atacar estando dormido\n", pokemon.getNombre());
         habilidad.restarUso();
         return false;
+    }
+
+    @Override
+    public int getTurnos(){
+        return turnosDormido;
     }
 }

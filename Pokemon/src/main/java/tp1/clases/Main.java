@@ -15,15 +15,16 @@ public class Main {
 
         Batalla batalla = new Batalla(inicializador.iniciarJugadores(Constantes.cantidadJugadores));
 
-
         ControladorJuego controlador = new ControladorJuego(batalla);
 
         while (!controlador.getJuegoTerminado()) {
-            controlador.JugarTurno();
+            controlador.jugarTurno();
         }
 
         String res = ResultadoVista.mostrarResultado(batalla.obtenerGanador());
 
         System.out.println(res);
+
+
     }
 }

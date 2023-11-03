@@ -1,11 +1,6 @@
 package tp1.clases.modelo;
 
-import tp1.clases.errores.Error;
-import tp1.clases.errores.ErrorNoPuedeUsarHabilidadParalizado;
-
-import java.util.Optional;
-
-public class Paralizado implements EstadosComportamiento{
+public class Paralizado implements EstadoComportamiento {
 
     private int turnosParalizado;
 
@@ -26,7 +21,11 @@ public class Paralizado implements EstadosComportamiento{
             return false;
         }
         return true;
+    }
 
+    @Override
+    public int getTurnos(){
+        return turnosParalizado;
     }
 }
 
