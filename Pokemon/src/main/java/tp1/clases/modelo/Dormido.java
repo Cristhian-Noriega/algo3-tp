@@ -1,6 +1,6 @@
 package tp1.clases.modelo;
 
-public class Dormido implements EstadosComportamiento {
+public class Dormido implements EstadoComportamiento {
 
     private int turnosDormido;
 

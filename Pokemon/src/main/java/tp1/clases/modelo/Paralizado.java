@@ -1,6 +1,6 @@
 package tp1.clases.modelo;
 
-public class Paralizado implements EstadosComportamiento{
+public class Paralizado implements EstadoComportamiento {
 
     private int turnosParalizado;
 

@@ -12,7 +12,7 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class AdministradorDeTrunosTest {
+public class AdministradorDeTurnosTest {
     private AdministradorDeTurnos admn;
     private List<Jugador>  jugadores;
 

@@ -33,6 +33,7 @@ public class ControladorMenuTest {
 
     @DisplayName("Verifico que se agregue correctamente el nuevo menuHabilidades")
     @Test
+
     public void verificoAgregarMenuHabilidadesTest(){
         MenuHabilidades menuHabil = new MenuHabilidades(List.of(mock(Habilidad.class)));
         controlMenu.actualizarMenu(menuHabil);

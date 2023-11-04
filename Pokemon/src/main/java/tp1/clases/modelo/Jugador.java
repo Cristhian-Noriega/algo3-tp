@@ -105,7 +105,6 @@ public class Jugador {
     }
 
     private Map<String, Long> contarFrecuenciaItems(List<Item> items) {
-        // AGREGAR QUE ELIMINE POCION REPETIDA
         return items.stream().
                 collect(Collectors.groupingBy(
                         Item::getNombre,

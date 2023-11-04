@@ -89,6 +89,30 @@ public class ItemsTest {
         Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
     }
 
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente confundido")
+    @Test
+    void pasoDeConfundidoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
+        pokemonDePrueba.setEstado(Estado.CONFUNDIDO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.CONFUNDIDO));
+
+        Optional<Error> err = estado.usar(pokemonDePrueba);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
+    }
+    @DisplayName("uso item para normalizar el estado del pokemon acualmente con mas de un estado activo")
+    @Test
+    void pasoDeMasDeUnEstadoANormal(){
+        //inicializo seteando el estado del poke para poder hacer la prueba
+        pokemonDePrueba.setEstado(Estado.DORMIDO);
+        pokemonDePrueba.setEstado(Estado.ENVENENADO);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.DORMIDO));
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.ENVENENADO));
+
+        Optional<Error> err = estado.usar(pokemonDePrueba);
+        Assertions.assertTrue(pokemonDePrueba.getEstados().contains(Estado.NORMAL));
+        Assertions.assertEquals(1, pokemonDePrueba.getEstados().size());
+    }
+
     @DisplayName("uso item para normalizar pokemon *ya* normal")
     @Test
     void noPuedoNormalizarPokemonNormalTest(){

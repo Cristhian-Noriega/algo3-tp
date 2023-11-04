@@ -4,19 +4,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
-import tp1.clases.modelo.Confundido;
-import tp1.clases.modelo.EstadosComportamiento;
-import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.Random;
+import tp1.clases.modelo.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
 public class EstadoConfundidoTest {
 
-    private EstadosComportamiento estadoConfundido;
+    private EstadoComportamiento estadoConfundido;
 
     private Pokemon pokeConfundido;
 
@@ -27,9 +23,9 @@ public class EstadoConfundidoTest {
         this.pokeConfundido = mock(Pokemon.class);
     }
 
-    @DisplayName("Al aplicar efecto, se puede ya que lleva solo 0 turnos confundido")
+    @DisplayName("Al aplicar efecto, solo lleva un turno confundido")
     @Test
-    public void aplicarEfectoValidoTest(){
+    public void aplicarEfectoValidarPrimerTurnoTest(){
         estadoConfundido.aplicarEfecto(pokeConfundido);
 
         assertEquals(1, estadoConfundido.getTurnos());
@@ -45,6 +41,16 @@ public class EstadoConfundidoTest {
 
         // Verifico que resetea los turnos que lleva confundido
         assertEquals(0, estadoConfundido.getTurnos());
+    }
+
+    @DisplayName("Luego de 3 turnos, deja de estar confundido")
+    @Test
+    public void dejaDeEstarConfundidoTest(){
+        estadoConfundido.aplicarEfecto(pokeConfundido); // turno = 1
+        estadoConfundido.aplicarEfecto(pokeConfundido); // turno = 2
+        estadoConfundido.aplicarEfecto(pokeConfundido); // turno = 3
+
+        assertFalse(this.pokeConfundido.getEstados().contains(Estado.CONFUNDIDO));
     }
 
     @DisplayName("Intenta usar habilidad, puede y termina autolesionandose")

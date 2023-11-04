@@ -1,6 +1,6 @@
 package tp1.clases.modelo;
 
-public class Envenenado implements EstadosComportamiento{
+public class Envenenado implements EstadoComportamiento {
 
     private int turnosEnvenenado;
     public Envenenado(int turnosEnvenenado){

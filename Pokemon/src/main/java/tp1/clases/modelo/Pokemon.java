@@ -1,8 +1,5 @@
 package tp1.clases.modelo;
 
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
 import tp1.clases.errores.ErrorHabilidadSinUsos;
@@ -19,7 +16,7 @@ import java.util.stream.Collectors;
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
-    private final HashMap<Estado, EstadosComportamiento> estadosComportamientos;
+    private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
     private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
@@ -29,25 +26,23 @@ import java.util.stream.Collectors;
     private double ataque;
     private double defensa;
 
-    @JsonCreator
-    public Pokemon(@JsonProperty("nombre") String nombre, @JsonProperty("nivel") int nivel, @JsonProperty("tipo") Tipo tipo,
-                   @JsonProperty("habilidades") List<Habilidad> habilidades, @JsonProperty("vidaMax") int vidaMax, @JsonProperty("velocidad") double velocidad,
-                   @JsonProperty("ataque") double ataque, @JsonProperty("defensa") double defensa) {
-        this.nombre = nombre;
-        this.nivel = nivel;
-        this.tipo = tipo;
-        this.estados = new ArrayList<>();
-        this.estados.add(Estado.NORMAL);
-        this.estadosParaEliminar = new ArrayList<>();
-        this.estadosComportamientos = new HashMap<>();
-        this.estadosComportamientos.put(Estado.NORMAL, null);
-        this.habilidades = habilidades;
-        this.vidaMax = vidaMax;
-        this.vidaActual = vidaMax;
-        this.velocidad = velocidad;
-        this.ataque = ataque;
-        this.defensa = defensa;
-    }
+     public Pokemon(String nombre, int nivel, Tipo tipo,
+                    List<Habilidad> habilidades, int vidaMax, double velocidad, double ataque, double defensa) {
+         this.nombre = nombre;
+         this.nivel = nivel;
+         this.tipo = tipo;
+         this.estados = new ArrayList<>();
+         this.estados.add(Estado.NORMAL);
+         this.estadosParaEliminar = new ArrayList<>();
+         this.estadosComportamientos = new HashMap<>();
+         this.estadosComportamientos.put(Estado.NORMAL, null);
+         this.habilidades = habilidades;
+         this.vidaMax = vidaMax;
+         this.vidaActual = vidaMax;
+         this.velocidad = velocidad;
+         this.ataque = ataque;
+         this.defensa = defensa;
+     }
 
     public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival, AdministradorDeClima administradorDeClima){
         if (numeroHabilidad < 0 || numeroHabilidad >= this.habilidades.size()) {
@@ -70,7 +65,7 @@ import java.util.stream.Collectors;
 
     private Boolean usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
         for (Estado estado : this.estados) {
-            EstadosComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
+            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
                 boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
                 if (!puedeUsarHabilidad) {
@@ -84,7 +79,7 @@ import java.util.stream.Collectors;
     public void aplicarEfectoEstados(){
 
         for (Estado estado: this.estados){
-            EstadosComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
+            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
                 estadoComportamiento.aplicarEfecto(this);
 
@@ -108,20 +103,17 @@ import java.util.stream.Collectors;
     public void modificadorVelocidad(double modificador) { this.velocidad += modificador; }
 
     public Optional<Error> setEstado(Estado estado) {
-        if (estado == Estado.NORMAL) {
-            estados.clear();
-            estados.add(estado);
-        } else if (estados.contains(estado)){
+        if (estados.contains(estado)){
             return Optional.of(new ErrorMismoEstado(estado.name()));
-        } else if (estados.contains(Estado.NORMAL)){
-            estados.clear();
-            estados.add(estado);
-        }else{
-            estados.add(estado);
         }
-        EstadosComportamiento estadoComportamiento = estadosComportamientos.get(estado);
+        if ((estado == Estado.NORMAL) || (estados.contains(Estado.NORMAL))){
+            estados.clear();
+        }
+        estados.add(estado);
+
+        EstadoComportamiento estadoComportamiento = estadosComportamientos.get(estado);
         if (estadoComportamiento == null) {
-            estadoComportamiento = EstadoFactory.crearEstado(estado);
+            estadoComportamiento = EstadoFacotory.crearEstado(estado);
             estadosComportamientos.put(estado, estadoComportamiento);
         }
         System.out.println(this.getNombre() + " ahora esta " + estado.name().toLowerCase());

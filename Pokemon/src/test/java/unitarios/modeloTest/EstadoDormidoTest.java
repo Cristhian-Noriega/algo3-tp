@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 
 public class EstadoDormidoTest {
 
-    private EstadosComportamiento estadoDormido;
+    private EstadoComportamiento estadoDormido;
 
     private Pokemon pokeDormido;
 

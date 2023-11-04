@@ -42,6 +42,7 @@ public class PokemonTest {
         Assertions.assertTrue(err.isPresent());
     }
 
+
     @Test
     void usarHabilidadSinUsosDisponibles(){
         AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);

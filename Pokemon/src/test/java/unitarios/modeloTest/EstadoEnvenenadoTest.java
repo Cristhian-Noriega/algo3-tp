@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tp1.clases.modelo.Constantes;
 import tp1.clases.modelo.Envenenado;
-import tp1.clases.modelo.EstadosComportamiento;
+import tp1.clases.modelo.EstadoComportamiento;
 import tp1.clases.modelo.Pokemon;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class EstadoEnvenenadoTest {
-    private EstadosComportamiento estadoEnvenenado;
+    private EstadoComportamiento estadoEnvenenado;
 
     private Pokemon pokeEnvenenado;
 
@@ -42,6 +42,7 @@ public class EstadoEnvenenadoTest {
         verify(pokeEnvenenado).modificarVida((-1) * Constantes.porcentajeDeEnvenamiento);
         assertEquals(2, estadoEnvenenado.getTurnos());
     }
+
 
     @DisplayName("Al llamar a usarHabilidad simplemente devuelve true, ya que este estado no niega el uso en ningun caso")
     @Test

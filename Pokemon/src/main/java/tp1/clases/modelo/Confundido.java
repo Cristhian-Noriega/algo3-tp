@@ -1,6 +1,6 @@
 package tp1.clases.modelo;
 
-public class Confundido implements EstadosComportamiento{
+public class Confundido implements EstadoComportamiento {
 
     private int turnosConfundido;
 
@@ -10,7 +10,7 @@ public class Confundido implements EstadosComportamiento{
 
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
-        if (this.turnosConfundido == 3){
+        if (this.turnosConfundido == Constantes.turnosParaCurarseEstadoConfundido){
             pokemon.eliminarEstado(Estado.CONFUNDIDO);
             this.turnosConfundido = 0;
             return;
@@ -20,9 +20,9 @@ public class Confundido implements EstadosComportamiento{
 
     @Override
     public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon) {
-        boolean seAutolesiona = Random.probabilidad(1.0/3.0);
+        boolean seAutolesiona = Random.probabilidad(Constantes.probabilidadDeAutolesionarse);
         if (seAutolesiona){
-            double danio = 0.15 * pokemon.getVidaMax();
+            double danio = Constantes.porcentajeDeAutolesionConfundido * pokemon.getVidaMax();
             pokemon.modificarVida((-1) * danio);
             System.out.printf("%s esta cofundido y se autolesiono\n", pokemon.getNombre());
         }

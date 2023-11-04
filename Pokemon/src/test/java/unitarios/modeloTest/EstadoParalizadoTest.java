@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class EstadoParalizadoTest {
-    private EstadosComportamiento estadoParalizado;
+    private EstadoComportamiento estadoParalizado;
 
     private Pokemon pokeParalizado;
 

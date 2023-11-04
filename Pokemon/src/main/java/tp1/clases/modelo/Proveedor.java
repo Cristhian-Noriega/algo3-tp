@@ -171,7 +171,7 @@ public class Proveedor {
         listaItems2.add(item3);
         listaItems2.add(item5);
         listaItems2.add(item7);
-        listaItems2.add(item7);
+        listaItems2.add(item3);
         listaItems2.add(item5);
         this.listasItems.add(listaItems1);
         this.listasItems.add(listaItems2);
