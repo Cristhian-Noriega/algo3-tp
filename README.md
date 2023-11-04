@@ -1,13 +1,3 @@
-# algo3-tp
-Trabajo Práctico de Algoritmos y Programación III (FIUBA) - 2C2023
+Para correr el juego es necesario tener la versión 17 de Java, pararse en el directorio que contiene el archivo Pokemon.jar y ejecutar el comando:
 
-
-Grupo Paradigmáticos
-
-Calvert de Bohun, Lucia - 109441 
-
-Duzac, Emilia - 110307 
-
-Noriega, Cristhian - 109164 
-
-Retamozo, Melina - 110065 
+java -jar Pokemon.jar
