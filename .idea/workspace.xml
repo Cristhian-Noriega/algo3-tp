@@ -5,63 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EstadoComportamiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EstadoFacotory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/integracion/BatallaIntegracionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/AdministradorDeTurnosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoConfundidoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoDormidoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoParalizadoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_10_23_14_39_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_10_23_14_39_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_10_23_14_39__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_23_21_33_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_23_21_33__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/algo3-tp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Batalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Clima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Confundido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Dormido.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Dormido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Envenenado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Envenenado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EstadoFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/EstadosComportamiento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Paralizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Paralizado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/MainTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/controladorTest/ControladorJuegoTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/controladorTest/ControladorMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/controladorTest/ControladorMenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/AdministradorDeTrunosTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/BatallaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/BatallaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/BatallaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/HabilidadesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/PokemonTest.java" afterDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -127,7 +77,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest">
+  <component name="RunManager" selected="JUnit.unitarios in Pokemon">
     <configuration name="AdministradorDeTurnosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
       <extension name="coverage">
@@ -175,21 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pokemon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unitarios.modeloTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ItemsTest.pasoDeTodosLosEstadosANormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
       <extension name="coverage">
@@ -202,6 +137,14 @@
       <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
       <option name="METHOD_NAME" value="pasoDeTodosLosEstadosANormal" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unitarios in Pokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/Pokemon/src/test/java/unitarios" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -221,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.unitarios in Pokemon" />
         <item itemvalue="JUnit.EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest" />
         <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuHabilidades" />
         <item itemvalue="JUnit.AdministradorDeTurnosTest" />
         <item itemvalue="JUnit.ItemsTest.pasoDeTodosLosEstadosANormal" />
-        <item itemvalue="JUnit.ItemsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +225,9 @@
       <workItem from="1698957041678" duration="1527000" />
       <workItem from="1699016942916" duration="721000" />
       <workItem from="1699017691324" duration="1100000" />
-      <workItem from="1699018803951" duration="16992000" />
+      <workItem from="1699018803951" duration="17237000" />
+      <workItem from="1699037108580" duration="1773000" />
+      <workItem from="1699056781169" duration="672000" />
     </task>
     <servers />
   </component>
@@ -322,6 +267,10 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/algo3_tp$unitarios_in_Pokemon.ic" NAME="unitarios in Pokemon Coverage Results" MODIFIED="1699057125987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/algo3_tp$EstadoEnvenenadoTest_aplicarEfectoReduceVidaUnCincoPorcientoTest.ic" NAME="EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest Coverage Results" MODIFIED="1699057005607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>unitarios.modeloTest.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/algo3_tp$Main.ic" NAME="Main Coverage Results" MODIFIED="1696650388579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tp1.clases.*</FILTER>
     </SUITE>

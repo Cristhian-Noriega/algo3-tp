@@ -13,7 +13,7 @@ public class AdministradorClimaTest {
     Pokemon rataDeLaboratorio = new Pokemon("Rata de laboratorio", 20, Tipo.AGUA, List.of(), 100, 193.0, 184.0, 130.0);
     Pokemon conejilloDeIndias = new Pokemon("Conejillo de Indias", 18, Tipo.TIERRA, List.of(), 98, 139.0, 180.0, 130.0);
     @Test
-    void actualizarTurno(){
+    void actualizarTurnoTest(){
         AdministradorDeClima admin = new AdministradorDeClima();
         admin.cambiarClima(Clima.HURACAN);
 
@@ -43,7 +43,7 @@ public class AdministradorClimaTest {
     }
 
     @Test
-    void afectarPokemonesPorClima(){
+    void afectarPokemonesPorClimaTest(){
         Jugador jugadorA = mock(Jugador.class);
         when(jugadorA.getPokemonActual()).thenReturn(rataDeLaboratorio);
         Jugador jugadorB = mock(Jugador.class);
