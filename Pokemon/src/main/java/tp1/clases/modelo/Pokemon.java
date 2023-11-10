@@ -16,10 +16,7 @@ import java.util.stream.Collectors;
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
-
     private final AdministradorDeEstados administradorDeEstados;
-    private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
-    private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
     private final int vidaMax;
