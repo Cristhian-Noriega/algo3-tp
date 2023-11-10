@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/AdministradorDeEstados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -31,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="teller" />
+        <entry key="$PROJECT_DIR$" value="tp-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;tp-2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;estadosv2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -163,10 +165,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AdministradorDeTurnosTest" />
         <item itemvalue="JUnit.unitarios in Pokemon" />
         <item itemvalue="JUnit.EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest" />
         <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuHabilidades" />
-        <item itemvalue="JUnit.AdministradorDeTurnosTest" />
         <item itemvalue="JUnit.ItemsTest.pasoDeTodosLosEstadosANormal" />
       </list>
     </recent_temporary>
@@ -229,6 +231,8 @@
       <workItem from="1699056781169" duration="1667000" />
       <workItem from="1699058472512" duration="1415000" />
       <workItem from="1699059927329" duration="1713000" />
+      <workItem from="1699551296848" duration="5689000" />
+      <workItem from="1699579757515" duration="3270000" />
     </task>
     <servers />
   </component>

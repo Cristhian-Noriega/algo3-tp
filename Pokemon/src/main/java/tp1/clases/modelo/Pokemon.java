@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
+
+    private final AdministradorDeEstados administradorDeEstados;
     private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
     private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
@@ -33,9 +35,7 @@ import java.util.stream.Collectors;
          this.tipo = tipo;
          this.estados = new ArrayList<>();
          this.estados.add(Estado.NORMAL);
-         this.estadosParaEliminar = new ArrayList<>();
-         this.estadosComportamientos = new HashMap<>();
-         this.estadosComportamientos.put(Estado.NORMAL, null);
+         this.administradorDeEstados = new AdministradorDeEstados(this);
          this.habilidades = habilidades;
          this.vidaMax = vidaMax;
          this.vidaActual = vidaMax;
@@ -54,7 +54,7 @@ import java.util.stream.Collectors;
             return Optional.of(new ErrorHabilidadSinUsos(habilidad.getNombre()));
         }
 
-        Boolean pudoUsarse = this.usarHabilidadEstados(numeroHabilidad, this);
+        Boolean pudoUsarse = this.administradorDeEstados.usarHabilidadEstados(numeroHabilidad, this);
         if(!pudoUsarse){
             return Optional.empty();
         }
@@ -63,33 +63,8 @@ import java.util.stream.Collectors;
         return habilidad.usar();
     }
 
-    private Boolean usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
-        for (Estado estado : this.estados) {
-            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
-            if (estadoComportamiento != null) {
-                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
-                if (!puedeUsarHabilidad) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     public void aplicarEfectoEstados(){
-
-        for (Estado estado: this.estados){
-            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
-            if (estadoComportamiento != null) {
-                estadoComportamiento.aplicarEfecto(this);
-
-            }
-        }
-        this.estados.removeAll(this.estadosParaEliminar);
-        this.estadosParaEliminar.clear();
-        if (this.estados.isEmpty()){
-            this.estados.add(Estado.NORMAL);
-        }
+         this.administradorDeEstados.aplicarEfectoEstados();
     }
 
     public boolean estaMuerto() {
@@ -110,12 +85,7 @@ import java.util.stream.Collectors;
             estados.clear();
         }
         estados.add(estado);
-
-        EstadoComportamiento estadoComportamiento = estadosComportamientos.get(estado);
-        if (estadoComportamiento == null) {
-            estadoComportamiento = EstadoFacotory.crearEstado(estado);
-            estadosComportamientos.put(estado, estadoComportamiento);
-        }
+        this.administradorDeEstados.setEstado(estado);
         System.out.println(this.getNombre() + " ahora esta " + estado.name().toLowerCase());
         return Optional.empty() ;
     }
@@ -131,8 +101,7 @@ import java.util.stream.Collectors;
 
 
     public void eliminarEstado(Estado estado) {
-        this.estadosParaEliminar.add(estado);
-        System.out.println(this.nombre + " ha dejado de estar " + estado.name().toLowerCase());
+        this.administradorDeEstados.eliminarEstado(estado);
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
