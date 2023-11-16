@@ -9,27 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/MainJavaFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/integracion/BatallaIntegracionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/integracion/BatallaIntegracionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Pokemon_jar/Pokemon.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Pokemon_jar/Pokemon.jar" afterDir="false" />
-    </list>
+    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="" />
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
     <list id="8980183e-9624-4fad-9fdf-4b52c39a0d85" name="Changes by melina" comment="" />
@@ -92,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "estadosv2",
+    "git-widget-placeholder": "vistaItems",
     "jdk.selected.JAVA_MODULE": "graalvm-jdk-17",
     "last_directory_selection": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases",
     "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes",
@@ -313,7 +293,7 @@
       <workItem from="1700010742375" duration="3453000" />
       <workItem from="1700048797930" duration="11680000" />
       <workItem from="1700067614923" duration="9088000" />
-      <workItem from="1700138539901" duration="3342000" />
+      <workItem from="1700138539901" duration="3749000" />
     </task>
     <servers />
   </component>
