@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.ControladorMenuItems">
+   <top>
+      <Label BorderPane.alignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagenes/label_items.png" />
+               </image>
+            </ImageView>
+         </graphic></Label>
+   </top>
+   <left>
+      <ImageView fitHeight="194.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@Imagenes/bag_pokemon.png" />
+         </image>
+      </ImageView>
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="106.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="buttonContainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="210.0" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="595.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="itemImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="itemDescriptionTextArea" prefHeight="71.0" prefWidth="424.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
