@@ -13,9 +13,12 @@ public class ItemRestauracionVida implements Item {
 
     int MOLESTAALUMNOS = 0;
 
-    public ItemRestauracionVida(String nombre, int vida){ //si vida es 0 entonces es pocion molesta alumnos
+    private final String descripcion;
+
+    public ItemRestauracionVida(String nombre, int vida, String descripcion){ //si vida es 0 entonces es pocion molesta alumnos
         this.nombre = nombre;
         this.vida = vida;
+        this.descripcion = descripcion;
     }
 
     @Override
@@ -41,4 +44,7 @@ public class ItemRestauracionVida implements Item {
         return Optional.empty();
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
 }

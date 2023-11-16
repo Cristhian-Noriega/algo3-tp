@@ -128,22 +128,22 @@ public class Proveedor {
 
 
 
-        Item item1 = new ItemEstado("Sacar estado");
+        Item item1 = new ItemEstado("Sacar estado", "saca todos los estados activos del pokemon");
 
-        Item item2 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA);
+        Item item2 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA, "aumenta la defensa del pokemon");
 
-        Item item3 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE);
+        Item item3 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE, "aumenta el ataque del pokemon");
 
-        Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD);
+        Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD, "le da alas al pokemon aumentando su velocidad");
 
 
-    Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0);
+    Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0, "molesta al alumno");
 
-    Item item6 = new ItemRestauracionVida("Mega Pocion", 50);
+    Item item6 = new ItemRestauracionVida("Mega Pocion", 50, "aumenta vida");
 
-    Item item7 = new ItemRestauracionVida("Hiper Pocion", 100);
+    Item item7 = new ItemRestauracionVida("Hiper Pocion", 100, "auenta vida");
 
-    Item item8 = new ItemRevivir("Revivir", 0);
+    Item item8 = new ItemRevivir("Revivir", 0, "revive al pokemon debilitado");
 
 
     public Proveedor() {

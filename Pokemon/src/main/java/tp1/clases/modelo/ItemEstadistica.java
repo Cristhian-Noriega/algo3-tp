@@ -2,6 +2,7 @@ package tp1.clases.modelo;
 
 import tp1.clases.errores.Error;
 
+import java.lang.invoke.StringConcatFactory;
 import java.util.Optional;
 
 public class ItemEstadistica implements Item{
@@ -9,8 +10,11 @@ public class ItemEstadistica implements Item{
     private final Estadisticas estadistica;
     private final Categoria categoria = Categoria.ESTADISTICA;
 
-    public ItemEstadistica(String nombre, Estadisticas estadistica) {
+    private final String descripcion;
+
+    public ItemEstadistica(String nombre, Estadisticas estadistica, String descripcion) {
         this.nombre = nombre;
+        this.descripcion = descripcion;
         this.estadistica = estadistica;
     }
 
@@ -23,6 +27,7 @@ public class ItemEstadistica implements Item{
     public Categoria getCategoria() {
         return this.categoria;
     }
+
 
     @Override
     public Optional<Error> usar(Pokemon pokemon){
@@ -42,6 +47,10 @@ public class ItemEstadistica implements Item{
                 return Optional.empty();
         }
         return Optional.empty();
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 }
 

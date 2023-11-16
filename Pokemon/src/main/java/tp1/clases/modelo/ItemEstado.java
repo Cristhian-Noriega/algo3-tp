@@ -8,10 +8,14 @@ import java.util.Optional;
 public class ItemEstado implements Item{
 
     private final String nombre;
+
     private final Categoria categoria = Categoria.ESTADO;
 
-    public ItemEstado(String nombre){
+    private final String descripcion;
+
+    public ItemEstado(String nombre, String descripcion){
         this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
     @Override
@@ -33,4 +37,7 @@ public class ItemEstado implements Item{
         return Optional.empty();
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
 }

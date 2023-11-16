@@ -10,8 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/MainJavaFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Habilidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/integracion/BatallaIntegracionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/integracion/BatallaIntegracionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Pokemon_jar/Pokemon.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Pokemon_jar/Pokemon.jar" afterDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -25,7 +42,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="module-info" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -38,10 +57,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="jdkForImporter" value="17" />
@@ -49,7 +76,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -66,18 +93,42 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "estadosv2",
+    "jdk.selected.JAVA_MODULE": "graalvm-jdk-17",
+    "last_directory_selection": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases",
+    "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.unitarios in Pokemon">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes" />
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources" />
+      <recent name="$PROJECT_DIR$/Pokemon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes" />
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources" />
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/tp1.clases" />
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Pokemon">
+    <configuration name="Pokemon" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="tp1.clases.MainJavaFX" />
+      <module name="Pokemon" />
+      <option name="PROGRAM_PARAMETERS" value="–module-path /path/to/javafx-sdk-17.0.1/lib –add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdministradorDeTurnosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
       <extension name="coverage">
@@ -162,10 +213,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Pokemon" />
+      <item itemvalue="JUnit.AdministradorDeTurnosTest" />
+      <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuHabilidades" />
+      <item itemvalue="JUnit.EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest" />
+      <item itemvalue="JUnit.ItemsTest.pasoDeTodosLosEstadosANormal" />
+      <item itemvalue="JUnit.unitarios in Pokemon" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.unitarios in Pokemon" />
         <item itemvalue="JUnit.AdministradorDeTurnosTest" />
+        <item itemvalue="JUnit.unitarios in Pokemon" />
         <item itemvalue="JUnit.EstadoEnvenenadoTest.aplicarEfectoReduceVidaUnCincoPorcientoTest" />
         <item itemvalue="JUnit.ControladorMenuTest.verificoAgregarMenuHabilidades" />
         <item itemvalue="JUnit.ItemsTest.pasoDeTodosLosEstadosANormal" />
@@ -233,7 +292,28 @@
       <workItem from="1699551296848" duration="5689000" />
       <workItem from="1699579757515" duration="4170000" />
       <workItem from="1699639920465" duration="669000" />
-      <workItem from="1699641870617" duration="585000" />
+      <workItem from="1699641870617" duration="1188000" />
+      <workItem from="1699643081324" duration="1631000" />
+      <workItem from="1699645719701" duration="1980000" />
+      <workItem from="1699707931249" duration="7367000" />
+      <workItem from="1699729286707" duration="2676000" />
+      <workItem from="1699732638673" duration="4138000" />
+      <workItem from="1699737545372" duration="590000" />
+      <workItem from="1699738208894" duration="825000" />
+      <workItem from="1699739161548" duration="1092000" />
+      <workItem from="1699740288521" duration="621000" />
+      <workItem from="1699740940443" duration="2164000" />
+      <workItem from="1699743551698" duration="4920000" />
+      <workItem from="1699748483736" duration="534000" />
+      <workItem from="1699753009652" duration="4847000" />
+      <workItem from="1699826261449" duration="3673000" />
+      <workItem from="1699875297496" duration="16901000" />
+      <workItem from="1699962617346" duration="1820000" />
+      <workItem from="1699985174059" duration="1935000" />
+      <workItem from="1700010742375" duration="3453000" />
+      <workItem from="1700048797930" duration="11680000" />
+      <workItem from="1700067614923" duration="9088000" />
+      <workItem from="1700138539901" duration="3342000" />
     </task>
     <servers />
   </component>
@@ -262,6 +342,10 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -271,6 +355,10 @@
         <PinnedItemInfo parentTag="unitarios.modeloTest.EstadoEnvenenadoTest" memberName="pokeEnvenenado" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/algo3_tp$unitarios_in_Pokemon.ic" NAME="unitarios in Pokemon Coverage Results" MODIFIED="1699583719466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

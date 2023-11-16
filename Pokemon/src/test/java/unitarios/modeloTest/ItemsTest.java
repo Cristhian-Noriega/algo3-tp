@@ -14,12 +14,12 @@ public class ItemsTest {
 
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0);
 
-    Item itemVida = new ItemRestauracionVida("mas vida", 40);
-    Item revivir = new ItemRevivir("revivir", 0);
-    Item estado = new ItemEstado("recupero estado");
-    Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD);
-    Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE);
-    Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA);
+    Item itemVida = new ItemRestauracionVida("mas vida", 40, descripcion);
+    Item revivir = new ItemRevivir("revivir", 0, descripcion);
+    Item estado = new ItemEstado("recupero estado", descripcion);
+    Item velocidad = new ItemEstadistica("mejoro velocidad", descripcion, Estadisticas.VELOCIDAD);
+    Item ataque = new ItemEstadistica("mejoro atque", descripcion, Estadisticas.ATAQUE);
+    Item defensa = new ItemEstadistica("mejoro defensa", descripcion, Estadisticas.DEFENSA);
 
     @DisplayName("uso item que sube la vida con la vida del pokemon *ya* al maximo")
     @Test

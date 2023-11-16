@@ -8,4 +8,5 @@ public interface Item {
     String getNombre();
     Optional<Error> usar(Pokemon pokemon);
     Categoria getCategoria();
+    String getDescripcion();
 }

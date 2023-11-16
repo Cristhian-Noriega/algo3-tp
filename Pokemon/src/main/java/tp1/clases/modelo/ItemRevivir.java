@@ -9,9 +9,12 @@ public class ItemRevivir implements Item {
     protected final String nombre;
     protected final int vida;
     private final Categoria categoria = Categoria.VIDA;
-    public ItemRevivir(String nombre, int vida){
+
+    private final String descripcion;
+    public ItemRevivir(String nombre, int vida, String descripcion){
         this.nombre = nombre;
         this.vida = vida;
+        this.descripcion = descripcion;
     }
 
     @Override
@@ -32,5 +35,9 @@ public class ItemRevivir implements Item {
         pokemon.modificarVida(pokemon.getVidaMax());
         System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
         return Optional.empty();
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 }
