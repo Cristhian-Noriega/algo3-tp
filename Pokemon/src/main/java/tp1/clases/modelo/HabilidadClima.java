@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public class HabilidadClima extends Habilidad {
     private final Clima clima;
-    public HabilidadClima(String nombre, Integer usos, Tipo tipo, String info, Clima clima) {
-        super(nombre, usos, tipo, info, Categoria.CLIMA);
+    public HabilidadClima(String nombre, Integer usos, Tipo tipo, String info, Clima clima, Integer id) {
+        super(nombre, usos, tipo, info, Categoria.CLIMA, id);
         this.clima = clima;
     }
 

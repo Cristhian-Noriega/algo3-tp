@@ -1,12 +1,15 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Jugador {
+public class Jugador implements Serializable {
 
     private final ArrayList<Pokemon> pokemones;
     private Pokemon pokemonActual;
@@ -14,7 +17,8 @@ public class Jugador {
     private final String nombre;
     private final Map<String, Long> mapCantidadItems;
 
-    public Jugador(String nombre, ArrayList<Pokemon> pokemones, List<Item> items) {
+    @JsonCreator
+    public Jugador(@JsonProperty("nombre") String nombre, @JsonProperty("pokemones") ArrayList<Pokemon> pokemones, @JsonProperty("items") List<Item> items) {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.mapCantidadItems = this.contarFrecuenciaItems(items);

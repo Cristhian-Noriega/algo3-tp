@@ -16,42 +16,42 @@ public class BatallaIntegracionTest {
     Batalla batalla;
 
     private ArrayList<Jugador> setUp(){
-        Habilidad hab1 = new HabilidadAtaque("Arañazo", 4, Tipo.NORMAL, 122, "Araña con afiladas garras");
-        Habilidad hab2 = new HabilidadEstadistica("Amnesia", 2, Tipo.PSIQUICO, "El usuario olvida sus preocupaciones y aumenta mucho sus defensas", Estadisticas.DEFENSA, false);
-        Habilidad hab3 = new HabilidadEstado("Bostezo", 7, Tipo.NORMAL, "Gran bostezo que induce al sueño del enemigo", Estado.DORMIDO);
-        Habilidad hab4 = new HabilidadClima("Dia de playa", 3, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO);
+        Habilidad hab1 = new HabilidadAtaque("Arañazo", 4, Tipo.NORMAL, 122, "Araña con afiladas garras", 1);
+        Habilidad hab2 = new HabilidadEstadistica("Amnesia", 2, Tipo.PSIQUICO, "El usuario olvida sus preocupaciones y aumenta mucho sus defensas", Estadisticas.DEFENSA, false, 2);
+        Habilidad hab3 = new HabilidadEstado("Bostezo", 7, Tipo.NORMAL, "Gran bostezo que induce al sueño del enemigo", Estado.DORMIDO, 3);
+        Habilidad hab4 = new HabilidadClima("Dia de playa", 3, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO, 4);
 
-        Item item1 = new ItemEstado("Sacar estado");
-        Item item2 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE);
-        Item item3 = new ItemRestauracionVida("Mega Pocion", 50);
+        Item item1 = new ItemEstado("Sacar estado", 1);
+        Item item2 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE, 2);
+        Item item3 = new ItemRestauracionVida("Mega Pocion", 50, 3);
         List<Item> listaItems1 = new ArrayList<Item>();
         listaItems1.add(item1);
         listaItems1.add(item2);
         listaItems1.add(item3);
 
-        Pokemon poke1 = new Pokemon("Naclastack", 7, Tipo.ROCA, List.of(hab1, hab2), 35, 93.0, 152.0, 74.0);
-        Pokemon poke2 = new Pokemon("Rapidash", 6, Tipo.FUEGO, List.of(hab3, hab4), 42, 67.0, 110.0, 50.0);
+        Pokemon poke1 = new Pokemon("Naclastack", 7, Tipo.ROCA, List.of(hab1, hab2), 35, 93.0, 152.0, 74.0, 1);
+        Pokemon poke2 = new Pokemon("Rapidash", 6, Tipo.FUEGO, List.of(hab3, hab4), 42, 67.0, 110.0, 50.0, 2);
         ArrayList<Pokemon> listaPokes1 = new ArrayList<>(List.of(poke1, poke2));
 
         Jugador jugador1 = new Jugador("Pepito", listaPokes1, listaItems1);
 
 
-        Habilidad hab5 = new HabilidadAtaque("Corte Furia", 4, Tipo.BICHO, 100, "Ataque con una guadaña");
-        Habilidad hab6 = new HabilidadEstadistica("Danza Pluma", 5, Tipo.VOLADOR, "Envuelve al objetivo cpn un manto de plumas para reducir mucho su ataque", Estadisticas.ATAQUE, true);
-        Habilidad hab7 = new HabilidadEstado("Gas venenoso", 2, Tipo.VENENO,"Lanza una nube de gas toxico a los rivales", Estado.ENVENENADO);
-        Habilidad hab8 = new HabilidadClima("Dios del viento", 5, Tipo.AGUA, "Sopla y sopla hasta que se genera un huracan", Clima.HURACAN);
+        Habilidad hab5 = new HabilidadAtaque("Corte Furia", 4, Tipo.BICHO, 100, "Ataque con una guadaña", 5);
+        Habilidad hab6 = new HabilidadEstadistica("Danza Pluma", 5, Tipo.VOLADOR, "Envuelve al objetivo cpn un manto de plumas para reducir mucho su ataque", Estadisticas.ATAQUE, true,6);
+        Habilidad hab7 = new HabilidadEstado("Gas venenoso", 2, Tipo.VENENO,"Lanza una nube de gas toxico a los rivales", Estado.ENVENENADO, 7);
+        Habilidad hab8 = new HabilidadClima("Dios del viento", 5, Tipo.AGUA, "Sopla y sopla hasta que se genera un huracan", Clima.HURACAN, 8);
 
-        Item item4 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA);
-        Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0);
-        Item item6 = new ItemRevivir("Revivir", 0);
+        Item item4 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA, 4);
+        Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0, 5);
+        Item item6 = new ItemRevivir("Revivir", 0, 6);
         List<Item> listaItems2 = new ArrayList<Item>();
         listaItems2.add(item4);
         listaItems2.add(item5);
         listaItems2.add(item6);
 
-        Pokemon poke3 = new Pokemon("Fraxure", 6, Tipo.DRAGON, List.of(hab5, hab6), 80, 95.0, 120.0, 48.0);
-        Pokemon poke4 = new Pokemon("Gastrodon",5 , Tipo.AGUA, List.of(hab7, hab8), 50, 64.0, 113.0, 70.0);
-        Pokemon poke5 = new Pokemon("Mini Pikachu", 4, Tipo.FANTASMA, List.of(hab1), 1, 30, 80, 34);
+        Pokemon poke3 = new Pokemon("Fraxure", 6, Tipo.DRAGON, List.of(hab5, hab6), 80, 95.0, 120.0, 48.0, 3);
+        Pokemon poke4 = new Pokemon("Gastrodon",5 , Tipo.AGUA, List.of(hab7, hab8), 50, 64.0, 113.0, 70.0, 4);
+        Pokemon poke5 = new Pokemon("Mini Pikachu", 4, Tipo.FANTASMA, List.of(hab1), 1, 30, 80, 34, 5);
         ArrayList<Pokemon> listaPokes2 = new ArrayList<>(List.of(poke3, poke4, poke5));
 
         Jugador jugador2 = new Jugador("Fulanito", listaPokes2, listaItems2);

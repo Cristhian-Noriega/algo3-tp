@@ -12,11 +12,11 @@ import java.util.Optional;
 
 public class JugadorTest {
 
-    Pokemon pokeVivo = new Pokemon("pokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0);
-    Pokemon pokeMuerto = new Pokemon("pokeMuerto", 20, Tipo.BICHO, List.of(), 0, 193.0, 184.0, 130.0);
-    Pokemon otroPokeVivo = new Pokemon("El otroPokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0);
+    Pokemon pokeVivo = new Pokemon("pokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0, 1);
+    Pokemon pokeMuerto = new Pokemon("pokeMuerto", 20, Tipo.BICHO, List.of(), 0, 193.0, 184.0, 130.0, 2);
+    Pokemon otroPokeVivo = new Pokemon("El otroPokeVivo", 18, Tipo.HIELO, List.of(), 98, 139.0, 180.0, 130.0, 3);
 
-    Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA);
+    Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA, 1);
     ArrayList<Pokemon> pokemones = new ArrayList<>(Arrays.asList(pokeVivo, pokeMuerto, otroPokeVivo));
     Jugador jugador = new Jugador("puppet", pokemones, List.of(defensa));
 
