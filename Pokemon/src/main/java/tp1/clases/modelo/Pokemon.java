@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
     private final int vidaMax;
-    private int vidaActual;
+    private Integer vidaActual;
     private double velocidad;
     private double ataque;
     private double defensa;
@@ -156,7 +156,7 @@ import java.util.stream.Collectors;
         return this.nivel;
     }
 
-    public int getVida(){
+    public Integer getVida(){
         return this.vidaActual;
     }
 

@@ -15,7 +15,6 @@ public class Inicializador {
 
     public static ArrayList<Jugador> iniciarJugadores() throws IOException{
 
-
         ArrayList<Item> listaItems = crearListaItems();
 
         ArrayList<Habilidad> listaHabilidades = crearListaHabilidades();
