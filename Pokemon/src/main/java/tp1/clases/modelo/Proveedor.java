@@ -134,7 +134,7 @@ public class Proveedor {
 
         Item item3 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE, "aumenta el ataque del pokemon");
 
-        Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD, "le da alas al pokemon aumentando su velocidad");
+        Item item4 = new ItemEstadistica("Red Bull", Estadisticas.VELOCIDAD, "aumenta la velocidad del pokemon");
 
 
     Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0, "molesta al alumno");

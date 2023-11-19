@@ -8,12 +8,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import tp1.clases.controlador.ControladorMenuItems;
 import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainJavaFX extends Application {
 
@@ -47,7 +50,7 @@ public class MainJavaFX extends Application {
         controller.initializeItemsList(FXCollections.observableList(currentPlayerItems));
 
         StackPane stackPane = new StackPane();
-        ImageView backgroundImage = new ImageView(new Image("file:/home/cristhian/Descargas/background_items_menu.png"));
+        ImageView backgroundImage = new ImageView(new Image("file:/home/cristhian/Descargas/background.png"));
 
         stackPane.getChildren().addAll(backgroundImage, existingBorderPane);
 

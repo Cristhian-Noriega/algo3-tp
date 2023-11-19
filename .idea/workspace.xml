@@ -9,7 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="" />
+    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/ControladorMenuItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/MainJavaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/MainJavaFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/Red bull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" afterDir="false" />
+    </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
     <list id="8980183e-9624-4fad-9fdf-4b52c39a0d85" name="Changes by melina" comment="" />
@@ -25,6 +33,7 @@
         <option value="module-info" />
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -66,27 +75,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "vistaItems",
-    "jdk.selected.JAVA_MODULE": "graalvm-jdk-17",
-    "last_directory_selection": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases",
-    "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vistaItems&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;graalvm-jdk-17&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes" />
@@ -94,6 +104,7 @@
       <recent name="$PROJECT_DIR$/Pokemon" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/vista" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/tp1.clases" />
@@ -293,7 +304,14 @@
       <workItem from="1700010742375" duration="3453000" />
       <workItem from="1700048797930" duration="11680000" />
       <workItem from="1700067614923" duration="9088000" />
-      <workItem from="1700138539901" duration="4056000" />
+      <workItem from="1700138539901" duration="8766000" />
+      <workItem from="1700182333246" duration="4399000" />
+      <workItem from="1700226353038" duration="11041000" />
+      <workItem from="1700239711738" duration="9419000" />
+      <workItem from="1700250389261" duration="459000" />
+      <workItem from="1700253688075" duration="5910000" />
+      <workItem from="1700271921357" duration="671000" />
+      <workItem from="1700308629048" duration="1307000" />
     </task>
     <servers />
   </component>

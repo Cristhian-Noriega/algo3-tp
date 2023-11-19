@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.ControladorMenuItems">
-   <top>
-      <Label BorderPane.alignment="CENTER">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="33.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagenes/label_items.png" />
-               </image>
-            </ImageView>
-         </graphic></Label>
-   </top>
-   <left>
-      <ImageView fitHeight="194.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@Imagenes/bag_pokemon.png" />
-         </image>
-      </ImageView>
-   </left>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="619.0" stylesheets="style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuItems">
    <right>
       <VBox prefHeight="200.0" prefWidth="106.0" BorderPane.alignment="CENTER">
          <children>
@@ -38,11 +18,49 @@
       </VBox>
    </right>
    <bottom>
-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="595.0" BorderPane.alignment="CENTER">
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="93.0" prefWidth="618.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="itemImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <TextArea fx:id="itemDescriptionTextArea" prefHeight="71.0" prefWidth="424.0" />
+            <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="106.0" prefWidth="621.0" style="-fx-background-color: #0a7ab9; -fx-border-color: #6B6B6B; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;">
+            <children>
+               <Label fx:id="itemDescriptionLabel" layoutX="144.0" layoutY="9.0" prefHeight="86.0" prefWidth="431.0" stylesheets="colorFont.css" textAlignment="CENTER" textFill="#000000" wrapText="true">
+                  <font>
+                     <Font name="Pokemon Fire Red Regular" size="32.0" />
+                  </font>
+               </Label>
+                  <Pane layoutX="14.0" layoutY="11.0" prefHeight="81.0" prefWidth="116.0">
+                     <children>
+                        <Pane layoutX="16.0" prefHeight="74.0" prefWidth="84.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #6B6B6B; -fx-border-radius: 3%;">
+                           <children>
+                              <ImageView fx:id="imagenItem" fitHeight="60.0" fitWidth="65.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+            </children>
+            </Pane>
          </children>
       </HBox>
    </bottom>
+   <top>
+      <Pane prefHeight="91.0" prefWidth="619.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="243.0" layoutY="20.0" prefHeight="52.0" prefWidth="133.0" style="-fx-background-color: #e9cc7d; -fx-border-color: #6B6B6B; -fx-border-width: 3; -fx-border-radius: 5; -fx-padding: 15px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="8.0" text="ITEMS">
+                     <font>
+                        <Font name="Pokemon Fire Red Regular" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <ImageView fitHeight="191.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@Imagenes/bag.png" />
+         </image>
+      </ImageView>
+   </left>
 </BorderPane>
