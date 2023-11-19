@@ -62,7 +62,7 @@ public class PokemonTest {
         AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         pokeVivo.setEstado(Estado.DORMIDO);
-        double vidaInicial = otroPokeVivo.getVida();
+        int vidaInicial = otroPokeVivo.getVida();
 
         Optional<Error> error = pokeVivo.usarHabilidad(0, otroPokeVivo, administradorDeClima);
         Assertions.assertTrue(error.isEmpty());

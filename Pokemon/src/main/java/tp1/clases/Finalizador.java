@@ -17,14 +17,9 @@ public class Finalizador {
     private final Jugador ganador;
     private final Jugador perdedor;
 
-    public Finalizador(List<Jugador> jugadores){
-        if (jugadores.get(0).tienePokemonesConVida()){
-            this.ganador = jugadores.get(0);
-            this.perdedor = jugadores.get(1);
-        } else {
-            this.ganador = jugadores.get(1);
-            this.perdedor = jugadores.get(0);
-        }
+    public Finalizador(Jugador ganador, Jugador perdedor){
+            this.ganador = ganador;
+            this.perdedor = perdedor;
     }
 
     public void crearJsonPartida() throws IOException {
@@ -38,7 +33,7 @@ public class Finalizador {
         ObjectMapper objectMapper = new ObjectMapper();
         // Serializacion
         objectMapper.writeValue(new File(path), resultados);
-        
+
     }
 
     private static String horaActual(){

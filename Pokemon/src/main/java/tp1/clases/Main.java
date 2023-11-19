@@ -23,6 +23,9 @@ public class Main {
             controlador.jugarTurno();
         }
 
+        Finalizador finalizador = new Finalizador(batalla.getJugadores().get(0), batalla.getRendidos().get(0));
+        finalizador.crearJsonPartida();
+
         String res = ResultadoVista.mostrarResultado(batalla.obtenerGanador());
 
         System.out.println(res);

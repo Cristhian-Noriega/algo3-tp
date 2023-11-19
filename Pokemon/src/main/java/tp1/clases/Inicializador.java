@@ -26,7 +26,7 @@ public class Inicializador {
     }
 
     private static ArrayList<Item> crearListaItems() throws IOException {
-        String pathItems = "resources/items.json";
+        String pathItems = "resources/json/items.json";
 
         ArrayList<Item> listaItems = new ArrayList<Item>();
 
@@ -64,7 +64,7 @@ public class Inicializador {
 
 
     private static ArrayList<Habilidad> crearListaHabilidades() throws IOException {
-        String pathHabilidades = "resources/habilidades.json";
+        String pathHabilidades = "resources/json/habilidades.json";
 
         ArrayList<Habilidad> listaHabilidades = new ArrayList<Habilidad>();
 
@@ -108,7 +108,7 @@ public class Inicializador {
     }
 
     private static ArrayList<Pokemon> crearListaPokemones(ArrayList<Habilidad> listaHabilidades) throws IOException {
-        String pathPokemones = "resources/pokemones.json";
+        String pathPokemones = "resources/json/pokemones.json";
 
         ArrayList<Pokemon> listaPokemones = new ArrayList<Pokemon>();
 
@@ -147,7 +147,7 @@ public class Inicializador {
     }
 
     private static ArrayList<Jugador> crearListaJugadores(ArrayList<Pokemon> listaPokemones, ArrayList<Item> listaItems) throws IOException {
-        String pathJugadores = "resources/jugadores.json";
+        String pathJugadores = "resources/json/jugadores.json";
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
