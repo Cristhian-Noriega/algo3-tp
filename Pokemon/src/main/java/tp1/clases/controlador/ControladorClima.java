@@ -1,0 +1,43 @@
+package tp1.clases.controlador;
+
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class ControladorClima {
+    private String clima = "Sin clima";
+    private final ObjectProperty<Image> imagenProperty = new SimpleObjectProperty<>();
+    private StringProperty climaProperty = new SimpleStringProperty();;
+    @FXML public Label labelClima;
+    @FXML public ImageView imagenClima;
+
+    public ControladorClima() {}
+
+    public void inicializar(String clima) {
+        this.labelClima.textProperty().bind(climaProperty);
+        this.imagenClima.imageProperty().bind(this.imagenProperty);
+        this.setClimaProperty(clima);
+        this.setImagen(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/CLIMA_" + clima + ".png"));
+    }
+
+    public String getClimaProperty() {
+        return climaProperty.get();
+    }
+
+    public void setClimaProperty(String climaProperty) {
+        this.climaProperty.set(climaProperty);
+    }
+
+    public ObjectProperty<Image> imagenProperty() {
+        return imagenProperty;
+    }
+
+    public void setImagen(Image imagen) {
+        imagenProperty.set(imagen);
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="106.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f2d1" height="80.0" layoutX="5.0" layoutY="13.0" stroke="#ebd5ab" strokeType="INSIDE" width="221.0" />
+        <Label fx:id="labelNombre" layoutX="14.0" layoutY="23.0" prefHeight="30.0" prefWidth="136.0">
+             <font>
+                <Font name="Pokemon Fire Red Regular" size="25.0" />
+             </font>
+        </Label>
+        <Label fx:id="labelNivel" layoutX="161.0" layoutY="22.0" prefHeight="30.0" prefWidth="54.0">
+            <font>
+                <Font name="Pokemon Fire Red Regular" size="25.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelCantVida" layoutX="164.0" layoutY="57.0" prefHeight="32.0" prefWidth="48.0">
+             <font>
+                <Font name="Pokemon Fire Red Regular" size="20.0" />
+             </font>
+        </Label>
+        <ProgressBar fx:id="barraVida" layoutX="12.0" layoutY="63.0" prefHeight="20.0" prefWidth="140.0" progress="1.0" />
+    </children>
+</Pane>

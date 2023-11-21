@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+
+<Pane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
+    <children>
+        <ImageView fx:id="fondoClima" fitHeight="300.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
+            <children>
+                <HBox prefHeight="150.0" prefWidth="200.0">
+                    <children>
+                        <fx:include fx:id="cartelPokemonRival" source="cartel-pokemon.fxml" />
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <Ellipse fill="#46975a" layoutX="62.0" layoutY="136.0" radiusX="62.0" radiusY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                <ImageView fx:id="imagenRival" fitHeight="123.0" fitWidth="123.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </Pane>
+                        <fx:include fx:id="cartelClima" source="cartel-clima.fxml" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox fx:id="hboxCartelesActual" prefHeight="150.0" prefWidth="200.0">
+                    <children>
+                        <Pane prefHeight="150.0" prefWidth="358.0">
+                            <children>
+                        <Ellipse fill="#46975a" layoutX="179.0" layoutY="121.0" radiusX="91.0" radiusY="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                <ImageView fx:id="imagenActual" fitHeight="135.0" fitWidth="135.0" layoutX="112.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </Pane>
+                        <fx:include fx:id="cartelPokemonActual" source="cartel-pokemon.fxml" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</Pane>
