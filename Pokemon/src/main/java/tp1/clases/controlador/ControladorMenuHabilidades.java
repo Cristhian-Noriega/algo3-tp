@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import tp1.clases.controlador.comandos.Comando;
+import tp1.clases.modelo.AdministradorDeClima;
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Pokemon;
 
@@ -28,22 +30,33 @@ public class ControladorMenuHabilidades {
     @FXML public Label labelUsos;
     @FXML public VBox botonesHabilidades;
 
+    private AdministradorDeClima AdministradorDeClima;
+    private Pokemon pokemonActual;
+    private Pokemon pokemonRival;
+
     public ControladorMenuHabilidades() {}
 
-    public void inicializar(Pokemon pokemonActual, Pokemon pokemonRival, String clima, List<Habilidad> habilidades) {
-        this.campoController.inicializar(pokemonActual, pokemonRival, clima);
+    public void inicializar(Pokemon pokemonActual, Pokemon pokemonRival, AdministradorDeClima clima) {
+        this.AdministradorDeClima = clima;
+        this.pokemonActual = pokemonActual;
+        this.pokemonRival = pokemonRival;
+        this.campoController.inicializar(pokemonActual, pokemonRival, clima.getClimaActual().name());
         this.setOpacidadInfo(0);
         this.botonVolver.setOnMouseClicked(event -> {cambiarMenuPrincipal(event, pokemonActual, pokemonRival, clima);});
-        this.setHabilidades(habilidades);
+        this.setHabilidades(pokemonActual.getHabilidades());
     }
 
     public void setHabilidades(List<Habilidad> habilidades) {
-        for (int i=0; i<habilidades.size(); i++) {
-            int finalI = i;
+        int i = 0;
+        for (Habilidad habilidad: habilidades) {
+            System.out.println(habilidad.getNombre());
             Button boton = (Button) this.botonesHabilidades.getChildren().get(i);
-            boton.setText(habilidades.get(finalI).getNombre());
-            boton.setOnMouseEntered(event -> {mostrarInfoHabilidad(habilidades.get(finalI));});
+            boton.setText(habilidad.getNombre());
+            boton.setOnMouseEntered(event -> {mostrarInfoHabilidad(habilidad);});
             boton.setOnMouseExited(event -> {mostrarTexto();});
+            boton.setOnMouseClicked(event -> {seleccionarHabilidad(event, habilidad);});
+            boton.setOnMouseClicked(event -> {cambiarPantallaEfecto(event, pokemonActual, pokemonRival, AdministradorDeClima, habilidad);});
+            i++;
         }
     }
 
@@ -71,7 +84,7 @@ public class ControladorMenuHabilidades {
         this.labelUsos.setOpacity(opacidad);
     }
 
-    public void cambiarMenuPrincipal(MouseEvent event, Pokemon pokemonActual, Pokemon pokemonRival, String clima) {
+    public void cambiarMenuPrincipal(MouseEvent event, Pokemon pokemonActual, Pokemon pokemonRival, AdministradorDeClima clima) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/menu-principal.fxml"));
             Parent root = loader.load();
@@ -83,6 +96,24 @@ public class ControladorMenuHabilidades {
         } catch (IOException e) {
             System.out.println("No se pudo cambiar al menú de habilidades.");
         }
+    }
+
+    public void cambiarPantallaEfecto(MouseEvent event, Pokemon pokemonActual, Pokemon pokemonRival, AdministradorDeClima clima, Habilidad habilidadSeleccionada) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantalla-efecto.fxml"));
+            Parent root = loader.load();
+            ControladorPantallaEfecto controladorPantallaEfecto = loader.getController();
+            controladorPantallaEfecto.inicializarAtaque(List.of(this.pokemonActual, this.pokemonRival), clima, habilidadSeleccionada);
+            Scene escenaEfecto = new Scene(root);
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(escenaEfecto);
+        } catch (IOException e) {
+            System.out.println("No se pudo cambiar la pantalla.");
+        }
+    }
+
+    public void seleccionarHabilidad(MouseEvent event, Habilidad habilidad) {
+        cambiarPantallaEfecto(event, pokemonActual, pokemonRival, this.AdministradorDeClima, habilidad);
     }
 
 }

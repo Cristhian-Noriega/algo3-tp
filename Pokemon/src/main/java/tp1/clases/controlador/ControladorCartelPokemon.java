@@ -88,4 +88,9 @@ public class ControladorCartelPokemon {
             this.barraVida.setStyle("-fx-accent: #c5c742");
         }
     }
+
+    public void actualizar(Pokemon pokemon) {
+        setEstados(pokemon);
+        setVida(pokemon);
+    }
 }

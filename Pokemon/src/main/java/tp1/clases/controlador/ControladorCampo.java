@@ -1,5 +1,8 @@
 package tp1.clases.controlador;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
@@ -8,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 import tp1.clases.modelo.Pokemon;
 
 import java.io.IOException;
@@ -23,6 +27,7 @@ public class ControladorCampo {
     @FXML public ImageView imagenRival;
     @FXML public ImageView imagenActual;
     @FXML public ImageView fondoClima;
+    @FXML public Pane campoPane;
 
     public ControladorCampo() {}
 
@@ -33,21 +38,51 @@ public class ControladorCampo {
         this.imagenActual.imageProperty().bind(this.imagenActualProperty);
         this.imagenRival.imageProperty().bind(this.imagenRivalProperty);
         this.fondoClima.imageProperty().bind(this.fondoClimaProperty);
-        this.setImagenActualProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonActual.getNombre() + "_espalda.gif"));
-        this.setImagenRivalProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonRival.getNombre() + ".gif"));
-        this.setFondoClimaProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/" + clima + ".png"));
+        this.setImagenActualProperty(pokemonActual.getNombre());
+        this.setImagenRivalProperty(pokemonRival.getNombre());
+        this.setFondoClimaProperty(clima);
     }
 
-    public void setFondoClimaProperty(Image fondoClimaProperty) {
-        this.fondoClimaProperty.set(fondoClimaProperty);
+    public void actualizarCampo(Pokemon pokemonActual, Pokemon pokemonRival, String clima) {
+        this.cartelClimaController.actualizar(clima);
+        this.cartelPokemonActualController.actualizar(pokemonActual);
+        this.cartelPokemonRivalController.actualizar(pokemonRival);
+        this.setFondoClimaProperty(clima);
     }
 
-    public void setImagenRivalProperty(Image imagenRivalProperty) {
-        this.imagenRivalProperty.set(imagenRivalProperty);
+    public void setFondoClimaProperty(String clima) {
+        Image imagen = new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/" + clima + ".png");
+        this.fondoClimaProperty.set(imagen);
     }
 
-    public void setImagenActualProperty(Image imagenActualProperty) {
-        this.imagenActualProperty.set(imagenActualProperty);
+    public void setImagenRivalProperty(String pokemon) {
+        Image imagen = new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemon + ".gif");
+        this.imagenRivalProperty.set(imagen);
+    }
+
+    public void setImagenActualProperty(String pokemon) {
+        Image imagen = new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemon + "_espalda.gif");
+        this.imagenActualProperty.set(imagen);
+    }
+
+    public void aplicarParpadeo(JugadorEnum jugador) {
+        ImageView imagen = this.imagenRival;
+        if (jugador == JugadorEnum.ACTUAL) {
+            imagen = this.imagenActual;
+        }
+
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.seconds(0.5), new KeyValue(imagen.opacityProperty(), 1.0))
+        );
+
+        timeline.setCycleCount(3);
+        timeline.play();
+    }
+
+    public Pane getCampoPane() {
+        return campoPane;
     }
 
     public ControladorCartelPokemon getCartelPokemonRivalController() {

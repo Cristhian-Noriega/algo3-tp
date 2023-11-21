@@ -13,8 +13,7 @@ public class Paralizado implements EstadoComportamiento {
     }
 
     @Override
-    public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon){
-        Habilidad habilidad = pokemon.getHabilidades().get(numeroHabilidad);
+    public Boolean usarHabilidad(Habilidad habilidad, Pokemon pokemon){
         if (!Random.probabilidad(Constantes.probabilidadParalizado)) {
             habilidad.restarUso();
             System.out.printf("%s esta paralizado, no pudo usar la habilidad\n", pokemon.getNombre());

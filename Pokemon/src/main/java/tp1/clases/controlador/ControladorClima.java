@@ -22,7 +22,7 @@ public class ControladorClima {
         this.labelClima.textProperty().bind(climaProperty);
         this.imagenClima.imageProperty().bind(this.imagenProperty);
         this.setClimaProperty(clima);
-        this.setImagen(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/CLIMA_" + clima + ".png"));
+        this.setImagen(clima);
     }
 
     public String getClimaProperty() {
@@ -37,7 +37,13 @@ public class ControladorClima {
         return imagenProperty;
     }
 
-    public void setImagen(Image imagen) {
+    public void setImagen(String clima) {
+        Image imagen = new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/CLIMA_" + clima + ".png");
         imagenProperty.set(imagen);
+    }
+
+    public void actualizar(String clima) {
+        setClimaProperty(clima);
+        setImagen(clima);
     }
 }

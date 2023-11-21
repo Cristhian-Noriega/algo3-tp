@@ -1,18 +1,23 @@
 package tp1.clases;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tp1.clases.controlador.ControladorMenuPrincipal;
+import tp1.clases.eventos.CambioDeTurnoEvent;
 import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainJavaFX extends Application {
+public class MainJavaFX extends Application implements EventHandler<CambioDeTurnoEvent> {
+    private Batalla batalla;
+    private Jugador jugadorActual;
+    private Jugador jugadorSiguiente;
 
     public static void main(String[] args) {
         launch(args);
@@ -29,20 +34,18 @@ public class MainJavaFX extends Application {
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
         listaJugadores.add(jugador1);
         listaJugadores.add(jugador2);
-        Batalla batalla = new Batalla(listaJugadores);
+        this.batalla = new Batalla(listaJugadores);
 
-        jugador2.getPokemonActual().setEstado(Estado.CONFUNDIDO);
-        jugador2.getPokemonActual().setEstado(Estado.ENVENENADO);
-        jugador2.getPokemonActual().setEstado(Estado.DORMIDO);
-        jugador2.getPokemonActual().setEstado(Estado.PARALIZADO);
-        jugador2.getPokemonActual().modificarVida(-50);
-        jugador1.getPokemonActual().modificarVida(-90);
+        this.jugadorActual = this.batalla.getJugadorActual();
+        this.jugadorSiguiente = this.batalla.getJugadorSiguiente();
+
+        AdministradorDeClima administradorDeClima = this.batalla.getAdministradorDeClima();
 
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("menu-principal.fxml"));
         Parent root = loader.load();
         ControladorMenuPrincipal controladorMenuPrincipal = loader.getController();
         if (controladorMenuPrincipal != null) {
-            controladorMenuPrincipal.inicializar(jugador2.getPokemonActual(), jugador1.getPokemonActual(), "SOLEADO");
+            controladorMenuPrincipal.inicializar(this.jugadorActual.getPokemonActual(), this.jugadorSiguiente.getPokemonActual(), administradorDeClima);
         } else {
             System.out.println("el controlador de menu principal es null");
         }
@@ -52,5 +55,12 @@ public class MainJavaFX extends Application {
         stage.setTitle("Pokemon");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void handle(CambioDeTurnoEvent cambioDeTurnoEvent) {
+        this.batalla.cambiarTurno();
+        this.jugadorActual = this.batalla.getJugadorActual();
+        this.jugadorSiguiente = this.batalla.getJugadorSiguiente();
     }
 }

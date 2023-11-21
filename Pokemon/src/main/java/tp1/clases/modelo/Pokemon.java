@@ -1,10 +1,7 @@
 package tp1.clases.modelo;
 
+import tp1.clases.errores.*;
 import tp1.clases.errores.Error;
-
-import tp1.clases.errores.ErrorHabilidadSinUsos;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
-import tp1.clases.errores.ErrorMismoEstado;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,17 +41,16 @@ import java.util.stream.Collectors;
          this.defensa = defensa;
      }
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Pokemon rival, AdministradorDeClima administradorDeClima){
-        if (numeroHabilidad < 0 || numeroHabilidad >= this.habilidades.size()) {
-            return Optional.of(new ErrorIndiceFueraDeRango());
+    public Optional<Error> usarHabilidad(Habilidad habilidad, Pokemon rival, AdministradorDeClima administradorDeClima){
+        if (!this.habilidades.contains(habilidad)) {
+            return Optional.of(new ErrorHabilidadErronea(this.nombre, habilidad.getNombre()));
         }
 
-        Habilidad habilidad = this.habilidades.get(numeroHabilidad);
         if (habilidad.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(habilidad.getNombre()));
         }
 
-        Boolean pudoUsarse = this.usarHabilidadEstados(numeroHabilidad, this);
+        Boolean pudoUsarse = this.usarHabilidadEstados(habilidad, this);
         if(!pudoUsarse){
             return Optional.empty();
         }
@@ -63,17 +59,15 @@ import java.util.stream.Collectors;
         return habilidad.usar();
     }
 
-    private Boolean usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
-        for (Estado estado : this.estados) {
+    private Boolean usarHabilidadEstados(Habilidad habilidad, Pokemon pokemon) {
+         boolean puedeUsarHabilidad = true;
+         for (Estado estado : this.estados) {
             EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
-                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
-                if (!puedeUsarHabilidad) {
-                    return false;
-                }
+                puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
             }
-        }
-        return true;
+         }
+        return puedeUsarHabilidad;
     }
 
     public void aplicarEfectoEstados(){
