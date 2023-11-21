@@ -33,8 +33,8 @@ public class ControladorCampo {
         this.imagenActual.imageProperty().bind(this.imagenActualProperty);
         this.imagenRival.imageProperty().bind(this.imagenRivalProperty);
         this.fondoClima.imageProperty().bind(this.fondoClimaProperty);
-        this.setImagenActualProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonActual.getNombre() + "_espalda.png"));
-        this.setImagenRivalProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonRival.getNombre() + ".png"));
+        this.setImagenActualProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonActual.getNombre() + "_espalda.gif"));
+        this.setImagenRivalProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/pokemon/" + pokemonRival.getNombre() + ".gif"));
         this.setFondoClimaProperty(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/" + clima + ".png"));
     }
 

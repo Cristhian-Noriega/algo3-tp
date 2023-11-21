@@ -31,6 +31,13 @@ public class MainJavaFX extends Application {
         listaJugadores.add(jugador2);
         Batalla batalla = new Batalla(listaJugadores);
 
+        jugador2.getPokemonActual().setEstado(Estado.CONFUNDIDO);
+        jugador2.getPokemonActual().setEstado(Estado.ENVENENADO);
+        jugador2.getPokemonActual().setEstado(Estado.DORMIDO);
+        jugador2.getPokemonActual().setEstado(Estado.PARALIZADO);
+        jugador2.getPokemonActual().modificarVida(-50);
+        jugador1.getPokemonActual().modificarVida(-90);
+
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("menu-principal.fxml"));
         Parent root = loader.load();
         ControladorMenuPrincipal controladorMenuPrincipal = loader.getController();

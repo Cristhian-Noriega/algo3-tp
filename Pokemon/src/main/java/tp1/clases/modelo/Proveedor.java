@@ -105,22 +105,22 @@ public class Proveedor {
 
         Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
 
-        Pokemon poke2 = new Pokemon("Toxtricity", 18, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 98, 139.0, 180.0, 130.0);
+        Pokemon poke2 = new Pokemon("Ampharos", 18, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 98, 139.0, 180.0, 130.0);
 
         Pokemon poke3 = new Pokemon("Golurk", 23, Tipo.TIERRA, List.of(hab5, hab6, hab13, hab19), 122, 103.0, 227.0, 148.0);
 
-        Pokemon poke4 = new Pokemon("Naclastack", 24, Tipo.ROCA, List.of(hab7, hab8, hab14, hab20), 111, 67.0, 112.0, 184.0);
+        Pokemon poke4 = new Pokemon("Golem", 24, Tipo.ROCA, List.of(hab7, hab8, hab14, hab20), 111, 67.0, 112.0, 184.0);
 
-        Pokemon poke5 = new Pokemon("Appletun", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
+        Pokemon poke5 = new Pokemon("Dragonair", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
         Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
 
         Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
 
         Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 
-        Pokemon poke9 = new Pokemon("Sandaconda", 18, Tipo.TIERRA, List.of(hab23, hab34, hab39, hab44), 126, 132.0, 197.0, 229.0);
+        Pokemon poke9 = new Pokemon("Cubone", 18, Tipo.TIERRA, List.of(hab23, hab34, hab39, hab44), 126, 132.0, 197.0, 229.0);
 
-        Pokemon poke10 = new Pokemon("Kleavor", 12, Tipo.ROCA, List.of(hab24, hab27, hab40, hab45), 130, 157.0, 247.0, 175.0);
+        Pokemon poke10 = new Pokemon("Sudowoodo", 12, Tipo.ROCA, List.of(hab24, hab27, hab40, hab45), 130, 157.0, 247.0, 175.0);
 
         Pokemon poke11 = new Pokemon("Fraxure", 16, Tipo.DRAGON, List.of(hab35, hab31, hab41, hab47), 117, 125.0, 215.0, 130.0);
 
