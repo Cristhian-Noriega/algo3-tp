@@ -24,4 +24,8 @@ public class ControladorMenuPokemon implements Initializable {
             Pane pane = new Pane();
         }
     }
+
+    public ControladorMenuPokemon getControlador(){
+        return this;
+    }
 }

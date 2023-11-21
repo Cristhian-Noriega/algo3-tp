@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: unitarios.modeloTest.AdministradorDeTurnosTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 s - in unitarios.modeloTest.AdministradorDeTurnosTest

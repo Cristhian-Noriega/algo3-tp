@@ -3,6 +3,7 @@ package tp1.clases;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
@@ -31,23 +32,17 @@ public class MainJavaFX extends Application {
         listaJugadores.add(jugador2);
         Batalla batalla = new Batalla(listaJugadores);
 
-//        ControladorJuego controlador = new ControladorJuego(batalla);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("pokemones-view.fxml"));
+        Parent root = fxmlLoader.load();
+        ControladorMenuPokemon controladorMenuPokemon = fxmlLoader.getController();
+        if (controladorMenuPokemon != null) {
+            controladorMenuPokemon.setPokemones(pokemones.get(0));
+        } else {
+            System.out.println("el controlador de menu principal es null");
+        }
 
-//        while (!controlador.getJuegoTerminado()) {
-//            controlador.jugarTurno();
-//        }
+        Scene scene = new Scene(root, 600, 400);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("items-view.fxml"));
-        BorderPane existingBorderPane = fxmlLoader.load();
-//        Scene scene = new Scene(fxmlLoader.load(), 600, 440);
-
-        ControladorMenuPokemon controller = fxmlLoader.getController();
-
-        controller.setPokemones(FXCollections.observableList(currentPlayerPokemones));
-
-        StackPane stackPane = new StackPane();
-
-        Scene scene = new Scene(stackPane, 600, 440);
         stage.setTitle("Pokemon");
         stage.setScene(scene);
         stage.show();

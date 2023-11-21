@@ -1,0 +1,12 @@
+unitarios/modeloTest/JugadorTest.class
+unitarios/modeloTest/EstadoConfundidoTest.class
+unitarios/modeloTest/AdministradorClimaTest.class
+unitarios/modeloTest/ItemsTest.class
+unitarios/modeloTest/EstadoParalizadoTest.class
+unitarios/modeloTest/EstadoDormidoTest.class
+unitarios/modeloTest/PokemonTest.class
+unitarios/modeloTest/EstadoEnvenenadoTest.class
+unitarios/controladorTest/ControladorMenuTest.class
+integracion/BatallaIntegracionTest.class
+unitarios/modeloTest/HabilidadesTest.class
+unitarios/modeloTest/AdministradorDeTurnosTest.class
