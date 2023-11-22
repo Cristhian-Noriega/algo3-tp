@@ -84,17 +84,20 @@ public class Inicializador {
                     habilidad = new HabilidadAtaque(nombre, usos, tipo, poder, info, id);
                     listaHabilidades.put(id, habilidad);
                     continue;
+
                 case ESTADO:
                     Estado estado = Estado.valueOf(habilidadNodo.get("estado").asText());
                     habilidad = new HabilidadEstado(nombre, usos, tipo, info, estado, id);
                     listaHabilidades.put(id, habilidad);
                     continue;
+
                 case ESTADISTICA:
                     Estadisticas estadistica = Estadisticas.valueOf(habilidadNodo.get("estadistica").asText());
                     boolean contraRival = habilidadNodo.get("contraRival").asBoolean();
                     habilidad = new HabilidadEstadistica(nombre, usos, tipo, info, estadistica, contraRival, id);
                     listaHabilidades.put(id, habilidad);
                     continue;
+                    
                 case CLIMA:
                     Clima clima = Clima.valueOf(habilidadNodo.get("clima").asText());
                     habilidad = new HabilidadClima(nombre, usos, tipo, info, clima, id);
@@ -183,6 +186,7 @@ public class Inicializador {
             Jugador jugador = new Jugador(nombre, pokemones, items);
             listaJugadores.add(jugador);
         }
+
 
         return listaJugadores;
     }
