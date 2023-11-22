@@ -3,6 +3,7 @@ module Pokemon {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.media;
 
     opens tp1.clases to javafx.fxml;
     exports tp1.clases;

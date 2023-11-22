@@ -6,19 +6,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import tp1.clases.controlador.ControladorJugar;
 import tp1.clases.controlador.ControladorMenuItems;
 import tp1.clases.modelo.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainJavaFX extends Application {
+
+    private static final String RUTA_SONIDO_MENU = "file: /home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/musica-inicio.mp3";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -35,29 +43,16 @@ public class MainJavaFX extends Application {
         listaJugadores.add(jugador2);
         Batalla batalla = new Batalla(listaJugadores);
 
-//        ControladorJuego controlador = new ControladorJuego(batalla);
-
-//        while (!controlador.getJuegoTerminado()) {
-//            controlador.jugarTurno();
-//        }
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("items-view.fxml"));
-        BorderPane existingBorderPane = fxmlLoader.load();
-//        Scene scene = new Scene(fxmlLoader.load(), 600, 440);
-
-        ControladorMenuItems controller = fxmlLoader.getController();
-
-        controller.initializeItemsList(FXCollections.observableList(currentPlayerItems));
-
-        StackPane stackPane = new StackPane();
-        ImageView backgroundImage = new ImageView(new Image("file:/home/cristhian/Descargas/background.png"));
-
-        stackPane.getChildren().addAll(backgroundImage, existingBorderPane);
-
-
-
-        Scene scene = new Scene(stackPane, 600, 440);
         stage.setTitle("Pokemon");
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("inicio-view.fxml"));
+        StackPane root = loader.load();
+        // Pasar el Stage al controlador ControladorJugar
+        ControladorJugar controladorJugar = loader.getController();
+        controladorJugar.setStage(stage);
+        controladorJugar.setBatalla(batalla);
+
+        Scene scene = new Scene(root, 640, 500);
+
         stage.setScene(scene);
         stage.show();
     }
