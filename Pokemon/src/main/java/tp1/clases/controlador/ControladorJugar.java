@@ -17,6 +17,7 @@ import tp1.clases.modelo.Item;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class ControladorJugar {
 
@@ -40,7 +41,8 @@ public class ControladorJugar {
             Scene itemsScene = new Scene(itemsBorderPane);
             ControladorMenuItems controller = loader.getController();
             List<Item> items = this.batalla.getItemsJugadorActual();
-            controller.inicializarItems(items);
+            Map<String, Long> cantidadItems = this.batalla.getMapItemsJugadorActual();
+            controller.inicializar(items, cantidadItems);
             stage.setScene(itemsScene);
             } catch (IOException error) {
                 error.printStackTrace();

@@ -36,14 +36,14 @@ public class MainJavaFX extends Application {
         List<List<Item>> items = proveedor.getItems();
         Jugador jugador1 = new Jugador("jugador1", pokemones.get(0), items.get(0));
         Jugador jugador2 = new Jugador("jugador2", pokemones.get(1), items.get(1));
-        List<Item> currentPlayerItems = jugador1.getListaItems();
+        List<Item> itemsJugadorActual = jugador1.getListaItems();
 
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
         listaJugadores.add(jugador1);
         listaJugadores.add(jugador2);
         Batalla batalla = new Batalla(listaJugadores);
 
-        stage.setTitle("Pokemon");
+
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("inicio-view.fxml"));
         StackPane root = loader.load();
         // Pasar el Stage al controlador ControladorJugar
@@ -52,7 +52,7 @@ public class MainJavaFX extends Application {
         controladorJugar.setBatalla(batalla);
 
         Scene scene = new Scene(root, 640, 500);
-
+        stage.setTitle("Pokemon");
         stage.setScene(scene);
         stage.show();
     }
