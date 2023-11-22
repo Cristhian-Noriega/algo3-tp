@@ -8,8 +8,8 @@ import tp1.clases.errores.ErrorPokemonNormal;
 import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemEstado implements Item, Serializable {
-;
+public class ItemEstado implements Item, Serializable, Cloneable {
+    ;
     private final String nombre;
     private final Categoria categoria = Categoria.ESTADO;
     private final Integer id;
@@ -33,7 +33,7 @@ public class ItemEstado implements Item, Serializable {
     public Integer getId(){
         return this.id;
     }
-    
+
     @Override
     public Optional<Error> usar(Pokemon pokemon){
         if (pokemon.getEstados().contains(Estado.NORMAL)) {
@@ -41,6 +41,10 @@ public class ItemEstado implements Item, Serializable {
         }
         pokemon.setEstado(Estado.NORMAL);
         return Optional.empty();
+    }
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 
 }

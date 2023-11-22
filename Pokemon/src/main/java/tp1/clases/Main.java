@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, CloneNotSupportedException {
 
         ArrayList<Jugador> jugadores = Inicializador.iniciarJugadores();
 

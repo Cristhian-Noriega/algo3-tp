@@ -1,0 +1,142 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"faa3209b-5150-4917-8e65-1e86ef7416ac\" name=\"Changes\" comment=\"&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/resources/items.json\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/resources/pokemones.json\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/tp1/clases/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/tp1/clases/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/tp1/clases/modelo/DatosPokemon.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/tp1/clases/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/tp1/clases/Main.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class\" afterDir=\"false\" />\n    </list>\n    <list id=\"a80fe8b4-d52a-498c-b558-dad374f08d15\" name=\"Changes by melina\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CodeInsightWorkspaceSettings\">\n    <option name=\"optimizeImportsOnTheFly\" value=\"true\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$/..\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"jdkForImporter\" value=\"jbr-17\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 4\n}</component>\n  <component name=\"ProjectId\" id=\"2VOtbGKunbDF8z09wSB1DMWENz8\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;test&quot;,\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/resources/src/main/java/org/prueba/Main.java&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"tp1.clases.controlador\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"JUnit.ItemsTest\">\n    <configuration name=\"ItemsTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.ItemsTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"JugadorTest.seleccionarPokemonNoDisponible\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.JugadorTest\" />\n      <option name=\"METHOD_NAME\" value=\"seleccionarPokemonNoDisponible\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"PokemonTest.aplicarEfectoEstadoEnvenenado\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.PokemonTest\" />\n      <option name=\"METHOD_NAME\" value=\"aplicarEfectoEstadoEnvenenado\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"PokemonTest.usarHabilidadEstandoDormido\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.PokemonTest\" />\n      <option name=\"METHOD_NAME\" value=\"usarHabilidadEstandoDormido\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"PokemonTest.usarHabilidadSinUsosDisponibles\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.PokemonTest\" />\n      <option name=\"METHOD_NAME\" value=\"usarHabilidadSinUsosDisponibles\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JUnit.ItemsTest\" />\n        <item itemvalue=\"JUnit.JugadorTest.seleccionarPokemonNoDisponible\" />\n        <item itemvalue=\"JUnit.PokemonTest.aplicarEfectoEstadoEnvenenado\" />\n        <item itemvalue=\"JUnit.PokemonTest.usarHabilidadEstandoDormido\" />\n        <item itemvalue=\"JUnit.PokemonTest.usarHabilidadSinUsosDisponibles\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"faa3209b-5150-4917-8e65-1e86ef7416ac\" name=\"Changes\" comment=\"\" />\n      <created>1694719024228</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1694719024228</updated>\n      <workItem from=\"1694719025226\" duration=\"1859000\" />\n      <workItem from=\"1694875433678\" duration=\"13060000\" />\n      <workItem from=\"1694974266434\" duration=\"3384000\" />\n      <workItem from=\"1694992676256\" duration=\"627000\" />\n      <workItem from=\"1695045673884\" duration=\"6139000\" />\n      <workItem from=\"1695304159424\" duration=\"2168000\" />\n      <workItem from=\"1695563800026\" duration=\"3297000\" />\n      <workItem from=\"1695664414570\" duration=\"5035000\" />\n      <workItem from=\"1695736428628\" duration=\"4775000\" />\n      <workItem from=\"1695841058721\" duration=\"7917000\" />\n      <workItem from=\"1695899373823\" duration=\"1019000\" />\n      <workItem from=\"1695920330859\" duration=\"4550000\" />\n      <workItem from=\"1696079000434\" duration=\"25222000\" />\n      <workItem from=\"1696249059434\" duration=\"1698000\" />\n      <workItem from=\"1696250763410\" duration=\"5765000\" />\n      <workItem from=\"1696335769799\" duration=\"4541000\" />\n      <workItem from=\"1696357522656\" duration=\"2316000\" />\n      <workItem from=\"1696424179047\" duration=\"4970000\" />\n      <workItem from=\"1696470165944\" duration=\"5286000\" />\n      <workItem from=\"1696514333068\" duration=\"14126000\" />\n      <workItem from=\"1696646571713\" duration=\"3860000\" />\n      <workItem from=\"1697222864192\" duration=\"1207000\" />\n      <workItem from=\"1697323614470\" duration=\"1958000\" />\n      <workItem from=\"1697394457640\" duration=\"214000\" />\n      <workItem from=\"1697394680420\" duration=\"17755000\" />\n      <workItem from=\"1697484520058\" duration=\"11719000\" />\n      <workItem from=\"1697551637505\" duration=\"599000\" />\n      <workItem from=\"1698248165375\" duration=\"18362000\" />\n      <workItem from=\"1698669450219\" duration=\"7544000\" />\n      <workItem from=\"1698691168181\" duration=\"2159000\" />\n      <workItem from=\"1698693387960\" duration=\"594000\" />\n      <workItem from=\"1698693987117\" duration=\"333000\" />\n      <workItem from=\"1698694325090\" duration=\"18318000\" />\n      <workItem from=\"1698756681820\" duration=\"8503000\" />\n      <workItem from=\"1698797110448\" duration=\"1674000\" />\n      <workItem from=\"1698803992961\" duration=\"1454000\" />\n      <workItem from=\"1698863051062\" duration=\"5850000\" />\n      <workItem from=\"1698931090339\" duration=\"1506000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"&quot;creo ItemsTest&quot;\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1697418461409</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697418461409</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1697495223871</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697495223871</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"&quot;creo ItemsTest&quot;\" />\n    <MESSAGE value=\"&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/resources/src/main/java/org/prueba/Main.java</url>\n          <line>15</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,18 +6,6 @@
+   <component name="ChangeListManager">
+     <list default="true" id="faa3209b-5150-4917-8e65-1e86ef7416ac" name="Changes" comment="&quot;actualizo ItemsTest y creo tests unitarios de HabilidadesTest&quot;">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/items.json" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/pokemones.json" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/DatosPokemon.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/ItemsTest.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unitarios/modeloTest/JugadorTest.class" afterDir="false" />
+     </list>
+     <list id="a80fe8b4-d52a-498c-b558-dad374f08d15" name="Changes by melina" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -93,8 +81,8 @@
+       <recent name="" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.ItemsTest">
+-    <configuration name="ItemsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="JUnit.PokemonTest">
++    <configuration name="EstadoParalizadoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Pokemon" />
+       <extension name="coverage">
+         <pattern>
+@@ -103,13 +91,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
++      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.EstadoParalizadoTest" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="JugadorTest.seleccionarPokemonNoDisponible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="HabilidadesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Pokemon" />
+       <extension name="coverage">
+         <pattern>
+@@ -118,14 +106,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.JugadorTest" />
+-      <option name="METHOD_NAME" value="seleccionarPokemonNoDisponible" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.HabilidadesTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PokemonTest.aplicarEfectoEstadoEnvenenado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="ItemsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Pokemon" />
+       <extension name="coverage">
+         <pattern>
+@@ -134,14 +121,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+-      <option name="METHOD_NAME" value="aplicarEfectoEstadoEnvenenado" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PokemonTest.usarHabilidadEstandoDormido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Pokemon" />
+       <extension name="coverage">
+         <pattern>
+@@ -150,14 +136,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+-      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+-      <option name="METHOD_NAME" value="usarHabilidadEstandoDormido" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.JugadorTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PokemonTest.usarHabilidadSinUsosDisponibles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PokemonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Pokemon" />
+       <extension name="coverage">
+         <pattern>
+@@ -167,19 +152,18 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+       <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+-      <option name="METHOD_NAME" value="usarHabilidadSinUsosDisponibles" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.PokemonTest" />
++        <item itemvalue="JUnit.JugadorTest" />
+         <item itemvalue="JUnit.ItemsTest" />
+-        <item itemvalue="JUnit.JugadorTest.seleccionarPokemonNoDisponible" />
+-        <item itemvalue="JUnit.PokemonTest.aplicarEfectoEstadoEnvenenado" />
+-        <item itemvalue="JUnit.PokemonTest.usarHabilidadEstandoDormido" />
+-        <item itemvalue="JUnit.PokemonTest.usarHabilidadSinUsosDisponibles" />
++        <item itemvalue="JUnit.HabilidadesTest" />
++        <item itemvalue="JUnit.EstadoParalizadoTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -228,7 +212,7 @@
+       <workItem from="1698797110448" duration="1674000" />
+       <workItem from="1698803992961" duration="1454000" />
+       <workItem from="1698863051062" duration="5850000" />
+-      <workItem from="1698931090339" duration="1506000" />
++      <workItem from="1698931090339" duration="2990000" />
+     </task>
+     <task id="LOCAL-00001" summary="&quot;creo ItemsTest&quot;">
+       <option name="closed" value="true" />

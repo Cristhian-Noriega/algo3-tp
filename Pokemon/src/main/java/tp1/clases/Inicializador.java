@@ -7,28 +7,26 @@ import tp1.clases.modelo.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
 public class Inicializador {
 
-    public static ArrayList<Jugador> iniciarJugadores() throws IOException{
+    public static ArrayList<Jugador> iniciarJugadores() throws IOException, CloneNotSupportedException {
 
-        ArrayList<Item> listaItems = crearListaItems();
+        Map<Integer, Item> listaItems = crearListaItems();
 
-        ArrayList<Habilidad> listaHabilidades = crearListaHabilidades();
+        Map<Integer, Habilidad> listaHabilidades = crearListaHabilidades();
 
-        ArrayList<Pokemon> listaPokemones = crearListaPokemones(listaHabilidades);
+        Map<Integer, Pokemon> listaPokemones = crearListaPokemones(listaHabilidades);
 
         return crearListaJugadores(listaPokemones, listaItems);
 
     }
 
-    private static ArrayList<Item> crearListaItems() throws IOException {
+    private static Map<Integer, Item> crearListaItems() throws IOException {
         String pathItems = "resources/json/items.json";
 
-        ArrayList<Item> listaItems = new ArrayList<Item>();
+        Map<Integer,Item> listaItems = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -42,12 +40,12 @@ public class Inicializador {
             switch (categoria){
                 case ESTADO:
                     item = new ItemEstado(nombre, id);
-                    listaItems.add(item);
+                    listaItems.put(id, item);
                     continue;
                 case ESTADISTICA:
                     Estadisticas estadistica = Estadisticas.valueOf(itemNode.get("estadistica").asText());
                     item = new ItemEstadistica(nombre, estadistica, id);
-                    listaItems.add(item);
+                    listaItems.put(id, item);
                     continue;
                 case VIDA:
                     int vida = itemNode.get("vida").asInt();
@@ -56,17 +54,17 @@ public class Inicializador {
                     } else {
                         item = new ItemRestauracionVida(nombre, vida, id);
                     }
-                    listaItems.add(item);
+                    listaItems.put(id, item);
             }
         }
         return listaItems;
     }
 
 
-    private static ArrayList<Habilidad> crearListaHabilidades() throws IOException {
+    private static Map<Integer, Habilidad> crearListaHabilidades() throws IOException {
         String pathHabilidades = "resources/json/habilidades.json";
 
-        ArrayList<Habilidad> listaHabilidades = new ArrayList<Habilidad>();
+        Map<Integer,Habilidad> listaHabilidades = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -84,33 +82,36 @@ public class Inicializador {
                 case ATAQUE:
                     int poder = habilidadNodo.get("poder").asInt();
                     habilidad = new HabilidadAtaque(nombre, usos, tipo, poder, info, id);
-                    listaHabilidades.add(habilidad);
+                    listaHabilidades.put(id, habilidad);
                     continue;
+
                 case ESTADO:
                     Estado estado = Estado.valueOf(habilidadNodo.get("estado").asText());
                     habilidad = new HabilidadEstado(nombre, usos, tipo, info, estado, id);
-                    listaHabilidades.add(habilidad);
+                    listaHabilidades.put(id, habilidad);
                     continue;
+
                 case ESTADISTICA:
                     Estadisticas estadistica = Estadisticas.valueOf(habilidadNodo.get("estadistica").asText());
                     boolean contraRival = habilidadNodo.get("contraRival").asBoolean();
                     habilidad = new HabilidadEstadistica(nombre, usos, tipo, info, estadistica, contraRival, id);
-                    listaHabilidades.add(habilidad);
+                    listaHabilidades.put(id, habilidad);
                     continue;
+
                 case CLIMA:
                     Clima clima = Clima.valueOf(habilidadNodo.get("clima").asText());
                     habilidad = new HabilidadClima(nombre, usos, tipo, info, clima, id);
-                    listaHabilidades.add(habilidad);
+                    listaHabilidades.put(id, habilidad);
             }
         }
         return listaHabilidades;
 
     }
 
-    private static ArrayList<Pokemon> crearListaPokemones(ArrayList<Habilidad> listaHabilidades) throws IOException {
+    private static Map<Integer, Pokemon> crearListaPokemones(Map<Integer, Habilidad> listaHabilidades) throws IOException, CloneNotSupportedException {
         String pathPokemones = "resources/json/pokemones.json";
 
-        ArrayList<Pokemon> listaPokemones = new ArrayList<Pokemon>();
+        Map<Integer, Pokemon> listaPokemones = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -125,9 +126,9 @@ public class Inicializador {
                 Iterator<JsonNode> habilidadesElements = habilidadesNode.elements();
                 while (habilidadesElements.hasNext()) {
                     int habilidadIndex = habilidadesElements.next().asInt();
-                    if (habilidadIndex < listaHabilidades.size()){
-                        habilidades.add(listaHabilidades.get(habilidadIndex));
-
+                    if (habilidadIndex <= listaHabilidades.size()){
+                        Habilidad habilidad = listaHabilidades.get(habilidadIndex);
+                        habilidades.add(habilidad.clone());
                     }
                 }
             }
@@ -140,13 +141,13 @@ public class Inicializador {
             int vidaMax = pokeNode.get("vidaMax").asInt();
 
             Pokemon poke = new Pokemon(nombre, nivel, tipo, habilidades, vidaMax, velocidad, ataque, defensa, id);
-            listaPokemones.add(poke);
+            listaPokemones.put(id, poke);
         }
 
         return listaPokemones;
     }
 
-    private static ArrayList<Jugador> crearListaJugadores(ArrayList<Pokemon> listaPokemones, ArrayList<Item> listaItems) throws IOException {
+    private static ArrayList<Jugador> crearListaJugadores(Map<Integer, Pokemon> listaPokemones, Map<Integer, Item> listaItems) throws IOException, CloneNotSupportedException {
         String pathJugadores = "resources/json/jugadores.json";
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
@@ -163,7 +164,7 @@ public class Inicializador {
                 Iterator<JsonNode> pokeElem = pokeJugadorNode.elements();
                 while (pokeElem.hasNext()) {
                     int pokeIndex = pokeElem.next().asInt();
-                    if (pokeIndex < listaPokemones.size()){
+                    if (pokeIndex <= listaPokemones.size()){
                         pokemones.add(listaPokemones.get(pokeIndex));
                     }
                 }
@@ -175,9 +176,9 @@ public class Inicializador {
                 Iterator<JsonNode> itemElem = itemsNode.elements();
                 while (itemElem.hasNext()) {
                     int itemIndex = itemElem.next().asInt();
-                    if (itemIndex < listaItems.size()){
-                        items.add(listaItems.get(itemIndex));
-
+                    if (itemIndex <= listaItems.size()){
+                        Item item = listaItems.get(itemIndex);
+                        items.add(item.clone());
                     }
                 }
             }
@@ -185,6 +186,7 @@ public class Inicializador {
             Jugador jugador = new Jugador(nombre, pokemones, items);
             listaJugadores.add(jugador);
         }
+
 
         return listaJugadores;
     }
