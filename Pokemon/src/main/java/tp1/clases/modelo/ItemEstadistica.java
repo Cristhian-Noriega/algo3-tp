@@ -7,7 +7,7 @@ import tp1.clases.errores.Error;
 import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemEstadistica implements Item, Serializable {
+public class ItemEstadistica implements Item, Serializable, Cloneable {
     private final String nombre;
     private final Estadisticas estadistica;
     private final Categoria categoria = Categoria.ESTADISTICA;
@@ -53,6 +53,10 @@ public class ItemEstadistica implements Item, Serializable {
                 return Optional.empty();
         }
         return Optional.empty();
+    }
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 }
 

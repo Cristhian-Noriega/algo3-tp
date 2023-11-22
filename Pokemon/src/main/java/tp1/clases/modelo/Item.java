@@ -10,4 +10,5 @@ public interface Item {
     Optional<Error> usar(Pokemon pokemon);
     Categoria getCategoria();
     Integer getId();
+    Item clone() throws CloneNotSupportedException;
 }
