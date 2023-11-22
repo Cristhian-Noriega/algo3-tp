@@ -103,7 +103,7 @@ public class Proveedor {
 
 
 
-        Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 100, 193.0, 184.0, 130.0);
+        Pokemon poke1 = new Pokemon("Rapidash", 20, Tipo.FUEGO, List.of(hab25, hab2, hab10, hab18), 500, 193.0, 184.0, 130.0);
 
         Pokemon poke2 = new Pokemon("Ampharos", 18, Tipo.ELECTRICO, List.of(hab3, hab4, hab11, hab17), 98, 139.0, 180.0, 130.0);
 
@@ -114,7 +114,7 @@ public class Proveedor {
         Pokemon poke5 = new Pokemon("Dragonair", 23, Tipo.DRAGON, List.of(hab9, hab1, hab15, hab21), 153, 58.0, 157.0, 148.0);
         Pokemon poke6 = new Pokemon("Cloyster", 17, Tipo.AGUA, List.of(hab29, hab32, hab49, hab22), 115, 130.0, 175.0, 328.0);
 
-        Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 80, 121.0, 98.0, 81.0);
+        Pokemon poke7 = new Pokemon("Charmander", 16, Tipo.FUEGO, List.of(hab36, hab37, hab50, hab46), 480, 121.0, 98.0, 81.0);
 
         Pokemon poke8 = new Pokemon("Thundurus", 25, Tipo.ELECTRICO, List.of(hab30, hab26, hab12, hab43), 132, 204.0, 211.0, 130.0);
 

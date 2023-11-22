@@ -1,16 +1,21 @@
 package tp1.clases.controlador;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+
+import javafx.util.Duration;
 import tp1.clases.modelo.Estado;
 import tp1.clases.modelo.Pokemon;
 import java.util.List;
@@ -37,13 +42,16 @@ public class ControladorCartelPokemon {
     public void inicializar(Pokemon pokemon, JugadorEnum jugador) {
         this.labelNombre.textProperty().bind(this.nombreProperty);
         this.labelNivel.textProperty().bind(this.nivelProperty);
+
         if (jugador == JugadorEnum.ACTUAL){
             this.labelCantVida.textProperty().bind(this.cantVidaProperty);
+            this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
         } else {
             this.barraVida.setScaleX(1.5);
             this.barraVida.setTranslateX(32);
         }
-        this.setVida(pokemon);
+
+        this.barraVida.setProgress((double) pokemon.getVida() / pokemon.getVidaMax());
         this.setNombreProperty(pokemon.getNombre());
         this.setNivelProperty(("Nvl." + pokemon.getNivel()));
 
@@ -67,6 +75,12 @@ public class ControladorCartelPokemon {
     }
 
     public void setEstados(Pokemon pokemon){
+        int j = 0;
+        for (Node circle: this.circulos.getChildren()) {
+            circle.setOpacity(0);
+            this.imagenesEstadosProperty.get(j).set(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/default.png"));
+        }
+
         int i = 0;
         for (Estado estado: pokemon.getEstados()) {
             if (estado == Estado.NORMAL) {
@@ -78,19 +92,49 @@ public class ControladorCartelPokemon {
         }
     }
 
-    public void setVida(Pokemon pokemon) {
-        double porcentaje = (double) pokemon.getVida() / pokemon.getVidaMax();
-        this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
-        this.barraVida.setProgress(porcentaje);
+    public void setVida(Pokemon pokemon, JugadorEnum jugador) {
+        if (jugador == JugadorEnum.ACTUAL) {
+            this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
+        }
+
+        this.barraVida.setProgress((double) pokemon.getVida() / pokemon.getVidaMax());
+
+        if (this.barraVida.getProgress() < 0.3) {
+            this.barraVida.setStyle("-fx-accent: #c22f2f");
+        } else if (this.barraVida.getProgress() < 0.6) {
+            this.barraVida.setStyle("-fx-accent: #c5c742");
+        }
+    }
+
+    public void bajarVida(double cantidad) {
+        Timeline animacion = new Timeline(
+                new KeyFrame(Duration.seconds(0.1), event -> reducirVida())
+        );
+
+        animacion.setCycleCount((int) cantidad / 10);
+        animacion.play();
+    }
+
+
+    private void reducirVida() { //TODO: ver caso de aumento de vida
+        double porcentaje = this.barraVida.getProgress();
+        if (porcentaje <= 0.1) {
+            return;
+        }
+
+        this.barraVida.setProgress(porcentaje - 0.1);
         if (porcentaje < 0.3) {
             this.barraVida.setStyle("-fx-accent: #c22f2f");
         } else if (porcentaje < 0.6) {
             this.barraVida.setStyle("-fx-accent: #c5c742");
         }
+
     }
 
-    public void actualizar(Pokemon pokemon) {
-        setEstados(pokemon);
-        setVida(pokemon);
+    public void actualizar(Pokemon pokemon, JugadorEnum jugador) {
+        this.setNombreProperty(pokemon.getNombre());
+        this.setNivelProperty(("Nvl." + pokemon.getNivel()));
+        this.setEstados(pokemon);
+        this.setVida(pokemon, jugador);
     }
 }

@@ -12,6 +12,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import tp1.clases.modelo.AdministradorDeClima;
+import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Pokemon;
 
 import java.io.IOException;
@@ -28,26 +30,34 @@ public class ControladorCampo {
     @FXML public ImageView imagenActual;
     @FXML public ImageView fondoClima;
     @FXML public Pane campoPane;
+    private Batalla batalla;
 
     public ControladorCampo() {}
 
-    public void inicializar(Pokemon pokemonActual, Pokemon pokemonRival, String clima) {
-        this.cartelPokemonRivalController.inicializar(pokemonRival, JugadorEnum.RIVAL);
-        this.cartelPokemonActualController.inicializar(pokemonActual, JugadorEnum.ACTUAL);
-        this.cartelClimaController.inicializar(clima);
+    public void inicializar(Batalla batalla) {
+        this.batalla = batalla;
+
+        this.cartelPokemonActualController.inicializar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);
+        this.cartelPokemonRivalController.inicializar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
+        this.cartelClimaController.inicializar(this.batalla.getClima().name());
+
         this.imagenActual.imageProperty().bind(this.imagenActualProperty);
         this.imagenRival.imageProperty().bind(this.imagenRivalProperty);
         this.fondoClima.imageProperty().bind(this.fondoClimaProperty);
-        this.setImagenActualProperty(pokemonActual.getNombre());
-        this.setImagenRivalProperty(pokemonRival.getNombre());
-        this.setFondoClimaProperty(clima);
+
+        this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
+        this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
+        this.setFondoClimaProperty(this.batalla.getClima().name());
     }
 
-    public void actualizarCampo(Pokemon pokemonActual, Pokemon pokemonRival, String clima) {
-        this.cartelClimaController.actualizar(clima);
-        this.cartelPokemonActualController.actualizar(pokemonActual);
-        this.cartelPokemonRivalController.actualizar(pokemonRival);
-        this.setFondoClimaProperty(clima);
+    public void actualizar(Batalla batalla) {
+        this.batalla = batalla;
+        this.cartelClimaController.actualizar(batalla.getClima().name());
+        this.cartelPokemonActualController.actualizar(batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);
+        this.cartelPokemonRivalController.actualizar(batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
+        this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
+        this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
+        this.setFondoClimaProperty(this.batalla.getClima().name());
     }
 
     public void setFondoClimaProperty(String clima) {
@@ -85,15 +95,7 @@ public class ControladorCampo {
         return campoPane;
     }
 
-    public ControladorCartelPokemon getCartelPokemonRivalController() {
-        return cartelPokemonRivalController;
-    }
-
-    public ControladorCartelPokemon getCartelPokemonActualController() {
-        return cartelPokemonActualController;
-    }
-
-    public ControladorClima getCartelClimaController() {
-        return cartelClimaController;
+    public void animarVida(double cantidad) {
+        this.cartelPokemonRivalController.bajarVida(cantidad);
     }
 }
