@@ -35,7 +35,7 @@
                 </Button>
             </HBox>
             <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="483.0" style="-fx-background-color: white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;">
-                <Label alignment="CENTER" text="Seleccione un Pokemon" textAlignment="CENTER">
+                <Label fx:id="labelTexto" alignment="CENTER" text="Seleccione un Pokemon" textAlignment="CENTER">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>

@@ -34,11 +34,11 @@ public class ControladorMenuPokemon implements Initializable {
         for (Pokemon pokemon : pokemones) {
             try {
                 if (pokemon == jugadorActual.getPokemonActual()){
-                    // Cargar el FXML para el Pokémon actual
+                    // Cargar el FXML para el Pokemon actual
                     FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartelPokemonActual.fxml"));
                     Pane cartelPokemonActual = loader.load();
 
-                    // Obtener el controlador del FXML para establecer la información del Pokémon
+                    // Obtener el controlador del FXML para establecer la información del Pokemon ACT
                     ControladorCartelPokemonActual controladorCartelActual = loader.getController();
                     controladorCartelActual.setDatosPokemonActual(pokemon);
 
@@ -69,3 +69,4 @@ public class ControladorMenuPokemon implements Initializable {
         return this;
     }
 }
+

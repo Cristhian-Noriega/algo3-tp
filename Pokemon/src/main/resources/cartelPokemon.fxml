@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
@@ -17,7 +18,7 @@
     <ImageView fitHeight="94.0" fitWidth="334.0" layoutX="79.0" layoutY="6.0">
         <Image url="@images/fondoCartelPokemon.jpeg" />
     </ImageView>
-    <HBox layoutX="73.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
+    <HBox fx:id="contenedorBoton" layoutX="73.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
         <StackPane prefHeight="94.0" prefWidth="178.0">
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="127.0" translateX="45.0" translateY="-25.0">
                 <Label fx:id="labelNombre" prefHeight="40.0" prefWidth="134.0" translateY="5.0">
@@ -44,6 +45,7 @@
                 </font>
             </Label>
         </HBox>
+      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" opacity="0.0" prefHeight="92.0" prefWidth="340.0" text="Button" translateX="-420.0" />
     </HBox>
     <StackPane layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
         <Circle fill="#245924" radius="50.0" stroke="#000d00" strokeType="INSIDE" strokeWidth="3.0" />
