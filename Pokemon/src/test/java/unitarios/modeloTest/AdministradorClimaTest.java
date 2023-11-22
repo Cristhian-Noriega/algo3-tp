@@ -10,8 +10,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class AdministradorClimaTest {
-    Pokemon rataDeLaboratorio = new Pokemon("Rata de laboratorio", 20, Tipo.AGUA, List.of(), 100, 193.0, 184.0, 130.0);
-    Pokemon conejilloDeIndias = new Pokemon("Conejillo de Indias", 18, Tipo.TIERRA, List.of(), 98, 139.0, 180.0, 130.0);
+    Pokemon rataDeLaboratorio = new Pokemon("Rata de laboratorio", 20, Tipo.AGUA, List.of(), 100, 193.0, 184.0, 130.0, 1);
+    Pokemon conejilloDeIndias = new Pokemon("Conejillo de Indias", 18, Tipo.TIERRA, List.of(), 98, 139.0, 180.0, 130.0, 2);
     @Test
     void actualizarTurnoTest(){
         AdministradorDeClima admin = new AdministradorDeClima();
