@@ -1,22 +1,25 @@
 package tp1.clases.controlador;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.CambioDeTurnoEvent;
+import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ControladorVentana implements EventHandler<CambioDeTurnoEvent> {
+public class ControladorVentana implements EventHandler<ActionEvent> {
     private Batalla batalla;
     private Stage stage;
-    private ArrayList<Scene> escenas; //orden: MenuPrincipal, MenuHabilidades, PantallaEfecto
-    private ArrayList<Controlador> controladores; //idem
+    private ArrayList<Scene> escenas;
+    private ArrayList<Controlador> controladores;
 
     public ControladorVentana(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
@@ -30,6 +33,18 @@ public class ControladorVentana implements EventHandler<CambioDeTurnoEvent> {
         } catch (IOException e) {
             System.out.println("no se pudieron cargar las escenas");
         }
+
+        this.stage.addEventHandler(HabilidadSeleccionadaEvent.HABILIDAD_SELECCIONADA_EVENT, event -> {
+            Habilidad habilidad = event.getHabilidad();
+            this.seleccionarHabilidad(habilidad);
+            System.out.println("habilidad seteada: " + habilidad.getNombre());
+        });
+
+        this.stage.addEventHandler(CambioDeEscenaEvent.CAMBIO_DE_ESCENA_EVENT, event -> {
+            int escena = event.getEscena();
+            this.cambiarEscena(escena);
+            System.out.println("Evento recibido con escena: " + escena);
+        });
     }
 
     public void cargarFXML(String ruta) throws IOException {
@@ -48,33 +63,21 @@ public class ControladorVentana implements EventHandler<CambioDeTurnoEvent> {
         cargarFXML("/pantalla-efecto.fxml");
     }
 
-    public void actualizarEscenas() {
-        for (Controlador controlador: this.controladores) {
-            controlador.actualizar(this.batalla);
-        }
-    }
-
-    @Override
-    public void handle(CambioDeTurnoEvent cambioDeTurnoEvent) {
-        this.batalla.cambiarTurno();
-        this.actualizarEscenas();
-    }
-
-    public void cambiarTurno() {
-        this.batalla.cambiarTurno();
-        this.actualizarEscenas();
-        System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
-    }
-
     public void seleccionarHabilidad(Habilidad habilidad) {
         ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(2);
         controlador.setHabilidadSeleccionada(habilidad);
         controlador.actualizar(this.batalla);
     }
 
-    public void cambiarEscena(int i) {
-        this.controladores.get(i).actualizarCampo(this.batalla);
-        this.stage.setScene(this.escenas.get(i));
+    public void cambiarEscena(int escena) {
+       //this.controladores.get(i).actualizarCampo(this.batalla);
+        this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
+        System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        System.out.println(actionEvent.getEventType());
     }
 }

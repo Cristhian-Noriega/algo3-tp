@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class ControladorClima {
-    private String clima = "Sin clima";
     private final ObjectProperty<Image> imagenProperty = new SimpleObjectProperty<>();
     private StringProperty climaProperty = new SimpleStringProperty();;
     @FXML public Label labelClima;
@@ -25,20 +24,12 @@ public class ControladorClima {
         this.setImagen(clima);
     }
 
-    public String getClimaProperty() {
-        return climaProperty.get();
-    }
-
     public void setClimaProperty(String climaProperty) {
         this.climaProperty.set(climaProperty);
     }
 
-    public ObjectProperty<Image> imagenProperty() {
-        return imagenProperty;
-    }
-
     public void setImagen(String clima) {
-        Image imagen = new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/CLIMA_" + clima + ".png");
+        Image imagen = new Image(Archivos.getRutaAbsoluta("CLIMA_" + clima + ".png"));
         imagenProperty.set(imagen);
     }
 

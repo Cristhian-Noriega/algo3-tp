@@ -97,4 +97,8 @@ public class Batalla {
     public AdministradorDeClima getAdministradorDeClima(){
         return this.administradorDeClima;
     }
+
+    public AdministradorDeTurnos getAdministradorTurnos() {
+        return administradorTurnos;
+    }
 }

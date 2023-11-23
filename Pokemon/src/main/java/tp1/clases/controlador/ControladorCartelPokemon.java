@@ -18,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.modelo.Estado;
 import tp1.clases.modelo.Pokemon;
+
 import java.util.List;
 
 public class ControladorCartelPokemon {
@@ -78,7 +79,7 @@ public class ControladorCartelPokemon {
         int j = 0;
         for (Node circle: this.circulos.getChildren()) {
             circle.setOpacity(0);
-            this.imagenesEstadosProperty.get(j).set(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/default.png"));
+            this.imagenesEstadosProperty.get(j).set(new Image(Archivos.getRutaAbsoluta("default.png")));
         }
 
         int i = 0;
@@ -87,7 +88,7 @@ public class ControladorCartelPokemon {
                 break;
             }
             this.circulos.getChildren().get(i).setOpacity(100);
-            this.imagenesEstadosProperty.get(i).set(new Image("file:/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Imagenes/" + estado + ".png"));
+            this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsoluta(estado.name() + ".png")));
             i++;
         }
     }
@@ -106,23 +107,23 @@ public class ControladorCartelPokemon {
         }
     }
 
-    public void bajarVida(double cantidad) {
+    public void animarBarraDeVida(double cantidad) {
         Timeline animacion = new Timeline(
-                new KeyFrame(Duration.seconds(0.1), event -> reducirVida())
+                new KeyFrame(Duration.seconds(0.1), event -> modificarBarraDeVida(cantidad))
         );
 
-        animacion.setCycleCount((int) cantidad / 10);
+        animacion.setCycleCount((int) Math.abs(cantidad) / 10);
         animacion.play();
     }
 
 
-    private void reducirVida() { //TODO: ver caso de aumento de vida
+    private void modificarBarraDeVida(double cantidad) {
         double porcentaje = this.barraVida.getProgress();
-        if (porcentaje <= 0.1) {
+        if ((porcentaje <= 0.1) | (porcentaje >= 1)) {
             return;
         }
 
-        this.barraVida.setProgress(porcentaje - 0.1);
+        this.barraVida.setProgress(porcentaje + cantidad);
         if (porcentaje < 0.3) {
             this.barraVida.setStyle("-fx-accent: #c22f2f");
         } else if (porcentaje < 0.6) {

@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import tp1.clases.errores.Error;
-import tp1.clases.eventos.CambioDeTurnoEvent;
+import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.*;
 
 
@@ -23,57 +23,54 @@ public class ControladorPantallaEfecto implements Controlador{
     @FXML public Label labelTexto;
     @FXML public ControladorCampo campoController;
     @FXML public Pane pane;
-    private ControladorVentana controladorVentana;
 
     public ControladorPantallaEfecto() {
         this.pokemones = new ArrayList<>();
     }
 
     public void inicializar(Batalla batalla) {
+        System.out.println("batalla en pantalla efecto " + batalla);
         this.batalla = batalla;
-        this.pokemones.add(batalla.getJugadorActual().getPokemonActual());
-        this.pokemones.add(batalla.getJugadorSiguiente().getPokemonActual());
-
+        this.setPokemones();
         this.campoController.inicializar(batalla);
+        this.labelTexto.setWrapText(true);
     }
 
     public void actualizar(Batalla batalla) {
         this.batalla = batalla;
-
+        this.setPokemones();
         this.labelTexto.textProperty().bind(textoProperty);
         System.out.println(pokemones.get(0).getHabilidades() + "   " + pokemones.get(1).getNombre());
         double vidaAntRival = pokemones.get(1).getVida();
         Optional<Error> err = this.batalla.usarHabilidad(this.habilidadSeleccionada, this.batalla.getJugadorSiguiente());
         if (err.isEmpty()) {
-            this.setTextoProperty(pokemones.get(0).getNombre() + " ha utilizado la habilidad " + this.habilidadSeleccionada.getNombre());
+            this.setTextoProperty(pokemones.get(0).getNombre() + " " + this.habilidadSeleccionada.getInfo().toLowerCase());
             if (this.habilidadSeleccionada.getCategoria() != Categoria.ESTADISTICA) {
                 this.campoController.aplicarParpadeo(JugadorEnum.RIVAL);
-                this.campoController.animarVida((vidaAntRival - pokemones.get(1).getVida() ) / pokemones.get(1).getVidaMax());
+                this.campoController.animarVida((pokemones.get(1).getVida() - vidaAntRival) / pokemones.get(1).getVidaMax());
             }
-            this.campoController.actualizar(this.batalla);
-            this.campoController.getCampoPane().fireEvent(new CambioDeTurnoEvent());
+            this.campoController.actualizar();
             this.pane.setOnMouseClicked(this::cambiarMenuPrincipal);
         }
     }
 
-    @Override
-    public void actualizarCampo(Batalla batalla) {
-        this.campoController.actualizar(batalla);
-    }
-
-    @Override
-    public void setControladorVentana(ControladorVentana controladorVentana) {
-        this.controladorVentana = controladorVentana;
+    private void setPokemones() {
+        this.pokemones = new ArrayList<>();
+        for (Jugador jugador: this.batalla.getJugadores()) {
+            this.pokemones.add(jugador.getPokemonActual());
+        }
     }
 
     public void cambiarMenuPrincipal(MouseEvent event) {
-        this.controladorVentana.cambiarTurno();
-        this.controladorVentana.cambiarEscena(0);
+        this.batalla.cambiarTurno();
+        //this.controladorVentana.cambiarEscena(Escena.MENU_PRINCIPAL.ordinal());
+        this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 
     public void setTextoProperty(String textoProperty) {
         this.textoProperty.set(textoProperty);
     }
+
     public void setHabilidadSeleccionada(Habilidad habilidad) {
         this.habilidadSeleccionada = habilidad;
     }

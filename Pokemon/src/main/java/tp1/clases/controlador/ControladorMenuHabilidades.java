@@ -1,23 +1,22 @@
 package tp1.clases.controlador;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+
+import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Pokemon;
+import tp1.clases.modelo.Subscriptor;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControladorMenuHabilidades implements Controlador{
+public class ControladorMenuHabilidades implements Controlador, Subscriptor {
     @FXML public ControladorCampo campoController;
     @FXML public Button botonVolver;
     @FXML public Label texto;
@@ -30,19 +29,15 @@ public class ControladorMenuHabilidades implements Controlador{
 
     private Batalla batalla;
     private ArrayList<Pokemon> pokemones;
-    private ControladorVentana controladorVentana;
 
     public ControladorMenuHabilidades() {
         this.pokemones = new ArrayList<>();
     }
 
-    public void setControladorVentana(ControladorVentana controladorVentana) {
-        this.controladorVentana = controladorVentana;
-    }
-
     public void inicializar(Batalla batalla) {
+        System.out.println("batalla en habilidades " + batalla);
         this.batalla = batalla;
-
+        batalla.getAdministradorTurnos().agregarSubscriptor(this);
         this.pokemones.add(batalla.getJugadorActual().getPokemonActual());
         this.pokemones.add(batalla.getJugadorSiguiente().getPokemonActual());
 
@@ -52,14 +47,8 @@ public class ControladorMenuHabilidades implements Controlador{
         this.setHabilidades(this.pokemones.get(0).getHabilidades());
     }
 
-    @Override
-    public void actualizar(Batalla batalla) {
-        this.setHabilidades(batalla.getHabilidadesPokemonActual());
-    }
-
-    @Override
-    public void actualizarCampo(Batalla batalla) {
-        this.campoController.actualizar(batalla);
+    public void actualizar() {
+        this.setHabilidades(this.batalla.getHabilidadesPokemonActual());
     }
 
     public void setHabilidades(List<Habilidad> habilidades) {
@@ -76,6 +65,8 @@ public class ControladorMenuHabilidades implements Controlador{
                 boton.setDisable(true);
                 i++;
                 continue;
+            } else {
+                boton.setDisable(false);
             }
 
             boton.setOnMouseClicked(event -> {cambiarPantallaEfecto(event, habilidad);});
@@ -108,11 +99,18 @@ public class ControladorMenuHabilidades implements Controlador{
     }
 
     public void cambiarMenuPrincipal(MouseEvent event) {
-        this.controladorVentana.cambiarEscena(0);
+        this.texto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 
     public void cambiarPantallaEfecto(MouseEvent event, Habilidad habilidadSeleccionada) {
-        this.controladorVentana.seleccionarHabilidad(habilidadSeleccionada);
-        this.controladorVentana.cambiarEscena(2);
+        this.texto.fireEvent(new HabilidadSeleccionadaEvent(habilidadSeleccionada));
+        CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_EFECTO.ordinal());
+        evento.setHabilidad(habilidadSeleccionada);
+        this.texto.fireEvent(evento);
+    }
+
+    @Override
+    public void Update() {
+        this.actualizar();
     }
 }
