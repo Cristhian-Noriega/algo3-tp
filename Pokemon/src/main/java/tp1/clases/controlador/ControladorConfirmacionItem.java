@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import java.util.Objects;
+
 public class ControladorConfirmacionItem {
     @FXML
     private Label itemSeleccionado;
@@ -20,7 +22,8 @@ public class ControladorConfirmacionItem {
 
     public void setInfoItem(String nombreItem){
         this.itemSeleccionado.setText("Haz seleccionado " + nombreItem );
-        Image imagen = new Image("file:/home/cristhian/Descargas/" + nombreItem + ".png");
+        String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
+        Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         this.imagenItemSeleccionado.setImage(imagen);
     }
 
@@ -34,5 +37,4 @@ public class ControladorConfirmacionItem {
     public void setCancelActionListener(CancelarAccionListener listener){
         this.cancelarAccionListener = listener;
     }
-
 }

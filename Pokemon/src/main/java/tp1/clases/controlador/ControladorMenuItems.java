@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,6 +17,7 @@ import tp1.clases.modelo.Item;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ControladorMenuItems implements CancelarAccionListener {
     @FXML
@@ -54,13 +56,15 @@ public class ControladorMenuItems implements CancelarAccionListener {
         Button boton = new Button("Volver");
         boton.setMaxWidth(Double.MAX_VALUE);
         boton.setMaxHeight(Double.MAX_VALUE);
+        boton.getStyleClass().add("boton-volver");
         botonesItems.getChildren().add(boton);
         this.setInfoBotonVolver();
         boton.setOnMouseEntered(mouseEvent -> {setInfoBotonVolver();});
     }
 
     private void setInfoBotonVolver(){
-        Image imagen = new Image("file:/home/cristhian/Descargas/volver.png");
+        String imagenPath = "/Imagenes/volver.png";
+        Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         imagenItem.setImage(imagen);
         itemDescriptionLabel.setText("Cerrar mochila.");
     }
@@ -84,7 +88,8 @@ public class ControladorMenuItems implements CancelarAccionListener {
     }
 
     public void setInfoItem(String descripcionItem, String nombreItem){
-        Image imagen = new Image("file:/home/cristhian/Descargas/" + nombreItem + ".png");
+        String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
+        Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         imagenItem.setImage(imagen);
         itemDescriptionLabel.setText(descripcionItem);
     }
