@@ -25,30 +25,31 @@ public class ControladorJugar {
 
     private Batalla batalla;
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public void setBatalla(Batalla batalla){
-        this.batalla = batalla;
-    }
-
     @FXML
     private void handleJugarButtonClick(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("items-view.fxml"));
-            BorderPane itemsBorderPane = loader.load();
-            Scene itemsScene = new Scene(itemsBorderPane);
-            ControladorMenuItems controller = loader.getController();
-            List<Item> items = this.batalla.getItemsJugadorActual();
-            Map<String, Long> cantidadItems = this.batalla.getMapItemsJugadorActual();
-            controller.inicializar(items, cantidadItems);
-            stage.setScene(itemsScene);
-            } catch (IOException error) {
-                error.printStackTrace();
+            Parent menuItems = loader.load();
+
+            ControladorMenuItems controladorMenuItems = loader.getController();
+            if (controladorMenuItems != null) {
+                controladorMenuItems.inicializar(this.batalla.getItemsJugadorActual(), this.batalla.getMapItemsJugadorActual());
+            } else {
+                System.out.println("El controlador de menu items es null");
             }
+
+            Scene itemsScene = new Scene(menuItems);
+            stage.setScene(itemsScene);
+        } catch (IOException error) {
+            error.printStackTrace();
+        }
+    }
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
-
+    public void setBatalla(Batalla batalla) {
+        this.batalla = batalla;
+    }
 }
 

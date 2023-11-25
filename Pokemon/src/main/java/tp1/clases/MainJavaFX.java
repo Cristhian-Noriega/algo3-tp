@@ -46,7 +46,7 @@ public class MainJavaFX extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("inicio-view.fxml"));
         StackPane root = loader.load();
-        // Pasar el Stage al controlador ControladorJugar
+
         ControladorJugar controladorJugar = loader.getController();
         controladorJugar.setStage(stage);
         controladorJugar.setBatalla(batalla);
