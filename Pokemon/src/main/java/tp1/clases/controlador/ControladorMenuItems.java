@@ -47,7 +47,8 @@ public class ControladorMenuItems implements CancelarAccionListener {
             this.botonesItems.getChildren().add(boton);
             boton.setMaxWidth(Double.MAX_VALUE);
             boton.setMaxHeight(Double.MAX_VALUE);
-            boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getDescripcion(), item.getNombre());});
+            //item.getDescripcion(),
+            boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getNombre());});
             boton.setOnMouseClicked(mouseEvent -> {cambiarMenuItemsConfirmacion(mouseEvent, item);});
         }
     }
@@ -87,11 +88,11 @@ public class ControladorMenuItems implements CancelarAccionListener {
         borderPane.setBottom(itemInfoPane);
     }
 
-    public void setInfoItem(String descripcionItem, String nombreItem){
+    public void setInfoItem(String nombreItem){
         String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
         Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         imagenItem.setImage(imagen);
-        itemDescriptionLabel.setText(descripcionItem);
+//        itemDescriptionLabel.setText(descripcionItem);
     }
 
     public void habilitarBotones() {

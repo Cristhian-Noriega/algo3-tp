@@ -20,8 +20,7 @@ public class Dormido implements EstadoComportamiento {
     }
 
     @Override
-    public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon) {
-        Habilidad habilidad = pokemon.getHabilidades().get(numeroHabilidad);
+    public Boolean usarHabilidad(Habilidad habilidad, Pokemon pokemon) {
         System.out.printf("%s no puede atacar estando dormido\n", pokemon.getNombre());
         habilidad.restarUso();
         return false;

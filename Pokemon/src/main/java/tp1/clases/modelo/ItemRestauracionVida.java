@@ -1,24 +1,27 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorPokemonMuerto;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemRestauracionVida implements Item {
+public class ItemRestauracionVida implements Item, Serializable, Cloneable {
 
     protected final String nombre;
     protected int vida;
     private final Categoria categoria = Categoria.VIDA;
+    private final Integer id;
 
     int MOLESTAALUMNOS = 0;
-
-    private final String descripcion;
-
-    public ItemRestauracionVida(String nombre, int vida, String descripcion){ //si vida es 0 entonces es pocion molesta alumnos
+    @JsonCreator
+    public ItemRestauracionVida(@JsonProperty("nombre") String nombre, @JsonProperty("vida") int vida,
+                                @JsonProperty("id") Integer id){ //si vida es 0 entonces es pocion molesta alumnos
         this.nombre = nombre;
         this.vida = vida;
-        this.descripcion = descripcion;
+        this.id = id;
     }
 
     @Override
@@ -29,6 +32,11 @@ public class ItemRestauracionVida implements Item {
     @Override
     public Categoria getCategoria() {
         return this.categoria;
+    }
+
+    @Override
+    public Integer getId(){
+        return this.id;
     }
 
     @Override
@@ -43,8 +51,9 @@ public class ItemRestauracionVida implements Item {
         System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
         return Optional.empty();
     }
-
-    public String getDescripcion() {
-        return descripcion;
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
+
 }

@@ -5,8 +5,11 @@ module Pokemon {
     requires javafx.graphics;
     requires javafx.media;
 
+    requires org.jline;
+    requires com.fasterxml.jackson.databind;
+
     opens tp1.clases to javafx.fxml;
-    exports tp1.clases;
-    exports tp1.clases.controlador;
     opens tp1.clases.controlador to javafx.fxml;
+    opens tp1.clases.eventos to javafx.fxml;
+    exports tp1.clases;
 }

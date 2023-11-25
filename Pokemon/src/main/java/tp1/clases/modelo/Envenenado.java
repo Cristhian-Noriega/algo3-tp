@@ -16,7 +16,7 @@ public class Envenenado implements EstadoComportamiento {
         this.turnosEnvenenado++;
     }
     @Override
-    public Boolean usarHabilidad(int numeroHabilidad, Pokemon rival){
+    public Boolean usarHabilidad(Habilidad habilidad, Pokemon rival){
         return true;
     }
 

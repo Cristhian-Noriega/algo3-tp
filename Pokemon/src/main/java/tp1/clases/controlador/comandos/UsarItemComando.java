@@ -15,12 +15,10 @@
             this.batalla = batalla;
         }
 
-        @Override
         public void definirPokemon(int pokemon){
             this.pokemon = pokemon;
         }
 
-        @Override
         public void definirOpcion(int op){
             this.item = op;
         }

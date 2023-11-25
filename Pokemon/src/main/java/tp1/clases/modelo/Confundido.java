@@ -19,7 +19,7 @@ public class Confundido implements EstadoComportamiento {
     }
 
     @Override
-    public Boolean usarHabilidad(int numeroHabilidad, Pokemon pokemon) {
+    public Boolean usarHabilidad(Habilidad habilidad, Pokemon pokemon) {
         boolean seAutolesiona = Random.probabilidad(Constantes.probabilidadDeAutolesionarse);
         if (seAutolesiona){
             double danio = Constantes.porcentajeDeAutolesionConfundido * pokemon.getVidaMax();

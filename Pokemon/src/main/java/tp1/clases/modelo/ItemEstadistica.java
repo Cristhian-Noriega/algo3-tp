@@ -1,21 +1,23 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
-import java.lang.invoke.StringConcatFactory;
+import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemEstadistica implements Item{
+public class ItemEstadistica implements Item, Serializable, Cloneable {
     private final String nombre;
     private final Estadisticas estadistica;
     private final Categoria categoria = Categoria.ESTADISTICA;
-
-    private final String descripcion;
-
-    public ItemEstadistica(String nombre, Estadisticas estadistica, String descripcion) {
+    private final Integer id;
+    @JsonCreator
+    public ItemEstadistica(@JsonProperty("nombre") String nombre, @JsonProperty("estadistica") Estadisticas estadistica,
+                           @JsonProperty("id") Integer id) {
         this.nombre = nombre;
-        this.descripcion = descripcion;
         this.estadistica = estadistica;
+        this.id = id;
     }
 
     @Override
@@ -28,6 +30,11 @@ public class ItemEstadistica implements Item{
         return this.categoria;
     }
 
+
+    @Override
+    public Integer getId(){
+        return this.id;
+    }
 
     @Override
     public Optional<Error> usar(Pokemon pokemon){
@@ -49,8 +56,8 @@ public class ItemEstadistica implements Item{
         return Optional.empty();
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 }
-

@@ -1,6 +1,7 @@
 package tp1.clases;
 
 import javafx.application.Application;
+<<<<<<< HEAD
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,16 +32,38 @@ public class MainJavaFX extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+=======
+import javafx.stage.Stage;
+import tp1.clases.controlador.ControladorEscenas;
+import tp1.clases.modelo.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainJavaFX extends Application {
+    private Batalla batalla;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) {
+>>>>>>> main
         Proveedor proveedor = new Proveedor();
         List<ArrayList<Pokemon>> pokemones = proveedor.getPokemones();
         List<List<Item>> items = proveedor.getItems();
         Jugador jugador1 = new Jugador("jugador1", pokemones.get(0), items.get(0));
         Jugador jugador2 = new Jugador("jugador2", pokemones.get(1), items.get(1));
+<<<<<<< HEAD
         List<Item> itemsJugadorActual = jugador1.getListaItems();
+=======
+>>>>>>> main
 
         ArrayList<Jugador> listaJugadores = new ArrayList<>();
         listaJugadores.add(jugador1);
         listaJugadores.add(jugador2);
+<<<<<<< HEAD
         Batalla batalla = new Batalla(listaJugadores);
 
 
@@ -59,5 +82,10 @@ public class MainJavaFX extends Application {
 
     public static void main(String []args) {
         launch();
+=======
+        this.batalla = new Batalla(listaJugadores);
+
+        ControladorEscenas controladorEscenas = new ControladorEscenas(stage, this.batalla);
+>>>>>>> main
     }
 }

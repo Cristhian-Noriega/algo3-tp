@@ -9,8 +9,8 @@ public class HabilidadEstadistica extends Habilidad {
     final private boolean contraRival;
 
     final private double porcentaje;
-    public HabilidadEstadistica(String nombre, Integer usos, Tipo tipo, String info, Estadisticas estadistica, boolean contraRival) {
-        super(nombre, usos, tipo, info, Categoria.ESTADISTICA);
+    public HabilidadEstadistica(String nombre, Integer usos, Tipo tipo, String info, Estadisticas estadistica, boolean contraRival, Integer id) {
+        super(nombre, usos, tipo, info, Categoria.ESTADISTICA, id);
         this.estadistica = estadistica;
         this.contraRival = contraRival;
         this.porcentaje = Constantes.porcentajeDeModificacion;
