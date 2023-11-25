@@ -3,11 +3,9 @@ package tp1.clases.controlador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tp1.clases.eventos.CambioDeEscenaEvent;
-import tp1.clases.eventos.CambioDeTurnoEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
@@ -15,13 +13,13 @@ import tp1.clases.modelo.Habilidad;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ControladorVentana implements EventHandler<ActionEvent> {
+public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Batalla batalla;
     private Stage stage;
     private ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
 
-    public ControladorVentana(Stage stage, Batalla batalla) {
+    public ControladorEscenas(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
         this.controladores = new ArrayList<>();
         this.batalla = batalla;
@@ -52,7 +50,6 @@ public class ControladorVentana implements EventHandler<ActionEvent> {
         Scene scene = new Scene(loader.load());
         this.escenas.add(scene);
         Controlador controlador = loader.getController();
-        controlador.setControladorVentana(this);
         controlador.inicializar(this.batalla);
         this.controladores.add(controlador);
     }
@@ -70,7 +67,6 @@ public class ControladorVentana implements EventHandler<ActionEvent> {
     }
 
     public void cambiarEscena(int escena) {
-       //this.controladores.get(i).actualizarCampo(this.batalla);
         this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());

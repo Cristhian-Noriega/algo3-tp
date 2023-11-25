@@ -1,17 +1,10 @@
 package tp1.clases;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import tp1.clases.controlador.ControladorMenuPrincipal;
-import tp1.clases.controlador.ControladorVentana;
-import tp1.clases.eventos.CambioDeTurnoEvent;
+import tp1.clases.controlador.ControladorEscenas;
 import tp1.clases.modelo.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +28,6 @@ public class MainJavaFX extends Application {
         listaJugadores.add(jugador2);
         this.batalla = new Batalla(listaJugadores);
 
-        ControladorVentana controladorVentana = new ControladorVentana(stage, this.batalla);
+        ControladorEscenas controladorEscenas = new ControladorEscenas(stage, this.batalla);
     }
 }

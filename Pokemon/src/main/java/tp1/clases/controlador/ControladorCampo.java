@@ -17,8 +17,8 @@ public class ControladorCampo implements Subscriptor {
     private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> imagenActualProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> fondoClimaProperty = new SimpleObjectProperty<>();
-    @FXML public ControladorCartelPokemon cartelPokemonRivalController;
-    @FXML public ControladorCartelPokemon cartelPokemonActualController;
+    @FXML public ControladorCartelInfoPokemon cartelPokemonRivalController;
+    @FXML public ControladorCartelInfoPokemon cartelPokemonActualController;
     @FXML public ControladorClima cartelClimaController;
     @FXML public ImageView imagenRival;
     @FXML public ImageView imagenActual;

@@ -14,9 +14,11 @@ import tp1.clases.modelo.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class ControladorPantallaEfecto implements Controlador{
+public class ControladorPantallaEfecto implements Controlador {
     private Batalla batalla;
     private Habilidad habilidadSeleccionada;
+    private Pokemon pokemonSeleccionado;
+    private Item itemSeleccionado;
     private ArrayList<Pokemon> pokemones;
     private String texto = "Efecto";
     private StringProperty textoProperty = new SimpleStringProperty(this.texto);
@@ -47,10 +49,18 @@ public class ControladorPantallaEfecto implements Controlador{
             this.setTextoProperty(pokemones.get(0).getNombre() + " " + this.habilidadSeleccionada.getInfo().toLowerCase());
             if (this.habilidadSeleccionada.getCategoria() != Categoria.ESTADISTICA) {
                 this.campoController.aplicarParpadeo(JugadorEnum.RIVAL);
-                this.campoController.animarVida((pokemones.get(1).getVida() - vidaAntRival) / pokemones.get(1).getVidaMax());
+                double cambio = pokemones.get(1).getVida() - vidaAntRival;
+                this.campoController.animarVida(cambio / pokemones.get(1).getVidaMax());
             }
             this.campoController.actualizar();
-            this.pane.setOnMouseClicked(this::cambiarMenuPrincipal);
+            this.pane.setOnMouseClicked(event -> {
+                cambiarMenuPrincipal(event, true);
+            });
+        } else {
+            this.setTextoProperty(err.get().mostrar());
+            this.pane.setOnMouseClicked(event -> {
+                cambiarMenuPrincipal(event, false);
+            });
         }
     }
 
@@ -61,9 +71,10 @@ public class ControladorPantallaEfecto implements Controlador{
         }
     }
 
-    public void cambiarMenuPrincipal(MouseEvent event) {
-        this.batalla.cambiarTurno();
-        //this.controladorVentana.cambiarEscena(Escena.MENU_PRINCIPAL.ordinal());
+    public void cambiarMenuPrincipal(MouseEvent event, boolean cambioTurno) {
+        if (cambioTurno) {
+            this.batalla.cambiarTurno();
+        }
         this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 

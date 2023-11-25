@@ -21,7 +21,7 @@ import tp1.clases.modelo.Pokemon;
 
 import java.util.List;
 
-public class ControladorCartelPokemon {
+public class ControladorCartelInfoPokemon {
     private String nombre = "Pokemon";
     private String nivel = "Nvl.0";
     private String cantVida = "00/00";
@@ -38,7 +38,7 @@ public class ControladorCartelPokemon {
     @FXML public HBox circulos;
     @FXML public Pane imagenesEstados;
 
-    public ControladorCartelPokemon() {}
+    public ControladorCartelInfoPokemon() {}
 
     public void inicializar(Pokemon pokemon, JugadorEnum jugador) {
         this.labelNombre.textProperty().bind(this.nombreProperty);
@@ -97,9 +97,9 @@ public class ControladorCartelPokemon {
         if (jugador == JugadorEnum.ACTUAL) {
             this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
         }
-
+        System.out.println("entro a setVida con barra de vida en " + barraVida.getProgress());
         this.barraVida.setProgress((double) pokemon.getVida() / pokemon.getVidaMax());
-
+        System.out.println("salgo con barra de vida en " + barraVida.getProgress());
         if (this.barraVida.getProgress() < 0.3) {
             this.barraVida.setStyle("-fx-accent: #c22f2f");
         } else if (this.barraVida.getProgress() < 0.6) {
@@ -112,7 +112,7 @@ public class ControladorCartelPokemon {
                 new KeyFrame(Duration.seconds(0.1), event -> modificarBarraDeVida(cantidad))
         );
 
-        animacion.setCycleCount((int) Math.abs(cantidad) / 10);
+        animacion.setCycleCount((int) Math.abs(cantidad) / 100);
         animacion.play();
     }
 
@@ -122,8 +122,9 @@ public class ControladorCartelPokemon {
         if ((porcentaje <= 0.1) | (porcentaje >= 1)) {
             return;
         }
-
+        System.out.println("entro a mod con barra de vida en " + barraVida.getProgress());
         this.barraVida.setProgress(porcentaje + cantidad);
+        System.out.println("salgo con barra de vida en " + barraVida.getProgress());
         if (porcentaje < 0.3) {
             this.barraVida.setStyle("-fx-accent: #c22f2f");
         } else if (porcentaje < 0.6) {

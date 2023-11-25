@@ -58,9 +58,6 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
             Button boton = (Button) this.botonesHabilidades.getChildren().get(i);
             boton.setText(habilidad.getNombre());
 
-            boton.setOnMouseEntered(event -> {mostrarInfoHabilidad(habilidad);});
-            boton.setOnMouseExited(event -> {mostrarTexto();});
-
             if (habilidad.sinUsosDisponibles()) {
                 boton.setDisable(true);
                 i++;
@@ -68,6 +65,10 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
             } else {
                 boton.setDisable(false);
             }
+
+            boton.setOnMouseEntered(event -> {mostrarInfoHabilidad(habilidad);});
+            boton.setOnMouseExited(event -> {mostrarTexto();});
+
 
             boton.setOnMouseClicked(event -> {cambiarPantallaEfecto(event, habilidad);});
             i++;
