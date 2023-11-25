@@ -10,13 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items/Revivir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items/Red Bull.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items/Red Bull.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/Style/botonInicio.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Style/botonInicio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/Style/botonesItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Style/botonesItems.css" afterDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -81,7 +75,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "vistaItems",
+    "git-widget-placeholder": "vistaMenuItemsv2",
     "jdk.selected.JAVA_MODULE": "graalvm-jdk-17",
     "last_directory_selection": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases",
     "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes/items",
@@ -330,7 +324,7 @@
       <workItem from="1700836802123" duration="177000" />
       <workItem from="1700849045481" duration="281000" />
       <workItem from="1700874412934" duration="5906000" />
-      <workItem from="1700908112481" duration="2632000" />
+      <workItem from="1700908112481" duration="4406000" />
     </task>
     <servers />
   </component>
