@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Habilidad implements Serializable{
+public abstract class Habilidad implements Serializable, Cloneable{
     final protected String nombre;
 
     final protected Integer id;
@@ -104,30 +104,9 @@ public abstract class Habilidad implements Serializable{
         this.setPokemonAtacante(pokemonesActuales.get(0));
         this.setPokemonRival(pokemonesActuales.get(1));
     }
+
+    @Override
+    public Habilidad clone() throws CloneNotSupportedException {
+        return (Habilidad) super.clone();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,7 @@ import tp1.clases.errores.ErrorPokemonMuerto;
 import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemRestauracionVida implements Item, Serializable {
+public class ItemRestauracionVida implements Item, Serializable, Cloneable {
 
     protected final String nombre;
     protected int vida;
@@ -50,6 +50,10 @@ public class ItemRestauracionVida implements Item, Serializable {
         System.out.println("¡" + this.nombre + " ha sido usada!");
         System.out.println("Vida actual de " + pokemon.getNombre() + ": " + pokemon.getVida());
         return Optional.empty();
+    }
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 
 }

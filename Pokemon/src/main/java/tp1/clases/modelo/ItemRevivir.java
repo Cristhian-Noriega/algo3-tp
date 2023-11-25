@@ -8,7 +8,7 @@ import tp1.clases.errores.ErrorPokemonNoMuerto;
 import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemRevivir implements Item, Serializable {
+public class ItemRevivir implements Item, Serializable, Cloneable {
     protected final String nombre;
     protected final int vida;
     private final Categoria categoria = Categoria.VIDA;
@@ -43,5 +43,9 @@ public class ItemRevivir implements Item, Serializable {
         pokemon.modificarVida(pokemon.getVidaMax());
         System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
         return Optional.empty();
+    }
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 }
