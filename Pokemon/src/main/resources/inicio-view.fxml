@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="426.0" prefWidth="624.0" stylesheets="@Style/InicioStyle.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorJugar">
+<StackPane prefHeight="426.0" prefWidth="624.0" stylesheets="@Style/InicioStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorJugar">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>

@@ -1,0 +1,48 @@
+[
+  {
+    "categoria": "ESTADO",
+    "id": 1,
+    "nombre": "Sacar estado"
+  },
+  {
+    "categoria": "ESTADISTICA",
+    "estadistica": "DEFENSA",
+    "id": 2,
+    "nombre": "Jugo de apio"
+  },
+  {
+    "categoria": "ESTADISTICA",
+    "estadistica": "ATAQUE",
+    "id": 3,
+    "nombre": "Batido proteico"
+  },
+  {
+    "categoria": "ESTADISTICA",
+    "estadistica": "VELOCIDAD",
+    "id": 4,
+    "nombre": "Red Bull"
+  },
+  {
+    "categoria": "VIDA",
+    "vida": 0,
+    "id": 5,
+    "nombre": "Molesta Alumnos"
+  },
+  {
+    "categoria": "VIDA",
+    "vida": 50,
+    "id": 6,
+    "nombre": "Mega Pocion"
+  },
+  {
+    "categoria": "VIDA",
+    "vida": 100,
+    "id": 7,
+    "nombre": "Hiper Pocion"
+  },
+  {
+    "categoria": "VIDA",
+    "vida": 0,
+    "id": 8,
+    "nombre": "Revivir"
+  }]
