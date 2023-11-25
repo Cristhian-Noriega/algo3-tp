@@ -11,6 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/src/main/java/com/example/javafx/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/src/main/java/com/example/javafx/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx/src/main/resources/com/example/javafx/hello-view.fxml" beforeDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -324,7 +332,7 @@
       <workItem from="1700836802123" duration="177000" />
       <workItem from="1700849045481" duration="281000" />
       <workItem from="1700874412934" duration="5906000" />
-      <workItem from="1700908112481" duration="4406000" />
+      <workItem from="1700908112481" duration="4720000" />
     </task>
     <servers />
   </component>
