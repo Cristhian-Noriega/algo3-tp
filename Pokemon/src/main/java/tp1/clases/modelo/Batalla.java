@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public class Batalla {
     private final ArrayList<Jugador> jugadores;
+    private final ArrayList<Jugador> rendidos;
     private final AdministradorDeTurnos administradorTurnos;
     private final AdministradorDeClima administradorDeClima;
 
@@ -16,6 +17,7 @@ public class Batalla {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
         this.administradorDeClima = new AdministradorDeClima();
+        this.rendidos = new ArrayList<Jugador>();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -45,6 +47,11 @@ public class Batalla {
 
     public void rendir(Jugador jugador) {
         this.jugadores.remove(jugador);
+        this.rendidos.add(jugador);
+    }
+
+    public ArrayList<Jugador> getRendidos(){
+        return this.rendidos;
     }
 
     public List<Pokemon> getPokemonesJugadorActual() {

@@ -1,17 +1,22 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 import tp1.clases.errores.ErrorPokemonNormal;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public class ItemEstado implements Item{
-
+public class ItemEstado implements Item, Serializable, Cloneable {
+    ;
     private final String nombre;
     private final Categoria categoria = Categoria.ESTADO;
-
-    public ItemEstado(String nombre){
+    private final Integer id;
+    @JsonCreator
+    public ItemEstado(@JsonProperty("nombre") String nombre, @JsonProperty("id") Integer id){
         this.nombre = nombre;
+        this.id = id;
     }
 
     @Override
@@ -23,7 +28,12 @@ public class ItemEstado implements Item{
     public Categoria getCategoria() {
         return this.categoria;
     }
-    
+
+    @Override
+    public Integer getId(){
+        return this.id;
+    }
+
     @Override
     public Optional<Error> usar(Pokemon pokemon){
         if (pokemon.getEstados().contains(Estado.NORMAL)) {
@@ -31,6 +41,10 @@ public class ItemEstado implements Item{
         }
         pokemon.setEstado(Estado.NORMAL);
         return Optional.empty();
+    }
+    @Override
+    public Item clone() throws CloneNotSupportedException {
+        return (Item) super.clone();
     }
 
 }

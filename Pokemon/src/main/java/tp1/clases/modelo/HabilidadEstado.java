@@ -8,8 +8,8 @@ import java.util.Optional;
 public class HabilidadEstado extends Habilidad {
     final private Estado estado;
 
-    public HabilidadEstado(String nombre, Integer usos, Tipo tipo, String info, Estado estado) {
-        super(nombre, usos, tipo, info, Categoria.ESTADO);
+    public HabilidadEstado(String nombre, Integer usos, Tipo tipo, String info, Estado estado, Integer id) {
+        super(nombre, usos, tipo, info, Categoria.ESTADO, id);
         this.estado = estado;
     }
 
