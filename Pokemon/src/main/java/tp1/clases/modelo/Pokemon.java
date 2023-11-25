@@ -62,12 +62,7 @@ import java.util.stream.Collectors;
         if (habilidad.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(habilidad.getNombre()));
         }
-
-<<<<<<< HEAD
-        Boolean pudoUsarse = this.administradorDeEstados.usarHabilidadEstados(numeroHabilidad, this);
-=======
-        Boolean pudoUsarse = this.usarHabilidadEstados(habilidad, this);
->>>>>>> main
+        Boolean pudoUsarse = this.administradorDeEstados.usarHabilidadEstados(habilidad, this);
         if(!pudoUsarse){
             return Optional.empty();
         }
@@ -76,20 +71,6 @@ import java.util.stream.Collectors;
         return habilidad.usar();
     }
 
-<<<<<<< HEAD
-=======
-    private Boolean usarHabilidadEstados(Habilidad habilidad, Pokemon pokemon) {
-         boolean puedeUsarHabilidad = true;
-         for (Estado estado : this.estados) {
-            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
-            if (estadoComportamiento != null) {
-                puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
-            }
-         }
-        return puedeUsarHabilidad;
-    }
-
->>>>>>> main
     public void aplicarEfectoEstados(){
          this.administradorDeEstados.aplicarEfectoEstados();
     }

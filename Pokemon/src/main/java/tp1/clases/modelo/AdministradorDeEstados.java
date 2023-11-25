@@ -7,8 +7,6 @@ import java.util.List;
 public class AdministradorDeEstados {
 
     private Pokemon pokemon;
-
-
     private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
     private List<Estado> estadosParaEliminar;
 
@@ -29,11 +27,11 @@ public class AdministradorDeEstados {
         }
     }
 
-    public Boolean usarHabilidadEstados(int numeroHabilidad, Pokemon pokemon) {
+    public Boolean usarHabilidadEstados(Habilidad habilidad, Pokemon pokemon) {
         for (Estado estado : pokemon.getEstados()) {
             EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
-                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(numeroHabilidad, pokemon);
+                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
                 if (!puedeUsarHabilidad) {
                     return false;
                 }
