@@ -95,7 +95,7 @@ public class ControladorJuego {
             }
 
             int posicion = opcionElegida - 1;
-            this.comando.definirOpcion(posicion);
+            //this.comando.definirOpcion(posicion);
 
             Optional<Error> err = this.comando.ejecutar();
 
@@ -116,7 +116,7 @@ public class ControladorJuego {
             this.controladorMenu.retroceder();
             return false;
         }
-        this.comando.definirPokemon(pokemonElegido-1);
+        //this.comando.definirPokemon(pokemonElegido-1);
         this.controladorMenu.retroceder();
         return true;
     }
@@ -183,7 +183,7 @@ public class ControladorJuego {
                 this.controladorMenu.actualizarMenu(new MenuItems(this.batalla.getMapItemsJugadorActual(), this.batalla.getItemsJugadorActual()));
             }
             case VER_HABILIDAD -> {
-                this.comando = new UsarHabilidadComando(this.batalla);
+                //this.comando = new UsarHabilidadComando();
                 this.controladorMenu.actualizarMenu(new MenuHabilidades(this.batalla.getHabilidadesPokemonActual()));
             }
             case VER_POKEMONES -> {

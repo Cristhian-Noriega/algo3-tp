@@ -15,7 +15,6 @@ public class CambiarPokemonComando implements Comando {
         this.batalla = batalla;
     }
 
-    @Override
     public void definirOpcion(int op){
         this.pokemon = op;
     }

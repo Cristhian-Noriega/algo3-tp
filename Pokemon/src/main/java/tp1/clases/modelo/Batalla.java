@@ -71,10 +71,10 @@ public class Batalla {
     }
 
 
-    public Optional<Error> usarHabilidad(int numeroHabilidad, Jugador rival) {
+    public Optional<Error> usarHabilidad(Habilidad habilidad, Jugador rival) {
         Pokemon pokemonJugadorActual = this.getJugadorActual().getPokemonActual();
         Pokemon pokemonJugadorRival = rival.getPokemonActual();
-        return pokemonJugadorActual.usarHabilidad(numeroHabilidad, pokemonJugadorRival, administradorDeClima);
+        return pokemonJugadorActual.usarHabilidad(habilidad, pokemonJugadorRival, administradorDeClima);
     }
 
     public Optional<Error> usarItem(int itemElegido, int pokemon) {
@@ -103,5 +103,9 @@ public class Batalla {
 
     public AdministradorDeClima getAdministradorDeClima(){
         return this.administradorDeClima;
+    }
+
+    public AdministradorDeTurnos getAdministradorTurnos() {
+        return administradorTurnos;
     }
 }
