@@ -1,14 +1,28 @@
 package tp1.clases.controlador;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class ControladorPantallaInicial {
     @FXML
-    private Label welcomeText;
+    private ImageView boton;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void setBoton() {
+        //this.boton.setOnMouseClicked(event -> );
+        this.boton.setOnMouseDragEntered(event -> handleMouseEnter());
+        this.boton.setOnMouseDragExited(event -> handleMouseExit());
     }
+
+    @FXML
+    private void handleMouseEnter() {
+        boton.setImage(new Image("imagenes/play.png"));
+    }
+
+    @FXML
+    private void handleMouseExit() {
+        boton.setImage(new Image("imagenes/playPressed.png"));
+    }
+
 }
