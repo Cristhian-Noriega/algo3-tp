@@ -58,6 +58,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         cargarFXML("/menu-principal.fxml");
         cargarFXML("/menu-habilidades.fxml");
         cargarFXML("/pantalla-efecto.fxml");
+        cargarFXML("/items-view.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {

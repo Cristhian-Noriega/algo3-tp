@@ -193,7 +193,7 @@
     "nombre": "Onda Trueno",
     "tipo": "ELECTRICO",
     "usos": 20,
-    "estado":"CONFUNDIDO"
+    "estado":"PARALIZADO"
   },
   {
     "categoria": "ESTADO",
@@ -202,7 +202,7 @@
     "nombre": "Supersonico",
     "tipo": "NORMAL",
     "usos": 20,
-    "estado":"PARALIZADO"
+    "estado":"CONFUNDIDO"
   },
   {
     "categoria": "ESTADO",

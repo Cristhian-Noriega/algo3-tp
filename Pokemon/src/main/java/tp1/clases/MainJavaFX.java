@@ -3,6 +3,7 @@ package tp1.clases;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import tp1.clases.controlador.ControladorEscenas;
+import tp1.clases.controlador.ControladorEstados;
 import tp1.clases.modelo.*;
 
 import java.io.IOException;

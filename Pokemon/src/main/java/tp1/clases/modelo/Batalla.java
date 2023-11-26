@@ -13,10 +13,13 @@ public class Batalla {
     private final AdministradorDeTurnos administradorTurnos;
     private final AdministradorDeClima administradorDeClima;
 
+    private final AdministradorDeEstadosv2 administradorDeEstadosv2;
+
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
         this.administradorDeClima = new AdministradorDeClima();
+        this.administradorDeEstadosv2 = new AdministradorDeEstadosv2(this);
         this.rendidos = new ArrayList<Jugador>();
     }
 
@@ -35,6 +38,7 @@ public class Batalla {
         this.administradorDeClima.afectarJugadores(this.getJugadores());
         this.administradorTurnos.siguienteTurno();
         this.administradorDeClima.ActualizarTurno();
+        this.administradorDeEstadosv2.aplicarEfectoEstado();
     }
 
     public Jugador getJugadorActual() {

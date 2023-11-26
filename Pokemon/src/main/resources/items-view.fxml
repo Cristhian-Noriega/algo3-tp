@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="619.0" stylesheets="@Style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuItems">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="619.0" stylesheets="@Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuItems">
    <right>
       <VBox prefHeight="200.0" prefWidth="106.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="316.0" stylesheets="@Style/botonesItems.css" />
+            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="316.0" stylesheets="@Style/botonesItems.css" />
          </children>
       </VBox>
    </right>
@@ -47,11 +47,11 @@
       </HBox>
    </bottom>
    <top>
-      <Pane prefHeight="96.0" prefWidth="624.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="54.0" prefWidth="619.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="243.0" layoutY="20.0" prefHeight="52.0" prefWidth="133.0" style="-fx-background-color: #efc040; -fx-border-color: #6B6B6B; -fx-border-width: 3; -fx-border-radius: 5; -fx-padding: 15px;">
+            <Pane layoutX="245.0" layoutY="7.0" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #efc040; -fx-border-color: #6B6B6B; -fx-border-width: 3; -fx-border-radius: 5; -fx-padding: 15px;">
                <children>
-                  <Label layoutX="34.0" layoutY="8.0" text="ITEMS">
+                  <Label layoutX="24.0" layoutY="3.0" text="ITEMS">
                      <font>
                         <Font name="Pokemon Fire Red Regular" size="35.0" />
                      </font>
@@ -62,7 +62,7 @@
       </Pane>
    </top>
    <left>
-      <ImageView fitHeight="191.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="204.0" fitWidth="219.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@Imagenes/bag.png" />
          </image>

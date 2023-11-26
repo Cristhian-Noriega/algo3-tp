@@ -9,9 +9,12 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Item;
 
 import java.io.IOException;
@@ -19,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ControladorMenuItems implements CancelarAccionListener {
+public class ControladorMenuItems implements Controlador, CancelarAccionListener {
     @FXML
     private VBox botonesItems;
 
@@ -34,7 +37,9 @@ public class ControladorMenuItems implements CancelarAccionListener {
 
     private Pane bottomActual;
 
-    public void inicializar(List<Item> items, Map<String, Long> cantidadItems) {
+    public void inicializar(Batalla batalla) {
+        List<Item> items = batalla.getItemsJugadorActual();
+        Map<String, Long> cantidadItems = batalla.getMapItemsJugadorActual();
         this.setBotonesItems(items, cantidadItems);
         this.setBotonVolver();
     }
@@ -47,7 +52,6 @@ public class ControladorMenuItems implements CancelarAccionListener {
             this.botonesItems.getChildren().add(boton);
             boton.setMaxWidth(Double.MAX_VALUE);
             boton.setMaxHeight(Double.MAX_VALUE);
-            //item.getDescripcion(),
             boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getNombre());});
             boton.setOnMouseClicked(mouseEvent -> {cambiarMenuItemsConfirmacion(mouseEvent, item);});
         }
@@ -61,6 +65,7 @@ public class ControladorMenuItems implements CancelarAccionListener {
         botonesItems.getChildren().add(boton);
         this.setInfoBotonVolver();
         boton.setOnMouseEntered(mouseEvent -> {setInfoBotonVolver();});
+        boton.setOnMouseClicked(this::cambiarMenuPrincipal);
     }
 
     private void setInfoBotonVolver(){
@@ -92,7 +97,6 @@ public class ControladorMenuItems implements CancelarAccionListener {
         String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
         Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         imagenItem.setImage(imagen);
-//        itemDescriptionLabel.setText(descripcionItem);
     }
 
     public void habilitarBotones() {
@@ -112,6 +116,10 @@ public class ControladorMenuItems implements CancelarAccionListener {
             borderPane.setBottom(bottomActual);
             habilitarBotones();
         }
+    }
+
+    public void cambiarMenuPrincipal(MouseEvent event) {
+        this.borderPane.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 }
 
