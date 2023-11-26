@@ -8,6 +8,7 @@ import tp1.clases.modelo.Pokemon;
 public class CambioDeEscenaEvent extends Event {
     private final int escena;
     private Habilidad habilidad;
+    private Pokemon pokemon;
     public static EventType<CambioDeEscenaEvent> CAMBIO_DE_ESCENA_EVENT = new EventType<>("Cambio de Escena Event");
 
     public CambioDeEscenaEvent(int escena) {
@@ -25,5 +26,9 @@ public class CambioDeEscenaEvent extends Event {
 
     public void setHabilidad(Habilidad habilidad) {
         this.habilidad = habilidad;
+    }
+
+    public void setPokemon(Pokemon pokemon){
+        this.pokemon = pokemon;
     }
 }

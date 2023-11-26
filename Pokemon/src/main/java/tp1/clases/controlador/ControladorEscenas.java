@@ -7,8 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
+import tp1.clases.eventos.PokemonSeleccionadoEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
+import tp1.clases.modelo.Jugador;
+import tp1.clases.modelo.Pokemon;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +21,8 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Stage stage;
     private ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
+
+    private Escena escenaAnterior;
 
     public ControladorEscenas(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
@@ -43,6 +48,13 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             this.cambiarEscena(escena);
             System.out.println("Evento recibido con escena: " + escena);
         });
+
+        this.stage.addEventHandler(PokemonSeleccionadoEvent.POKEMON_SELECCIONADO_EVENT , event -> {
+            Pokemon pokemon = event.getPokemon();
+            this.seleccionarPokemon(pokemon);
+            System.out.println("Pokemon seteado: " + pokemon.getNombre());
+        });
+
     }
 
     public void cargarFXML(String ruta) throws IOException {
@@ -58,6 +70,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         cargarFXML("/menu-principal.fxml");
         cargarFXML("/menu-habilidades.fxml");
         cargarFXML("/pantalla-efecto.fxml");
+        cargarFXML("/pokemones-view.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
@@ -70,6 +83,14 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
+    }
+
+    public void seleccionarPokemon(Pokemon pokemon){
+        if (escenaAnterior == Escena.MENU_ITEMS){
+
+        }else if (escenaAnterior == Escena.MENU_PRINCIPAL){ //seleccionarPokemon o Pokemon muerto (el ult viene de ahí?)
+            batalla.cambiarPokemon(pokemon);
+        }
     }
 
     @Override

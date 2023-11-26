@@ -2,6 +2,7 @@ package tp1.clases.controlador;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
+import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
 
 public class ControladorCampo implements Subscriptor {
@@ -86,6 +88,24 @@ public class ControladorCampo implements Subscriptor {
 
     public void animarVida(double cantidad) {
         this.cartelPokemonRivalController.animarBarraDeVida(cantidad);
+    }
+
+    public void aplicarCambioPokemon(){
+        ImageView imagen = this.imagenActual;
+
+        RotateTransition rotateTransition = new RotateTransition(Duration.millis(500), imagen);
+        rotateTransition.setByAngle(360);
+
+        rotateTransition.setOnFinished(event -> {
+                    this.actualizar(); //habria q llamar a inicializar para q se actualice el poke? eso lo hago en
+                // controladorCartelPoke igual (actualizar el poke actual nomas)
+
+            // Restablecer la rotación a cero
+            imagenActual.setRotate(0);
+        });
+
+        // Iniciar la transición
+        rotateTransition.play();
     }
 
     @Override

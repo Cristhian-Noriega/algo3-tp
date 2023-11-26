@@ -2,20 +2,21 @@ package tp1.clases.controlador.comandos;
 
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Pokemon;
 
 import java.util.Optional;
 
 public class CambiarPokemonComando implements Comando {
 
     private final Batalla batalla;
-    private int pokemon;
+    private Pokemon pokemon;
 
 
     public CambiarPokemonComando(Batalla batalla) {
         this.batalla = batalla;
     }
 
-    public void definirOpcion(int op){
+    public void definirOpcion(Pokemon op){
         this.pokemon = op;
     }
 

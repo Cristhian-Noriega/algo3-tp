@@ -42,11 +42,7 @@ public class Jugador implements Serializable {
         return nombre;
     }
 
-    public Optional<Error> seleccionarPokemon(int pokeElegido){
-        if (pokeElegido < 0 | pokeElegido >= this.pokemones.size()) {
-            return Optional.of(new ErrorIndiceFueraDeRango());
-        }
-        Pokemon nuevoPokemon = this.pokemones.get(pokeElegido);
+    public Optional<Error> seleccionarPokemon(Pokemon nuevoPokemon){
         if (nuevoPokemon.estaMuerto()){
             return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
         }
@@ -66,17 +62,13 @@ public class Jugador implements Serializable {
         return false;
     }
 
-    public Optional<Error> usarItem(int itemElegido, int pokemon) {
-        if (itemElegido < 0 || itemElegido >= this.items.size()) {
-            return Optional.of(new ErrorIndiceFueraDeRango());
+    public Optional<Error> usarItem(Item itemElegido, Pokemon pokemon) {
+        if (this.mapCantidadItems.get(itemElegido.getNombre()) <= 0){
+            return Optional.of(new ErrorItemNoValido(itemElegido.getNombre()));
         }
-        Item item = this.items.get(itemElegido);
-        if (this.mapCantidadItems.get(item.getNombre()) <= 0){
-            return Optional.of(new ErrorItemNoValido(item.getNombre()));
-        }
-        Optional<Error> err = item.usar(this.pokemones.get(pokemon));
+        Optional<Error> err = itemElegido.usar(pokemon);
         if (err.isEmpty()){
-            this.eliminarItem(item);
+            this.eliminarItem(itemElegido);
         }
         return err;
     }

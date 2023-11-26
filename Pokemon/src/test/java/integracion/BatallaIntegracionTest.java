@@ -69,13 +69,13 @@ public class BatallaIntegracionTest {
 
         // El jugador2 cambia de pokemon
         Pokemon pokeAct = batalla.getJugadorActual().getPokemonActual();
-        batalla.cambiarPokemon(2);
+        batalla.cambiarPokemon(batalla.getJugadorActual().getListaPokemones().get(2));
         Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
 
         batalla.cambiarTurno();
 
         // Pruebo que el jugador1 actual use una habilidad (Arañazo-->habilidad ataque)
-        batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
+        batalla.usarHabilidad(batalla.getHabilidadesPokemonActual().get(0), batalla.getJugadorSiguiente());
         // Aun no hay ganador, pero el pokemon del jugador rival fue atacado.
         Assertions.assertEquals(Optional.empty(), batalla.obtenerGanador());
         Assertions.assertTrue(batalla.getJugadorSiguiente().getPokemonActual().estaMuerto());
@@ -83,11 +83,11 @@ public class BatallaIntegracionTest {
         batalla.cambiarTurno();
 
         // El jugador 2 debe cambiar de Pokemon
-        batalla.cambiarPokemon(0);
+        batalla.cambiarPokemon(batalla.getPokemonesJugadorActual().get(0));
         batalla.cambiarTurno();
 
         // EL jugador1 intenta usar item estado, pero no tiene estado
-        Optional<Error> err = batalla.usarItem(0, 0);
+        Optional<Error> err = batalla.usarItem(batalla.getItemsJugadorActual().get(0), batalla.getPokemonesJugadorActual().get(0));
         Assertions.assertNotEquals(Optional.empty(), err);
 
         batalla.cambiarTurno();
@@ -95,7 +95,7 @@ public class BatallaIntegracionTest {
         // Pruebo que el jugador2 actual use un item (Jugo de apio-->item estadistica)
         pokeAct = batalla.getJugadorActual().getListaPokemones().get(0);
         double defensaPokeAct = pokeAct.getDefensa();
-        batalla.usarItem(0, 0);
+        batalla.usarItem(batalla.getItemsJugadorActual().get(0), batalla.getPokemonesJugadorActual().get(0));
         System.out.printf("El jugador acutal es %s, su defensa era %s y ahora es %s \n", pokeAct.getNombre(), defensaPokeAct, pokeAct.getDefensa());
         // Verifico que la defensa haya mejorado
         Assertions.assertTrue(pokeAct.getDefensa() > defensaPokeAct);
@@ -105,7 +105,7 @@ public class BatallaIntegracionTest {
         // Pruebo que el jugador1 use una habildiad de estadistica que mejora la defensa propia (Amnesia-->habilidad estadistica)
         pokeAct = batalla.getJugadorActual().getPokemonActual();
         defensaPokeAct = pokeAct.getDefensa();
-        batalla.usarHabilidad(1, batalla.getJugadorSiguiente());
+        batalla.usarHabilidad(batalla.getHabilidadesPokemonActual().get(1), batalla.getJugadorSiguiente());
         // Verifico que la defensa haya mejorado
         Assertions.assertTrue(pokeAct.getDefensa() > defensaPokeAct);
 
@@ -113,7 +113,7 @@ public class BatallaIntegracionTest {
 
         // Pruebo que el jugador2 cambie su pokemon (Fraxure-->Gastrodon)
         pokeAct = batalla.getJugadorActual().getPokemonActual();
-        batalla.cambiarPokemon(1);
+        batalla.cambiarPokemon(batalla.getPokemonesJugadorActual().get(1));
         // Verifico que se haya cambiado correctamente
         Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
         Assertions.assertEquals(batalla.getJugadorActual().getPokemonActual(), batalla.getJugadorActual().getListaPokemones().get(1));
@@ -122,7 +122,7 @@ public class BatallaIntegracionTest {
 
         // Pruebo que el jugador1 cambie su pokemon (Naclastack-->Rapidash)
         pokeAct = batalla.getJugadorActual().getPokemonActual();
-        batalla.cambiarPokemon(1);
+        batalla.cambiarPokemon(batalla.getPokemonesJugadorActual().get(1));
         // Verifico que se haya cambiado correctamente
         Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
         Assertions.assertEquals(batalla.getJugadorActual().getPokemonActual(), batalla.getJugadorActual().getListaPokemones().get(1));
@@ -132,7 +132,7 @@ public class BatallaIntegracionTest {
         // Pruebo que el jugador2 cambie el clima
         int vidaPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
         int vidaPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVida();
-        batalla.usarHabilidad(1, batalla.getJugadorSiguiente());
+        batalla.usarHabilidad(batalla.getHabilidadesPokemonActual().get(1), batalla.getJugadorSiguiente());
         Assertions.assertEquals(Clima.HURACAN, batalla.getClima());
 
         batalla.cambiarTurno();
@@ -144,7 +144,7 @@ public class BatallaIntegracionTest {
         Assertions.assertEquals((int) (vidaPokeJug2 - modificadorPokeJug2), batalla.getJugadorSiguiente().getPokemonActual().getVida());
 
         // Pruebo que el jugador1 le cambie el estado al jugador2
-        batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
+        batalla.usarHabilidad(batalla.getHabilidadesPokemonActual().get(0), batalla.getJugadorSiguiente());
         Pokemon pokeDormido = batalla.getJugadorSiguiente().getPokemonActual();
         Assertions.assertTrue(pokeDormido.getEstados().contains(Estado.DORMIDO));
 
@@ -160,7 +160,7 @@ public class BatallaIntegracionTest {
         Assertions.assertEquals((int) (vidaPokeJug2 - modificadorPokeJug2), batalla.getJugadorActual().getPokemonActual().getVida());
 
         // Pruebo que el jugador2 no pueda usar un item revivir ya que esta muerto
-        err = batalla.usarItem(2, 0);
+        err = batalla.usarItem(batalla.getItemsJugadorActual().get(2), batalla.getPokemonesJugadorActual().get(0));
         Assertions.assertNotEquals(Optional.empty(), err);
 
         vidaPokeJug1 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
@@ -176,7 +176,7 @@ public class BatallaIntegracionTest {
 
         // Pruebo que el jugador1 cambie de pokemon (Rapidash-->Naclastack)
         pokeAct = batalla.getJugadorActual().getPokemonActual();
-        batalla.cambiarPokemon(0);
+        batalla.cambiarPokemon(batalla.getPokemonesJugadorActual().get(0));
         // Verifico que se haya cambiado correctamente
         Assertions.assertNotEquals(pokeAct, batalla.getJugadorActual().getPokemonActual());
         Assertions.assertEquals(batalla.getJugadorActual().getPokemonActual(), batalla.getJugadorActual().getListaPokemones().get(0));
@@ -195,7 +195,7 @@ public class BatallaIntegracionTest {
         // Pruebo que el jugador2 use un item (no puede usar habilidades estando dormido)
         vidaPokeJug2 = batalla.getJugadorActual().getPokemonActual().getVida();
         modificadorPokeJug2 = (double) batalla.getJugadorActual().getPokemonActual().getVidaMax() / 3;
-        batalla.usarItem(1, 1);
+        batalla.usarItem(batalla.getItemsJugadorActual().get(1), batalla.getPokemonesJugadorActual().get(1));
         int nuevaVidaPoke2 = (int)(vidaPokeJug2 + modificadorPokeJug2);
         // verificamos que la nueva vida no supere la maxima, en otro caso la nueva vida es la maxima.
         if (nuevaVidaPoke2 > batalla.getJugadorActual().getPokemonActual().getVidaMax()){
@@ -216,7 +216,7 @@ public class BatallaIntegracionTest {
 
         // Pruebo que el jugador1 ataque al pokemon del jugador2
         vidaPokeJug2 = batalla.getJugadorSiguiente().getPokemonActual().getVida();
-        batalla.usarHabilidad(0, batalla.getJugadorSiguiente());
+        batalla.usarHabilidad(batalla.getHabilidadesPokemonActual().get(0), batalla.getJugadorSiguiente());
         Assertions.assertTrue(vidaPokeJug2 > batalla.getJugadorSiguiente().getPokemonActual().getVida());
 
         batalla.cambiarTurno();
