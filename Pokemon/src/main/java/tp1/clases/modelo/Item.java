@@ -9,6 +9,7 @@ public interface Item {
     String getNombre();
     Optional<Error> usar(Pokemon pokemon);
     Categoria getCategoria();
+    String getInfo();
     Integer getId();
     Item clone() throws CloneNotSupportedException;
 }

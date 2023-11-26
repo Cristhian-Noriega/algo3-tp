@@ -11,7 +11,6 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.errores.Error;
 import tp1.clases.eventos.CambioDeEscenaEvent;
-import tp1.clases.eventos.EstadoEvento;
 import tp1.clases.modelo.*;
 
 

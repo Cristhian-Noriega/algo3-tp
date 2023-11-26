@@ -12,11 +12,13 @@ public class ItemRevivir implements Item, Serializable, Cloneable {
     protected final String nombre;
     protected final int vida;
     private final Categoria categoria = Categoria.VIDA;
+    final protected String info;
     private final Integer id;
     @JsonCreator
-    public ItemRevivir(@JsonProperty("nombre") String nombre,@JsonProperty("vida") int vida, @JsonProperty("id") Integer id){
+    public ItemRevivir(@JsonProperty("nombre") String nombre,@JsonProperty("vida") int vida, @JsonProperty("info") String info, @JsonProperty("id") Integer id){
         this.nombre = nombre;
         this.vida = vida;
+        this.info = info;
         this.id = id;
     }
 
@@ -28,6 +30,11 @@ public class ItemRevivir implements Item, Serializable, Cloneable {
     @Override
     public Categoria getCategoria() {
         return this.categoria;
+    }
+
+    @Override
+    public String getInfo() {
+        return this.info;
     }
 
     @Override

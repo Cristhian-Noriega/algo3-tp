@@ -12,10 +12,12 @@ public class ItemEstado implements Item, Serializable, Cloneable {
     ;
     private final String nombre;
     private final Categoria categoria = Categoria.ESTADO;
+    final protected String info;
     private final Integer id;
     @JsonCreator
-    public ItemEstado(@JsonProperty("nombre") String nombre, @JsonProperty("id") Integer id){
+    public ItemEstado(@JsonProperty("nombre") String nombre, @JsonProperty("info") String info, @JsonProperty("id") Integer id){
         this.nombre = nombre;
+        this.info = info;
         this.id = id;
     }
 
@@ -27,6 +29,11 @@ public class ItemEstado implements Item, Serializable, Cloneable {
     @Override
     public Categoria getCategoria() {
         return this.categoria;
+    }
+
+    @Override
+    public String getInfo() {
+        return this.info;
     }
 
     @Override

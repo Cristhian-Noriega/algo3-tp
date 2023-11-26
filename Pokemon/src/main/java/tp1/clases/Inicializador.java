@@ -38,24 +38,25 @@ public class Inicializador {
             Categoria categoria = Categoria.valueOf(itemNode.get("categoria").asText());
             String nombre = itemNode.get("nombre").asText();
             int id = itemNode.get("id").asInt();
+            String info = itemNode.get("info").asText();
 
             Item item = null;
             switch (categoria){
                 case ESTADO:
-                    item = new ItemEstado(nombre, id);
+                    item = new ItemEstado(nombre,info, id);
                     listaItems.put(id, item);
                     continue;
                 case ESTADISTICA:
                     Estadisticas estadistica = Estadisticas.valueOf(itemNode.get("estadistica").asText());
-                    item = new ItemEstadistica(nombre, estadistica, id);
+                    item = new ItemEstadistica(nombre, estadistica,info, id);
                     listaItems.put(id, item);
                     continue;
                 case VIDA:
                     int vida = itemNode.get("vida").asInt();
                     if (Objects.equals(nombre, "Revivir")){
-                        item = new ItemRevivir(nombre, vida, id);
+                        item = new ItemRevivir(nombre, vida, info, id);
                     } else {
-                        item = new ItemRestauracionVida(nombre, vida, id);
+                        item = new ItemRestauracionVida(nombre, vida, info, id);
                     }
                     listaItems.put(id, item);
             }

@@ -11,12 +11,14 @@ public class ItemEstadistica implements Item, Serializable, Cloneable {
     private final String nombre;
     private final Estadisticas estadistica;
     private final Categoria categoria = Categoria.ESTADISTICA;
+    final protected String info;
     private final Integer id;
     @JsonCreator
     public ItemEstadistica(@JsonProperty("nombre") String nombre, @JsonProperty("estadistica") Estadisticas estadistica,
-                           @JsonProperty("id") Integer id) {
+                           @JsonProperty("info") String info, @JsonProperty("id") Integer id) {
         this.nombre = nombre;
         this.estadistica = estadistica;
+        this.info = info;
         this.id = id;
     }
 
@@ -30,6 +32,10 @@ public class ItemEstadistica implements Item, Serializable, Cloneable {
         return this.categoria;
     }
 
+    @Override
+    public String getInfo() {
+        return this.info;
+    }
 
     @Override
     public Integer getId(){

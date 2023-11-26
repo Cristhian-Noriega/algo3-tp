@@ -27,6 +27,9 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
     private VBox botonesItems;
 
     @FXML
+    private Button botonVolver;
+
+    @FXML
     private BorderPane borderPane;
 
     @FXML
@@ -38,34 +41,26 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
     private Pane bottomActual;
 
     public void inicializar(Batalla batalla) {
-        List<Item> items = batalla.getItemsJugadorActual();
-        Map<String, Long> cantidadItems = batalla.getMapItemsJugadorActual();
-        this.setBotonesItems(items, cantidadItems);
+        this.setBotonesItems(batalla.getItemsJugadorActual(), batalla.getMapItemsJugadorActual());
         this.setBotonVolver();
     }
 
     private void setBotonesItems(List<Item> items, Map<String, Long> cantidadItems) {
+        System.out.println(items);
         for (Item item : items) {
-            String nombreItem = item.getNombre();
-            Long cantidad = cantidadItems.get(nombreItem);
-            Button boton = new Button(item.getNombre() + " x" + cantidad);
+            Button boton = new Button(item.getNombre() + " x" + cantidadItems.get(item.getNombre()));
             this.botonesItems.getChildren().add(boton);
             boton.setMaxWidth(Double.MAX_VALUE);
             boton.setMaxHeight(Double.MAX_VALUE);
-            boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getNombre());});
+            boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getNombre(), item.getInfo());});
             boton.setOnMouseClicked(mouseEvent -> {cambiarMenuItemsConfirmacion(mouseEvent, item);});
         }
     }
 
     private void setBotonVolver(){
-        Button boton = new Button("Volver");
-        boton.setMaxWidth(Double.MAX_VALUE);
-        boton.setMaxHeight(Double.MAX_VALUE);
-        boton.getStyleClass().add("boton-volver");
-        botonesItems.getChildren().add(boton);
         this.setInfoBotonVolver();
-        boton.setOnMouseEntered(mouseEvent -> {setInfoBotonVolver();});
-        boton.setOnMouseClicked(this::cambiarMenuPrincipal);
+        this.botonVolver.setOnMouseEntered(mouseEvent -> {setInfoBotonVolver();});
+        this.botonVolver.setOnMouseClicked(this::cambiarMenuPrincipal);
     }
 
     private void setInfoBotonVolver(){
@@ -93,21 +88,24 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         borderPane.setBottom(itemInfoPane);
     }
 
-    public void setInfoItem(String nombreItem){
+    public void setInfoItem(String nombreItem, String infoItem){
         String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
         Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         imagenItem.setImage(imagen);
+        itemDescriptionLabel.setText(infoItem);
     }
 
     public void habilitarBotones() {
         for (Node node : botonesItems.getChildren()) {
             node.setDisable(false);
         }
+        this.botonVolver.setDisable(false);
     }
     private void deshabilitarBotones(){
         for (Node node: botonesItems.getChildren()){
             node.setDisable(true);
         }
+        this.botonVolver.setDisable(true);
     }
 
     @Override

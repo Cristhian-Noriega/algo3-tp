@@ -21,7 +21,7 @@ public class ControladorConfirmacionItem {
     private CancelarAccionListener cancelarAccionListener;
 
     public void setInfoItem(String nombreItem){
-        this.itemSeleccionado.setText("Haz seleccionado " + nombreItem );
+        this.itemSeleccionado.setText("Has seleccionado " + nombreItem );
         String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
         Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
         this.imagenItemSeleccionado.setImage(imagen);
