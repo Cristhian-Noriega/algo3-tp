@@ -3,6 +3,7 @@ package tp1.clases;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tp1.clases.controlador.Archivos;
 import tp1.clases.modelo.*;
 
 import java.io.File;
@@ -24,13 +25,13 @@ public class Inicializador {
     }
 
     private static Map<Integer, Item> crearListaItems() throws IOException {
-        String pathItems = "resources/json/items.json";
+        String pathItems = "src/main/resources/json/items.json";
 
         Map<Integer,Item> listaItems = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode listaItemsNode = objectMapper.readTree(new File(pathItems));
+        JsonNode listaItemsNode = objectMapper.readTree(new File(pathItems).getAbsoluteFile());
         for (JsonNode itemNode : listaItemsNode) {
             Categoria categoria = Categoria.valueOf(itemNode.get("categoria").asText());
             String nombre = itemNode.get("nombre").asText();
@@ -62,13 +63,13 @@ public class Inicializador {
 
 
     private static Map<Integer, Habilidad> crearListaHabilidades() throws IOException {
-        String pathHabilidades = "resources/json/habilidades.json";
+        String pathHabilidades = "src/main/resources/json/habilidades.json";
 
         Map<Integer,Habilidad> listaHabilidades = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode listaHabilidadesNode = objectMapper.readTree(new File(pathHabilidades));
+        JsonNode listaHabilidadesNode = objectMapper.readTree(new File(pathHabilidades).getAbsoluteFile());
         for (JsonNode habilidadNodo : listaHabilidadesNode) {
             Categoria categoria = Categoria.valueOf(habilidadNodo.get("categoria").asText());
             String nombre = habilidadNodo.get("nombre").asText();
@@ -109,13 +110,13 @@ public class Inicializador {
     }
 
     private static Map<Integer, Pokemon> crearListaPokemones(Map<Integer, Habilidad> listaHabilidades) throws IOException, CloneNotSupportedException {
-        String pathPokemones = "resources/json/pokemones.json";
+        String pathPokemones = "src/main/resources/json/pokemones.json";
 
         Map<Integer, Pokemon> listaPokemones = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode pokemonesNode = objectMapper.readTree(new File(pathPokemones));
+        JsonNode pokemonesNode = objectMapper.readTree(new File(pathPokemones).getAbsoluteFile());
         for (JsonNode pokeNode : pokemonesNode) {
             double ataque = pokeNode.get("ataque").asDouble();
             double defensa = pokeNode.get("defensa").asDouble();
@@ -148,13 +149,13 @@ public class Inicializador {
     }
 
     private static ArrayList<Jugador> crearListaJugadores(Map<Integer, Pokemon> listaPokemones, Map<Integer, Item> listaItems) throws IOException, CloneNotSupportedException {
-        String pathJugadores = "resources/json/jugadores.json";
+        String pathJugadores = "src/main/resources/json/jugadores.json";
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode jugadoresNode = objectMapper.readTree(new File(pathJugadores));
+        JsonNode jugadoresNode = objectMapper.readTree(new File(pathJugadores).getAbsoluteFile());
         for (JsonNode jugNode : jugadoresNode) {
             String nombre = jugNode.get("nombre").asText();
 

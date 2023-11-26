@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.eventos.CambioDeTurnoEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
@@ -55,20 +56,29 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cargarEscenas() throws IOException {
-        cargarFXML("/menu-principal.fxml");
-        cargarFXML("/menu-habilidades.fxml");
-        cargarFXML("/pantalla-efecto.fxml");
+        cargarFXML("/Vistas/menu-principal.fxml");
+        cargarFXML("/Vistas/menu-habilidades.fxml");
+        cargarFXML("/Vistas/pantalla-efecto.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
         ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(2);
         controlador.setHabilidadSeleccionada(habilidad);
-        controlador.actualizar(this.batalla);
+        boolean cambiarTurno = controlador.mostrarAtaque();
+        if (cambiarTurno) {
+            this.batalla.cambiarTurno();
+            System.out.println("Turno cambiado " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
+        }
     }
 
     public void cambiarEscena(int escena) {
         this.stage.setScene(this.escenas.get(escena));
+        System.out.println("escena cambiada");
         this.stage.show();
+        if (escena == Escena.MENU_PRINCIPAL.ordinal()) {
+            ControladorMenuPrincipal controlador = (ControladorMenuPrincipal) this.controladores.get(escena);
+            controlador.actualizarCampo();
+        }
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
     }
 

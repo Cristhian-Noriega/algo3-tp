@@ -1,7 +1,6 @@
 package tp1.clases.controlador;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.Transition;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -9,14 +8,16 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import tp1.clases.modelo.Constantes;
 import tp1.clases.modelo.Estado;
+import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 
 import java.util.List;
@@ -34,9 +35,10 @@ public class ControladorCartelInfoPokemon {
     @FXML public Label labelNombre;
     @FXML public Label labelNivel;
     @FXML public Label labelCantVida;
-    @FXML public ProgressBar barraVida;
     @FXML public HBox circulos;
     @FXML public Pane imagenesEstados;
+    @FXML public Rectangle barraVida;
+    @FXML public Rectangle barraFondo;
 
     public ControladorCartelInfoPokemon() {}
 
@@ -45,17 +47,15 @@ public class ControladorCartelInfoPokemon {
         this.labelNivel.textProperty().bind(this.nivelProperty);
 
         if (jugador == JugadorEnum.ACTUAL){
+            this.barraFondo.setWidth(Constantes.tamanioBarraVidaJugadorActual + Constantes.margen);
+            this.barraVida.setWidth(Constantes.tamanioBarraVidaJugadorActual);
             this.labelCantVida.textProperty().bind(this.cantVidaProperty);
             this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
-        } else {
-            this.barraVida.setScaleX(1.5);
-            this.barraVida.setTranslateX(32);
         }
 
-        this.barraVida.setProgress((double) pokemon.getVida() / pokemon.getVidaMax());
         this.setNombreProperty(pokemon.getNombre());
         this.setNivelProperty(("Nvl." + pokemon.getNivel()));
-
+        this.setPorcentajeVida((double) pokemon.getVida() / pokemon.getVidaMax());
         int i = 0;
         for (ObjectProperty<Image> objectProperty: imagenesEstadosProperty) {
             ImageView imagen = (ImageView) this.imagenesEstados.getChildren().get(i);
@@ -75,11 +75,20 @@ public class ControladorCartelInfoPokemon {
         this.cantVidaProperty.set(cantVidaProperty);
     }
 
+    public void setPorcentajeVida(double porcentajeNuevo) {
+        double tamanioNuevo = ((this.barraFondo.getWidth() - Constantes.margen) * porcentajeNuevo);
+        this.barraVida.setWidth(tamanioNuevo);
+    }
+
+    public double getPorcentajeBarraDeVida() {
+        return this.barraVida.getWidth() / (this.barraFondo.getWidth() - Constantes.margen);
+    }
+
     public void setEstados(Pokemon pokemon){
         int j = 0;
         for (Node circle: this.circulos.getChildren()) {
             circle.setOpacity(0);
-            this.imagenesEstadosProperty.get(j).set(new Image(Archivos.getRutaAbsoluta("default.png")));
+            this.imagenesEstadosProperty.get(j).set(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
         }
 
         int i = 0;
@@ -88,7 +97,7 @@ public class ControladorCartelInfoPokemon {
                 break;
             }
             this.circulos.getChildren().get(i).setOpacity(100);
-            this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsoluta(estado.name() + ".png")));
+            this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsolutaImagenes("estados/" + estado.name() + ".png")));
             i++;
         }
     }
@@ -97,40 +106,34 @@ public class ControladorCartelInfoPokemon {
         if (jugador == JugadorEnum.ACTUAL) {
             this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
         }
-        System.out.println("entro a setVida con barra de vida en " + barraVida.getProgress());
-        this.barraVida.setProgress((double) pokemon.getVida() / pokemon.getVidaMax());
-        System.out.println("salgo con barra de vida en " + barraVida.getProgress());
-        if (this.barraVida.getProgress() < 0.3) {
-            this.barraVida.setStyle("-fx-accent: #c22f2f");
-        } else if (this.barraVida.getProgress() < 0.6) {
-            this.barraVida.setStyle("-fx-accent: #c5c742");
+
+        this.setPorcentajeVida((double) pokemon.getVida() / pokemon.getVidaMax());
+
+        if (this.getPorcentajeBarraDeVida() < 0.3) {
+            this.barraVida.setStyle("-fx-fill: #c22f2f");
+        } else if (this.getPorcentajeBarraDeVida() < 0.6) {
+            this.barraVida.setStyle("-fx-fillt: #c5c742");
         }
     }
 
-    public void animarBarraDeVida(double cantidad) {
-        Timeline animacion = new Timeline(
-                new KeyFrame(Duration.seconds(0.1), event -> modificarBarraDeVida(cantidad))
-        );
-
-        animacion.setCycleCount((int) Math.abs(cantidad) / 100);
-        animacion.play();
-    }
-
-
-    private void modificarBarraDeVida(double cantidad) {
-        double porcentaje = this.barraVida.getProgress();
-        if ((porcentaje <= 0.1) | (porcentaje >= 1)) {
+    public void animarBarraDeVida(double porcentajeInicial, double porcentajeFinal) {
+        if (porcentajeInicial == porcentajeFinal) {
             return;
         }
-        System.out.println("entro a mod con barra de vida en " + barraVida.getProgress());
-        this.barraVida.setProgress(porcentaje + cantidad);
-        System.out.println("salgo con barra de vida en " + barraVida.getProgress());
-        if (porcentaje < 0.3) {
-            this.barraVida.setStyle("-fx-accent: #c22f2f");
-        } else if (porcentaje < 0.6) {
-            this.barraVida.setStyle("-fx-accent: #c5c742");
-        }
 
+        Transition transicion = new Transition() {
+            {
+                setCycleDuration(Duration.seconds(2));
+            }
+
+            @Override
+            protected void interpolate(double tiempo) {
+                double nuevoPorcentaje = porcentajeInicial + tiempo * (porcentajeFinal - porcentajeInicial);
+                setPorcentajeVida(nuevoPorcentaje);
+            }
+        };
+
+        transicion.play();
     }
 
     public void actualizar(Pokemon pokemon, JugadorEnum jugador) {

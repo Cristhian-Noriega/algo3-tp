@@ -67,6 +67,8 @@ import java.util.stream.Collectors;
         }
 
         Boolean pudoUsarse = this.usarHabilidadEstados(habilidad, this);
+        habilidad.getInfoHabilidad().setPudoUsarHabilidad(pudoUsarse);
+
         if(!pudoUsarse){
             return Optional.empty();
         }
@@ -81,6 +83,9 @@ import java.util.stream.Collectors;
             EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
                 puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
+                if (!puedeUsarHabilidad) {
+                    habilidad.getInfoHabilidad().setEstadoLimitante(estado);
+                }
             }
          }
         return puedeUsarHabilidad;

@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@Imagenes/fondoBatalla.png" />
+            <Image url="@../Imagenes/fondoBatalla.png" />
          </image>
       </ImageView>
       <VBox prefHeight="400.0" prefWidth="600.0" />

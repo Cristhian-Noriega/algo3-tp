@@ -1,5 +1,7 @@
 package tp1.clases.modelo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
 import java.io.Serializable;
@@ -24,6 +26,8 @@ public abstract class Habilidad implements Serializable, Cloneable{
     protected Pokemon pokemonAtacante;
 
     protected Pokemon pokemonRival;
+
+    protected InfoHabilidad infoHabilidad;
     @JsonCreator
     public Habilidad(@JsonProperty("nombre") String nombre, @JsonProperty("usos") Integer usos, @JsonProperty("tipo") Tipo tipo,
                      @JsonProperty("info") String info, @JsonProperty("categoria") Categoria categoria,
@@ -34,6 +38,11 @@ public abstract class Habilidad implements Serializable, Cloneable{
         this.info = info;
         this.categoria = categoria;
         this.id = id;
+        this.infoHabilidad = new InfoHabilidad(categoria);
+    }
+
+    public InfoHabilidad getInfoHabilidad() {
+        return infoHabilidad;
     }
 
     public String getNombre(){

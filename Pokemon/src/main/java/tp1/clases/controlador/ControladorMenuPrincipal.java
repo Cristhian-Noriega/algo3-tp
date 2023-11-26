@@ -24,6 +24,12 @@ public class ControladorMenuPrincipal implements Controlador {
         this.botonAtacar.setOnMouseClicked(this::cambiarMenuHabilidades);
     }
 
+    @Override
+    public void actualizarCampo() {
+        this.campoController.actualizar();
+        System.out.println("actualiza desde menu principal");
+    }
+
     public void cambiarMenuHabilidades(MouseEvent event) {
         this.dialogo.fireEvent(new CambioDeEscenaEvent(Escena.MENU_HABILIDADES.ordinal()));
     }

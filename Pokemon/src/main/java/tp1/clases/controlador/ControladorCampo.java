@@ -11,9 +11,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.JugadorEnum;
+import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
 
-public class ControladorCampo implements Subscriptor {
+public class ControladorCampo {
     private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> imagenActualProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> fondoClimaProperty = new SimpleObjectProperty<>();
@@ -30,7 +32,7 @@ public class ControladorCampo implements Subscriptor {
 
     public void inicializar(Batalla batalla) {
         this.batalla = batalla;
-        this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
+
         this.cartelPokemonActualController.inicializar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);
         this.cartelPokemonRivalController.inicializar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
         this.cartelClimaController.inicializar(this.batalla.getClima().name());
@@ -45,6 +47,7 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void actualizar() {
+        System.out.println("se actualiza el campo");
         this.cartelClimaController.actualizar(this.batalla.getClima().name());
         this.cartelPokemonActualController.actualizar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);
         this.cartelPokemonRivalController.actualizar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
@@ -54,17 +57,17 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void setFondoClimaProperty(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta(clima + ".png"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("climas/" + clima + ".png"));
         this.fondoClimaProperty.set(imagen);
     }
 
     public void setImagenRivalProperty(String pokemon) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta("pokemon/" + pokemon + ".gif"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + ".gif"));
         this.imagenRivalProperty.set(imagen);
     }
 
     public void setImagenActualProperty(String pokemon) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta("pokemon/" + pokemon + "_espalda.gif"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + "_espalda.gif"));
         this.imagenActualProperty.set(imagen);
     }
 
@@ -84,12 +87,8 @@ public class ControladorCampo implements Subscriptor {
         timeline.play();
     }
 
-    public void animarVida(double cantidad) {
-        this.cartelPokemonRivalController.animarBarraDeVida(cantidad);
-    }
-
-    @Override
-    public void Update() {
-        this.actualizar();
+    public void animarVida(Pokemon pokemon) {
+        this.cartelPokemonRivalController.animarBarraDeVida(this.cartelPokemonRivalController.getPorcentajeBarraDeVida(), (double) pokemon.getVida() / pokemon.getVidaMax());
+        this.cartelPokemonRivalController.setVida(pokemon, JugadorEnum.RIVAL);
     }
 }

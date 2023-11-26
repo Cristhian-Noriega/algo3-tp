@@ -35,6 +35,7 @@ public class Batalla {
         this.administradorDeClima.afectarJugadores(this.getJugadores());
         this.administradorTurnos.siguienteTurno();
         this.administradorDeClima.ActualizarTurno();
+        System.out.println("cambio turno desde batalla");
     }
 
     public Jugador getJugadorActual() {

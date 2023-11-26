@@ -25,11 +25,11 @@ public class ControladorClima {
     }
 
     public void setClimaProperty(String climaProperty) {
-        this.climaProperty.set(climaProperty);
+        this.climaProperty.set(String.join(" ", climaProperty.split("_")));
     }
 
     public void setImagen(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta("CLIMA_" + clima + ".png"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("CLIMA_" + clima + ".png"));
         imagenProperty.set(imagen);
     }
 
