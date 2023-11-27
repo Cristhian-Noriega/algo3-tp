@@ -70,7 +70,7 @@ public class ControladorPantallaEfecto implements Controlador {
 
         this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado());
         if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
-            this.campoController.animarVida(pokemones.get(0).getVida() - vidaAnt);
+            this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()));
         }
 
         this.campoController.actualizar();
