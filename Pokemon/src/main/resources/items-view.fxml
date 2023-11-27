@@ -16,8 +16,8 @@
    <right>
       <VBox prefHeight="200.0" prefWidth="106.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="342.0" stylesheets="@Style/botonesItems.css" />
-            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" stylesheets="@Style/botonConfirmacion.css" text="Volver" translateX="200.0">
+            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="342.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@Style/botonesItems.css" />
+            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="39.0" prefWidth="140.0" stylesheets="@Style/botonConfirmacion.css" text="VOLVER" translateX="200.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

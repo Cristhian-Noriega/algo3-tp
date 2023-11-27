@@ -19,11 +19,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
- public class Pokemon implements Serializable {
+public class Pokemon implements Serializable {
     private final String nombre;
     private final int nivel;
     private final List<Estado> estados;
-    private final AdministradorDeEstados administradorDeEstados;
+    private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
+    private final List<Estado> estadosParaEliminar;
     private final Tipo tipo;
     private final List<Habilidad> habilidades;
     private final int vidaMax;
@@ -34,25 +35,27 @@ import java.util.stream.Collectors;
 
     private final Integer id;
 
-     @JsonCreator
-     public Pokemon(@JsonProperty("nombre") String nombre, @JsonProperty("nivel") int nivel, @JsonProperty("tipo") Tipo tipo,
-                    @JsonProperty("habilidades") List<Habilidad> habilidades, @JsonProperty("vidaMax") int vidaMax,
-                    @JsonProperty("velocidad") double velocidad, @JsonProperty("ataque") double ataque,
-                    @JsonProperty("defensa") double defensa, @JsonProperty("id") Integer id) {
-         this.nombre = nombre;
-         this.nivel = nivel;
-         this.tipo = tipo;
-         this.estados = new ArrayList<>();
-         this.estados.add(Estado.NORMAL);
-         this.administradorDeEstados = new AdministradorDeEstados(this);
-         this.habilidades = habilidades;
-         this.vidaMax = vidaMax;
-         this.vidaActual = vidaMax;
-         this.velocidad = velocidad;
-         this.ataque = ataque;
-         this.defensa = defensa;
-         this.id = id;
-     }
+    @JsonCreator
+    public Pokemon(@JsonProperty("nombre") String nombre, @JsonProperty("nivel") int nivel, @JsonProperty("tipo") Tipo tipo,
+                   @JsonProperty("habilidades") List<Habilidad> habilidades, @JsonProperty("vidaMax") int vidaMax,
+                   @JsonProperty("velocidad") double velocidad, @JsonProperty("ataque") double ataque,
+                   @JsonProperty("defensa") double defensa, @JsonProperty("id") Integer id) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.tipo = tipo;
+        this.estados = new ArrayList<>();
+        this.estados.add(Estado.NORMAL);
+        this.estadosParaEliminar = new ArrayList<>();
+        this.estadosComportamientos = new HashMap<>();
+        this.estadosComportamientos.put(Estado.NORMAL, null);
+        this.habilidades = habilidades;
+        this.vidaMax = vidaMax;
+        this.vidaActual = vidaMax;
+        this.velocidad = velocidad;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.id = id;
+    }
 
     public Optional<Error> usarHabilidad(Habilidad habilidad, Pokemon rival, AdministradorDeClima administradorDeClima){
         if (!this.habilidades.contains(habilidad)) {
@@ -62,7 +65,10 @@ import java.util.stream.Collectors;
         if (habilidad.sinUsosDisponibles()){
             return Optional.of(new ErrorHabilidadSinUsos(habilidad.getNombre()));
         }
-        Boolean pudoUsarse = this.administradorDeEstados.usarHabilidadEstados(habilidad, this);
+
+        Boolean pudoUsarse = this.usarHabilidadEstados(habilidad, this);
+        habilidad.getInfoHabilidad().setPudoUsarHabilidad(pudoUsarse);
+
         if(!pudoUsarse){
             return Optional.empty();
         }
@@ -71,8 +77,34 @@ import java.util.stream.Collectors;
         return habilidad.usar();
     }
 
+    private Boolean usarHabilidadEstados(Habilidad habilidad, Pokemon pokemon) {
+        boolean puedeUsarHabilidad = true;
+        for (Estado estado : this.estados) {
+            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
+            if (estadoComportamiento != null) {
+                puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
+                if (!puedeUsarHabilidad) {
+                    habilidad.getInfoHabilidad().setEstadoLimitante(estado);
+                }
+            }
+        }
+        return puedeUsarHabilidad;
+    }
+
     public void aplicarEfectoEstados(){
-         this.administradorDeEstados.aplicarEfectoEstados();
+
+        for (Estado estado: this.estados){
+            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
+            if (estadoComportamiento != null) {
+                estadoComportamiento.aplicarEfecto(this);
+
+            }
+        }
+        this.estados.removeAll(this.estadosParaEliminar);
+        this.estadosParaEliminar.clear();
+        if (this.estados.isEmpty()){
+            this.estados.add(Estado.NORMAL);
+        }
     }
 
     public boolean estaMuerto() {
@@ -93,7 +125,12 @@ import java.util.stream.Collectors;
             estados.clear();
         }
         estados.add(estado);
-        this.administradorDeEstados.setEstado(estado);
+
+        EstadoComportamiento estadoComportamiento = estadosComportamientos.get(estado);
+        if (estadoComportamiento == null) {
+            estadoComportamiento = EstadoFacotory.crearEstado(estado);
+            estadosComportamientos.put(estado, estadoComportamiento);
+        }
         System.out.println(this.getNombre() + " ahora esta " + estado.name().toLowerCase());
         return Optional.empty() ;
     }
@@ -109,7 +146,8 @@ import java.util.stream.Collectors;
 
 
     public void eliminarEstado(Estado estado) {
-        this.administradorDeEstados.eliminarEstado(estado);
+        this.estadosParaEliminar.add(estado);
+        System.out.println(this.nombre + " ha dejado de estar " + estado.name().toLowerCase());
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }
@@ -153,6 +191,6 @@ import java.util.stream.Collectors;
     }
 
     public Integer getId(){
-         return this.id;
+        return this.id;
     }
 }

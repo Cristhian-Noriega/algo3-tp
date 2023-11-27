@@ -26,6 +26,8 @@ public abstract class Habilidad implements Serializable, Cloneable{
     protected Pokemon pokemonAtacante;
 
     protected Pokemon pokemonRival;
+
+    protected InfoHabilidad infoHabilidad;
     @JsonCreator
     public Habilidad(@JsonProperty("nombre") String nombre, @JsonProperty("usos") Integer usos, @JsonProperty("tipo") Tipo tipo,
                      @JsonProperty("info") String info, @JsonProperty("categoria") Categoria categoria,
@@ -36,6 +38,11 @@ public abstract class Habilidad implements Serializable, Cloneable{
         this.info = info;
         this.categoria = categoria;
         this.id = id;
+        this.infoHabilidad = new InfoHabilidad(categoria);
+    }
+
+    public InfoHabilidad getInfoHabilidad() {
+        return infoHabilidad;
     }
 
     public String getNombre(){
@@ -104,6 +111,7 @@ public abstract class Habilidad implements Serializable, Cloneable{
         this.setPokemonAtacante(pokemonesActuales.get(0));
         this.setPokemonRival(pokemonesActuales.get(1));
     }
+
 
     @Override
     public Habilidad clone() throws CloneNotSupportedException {

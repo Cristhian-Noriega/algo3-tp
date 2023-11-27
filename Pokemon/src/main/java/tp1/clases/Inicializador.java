@@ -66,6 +66,7 @@ public class Inicializador {
 
 
     private static Map<Integer, Habilidad> crearListaHabilidades() throws IOException {
+
         String pathHabilidades = "/json/habilidades.json";
 
         Map<Integer,Habilidad> listaHabilidades = new HashMap<>();
@@ -115,7 +116,9 @@ public class Inicializador {
     }
 
     private static Map<Integer, Pokemon> crearListaPokemones(Map<Integer, Habilidad> listaHabilidades) throws IOException, CloneNotSupportedException {
+
         String pathPokemones = "/json/pokemones.json";
+
 
         Map<Integer, Pokemon> listaPokemones = new HashMap<>();
 
@@ -156,7 +159,9 @@ public class Inicializador {
     }
 
     private static ArrayList<Jugador> crearListaJugadores(Map<Integer, Pokemon> listaPokemones, Map<Integer, Item> listaItems) throws IOException, CloneNotSupportedException {
+
         String pathJugadores = "/json/jugadores.json";
+
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
@@ -200,8 +205,5 @@ public class Inicializador {
 
         return listaJugadores;
     }
-
-
-
 
 }

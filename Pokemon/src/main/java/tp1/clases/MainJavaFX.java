@@ -1,6 +1,8 @@
 package tp1.clases;
 
+
 import javafx.application.Application;
+
 import javafx.stage.Stage;
 import tp1.clases.controlador.ControladorEscenas;
 import tp1.clases.controlador.ControladorEstados;
@@ -19,13 +21,8 @@ public class MainJavaFX extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, CloneNotSupportedException {
-        try {
-            ArrayList<Jugador> jugadores = Inicializador.iniciarJugadores();
-            this.batalla = new Batalla(jugadores);
-        } catch (IOException e){
-            System.out.println("HUBO UN ERROR");
-            throw e;
-        }
+        ArrayList<Jugador> jugadores = Inicializador.iniciarJugadores();
+        this.batalla = new Batalla(jugadores);
 
         ControladorEscenas controladorEscenas = new ControladorEscenas(stage, this.batalla);
     }

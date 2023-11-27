@@ -13,12 +13,12 @@ import java.util.Optional;
 public class ItemsTest {
 
     Pokemon pokemonDePrueba = new Pokemon("Rata de laboratorio", 20, Tipo.BICHO, List.of(), 100, 193.0, 184.0, 130.0, 1);
-    Item itemVida = new ItemRestauracionVida("mas vida", 40, 1);
-    Item revivir = new ItemRevivir("revivir", 0, 2);
-    Item estado = new ItemEstado("recupero estado", 3);
-    Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD, 4);
-    Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE, 5);
-    Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA, 6);
+    Item itemVida = new ItemRestauracionVida("mas vida", 40, "info", 1);
+    Item revivir = new ItemRevivir("revivir", 0, "info", 2);
+    Item estado = new ItemEstado("recupero estado", "info",3);
+    Item velocidad = new ItemEstadistica("mejoro velocidad", Estadisticas.VELOCIDAD,"info", 4);
+    Item ataque = new ItemEstadistica("mejoro atque", Estadisticas.ATAQUE, "info",5);
+    Item defensa = new ItemEstadistica("mejoro defensa", Estadisticas.DEFENSA, "info", 6);
 
     @DisplayName("uso item que sube la vida con la vida del pokemon *ya* al maximo")
     @Test
