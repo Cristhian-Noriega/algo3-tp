@@ -3,10 +3,9 @@ module Pokemon {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
-
     requires org.jline;
-    requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.annotation;
 
     opens tp1.clases to javafx.fxml;
     opens tp1.clases.controlador to javafx.fxml;
