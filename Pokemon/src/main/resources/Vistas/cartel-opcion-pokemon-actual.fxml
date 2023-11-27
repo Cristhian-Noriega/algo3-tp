@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+    <ImageView fitHeight="220.0" fitWidth="220.0">
+        <Image url="@../Imagenes/fondoPokemonActual.png" />
+    </ImageView>
+    <HBox fx:id="contenedorCajaPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="220.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
+        <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="103.0" translateX="110.0" translateY="20.0">
+                <Label fx:id="labelNombre" prefHeight="37.0" prefWidth="100.0">
+                    <font>
+                        <Font name="Pokemon Fire Red Regular" size="34.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <ProgressBar fx:id="barraVida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="191.0" progress="0.0" translateX="-90.0" translateY="140.0" />
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="116.0" translateX="-300.0" translateY="5.0">
+                <Circle fill="#245924" radius="47.0" stroke="#040a04" strokeType="INSIDE" strokeWidth="3.0" translateX="3.0" />
+                <ImageView fx:id="imagenPokemon" fitHeight="96.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+            </StackPane>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="83.0" translateX="-300.0" translateY="80.0">
+                <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="77.0" textAlignment="JUSTIFY">
+                    <font>
+                        <Font name="Pokemon Fire Red Regular" size="28.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" translateX="-450.0" translateY="180.0">
+                <Label fx:id="labelVida" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="118.0" textAlignment="JUSTIFY">
+                    <font>
+                        <Font name="Pokemon Fire Red Regular" size="25.0" />
+                    </font>
+                </Label>
+            </HBox>
+        </children>
+    </HBox>
+</Pane>

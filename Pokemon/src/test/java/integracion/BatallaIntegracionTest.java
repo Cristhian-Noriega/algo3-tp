@@ -1,6 +1,7 @@
 package integracion;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import tp1.clases.errores.Error;
 import tp1.clases.modelo.*;
