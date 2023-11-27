@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Subscriptor;
 
 public class ControladorCampo implements Subscriptor {
