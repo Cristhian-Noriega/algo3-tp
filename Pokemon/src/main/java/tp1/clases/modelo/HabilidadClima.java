@@ -10,12 +10,15 @@ public class HabilidadClima extends Habilidad {
     public HabilidadClima(String nombre, Integer usos, Tipo tipo, String info, Clima clima, Integer id) {
         super(nombre, usos, tipo, info, Categoria.CLIMA, id);
         this.clima = clima;
+        this.infoHabilidad.setClimaModificado(clima);
+        this.infoHabilidad.setJugadorAfectado(JugadorEnum.NINGUNO);
     }
 
     @Override
     public Optional<Error> usar() {
         if (this.getClimaActual() == this.clima) {
-            return Optional.of(new ErrorMismoClima(this.clima.toString().toLowerCase()));
+            Error error = new ErrorMismoClima(this.clima.toString().toLowerCase());
+            return Optional.of(error);
         }
         this.administradorDeClima.cambiarClima(this.clima);
         System.out.println(this.pokemonAtacante.getNombre() + " ha cambiado el clima a " + this.clima.toString().toLowerCase());

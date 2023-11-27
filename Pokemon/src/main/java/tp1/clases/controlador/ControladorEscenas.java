@@ -1,5 +1,6 @@
 package tp1.clases.controlador;
 
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +10,11 @@ import tp1.clases.eventos.AplicarItemEvent;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.eventos.PokemonSeleccionadoEvent;
-import tp1.clases.modelo.*;
+
+import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Habilidad;
+import tp1.clases.modelo.Item;
+import tp1.clases.modelo.Pokemon;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,12 +78,15 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cargarEscenas() throws IOException {
-        cargarFXML("/menu-principal.fxml");
-        cargarFXML("/menu-habilidades.fxml");
-        cargarFXML("/pantalla-efecto.fxml");
+
+        //cargarFXML("/Vistas/pantallaInicial.fxml"); TODO:solucionar que este menú tenga un controlador que implemente Controlador
+        cargarFXML("/Vistas/menu-principal.fxml");
         cargarFXML("/menu-pokemon.fxml");
         cargarFXML("/pantalla-poke-elegido.fxml");
-        cargarFXML("/pantalla-aplicar-item.fxml");
+        cargarFXML("/pantalla-aplicar-item.fxml"); // ¿es distinta de la pantalla-efecto?
+        cargarFXML("/Vistas/menu-habilidades.fxml");
+        cargarFXML("/Vistas/pantalla-efecto.fxml");
+
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
@@ -101,7 +109,8 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         this.itemAUtilizar = item; // solo se llamaria desde controlador item y se accede solo si la pantalla ant es esa
     }
 
-    public void seleccionarPokemon(Pokemon pokemon){
+    public void seleccionarPokemon(Pokemon pokemon){ //meli: este metodo no deberia estar, los controladores no pueden tener referencias a controlador escena
+
         if (escenaAnterior == Escena.MENU_ITEMS.ordinal()){
             ControladorPantallaAplicarItem controlador = (ControladorPantallaAplicarItem) this.controladores.get(5);
             this.actualizarItemAutilizar(batalla.getItemsJugadorActual().get(0));
@@ -116,5 +125,6 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         System.out.println(actionEvent.getEventType());
+
     }
 }

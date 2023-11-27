@@ -110,9 +110,9 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
 
     @FXML
     private void handleMouseOnClick(MouseEvent event){
-       if (escenaAnterior != Escena.POKEMON_MUERTO.ordinal()){
-           this.contenedorPrincipal.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
-       }
+        if (escenaAnterior != Escena.POKEMON_MUERTO.ordinal()){
+            this.contenedorPrincipal.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
+        }
     }
 
     @Override

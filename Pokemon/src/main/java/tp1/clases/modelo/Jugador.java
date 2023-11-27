@@ -43,6 +43,8 @@ public class Jugador implements Serializable {
     }
 
     public Optional<Error> seleccionarPokemon(Pokemon nuevoPokemon){
+        //se podria agregar un listaPokemon.contains(nuevoPokemon) quiazs?
+
         if (nuevoPokemon.estaMuerto()){
             return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
         }
@@ -63,9 +65,11 @@ public class Jugador implements Serializable {
     }
 
     public Optional<Error> usarItem(Item itemElegido, Pokemon pokemon) {
+
         if (this.mapCantidadItems.get(itemElegido.getNombre()) <= 0){
             return Optional.of(new ErrorItemNoValido(itemElegido.getNombre()));
         }
+
         Optional<Error> err = itemElegido.usar(pokemon);
         if (err.isEmpty()){
             this.eliminarItem(itemElegido);

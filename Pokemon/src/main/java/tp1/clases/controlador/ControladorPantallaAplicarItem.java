@@ -24,14 +24,15 @@ public class ControladorPantallaAplicarItem implements Controlador{
     }
 
     public void actualizar(Pokemon pokemon, Item item) {
-       this.pokemon = pokemon;
-       this.item = item;
+        this.pokemon = pokemon;
+        this.item = item;
 
-       Optional<Error> err = this.batalla.usarItem(item, pokemon);
+        Optional<Error> err = this.batalla.usarItem(item, pokemon);
+
         if (err.isEmpty()) {
             this.labelTexto.setText("Se aplico " + item.getNombre() + "a " +pokemon.getNombre());
             this.campoController.aplicarItem(pokemon);
         }
 
-       }
+    }
 }

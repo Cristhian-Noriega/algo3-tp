@@ -11,6 +11,7 @@ public class CambioDeEscenaEvent extends Event {
     private Habilidad habilidad;
     private Item item;
     private Pokemon pokemon;
+
     public static EventType<CambioDeEscenaEvent> CAMBIO_DE_ESCENA_EVENT = new EventType<>("Cambio de Escena Event");
 
     public CambioDeEscenaEvent(int escena) {
