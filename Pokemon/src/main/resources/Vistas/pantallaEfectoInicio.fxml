@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.7361809045226131" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pasarPantalla" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#pasarPantalla" prefHeight="276.0" prefWidth="598.0">
+            <children>
+                <ImageView fx:id="fondo" fitHeight="400.0" fitWidth="600.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                    <image>
+                        <Image url="@../Imagenes/fondoBatalla.png" />
+                    </image>
+                </ImageView>
+                <ImageView id="ash" fx:id="ash" fitHeight="417.0" fitWidth="612.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                    <image>
+                        <Image url="@../Imagenes/ash.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="bolasAsh" fitHeight="94.0" fitWidth="277.0" layoutX="335.0" layoutY="194.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                    <image>
+                        <Image url="@../Imagenes/bolasDer.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="bolasBrook" fitHeight="87.0" fitWidth="291.0" layoutX="-21.0" layoutY="44.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                    <image>
+                        <Image url="@../Imagenes/bolasIzq.png" />
+                    </image>
+                </ImageView>
+                <ImageView id="brook" fx:id="brook" fitHeight="417.0" fitWidth="612.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                    <image>
+                        <Image url="@../Imagenes/brook.png" />
+                    </image>
+                </ImageView>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#pasarPantalla" prefHeight="154.0" prefWidth="598.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" height="102.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="600.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#256bbf" height="76.0" layoutX="15.0" layoutY="12.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="#d6b051" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" strokeWidth="8.0" width="569.0" />
+                <Label fx:id="texto" layoutX="34.0" layoutY="31.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="35.0" prefWidth="528.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
+                    <font>
+                        <Font name="Pokemon X and Y Regular" size="31.0" />
+                    </font>
+                </Label>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets></AnchorPane>
+    </items>
+</SplitPane>

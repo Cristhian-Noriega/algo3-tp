@@ -55,9 +55,10 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cargarEscenas() throws IOException {
-        cargarFXML("/menu-principal.fxml");
-        cargarFXML("/menu-habilidades.fxml");
-        cargarFXML("/pantalla-efecto.fxml");
+        //cargarFXML("/Vistas/pantallaInicial.fxml"); TODO:solucionar que este menú tenga un controlador que implemente Controlador
+        cargarFXML("/Vistas/menu-principal.fxml");
+        cargarFXML("/Vistas/menu-habilidades.fxml");
+        cargarFXML("/Vistas/pantalla-efecto.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {

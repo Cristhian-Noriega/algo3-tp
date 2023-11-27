@@ -56,7 +56,7 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void setFondoClimaProperty(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes(clima + ".png"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("clima/" + clima + ".png"));
         this.fondoClimaProperty.set(imagen);
     }
 

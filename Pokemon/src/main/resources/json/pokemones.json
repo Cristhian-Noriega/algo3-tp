@@ -16,7 +16,7 @@
     "habilidades": [3, 4, 11, 17],
     "id": 2,
     "nivel": 18,
-    "nombre": "Toxtricity",
+    "nombre": "Ampharos",
     "tipo": "ELECTRICO",
     "velocidad": 139.0,
     "vidaMax": 98
@@ -38,7 +38,7 @@
     "habilidades": [7, 8, 14, 20],
     "id": 4,
     "nivel": 24,
-    "nombre": "Naclastack",
+    "nombre": "Cubone",
     "tipo": "ROCA",
     "velocidad": 67.0,
     "vidaMax": 111
@@ -49,7 +49,7 @@
     "habilidades": [9, 1, 15, 21],
     "id": 5,
     "nivel": 23,
-    "nombre": "Appletun",
+    "nombre": "Dragonair",
     "tipo": "DRAGON",
     "velocidad": 58.0,
     "vidaMax": 153
@@ -93,7 +93,7 @@
     "habilidades": [5, 8, 13, 18],
     "id": 9,
     "nivel": 18,
-    "nombre": "Sandaconda",
+    "nombre": "Sudowoodo",
     "tipo": "TIERRA",
     "velocidad": 132.0,
     "vidaMax": 126
@@ -104,7 +104,7 @@
     "habilidades": [5, 1, 14, 19],
     "id": 10,
     "nivel": 12,
-    "nombre": "Kleavor",
+    "nombre": "Golem",
     "tipo": "ROCA",
     "velocidad": 157.0,
     "vidaMax": 130
