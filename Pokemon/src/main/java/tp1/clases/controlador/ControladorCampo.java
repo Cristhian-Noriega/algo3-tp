@@ -11,6 +11,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.JugadorEnum;
+import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
 
 public class ControladorCampo implements Subscriptor {
@@ -54,17 +56,17 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void setFondoClimaProperty(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta(clima + ".png"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes(clima + ".png"));
         this.fondoClimaProperty.set(imagen);
     }
 
     public void setImagenRivalProperty(String pokemon) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta("pokemon/" + pokemon + ".gif"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + ".gif"));
         this.imagenRivalProperty.set(imagen);
     }
 
     public void setImagenActualProperty(String pokemon) {
-        Image imagen = new Image(Archivos.getRutaAbsoluta("pokemon/" + pokemon + "_espalda.gif"));
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + "_espalda.gif"));
         this.imagenActualProperty.set(imagen);
     }
 
@@ -84,8 +86,9 @@ public class ControladorCampo implements Subscriptor {
         timeline.play();
     }
 
-    public void animarVida(double cantidad) {
-        this.cartelPokemonRivalController.animarBarraDeVida(cantidad);
+    public void animarVida(Pokemon pokemon) {
+        this.cartelPokemonRivalController.animarBarraDeVida(this.cartelPokemonRivalController.getPorcentajeBarraDeVida(), (double) pokemon.getVida() / pokemon.getVidaMax());
+        this.cartelPokemonRivalController.setVida(pokemon, JugadorEnum.RIVAL);
     }
 
     @Override
