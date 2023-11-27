@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f852a4e-44c6-4ccb-ae6e-77a92dd832c9" name="Changes" comment="&quot;probando pantallaInicial.fxml&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/charizard.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/fondo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/logo-pixel.96c2ab63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/playPressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaEfectoInicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/MainJavaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/MainJavaFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/imagenes/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/imagenes/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/imagenes/playPressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/imagenes/playPressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaFinal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaFinal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaInicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaInicial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imagenes/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/imagenes/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imagenes/playPressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/imagenes/playPressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pantallaInicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pantallaInicial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,26 +53,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "json",
-    "jdk.selected.JAVA_MODULE": "jbr-17",
-    "last_opened_file_path": "/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/src/main/resources/imagenes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3551069",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;json&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lu/Documents/fiuba/Algo3/algo3-tp/Pokemon/src/main/resources/imagenes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3551069&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/imagenes" />
@@ -151,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainJavaFX" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ControladorMenuTest" />
         <item itemvalue="JUnit.BatallaIntegracionTest" />
         <item itemvalue="JUnit.AdministradorClimaTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +189,8 @@
       <workItem from="1700681374669" duration="1839000" />
       <workItem from="1700784605807" duration="50000" />
       <workItem from="1700784662903" duration="1834000" />
-      <workItem from="1700937188350" duration="5236000" />
+      <workItem from="1700937188350" duration="5358000" />
+      <workItem from="1701009006051" duration="27807000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;sin target&quot;">
       <option name="closed" value="true" />
