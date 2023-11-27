@@ -6,53 +6,64 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Jugador;
 import tp1.clases.modelo.Pokemon;
+import tp1.clases.modelo.Subscriptor;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-public class ControladorMenuPokemon implements Initializable, Controlador {
+public class ControladorMenuPokemon implements Initializable, Controlador, Subscriptor {
     @FXML
     public VBox contenedorPokemonActual;
     @FXML
-    public HBox contenedorBoton;
-    private  Jugador jugadorActual;
+    public HBox contenedorBotonVolver;
+    @FXML
+    public StackPane contenedorPrincipal;
     @FXML
     public VBox contenedorPokemon;
     private Batalla batalla;
-
-    private Escena escenaAnterior;
+    private Boolean focusAplicado;
+    private int escenaAnterior; // HABRIA Q VER DONDE LA SETTEO
 
     @Override
-    public void inicializar(Batalla batalla) { // PODRIAMOS MANDARLE A TODOS LOS INICIALIZAR LA ESCENA ANTERIOR?
+    public void inicializar(Batalla batalla) {
         this.batalla = batalla;
-        this.jugadorActual = batalla.getJugadorActual();
-        this.setPokemones();
+        this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
+        List<Pokemon> pokemones = this.batalla.getJugadorActual().getListaPokemones();
+        this.setPokemones(pokemones);
 
-        if (escenaAnterior == Escena.POKEMON_MUERTO){
-            contenedorBoton.setStyle("-fx-border-color: black; -fx-background-color: grey; -fx-border-radius: 3%; -fx-border-width: 5;");
+        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){ // FUNCIONA??
+            contenedorBotonVolver.setStyle("-fx-border-color: black; -fx-background-color: grey; -fx-border-radius: 3%; -fx-border-width: 5;");
         }
-    }
-
-    public void setEscenaAnterior(Escena escenaAnterior){
-        this.escenaAnterior = escenaAnterior;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        contenedorBoton.setOnMouseEntered(this::handleMouseEntered);
-        contenedorBoton.setOnMouseExited(this::handleMouseExited);
+        contenedorBotonVolver.setOnMouseEntered(this::handleMouseEntered);
+        contenedorBotonVolver.setOnMouseExited(this::handleMouseExited);
+        contenedorBotonVolver.setOnMouseClicked(this::handleMouseOnClick);
     }
 
-    public void setPokemones(){
-        List<Pokemon> pokemones = jugadorActual.getListaPokemones();
+    public void setEscenaAnterior(int escenaAnterior){
+        this.escenaAnterior = escenaAnterior;
+    }
+
+    public void actualizar() {
+        this.setPokemones(this.batalla.getPokemonesJugadorActual());
+    }
+
+    public void setPokemones(List<Pokemon> pokemones){
+        this.focusAplicado = false;
         for (Pokemon pokemon : pokemones) {
+            int i = 0;
             try {
-                if (pokemon == jugadorActual.getPokemonActual()){
+                if (pokemon == this.batalla.getJugadorActual().getPokemonActual()){
                     FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-opcion-pokemon-actual.fxml"));
                     Pane cartelPokemonActual = loader.load();
 
@@ -61,7 +72,6 @@ public class ControladorMenuPokemon implements Initializable, Controlador {
                     controladorCartelActual.setDatosPokemon();
 
                     contenedorPokemonActual.getChildren().add(cartelPokemonActual);
-
                 }else{
                     FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-opcion-pokemon.fxml"));
                     Pane cartelPokemon = loader.load();
@@ -71,6 +81,10 @@ public class ControladorMenuPokemon implements Initializable, Controlador {
                     controladorCartel.setDatosPokemon();
 
                     contenedorPokemon.getChildren().add(cartelPokemon);
+                    if (!focusAplicado) { // FALTA Q SE SQUE APENAS SE PARA EN OTRO
+                        controladorCartel.handleMouseEntered(null);
+                        focusAplicado = true;
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -82,18 +96,29 @@ public class ControladorMenuPokemon implements Initializable, Controlador {
         return this;
     }
 
-    private void handleMouseEntered(MouseEvent event) {
-        contenedorBoton.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
+    public void handleMouseEntered(MouseEvent event) {
+        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){
+            contenedorBotonVolver.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
+        }
     }
 
-    private void handleMouseExited(MouseEvent event) {
-        contenedorBoton.setStyle("-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
+    public void handleMouseExited(MouseEvent event) {
+        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){
+            contenedorBotonVolver.setStyle("-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
+        }
     }
 
     @FXML
     private void handleMouseOnClick(MouseEvent event){
-       if (escenaAnterior != Escena.POKEMON_MUERTO){
-
+       if (escenaAnterior != Escena.POKEMON_MUERTO.ordinal()){
+           this.contenedorPrincipal.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
        }
+    }
+
+    @Override
+    public void Update() {
+        contenedorPokemon.getChildren().clear();
+        contenedorPokemonActual.getChildren().clear();
+        this.actualizar();
     }
 }

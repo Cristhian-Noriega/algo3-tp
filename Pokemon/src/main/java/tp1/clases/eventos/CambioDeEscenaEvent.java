@@ -3,11 +3,13 @@ package tp1.clases.eventos;
 import javafx.event.Event;
 import javafx.event.EventType;
 import tp1.clases.modelo.Habilidad;
+import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Pokemon;
 
 public class CambioDeEscenaEvent extends Event {
     private final int escena;
     private Habilidad habilidad;
+    private Item item;
     private Pokemon pokemon;
     public static EventType<CambioDeEscenaEvent> CAMBIO_DE_ESCENA_EVENT = new EventType<>("Cambio de Escena Event");
 
@@ -30,5 +32,9 @@ public class CambioDeEscenaEvent extends Event {
 
     public void setPokemon(Pokemon pokemon){
         this.pokemon = pokemon;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

@@ -5,13 +5,11 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tp1.clases.eventos.AplicarItemEvent;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.eventos.PokemonSeleccionadoEvent;
-import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Habilidad;
-import tp1.clases.modelo.Jugador;
-import tp1.clases.modelo.Pokemon;
+import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,8 +19,10 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Stage stage;
     private ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
-
-    private Escena escenaAnterior;
+    private ControladorMenuPokemon controladorMenuPokemon;
+    private int escenaActual;
+    private int escenaAnterior;
+    private Item itemAUtilizar;
 
     public ControladorEscenas(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
@@ -55,6 +55,12 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             System.out.println("Pokemon seteado: " + pokemon.getNombre());
         });
 
+        this.stage.addEventHandler(AplicarItemEvent.APLICAR_ITEM_EVENT , event -> {
+            Pokemon pokemon = event.getPokemon();
+            this.seleccionarPokemon(pokemon);
+            System.out.println("Pokemon seteado a utilizar item: " + pokemon.getNombre());
+        });
+
     }
 
     public void cargarFXML(String ruta) throws IOException {
@@ -70,7 +76,9 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         cargarFXML("/menu-principal.fxml");
         cargarFXML("/menu-habilidades.fxml");
         cargarFXML("/pantalla-efecto.fxml");
-        cargarFXML("/pokemones-view.fxml");
+        cargarFXML("/menu-pokemon.fxml");
+        cargarFXML("/pantalla-poke-elegido.fxml");
+        cargarFXML("/pantalla-aplicar-item.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
@@ -80,16 +88,28 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cambiarEscena(int escena) {
+        this.escenaAnterior = this.escenaActual;
+        this.escenaActual = escena;
+
         this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
+
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
     }
 
-    public void seleccionarPokemon(Pokemon pokemon){
-        if (escenaAnterior == Escena.MENU_ITEMS){
+    public void actualizarItemAutilizar(Item item){
+        this.itemAUtilizar = item; // solo se llamaria desde controlador item y se accede solo si la pantalla ant es esa
+    }
 
-        }else if (escenaAnterior == Escena.MENU_PRINCIPAL){ //seleccionarPokemon o Pokemon muerto (el ult viene de ahí?)
-            batalla.cambiarPokemon(pokemon);
+    public void seleccionarPokemon(Pokemon pokemon){
+        if (escenaAnterior == Escena.MENU_ITEMS.ordinal()){
+            ControladorPantallaAplicarItem controlador = (ControladorPantallaAplicarItem) this.controladores.get(5);
+            this.actualizarItemAutilizar(batalla.getItemsJugadorActual().get(0));
+            controlador.actualizar(pokemon, this.itemAUtilizar);
+
+        }else if (escenaAnterior == Escena.MENU_PRINCIPAL.ordinal()){ //seleccionarPokemon o Pokemon muerto (el ult viene de ahí?)
+            ControladorPantallaPokemonSeleccionado controlador = (ControladorPantallaPokemonSeleccionado) this.controladores.get(4);
+            controlador.actualizar(pokemon);
         }
     }
 

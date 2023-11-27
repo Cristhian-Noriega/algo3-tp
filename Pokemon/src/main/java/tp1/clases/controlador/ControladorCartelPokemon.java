@@ -7,6 +7,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import tp1.clases.eventos.AplicarItemEvent;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.eventos.PokemonSeleccionadoEvent;
@@ -31,10 +33,12 @@ public class ControladorCartelPokemon implements Initializable {
     public ImageView imagenPokemon;
     @FXML
     public HBox contenedorCajaPokemon;
+    @FXML
+    public Pane contenedorPokemon;
     private Batalla batalla;
     private Boolean esPokemonActual;
     private Pokemon pokemon;
-    private Escena escenaAnterior;
+    private int escenaAnterior;
     private Item item;
 
     @Override
@@ -44,7 +48,7 @@ public class ControladorCartelPokemon implements Initializable {
         contenedorCajaPokemon.setOnMouseClicked(this::handleMouseOnClick);
     }
 
-    public void inicializar(Batalla batalla, Boolean esPokemonActual, Pokemon pokemon, Escena escenaAnterior){
+    public void inicializar(Batalla batalla, Boolean esPokemonActual, Pokemon pokemon, int escenaAnterior){
         this.batalla = batalla;
         this.esPokemonActual = esPokemonActual;
         this.pokemon = pokemon;
@@ -70,27 +74,36 @@ public class ControladorCartelPokemon implements Initializable {
         this.imagenPokemon.setImage(imagen);
     }
 
-    private void handleMouseEntered(MouseEvent event) {
-        contenedorCajaPokemon.setStyle("-fx-border-color:#e77a00; -fx-border-radius: 3%; -fx-border-width: 5;");
+    void handleMouseEntered(MouseEvent event) {
+        if (!esPokemonActual){
+            contenedorCajaPokemon.setStyle("-fx-border-color:#e77a00; -fx-border-radius: 3%; -fx-border-width: 5;");
+        }
     }
 
     private void handleMouseExited(MouseEvent event) {
-        contenedorCajaPokemon.setStyle("-fx-border-color:black; -fx-border-radius: 3%; -fx-border-width: 3;");
+        if (!esPokemonActual) {
+            contenedorCajaPokemon.setStyle("-fx-border-color:black; -fx-border-radius: 3%; -fx-border-width: 3;");
+        }
     }
 
     @FXML
     private void handleMouseOnClick(MouseEvent event){
-        if (this.escenaAnterior == Escena.MENU_ITEMS) {
-            this.batalla.usarItem(this.item, this.pokemon);
-            System.out.println("estoy aca");
-        }else if (!esPokemonActual){
-            this.batalla.cambiarPokemon(this.pokemon);
-            System.out.println("o en esta");
+        if (!esPokemonActual) {
+            if (this.escenaAnterior == Escena.MENU_ITEMS.ordinal() - 1) {
+                this.contenedorPokemon.fireEvent(new AplicarItemEvent(this.pokemon, this.item, batalla));
+                // no seria otro evento?
+                CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_SELECCION_POKEMON.ordinal());
+                evento.setItem(this.item);
+                evento.setPokemon(this.pokemon);
+                this.contenedorPokemon.fireEvent(evento);
+
+            } else if (!esPokemonActual) {
+                this.contenedorPokemon.fireEvent(new PokemonSeleccionadoEvent(this.pokemon));
+                CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_SELECCION_POKEMON.ordinal());
+                evento.setPokemon(this.pokemon);
+                this.contenedorPokemon.fireEvent(evento);
+            }
         }
-        this.contenedorCajaPokemon.fireEvent(new PokemonSeleccionadoEvent(this.pokemon));
-        CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_SELECCION_POKEMON.ordinal());
-        evento.setPokemon(this.pokemon);
-        this.contenedorCajaPokemon.fireEvent(evento);
     }
 
     public ControladorCartelPokemon getControlador() {

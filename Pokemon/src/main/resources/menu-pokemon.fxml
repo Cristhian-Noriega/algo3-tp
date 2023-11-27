@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+<StackPane fx:id="contenedorPrincipal" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
     <ImageView fitHeight="709.0" fitWidth="707.0">
         <Image url="@Imagenes/fondoMenuPokemonAzul.jpg" />
     </ImageView>
@@ -26,7 +26,7 @@
             <VBox.margin>
                 <Insets />
             </VBox.margin>
-            <HBox fx:id="contenedorBoton" alignment="CENTER" layoutX="548.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
+            <HBox fx:id="contenedorBotonVolver" alignment="CENTER" layoutX="548.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
                 <children>
                     <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="VOLVER" translateX="15.0">
                         <font>

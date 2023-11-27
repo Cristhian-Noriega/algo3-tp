@@ -7,6 +7,10 @@ import javafx.animation.Timeline;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.Light;
+import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -97,15 +101,28 @@ public class ControladorCampo implements Subscriptor {
         rotateTransition.setByAngle(360);
 
         rotateTransition.setOnFinished(event -> {
-                    this.actualizar(); //habria q llamar a inicializar para q se actualice el poke? eso lo hago en
-                // controladorCartelPoke igual (actualizar el poke actual nomas)
+                    this.actualizar();
 
-            // Restablecer la rotación a cero
             imagenActual.setRotate(0);
         });
 
-        // Iniciar la transición
         rotateTransition.play();
+    }
+
+    public void aplicarItem(Pokemon pokemon) {
+        ImageView imagen = new ImageView(Archivos.getRutaAbsoluta("pokemon/" + pokemon + ".gif"));
+        Light.Distant light = new Light.Distant();
+        light.setAzimuth(-135.0);
+
+        // Aplicar el efecto de luz al nodo ImageView
+        Lighting lighting = new Lighting();
+        lighting.setLight(light);
+
+        Blend blend = new Blend();
+        blend.setMode(BlendMode.ADD);
+        blend.setTopInput(lighting);
+
+        imagen.setEffect(blend);
     }
 
     @Override
