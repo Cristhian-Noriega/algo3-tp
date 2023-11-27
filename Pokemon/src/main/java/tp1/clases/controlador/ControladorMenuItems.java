@@ -16,13 +16,14 @@ import javafx.scene.layout.VBox;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Item;
+import tp1.clases.modelo.Subscriptor;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ControladorMenuItems implements Controlador, CancelarAccionListener {
+public class ControladorMenuItems implements Controlador, CancelarAccionListener, Subscriptor {
     @FXML
     private VBox botonesItems;
 
@@ -40,13 +41,19 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
 
     private Pane bottomActual;
 
+    private Batalla batalla;
+
     public void inicializar(Batalla batalla) {
-        this.setBotonesItems(batalla.getItemsJugadorActual(), batalla.getMapItemsJugadorActual());
+        this.batalla = batalla;
+        this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
+        this.setBotonesItems();
         this.setBotonVolver();
     }
 
-    private void setBotonesItems(List<Item> items, Map<String, Long> cantidadItems) {
-        System.out.println(items);
+    private void setBotonesItems() {
+        List<Item> items = this.batalla.getItemsJugadorActual();
+        Map<String, Long> cantidadItems = this.batalla.getMapItemsJugadorActual();
+
         for (Item item : items) {
             Button boton = new Button(item.getNombre() + " x" + cantidadItems.get(item.getNombre()));
             this.botonesItems.getChildren().add(boton);
@@ -78,6 +85,7 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         try {
             itemInfoPane = loader.load();
             ControladorConfirmacionItem controladorConfirmacion = loader.getController();
+//            controladorConfirmacion.setItemSeleccionado(item);
             controladorConfirmacion.setInfoItem(item.getNombre());
             controladorConfirmacion.setCancelActionListener(this);
         } catch (IOException e) {
@@ -118,6 +126,11 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
 
     public void cambiarMenuPrincipal(MouseEvent event) {
         this.borderPane.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
+    }
+
+    public void Update(){
+        this.botonesItems.getChildren().clear();
+        this.setBotonesItems();
     }
 }
 

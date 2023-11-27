@@ -10,35 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Style/botonConfirmacion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/sonidos/sonido-boton.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items/Hiper Pocion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items/Molesta Alumnos.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Inicializador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/CategoriaMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorJugar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuHabilidades.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPokemones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/MenuPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/Comando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/ItemRevivir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/cartel-confirmacion-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/cartel-confirmacion-item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/json/items.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/json/items.json" afterDir="false" />
     </list>
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
@@ -54,8 +33,8 @@
         <option value="module-info" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,7 +85,7 @@
     "git-widget-placeholder": "vistaMenuItemsv2",
     "jdk.selected.JAVA_MODULE": "graalvm-jdk-17",
     "last_directory_selection": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/java/tp1/clases",
-    "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes",
+    "last_opened_file_path": "/home/cristhian/algoritmos3/algo3-tp/Pokemon/src/main/resources/Imagenes/items",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -122,9 +101,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/sonidos" />
-      <recent name="$PROJECT_DIR$/Pokemon/src/main/resources/Imagenes/items" />
       <recent name="$PROJECT_DIR$/Pokemon/src/main/resources" />
       <recent name="$PROJECT_DIR$/Pokemon" />
     </key>
@@ -354,7 +333,8 @@
       <workItem from="1700849045481" duration="281000" />
       <workItem from="1700874412934" duration="5906000" />
       <workItem from="1700908112481" duration="45748000" />
-      <workItem from="1700995609281" duration="31623000" />
+      <workItem from="1700995609281" duration="37849000" />
+      <workItem from="1701034778948" duration="19321000" />
     </task>
     <servers />
   </component>
@@ -391,11 +371,6 @@
           <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
           <option name="timeStamp" value="4" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorEscenas.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

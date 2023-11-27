@@ -26,12 +26,12 @@
       </Pane>
       <VBox layoutX="472.0" layoutY="15.0" prefHeight="74.0" prefWidth="122.0">
          <children>
-            <Button fx:id="botonUsar" mnemonicParsing="false" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Usar">
+            <Button fx:id="botonUsar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedUsar" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Usar">
                <font>
                   <Font name="Pokemon Fire Red Regular" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="botonCancelar" mnemonicParsing="false" onMouseClicked="#handleMouseClicked" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Cancelar">
+            <Button fx:id="botonCancelar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedCancelar" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Cancelar">
                <font>
                   <Font name="Pokemon Fire Red Regular" size="18.0" />
                </font>
