@@ -112,6 +112,7 @@ public abstract class Habilidad implements Serializable, Cloneable{
         this.setPokemonRival(pokemonesActuales.get(1));
     }
 
+
     @Override
     public Habilidad clone() throws CloneNotSupportedException {
         return (Habilidad) super.clone();

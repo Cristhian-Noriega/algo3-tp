@@ -22,9 +22,14 @@ public class ControladorMenuPrincipal implements Controlador {
         System.out.println("batalla en menu principla " + batalla);
         this.campoController.inicializar(batalla);
         this.botonAtacar.setOnMouseClicked(this::cambiarMenuHabilidades);
+        this.botonPokemon.setOnMouseClicked(this::cambiarMenuPokemones);
     }
 
     public void cambiarMenuHabilidades(MouseEvent event) {
         this.dialogo.fireEvent(new CambioDeEscenaEvent(Escena.MENU_HABILIDADES.ordinal()));
+    }
+
+    public void cambiarMenuPokemones(MouseEvent event) {
+        this.dialogo.fireEvent(new CambioDeEscenaEvent(Escena.MENU_POKEMONES.ordinal()));
     }
 }

@@ -3,10 +3,7 @@ package unitarios.modeloTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tp1.clases.modelo.Constantes;
-import tp1.clases.modelo.Envenenado;
-import tp1.clases.modelo.EstadoComportamiento;
-import tp1.clases.modelo.Pokemon;
+import tp1.clases.modelo.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -47,6 +44,7 @@ public class EstadoEnvenenadoTest {
     @DisplayName("Al llamar a usarHabilidad simplemente devuelve true, ya que este estado no niega el uso en ningun caso")
     @Test
     public void puedeUsarHabilidadTrueTest(){
-        assertTrue(estadoEnvenenado.usarHabilidad(0, pokeEnvenenado));
+        Habilidad hab = mock(Habilidad.class);
+        assertTrue(estadoEnvenenado.usarHabilidad(hab, pokeEnvenenado));
     }
 }

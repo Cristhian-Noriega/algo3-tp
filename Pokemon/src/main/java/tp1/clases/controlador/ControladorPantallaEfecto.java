@@ -17,8 +17,6 @@ import java.util.Optional;
 public class ControladorPantallaEfecto implements Controlador {
     private Batalla batalla;
     private Habilidad habilidadSeleccionada;
-    private Pokemon pokemonSeleccionado;
-    private Item itemSeleccionado;
     private ArrayList<Pokemon> pokemones;
     private String texto = "Efecto";
     private StringProperty textoProperty = new SimpleStringProperty(this.texto);

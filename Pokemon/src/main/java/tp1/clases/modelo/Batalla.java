@@ -77,11 +77,11 @@ public class Batalla {
         return pokemonJugadorActual.usarHabilidad(habilidad, pokemonJugadorRival, administradorDeClima);
     }
 
-    public Optional<Error> usarItem(int itemElegido, int pokemon) {
+    public Optional<Error> usarItem(Item itemElegido, Pokemon pokemon) {
         return this.getJugadorActual().usarItem(itemElegido, pokemon);
     }
 
-    public Optional<Error> cambiarPokemon(int pokemon) {
+    public Optional<Error> cambiarPokemon(Pokemon pokemon) {
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 

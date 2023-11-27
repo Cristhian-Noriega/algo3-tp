@@ -1,29 +1,35 @@
-    package tp1.clases.controlador.comandos;
+package tp1.clases.controlador.comandos;
 
-    import tp1.clases.errores.Error;
-    import tp1.clases.modelo.Batalla;
+import tp1.clases.errores.Error;
+import tp1.clases.modelo.Batalla;
+import tp1.clases.modelo.Item;
+import tp1.clases.modelo.Pokemon;
 
-    import java.util.Optional;
 
-    public class UsarItemComando implements Comando {
+import java.util.Optional;
 
-        private final Batalla batalla;
-        private int item;
-        private int pokemon;
+public class UsarItemComando implements Comando {
 
-        public UsarItemComando(Batalla batalla) {
-            this.batalla = batalla;
-        }
+    private final Batalla batalla;
+    private Item item;
+    private Pokemon pokemon;
 
-        public void definirPokemon(int pokemon){
-            this.pokemon = pokemon;
-        }
 
-        public void definirOpcion(int op){
-            this.item = op;
-        }
-
-        public Optional<Error> ejecutar() {
-            return this.batalla.usarItem(this.item, this.pokemon);
-        }
+    public UsarItemComando(Batalla batalla) {
+        this.batalla = batalla;
     }
+
+
+    public void definirPokemon(Pokemon pokemon){
+        this.pokemon = pokemon;
+    }
+
+    public void definirOpcion(Item op){
+        this.item = op;
+    }
+
+
+    public Optional<Error> ejecutar() {
+        return this.batalla.usarItem(this.item, this.pokemon);
+    }
+}
