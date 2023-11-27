@@ -19,16 +19,12 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     private ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
 
-    private BlackScreenTransition blackScreenTransition;
-
-
 
     public ControladorEscenas(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
         this.controladores = new ArrayList<>();
         this.batalla = batalla;
         this.stage = stage;
-        this.blackScreenTransition = new BlackScreenTransition(stage, this);
         try {
             cargarEscenas();
             this.stage.setScene(this.escenas.get(0));
@@ -76,8 +72,6 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
-
-        // Llamar a cambiarEscenaConTransicion en BlackScreenTransition
     }
 
     @Override

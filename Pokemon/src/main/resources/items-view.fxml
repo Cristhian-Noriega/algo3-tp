@@ -32,7 +32,7 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="620.0" style="-fx-background-color: rgba(120,122,120,0.62); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;">
+                  <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="620.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;">
                   <children>
                      <Label fx:id="itemDescriptionLabel" layoutX="144.0" layoutY="9.0" prefHeight="86.0" prefWidth="431.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
                         <font>

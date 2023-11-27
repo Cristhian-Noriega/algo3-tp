@@ -8,7 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.modelo.Item;
 
 import java.util.Objects;
 
@@ -28,6 +31,17 @@ public class ControladorConfirmacionItem {
 
     private CancelarAccionListener cancelarAccionListener;
 
+    private Item item;
+
+    private BorderPane borderPane;
+
+    public void inicializar(Item item, BorderPane borderPane){
+        this.item = item;
+        this.setInfoItem(this.item.getNombre());
+        this.borderPane = borderPane;
+        System.out.println(item.getNombre());
+    }
+
     public void setInfoItem(String nombreItem){
         this.itemSeleccionado.setText("Has seleccionado " + nombreItem );
         String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
@@ -42,7 +56,7 @@ public class ControladorConfirmacionItem {
     }
 
     public void handleMouseClickedUsar(MouseEvent mouseEvent){
-
+        this.borderPane.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 
     public void setCancelActionListener(CancelarAccionListener listener){
