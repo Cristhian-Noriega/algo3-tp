@@ -81,16 +81,16 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
 
         //cargarFXML("/Vistas/pantallaInicial.fxml"); TODO:solucionar que este menú tenga un controlador que implemente Controlador
         cargarFXML("/Vistas/menu-principal.fxml");
-        cargarFXML("/menu-pokemon.fxml");
-        cargarFXML("/pantalla-poke-elegido.fxml");
-        cargarFXML("/pantalla-aplicar-item.fxml"); // ¿es distinta de la pantalla-efecto?
         cargarFXML("/Vistas/menu-habilidades.fxml");
+        cargarFXML("/Vistas/menu-pokemon.fxml");
         cargarFXML("/Vistas/pantalla-efecto.fxml");
+        cargarFXML("/Vistas/pantalla-poke-elegido.fxml");
+        cargarFXML("/Vistas/pantalla-aplicar-item.fxml"); // ¿es distinta de la pantalla-efecto?
 
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
-        ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(2);
+        ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
         controlador.setHabilidadSeleccionada(habilidad);
         controlador.actualizar(this.batalla);
     }

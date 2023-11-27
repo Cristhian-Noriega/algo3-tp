@@ -28,7 +28,11 @@ public class ControladorPantallaInicial {
         this.boton.setOnMouseExited(event -> handleMouseDragExited());
 
         this.boton.setOnMouseClicked(event -> {
-            handleOnMouseClicked();
+            try {
+                handleOnMouseClicked();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 crearEfectoInicio(stage);
             } catch (IOException e) {
@@ -52,10 +56,10 @@ public class ControladorPantallaInicial {
     }
 
     @FXML
-    private void handleOnMouseClicked(){
+    private void handleOnMouseClicked() throws IOException {
 
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playRojo.png")))));
-
+    }
 
     public void crearEfectoInicio(Stage stage) throws IOException {
 
