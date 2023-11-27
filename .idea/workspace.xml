@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/cartel-confirmacion-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/cartel-confirmacion-item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon/src/main/resources/items-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="0db68342-9159-40e3-924e-d8a9657bdfbe" name="Changes" comment="" />
     <list id="4940fcff-4841-4afd-a39b-d69a24f04c75" name="Changes by emilia" comment="" />
     <list id="041e3e65-8c6a-4f0f-a90c-ccf594ce4ceb" name="Changes by lu" comment="" />
     <list id="8980183e-9624-4fad-9fdf-4b52c39a0d85" name="Changes by melina" comment="" />
@@ -332,7 +326,7 @@
       <workItem from="1700908112481" duration="45748000" />
       <workItem from="1700995609281" duration="37849000" />
       <workItem from="1701034778948" duration="19321000" />
-      <workItem from="1701083102441" duration="7630000" />
+      <workItem from="1701083102441" duration="7958000" />
     </task>
     <servers />
   </component>
