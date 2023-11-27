@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorClima">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorClima">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff0d2" height="46.0" layoutX="34.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="210.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff0d2" height="46.0" layoutX="14.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="229.0" />

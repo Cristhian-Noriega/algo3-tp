@@ -38,6 +38,7 @@ public class ControladorCampo implements Subscriptor {
     @FXML public ImageView efectoRival;
     @FXML public ImageView efectoActual;
     @FXML public ImageView pokebolasJugadorActual;
+
     private Batalla batalla;
 
     public ControladorCampo() {}
@@ -101,9 +102,23 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarParpadeo(JugadorEnum jugador) {
+        if (jugador == JugadorEnum.NINGUNO) {
+            return;
+        }
         ImageView imagen = this.imagenRival;
         if (jugador == JugadorEnum.ACTUAL) {
             imagen = this.imagenActual;
+            this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillos.gif")));
+
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, new KeyValue(this.efectoActual.opacityProperty(), 0.0)),
+                    new KeyFrame(Duration.seconds(0.2), new KeyValue(this.efectoActual.opacityProperty(), 1.0)),
+                    new KeyFrame(Duration.seconds(0.5), new KeyValue(this.efectoActual.opacityProperty(), 0.0))
+            );
+
+            timeline.setCycleCount(3);
+            timeline.play();
+            return;
         }
 
         Timeline timeline = new Timeline(
