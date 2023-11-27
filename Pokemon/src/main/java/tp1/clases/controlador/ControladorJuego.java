@@ -157,7 +157,7 @@ public class ControladorJuego {
                 System.out.println("Opcion fuera de rango");
                 continue;
             }
-            this.batalla.cambiarPokemon(pokemon-1);
+            //this.batalla.cambiarPokemon(pokemon-1);
         }
     }
 

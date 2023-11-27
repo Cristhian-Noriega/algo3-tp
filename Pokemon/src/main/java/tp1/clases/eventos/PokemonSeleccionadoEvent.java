@@ -16,4 +16,6 @@ public class PokemonSeleccionadoEvent extends Event  {
     public Pokemon getPokemon(){
         return this.pokemon;
     }
+
 }
+

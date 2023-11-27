@@ -10,12 +10,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import tp1.clases.eventos.AplicarItemEvent;
 import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.eventos.PokemonSeleccionadoEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Pokemon;
-
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ControladorCartelPokemon implements Initializable {
@@ -68,7 +69,9 @@ public class ControladorCartelPokemon implements Initializable {
     }
 
     private void setImagenPokemonOpcion(String pokemon){
+
         Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + ".gif"));
+
         this.imagenPokemon.setImage(imagen);
     }
 
@@ -91,6 +94,7 @@ public class ControladorCartelPokemon implements Initializable {
                 this.contenedorPokemon.fireEvent(new AplicarItemEvent(this.pokemon, this.item, batalla));
                 // no seria otro evento?
                 // meli: los eventos son inmutables, no se puede hacer set
+
                 CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_SELECCION_POKEMON.ordinal());
                 evento.setItem(this.item);
                 evento.setPokemon(this.pokemon);

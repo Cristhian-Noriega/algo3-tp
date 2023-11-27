@@ -28,6 +28,7 @@ public class ControladorPantallaAplicarItem implements Controlador{
         this.item = item;
 
         Optional<Error> err = this.batalla.usarItem(item, pokemon);
+
         if (err.isEmpty()) {
             this.labelTexto.setText("Se aplico " + item.getNombre() + "a " +pokemon.getNombre());
             this.campoController.aplicarItem(pokemon);

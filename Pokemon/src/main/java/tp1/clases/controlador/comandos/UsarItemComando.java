@@ -5,6 +5,7 @@ import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Item;
 import tp1.clases.modelo.Pokemon;
 
+
 import java.util.Optional;
 
 public class UsarItemComando implements Comando {
@@ -13,9 +14,11 @@ public class UsarItemComando implements Comando {
     private Item item;
     private Pokemon pokemon;
 
+
     public UsarItemComando(Batalla batalla) {
         this.batalla = batalla;
     }
+
 
     public void definirPokemon(Pokemon pokemon){
         this.pokemon = pokemon;
@@ -24,6 +27,7 @@ public class UsarItemComando implements Comando {
     public void definirOpcion(Item op){
         this.item = op;
     }
+
 
     public Optional<Error> ejecutar() {
         return this.batalla.usarItem(this.item, this.pokemon);

@@ -67,7 +67,7 @@ public class EstadoDormidoTest {
         List<Habilidad> habilidades = List.of(hab);
         when(pokeDormido.getHabilidades()).thenReturn(habilidades);
 
-        boolean resultado = estadoDormido.usarHabilidad(0, pokeDormido);
+        boolean resultado = estadoDormido.usarHabilidad(hab, pokeDormido);
 
         assertFalse(resultado);
     }

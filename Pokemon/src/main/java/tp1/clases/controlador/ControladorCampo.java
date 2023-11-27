@@ -103,6 +103,7 @@ public class ControladorCampo implements Subscriptor {
         rotateTransition.setByAngle(360);
 
         rotateTransition.setOnFinished(event -> {
+
             this.actualizar();
 
             imagenActual.setRotate(0);
@@ -112,7 +113,9 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarItem(Pokemon pokemon) {
+
         ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + ".gif"));
+
         Light.Distant light = new Light.Distant();
         light.setAzimuth(-135.0);
 
@@ -126,7 +129,6 @@ public class ControladorCampo implements Subscriptor {
 
         imagen.setEffect(blend);
     }
-
 
     @Override
     public void Update() {

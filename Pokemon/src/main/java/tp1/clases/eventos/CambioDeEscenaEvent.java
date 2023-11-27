@@ -30,6 +30,7 @@ public class CambioDeEscenaEvent extends Event {
     public void setHabilidad(Habilidad habilidad) {
         this.habilidad = habilidad;
     }
+
     public void setPokemon(Pokemon pokemon){
         this.pokemon = pokemon;
     }

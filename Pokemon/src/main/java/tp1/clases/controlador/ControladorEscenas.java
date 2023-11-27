@@ -10,6 +10,7 @@ import tp1.clases.eventos.AplicarItemEvent;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.eventos.PokemonSeleccionadoEvent;
+
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Item;
@@ -64,6 +65,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             this.seleccionarPokemon(pokemon);
             System.out.println("Pokemon seteado a utilizar item: " + pokemon.getNombre());
         });
+
     }
 
     public void cargarFXML(String ruta) throws IOException {
@@ -76,6 +78,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cargarEscenas() throws IOException {
+
         //cargarFXML("/Vistas/pantallaInicial.fxml"); TODO:solucionar que este menú tenga un controlador que implemente Controlador
         cargarFXML("/Vistas/menu-principal.fxml");
         cargarFXML("/menu-pokemon.fxml");
@@ -83,6 +86,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         cargarFXML("/pantalla-aplicar-item.fxml"); // ¿es distinta de la pantalla-efecto?
         cargarFXML("/Vistas/menu-habilidades.fxml");
         cargarFXML("/Vistas/pantalla-efecto.fxml");
+
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
@@ -94,8 +98,10 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     public void cambiarEscena(int escena) {
         this.escenaAnterior = this.escenaActual;
         this.escenaActual = escena;
+
         this.stage.setScene(this.escenas.get(escena));
         this.stage.show();
+
         System.out.println("TURNO DE " + this.batalla.getJugadorActual().getPokemonActual().getNombre());
     }
 
@@ -104,6 +110,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void seleccionarPokemon(Pokemon pokemon){ //meli: este metodo no deberia estar, los controladores no pueden tener referencias a controlador escena
+
         if (escenaAnterior == Escena.MENU_ITEMS.ordinal()){
             ControladorPantallaAplicarItem controlador = (ControladorPantallaAplicarItem) this.controladores.get(5);
             this.actualizarItemAutilizar(batalla.getItemsJugadorActual().get(0));

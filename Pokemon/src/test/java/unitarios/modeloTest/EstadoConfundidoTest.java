@@ -57,10 +57,11 @@ public class EstadoConfundidoTest {
     @Test
     public void usarHabilidadAutolesionaTest(){
         when(pokeConfundido.getVidaMax()).thenReturn(100);
+        Habilidad hab = mock(Habilidad.class);
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(1.0 / 3.0)).thenReturn(true);
 
-            boolean resultado = estadoConfundido.usarHabilidad(0, pokeConfundido);
+            boolean resultado = estadoConfundido.usarHabilidad(hab, pokeConfundido);
 
             double danio =  0.15 * 100;
             verify(pokeConfundido).modificarVida((-1) * danio);
@@ -73,8 +74,9 @@ public class EstadoConfundidoTest {
     public void usarHabilidadNoAutolesionaTest(){
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(1.0 / 3.0)).thenReturn(false);
+            Habilidad hab = mock(Habilidad.class);
 
-            boolean resultado = estadoConfundido.usarHabilidad(0, pokeConfundido);
+            boolean resultado = estadoConfundido.usarHabilidad(hab, pokeConfundido);
 
             assertTrue(resultado);
             verify(pokeConfundido, never()).modificarVida(anyDouble());
