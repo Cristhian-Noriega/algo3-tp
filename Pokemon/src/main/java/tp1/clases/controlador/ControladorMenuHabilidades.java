@@ -47,11 +47,6 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
         this.setHabilidades(this.pokemones.get(0).getHabilidades());
     }
 
-    @Override
-    public void actualizarCampo() {
-        System.out.println("actualiza de menu hab");
-    }
-
     public void actualizar() {
         this.setHabilidades(this.batalla.getHabilidadesPokemonActual());
     }

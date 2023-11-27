@@ -42,11 +42,6 @@ public class ControladorPantallaEfecto implements Controlador {
         this.pane.setOnMouseMoved(this::cambiarMenuPrincipal);
     }
 
-    @Override
-    public void actualizarCampo() {
-        System.out.println("se actualiza desde efecto");
-    }
-
     public boolean mostrarAtaque() {
         this.setPokemones();
 
@@ -71,7 +66,7 @@ public class ControladorPantallaEfecto implements Controlador {
             this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()));
         }
 
-        //this.campoController.actualizar();
+
         return true;
     }
 

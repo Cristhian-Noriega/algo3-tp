@@ -41,8 +41,9 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
 
         this.stage.addEventHandler(CambioDeEscenaEvent.CAMBIO_DE_ESCENA_EVENT, event -> {
             int escena = event.getEscena();
+            System.out.println("recibo evento con escena: " + escena);
             this.cambiarEscena(escena);
-            System.out.println("Evento recibido con escena: " + escena);
+            System.out.println("salgo de cambiar escena " + escena);
         });
     }
 
@@ -72,10 +73,12 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cambiarEscena(int escena) {
+        System.out.println("llego a cambiar escena con " + escena);
         this.stage.setScene(this.escenas.get(escena));
         System.out.println("escena cambiada");
         this.stage.show();
         if (escena == Escena.MENU_PRINCIPAL.ordinal()) {
+            System.out.println("entro al if de cambiar escena");
             ControladorMenuPrincipal controlador = (ControladorMenuPrincipal) this.controladores.get(escena);
             controlador.actualizarCampo();
         }
