@@ -86,4 +86,6 @@ public class ControladorEfectoInicio {
 
         //cambiar la escena
     }
+
 }
+

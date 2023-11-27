@@ -1,6 +1,7 @@
 package tp1.clases;
 
 import javafx.application.Application;
+
 import javafx.stage.Stage;
 import tp1.clases.controlador.ControladorEscenas;
 import tp1.clases.modelo.*;
@@ -24,4 +25,5 @@ public class MainJavaFX extends Application {
 
         ControladorEscenas controladorEscenas = new ControladorEscenas(stage, this.batalla);
     }
+
 }

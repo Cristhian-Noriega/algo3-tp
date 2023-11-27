@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
 import tp1.clases.modelo.Batalla;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ public class ControladorPantallaInicial {
 
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
 
+
         this.boton.setOnMouseEntered(event -> handleMouseDragEntered());
         this.boton.setOnMouseExited(event -> handleMouseDragExited());
 
@@ -37,22 +39,29 @@ public class ControladorPantallaInicial {
 
     @FXML
     private void handleMouseDragEntered() {
+
         boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playPressed.png")))));
+
     }
 
     @FXML
     private void handleMouseDragExited() {
+
         boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
+
     }
 
     @FXML
     private void handleOnMouseClicked(){
+
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playRojo.png")))));
-    }
+
 
     public void crearEfectoInicio(Stage stage) throws IOException {
 
+
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("/Vistas/pantallaEfectoInicio.fxml"));
+
 
         Scene scene = new Scene(loader.load());
         ControladorEfectoInicio controlador = loader.getController();
@@ -62,4 +71,6 @@ public class ControladorPantallaInicial {
         stage.show();
 
     }
+
 }
+

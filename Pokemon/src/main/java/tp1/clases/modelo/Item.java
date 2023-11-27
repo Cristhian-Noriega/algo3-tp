@@ -11,4 +11,6 @@ public interface Item {
     Categoria getCategoria();
     Integer getId();
     Item clone() throws CloneNotSupportedException;
+
 }
+

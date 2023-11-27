@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Optional;
 
 public class ItemEstado implements Item, Serializable, Cloneable {
-    ;
+
     private final String nombre;
     private final Categoria categoria = Categoria.ESTADO;
     private final Integer id;

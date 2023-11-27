@@ -1,5 +1,6 @@
 package tp1.clases.controlador;
 
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -76,5 +77,6 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         System.out.println(actionEvent.getEventType());
+
     }
 }
