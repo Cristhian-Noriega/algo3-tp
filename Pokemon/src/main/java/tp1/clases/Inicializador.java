@@ -7,6 +7,7 @@ import tp1.clases.modelo.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
 public class Inicializador {
@@ -24,37 +25,38 @@ public class Inicializador {
     }
 
     private static Map<Integer, Item> crearListaItems() throws IOException {
-
-        String pathItems = "src/main/resources/json/items.json";
-
+        String pathItems = "/json/items.json";
 
         Map<Integer,Item> listaItems = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode listaItemsNode = objectMapper.readTree(new File(pathItems));
+        URL urlItems = MainJavaFX.class.getResource(pathItems);
+
+        JsonNode listaItemsNode = objectMapper.readTree(urlItems);
         for (JsonNode itemNode : listaItemsNode) {
             Categoria categoria = Categoria.valueOf(itemNode.get("categoria").asText());
             String nombre = itemNode.get("nombre").asText();
             int id = itemNode.get("id").asInt();
+            String info = itemNode.get("info").asText();
 
             Item item = null;
             switch (categoria){
                 case ESTADO:
-                    item = new ItemEstado(nombre, id);
+                    item = new ItemEstado(nombre,info, id);
                     listaItems.put(id, item);
                     continue;
                 case ESTADISTICA:
                     Estadisticas estadistica = Estadisticas.valueOf(itemNode.get("estadistica").asText());
-                    item = new ItemEstadistica(nombre, estadistica, id);
+                    item = new ItemEstadistica(nombre, estadistica,info, id);
                     listaItems.put(id, item);
                     continue;
                 case VIDA:
                     int vida = itemNode.get("vida").asInt();
                     if (Objects.equals(nombre, "Revivir")){
-                        item = new ItemRevivir(nombre, vida, id);
+                        item = new ItemRevivir(nombre, vida, info, id);
                     } else {
-                        item = new ItemRestauracionVida(nombre, vida, id);
+                        item = new ItemRestauracionVida(nombre, vida, info, id);
                     }
                     listaItems.put(id, item);
             }
@@ -65,13 +67,15 @@ public class Inicializador {
 
     private static Map<Integer, Habilidad> crearListaHabilidades() throws IOException {
 
-        String pathHabilidades = "src/main/resources/json/habilidades.json";
+        String pathHabilidades = "/json/habilidades.json";
 
         Map<Integer,Habilidad> listaHabilidades = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode listaHabilidadesNode = objectMapper.readTree(new File(pathHabilidades));
+        URL urlHabilidades = MainJavaFX.class.getResource(pathHabilidades);
+
+        JsonNode listaHabilidadesNode = objectMapper.readTree(urlHabilidades);
         for (JsonNode habilidadNodo : listaHabilidadesNode) {
             Categoria categoria = Categoria.valueOf(habilidadNodo.get("categoria").asText());
             String nombre = habilidadNodo.get("nombre").asText();
@@ -113,14 +117,16 @@ public class Inicializador {
 
     private static Map<Integer, Pokemon> crearListaPokemones(Map<Integer, Habilidad> listaHabilidades) throws IOException, CloneNotSupportedException {
 
-        String pathPokemones = "src/main/resources/json/pokemones.json";
+        String pathPokemones = "/json/pokemones.json";
 
 
         Map<Integer, Pokemon> listaPokemones = new HashMap<>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode pokemonesNode = objectMapper.readTree(new File(pathPokemones));
+        URL urlPokemones = MainJavaFX.class.getResource(pathPokemones);
+
+        JsonNode pokemonesNode = objectMapper.readTree(urlPokemones);
         for (JsonNode pokeNode : pokemonesNode) {
             double ataque = pokeNode.get("ataque").asDouble();
             double defensa = pokeNode.get("defensa").asDouble();
@@ -154,14 +160,16 @@ public class Inicializador {
 
     private static ArrayList<Jugador> crearListaJugadores(Map<Integer, Pokemon> listaPokemones, Map<Integer, Item> listaItems) throws IOException, CloneNotSupportedException {
 
-        String pathJugadores = "src/main/resources/json/jugadores.json";
+        String pathJugadores = "/json/jugadores.json";
 
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode jugadoresNode = objectMapper.readTree(new File(pathJugadores));
+        URL urlJugadores = MainJavaFX.class.getResource(pathJugadores);
+
+        JsonNode jugadoresNode = objectMapper.readTree(urlJugadores);
         for (JsonNode jugNode : jugadoresNode) {
             String nombre = jugNode.get("nombre").asText();
 
@@ -197,8 +205,5 @@ public class Inicializador {
 
         return listaJugadores;
     }
-
-
-
 
 }

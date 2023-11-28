@@ -13,14 +13,16 @@ public class ItemRestauracionVida implements Item, Serializable, Cloneable {
     protected final String nombre;
     protected int vida;
     private final Categoria categoria = Categoria.VIDA;
+    final protected String info;
     private final Integer id;
 
     int MOLESTAALUMNOS = 0;
     @JsonCreator
     public ItemRestauracionVida(@JsonProperty("nombre") String nombre, @JsonProperty("vida") int vida,
-                                @JsonProperty("id") Integer id){ //si vida es 0 entonces es pocion molesta alumnos
+                                @JsonProperty("info") String info, @JsonProperty("id") Integer id){ //si vida es 0 entonces es pocion molesta alumnos
         this.nombre = nombre;
         this.vida = vida;
+        this.info = info;
         this.id = id;
     }
 
@@ -32,6 +34,11 @@ public class ItemRestauracionVida implements Item, Serializable, Cloneable {
     @Override
     public Categoria getCategoria() {
         return this.categoria;
+    }
+
+    @Override
+    public String getInfo() {
+        return this.info;
     }
 
     @Override

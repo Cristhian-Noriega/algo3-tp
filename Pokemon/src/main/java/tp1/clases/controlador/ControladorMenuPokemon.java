@@ -9,16 +9,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import tp1.clases.eventos.CambioDeEscenaEvent;
-import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Jugador;
-import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.Subscriptor;
+import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-public class ControladorMenuPokemon implements Initializable, Controlador, Subscriptor {
+public class ControladorMenuPokemon implements Controlador, Subscriptor, SubscriptorEscena {
     @FXML
     public VBox contenedorPokemonActual;
     @FXML
@@ -28,8 +25,9 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
     @FXML
     public VBox contenedorPokemon;
     private Batalla batalla;
-    private Boolean focusAplicado;
-    private int escenaAnterior; // HABRIA Q VER DONDE LA SETTEO
+    private int escenaAnterior;
+    private int escenaActual;
+    private Item item;
 
     @Override
     public void inicializar(Batalla batalla) {
@@ -39,19 +37,16 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
         this.setPokemones(pokemones);
 
         if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){ // FUNCIONA??
+            System.out.println("entro a pokemon muerto "+ this.escenaAnterior);
             contenedorBotonVolver.setStyle("-fx-border-color: black; -fx-background-color: grey; -fx-border-radius: 3%; -fx-border-width: 5;");
+            contenedorBotonVolver.setDisable(true);
+        }else{
+            contenedorBotonVolver.setDisable(false);
         }
-    }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
         contenedorBotonVolver.setOnMouseEntered(this::handleMouseEntered);
         contenedorBotonVolver.setOnMouseExited(this::handleMouseExited);
         contenedorBotonVolver.setOnMouseClicked(this::handleMouseOnClick);
-    }
-
-    public void setEscenaAnterior(int escenaAnterior){
-        this.escenaAnterior = escenaAnterior;
     }
 
     public void actualizar() {
@@ -59,37 +54,45 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
     }
 
     public void setPokemones(List<Pokemon> pokemones){
-        this.focusAplicado = false;
+        Boolean focusAplicado = false;
         for (Pokemon pokemon : pokemones) {
             int i = 0;
+
+            String ruta = "cartel-opcion-pokemon";
+            if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
+                ruta += "-actual";
+            }
+            ruta += ".fxml";
+
             try {
-                if (pokemon == this.batalla.getJugadorActual().getPokemonActual()){
-                    FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-opcion-pokemon-actual.fxml"));
-                    Pane cartelPokemonActual = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource(ruta));
 
-                    ControladorCartelPokemon controladorCartelActual = loader.getController();
-                    controladorCartelActual.inicializar(batalla, true, pokemon, escenaAnterior);
-                    controladorCartelActual.setDatosPokemon();
+                Pane cartelPokemon = loader.load();
 
-                    contenedorPokemonActual.getChildren().add(cartelPokemonActual);
+                ControladorCartelPokemon controladorCartel = loader.getController();
+                controladorCartel.inicializar(batalla, pokemon, escenaAnterior);
+                System.out.println(this.escenaAnterior);
+                controladorCartel.setDatosPokemon();
+                controladorCartel.setEstados();
+
+                if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
+                    contenedorPokemonActual.getChildren().add(cartelPokemon);
                 }else{
-                    FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-opcion-pokemon.fxml"));
-                    Pane cartelPokemon = loader.load();
-
-                    ControladorCartelPokemon controladorCartel = loader.getController();
-                    controladorCartel.inicializar(batalla, false, pokemon, escenaAnterior);
-                    controladorCartel.setDatosPokemon();
-
                     contenedorPokemon.getChildren().add(cartelPokemon);
                     if (!focusAplicado) { // FALTA Q SE SQUE APENAS SE PARA EN OTRO
                         controladorCartel.handleMouseEntered(null);
                         focusAplicado = true;
                     }
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
+        System.out.println(this.contenedorPokemonActual.disabledProperty());
+        contenedorPokemonActual.setDisable(this.escenaAnterior == Escena.MENU_PRINCIPAL.ordinal());
+        System.out.println(this.contenedorPokemonActual.disabledProperty());
     }
 
     public ControladorMenuPokemon getControlador() {
@@ -97,15 +100,12 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
     }
 
     public void handleMouseEntered(MouseEvent event) {
-        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){
-            contenedorBotonVolver.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
-        }
+        contenedorBotonVolver.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
+
     }
 
     public void handleMouseExited(MouseEvent event) {
-        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){
-            contenedorBotonVolver.setStyle("-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
-        }
+        contenedorBotonVolver.setStyle("-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
     }
 
     @FXML
@@ -120,5 +120,18 @@ public class ControladorMenuPokemon implements Initializable, Controlador, Subsc
         contenedorPokemon.getChildren().clear();
         contenedorPokemonActual.getChildren().clear();
         this.actualizar();
+    }
+
+    @Override
+    public void Update(int escena) {
+        this.escenaAnterior = this.escenaActual;
+        this.escenaActual = escena;
+        this.contenedorPokemonActual.getChildren().clear();
+        this.contenedorPokemon.getChildren().clear();
+        this.setPokemones(this.batalla.getPokemonesJugadorActual());
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

@@ -22,9 +22,9 @@ public class BatallaIntegracionTest {
         Habilidad hab3 = new HabilidadEstado("Bostezo", 7, Tipo.NORMAL, "Gran bostezo que induce al sueño del enemigo", Estado.DORMIDO, 3);
         Habilidad hab4 = new HabilidadClima("Dia de playa", 3, Tipo.FUEGO, "Hace salir el sol para disfrutar un buen bronceado", Clima.SOLEADO, 4);
 
-        Item item1 = new ItemEstado("Sacar estado", 1);
-        Item item2 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE, 2);
-        Item item3 = new ItemRestauracionVida("Mega Pocion", 50, 3);
+        Item item1 = new ItemEstado("Sacar estado", "info",1);
+        Item item2 = new ItemEstadistica("Batido proteico", Estadisticas.ATAQUE, "info", 2);
+        Item item3 = new ItemRestauracionVida("Mega Pocion", 50, "info", 3);
         List<Item> listaItems1 = new ArrayList<Item>();
         listaItems1.add(item1);
         listaItems1.add(item2);
@@ -42,9 +42,9 @@ public class BatallaIntegracionTest {
         Habilidad hab7 = new HabilidadEstado("Gas venenoso", 2, Tipo.VENENO,"Lanza una nube de gas toxico a los rivales", Estado.ENVENENADO, 7);
         Habilidad hab8 = new HabilidadClima("Dios del viento", 5, Tipo.AGUA, "Sopla y sopla hasta que se genera un huracan", Clima.HURACAN, 8);
 
-        Item item4 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA, 4);
-        Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0, 5);
-        Item item6 = new ItemRevivir("Revivir", 0, 6);
+        Item item4 = new ItemEstadistica("Jugo de apio", Estadisticas.DEFENSA, "info", 4);
+        Item item5 = new ItemRestauracionVida("Molesta Alumnos", 0, "info",5);
+        Item item6 = new ItemRevivir("Revivir", 0, "info", 6);
         List<Item> listaItems2 = new ArrayList<Item>();
         listaItems2.add(item4);
         listaItems2.add(item5);

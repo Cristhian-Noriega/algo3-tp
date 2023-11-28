@@ -44,7 +44,9 @@ public class EstadoEnvenenadoTest {
     @DisplayName("Al llamar a usarHabilidad simplemente devuelve true, ya que este estado no niega el uso en ningun caso")
     @Test
     public void puedeUsarHabilidadTrueTest(){
+
         Habilidad hab = mock(Habilidad.class);
+
         assertTrue(estadoEnvenenado.usarHabilidad(hab, pokeEnvenenado));
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
@@ -10,14 +11,14 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="220.0" fitWidth="220.0">
         <Image url="@Imagenes/fondoPokemonActual.png" />
     </ImageView>
     <HBox fx:id="contenedorCajaPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="220.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
         <children>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="103.0" translateX="110.0" translateY="20.0">
-                <Label fx:id="labelNombre" prefHeight="37.0" prefWidth="100.0">
+                <Label fx:id="labelNombre" prefHeight="37.0" prefWidth="100.0" text="NOMBRE">
                     <font>
                         <Font name="Pokemon Fire Red Regular" size="34.0" />
                     </font>
@@ -28,20 +29,43 @@
                 <Circle fill="#245924" radius="47.0" stroke="#040a04" strokeType="INSIDE" strokeWidth="3.0" translateX="3.0" />
                 <ImageView fx:id="imagenPokemon" fitHeight="96.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
             </StackPane>
-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="83.0" translateX="-300.0" translateY="80.0">
-                <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="77.0" textAlignment="JUSTIFY">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="83.0" translateX="-295.0" translateY="60.0">
+                <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="77.0" text="Nvl.XX" textAlignment="JUSTIFY">
                     <font>
                         <Font name="Pokemon Fire Red Regular" size="28.0" />
                     </font>
                 </Label>
             </HBox>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" translateX="-450.0" translateY="180.0">
-                <Label fx:id="labelVida" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="118.0" textAlignment="JUSTIFY">
+                <Label fx:id="labelVida" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="118.0" text="XXX/XXX" textAlignment="JUSTIFY">
                     <font>
                         <Font name="Pokemon Fire Red Regular" size="25.0" />
                     </font>
                 </Label>
             </HBox>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="138.0" translateX="-540.0" translateY="103.0">
+                <children>
+                    <HBox fx:id="circulosEstados" prefHeight="35.0" prefWidth="218.0" spacing="5.0">
+                        <children>
+                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
+                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
+                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
+                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
+                        </children>
+                        <padding>
+                            <Insets top="2.0" />
+                        </padding>
+                    </HBox>
+                    <Pane fx:id="imagenesEstados" prefHeight="35.0" prefWidth="219.0">
+                        <children>
+                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="36.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="71.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="106.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                    </Pane>
+                </children>
+            </Pane>
         </children>
     </HBox>
 </Pane>

@@ -20,9 +20,13 @@ import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
 
+import java.util.List;
+
 public class ControladorCampo implements Subscriptor {
     private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> imagenActualProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<Image> pokebolasRivalProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<Image> pokebolasActualProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> fondoClimaProperty = new SimpleObjectProperty<>();
     @FXML public ControladorCartelInfoPokemon cartelPokemonRivalController;
     @FXML public ControladorCartelInfoPokemon cartelPokemonActualController;
@@ -30,7 +34,10 @@ public class ControladorCampo implements Subscriptor {
     @FXML public ImageView imagenRival;
     @FXML public ImageView imagenActual;
     @FXML public ImageView fondoClima;
-    @FXML public Pane campoPane;
+    @FXML public ImageView pokebolasJugadorRival;
+    @FXML public ImageView efectoRival;
+    @FXML public ImageView efectoActual;
+    @FXML public ImageView pokebolasJugadorActual;
     private Batalla batalla;
 
     public ControladorCampo() {}
@@ -44,11 +51,11 @@ public class ControladorCampo implements Subscriptor {
 
         this.imagenActual.imageProperty().bind(this.imagenActualProperty);
         this.imagenRival.imageProperty().bind(this.imagenRivalProperty);
+        this.pokebolasJugadorActual.imageProperty().bind(this.pokebolasActualProperty);
+        this.pokebolasJugadorRival.imageProperty().bind(this.pokebolasRivalProperty);
         this.fondoClima.imageProperty().bind(this.fondoClimaProperty);
 
-        this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
-        this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
-        this.setFondoClimaProperty(this.batalla.getClima().name());
+        this.actualizar();
     }
 
     public void actualizar() {
@@ -57,7 +64,25 @@ public class ControladorCampo implements Subscriptor {
         this.cartelPokemonRivalController.actualizar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
         this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
         this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
+        this.setPokebolas(JugadorEnum.ACTUAL);
+        this.setPokebolas(JugadorEnum.RIVAL);
         this.setFondoClimaProperty(this.batalla.getClima().name());
+    }
+
+    public void setPokebolas(JugadorEnum jugador) {
+        List<Pokemon> pokemones = this.batalla.getJugadores().get(jugador.ordinal()).getListaPokemones();
+        int cant = 0;
+        for (Pokemon pokemon: pokemones) {
+            if (!pokemon.estaMuerto()) {
+                cant++;
+            }
+        }
+        String ruta = "pokebolas/pokebolas-" + jugador.name().toLowerCase() + "-" + cant + ".png";
+        if (jugador == JugadorEnum.ACTUAL) {
+            this.pokebolasActualProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
+        } else {
+            this.pokebolasRivalProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
+        }
     }
 
     public void setFondoClimaProperty(String clima) {
@@ -113,13 +138,11 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarItem(Pokemon pokemon) {
-
-        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon + ".gif"));
+        System.out.println(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
+        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
 
         Light.Distant light = new Light.Distant();
         light.setAzimuth(-135.0);
-
-        // Aplicar el efecto de luz al nodo ImageView
         Lighting lighting = new Lighting();
         lighting.setLight(light);
 

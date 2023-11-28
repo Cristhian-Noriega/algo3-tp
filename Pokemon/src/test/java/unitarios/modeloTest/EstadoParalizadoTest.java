@@ -34,6 +34,7 @@ public class EstadoParalizadoTest {
         Habilidad hab = mock(Habilidad.class);
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(Constantes.probabilidadParalizado)).thenReturn(false);
+            Habilidad habilidad = mock(HabilidadAtaque.class);
 
             boolean resultado = estadoParalizado.usarHabilidad(hab, pokeParalizado);
 
@@ -48,6 +49,7 @@ public class EstadoParalizadoTest {
         Habilidad hab = mock(Habilidad.class);
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(Constantes.probabilidadParalizado)).thenReturn(true);
+            Habilidad habilidad = mock(HabilidadAtaque.class);
 
             boolean resultado = estadoParalizado.usarHabilidad(hab, pokeParalizado);
 

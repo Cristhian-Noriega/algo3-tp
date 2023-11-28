@@ -6,20 +6,22 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
+import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.Batalla;
+
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ControladorPantallaInicial {
+public class ControladorPantallaInicial implements Controlador {
 
     @FXML
     private ImageView boton;
 
+    private Stage stage;
 
-    @FXML //TODO: que este metodo no reciba nada para que pueda implementar la interfaz Controlador
-    protected void inicializar(Stage stage) {
+    @Override
+    public void inicializar(Batalla batalla) {
 
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
 
@@ -28,13 +30,9 @@ public class ControladorPantallaInicial {
         this.boton.setOnMouseExited(event -> handleMouseDragExited());
 
         this.boton.setOnMouseClicked(event -> {
+            handleOnMouseClicked();
             try {
-                handleOnMouseClicked();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                crearEfectoInicio(stage);
+                crearEfectoInicio();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -56,23 +54,24 @@ public class ControladorPantallaInicial {
     }
 
     @FXML
-    private void handleOnMouseClicked() throws IOException {
-
+    private void handleOnMouseClicked() {
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playRojo.png")))));
     }
 
-    public void crearEfectoInicio(Stage stage) throws IOException {
+    public void setStage(Stage stage){
+        this.stage = stage;
+    }
 
+    public void crearEfectoInicio() throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("/Vistas/pantallaEfectoInicio.fxml"));
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/pantallaEfectoInicio.fxml"));
 
         Scene scene = new Scene(loader.load());
         ControladorEfectoInicio controlador = loader.getController();
         controlador.inicializar();
 
-        stage.setScene(scene);
-        stage.show();
+        this.stage.setScene(scene);
+        this.stage.show();
 
     }
 
