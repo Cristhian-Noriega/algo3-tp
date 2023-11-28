@@ -1,0 +1,133 @@
+[
+  {
+    "ataque": 184.0,
+    "defensa": 130.0,
+    "habilidades": [1, 2, 10, 18],
+    "id": 1,
+    "nivel": 20,
+    "nombre": "Rapidash",
+    "tipo": "FUEGO",
+    "velocidad": 193.0,
+    "vidaMax": 100
+  },
+  {
+    "ataque": 180.0,
+    "defensa": 130.0,
+    "habilidades": [3, 4, 11, 17],
+    "id": 2,
+    "nivel": 18,
+    "nombre": "Ampharos",
+    "tipo": "ELECTRICO",
+    "velocidad": 139.0,
+    "vidaMax": 98
+  },
+  {
+    "ataque": 227.0,
+    "defensa": 148.0,
+    "habilidades": [5, 6, 13, 19],
+    "id": 3,
+    "nivel": 23,
+    "nombre": "Golurk",
+    "tipo": "TIERRA",
+    "velocidad": 103.0,
+    "vidaMax": 122
+  },
+  {
+    "ataque": 112.0,
+    "defensa": 184.0,
+    "habilidades": [7, 8, 14, 20],
+    "id": 4,
+    "nivel": 24,
+    "nombre": "Cubone",
+    "tipo": "ROCA",
+    "velocidad": 67.0,
+    "vidaMax": 111
+  },
+  {
+    "ataque": 157.0,
+    "defensa": 148.0,
+    "habilidades": [9, 1, 15, 21],
+    "id": 5,
+    "nivel": 23,
+    "nombre": "Dragonair",
+    "tipo": "DRAGON",
+    "velocidad": 58.0,
+    "vidaMax": 153
+  },
+  {
+    "ataque": 175.0,
+    "defensa": 328.0,
+    "habilidades": [3, 6, 25, 22],
+    "id": 6,
+    "nivel": 17,
+    "nombre": "Cloyster",
+    "tipo": "AGUA",
+    "velocidad": 130.0,
+    "vidaMax": 115
+  },
+  {
+    "ataque": 98.0,
+    "defensa": 81.0,
+    "habilidades": [9,10,26,21],
+    "id": 7,
+    "nivel": 16,
+    "nombre": "Charmander",
+    "tipo": "FUEGO",
+    "velocidad": 121.0,
+    "vidaMax": 80
+  },
+  {
+    "ataque": 211.0,
+    "defensa": 130.0,
+    "habilidades": [3, 1, 12, 17],
+    "id": 8,
+    "nivel": 25,
+    "nombre": "Thundurus",
+    "tipo": "ELECTRICO",
+    "velocidad": 204.0,
+    "vidaMax": 132
+  },
+  {
+    "ataque": 197.0,
+    "defensa": 229.0,
+    "habilidades": [5, 8, 13, 18],
+    "id": 9,
+    "nivel": 18,
+    "nombre": "Sudowoodo",
+    "tipo": "TIERRA",
+    "velocidad": 132.0,
+    "vidaMax": 126
+  },
+  {
+    "ataque": 247.0,
+    "defensa": 175.0,
+    "habilidades": [5, 1, 14, 19],
+    "id": 10,
+    "nivel": 12,
+    "nombre": "Golem",
+    "tipo": "ROCA",
+    "velocidad": 157.0,
+    "vidaMax": 130
+  },
+  {
+    "ataque": 215.0,
+    "defensa": 130.0,
+    "habilidades": [8, 3, 15, 23],
+    "id": 11,
+    "nivel": 16,
+    "nombre": "Fraxure",
+    "tipo": "DRAGON",
+    "velocidad": 125.0,
+    "vidaMax": 117
+  },
+  {
+    "ataque": 153.0,
+    "defensa": 126.0,
+    "habilidades": [2, 7, 16, 24],
+    "id": 12,
+    "nivel": 15,
+    "nombre": "Gastrodon",
+    "tipo": "AGUA",
+    "velocidad": 74.0,
+    "vidaMax": 158
+  }]

@@ -137,6 +137,7 @@ public class Pokemon implements Serializable {
 
 
     public void modificarVida(double modificador) {
+        System.out.println("se modifica la vida desde pokemon, cant: " + modificador);
         double nuevoValor = this.vidaActual + modificador;
         if (nuevoValor <= 0.0) {
             nuevoValor = 0;

@@ -51,8 +51,7 @@ public class ControladorPantallaEfecto implements Controlador {
         this.labelTexto.setWrapText(true);
     }
 
-    public void mostrarAtaque(Batalla batalla) {
-        this.batalla = batalla;
+    public void mostrarAtaque() {
         this.actualizarPokemones();
 
         Habilidad habilidad = this.habilidadSeleccionada;
@@ -70,15 +69,15 @@ public class ControladorPantallaEfecto implements Controlador {
         }
 
         if (!infoHabilidad.sePudoUsarHabilidad()) {
-            this.setTextoProperty(pokemones.get(0).getNombre() + " no pudo usar la habilidad porque se encuentra " + infoHabilidad.getEstadoLimitante().toString().toLowerCase());
-            this.campoController.actualizar();
+            this.setTextoProperty(pokemones.get(JugadorEnum.ACTUAL.ordinal()).getNombre() + " no pudo usar la habilidad porque se encuentra " + infoHabilidad.getEstadoLimitante().toString().toLowerCase());
+            //this.campoController.actualizar();
             this.pane.setOnMouseClicked(event -> {
                 cambiarMenuPrincipal(event, true);
             });
             return;
         }
 
-        String resultado = this.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(0).getNombre());
+        String resultado = this.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(JugadorEnum.ACTUAL.ordinal()).getNombre());
         System.out.println(resultado);
         this.setTextoProperty(resultado);
 
@@ -133,13 +132,17 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void mostrarCambioDePokemon() {
+        this.actualizarPokemones();
         Optional<Error> err = this.batalla.cambiarPokemon(this.pokemonSeleccionado);
-        this.setTextoProperty("antes del if");
         if (err.isEmpty()) {
             this.setTextoProperty("Cambiaste tu pokemon a " + this.pokemonSeleccionado.getNombre() + "!");
             this.campoController.aplicarCambioPokemon();
         } else {
             this.setTextoProperty(err.get().mostrar());
+            this.pane.setOnMouseClicked(event -> {
+                cambiarMenuPrincipal(event, false);
+            });
+            return;
         }
 
         this.campoController.aplicarCambioPokemon();
@@ -150,12 +153,10 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void mostrarItemAplicado() {
+        this.actualizarPokemones();
         Optional<Error> err = this.batalla.usarItem(this.itemSeleccionado, this.pokemonSeleccionado);
-        this.setTextoProperty("antes del if");
         if (err.isEmpty()) {
             this.setTextoProperty("Se aplicó " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println("Se aplico " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println(this.texto );
             this.campoController.aplicarItem(this.pokemonSeleccionado);
             this.campoController.actualizar();
         } else {
@@ -185,9 +186,8 @@ public class ControladorPantallaEfecto implements Controlador {
 
     private void actualizarPokemones() {
         this.pokemones = new ArrayList<>();
-        for (Jugador jugador: this.batalla.getJugadores()) {
-            this.pokemones.add(jugador.getPokemonActual());
-        }
+        this.pokemones.add(this.batalla.getJugadorActual().getPokemonActual());
+        this.pokemones.add(this.batalla.getJugadorSiguiente().getPokemonActual());
     }
 
     public void cambiarMenuPrincipal(MouseEvent event, boolean cambioTurno) {

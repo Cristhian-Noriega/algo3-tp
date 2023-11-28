@@ -99,7 +99,8 @@ public class ControladorCartelInfoPokemon {
             }
 
             this.circulos.getChildren().get(i).setOpacity(100);
-            this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsolutaImagenes("estados/" + estado.name() + ".png")));
+            String ruta = Archivos.getRutaAbsolutaImagenes("estados/" + estado.name() + ".png");
+            this.imagenesEstadosProperty.get(i).set(new Image(ruta));
             i++;
         }
     }

@@ -38,7 +38,7 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         this.setPokemones(pokemones);
 
         if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){ // FUNCIONA??
-            System.out.println("entro a pokemon muerto "+ this.escenaAnterior);
+            //System.out.println("entro a pokemon muerto "+ this.escenaAnterior);
             contenedorBotonVolver.setStyle("-fx-border-color: black; -fx-background-color: grey; -fx-border-radius: 3%; -fx-border-width: 5;");
             contenedorBotonVolver.setDisable(true);
         }else{
@@ -59,20 +59,20 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         for (Pokemon pokemon : pokemones) {
             int i = 0;
 
-            String ruta = "cartel-opcion-pokemon";
+            String ruta = "/Vistas/cartel-opcion-pokemon";
             if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
                 ruta += "-actual";
             }
             ruta += ".fxml";
 
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource(ruta));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(ruta));
 
                 Pane cartelPokemon = loader.load();
 
                 ControladorCartelPokemon controladorCartel = loader.getController();
                 controladorCartel.inicializar(batalla, pokemon, escenaAnterior);
-                System.out.println(this.escenaAnterior);
+                //System.out.println(this.escenaAnterior);
                 controladorCartel.setDatosPokemon();
                 controladorCartel.setEstados();
 
@@ -91,9 +91,9 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
             }
         }
 
-        System.out.println(this.contenedorPokemonActual.disabledProperty());
+        //System.out.println(this.contenedorPokemonActual.disabledProperty());
         contenedorPokemonActual.setDisable(this.escenaAnterior == Escena.MENU_PRINCIPAL.ordinal());
-        System.out.println(this.contenedorPokemonActual.disabledProperty());
+        //System.out.println(this.contenedorPokemonActual.disabledProperty());
     }
 
     public ControladorMenuPokemon getControlador() {

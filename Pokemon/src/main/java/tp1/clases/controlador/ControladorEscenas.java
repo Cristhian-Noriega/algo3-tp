@@ -122,7 +122,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     public void seleccionarHabilidad(Habilidad habilidad) {
         ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
         controlador.setHabilidadSeleccionada(habilidad);
-        controlador.mostrarAtaque(this.batalla);
+        controlador.mostrarAtaque();
     }
 
     public void cambiarEscena(int escena) {

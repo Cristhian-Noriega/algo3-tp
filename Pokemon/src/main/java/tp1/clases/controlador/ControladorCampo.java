@@ -19,6 +19,8 @@ import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorCampo implements Subscriptor {
@@ -66,31 +68,31 @@ public class ControladorCampo implements Subscriptor {
         this.cartelPokemonRivalController.actualizar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
         this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
         this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
-        this.setPokebolas(JugadorEnum.ACTUAL);
-        this.setPokebolas(JugadorEnum.RIVAL);
+        this.setPokebolas(JugadorEnum.ACTUAL, this.batalla.getJugadorActual().getListaPokemones());
+        this.setPokebolas(JugadorEnum.RIVAL, this.batalla.getJugadorSiguiente().getListaPokemones());
         this.setFondoClimaProperty(this.batalla.getClima().name());
     }
 
-
-    public void setFondoClimaProperty(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("clima/" + clima + ".png"));
-        this.fondoClimaProperty.set(imagen);
-    }
-
-    public void setPokebolas(JugadorEnum jugador) {
-        List<Pokemon> pokemones = this.batalla.getJugadores().get(jugador.ordinal()).getListaPokemones();
+    public void setPokebolas(JugadorEnum jugador, List<Pokemon> pokemones) {
         int cant = 0;
         for (Pokemon pokemon: pokemones) {
             if (!pokemon.estaMuerto()) {
                 cant++;
             }
         }
-        String ruta = "pokebolas/pokebolas-" + jugador.name().toLowerCase() + "-" + cant + ".png";
+
+        String ruta = "pokebolas/pokebolas-" + jugador.name().toLowerCase() + "-" + cant;
         if (jugador == JugadorEnum.ACTUAL) {
-            this.pokebolasActualProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
+            this.pokebolasActualProperty.set(new Image(ruta));
         } else {
-            this.pokebolasRivalProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
+            this.pokebolasRivalProperty.set(new Image(ruta));
         }
+    }
+
+
+    public void setFondoClimaProperty(String clima) {
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("clima/" + clima + ".png"));
+        this.fondoClimaProperty.set(imagen);
     }
 
     public void setImagenRivalProperty(String pokemon) {
@@ -155,7 +157,7 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarItem(Pokemon pokemon) {
-        System.out.println(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
+        //System.out.println(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
         ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
 
         Light.Distant light = new Light.Distant();
