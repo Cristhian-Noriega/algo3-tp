@@ -8,11 +8,11 @@ public class Envenenado implements EstadoComportamiento {
     }
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
-        if (turnosEnvenenado != 0) {
+//        if (turnosEnvenenado != 0) {
             double danio = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
             pokemon.modificarVida((-1) * danio);
             System.out.printf("%s ha perdido vida por estar envenenado\n", pokemon.getNombre());
-        }
+        //}
         this.turnosEnvenenado++;
     }
     @Override

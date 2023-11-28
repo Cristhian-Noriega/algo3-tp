@@ -3,6 +3,8 @@ module Pokemon {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.media;
+
     requires org.jline;
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.annotation;

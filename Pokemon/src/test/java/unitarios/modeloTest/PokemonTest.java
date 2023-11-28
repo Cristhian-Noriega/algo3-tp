@@ -21,9 +21,11 @@ public class PokemonTest {
     public void usarHabilidadDisponible(){
         double defensaInicial = pokeVivo.getDefensa();
         AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
+        Habilidad habilidad = mock(HabilidadAtaque.class);
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
 
         Optional<Error> err = pokeVivo.usarHabilidad(aumentaDefensa, otroPokeVivo, administradorDeClima);
+
         Assertions.assertTrue(err.isEmpty());
 
         //confirmo que haga algo
@@ -55,6 +57,7 @@ public class PokemonTest {
         Assertions.assertTrue(error.isEmpty());
         Assertions.assertEquals(vidaInicial, otroPokeVivo.getVida());
     }
+
 
     @Test
     void aplicarEfectoEstadoEnvenenado(){

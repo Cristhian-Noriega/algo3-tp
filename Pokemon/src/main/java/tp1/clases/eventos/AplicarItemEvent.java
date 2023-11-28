@@ -10,7 +10,7 @@ public class AplicarItemEvent extends Event {
     private Pokemon pokemon;
     private Item item;
 
-    public static EventType<PokemonSeleccionadoEvent> APLICAR_ITEM_EVENT = new EventType<>("Aplicar Item Event");
+    public static EventType<AplicarItemEvent> APLICAR_ITEM_EVENT = new EventType<>("Aplicar Item Event");
 
     //meli: no deberia ser aplicar item event acá arriba?
 

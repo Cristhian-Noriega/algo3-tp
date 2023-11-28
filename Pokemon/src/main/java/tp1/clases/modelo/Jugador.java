@@ -7,6 +7,7 @@ import tp1.clases.errores.Error;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Jugador implements Serializable {
@@ -42,13 +43,14 @@ public class Jugador implements Serializable {
         return nombre;
     }
 
+
     public Optional<Error> seleccionarPokemon(Pokemon nuevoPokemon){
         //se podria agregar un listaPokemon.contains(nuevoPokemon) quiazs?
 
         if (nuevoPokemon.estaMuerto()){
             return Optional.of(new ErrorPokemonMuerto(nuevoPokemon.getNombre()));
         }
-        if (nuevoPokemon == pokemonActual){
+        if (nuevoPokemon == pokemonActual) {
             return Optional.of(new ErrorCambiarPokemonEnBatalla(pokemonActual.getNombre()));
         }
         this.pokemonActual = nuevoPokemon;
@@ -85,15 +87,17 @@ public class Jugador implements Serializable {
         return this.pokemonActual.getHabilidades();
     }
 
-    public Map<String, Long> getMapCantidadItems(){
+    public Map<String, Long> getMapCantidadItems() {
         return this.mapCantidadItems;
     }
 
-    public void eliminarItem(Item item){
-        this.mapCantidadItems.put(item.getNombre(), this.mapCantidadItems.get(item.getNombre())-1);
-    }
+    public void eliminarItem(Item item) {
+        Long cantidad = this.mapCantidadItems.get(item.getNombre());
+        if (cantidad != null && cantidad > 0) {
+            this.mapCantidadItems.put(item.getNombre(), cantidad - 1);
+    }}
 
-    public Map<String, Object> getDatos(){
+    public Map<String, Object> getDatos() {
         Map<String, Object> datosPokemonActual = new HashMap<>();
         datosPokemonActual.put("Pokemon", this.pokemonActual.getNombre());
         datosPokemonActual.put("Vida Actual", this.pokemonActual.getVida());
@@ -112,9 +116,11 @@ public class Jugador implements Serializable {
                 ));
 
     }
+
     private List<Item> organizarItems(List<Item> items) {
-        return items.stream().
-                distinct().
-                toList();
+        Set<String> nombres = new HashSet<>();
+        return items.stream()
+                .filter(item -> nombres.add(item.getNombre()))
+                .collect(Collectors.toList());
     }
 }

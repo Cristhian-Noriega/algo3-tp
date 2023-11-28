@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Ellipse?>
 
-<Pane fx:id="campoPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCampo">
+<Pane fx:id="campoPane" prefHeight="432.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
     <children>
-        <ImageView fx:id="fondoClima" fitHeight="300.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
+        <ImageView fx:id="fondoClima" fitHeight="400.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+        <VBox layoutX="-4.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
             <children>
-                <HBox prefHeight="150.0" prefWidth="200.0">
+                <HBox prefHeight="260.0" prefWidth="800.0">
                     <children>
-                        <fx:include fx:id="cartelPokemonRival" source="../cartel-pokemon.fxml" />
-                        <Pane prefHeight="200.0" prefWidth="200.0">
+                        <VBox prefHeight="200.0" prefWidth="320.0">
                             <children>
-                                <Ellipse fill="#46975a" layoutX="62.0" layoutY="136.0" radiusX="62.0" radiusY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                                <ImageView fx:id="imagenRival" fitHeight="123.0" fitWidth="123.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                                <fx:include fx:id="cartelPokemonRival" source="cartel-pokemon.fxml" />
+                                <ImageView fx:id="pokebolasJugadorRival" fitHeight="50.0" fitWidth="314.0" />
+                            </children>
+                        </VBox>
+                        <Pane prefHeight="184.0" prefWidth="231.0">
+                            <children>
+                                <Ellipse fill="#46975a" layoutX="110.0" layoutY="185.0" radiusX="113.0" radiusY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                <ImageView fx:id="imagenRival" fitHeight="193.0" fitWidth="218.0" layoutX="2.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="efectoRival" fitHeight="198.0" fitWidth="227.0" layoutX="-4.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </Pane>
                         <fx:include fx:id="cartelClima" source="cartel-clima.fxml" />
@@ -27,15 +34,21 @@
                         <Insets left="10.0" />
                     </padding>
                 </HBox>
-                <HBox fx:id="hboxCartelesActual" prefHeight="150.0" prefWidth="200.0">
+                <HBox fx:id="hboxCartelesActual" prefHeight="237.0" prefWidth="800.0">
                     <children>
-                        <Pane prefHeight="150.0" prefWidth="358.0">
+                        <Pane prefHeight="270.0" prefWidth="624.0">
                             <children>
-                        <Ellipse fill="#46975a" layoutX="179.0" layoutY="121.0" radiusX="91.0" radiusY="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                                <ImageView fx:id="imagenActual" fitHeight="135.0" fitWidth="135.0" layoutX="112.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+                                <Ellipse fill="#46975a" layoutX="248.0" layoutY="182.0" radiusX="142.0" radiusY="8.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                <ImageView fx:id="imagenActual" fitHeight="179.0" fitWidth="267.0" layoutX="119.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="efectoActual" fitHeight="169.0" fitWidth="272.0" layoutX="117.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </Pane>
-                        <fx:include fx:id="cartelPokemonActual" source="../cartel-pokemon.fxml" />
+                        <VBox prefHeight="270.0" prefWidth="414.0">
+                            <children>
+                                <ImageView fx:id="pokebolasJugadorActual" fitHeight="50.0" fitWidth="295.0" />
+                                <fx:include fx:id="cartelPokemonActual" source="cartel-pokemon.fxml" />
+                            </children>
+                        </VBox>
                     </children>
                 </HBox>
             </children>

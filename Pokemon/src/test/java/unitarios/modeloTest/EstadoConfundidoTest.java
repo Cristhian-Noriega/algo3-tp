@@ -60,7 +60,7 @@ public class EstadoConfundidoTest {
         Habilidad hab = mock(Habilidad.class);
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(1.0 / 3.0)).thenReturn(true);
-
+            Habilidad habilidad = mock(HabilidadAtaque.class);
             boolean resultado = estadoConfundido.usarHabilidad(hab, pokeConfundido);
 
             double danio =  0.15 * 100;
@@ -74,6 +74,7 @@ public class EstadoConfundidoTest {
     public void usarHabilidadNoAutolesionaTest(){
         try (MockedStatic<Random> mockedRandom = mockStatic(Random.class)) {
             mockedRandom.when(() -> Random.probabilidad(1.0 / 3.0)).thenReturn(false);
+
             Habilidad hab = mock(Habilidad.class);
 
             boolean resultado = estadoConfundido.usarHabilidad(hab, pokeConfundido);
