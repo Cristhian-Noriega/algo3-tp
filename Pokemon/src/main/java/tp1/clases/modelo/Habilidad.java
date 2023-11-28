@@ -1,13 +1,18 @@
 package tp1.clases.modelo;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Habilidad{
+public abstract class Habilidad implements Serializable, Cloneable{
     final protected String nombre;
+
+    final protected Integer id;
 
     protected Integer usos;
 
@@ -23,12 +28,22 @@ public abstract class Habilidad{
 
     protected Pokemon pokemonRival;
 
-    public Habilidad(String nombre, Integer usos, Tipo tipo, String info, Categoria categoria) {
+    protected InfoHabilidad infoHabilidad;
+    @JsonCreator
+    public Habilidad(@JsonProperty("nombre") String nombre, @JsonProperty("usos") Integer usos, @JsonProperty("tipo") Tipo tipo,
+                     @JsonProperty("info") String info, @JsonProperty("categoria") Categoria categoria,
+                     @JsonProperty("id") Integer id) {
         this.nombre = nombre;
         this.usos = usos;
         this.tipo = tipo;
         this.info = info;
         this.categoria = categoria;
+        this.id = id;
+        this.infoHabilidad = new InfoHabilidad(categoria);
+    }
+
+    public InfoHabilidad getInfoHabilidad() {
+        return infoHabilidad;
     }
 
     public String getNombre(){
@@ -49,6 +64,9 @@ public abstract class Habilidad{
 
     public Categoria getCategoria() {
         return this.categoria;
+    }
+    public Integer getId(){
+        return this.id;
     }
 
     public Clima getClimaActual() {
@@ -94,30 +112,10 @@ public abstract class Habilidad{
         this.setPokemonAtacante(pokemonesActuales.get(0));
         this.setPokemonRival(pokemonesActuales.get(1));
     }
+
+
+    @Override
+    public Habilidad clone() throws CloneNotSupportedException {
+        return (Habilidad) super.clone();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

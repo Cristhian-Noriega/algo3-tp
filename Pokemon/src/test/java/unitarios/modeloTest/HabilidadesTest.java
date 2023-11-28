@@ -15,13 +15,13 @@ import static org.mockito.Mockito.when;
 @DisplayName("Pruebo unicamente la funcionalidad de las habilidades, la compatibilidades entre pokemones se prueba en BatallaTest")
 public class HabilidadesTest {
 
-    Pokemon rataDeLaboratorio = new Pokemon("Rata de laboratorio", 20, Tipo.AGUA, List.of(), 100, 193.0, 184.0, 130.0);
-    Pokemon conejilloDeIndias = new Pokemon("Conejillo de Indias", 18, Tipo.TIERRA, List.of(), 98, 139.0, 180.0, 130.0);
+    Pokemon rataDeLaboratorio = new Pokemon("Rata de laboratorio", 20, Tipo.AGUA, List.of(), 100, 193.0, 184.0, 130.0, 1);
+    Pokemon conejilloDeIndias = new Pokemon("Conejillo de Indias", 18, Tipo.TIERRA, List.of(), 98, 139.0, 180.0, 130.0, 2);
     AdministradorDeClima administradorDeClima = mock(AdministradorDeClima.class);
     @DisplayName("uso habilidad de ataque para hacerle daño al pokemon enemigo")
     @Test
     void vidaDeEnemigoDisminuyeTest(){
-        Habilidad danio = new HabilidadAtaque("Arañazo", 1, Tipo.NORMAL, 100, "Hace daño al pokemon contrario");
+        Habilidad danio = new HabilidadAtaque("Arañazo", 1, Tipo.NORMAL, 100, "Hace daño al pokemon contrario", 1);
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         danio.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
@@ -32,7 +32,7 @@ public class HabilidadesTest {
     @DisplayName("uso habilidad de estadistica de ataque para aumentar el ataque del pokemon")
     @Test
     void pokeAumentaSuAtaqueTest(){
-        Habilidad aumentaAtaque = new HabilidadEstadistica("Acua aro", 1, Tipo.AGUA, "Aumenta el ataque del pokemon", Estadisticas.ATAQUE, false);
+        Habilidad aumentaAtaque = new HabilidadEstadistica("Acua aro", 1, Tipo.AGUA, "Aumenta el ataque del pokemon", Estadisticas.ATAQUE, false,1);
         double ataqueInicial = rataDeLaboratorio.getAtaque();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         aumentaAtaque.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
@@ -45,7 +45,7 @@ public class HabilidadesTest {
     @Test
     void ataqueEnemigoDisminuyeTest(){
         double ataqueInicial = conejilloDeIndias.getAtaque();
-        Habilidad disminuyeAtaque = new HabilidadEstadistica("Danza Pluma", 1, Tipo.VOLADOR, "Disminuye el ataque del enemigo", Estadisticas.ATAQUE, true);
+        Habilidad disminuyeAtaque = new HabilidadEstadistica("Danza Pluma", 1, Tipo.VOLADOR, "Disminuye el ataque del enemigo", Estadisticas.ATAQUE, true, 1);
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
         disminuyeAtaque.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
@@ -59,7 +59,7 @@ public class HabilidadesTest {
         //inicializo bajando la vida del poke para poder hacer la prueba
         rataDeLaboratorio.modificarVida(-40);
         double vidaInicial = rataDeLaboratorio.getVida();
-        Habilidad aumentaVida = new HabilidadEstadistica("Campo de hierbas", 1, Tipo.PLANTA, "Recupera la vida de los Pokemon", Estadisticas.VIDA,false);
+        Habilidad aumentaVida = new HabilidadEstadistica("Campo de hierbas", 1, Tipo.PLANTA, "Recupera la vida de los Pokemon", Estadisticas.VIDA,false, 1);
         aumentaVida.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = aumentaVida.usar();
@@ -71,7 +71,7 @@ public class HabilidadesTest {
     void pokeAumentaSuDefensaTest(){
         double defensaInicial = rataDeLaboratorio.getDefensa();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
-        Habilidad aumentaDefensa = new HabilidadEstadistica("Amnesia", 1, Tipo.PSIQUICO, "Aumenta sus defensas", Estadisticas.DEFENSA, false);
+        Habilidad aumentaDefensa = new HabilidadEstadistica("Amnesia", 1, Tipo.PSIQUICO, "Aumenta sus defensas", Estadisticas.DEFENSA, false, 1);
         aumentaDefensa.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = aumentaDefensa.usar();
@@ -83,7 +83,7 @@ public class HabilidadesTest {
     void defensaEnemigoDisminuyeTest(){
         double defensaInicial = conejilloDeIndias.getDefensa();
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
-        Habilidad disminuyeDefensa = new HabilidadEstadistica("Rabia", 1, Tipo.FANTASMA, "Debilita la defensa del objetivo", Estadisticas.DEFENSA, true);
+        Habilidad disminuyeDefensa = new HabilidadEstadistica("Rabia", 1, Tipo.FANTASMA, "Debilita la defensa del objetivo", Estadisticas.DEFENSA, true, 1);
         disminuyeDefensa.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = disminuyeDefensa.usar();
@@ -94,7 +94,7 @@ public class HabilidadesTest {
     @Test
     void duermoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
-        Habilidad dormir = new HabilidadEstado("Somnifero", 1, Tipo.PLANTA, "Duerme al objetivo", Estado.DORMIDO);
+        Habilidad dormir = new HabilidadEstado("Somnifero", 1, Tipo.PLANTA, "Duerme al objetivo", Estado.DORMIDO, 1);
         dormir.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = dormir.usar();
@@ -106,7 +106,7 @@ public class HabilidadesTest {
     @Test
     void paralizoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
-        Habilidad paralizar = new HabilidadEstado("Chispa", 1, Tipo.ELECTRICO, "Paraliza al enemigo", Estado.PARALIZADO);
+        Habilidad paralizar = new HabilidadEstado("Chispa", 1, Tipo.ELECTRICO, "Paraliza al enemigo", Estado.PARALIZADO, 1);
         paralizar.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = paralizar.usar();
@@ -117,7 +117,7 @@ public class HabilidadesTest {
     @Test
     void envenenoEnemigoTest(){
         when(administradorDeClima.getClimaActual()).thenReturn(Clima.SIN_CLIMA);
-        Habilidad envenenar = new HabilidadEstado("Hilo venenoso", 1, Tipo.VENENO, "Ataca al enemigo con hilillos venenosos", Estado.ENVENENADO);
+        Habilidad envenenar = new HabilidadEstado("Hilo venenoso", 1, Tipo.VENENO, "Ataca al enemigo con hilillos venenosos", Estado.ENVENENADO, 1);
         envenenar.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = envenenar.usar();
@@ -128,13 +128,13 @@ public class HabilidadesTest {
     void cambioDeClimaTest(){
         AdministradorDeClima administradorDeClima = new AdministradorDeClima();
         administradorDeClima.cambiarClima(Clima.SIN_CLIMA);
-        Habilidad arena = new HabilidadClima("tormenta de arena", 1, Tipo.TIERRA, "", Clima.TORMENTA_DE_ARENA);
+        Habilidad arena = new HabilidadClima("tormenta de arena", 1, Tipo.TIERRA, "", Clima.TORMENTA_DE_ARENA, 1);
         arena.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> error = arena.usar();
         Assertions.assertEquals(administradorDeClima.getClimaActual(), Clima.TORMENTA_DE_ARENA);
 
-        Habilidad sacarClima = new HabilidadClima("sin clima", 1, Tipo.NORMAL, "", Clima.SIN_CLIMA);
+        Habilidad sacarClima = new HabilidadClima("sin clima", 1, Tipo.NORMAL, "", Clima.SIN_CLIMA, 2);
         sacarClima.setAmbiente(administradorDeClima, List.of(rataDeLaboratorio, conejilloDeIndias));
 
         Optional<Error> err = sacarClima.usar();

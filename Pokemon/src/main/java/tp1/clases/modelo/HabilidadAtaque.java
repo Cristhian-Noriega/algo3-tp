@@ -6,9 +6,10 @@ import java.util.Optional;
 
 public class HabilidadAtaque extends Habilidad {
     final protected Integer poder;
-    public HabilidadAtaque(String nombre, Integer usos, Tipo tipo, Integer poder, String info) {
-        super(nombre, usos, tipo, info, Categoria.ATAQUE);
+    public HabilidadAtaque(String nombre, Integer usos, Tipo tipo, Integer poder, String info, Integer id) {
+        super(nombre, usos, tipo, info, Categoria.ATAQUE, id);
         this.poder = poder;
+        this.infoHabilidad.setJugadorAfectado(JugadorEnum.RIVAL);
     }
     private double calcularDanioAtaque() {
         double nivelAtacante = this.pokemonAtacante.getNivel();
@@ -19,7 +20,9 @@ public class HabilidadAtaque extends Habilidad {
         double random = (double) ((Math.random()*(Constantes.maxRandom+1-Constantes.minRandom))+Constantes.minRandom)/Constantes.maxRandom;
         double critico = Random.probabilidad(Constantes.probabilidadDeCritico) ? 2: 1;
         double danio = (double) ((((2 * nivelAtacante * this.poder * (ataqueAtacante / defensaDefensor)) / 5 + 2)   / 50 ) * tipoAtaqueEfectividad * mismoTipo * random * critico);
+        this.infoHabilidad.setDanio(danio);
         if (this.getClimaActual().favorece(this.pokemonAtacante.getTipo())) {
+            this.infoHabilidad.setBeneficiadoPorClima(true);
             System.out.println(this.pokemonAtacante.getNombre() + " ha mejorado su ataque gracias al clima actual.");
             return danio + (danio * Constantes.modificacionPorClima);
         }

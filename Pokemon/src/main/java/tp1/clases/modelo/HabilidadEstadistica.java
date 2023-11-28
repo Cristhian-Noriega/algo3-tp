@@ -9,11 +9,12 @@ public class HabilidadEstadistica extends Habilidad {
     final private boolean contraRival;
 
     final private double porcentaje;
-    public HabilidadEstadistica(String nombre, Integer usos, Tipo tipo, String info, Estadisticas estadistica, boolean contraRival) {
-        super(nombre, usos, tipo, info, Categoria.ESTADISTICA);
+    public HabilidadEstadistica(String nombre, Integer usos, Tipo tipo, String info, Estadisticas estadistica, boolean contraRival, Integer id) {
+        super(nombre, usos, tipo, info, Categoria.ESTADISTICA, id);
         this.estadistica = estadistica;
         this.contraRival = contraRival;
         this.porcentaje = Constantes.porcentajeDeModificacion;
+        this.infoHabilidad.setEstadisticaModificada(estadistica);
     }
 
     public boolean isContraRival() {
@@ -26,9 +27,11 @@ public class HabilidadEstadistica extends Habilidad {
         if (this.isContraRival()) {
             this.modificarEstadistica(this.pokemonRival, (-1));
             System.out.println(this.pokemonRival.getNombre() + " ha disminuido su " + this.estadistica.toString().toLowerCase());
+            this.infoHabilidad.setJugadorAfectado(JugadorEnum.RIVAL);
         } else {
             this.modificarEstadistica(this.pokemonAtacante, 1);
-            System.out.println(this.pokemonAtacante.getNombre() + " ha aunmentdo su " + this.estadistica.toString().toLowerCase());
+            this.infoHabilidad.setJugadorAfectado(JugadorEnum.ACTUAL);
+            System.out.println(this.pokemonAtacante.getNombre() + " ha aumentdo su " + this.estadistica.toString().toLowerCase());
         }
 
         this.restarUso();
