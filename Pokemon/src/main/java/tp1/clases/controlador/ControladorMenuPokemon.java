@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;

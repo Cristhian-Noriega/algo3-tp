@@ -19,7 +19,6 @@ import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
-
 import java.util.List;
 
 public class ControladorCampo implements Subscriptor {
@@ -38,6 +37,7 @@ public class ControladorCampo implements Subscriptor {
     @FXML public ImageView efectoRival;
     @FXML public ImageView efectoActual;
     @FXML public ImageView pokebolasJugadorActual;
+    @FXML public Pane campoPane;
 
     private Batalla batalla;
 
@@ -46,6 +46,7 @@ public class ControladorCampo implements Subscriptor {
     public void inicializar(Batalla batalla) {
         this.batalla = batalla;
         this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
+
         this.cartelPokemonActualController.inicializar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);
         this.cartelPokemonRivalController.inicializar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
         this.cartelClimaController.inicializar(this.batalla.getClima().name());
@@ -70,6 +71,12 @@ public class ControladorCampo implements Subscriptor {
         this.setFondoClimaProperty(this.batalla.getClima().name());
     }
 
+
+    public void setFondoClimaProperty(String clima) {
+        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("clima/" + clima + ".png"));
+        this.fondoClimaProperty.set(imagen);
+    }
+
     public void setPokebolas(JugadorEnum jugador) {
         List<Pokemon> pokemones = this.batalla.getJugadores().get(jugador.ordinal()).getListaPokemones();
         int cant = 0;
@@ -84,11 +91,6 @@ public class ControladorCampo implements Subscriptor {
         } else {
             this.pokebolasRivalProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
         }
-    }
-
-    public void setFondoClimaProperty(String clima) {
-        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes("clima/" + clima + ".png"));
-        this.fondoClimaProperty.set(imagen);
     }
 
     public void setImagenRivalProperty(String pokemon) {

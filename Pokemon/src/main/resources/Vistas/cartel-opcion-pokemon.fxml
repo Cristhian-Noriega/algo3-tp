@@ -13,10 +13,10 @@
 
 <Pane fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="108.0" fitWidth="420.0">
-        <Image url="@Imagenes/fondoMenuPokemonAzul.jpg" />
+        <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
     </ImageView>
     <ImageView fitHeight="94.0" fitWidth="334.0" layoutX="79.0" layoutY="6.0">
-        <Image url="@Imagenes/fondoOpcionPokemonVerde.jpeg" />
+        <Image url="@../Imagenes/fondoOpcionPokemonVerde.jpeg" />
     </ImageView>
     <HBox fx:id="contenedorCajaPokemon" layoutX="73.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="100.0" prefWidth="343.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
         <StackPane prefHeight="94.0" prefWidth="178.0">

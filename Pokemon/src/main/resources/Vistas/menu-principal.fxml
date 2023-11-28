@@ -28,7 +28,7 @@
                         <HBox prefHeight="160.0" prefWidth="480.0">
                             <StackPane prefHeight="160.0" prefWidth="480.0">
                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="150.0" stroke="#5b615d9e" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" width="470.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="150.0" stroke="#5b615d9e" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="7.0" width="470.0" />
                                     <Label fx:id="dialogo" prefHeight="89.0" prefWidth="458.0" text="Qué accion querés realizar?">
                                         <font>
                                             <Font name="Pokemon Fire Red Regular" size="49.0" />

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-habilidades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-habilidades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-opcion-pokemon.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cartel-pokemon.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+    &quot;associatedIndex&quot;: 0
+    }</component>
+  <component name="ProjectId" id="2YUVoMGrh9qNsmem4hfBrM8RNl0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Rebasing chequeosPokemon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/Vistas" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Imagenes" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/.idea" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainJavaFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tp1.clases.Main" />
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tp1.clases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainJavaFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tp1.clases.MainJavaFX" />
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tp1.clases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BatallaIntegracionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integracion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integracion" />
+      <option name="MAIN_CLASS_NAME" value="integracion.BatallaIntegracionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EstadoConfundidoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.EstadoConfundidoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EstadoDormidoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.EstadoDormidoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainJavaFX" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BatallaIntegracionTest" />
+        <item itemvalue="JUnit.EstadoDormidoTest" />
+        <item itemvalue="JUnit.EstadoConfundidoTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="" />
+      <created>1700580324711</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700580324711</updated>
+      <workItem from="1700580329538" duration="337000" />
+      <workItem from="1700580706254" duration="109000" />
+      <workItem from="1700580934402" duration="1317000" />
+      <workItem from="1700600669020" duration="5305000" />
+      <workItem from="1700606309826" duration="679000" />
+      <workItem from="1700607220780" duration="306000" />
+      <workItem from="1700615408144" duration="6801000" />
+      <workItem from="1700622476258" duration="1334000" />
+      <workItem from="1700623874293" duration="402000" />
+      <workItem from="1700875091756" duration="3195000" />
+      <workItem from="1700916172040" duration="11864000" />
+      <workItem from="1700937912416" duration="2689000" />
+      <workItem from="1700952949205" duration="11796000" />
+      <workItem from="1700966564316" duration="631000" />
+      <workItem from="1701031286040" duration="22217000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

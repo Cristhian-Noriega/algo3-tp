@@ -36,6 +36,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             ControladorPantallaInicial controladorInicial = (ControladorPantallaInicial) this.controladores.get(Escena.PANTALLA_INICIAL.ordinal());
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
+
             this.stage.show();
         } catch (IOException e) {
             System.out.println("no se pudieron cargar las escenas");
