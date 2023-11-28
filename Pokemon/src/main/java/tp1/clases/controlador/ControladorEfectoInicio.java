@@ -4,11 +4,14 @@ import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
+
 import javafx.util.Duration;
+import tp1.clases.eventos.CambioDeEscenaEvent;
+import tp1.clases.modelo.Batalla;
 
-public class ControladorEfectoInicio {
+public class ControladorEfectoInicio{
 
+    public ImageView fondo;
     @FXML
     private ImageView ash;
     @FXML
@@ -20,9 +23,9 @@ public class ControladorEfectoInicio {
     @FXML
     private ImageView bolasBrook;
 
+    private int clicks = 0;
 
-    void inicializar(){
-
+    public void inicializar(){
         this.ash.setTranslateX(-200);
         this.brook.setTranslateX(200);
         this.bolasAsh.setTranslateX(200);
@@ -48,7 +51,7 @@ public class ControladorEfectoInicio {
 
         for (int i = 0; i < texto.getText().length(); i++) {
             KeyFrame keyFrame = new KeyFrame(
-                    Duration.seconds(0.1*i),
+                    Duration.seconds(0.06*i),
                     new KeyValue(texto.textProperty(), texto.getText().substring(0, i + 1))
             );
             timeline.getKeyFrames().add(keyFrame);
@@ -60,31 +63,34 @@ public class ControladorEfectoInicio {
         ));
 
         timeline.play();
-
     }
 
     public void pasarPantalla(){
-        this.ash.setTranslateX(0);
-        this.brook.setTranslateX(0);
-        this.bolasAsh.setTranslateX(0);
-        this.bolasBrook.setTranslateX(0);
+        if (this.clicks == 3) {
+            this.texto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
 
-        TranslateTransition transitionAsh = new TranslateTransition(Duration.seconds(1), ash);
-        TranslateTransition transitionBrook = new TranslateTransition(Duration.seconds(1), brook);
-        TranslateTransition transitionBolasAsh = new TranslateTransition(Duration.seconds(1), bolasAsh);
-        TranslateTransition transitionBolasBrook = new TranslateTransition(Duration.seconds(1), bolasBrook);
+        } else{
+            this.ash.setTranslateX(0);
+            this.brook.setTranslateX(0);
+            this.bolasAsh.setTranslateX(0);
+            this.bolasBrook.setTranslateX(0);
 
-        transitionAsh.setToX(-300);
-        transitionBrook.setToX(300);
-        transitionBolasAsh.setToX(300);
-        transitionBolasBrook.setToX(-300);
+            TranslateTransition transitionAsh = new TranslateTransition(Duration.seconds(1), ash);
+            TranslateTransition transitionBrook = new TranslateTransition(Duration.seconds(1), brook);
+            TranslateTransition transitionBolasAsh = new TranslateTransition(Duration.seconds(1), bolasAsh);
+            TranslateTransition transitionBolasBrook = new TranslateTransition(Duration.seconds(1), bolasBrook);
 
-        transitionAsh.play();
-        transitionBrook.play();
-        transitionBolasAsh.play();
-        transitionBolasBrook.play();
+            transitionAsh.setToX(-400);
+            transitionBrook.setToX(400);
+            transitionBolasAsh.setToX(400);
+            transitionBolasBrook.setToX(-400);
 
-        //cambiar la escena
+            transitionAsh.play();
+            transitionBrook.play();
+            transitionBolasAsh.play();
+            transitionBolasBrook.play();
+            this.clicks++;
+        }
     }
 
 }

@@ -7,31 +7,33 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="106.0" prefWidth="621.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorConfirmacionItem">
+<Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="796.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;" translateX="1.0" translateY="1.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorConfirmacionItem">
    <children>
-      <Pane layoutX="14.0" layoutY="11.0" prefHeight="81.0" prefWidth="116.0" />
-      <Pane layoutX="26.0" layoutY="10.0" prefHeight="74.0" prefWidth="84.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #6B6B6B; -fx-border-radius: 3%;">
+      <Pane layoutX="14.0" layoutY="11.0" prefHeight="93.0" prefWidth="115.0">
          <children>
-            <ImageView fx:id="imagenItemSeleccionado" fitHeight="60.0" fitWidth="65.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </Pane>
-      <Pane layoutX="130.0" layoutY="10.0" prefHeight="74.0" prefWidth="322.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #6B6B6B; -fx-border-radius: 1%;">
+            <Pane prefHeight="93.0" prefWidth="107.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #615d9e; -fx-border-radius: 3%;">
+               <children>
+                  <ImageView fx:id="imagenItemSeleccionado" fitHeight="73.0" fitWidth="86.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane layoutX="130.0" layoutY="10.0" prefHeight="93.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #6B6B6B; -fx-border-radius: 1%;">
          <children>
-            <Label fx:id="itemSeleccionado" layoutX="9.0" layoutY="7.0" prefHeight="60.0" prefWidth="304.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
+            <Label fx:id="itemSeleccionado" layoutX="9.0" layoutY="7.0" prefHeight="79.0" prefWidth="498.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
                <font>
                   <Font name="Pokemon Fire Red Regular" size="32.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <VBox layoutX="472.0" layoutY="15.0" prefHeight="74.0" prefWidth="122.0">
+      <VBox layoutX="659.0" layoutY="19.0" prefHeight="79.0" prefWidth="123.0">
          <children>
-            <Button fx:id="botonUsar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedUsar" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Usar">
+            <Button fx:id="botonUsar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedUsar" prefHeight="44.0" prefWidth="129.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Usar">
                <font>
                   <Font name="Pokemon Fire Red Regular" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="botonCancelar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedCancelar" prefHeight="35.0" prefWidth="121.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Cancelar">
+            <Button fx:id="botonCancelar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedCancelar" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Cancelar">
                <font>
                   <Font name="Pokemon Fire Red Regular" size="18.0" />
                </font>

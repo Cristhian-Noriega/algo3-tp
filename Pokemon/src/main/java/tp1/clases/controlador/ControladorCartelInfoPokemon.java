@@ -89,6 +89,7 @@ public class ControladorCartelInfoPokemon {
         for (Node circle: this.circulos.getChildren()) {
             circle.setOpacity(0);
             this.imagenesEstadosProperty.get(j).set(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
+            j++;
         }
 
         int i = 0;
@@ -96,6 +97,7 @@ public class ControladorCartelInfoPokemon {
             if (estado == Estado.NORMAL) {
                 break;
             }
+
             this.circulos.getChildren().get(i).setOpacity(100);
             this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsolutaImagenes("estados/" + estado.name() + ".png")));
             i++;

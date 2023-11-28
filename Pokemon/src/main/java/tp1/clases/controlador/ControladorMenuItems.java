@@ -59,6 +59,7 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
             this.botonesItems.getChildren().add(boton);
             boton.setMaxWidth(Double.MAX_VALUE);
             boton.setMaxHeight(Double.MAX_VALUE);
+            boton.setDisable(cantidadItems.get(item.getNombre()) == 0);
             boton.setOnMouseEntered(mouseEvent -> {setInfoItem(item.getNombre(), item.getInfo());});
             boton.setOnMouseClicked(mouseEvent -> {cambiarMenuItemsConfirmacion(mouseEvent, item);});
         }
@@ -137,3 +138,6 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
     }
 }
 
+
+
+//            boton.setDisable(cantidadItems.get(item.getNombre()) == 0);

@@ -92,11 +92,10 @@ public class Jugador implements Serializable {
     }
 
     public void eliminarItem(Item item) {
-        Long cantidad = this.mapCantidadItems.get(item);
+        Long cantidad = this.mapCantidadItems.get(item.getNombre());
         if (cantidad != null && cantidad > 0) {
             this.mapCantidadItems.put(item.getNombre(), cantidad - 1);
-        }
-    }
+    }}
 
     public Map<String, Object> getDatos() {
         Map<String, Object> datosPokemonActual = new HashMap<>();

@@ -3,6 +3,7 @@ package tp1.clases.eventos;
 import javafx.event.Event;
 import javafx.event.EventType;
 import tp1.clases.modelo.Habilidad;
+import tp1.clases.modelo.Item;
 
 public class HabilidadSeleccionadaEvent extends Event {
     private Habilidad habilidad;
@@ -15,4 +16,5 @@ public class HabilidadSeleccionadaEvent extends Event {
     public Habilidad getHabilidad() {
         return habilidad;
     }
+
 }
