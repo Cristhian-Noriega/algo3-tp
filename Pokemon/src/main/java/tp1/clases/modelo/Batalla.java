@@ -12,6 +12,7 @@ public class Batalla {
     private final ArrayList<Jugador> rendidos;
     private final AdministradorDeTurnos administradorTurnos;
     private final AdministradorDeClima administradorDeClima;
+    private InfoTurno infoTurno;
 
     private final AdministradorDeEstadosv2 administradorDeEstadosv2;
 
@@ -21,6 +22,7 @@ public class Batalla {
         this.administradorDeClima = new AdministradorDeClima();
         this.administradorDeEstadosv2 = new AdministradorDeEstadosv2(this);
         this.rendidos = new ArrayList<Jugador>();
+        this.infoTurno = new InfoTurno();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -35,10 +37,15 @@ public class Batalla {
     }
 
     public void cambiarTurno() {
-        this.administradorDeClima.afectarJugadores(this.getJugadores());
+        this.infoTurno.resetearInfo();
+        this.administradorDeClima.afectarJugadores(this.getJugadores(), this.infoTurno);
         this.administradorTurnos.siguienteTurno();
         this.administradorDeClima.ActualizarTurno();
-        this.administradorDeEstadosv2.aplicarEfectoEstado();
+        this.administradorDeEstadosv2.aplicarEfectoEstado(this.infoTurno);
+    }
+
+    public InfoTurno getInfoTurno() {
+        return this.infoTurno;
     }
 
     public Jugador getJugadorActual() {

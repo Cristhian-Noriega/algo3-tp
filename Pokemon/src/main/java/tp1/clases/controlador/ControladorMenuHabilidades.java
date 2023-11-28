@@ -35,7 +35,7 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
     }
 
     public void inicializar(Batalla batalla) {
-        System.out.println("batalla en habilidades " + batalla);
+       // System.out.println("batalla en habilidades " + batalla);
         this.batalla = batalla;
         batalla.getAdministradorTurnos().agregarSubscriptor(this);
         this.pokemones.add(batalla.getJugadorActual().getPokemonActual());
@@ -54,7 +54,7 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
     public void setHabilidades(List<Habilidad> habilidades) {
         int i = 0;
         for (Habilidad habilidad: habilidades) {
-            System.out.println(habilidad.getNombre());
+            //System.out.println(habilidad.getNombre());
             Button boton = (Button) this.botonesHabilidades.getChildren().get(i);
             boton.setText(habilidad.getNombre());
 

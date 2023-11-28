@@ -1,9 +1,6 @@
 package tp1.clases.controlador;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.RotateTransition;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
@@ -19,6 +16,7 @@ import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
+import javafx.scene.shape.Line;
 
 import java.util.List;
 
@@ -138,7 +136,6 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarItem(Pokemon pokemon) {
-        System.out.println(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
         ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
 
         Light.Distant light = new Light.Distant();
@@ -151,6 +148,34 @@ public class ControladorCampo implements Subscriptor {
         blend.setTopInput(lighting);
 
         imagen.setEffect(blend);
+    }
+
+    public void aplicarDesaparicionPokemonMuerto(Pokemon pokemon){
+        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
+        Line path = new Line(imagen.getTranslateX(), imagen.getTranslateY(), imagen.getTranslateX(), 400);
+
+        PathTransition pathTransition = new PathTransition();
+        pathTransition.setNode(imagen);
+        pathTransition.setPath(path);
+        pathTransition.setCycleCount(1);
+        pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
+        pathTransition.setDuration(Duration.seconds(2.0));
+
+        pathTransition.play();
+    }
+
+    public void aplicarAparicionPokemonNuevo(Pokemon pokemon){
+        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
+        Line path = new Line(imagen.getTranslateX(), 400, imagen.getTranslateX(), imagen.getTranslateY());
+
+        PathTransition pathTransition = new PathTransition();
+        pathTransition.setNode(imagen);
+        pathTransition.setPath(path);
+        pathTransition.setCycleCount(1);
+        pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
+        pathTransition.setDuration(Duration.seconds(2.0));
+
+        pathTransition.play();
     }
 
     @Override
