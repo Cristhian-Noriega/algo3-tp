@@ -16,8 +16,8 @@
    <right>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="443.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="444.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@Style/botonesItems.css" />
-            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" stylesheets="@Style/botonConfirmacion.css" text="VOLVER" translateX="300.0">
+            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="444.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@Style/botonesItems.css" />
+            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" stylesheets="@Style/botonConfirmacion.css" text="VOLVER" translateX="297.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -32,11 +32,11 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="796.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px;" translateX="1.0" translateY="1.0">
+                  <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="796.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px; -fx-arc-height: 10; -fx-arc-width: 10;" translateX="1.0" translateY="1.0">
                   <children>
                      <Label fx:id="itemDescriptionLabel" layoutX="169.0" layoutY="14.0" prefHeight="86.0" prefWidth="518.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
                         <font>
-                           <Font name="Pokemon Fire Red Regular" size="32.0" />
+                           <Font name="Pokemon Fire Red Regular" size="40.0" />
                         </font>
                      </Label>
                         <Pane layoutX="14.0" layoutY="11.0" prefHeight="105.0" prefWidth="136.0">
@@ -71,7 +71,7 @@
       </Pane>
    </top>
    <left>
-      <ImageView fitHeight="240.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="258.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@Imagenes/bag.png" />
          </image>

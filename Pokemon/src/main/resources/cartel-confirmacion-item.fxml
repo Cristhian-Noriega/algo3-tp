@@ -26,7 +26,7 @@
             </Label>
          </children>
       </Pane>
-      <VBox layoutX="659.0" layoutY="19.0" prefHeight="79.0" prefWidth="123.0">
+      <VBox layoutX="659.0" layoutY="8.0" prefHeight="79.0" prefWidth="123.0">
          <children>
             <Button fx:id="botonUsar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedUsar" prefHeight="44.0" prefWidth="129.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="Usar">
                <font>

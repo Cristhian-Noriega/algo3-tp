@@ -1,9 +1,9 @@
 .button {
     -fx-font-family: "Pokemon Fire Red";
     -fx-font-weight: bold;
-    -fx-font-size: 20px;
-    -fx-background-color: #a8d0e6; /* Color celeste claro */
-    -fx-border-color: #80a0b0; /* Color del borde */
+    -fx-font-size: 30px;
+    -fx-background-color: #a8d0e6;
+    -fx-border-color: #80a0b0;
     -fx-border-width: 3px;
     -fx-border-radius: 5px;
     -fx-padding: 8px 16px;

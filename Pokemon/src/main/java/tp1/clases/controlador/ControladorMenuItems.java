@@ -94,6 +94,7 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         }
 
         borderPane.setBottom(itemInfoPane);
+        this.setBotonVolver();
     }
 
     public void setInfoItem(String nombreItem, String infoItem){

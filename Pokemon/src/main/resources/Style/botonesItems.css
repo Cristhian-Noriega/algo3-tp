@@ -6,8 +6,8 @@
 
 .button {
     -fx-font-family: "Pokemon Fire Red";
-    -fx-font-size: 23px;
-    -fx-padding: 5px 10px;
+    -fx-font-size: 30px;
+    -fx-padding: 10px 15px;
     -fx-background-color: #f5e1a4;
     -fx-text-fill: black;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);
