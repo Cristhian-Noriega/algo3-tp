@@ -26,10 +26,11 @@ public enum Clima {
         return this.tiposFavorecidos.contains(tipo);
     }
 
-    public void lastimarPorClima(Pokemon pokemon) {
+    public void lastimarPorClima(Pokemon pokemon, InfoTurno infoTurno) {
         if (this == Clima.HURACAN || this == Clima.TORMENTA_DE_ARENA || this == Clima.TORMENTA_DE_RAYOS) {
             if (!this.getTiposFavorecidos().contains(pokemon.getTipo())) {
                 pokemon.modificarVida((-1) * (pokemon.getVidaMax() * Constantes.disminucionPorClima));
+                infoTurno.agregarPokemonAfectado(pokemon);
             }
         }
     }

@@ -15,6 +15,7 @@ import tp1.clases.modelo.*;
 
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.LinkedList;
 import java.util.Optional;
 import java.util.Queue;
@@ -43,7 +44,7 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void inicializar(Batalla batalla) {
-        System.out.println("batalla en pantalla efecto " + batalla);
+        //System.out.println("batalla en pantalla efecto " + batalla);
         this.batalla = batalla;
         this.actualizarPokemones();
         this.campoController.inicializar(batalla);
@@ -79,10 +80,10 @@ public class ControladorPantallaEfecto implements Controlador {
         }
 
         String resultado = this.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(0).getNombre());
-        System.out.println(resultado);
         this.setTextoProperty(resultado);
 
         this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado());
+
         if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
             this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()));
         }
@@ -92,6 +93,44 @@ public class ControladorPantallaEfecto implements Controlador {
             cambiarMenuPrincipal(event, true);
         });
     }
+
+    public void mostrarPokemonMuerto(Pokemon pokeRival, InfoHabilidad infoHabilidad){
+        String resultado =  pokeRival.getNombre() + "ha muerto!";
+        this.setTextoProperty(resultado);
+
+        this.campoController.aplicarDesaparicionPokemonMuerto(pokeRival); // NO FUNCIONA
+
+        if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
+            this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()));
+        } // PONERLO EN OTRO LADO PARA REPETIR
+
+        this.pane.setOnMouseClicked(event -> {
+            cambiarPokemonMuerto();
+        });
+    }
+
+    public void mostrarEfectosClimaYEstados() {
+        InfoTurno infoTurno = this.batalla.getInfoTurno();
+
+        for (Pokemon pokemon: infoTurno.getPokemonesAfectadosPorClima()) {
+            this.setTextoProperty(pokemon + " fue afectado por el clima actual y su vida actual ha disminuido.");
+            this.campoController.actualizar();
+        }
+        
+        
+        for (Pokemon pokemon: infoTurno.getPokemonesEnvenenados()) {
+            this.setTextoProperty(pokemon + " perdió vida por estar envenenado.");
+            this.campoController.actualizar();
+        }
+
+
+        for (Map.Entry<Pokemon, Estado> entrada: infoTurno.getEstadosReseteados().entrySet()){
+            this.setTextoProperty(entrada.getKey().getNombre() + " perdió el estado " +  entrada.getValue().name().toLowerCase());
+            this.campoController.actualizar();
+        }
+
+    }
+
 
     private String mostrarResultado(InfoHabilidad infoHabilidad, String habilidad, String pokemonAtacante) {
         String resultado = pokemonAtacante + " ha usado la habilidad " + habilidad + ". ";
@@ -137,7 +176,7 @@ public class ControladorPantallaEfecto implements Controlador {
         this.setTextoProperty("antes del if");
         if (err.isEmpty()) {
             this.setTextoProperty("Cambiaste tu pokemon a " + this.pokemonSeleccionado.getNombre() + "!");
-            this.campoController.aplicarCambioPokemon();
+            //this.campoController.aplicarCambioPokemon();
         } else {
             this.setTextoProperty(err.get().mostrar());
         }
@@ -154,8 +193,8 @@ public class ControladorPantallaEfecto implements Controlador {
         this.setTextoProperty("antes del if");
         if (err.isEmpty()) {
             this.setTextoProperty("Se aplicó " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println("Se aplico " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println(this.texto );
+            //System.out.println("Se aplico " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
+            //System.out.println(this.texto );
             this.campoController.aplicarItem(this.pokemonSeleccionado);
             this.campoController.actualizar();
         } else {
@@ -193,8 +232,14 @@ public class ControladorPantallaEfecto implements Controlador {
     public void cambiarMenuPrincipal(MouseEvent event, boolean cambioTurno) {
         if (cambioTurno) {
             this.batalla.cambiarTurno();
+            this.mostrarEfectosClimaYEstados();
         }
         this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
+    }
+
+    public void cambiarPokemonMuerto(){
+        this.batalla.cambiarTurno();
+        this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_POKEMONES.ordinal()));
     }
 
     public void setTextoProperty(String textoProperty) {

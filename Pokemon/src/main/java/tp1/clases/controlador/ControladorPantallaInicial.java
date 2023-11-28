@@ -64,6 +64,7 @@ public class ControladorPantallaInicial implements Controlador {
 
     public void crearEfectoInicio() throws IOException {
 
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/pantallaEfectoInicio.fxml"));
 
         Scene scene = new Scene(loader.load());

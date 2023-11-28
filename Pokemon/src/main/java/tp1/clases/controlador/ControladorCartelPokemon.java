@@ -110,7 +110,7 @@ public class ControladorCartelPokemon {
             if (estado == Estado.NORMAL) {
                 break;
             }
-            System.out.println("Agrego estado " + estado.name());
+            //System.out.println("Agrego estado " + estado.name());
             this.circulosEstados.getChildren().get(i).setOpacity(100);
             this.imagenesEstadosProperty.get(i).set(new Image(Archivos.getRutaAbsolutaImagenes("estados/" + estado.name() + ".png")));
             i++;

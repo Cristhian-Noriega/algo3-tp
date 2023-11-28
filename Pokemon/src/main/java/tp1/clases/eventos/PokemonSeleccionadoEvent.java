@@ -2,6 +2,7 @@ package tp1.clases.eventos;
 
 import javafx.event.Event;
 import javafx.event.EventType;
+import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Pokemon;
 
 public class PokemonSeleccionadoEvent extends Event  {

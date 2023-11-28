@@ -92,14 +92,13 @@ public class Pokemon implements Serializable {
     }
 
     public void aplicarEfectoEstados(){
-
         for (Estado estado: this.estados){
             EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
             if (estadoComportamiento != null) {
                 estadoComportamiento.aplicarEfecto(this);
-
             }
         }
+
         this.estados.removeAll(this.estadosParaEliminar);
         this.estadosParaEliminar.clear();
         if (this.estados.isEmpty()){

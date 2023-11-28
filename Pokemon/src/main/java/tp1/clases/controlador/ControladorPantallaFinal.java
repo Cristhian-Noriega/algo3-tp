@@ -34,6 +34,7 @@ public class ControladorPantallaFinal implements Controlador{
     private GridPane gridPane;
 
     private Jugador jugador;
+    private boolean clicksHecho = false;
 
     public void inicializar(Batalla batalla){
         this.jugador = batalla.getJugadores().get(0);
@@ -109,17 +110,20 @@ public class ControladorPantallaFinal implements Controlador{
     }
 
     @FXML
-    private void handleOnMouseClicked(){
-        Color initialColor = Color.web("#e3c57ff7");
-        this.rectangulo.setFill(initialColor);
-        this.rectangulo.setStroke(Color.WHITE);
-        this.textoClixk.setOpacity(0);
+    private void handleOnMouseClicked() {
+        if (!this.clicksHecho) {
+            this.clicksHecho = true;
+            Color initialColor = Color.web("#e3c57ff7");
+            this.rectangulo.setFill(initialColor);
+            this.rectangulo.setStroke(Color.WHITE);
+            this.textoClixk.setOpacity(0);
 
-        for (Pokemon pokemon : this.jugador.getListaPokemones()) {
-            Text info = new Text(pokemon.getNombre() + " " + "N° " + pokemon.getNivel() + " Vida " + pokemon.getVida());
-            info.setFont(new Font("Pokemon X and Y Regular", 27));
-            this.infoPokemones.getChildren().add(info);
-            this.infoPokemones.getChildren().add(new Text(""));
+            for (Pokemon pokemon : this.jugador.getListaPokemones()) {
+                Text info = new Text(pokemon.getNombre() + " " + "  Nvl " + pokemon.getNivel() + "  Vida " + pokemon.getVida());
+                info.setFont(new Font("Pokemon X and Y Regular", 27));
+                this.infoPokemones.getChildren().add(info);
+                this.infoPokemones.getChildren().add(new Text(""));
+            }
         }
     }
 }
