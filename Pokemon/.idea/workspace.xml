@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68f1a830-8564-43a2-9752-3cd5799138ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Ash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Brook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/ash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolaPokemon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasDer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasIzq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brillos.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/charizard.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_HURACAN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_LLUVIA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_NIEBLA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_SIN_CLIMA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_SOLEADO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_TORMENTA_DE_ARENA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/CLIMA_TORMENTA_DE_RAYOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/HURACAN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/LLUVIA.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/LLUVIA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/NIEBLA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/SIN_CLIMA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/SOLEADO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/TORMENTA_DE_ARENA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/clima/TORMENTA_DE_RAYOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/estados/CONFUNDIDO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/estados/DORMIDO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/estados/ENVENENADO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/estados/PARALIZADO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoBatalla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoMenuPokemonAzul.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoOpcionPokemonVerde.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoPokemonActual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Batido proteico.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Hiper Pocion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Jugo de apio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Mega Pocion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Molesta Alumnos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Red Bull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Revivir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/items/Sacar estado.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/logo-pixel.96c2ab63.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/playPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/playRojo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-actual-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokebolas/pokebolas-rival-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Ampharos.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Ampharos_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Charmander.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Charmander_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Cloyster.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Cloyster_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Cubone.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Cubone_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Dragonair.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Dragonair_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Fraxure.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Fraxure_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Gastrodon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Gastrodon_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Golem.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Golem_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Golurk.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Golurk_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Rapidash.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Rapidash_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Sudowoodo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Sudowoodo_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Thundurus.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/pokemon/Thundurus_espalda.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/volver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonConfirmacion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonInicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonesItems.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/colorFont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/menu-principal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-clima.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-aplicar-item.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-poke-elegido.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaEfectoInicio.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaFinal.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaInicial.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-confirmacion-item.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon-actual.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fonts/pokemon_fire_red.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/habilidades.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/items.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/jugadores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/pokemones.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sonidos/sonido-boton.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CancelarAccionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Controlador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorClima.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEstados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaPokemonSeleccionado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Escena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/SubscriptorEscena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/Error.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorCambiarPokemonEnBatalla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorHabilidadErronea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorHabilidadSinUsos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorIndiceFueraDeRango.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorMismoClima.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorMismoEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorNoPuedeAtacarDormido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorNoPuedeUsarHabilidadParalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonMuerto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonNoMuerto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorPokemonNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/AplicarItemEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/CambioDeEscenaEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/CambioDeTurnoEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/HabilidadSeleccionadaEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/ItemSeleccionadoEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/PokemonSeleccionadoEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeClima.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstadosv2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Clima.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Efectividad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estadisticas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoComportamiento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadClima.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/InfoHabilidad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRestauracionVida.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRevivir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/JugadorEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Random.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ResultadosJugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Subscriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Tipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/CampoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/OpcionMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/ResultadoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "chequeosPokemon"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>

@@ -81,11 +81,11 @@ public class ControladorCampo implements Subscriptor {
             }
         }
 
-        String ruta = "pokebolas/pokebolas-" + jugador.name().toLowerCase() + "-" + cant;
+        String ruta = "pokebolas/pokebolas-" + jugador.name().toLowerCase() + "-" + cant + ".png";
         if (jugador == JugadorEnum.ACTUAL) {
-            this.pokebolasActualProperty.set(new Image(ruta));
+            this.pokebolasActualProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
         } else {
-            this.pokebolasRivalProperty.set(new Image(ruta));
+            this.pokebolasRivalProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));
         }
     }
 
