@@ -12,6 +12,8 @@
     -fx-text-fill: black;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);
     -fx-border-width: 3;
+    -fx-border-radius: 1.5%;
+    -fx-border-color: #d2b55d;
     //style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0"
 }
 

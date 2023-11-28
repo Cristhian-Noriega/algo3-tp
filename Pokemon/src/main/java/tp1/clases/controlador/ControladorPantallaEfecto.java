@@ -160,6 +160,10 @@ public class ControladorPantallaEfecto implements Controlador {
             this.campoController.actualizar();
         } else {
             this.setTextoProperty(err.get().mostrar());
+            this.pane.setOnMouseClicked(event -> {
+                cambiarMenuPrincipal(event, false);
+            });
+            return;
         }
 
         this.pokemonSeleccionado = null;
