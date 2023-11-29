@@ -2,7 +2,6 @@ package tp1.clases;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import tp1.clases.modelo.Jugador;
-import tp1.clases.modelo.ResultadosJugador;
 
 import java.io.File;
 import java.io.IOException;

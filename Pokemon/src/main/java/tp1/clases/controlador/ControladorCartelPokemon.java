@@ -30,17 +30,18 @@ public class ControladorCartelPokemon {
     @FXML public HBox contenedorCajaPokemon;
     @FXML public Pane imagenesEstados;
     @FXML public HBox circulosEstados;
+    @FXML public ControladorMenuPokemon controladorGeneral;
 
     private Pokemon pokemon;
     private final List<ObjectProperty<Image>> imagenesEstadosProperty = List.of(new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>());
-    
-    public void inicializar(Pokemon pokemon){
+
+    public void inicializar(Pokemon pokemon, ControladorMenuPokemon controladorGeneral){
         this.pokemon = pokemon;
+        this.controladorGeneral = controladorGeneral;
 
         contenedorCajaPokemon.setOnMouseEntered(this::handleMouseEntered);
         contenedorCajaPokemon.setOnMouseExited(this::handleMouseExited);
         contenedorCajaPokemon.setOnMouseClicked(this::handleMouseOnClick);
-        //contenedorCajaPokemon.setOnMouseClicked(this::handleOnDragDetected);
 
         int i = 0;
         for (ObjectProperty<Image> objectProperty: imagenesEstadosProperty) {
@@ -74,10 +75,6 @@ public class ControladorCartelPokemon {
         contenedorCajaPokemon.setStyle("-fx-border-color:black; -fx-border-radius: 3%; -fx-border-width: 3;");
     }
 
-    //public void handleOnDragDetected(MouseEvent event) {
-    //    contenedorCajaPokemon.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
-   // }
-
     public void setEstados(){
         int j = 0;
         for (Node circle: this.circulosEstados.getChildren()) {
@@ -97,14 +94,11 @@ public class ControladorCartelPokemon {
         }
     }
 
-    @FXML
-    private void handleMouseOnClick(MouseEvent event){
-        this.contenedorCajaPokemon.fireEvent(new PokemonSeleccionadoEvent(this.pokemon));
-        this.contenedorCajaPokemon.fireEvent(new CambioDeEscenaEvent(Escena.PANTALLA_EFECTO.ordinal()));
+    @FXML private void handleMouseOnClick(MouseEvent event){
+        this.controladorGeneral.habilitarBotonesConfirmacion(pokemon);
     }
 
     public ControladorCartelPokemon getControlador() {
         return this;
     }
-
 }
