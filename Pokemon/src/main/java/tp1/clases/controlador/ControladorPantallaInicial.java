@@ -13,17 +13,12 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ControladorPantallaInicial implements Controlador {
-
-    @FXML
-    private ImageView boton;
-
+    @FXML private ImageView boton;
     private Stage stage;
 
     @Override
     public void inicializar(Batalla batalla) {
-
         this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
-
 
         this.boton.setOnMouseEntered(event -> handleMouseDragEntered());
         this.boton.setOnMouseExited(event -> handleMouseDragExited());
@@ -31,30 +26,11 @@ public class ControladorPantallaInicial implements Controlador {
         this.boton.setOnMouseClicked(event -> {
             handleOnMouseClicked();
             try {
-                crearEfectoInicio();
+                this.crearEfectoInicio();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
-    }
-
-    @FXML
-    private void handleMouseDragEntered() {
-
-        boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playPressed.png")))));
-
-    }
-
-    @FXML
-    private void handleMouseDragExited() {
-
-        boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
-
-    }
-
-    @FXML
-    private void handleOnMouseClicked() {
-        this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playRojo.png")))));
     }
 
     public void setStage(Stage stage){
@@ -62,8 +38,6 @@ public class ControladorPantallaInicial implements Controlador {
     }
 
     public void crearEfectoInicio() throws IOException {
-
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/pantalla-efecto-inicio.fxml"));
 
         Scene scene = new Scene(loader.load());
@@ -75,5 +49,19 @@ public class ControladorPantallaInicial implements Controlador {
 
     }
 
+    @FXML
+    private void handleMouseDragEntered() {
+        boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playPressed.png")))));
+    }
+
+    @FXML
+    private void handleMouseDragExited() {
+        boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/play.png")))));
+    }
+
+    @FXML
+    private void handleOnMouseClicked() {
+        this.boton.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource("/Imagenes/playRojo.png")))));
+    }
 }
 

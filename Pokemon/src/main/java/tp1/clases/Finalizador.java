@@ -2,7 +2,6 @@ package tp1.clases;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import tp1.clases.modelo.Jugador;
-import tp1.clases.modelo.ResultadosJugador;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Finalizador {
-
     private final Jugador ganador;
     private final Jugador perdedor;
 

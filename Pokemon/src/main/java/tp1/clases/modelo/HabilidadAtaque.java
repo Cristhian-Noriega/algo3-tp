@@ -11,6 +11,7 @@ public class HabilidadAtaque extends Habilidad {
         this.poder = poder;
         this.infoHabilidad.setJugadorAfectado(JugadorEnum.RIVAL);
     }
+
     private double calcularDanioAtaque() {
         double nivelAtacante = this.pokemonAtacante.getNivel();
         double ataqueAtacante = this.pokemonAtacante.getAtaque();
@@ -27,6 +28,7 @@ public class HabilidadAtaque extends Habilidad {
         }
         return danio;
     }
+
     @Override
     public Optional<Error> usar() {
         double danio = calcularDanioAtaque();
@@ -34,9 +36,5 @@ public class HabilidadAtaque extends Habilidad {
 
         this.restarUso();
         return Optional.empty();
-    }
-
-    public boolean esEfectivo(double danio) {
-        return (danio > 0 );
     }
 }

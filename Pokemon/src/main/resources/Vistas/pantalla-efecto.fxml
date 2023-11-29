@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../Imagenes/fondoBatalla.png" />
+            <Image url="@../Imagenes/fondos/fondoBatalla.png" />
          </image>
       </ImageView>
       <VBox prefHeight="600.0" prefWidth="800.0" />
@@ -22,7 +22,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="140.0" layoutX="10.0" stroke="#5b615d" strokeType="INSIDE" strokeWidth="7.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="780.0" />
             <Label fx:id="labelTexto" layoutX="26.0" layoutY="14.0" prefHeight="109.0" prefWidth="748.0">
                <font>
-                  <Font name="Pokemon Fire Red Regular" size="30.0" />
+                  <Font name="000webfont" size="30.0" />
                </font>
             </Label>
          </children>

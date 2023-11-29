@@ -22,7 +22,7 @@ import tp1.clases.modelo.Pokemon;
 
 import java.util.List;
 
-public class ControladorCartelInfoPokemon {
+public class ControladorCentroDeEstadisticas {
     private final String nombre = "Pokemon";
     private final String nivel = "Nvl.0";
     private final String cantVida = "00/00";
@@ -32,15 +32,15 @@ public class ControladorCartelInfoPokemon {
     private final StringProperty cantVidaProperty = new SimpleStringProperty(cantVida);
     private final List<ObjectProperty<Image>> imagenesEstadosProperty = List.of(new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>());
 
-    @FXML public Label labelNombre;
-    @FXML public Label labelNivel;
-    @FXML public Label labelCantVida;
-    @FXML public HBox circulos;
-    @FXML public Pane imagenesEstados;
-    @FXML public Rectangle barraVida;
-    @FXML public Rectangle barraFondo;
+    @FXML private Label labelNombre;
+    @FXML private Label labelNivel;
+    @FXML private Label labelCantVida;
+    @FXML private HBox circulos;
+    @FXML private Pane imagenesEstados;
+    @FXML private Rectangle barraVida;
+    @FXML private Rectangle barraFondo;
 
-    public ControladorCartelInfoPokemon() {}
+    public ControladorCentroDeEstadisticas() {}
 
     public void inicializar(Pokemon pokemon, JugadorEnum jugador) {
         this.labelNombre.textProperty().bind(this.nombreProperty);
@@ -53,9 +53,6 @@ public class ControladorCartelInfoPokemon {
             this.setCantVidaProperty(pokemon.getVida() + "/" + pokemon.getVidaMax());
         }
 
-        this.setNombreProperty(pokemon.getNombre());
-        this.setNivelProperty(("Nvl." + pokemon.getNivel()));
-        this.setPorcentajeVida((double) pokemon.getVida() / pokemon.getVidaMax());
         int i = 0;
         for (ObjectProperty<Image> objectProperty: imagenesEstadosProperty) {
             ImageView imagen = (ImageView) this.imagenesEstados.getChildren().get(i);
@@ -63,19 +60,8 @@ public class ControladorCartelInfoPokemon {
             i++;
         }
 
-        this.setEstados(pokemon);
+        this.actualizar(pokemon, jugador);
     }
-
-    public void cambiarColorBarraVida() {
-        if (this.getPorcentajeBarraDeVida() < 0.3) {
-            this.barraVida.setStyle("-fx-fill: #c22f2f");
-        } else if (this.getPorcentajeBarraDeVida() < 0.6) {
-            this.barraVida.setStyle("-fx-fillt: #c5c742");
-        } else {
-            this.barraVida.setStyle("-fx-fillt: #34BC81");
-        }
-    }
-
 
     public void setNombreProperty(String nombreProperty) {
         this.nombreProperty.set(nombreProperty);
@@ -90,10 +76,6 @@ public class ControladorCartelInfoPokemon {
     public void setPorcentajeVida(double porcentajeNuevo) {
         double tamanioNuevo = ((this.barraFondo.getWidth() - Constantes.margen) * porcentajeNuevo);
         this.barraVida.setWidth(tamanioNuevo);
-    }
-
-    public double getPorcentajeBarraDeVida() {
-        return this.barraVida.getWidth() / (this.barraFondo.getWidth() - Constantes.margen);
     }
 
     public void setEstados(Pokemon pokemon){
@@ -124,6 +106,20 @@ public class ControladorCartelInfoPokemon {
         this.setPorcentajeVida((double) pokemon.getVida() / pokemon.getVidaMax());
 
         this.cambiarColorBarraVida();
+    }
+
+    public double getPorcentajeBarraDeVida() {
+        return this.barraVida.getWidth() / (this.barraFondo.getWidth() - Constantes.margen);
+    }
+
+    public void cambiarColorBarraVida() {
+        if (this.getPorcentajeBarraDeVida() < 0.3) {
+            this.barraVida.setStyle("-fx-fill: #c22f2f");
+        } else if (this.getPorcentajeBarraDeVida() < 0.6) {
+            this.barraVida.setStyle("-fx-fillt: #c5c742");
+        } else {
+            this.barraVida.setStyle("-fx-fillt: #34BC81");
+        }
     }
 
     public void animarBarraDeVida(double porcentajeInicial, double porcentajeFinal) {

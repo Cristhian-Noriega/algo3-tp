@@ -13,38 +13,19 @@ public class Batalla {
     private final AdministradorDeTurnos administradorTurnos;
     private final AdministradorDeClima administradorDeClima;
     private InfoTurno infoTurno;
-
-    private final AdministradorDeEstados administradorDeEstadosv2;
+    private final AdministradorDeEstados administradorDeEstados;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
         this.administradorDeClima = new AdministradorDeClima();
-        this.administradorDeEstadosv2 = new AdministradorDeEstados(this);
+        this.administradorDeEstados = new AdministradorDeEstados(this);
         this.rendidos = new ArrayList<Jugador>();
         this.infoTurno = new InfoTurno();
     }
 
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
-    }
-
-    public Optional<String> obtenerGanador() {
-        List<Jugador> jugadoresConVida = jugadores.stream()
-                .filter(Jugador::tienePokemonesConVida)
-                .toList();
-        if (jugadoresConVida.size() == 1){
-            this.rendidos.add(getJugadorSiguiente());
-        }
-        return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0).getNombre()) : Optional.empty();
-    }
-
-    public void cambiarTurno() {
-        this.infoTurno.resetearInfo();
-        this.administradorDeClima.afectarJugadores(this.getJugadores(), this.infoTurno);
-        this.administradorTurnos.siguienteTurno();
-        this.administradorDeClima.ActualizarTurno();
-        this.administradorDeEstadosv2.aplicarEfectoEstado(this.infoTurno);
     }
 
     public InfoTurno getInfoTurno() {
@@ -57,11 +38,6 @@ public class Batalla {
 
     public Jugador getJugadorSiguiente() {
         return administradorTurnos.getJugadorSiguiente();
-    }
-
-    public void rendir(Jugador jugador) {
-        this.jugadores.remove(jugador);
-        this.rendidos.add(jugador);
     }
 
     public ArrayList<Jugador> getRendidos(){
@@ -84,6 +60,36 @@ public class Batalla {
         return this.getJugadorActual().getMapCantidadItems();
     }
 
+    public Clima getClima(){
+        return administradorDeClima.getClimaActual();
+    }
+
+    public AdministradorDeTurnos getAdministradorTurnos() {
+        return administradorTurnos;
+    }
+
+    public void cambiarTurno() {
+        this.infoTurno.resetearInfo();
+        this.administradorDeClima.afectarJugadores(this.getJugadores(), this.infoTurno);
+        this.administradorTurnos.siguienteTurno();
+        this.administradorDeClima.ActualizarTurno();
+        this.administradorDeEstados.aplicarEfectoEstado(this.infoTurno);
+    }
+
+    public void rendir(Jugador jugador) {
+        this.jugadores.remove(jugador);
+        this.rendidos.add(jugador);
+    }
+
+    public Optional<String> obtenerGanador() {
+        List<Jugador> jugadoresConVida = jugadores.stream()
+                .filter(Jugador::tienePokemonesConVida)
+                .toList();
+        if (jugadoresConVida.size() == 1){
+            this.rendidos.add(getJugadorSiguiente());
+        }
+        return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0).getNombre()) : Optional.empty();
+    }
 
     public Optional<Error> usarHabilidad(Habilidad habilidad, Jugador rival) {
         Pokemon pokemonJugadorActual = this.getJugadorActual().getPokemonActual();
@@ -99,31 +105,8 @@ public class Batalla {
         return this.getJugadorActual().seleccionarPokemon(pokemon);
     }
 
-    public List<Map<String, Object>> getDatosJugadores(){
-        List<Map<String, Object>> datos = new ArrayList<>();
-        for (Jugador jugador: this.jugadores) {
-            datos.add(jugador.getDatos());
-        }
-        return datos;
-    }
-
     public void cambiarPokemonMuertoJugadorSiguiente(){
         this.getJugadorSiguiente().cambiarPokemonMuerto();
     }
 
-    public boolean estaMuertoPokemonActual(){
-        return this.getJugadorActual().getPokemonActual().estaMuerto();
-    }
-
-    public Clima getClima(){
-        return administradorDeClima.getClimaActual();
-    }
-
-    public AdministradorDeClima getAdministradorDeClima(){
-        return this.administradorDeClima;
-    }
-
-    public AdministradorDeTurnos getAdministradorTurnos() {
-        return administradorTurnos;
-    }
 }

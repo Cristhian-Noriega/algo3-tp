@@ -21,16 +21,14 @@ public class ControladorConfirmacionItem {
 
     @FXML private ImageView imagenItemSeleccionado;
 
-    private CancelarAccionListener cancelarAccionListener;
+    private ControladorMenuItems controladorMenuItems;
 
     private Item item;
 
-    private BorderPane borderPane;
 
-    public void inicializar(Item item, BorderPane borderPane){
+    public void inicializar(Item item){
         this.item = item;
         this.setInfoItem(this.item.getNombre());
-        this.borderPane = borderPane;
     }
 
     public void setInfoItem(String nombreItem){
@@ -41,8 +39,8 @@ public class ControladorConfirmacionItem {
     }
 
     public void handleMouseClickedCancelar(MouseEvent mouseEvent){
-        if (cancelarAccionListener != null) {
-            cancelarAccionListener.onAccionCancelada();
+        if (controladorMenuItems != null) {
+            controladorMenuItems.onAccionCancelada();
         }
     }
 
@@ -50,11 +48,11 @@ public class ControladorConfirmacionItem {
         this.itemSeleccionado.fireEvent(new ItemSeleccionadoEvent(this.item));
         CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.MENU_POKEMONES.ordinal());
         this.itemSeleccionado.fireEvent(evento);
-        cancelarAccionListener.onAccionCancelada();
+        controladorMenuItems.onAccionCancelada();
     }
 
-    public void setCancelActionListener(CancelarAccionListener listener){
-        this.cancelarAccionListener = listener;
+    public void setControladorMenuItems(ControladorMenuItems controladorMenuItems){
+        this.controladorMenuItems = controladorMenuItems;
     }
 
 }

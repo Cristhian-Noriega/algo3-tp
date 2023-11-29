@@ -12,11 +12,9 @@ import java.util.ArrayList;
 
 public class MainJavaFX extends Application {
     private Batalla batalla;
-
     public static void main(String[] args) {
         launch();
     }
-
 
     @Override
     public void start(Stage stage) throws IOException, CloneNotSupportedException {

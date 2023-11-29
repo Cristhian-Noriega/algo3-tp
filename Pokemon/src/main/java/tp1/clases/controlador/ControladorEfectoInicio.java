@@ -9,14 +9,12 @@ import javafx.util.Duration;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 
 public class ControladorEfectoInicio{
-
     public ImageView fondo;
     @FXML private ImageView ash;
     @FXML private ImageView brook;
     @FXML private Label texto;
     @FXML private ImageView bolasAsh;
     @FXML private ImageView bolasBrook;
-
     private int clicks = 0;
 
     public void inicializar(){

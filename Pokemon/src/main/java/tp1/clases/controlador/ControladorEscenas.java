@@ -5,11 +5,7 @@ import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tp1.clases.Finalizador;
@@ -19,12 +15,11 @@ import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Batalla batalla;
     private Stage stage;
-    private static ArrayList<Scene> escenas;
+    private ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
     private int escenaActual;
     private int escenaAnterior;
@@ -37,63 +32,42 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         this.batalla = batalla;
         this.stage = stage;
         try {
-            cargarEscenas();
-            ControladorMenuPokemon controlador = (ControladorMenuPokemon) this.controladores.get(Escena.MENU_POKEMONES.ordinal());
-            this.agregarSubscriptor(controlador);
+            this.cargarEscenas();
+            ControladorMenuPokemon controladorMenuPokemon = (ControladorMenuPokemon) this.controladores.get(Escena.MENU_POKEMONES.ordinal());
+            this.agregarSubscriptor(controladorMenuPokemon);
             ControladorPantallaInicial controladorInicial = (ControladorPantallaInicial) this.controladores.get(Escena.PANTALLA_INICIAL.ordinal());
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
+            this.stage.getScene().getRoot().autosize();
             this.stage.show();
         } catch (IOException e) {
-            ;
             e.printStackTrace();
         }
 
         this.stage.addEventHandler(HabilidadSeleccionadaEvent.HABILIDAD_SELECCIONADA_EVENT, event -> {
-            Habilidad habilidad = event.getHabilidad();
-            this.seleccionarHabilidad(habilidad);
+            this.seleccionarHabilidad(event.getHabilidad());
         });
 
         this.stage.addEventHandler(CambioDeEscenaEvent.CAMBIO_DE_ESCENA_EVENT, event -> {
-            int escena = event.getEscena();
-            this.cambiarEscena(escena);
+            this.cambiarEscena(event.getEscena());
         });
 
         this.stage.addEventHandler(ItemSeleccionadoEvent.ITEM_SELECCIONADO_EVENT, event -> {
-            Item item = event.getItem();
-            ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
-            controladorPantallaEfecto.setItemSeleccionado(item);
+            this.seleccionarItem(event.getItem());
         });
 
         this.stage.addEventHandler(PokemonSeleccionadoEvent.POKEMON_SELECCIONADO_EVENT, event -> {
-            Pokemon pokemon = event.getPokemon();
-            ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
-            controladorPantallaEfecto.setPokemonSeleccionado(pokemon);
-            if (escenaAnterior == Escena.MENU_ITEMS.ordinal()) {
-                controladorPantallaEfecto.mostrarItemAplicado();
-            } else {
-                controladorPantallaEfecto.mostrarCambioDePokemon();
-            }
-        });
-
-        this.stage.addEventHandler(AplicarItemEvent.APLICAR_ITEM_EVENT, event -> {
-            Pokemon pokemon = event.getPokemon();
+            this.seleccionarPokemon(event.getPokemon());
         });
 
         this.stage.addEventHandler(RendirseEvent.RENDIRSE_EVENT, event -> {
-            this.batalla.rendir(this.batalla.getJugadorActual());
-            try {
-                partidaTerminada();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            this.rendirse();
         });
     }
 
     public void agregarSubscriptor(SubscriptorEscena subscriptor) {
         this.subscriptores.add(subscriptor);
     }
-
 
     public void actualizarEscena(int escena) {
         this.escenaAnterior = this.escenaActual;
@@ -114,18 +88,42 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cargarEscenas() throws IOException {
-        cargarFXML("/Vistas/pantalla-inicial.fxml");
-        cargarFXML("/Vistas/menu-principal.fxml");
-        cargarFXML("/Vistas/menu-habilidades.fxml");
-        cargarFXML("/Vistas/menu-pokemon.fxml");
-        cargarFXML("/Vistas/pantalla-efecto.fxml");
-        cargarFXML("/items-view.fxml");
+        this.cargarFXML("/Vistas/pantalla-inicial.fxml");
+        this.cargarFXML("/Vistas/menu-principal.fxml");
+        this.cargarFXML("/Vistas/menu-habilidades.fxml");
+        this.cargarFXML("/Vistas/menu-pokemon.fxml");
+        this.cargarFXML("/Vistas/menu-items.fxml");
+        this.cargarFXML("/Vistas/pantalla-efecto.fxml");
     }
 
     public void seleccionarHabilidad(Habilidad habilidad) {
         ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
         controlador.setHabilidadSeleccionada(habilidad);
         controlador.mostrarAtaque();
+    }
+
+    public void seleccionarPokemon(Pokemon pokemon ){
+        ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
+        controladorPantallaEfecto.setPokemonSeleccionado(pokemon);
+        if (escenaAnterior == Escena.MENU_ITEMS.ordinal()) {
+            controladorPantallaEfecto.mostrarItemAplicado();
+        } else {
+            controladorPantallaEfecto.mostrarCambioDePokemon();
+        }
+    }
+
+    public void seleccionarItem(Item item) {
+        ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
+        controladorPantallaEfecto.setItemSeleccionado(item);
+    }
+
+    public void rendirse() {
+        this.batalla.rendir(this.batalla.getJugadorActual());
+        try {
+            this.partidaTerminada();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void cambiarEscena(int escena) {
@@ -140,7 +138,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
 
         this.actualizarEscena(escena);
 
-        if ((this.escenaAnterior != Escena.MENU_PRINCIPAL.ordinal()) | (escena == Escena.MENU_PRINCIPAL.ordinal())) {
+        if ((this.escenaAnterior != Escena.MENU_PRINCIPAL.ordinal()) | escena == Escena.MENU_PRINCIPAL.ordinal()) {
             ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
             if (this.batalla.getJugadorSiguiente().getPokemonActual().estaMuerto()) {
                 controlador.mostrarPokemonMuerto(JugadorEnum.RIVAL);
@@ -174,9 +172,6 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         Finalizador finalizador = new Finalizador(batalla.getJugadores().get(0), batalla.getRendidos().get(0));
         finalizador.crearJsonPartida();
     }
-
-
-
 
     public void sacarEscenaAnterior(int escena) {
         Animation transition = new Transition() {

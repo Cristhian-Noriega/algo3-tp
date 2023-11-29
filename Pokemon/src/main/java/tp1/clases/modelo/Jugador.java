@@ -11,7 +11,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Jugador implements Serializable {
-
     private final ArrayList<Pokemon> pokemones;
     private Pokemon pokemonActual;
     private final List<Item> items;
@@ -43,6 +42,17 @@ public class Jugador implements Serializable {
         return nombre;
     }
 
+    public double getVelocidadPokemonActual() {
+        return this.pokemonActual.getVelocidad();
+    }
+
+    public List<Habilidad> getHabilidadesPokemonActual() {
+        return this.pokemonActual.getHabilidades();
+    }
+
+    public Map<String, Long> getMapCantidadItems() {
+        return this.mapCantidadItems;
+    }
 
     public Optional<Error> seleccionarPokemon(Pokemon nuevoPokemon){
 
@@ -66,11 +76,9 @@ public class Jugador implements Serializable {
     }
 
     public Optional<Error> usarItem(Item itemElegido, Pokemon pokemon) {
-
         if (this.mapCantidadItems.get(itemElegido.getNombre()) <= 0){
             return Optional.of(new ErrorItemNoValido(itemElegido.getNombre()));
         }
-
 
         Optional<Error> err = itemElegido.usar(pokemon);
         if (err.isEmpty()){
@@ -88,34 +96,11 @@ public class Jugador implements Serializable {
         }
     }
 
-    public double getVelocidadPokemonActual() {
-        return this.pokemonActual.getVelocidad();
-    }
-
-    public List<Habilidad> getHabilidadesPokemonActual() {
-        return this.pokemonActual.getHabilidades();
-    }
-
-    public Map<String, Long> getMapCantidadItems() {
-        return this.mapCantidadItems;
-    }
-
     public void eliminarItem(Item item) {
         Long cantidad = this.mapCantidadItems.get(item.getNombre());
         if (cantidad != null && cantidad > 0) {
             this.mapCantidadItems.put(item.getNombre(), cantidad - 1);
     }}
-
-    public Map<String, Object> getDatos() {
-        Map<String, Object> datosPokemonActual = new HashMap<>();
-        datosPokemonActual.put("Pokemon", this.pokemonActual.getNombre());
-        datosPokemonActual.put("Vida Actual", this.pokemonActual.getVida());
-        datosPokemonActual.put("Vida Max", this.pokemonActual.getVidaMax());
-        datosPokemonActual.put("Nivel", this.pokemonActual.getNivel());
-        datosPokemonActual.put("Estado", this.pokemonActual.getEstadosString());
-
-        return datosPokemonActual;
-    }
 
     private Map<String, Long> contarFrecuenciaItems(List<Item> items) {
         return items.stream().
@@ -123,7 +108,6 @@ public class Jugador implements Serializable {
                         Item::getNombre,
                         Collectors.counting()
                 ));
-
     }
 
     private List<Item> organizarItems(List<Item> items) {

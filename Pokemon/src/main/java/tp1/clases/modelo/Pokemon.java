@@ -5,10 +5,9 @@ import tp1.clases.errores.Error;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tp1.clases.errores.Error;
 
 import tp1.clases.errores.ErrorHabilidadSinUsos;
-import tp1.clases.errores.ErrorIndiceFueraDeRango;
+
 import tp1.clases.errores.ErrorMismoEstado;
 
 import java.io.Serializable;

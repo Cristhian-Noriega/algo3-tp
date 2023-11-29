@@ -21,7 +21,6 @@ import tp1.clases.modelo.Pokemon;
 import java.util.Objects;
 
 public class ControladorPantallaFinal implements Controlador{
-
     public ImageView fondo;
     public Label textoClixk;
     public Rectangle rectangulo;
@@ -74,7 +73,8 @@ public class ControladorPantallaFinal implements Controlador{
         Timeline timeline = new Timeline();
 
         for (int i = 0; i < texto.getText().length(); i++) {
-            KeyFrame keyFrame = new KeyFrame(
+            KeyFrame keyFrame =
+                    new KeyFrame(
                     Duration.seconds(0.1*i),
                     new KeyValue(texto.textProperty(), texto.getText().substring(0, i + 1))
             );
@@ -90,7 +90,7 @@ public class ControladorPantallaFinal implements Controlador{
     }
 
     private void setGanador(String nombre){
-        String path = "/Imagenes/" + nombre + ".png";
+        String path = "/Imagenes/jugadores/" + nombre + ".png";
         this.ganador.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource(path)))));
 
         Timeline timeline2 = new Timeline();
@@ -117,8 +117,9 @@ public class ControladorPantallaFinal implements Controlador{
 
             for (Pokemon pokemon : this.jugador.getListaPokemones()) {
                 Text info = new Text(pokemon.getNombre() + " " + "  Nvl " + pokemon.getNivel() + "  Vida " + pokemon.getVida());
-                info.setFont(new Font("Pokemon Classic Regular", 12));
+                info.setFont(new Font("000webfont", 24));
                 this.infoPokemones.getChildren().add(info);
+                this.infoPokemones.getChildren().add(new Text(""));
                 this.infoPokemones.getChildren().add(new Text(""));
             }
         }

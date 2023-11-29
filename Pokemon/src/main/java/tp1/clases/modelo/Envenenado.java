@@ -6,6 +6,12 @@ public class Envenenado implements EstadoComportamiento {
     public Envenenado(int turnosEnvenenado){
         this.turnosEnvenenado = turnosEnvenenado;
     }
+
+    @Override
+    public int getTurnos(){
+        return turnosEnvenenado;
+    }
+
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
         double danio = Constantes.porcentajeDeEnvenamiento * pokemon.getVidaMax();
@@ -15,10 +21,5 @@ public class Envenenado implements EstadoComportamiento {
     @Override
     public Boolean usarHabilidad(Habilidad habilidad, Pokemon rival){
         return true;
-    }
-
-    @Override
-    public int getTurnos(){
-        return turnosEnvenenado;
     }
 }

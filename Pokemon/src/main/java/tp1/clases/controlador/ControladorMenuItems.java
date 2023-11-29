@@ -15,26 +15,22 @@ import javafx.scene.layout.VBox;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Item;
-import tp1.clases.modelo.Subscriptor;
+import tp1.clases.modelo.SubscriptorTurno;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ControladorMenuItems implements Controlador, CancelarAccionListener, Subscriptor {
+public class ControladorMenuItems implements Controlador, SubscriptorTurno {
+    public Pane itemInfo;
     @FXML private VBox botonesItems;
-
     @FXML private Button botonVolver;
-
     @FXML private BorderPane borderPane;
-
-    @FXML private Label itemDescriptionLabel;
-
+    @FXML
+    private Label itemDescriptionLabel;
     @FXML private ImageView imagenItem;
-
     private Pane bottomActual;
-
     private Batalla batalla;
 
     public void inicializar(Batalla batalla) {
@@ -59,6 +55,13 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         }
     }
 
+    public void setInfoItem(String nombreItem, String infoItem){
+        String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
+        Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
+        imagenItem.setImage(imagen);
+        itemDescriptionLabel.setText(infoItem);
+    }
+
     private void setBotonVolver(){
         this.setInfoBotonVolver();
         this.botonVolver.setOnMouseEntered(mouseEvent -> {setInfoBotonVolver();});
@@ -72,16 +75,17 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         itemDescriptionLabel.setText("Cerrar mochila.");
     }
 
+
     private void cambiarMenuItemsConfirmacion(Event evento, Item item){
         this.deshabilitarBotones();
         this.bottomActual = (Pane) borderPane.getBottom();
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-confirmacion-item.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/cartel-confirmacion-item.fxml"));
         Pane itemInfoPane;
         try {
             itemInfoPane = loader.load();
             ControladorConfirmacionItem controladorConfirmacion = loader.getController();
-            controladorConfirmacion.inicializar(item, this.borderPane);
-            controladorConfirmacion.setCancelActionListener(this);
+            controladorConfirmacion.inicializar(item);
+            controladorConfirmacion.setControladorMenuItems(this);
         } catch (IOException e) {
             e.printStackTrace();
             return;
@@ -89,13 +93,6 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
 
         borderPane.setBottom(itemInfoPane);
         this.setBotonVolver();
-    }
-
-    public void setInfoItem(String nombreItem, String infoItem){
-        String imagenPath = "/Imagenes/items/" + nombreItem + ".png";
-        Image imagen = new Image(Objects.requireNonNull(getClass().getResource(imagenPath)).toString());
-        imagenItem.setImage(imagen);
-        itemDescriptionLabel.setText(infoItem);
     }
 
     public void habilitarBotones() {
@@ -111,12 +108,13 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         this.botonVolver.setDisable(true);
     }
 
-    @Override
     public void onAccionCancelada() {
         if (this.bottomActual != null) {
             borderPane.setBottom(bottomActual);
             habilitarBotones();
         }
+        this.botonesItems.getChildren().clear();
+        this.setBotonesItems();
     }
 
     public void cambiarMenuPrincipal(MouseEvent event) {

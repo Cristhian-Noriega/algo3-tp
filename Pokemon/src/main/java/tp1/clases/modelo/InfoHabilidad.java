@@ -25,12 +25,29 @@ public class InfoHabilidad {
         return estadoLimitante;
     }
 
-    public void setEstadoLimitante(Estado estadoLimitante) {
-        this.estadoLimitante = estadoLimitante;
-    }
-
     public JugadorEnum getJugadorAfectado() {
         return jugadorAfectado;
+    }
+
+    public double getDanio() {
+        return danio;
+    }
+
+    public Estado getEstadoModificado() {
+        return estadoModificado;
+    }
+
+    public Estadisticas getEstadisticaModificada() {
+        return estadisticaModificada;
+    }
+
+    public Clima getClimaModificado() {
+        return climaModificado;
+    }
+
+
+    public void setEstadoLimitante(Estado estadoLimitante) {
+        this.estadoLimitante = estadoLimitante;
     }
 
     public void setJugadorAfectado(JugadorEnum jugadorAfectado) {
@@ -45,43 +62,27 @@ public class InfoHabilidad {
         this.pudoUsarHabilidad = pudoUsarHabilidad;
     }
 
-    public double getDanio() {
-        return danio;
-    }
-
     public void setDanio(double danio) {
         this.danio = danio;
-    }
-
-    public boolean beneficiadoPorClima() {
-        return beneficiadoPorClima;
     }
 
     public void setBeneficiadoPorClima(boolean beneficiadoPorClima) {
         this.beneficiadoPorClima = beneficiadoPorClima;
     }
 
-    public Estado getEstadoModificado() {
-        return estadoModificado;
-    }
-
     public void setEstadoModificado(Estado estadoModificado) {
         this.estadoModificado = estadoModificado;
-    }
-
-    public Estadisticas getEstadisticaModificada() {
-        return estadisticaModificada;
     }
 
     public void setEstadisticaModificada(Estadisticas estadisticaModificada) {
         this.estadisticaModificada = estadisticaModificada;
     }
 
-    public Clima getClimaModificado() {
-        return climaModificado;
-    }
-
     public void setClimaModificado(Clima climaModificado) {
         this.climaModificado = climaModificado;
+    }
+
+    public boolean beneficiadoPorClima() {
+        return beneficiadoPorClima;
     }
 }

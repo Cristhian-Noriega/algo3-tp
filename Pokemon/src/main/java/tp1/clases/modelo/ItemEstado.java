@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.util.Optional;
 
 public class ItemEstado implements Item, Serializable, Cloneable {
-
     private final String nombre;
     private final Categoria categoria = Categoria.ESTADO;
     final protected String info;

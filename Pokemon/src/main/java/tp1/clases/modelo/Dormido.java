@@ -1,11 +1,15 @@
 package tp1.clases.modelo;
 
 public class Dormido implements EstadoComportamiento {
-
     private int turnosDormido;
 
     public Dormido(int turnosDormido){
         this.turnosDormido = turnosDormido;
+    }
+
+    @Override
+    public int getTurnos(){
+        return turnosDormido;
     }
 
     @Override
@@ -25,8 +29,4 @@ public class Dormido implements EstadoComportamiento {
         return false;
     }
 
-    @Override
-    public int getTurnos(){
-        return turnosDormido;
-    }
 }
