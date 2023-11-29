@@ -31,6 +31,9 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         this.batalla = batalla;
         this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
         List<Pokemon> pokemones = this.batalla.getJugadorActual().getListaPokemones();
+
+        contenedorPokemon.getChildren().clear();
+        contenedorPokemonActual.getChildren().clear();
         this.setPokemones(pokemones);
 
         contenedorBotonVolver.setOnMouseEntered(this::handleMouseEntered);
@@ -39,12 +42,14 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
     }
 
     public void actualizar() {
+        contenedorPokemon.getChildren().clear();
+        contenedorPokemonActual.getChildren().clear();
         this.setPokemones(this.batalla.getPokemonesJugadorActual());
     }
 
     public void setPokemones(List<Pokemon> pokemones){
         Boolean focusAplicado = false;
-
+        contenedorPokemon.getChildren().clear();
         for (Pokemon pokemon : pokemones) {
 
             String ruta = "/cartel-opcion-pokemon";
@@ -69,10 +74,10 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
                 }else{
                     contenedorPokemon.getChildren().add(cartelPokemon);
 
-                    if (!focusAplicado){
-                        controladorCartel.handleMouseEntered(null);
-                        focusAplicado = true;
-                    }
+//                    if (!focusAplicado){
+  //                      controladorCartel.handleMouseEntered(null);
+    //                    focusAplicado = true;
+      //              }
                 }
 
             } catch (IOException e) {
@@ -82,7 +87,10 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
         contenedorPokemonActual.setDisable((this.escenaAnterior == Escena.MENU_PRINCIPAL.ordinal()) || (escenaAnterior == Escena.PANTALLA_EFECTO.ordinal()));
 
-        //contenedorPokemon.getChildren().get(0).setStyle("-fx-border-color:#e77a00; -fx-border-radius: 3%; -fx-border-width: 5;");
+        contenedorPokemon.getChildren().get(0).setStyle("-fx-border-color:#e77a00; -fx-border-radius: 3%; -fx-border-width: 5;");
+        contenedorPokemon.setOnMouseEntered(event -> {
+            contenedorPokemon.getChildren().get(0).setStyle("-fx-border-color:black; -fx-border-radius: 3%; -fx-border-width: 3;");
+        });
     }
 
     public ControladorMenuPokemon getControlador() {
@@ -108,8 +116,6 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
     @Override
     public void Update() {
-        contenedorPokemon.getChildren().clear();
-        contenedorPokemonActual.getChildren().clear();
         this.actualizar();
     }
 
@@ -117,8 +123,6 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
     public void Update(int escena) {
         this.escenaAnterior = this.escenaActual;
         this.escenaActual = escena;
-        this.contenedorPokemonActual.getChildren().clear();
-        this.contenedorPokemon.getChildren().clear();
         this.actualizar();
     }
 
