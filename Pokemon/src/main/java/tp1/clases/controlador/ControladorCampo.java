@@ -98,26 +98,33 @@ public class ControladorCampo implements Subscriptor {
         this.imagenActualProperty.set(imagen);
     }
 
-    public void aplicarParpadeo(JugadorEnum jugador) {
+    public void aplicarParpadeo(JugadorEnum jugador, String tipo) {
         if (jugador == JugadorEnum.NINGUNO) {
             return;
         }
 
         if (jugador == JugadorEnum.ACTUAL) {
-            this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillos.gif")));
-
-            Timeline timeline = new Timeline(
-                    new KeyFrame(Duration.ZERO, new KeyValue(this.efectoActual.opacityProperty(), 0.0)),
-                    new KeyFrame(Duration.seconds(0.2), new KeyValue(this.efectoActual.opacityProperty(), 1.0)),
-                    new KeyFrame(Duration.seconds(0.5), new KeyValue(this.efectoActual.opacityProperty(), 0.0))
-            );
-
-            timeline.setCycleCount(3);
-            timeline.play();
+            this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillitos.gif")));
+            this.efecto(this.efectoActual);
             return;
         }
 
-        ImageView imagen = this.imagenRival;
+        this.parpadeo(this.imagenRival);
+        this.efectoRival.setImage(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
+    }
+
+    public void efecto(ImageView imagen) {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(0.5), new KeyValue(imagen.opacityProperty(), 0.0))
+        );
+
+        timeline.setCycleCount(3);
+        timeline.play();
+    }
+
+    public void parpadeo(ImageView imagen) {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),
                 new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 0.0)),
@@ -128,9 +135,14 @@ public class ControladorCampo implements Subscriptor {
         timeline.play();
     }
 
-    public void animarVida(Pokemon pokemon) {
-        this.cartelPokemonRivalController.animarBarraDeVida(this.cartelPokemonRivalController.getPorcentajeBarraDeVida(), (double) pokemon.getVida() / pokemon.getVidaMax());
-        this.cartelPokemonRivalController.setVida(pokemon, JugadorEnum.RIVAL);
+
+    public void animarVida(Pokemon pokemon, JugadorEnum jugador) {
+        ControladorCartelInfoPokemon controlador = this.cartelPokemonRivalController;
+        if (jugador == JugadorEnum.ACTUAL) {
+            controlador = this.cartelPokemonActualController;
+        }
+        controlador.animarBarraDeVida(controlador.getPorcentajeBarraDeVida(), (double) pokemon.getVida() / pokemon.getVidaMax());
+        controlador.setVida(pokemon, jugador);
     }
 
     public void aplicarCambioPokemon(){
