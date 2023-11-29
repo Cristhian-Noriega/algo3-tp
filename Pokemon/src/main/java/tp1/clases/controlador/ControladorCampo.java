@@ -15,10 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.JugadorEnum;
-import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.SubscriptorTurno;
+import tp1.clases.modelo.*;
 
 import java.io.File;
 import java.util.List;
@@ -102,7 +99,7 @@ public class ControladorCampo implements SubscriptorTurno {
         this.imagenActualProperty.set(imagen);
     }
 
-    public void aplicarParpadeo(JugadorEnum jugador, String tipo) {
+    public void aplicarParpadeo(JugadorEnum jugador, Habilidad habilidad) {
         if (jugador == JugadorEnum.NINGUNO) {
             return;
         }
@@ -110,11 +107,15 @@ public class ControladorCampo implements SubscriptorTurno {
         if (jugador == JugadorEnum.ACTUAL) {
             this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillitos.gif")));
             this.efecto(this.efectoActual);
-            //reproducir con ruta de brillito
+            Archivos.reproducirSonido("/subir_estadistica.wav", this.mediaPlayer);
             return;
         }
 
-        Archivos.reproducirSonido("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/golpe.wav", this.mediaPlayer);
+        if (habilidad.getCategoria() == Categoria.ESTADISTICA) {
+            Archivos.reproducirSonido("/bajar_estadistica.wav", this.mediaPlayer);
+        } else {
+            Archivos.reproducirSonido("/golpe.wav", this.mediaPlayer);
+        }
         this.parpadeo(this.imagenRival);
         this.efectoRival.setImage(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
     }

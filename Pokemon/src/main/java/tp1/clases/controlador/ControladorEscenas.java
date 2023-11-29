@@ -18,6 +18,7 @@ import tp1.clases.modelo.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Batalla batalla;
@@ -42,8 +43,8 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
 
-            Media media = new Media(new File("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Pokemon_FireRed_&_LeafGreen.mp3").toURI().toString());
-
+            String ruta = "/Pokemon_FireRed_&_LeafGreen.mp3";
+            Media media = new Media(Objects.requireNonNull(Archivos.class.getResource(ruta)).toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.volumeProperty().set(0.02);
             mediaPlayer.setAutoPlay(true);

@@ -13,7 +13,7 @@ public class Archivos {
     }
 
     public static void reproducirSonido(String ruta, MediaPlayer mediaPlayer) {
-        Media media = new Media(new File(ruta).toURI().toString());
+        Media media = new Media(Objects.requireNonNull(Archivos.class.getResource(ruta)).toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.volumeProperty().set(1.0);
         mediaPlayer.play();
