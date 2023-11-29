@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorPantallaEfecto">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0">
+         <image>
+            <Image url="@../Imagenes/fondoBatalla.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="600.0" prefWidth="800.0" />
+      <fx:include fx:id="campo" source="campo.fxml" />
+      <Pane layoutY="449.0" prefHeight="149.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="140.0" layoutX="10.0" stroke="#5b615d" strokeType="INSIDE" strokeWidth="7.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="780.0" />
+            <Label fx:id="labelTexto" layoutX="26.0" layoutY="14.0" prefHeight="109.0" prefWidth="748.0">
+               <font>
+                  <Font name="Pokemon Fire Red Regular" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>
