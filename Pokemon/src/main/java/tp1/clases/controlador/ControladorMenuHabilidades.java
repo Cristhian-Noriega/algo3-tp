@@ -11,21 +11,20 @@ import tp1.clases.eventos.HabilidadSeleccionadaEvent;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.Habilidad;
 import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.Subscriptor;
+import tp1.clases.modelo.SubscriptorTurno;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControladorMenuHabilidades implements Controlador, Subscriptor {
+public class ControladorMenuHabilidades implements Controlador, SubscriptorTurno {
     @FXML public ControladorCampo campoController;
-    @FXML public Button botonVolver;
-    @FXML public Label texto;
-
-    @FXML public Label labelTipoHabilidad;
-    @FXML public Label labelTipo;
-    @FXML public Label labelCantUsos;
-    @FXML public Label labelUsos;
-    @FXML public VBox botonesHabilidades;
+    @FXML private Button botonVolver;
+    @FXML private Label texto;
+    @FXML private Label labelTipoHabilidad;
+    @FXML private Label labelTipo;
+    @FXML private Label labelCantUsos;
+    @FXML private Label labelUsos;
+    @FXML private VBox botonesHabilidades;
 
     private Batalla batalla;
     private ArrayList<Pokemon> pokemones;
@@ -37,54 +36,45 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
     public void inicializar(Batalla batalla) {
         this.batalla = batalla;
         batalla.getAdministradorTurnos().agregarSubscriptor(this);
-        this.pokemones.add(batalla.getJugadorActual().getPokemonActual());
-        this.pokemones.add(batalla.getJugadorSiguiente().getPokemonActual());
+
+        this.actualizarPokemones();
 
         this.campoController.inicializar(batalla);
         this.setOpacidadInfo(0);
+        this.setHabilidades();
         this.botonVolver.setOnMouseClicked(this::cambiarMenuPrincipal);
-        this.setHabilidades(this.pokemones.get(0).getHabilidades());
     }
 
     public void actualizar() {
-        this.setHabilidades(this.batalla.getHabilidadesPokemonActual());
+        this.actualizarPokemones();
+        this.setHabilidades();
     }
 
-    public void setHabilidades(List<Habilidad> habilidades) {
+    public void actualizarPokemones() {
+        this.pokemones = new ArrayList<>();
+        this.pokemones.add(this.batalla.getJugadorActual().getPokemonActual());
+        this.pokemones.add(this.batalla.getJugadorSiguiente().getPokemonActual());
+    }
+
+    public void setHabilidades() {
+        List<Habilidad> habilidades = this.batalla.getHabilidadesPokemonActual();
         int i = 0;
         for (Habilidad habilidad: habilidades) {
             Button boton = (Button) this.botonesHabilidades.getChildren().get(i);
             boton.setText(habilidad.getNombre());
-
+            i++;
             if (habilidad.sinUsosDisponibles()) {
                 boton.setDisable(true);
-                i++;
                 continue;
             } else {
                 boton.setDisable(false);
             }
-
             boton.setOnMouseEntered(event -> {mostrarInfoHabilidad(habilidad);});
             boton.setOnMouseExited(event -> {mostrarTexto();});
 
-
             boton.setOnMouseClicked(event -> {cambiarPantallaEfecto(event, habilidad);});
-            i++;
         }
     }
-
-    private void mostrarTexto() {
-        this.setOpacidadInfo(0);
-        this.setOpacidadTexto(100);
-    }
-
-    private void mostrarInfoHabilidad(Habilidad habilidad) {
-        this.setOpacidadTexto(0);
-        this.setOpacidadInfo(100);
-        this.labelCantUsos.setText(habilidad.getUsos().toString());
-        this.labelTipoHabilidad.setText(habilidad.getTipo().toString());
-    }
-
 
     public void setOpacidadTexto(double opacidad) {
         this.texto.setOpacity(opacidad);
@@ -97,15 +87,25 @@ public class ControladorMenuHabilidades implements Controlador, Subscriptor {
         this.labelUsos.setOpacity(opacidad);
     }
 
+    private void mostrarTexto() {
+        this.setOpacidadInfo(0.0);
+        this.setOpacidadTexto(1.0);
+    }
+
+    private void mostrarInfoHabilidad(Habilidad habilidad) {
+        this.setOpacidadTexto(0.0);
+        this.setOpacidadInfo(1.0);
+        this.labelCantUsos.setText(habilidad.getUsos().toString());
+        this.labelTipoHabilidad.setText(habilidad.getTipo().toString());
+    }
+
     public void cambiarMenuPrincipal(MouseEvent event) {
         this.texto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 
     public void cambiarPantallaEfecto(MouseEvent event, Habilidad habilidadSeleccionada) {
         this.texto.fireEvent(new HabilidadSeleccionadaEvent(habilidadSeleccionada));
-        CambioDeEscenaEvent evento = new CambioDeEscenaEvent(Escena.PANTALLA_EFECTO.ordinal());
-        evento.setHabilidad(habilidadSeleccionada);
-        this.texto.fireEvent(evento);
+        this.texto.fireEvent(new CambioDeEscenaEvent(Escena.PANTALLA_EFECTO.ordinal()));
     }
 
     @Override

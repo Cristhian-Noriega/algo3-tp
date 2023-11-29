@@ -7,8 +7,7 @@ public class EstadoFacotory {
             case PARALIZADO -> new Paralizado(0);
             case ENVENENADO -> new Envenenado(0);
             case CONFUNDIDO -> new Confundido(0);
-            default ->
-                    null;
+            default -> null;
         };
     }
 }

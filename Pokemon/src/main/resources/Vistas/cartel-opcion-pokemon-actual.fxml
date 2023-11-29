@@ -13,7 +13,7 @@
 
 <Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="220.0" fitWidth="220.0">
-        <Image url="@Imagenes/fondoPokemonActual.png" />
+        <Image url="@../Imagenes/fondoPokemonActual.png" />
     </ImageView>
     <HBox fx:id="contenedorCajaPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="220.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
         <children>

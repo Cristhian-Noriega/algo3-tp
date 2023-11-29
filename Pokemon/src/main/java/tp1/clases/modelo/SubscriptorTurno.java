@@ -1,5 +1,5 @@
 package tp1.clases.modelo;
 
-public interface Subscriptor {
+public interface SubscriptorTurno {
     void Update();
 }

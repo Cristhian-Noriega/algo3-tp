@@ -1,8 +1,9 @@
 
-package tp1.clases.modelo;
+package tp1.clases;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import tp1.clases.modelo.Pokemon;
 
 import java.io.Serializable;
 import java.util.*;

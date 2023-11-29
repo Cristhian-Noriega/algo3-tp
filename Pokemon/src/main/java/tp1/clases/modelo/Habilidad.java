@@ -11,24 +11,16 @@ import java.util.Optional;
 
 public abstract class Habilidad implements Serializable, Cloneable{
     final protected String nombre;
-
     final protected Integer id;
-
     protected Integer usos;
-
     final protected Tipo tipo;
-
     final protected String info;
-
     final protected Categoria categoria;
-
     protected AdministradorDeClima administradorDeClima;
-
     protected Pokemon pokemonAtacante;
-
     protected Pokemon pokemonRival;
-
     protected InfoHabilidad infoHabilidad;
+
     @JsonCreator
     public Habilidad(@JsonProperty("nombre") String nombre, @JsonProperty("usos") Integer usos, @JsonProperty("tipo") Tipo tipo,
                      @JsonProperty("info") String info, @JsonProperty("categoria") Categoria categoria,
@@ -65,24 +57,13 @@ public abstract class Habilidad implements Serializable, Cloneable{
     public Categoria getCategoria() {
         return this.categoria;
     }
+
     public Integer getId(){
         return this.id;
     }
 
     public Clima getClimaActual() {
         return this.administradorDeClima.getClimaActual();
-    }
-
-    public Pokemon getPokemonAtacante() {
-        return pokemonAtacante;
-    }
-
-    public Pokemon getPokemonRival() {
-        return pokemonRival;
-    }
-
-    public AdministradorDeClima getAdministradorDeClima() {
-        return administradorDeClima;
     }
 
     public void setAdministradorDeClima(AdministradorDeClima administradorDeClima) {
@@ -97,6 +78,12 @@ public abstract class Habilidad implements Serializable, Cloneable{
         this.pokemonRival = pokemonRival;
     }
 
+    public void setAmbiente(AdministradorDeClima administradorDeClima, List<Pokemon> pokemonesActuales) {
+        this.setAdministradorDeClima(administradorDeClima);
+        this.setPokemonAtacante(pokemonesActuales.get(0));
+        this.setPokemonRival(pokemonesActuales.get(1));
+    }
+
     public abstract Optional<Error> usar();
 
     public boolean sinUsosDisponibles() {
@@ -105,12 +92,6 @@ public abstract class Habilidad implements Serializable, Cloneable{
 
     public void restarUso() {
         this.usos -= 1;
-    }
-
-    public void setAmbiente(AdministradorDeClima administradorDeClima, List<Pokemon> pokemonesActuales) {
-        this.setAdministradorDeClima(administradorDeClima);
-        this.setPokemonAtacante(pokemonesActuales.get(0));
-        this.setPokemonRival(pokemonesActuales.get(1));
     }
 
 

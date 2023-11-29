@@ -12,12 +12,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuItems">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuItems">
    <right>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="443.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="444.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@Style/botonesItems.css" />
-            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" stylesheets="@Style/botonConfirmacion.css" text="VOLVER" translateX="297.0">
+            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="444.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@../Style/botonesItems.css" />
+            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" stylesheets="@../Style/botonConfirmacion.css" text="VOLVER" translateX="297.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -73,7 +73,7 @@
    <left>
       <ImageView fitHeight="258.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@Imagenes/bag.png" />
+            <Image url="@../Imagenes/bag.png" />
          </image>
       </ImageView>
    </left>

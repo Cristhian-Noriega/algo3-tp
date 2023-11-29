@@ -3,7 +3,6 @@ package tp1.clases.modelo;
 import java.util.List;
 
 public class AdministradorDeEstados {
-
     private Batalla batalla;
 
     public AdministradorDeEstados(Batalla batalla) {

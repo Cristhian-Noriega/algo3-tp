@@ -11,7 +11,6 @@ import java.net.URL;
 import java.util.*;
 
 public class Inicializador {
-
     public static ArrayList<Jugador> iniciarJugadores() throws IOException, CloneNotSupportedException {
 
         Map<Integer, Item> listaItems = crearListaItems();
@@ -63,7 +62,6 @@ public class Inicializador {
         }
         return listaItems;
     }
-
 
     private static Map<Integer, Habilidad> crearListaHabilidades() throws IOException {
 
@@ -159,9 +157,7 @@ public class Inicializador {
     }
 
     private static ArrayList<Jugador> crearListaJugadores(Map<Integer, Pokemon> listaPokemones, Map<Integer, Item> listaItems) throws IOException, CloneNotSupportedException {
-
         String pathJugadores = "/json/jugadores.json";
-
 
         ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
@@ -202,8 +198,6 @@ public class Inicializador {
             listaJugadores.add(jugador);
         }
 
-
         return listaJugadores;
     }
-
 }

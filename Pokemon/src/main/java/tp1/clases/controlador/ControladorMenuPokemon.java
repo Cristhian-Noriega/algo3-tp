@@ -4,7 +4,6 @@ package tp1.clases.controlador;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
-import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -17,11 +16,11 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class ControladorMenuPokemon implements Controlador, Subscriptor, SubscriptorEscena {
-    @FXML public VBox contenedorPokemonActual;
-    @FXML public HBox contenedorBotonVolver;
-    @FXML public StackPane contenedorPrincipal;
-    @FXML public VBox contenedorPokemon;
+public class ControladorMenuPokemon implements Controlador, SubscriptorTurno, SubscriptorEscena {
+    @FXML private VBox contenedorPokemonActual;
+    @FXML private HBox contenedorBotonVolver;
+    @FXML private StackPane contenedorPrincipal;
+    @FXML private VBox contenedorPokemon;
     private Batalla batalla;
     private int escenaAnterior;
     private int escenaActual;
@@ -52,7 +51,7 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         contenedorPokemon.getChildren().clear();
         for (Pokemon pokemon : pokemones) {
 
-            String ruta = "/cartel-opcion-pokemon";
+            String ruta = "/Vistas/cartel-opcion-pokemon";
             if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
                 ruta += "-actual";
             }
@@ -73,11 +72,6 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
                 }else{
                     contenedorPokemon.getChildren().add(cartelPokemon);
-
-//                    if (!focusAplicado){
-  //                      controladorCartel.handleMouseEntered(null);
-    //                    focusAplicado = true;
-      //              }
                 }
 
             } catch (IOException e) {
