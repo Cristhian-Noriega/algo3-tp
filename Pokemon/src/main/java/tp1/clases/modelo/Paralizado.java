@@ -1,7 +1,6 @@
 package tp1.clases.modelo;
 
 public class Paralizado implements EstadoComportamiento {
-
     private int turnosParalizado;
 
     public Paralizado(int turnosParalizado){
@@ -9,8 +8,7 @@ public class Paralizado implements EstadoComportamiento {
     }
 
     @Override
-    public void aplicarEfecto(Pokemon pokemon) {
-    }
+    public void aplicarEfecto(Pokemon pokemon) {}
 
     @Override
     public Boolean usarHabilidad(Habilidad habilidad, Pokemon pokemon){

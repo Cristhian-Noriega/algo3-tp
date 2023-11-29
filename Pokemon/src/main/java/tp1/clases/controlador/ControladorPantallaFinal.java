@@ -21,7 +21,6 @@ import tp1.clases.modelo.Pokemon;
 import java.util.Objects;
 
 public class ControladorPantallaFinal implements Controlador{
-
     public ImageView fondo;
     public Label textoClixk;
     public Rectangle rectangulo;
@@ -74,7 +73,8 @@ public class ControladorPantallaFinal implements Controlador{
         Timeline timeline = new Timeline();
 
         for (int i = 0; i < texto.getText().length(); i++) {
-            KeyFrame keyFrame = new KeyFrame(
+            KeyFrame keyFrame =
+                    new KeyFrame(
                     Duration.seconds(0.1*i),
                     new KeyValue(texto.textProperty(), texto.getText().substring(0, i + 1))
             );

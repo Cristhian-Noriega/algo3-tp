@@ -1,11 +1,15 @@
 package tp1.clases.modelo;
 
 public class Confundido implements EstadoComportamiento {
-
     private int turnosConfundido;
 
     public Confundido(int turnosConfundido){
         this.turnosConfundido = turnosConfundido;
+    }
+
+    @Override
+    public int getTurnos() {
+        return turnosConfundido;
     }
 
     @Override
@@ -26,9 +30,5 @@ public class Confundido implements EstadoComportamiento {
             pokemon.modificarVida((-1) * danio);
         }
         return true;
-    }
-    @Override
-    public int getTurnos() {
-        return turnosConfundido;
     }
 }

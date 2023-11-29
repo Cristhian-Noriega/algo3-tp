@@ -11,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Finalizador {
-
     private final Jugador ganador;
     private final Jugador perdedor;
 

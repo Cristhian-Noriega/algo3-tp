@@ -9,8 +9,6 @@ import javafx.scene.layout.Pane;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.eventos.RendirseEvent;
 import tp1.clases.modelo.Batalla;
-import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.Subscriptor;
 
 
 public class ControladorMenuPrincipal implements Controlador {

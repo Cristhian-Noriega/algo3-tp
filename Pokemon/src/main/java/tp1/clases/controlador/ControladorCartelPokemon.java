@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -22,15 +23,13 @@ import tp1.clases.modelo.Pokemon;
 import java.util.List;
 
 public class ControladorCartelPokemon {
-    @FXML public Label labelNombre;
-    @FXML public Label labelNivel;
-    @FXML public javafx.scene.control.ProgressBar barraVida;
-    @FXML public Label labelVida;
-    @FXML public ImageView imagenPokemon;
-    @FXML public HBox contenedorCajaPokemon;
-    @FXML public Pane imagenesEstados;
-    @FXML public HBox circulosEstados;
-    @FXML public ControladorMenuPokemon controladorGeneral;
+    @FXML private Label labelNombre;
+    @FXML private Label labelNivel;
+    @FXML private ProgressBar barraVida;
+    @FXML private Label labelVida;
+    @FXML private ImageView imagenPokemon;
+    @FXML private HBox contenedorCajaPokemon;
+    @FXML private Pane imagenesEstados;
 
     private Pokemon pokemon;
     private final List<ObjectProperty<Image>> imagenesEstadosProperty = List.of(new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>());

@@ -16,27 +16,27 @@ import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
-import tp1.clases.modelo.Subscriptor;
+import tp1.clases.modelo.SubscriptorTurno;
 
 import java.util.List;
 import java.util.Objects;
 
-public class ControladorCampo implements Subscriptor {
+public class ControladorCampo implements SubscriptorTurno {
     private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> imagenActualProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> pokebolasRivalProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> pokebolasActualProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Image> fondoClimaProperty = new SimpleObjectProperty<>();
-    @FXML public ControladorCartelInfoPokemon cartelPokemonRivalController;
-    @FXML public ControladorCartelInfoPokemon cartelPokemonActualController;
-    @FXML public ControladorClima cartelClimaController;
-    @FXML public ImageView imagenRival;
-    @FXML public ImageView imagenActual;
-    @FXML public ImageView fondoClima;
-    @FXML public ImageView pokebolasJugadorRival;
-    @FXML public ImageView efectoRival;
-    @FXML public ImageView efectoActual;
-    @FXML public ImageView pokebolasJugadorActual;
+    @FXML protected ControladorCentroDeEstadisticas cartelPokemonRivalController;
+    @FXML protected ControladorCentroDeEstadisticas cartelPokemonActualController;
+    @FXML protected ControladorClima cartelClimaController;
+    @FXML private ImageView imagenRival;
+    @FXML private ImageView imagenActual;
+    @FXML private ImageView fondoClima;
+    @FXML private ImageView pokebolasJugadorRival;
+    @FXML private ImageView efectoRival;
+    @FXML private ImageView efectoActual;
+    @FXML private ImageView pokebolasJugadorActual;
     private Batalla batalla;
 
     public ControladorCampo() {}
@@ -137,7 +137,7 @@ public class ControladorCampo implements Subscriptor {
 
 
     public void animarVida(Pokemon pokemon, JugadorEnum jugador) {
-        ControladorCartelInfoPokemon controlador = this.cartelPokemonRivalController;
+        ControladorCentroDeEstadisticas controlador = this.cartelPokemonRivalController;
         if (jugador == JugadorEnum.ACTUAL) {
             controlador = this.cartelPokemonActualController;
         }
@@ -145,7 +145,8 @@ public class ControladorCampo implements Subscriptor {
         controlador.setVida(pokemon, jugador);
     }
 
-    public void aplicarCambioPokemon(){
+
+    public void aplicarIntercambioDePokemon(){
         ImageView imagen = this.imagenActual;
 
         RotateTransition rotateTransition = new RotateTransition(Duration.millis(500), imagen);
