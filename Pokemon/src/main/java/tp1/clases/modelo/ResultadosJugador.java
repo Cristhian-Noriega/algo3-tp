@@ -38,10 +38,9 @@ public class ResultadosJugador implements Serializable {
         return listaDatosPokemones;
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
-
     public boolean isGanador() {
         return ganador;
     }

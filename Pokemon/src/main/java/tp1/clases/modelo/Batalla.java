@@ -12,15 +12,17 @@ public class Batalla {
     private final ArrayList<Jugador> rendidos;
     private final AdministradorDeTurnos administradorTurnos;
     private final AdministradorDeClima administradorDeClima;
+    private InfoTurno infoTurno;
 
-    private final AdministradorDeEstadosv2 administradorDeEstadosv2;
+    private final AdministradorDeEstados administradorDeEstadosv2;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
         this.administradorDeClima = new AdministradorDeClima();
-        this.administradorDeEstadosv2 = new AdministradorDeEstadosv2(this);
+        this.administradorDeEstadosv2 = new AdministradorDeEstados(this);
         this.rendidos = new ArrayList<Jugador>();
+        this.infoTurno = new InfoTurno();
     }
 
     public ArrayList<Jugador> getJugadores() {
@@ -31,14 +33,22 @@ public class Batalla {
         List<Jugador> jugadoresConVida = jugadores.stream()
                 .filter(Jugador::tienePokemonesConVida)
                 .toList();
+        if (jugadoresConVida.size() == 1){
+            this.rendidos.add(getJugadorSiguiente());
+        }
         return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0).getNombre()) : Optional.empty();
     }
 
     public void cambiarTurno() {
-        this.administradorDeClima.afectarJugadores(this.getJugadores());
+        this.infoTurno.resetearInfo();
+        this.administradorDeClima.afectarJugadores(this.getJugadores(), this.infoTurno);
         this.administradorTurnos.siguienteTurno();
         this.administradorDeClima.ActualizarTurno();
-        this.administradorDeEstadosv2.aplicarEfectoEstado();
+        this.administradorDeEstadosv2.aplicarEfectoEstado(this.infoTurno);
+    }
+
+    public InfoTurno getInfoTurno() {
+        return this.infoTurno;
     }
 
     public Jugador getJugadorActual() {
@@ -95,6 +105,10 @@ public class Batalla {
             datos.add(jugador.getDatos());
         }
         return datos;
+    }
+
+    public void cambiarPokemonMuertoJugadorSiguiente(){
+        this.getJugadorSiguiente().cambiarPokemonMuerto();
     }
 
     public boolean estaMuertoPokemonActual(){

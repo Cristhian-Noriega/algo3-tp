@@ -3,6 +3,8 @@ package tp1.clases.modelo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorItemEnPokemonMuerto;
+import tp1.clases.errores.ErrorPokemonMuerto;
 import tp1.clases.errores.ErrorPokemonNormal;
 
 import java.io.Serializable;
@@ -43,6 +45,9 @@ public class ItemEstado implements Item, Serializable, Cloneable {
 
     @Override
     public Optional<Error> usar(Pokemon pokemon){
+        if (pokemon.estaMuerto()) {
+            return Optional.of(new ErrorItemEnPokemonMuerto(pokemon.getNombre()));
+        }
         if (pokemon.getEstados().contains(Estado.NORMAL)) {
             return Optional.of(new ErrorPokemonNormal(pokemon.getNombre(), this.nombre));
         }

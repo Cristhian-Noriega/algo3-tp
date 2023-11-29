@@ -48,11 +48,12 @@ public class AdministradorClimaTest {
         when(jugadorA.getPokemonActual()).thenReturn(rataDeLaboratorio);
         Jugador jugadorB = mock(Jugador.class);
         when(jugadorB.getPokemonActual()).thenReturn(conejilloDeIndias);
+        InfoTurno infoTurno= mock(InfoTurno.class);
 
         AdministradorDeClima admin = new AdministradorDeClima();
         admin.cambiarClima(Clima.TORMENTA_DE_ARENA);
 
-        admin.afectarJugadores(List.of(jugadorA, jugadorB));
+        admin.afectarJugadores(List.of(jugadorA, jugadorB), infoTurno);
         Assertions.assertEquals(conejilloDeIndias.getVida(), conejilloDeIndias.getVidaMax());
         Assertions.assertNotEquals(rataDeLaboratorio.getVida(), rataDeLaboratorio.getVidaMax());
 

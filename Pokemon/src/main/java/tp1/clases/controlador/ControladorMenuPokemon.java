@@ -1,8 +1,10 @@
 package tp1.clases.controlador;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
+import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -12,22 +14,17 @@ import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.*;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
+
+
 public class ControladorMenuPokemon implements Controlador, Subscriptor, SubscriptorEscena {
-    @FXML
-    public VBox contenedorPokemonActual;
-    @FXML
-    public HBox contenedorBotonVolver;
-    @FXML
-    public StackPane contenedorPrincipal;
-    @FXML
-    public VBox contenedorPokemon;
+    @FXML public VBox contenedorPokemonActual;
+    @FXML public HBox contenedorBotonVolver;
+    @FXML public StackPane contenedorPrincipal;
+    @FXML public VBox contenedorPokemon;
     private Batalla batalla;
     private int escenaAnterior;
     private int escenaActual;
-    private Item item;
 
     @Override
     public void inicializar(Batalla batalla) {
@@ -35,14 +32,6 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         this.batalla.getAdministradorTurnos().agregarSubscriptor(this);
         List<Pokemon> pokemones = this.batalla.getJugadorActual().getListaPokemones();
         this.setPokemones(pokemones);
-
-        if (escenaAnterior == Escena.POKEMON_MUERTO.ordinal()){ // FUNCIONA??
-            System.out.println("entro a pokemon muerto "+ this.escenaAnterior);
-            contenedorBotonVolver.setStyle("-fx-border-color: black; -fx-background-color: grey; -fx-border-radius: 3%; -fx-border-width: 5;");
-            contenedorBotonVolver.setDisable(true);
-        }else{
-            contenedorBotonVolver.setDisable(false);
-        }
 
         contenedorBotonVolver.setOnMouseEntered(this::handleMouseEntered);
         contenedorBotonVolver.setOnMouseExited(this::handleMouseExited);
@@ -55,31 +44,32 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
     public void setPokemones(List<Pokemon> pokemones){
         Boolean focusAplicado = false;
-        for (Pokemon pokemon : pokemones) {
-            int i = 0;
 
-            String ruta = "cartel-opcion-pokemon";
+        for (Pokemon pokemon : pokemones) {
+
+            String ruta = "/cartel-opcion-pokemon";
             if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
                 ruta += "-actual";
             }
             ruta += ".fxml";
 
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource(ruta));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(ruta));
 
                 Pane cartelPokemon = loader.load();
 
                 ControladorCartelPokemon controladorCartel = loader.getController();
-                controladorCartel.inicializar(batalla, pokemon, escenaAnterior);
-                System.out.println(this.escenaAnterior);
+                controladorCartel.inicializar(pokemon);
                 controladorCartel.setDatosPokemon();
                 controladorCartel.setEstados();
 
                 if (pokemon == this.batalla.getJugadorActual().getPokemonActual()) {
                     contenedorPokemonActual.getChildren().add(cartelPokemon);
+
                 }else{
                     contenedorPokemon.getChildren().add(cartelPokemon);
-                    if (!focusAplicado) { // FALTA Q SE SQUE APENAS SE PARA EN OTRO
+
+                    if (!focusAplicado){
                         controladorCartel.handleMouseEntered(null);
                         focusAplicado = true;
                     }
@@ -90,9 +80,9 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
             }
         }
 
-        System.out.println(this.contenedorPokemonActual.disabledProperty());
-        contenedorPokemonActual.setDisable(this.escenaAnterior == Escena.MENU_PRINCIPAL.ordinal());
-        System.out.println(this.contenedorPokemonActual.disabledProperty());
+        contenedorPokemonActual.setDisable((this.escenaAnterior == Escena.MENU_PRINCIPAL.ordinal()) || (escenaAnterior == Escena.PANTALLA_EFECTO.ordinal()));
+
+        //contenedorPokemon.getChildren().get(0).setStyle("-fx-border-color:#e77a00; -fx-border-radius: 3%; -fx-border-width: 5;");
     }
 
     public ControladorMenuPokemon getControlador() {
@@ -101,7 +91,6 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
     public void handleMouseEntered(MouseEvent event) {
         contenedorBotonVolver.setStyle("-fx-border-color:#e77a00;-fx-background-color: #bb50bb; -fx-border-radius: 3%; -fx-border-width: 5;");
-
     }
 
     public void handleMouseExited(MouseEvent event) {
@@ -110,7 +99,9 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
 
     @FXML
     private void handleMouseOnClick(MouseEvent event){
-        if (escenaAnterior != Escena.POKEMON_MUERTO.ordinal()){
+        if (escenaAnterior == Escena.MENU_ITEMS.ordinal()){
+            this.contenedorPrincipal.fireEvent(new CambioDeEscenaEvent(Escena.MENU_ITEMS.ordinal()));
+        }else{
             this.contenedorPrincipal.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
         }
     }
@@ -128,10 +119,7 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         this.escenaActual = escena;
         this.contenedorPokemonActual.getChildren().clear();
         this.contenedorPokemon.getChildren().clear();
-        this.setPokemones(this.batalla.getPokemonesJugadorActual());
+        this.actualizar();
     }
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
 }

@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -14,10 +15,7 @@ import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.*;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Optional;
-import java.util.Queue;
+import java.util.*;
 
 public class ControladorPantallaEfecto implements Controlador {
     private Batalla batalla;
@@ -27,12 +25,9 @@ public class ControladorPantallaEfecto implements Controlador {
     private Item itemSeleccionado;
 
     private ArrayList<Pokemon> pokemones;
-    private String texto = "Efecto";
+    private final String texto = "Efecto";
 
-    private Queue<String> colaMensajes = new LinkedList<>();
-
-    private boolean mostrandoMensaje = false;
-    private StringProperty textoProperty = new SimpleStringProperty(this.texto);
+    private final StringProperty textoProperty = new SimpleStringProperty(this.texto);
 
     @FXML public Label labelTexto;
     @FXML public ControladorCampo campoController;
@@ -43,7 +38,6 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void inicializar(Batalla batalla) {
-        System.out.println("batalla en pantalla efecto " + batalla);
         this.batalla = batalla;
         this.actualizarPokemones();
         this.campoController.inicializar(batalla);
@@ -51,8 +45,7 @@ public class ControladorPantallaEfecto implements Controlador {
         this.labelTexto.setWrapText(true);
     }
 
-    public void mostrarAtaque(Batalla batalla) {
-        this.batalla = batalla;
+    public void mostrarAtaque() {
         this.actualizarPokemones();
 
         Habilidad habilidad = this.habilidadSeleccionada;
@@ -70,7 +63,7 @@ public class ControladorPantallaEfecto implements Controlador {
         }
 
         if (!infoHabilidad.sePudoUsarHabilidad()) {
-            this.setTextoProperty(pokemones.get(0).getNombre() + " no pudo usar la habilidad porque se encuentra " + infoHabilidad.getEstadoLimitante().toString().toLowerCase());
+            this.setTextoProperty(pokemones.get(JugadorEnum.ACTUAL.ordinal()).getNombre() + " no pudo usar la habilidad porque se encuentra " + infoHabilidad.getEstadoLimitante().toString().toLowerCase());
             this.campoController.actualizar();
             this.pane.setOnMouseClicked(event -> {
                 cambiarMenuPrincipal(event, true);
@@ -78,11 +71,11 @@ public class ControladorPantallaEfecto implements Controlador {
             return;
         }
 
-        String resultado = this.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(0).getNombre());
-        System.out.println(resultado);
+        String resultado = this.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(JugadorEnum.ACTUAL.ordinal()).getNombre());
         this.setTextoProperty(resultado);
 
         this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado());
+
         if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
             this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()));
         }
@@ -92,6 +85,31 @@ public class ControladorPantallaEfecto implements Controlador {
             cambiarMenuPrincipal(event, true);
         });
     }
+
+    public void mostrarEfectosClimaYEstados() {
+        InfoTurno infoTurno = this.batalla.getInfoTurno();
+
+        Queue<String> colaMensajes = new ArrayDeque<String>();
+
+        for (Pokemon pokemon: infoTurno.getPokemonesAfectadosPorClima()) {
+            colaMensajes.add(pokemon.getNombre() + " fue afectado por el clima actual y su vida actual ha disminuido.");
+        }
+
+        for (Pokemon pokemon: infoTurno.getPokemonesEnvenenados()) {
+             colaMensajes.add(pokemon.getNombre() + " perdió vida por estar envenenado.");
+        }
+
+        for (Map.Entry<Pokemon, Estado> entrada: infoTurno.getEstadosReseteados().entrySet()){
+            colaMensajes.add(entrada.getKey().getNombre() + " perdió el estado " +  entrada.getValue().name().toLowerCase());
+        }
+
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(3), event -> this.setTextoProperty(colaMensajes.poll()))
+        );
+        timeline.setCycleCount(colaMensajes.size());
+        timeline.play();
+    }
+
 
     private String mostrarResultado(InfoHabilidad infoHabilidad, String habilidad, String pokemonAtacante) {
         String resultado = pokemonAtacante + " ha usado la habilidad " + habilidad + ". ";
@@ -137,9 +155,12 @@ public class ControladorPantallaEfecto implements Controlador {
         this.setTextoProperty("antes del if");
         if (err.isEmpty()) {
             this.setTextoProperty("Cambiaste tu pokemon a " + this.pokemonSeleccionado.getNombre() + "!");
-            this.campoController.aplicarCambioPokemon();
         } else {
             this.setTextoProperty(err.get().mostrar());
+            this.pane.setOnMouseClicked(event -> {
+                cambiarMenuPrincipal(event, false);
+            });
+            return;
         }
 
         this.campoController.aplicarCambioPokemon();
@@ -151,12 +172,14 @@ public class ControladorPantallaEfecto implements Controlador {
 
     public void mostrarItemAplicado() {
         Optional<Error> err = this.batalla.usarItem(this.itemSeleccionado, this.pokemonSeleccionado);
-        this.setTextoProperty("antes del if");
+
         if (err.isEmpty()) {
             this.setTextoProperty("Se aplicó " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println("Se aplico " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
-            System.out.println(this.texto );
+
             this.campoController.aplicarItem(this.pokemonSeleccionado);
+            if (this.pokemonSeleccionado.equals(this.batalla.getJugadorActual().getPokemonActual())){
+                this.campoController.aplicarEfectoItem();
+            }
             this.campoController.actualizar();
         } else {
             this.setTextoProperty(err.get().mostrar());
@@ -174,6 +197,7 @@ public class ControladorPantallaEfecto implements Controlador {
         });
     }
 
+
     public void setPokemonSeleccionado(Pokemon pokemon) {
         this.pokemonSeleccionado = pokemon;
     }
@@ -185,17 +209,27 @@ public class ControladorPantallaEfecto implements Controlador {
 
     private void actualizarPokemones() {
         this.pokemones = new ArrayList<>();
-        for (Jugador jugador: this.batalla.getJugadores()) {
-            this.pokemones.add(jugador.getPokemonActual());
-        }
+        this.pokemones.add(this.batalla.getJugadorActual().getPokemonActual());
+        this.pokemones.add(this.batalla.getJugadorSiguiente().getPokemonActual());
     }
 
     public void cambiarMenuPrincipal(MouseEvent event, boolean cambioTurno) {
         if (cambioTurno) {
             this.batalla.cambiarTurno();
+            this.mostrarEfectosClimaYEstados();
+            this.campoController.actualizar();
         }
         this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
+
+    public void mostrarPokemonMuerto(JugadorEnum jugador) {
+        this.setTextoProperty(this.pokemones.get(1).getNombre() + " ha muerto.");
+
+        this.campoController.aplicarDesaparicionPokemonMuerto(jugador);
+
+        this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
+    }
+
 
     public void setTextoProperty(String textoProperty) {
         this.textoProperty.set(textoProperty);

@@ -13,10 +13,8 @@ import java.util.Optional;
 
 public class ControladorPantallaAplicarItem implements Controlador{
 
-    @FXML
-    private Pane pane;
-    @FXML
-    public Label labelTexto;
+    @FXML private Pane pane;
+    @FXML public Label labelTexto;
     private Batalla batalla;
     private Item item;
     private Pokemon pokemon;

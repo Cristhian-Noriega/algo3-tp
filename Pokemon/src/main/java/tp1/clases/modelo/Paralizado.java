@@ -16,7 +16,6 @@ public class Paralizado implements EstadoComportamiento {
     public Boolean usarHabilidad(Habilidad habilidad, Pokemon pokemon){
         if (!Random.probabilidad(Constantes.probabilidadParalizado)) {
             habilidad.restarUso();
-            System.out.printf("%s esta paralizado, no pudo usar la habilidad\n", pokemon.getNombre());
             return false;
         }
         return true;

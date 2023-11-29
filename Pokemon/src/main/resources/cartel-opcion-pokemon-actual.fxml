@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="220.0" fitWidth="220.0">
         <Image url="@Imagenes/fondoPokemonActual.png" />
     </ImageView>
@@ -43,25 +43,25 @@
                     </font>
                 </Label>
             </HBox>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="138.0" translateX="-540.0" translateY="103.0">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0" translateX="-530.0" translateY="103.0">
                 <children>
-                    <HBox fx:id="circulosEstados" prefHeight="35.0" prefWidth="218.0" spacing="5.0">
+                    <HBox fx:id="circulosEstados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0" spacing="5.0">
                         <children>
-                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
-                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
-                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
-                            <Circle fill="#f8f2d1" opacity="0.0" radius="15.0" stroke="#ebd4ab" strokeType="INSIDE" />
+                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
                         </children>
                         <padding>
                             <Insets top="2.0" />
                         </padding>
                     </HBox>
-                    <Pane fx:id="imagenesEstados" prefHeight="35.0" prefWidth="219.0">
+                    <Pane fx:id="imagenesEstados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0">
                         <children>
-                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="36.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="71.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="106.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="60.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="90.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                     </Pane>
                 </children>

@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.Batalla;
 
 
@@ -64,7 +63,8 @@ public class ControladorPantallaInicial implements Controlador {
 
     public void crearEfectoInicio() throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/pantallaEfectoInicio.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/pantalla-efecto-inicio.fxml"));
 
         Scene scene = new Scene(loader.load());
         ControladorEfectoInicio controlador = loader.getController();

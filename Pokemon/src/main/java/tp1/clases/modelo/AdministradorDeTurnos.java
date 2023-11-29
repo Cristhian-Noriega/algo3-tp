@@ -9,7 +9,6 @@ public class AdministradorDeTurnos {
 
     public ArrayList<Subscriptor> subscriptores;
 
-
     public AdministradorDeTurnos(List<Jugador> jugadores) {
         this.subscriptores = new ArrayList<>();
         this.jugadores = jugadores;

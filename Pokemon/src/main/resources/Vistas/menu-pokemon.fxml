@@ -12,14 +12,14 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="contenedorPrincipal" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
-    <ImageView fitHeight="709.0" fitWidth="707.0">
+<StackPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+    <ImageView fitHeight="600.0" fitWidth="800.0">
         <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
     </ImageView>
-    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="706.0">
-        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="420.0" translateX="120.0" translateY="90.0" />
-        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="220.0" translateX="-220.0" translateY="-300.0" />
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="706.0" translateY="-60.0">
+    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="110.0" />
+        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="-220.0" translateY="-230.0" />
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="706.0" translateY="-110.0">
             <opaqueInsets>
                 <Insets right="600.0" top="600.0" />
             </opaqueInsets>
@@ -35,7 +35,7 @@
                     </Label>
                 </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="483.0" style="-fx-background-color: white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;">
+            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="483.0" style="-fx-background-color:white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;">
                 <Label fx:id="labelTexto" alignment="CENTER" text="Seleccione un Pokemon" textAlignment="CENTER">
                     <HBox.margin>
                         <Insets />

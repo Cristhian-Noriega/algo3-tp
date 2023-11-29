@@ -22,9 +22,9 @@ public class AdministradorDeClima {
         this.turnoActual += 1;
     }
 
-    public void afectarJugadores(List<Jugador> jugadores) {
+    public void afectarJugadores(List<Jugador> jugadores, InfoTurno infoTurno) {
         for (Jugador jugador: jugadores) {
-            climaActual.lastimarPorClima(jugador.getPokemonActual());
+            climaActual.lastimarPorClima(jugador.getPokemonActual(), infoTurno);
         }
     }
 

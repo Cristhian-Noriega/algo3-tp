@@ -12,8 +12,6 @@ public class AplicarItemEvent extends Event {
 
     public static EventType<AplicarItemEvent> APLICAR_ITEM_EVENT = new EventType<>("Aplicar Item Event");
 
-    //meli: no deberia ser aplicar item event acá arriba?
-
     public AplicarItemEvent(Pokemon pokemon, Item item, Batalla batalla){
         super(APLICAR_ITEM_EVENT);
         this.pokemon = pokemon;

@@ -97,7 +97,6 @@ public class BatallaIntegracionTest {
         pokeAct = batalla.getJugadorActual().getListaPokemones().get(0);
         double defensaPokeAct = pokeAct.getDefensa();
         batalla.usarItem(batalla.getItemsJugadorActual().get(0), batalla.getPokemonesJugadorActual().get(0));
-        System.out.printf("El jugador acutal es %s, su defensa era %s y ahora es %s \n", pokeAct.getNombre(), defensaPokeAct, pokeAct.getDefensa());
         // Verifico que la defensa haya mejorado
         Assertions.assertTrue(pokeAct.getDefensa() > defensaPokeAct);
 

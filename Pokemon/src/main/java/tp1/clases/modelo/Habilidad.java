@@ -1,5 +1,6 @@
 package tp1.clases.modelo;
 
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;

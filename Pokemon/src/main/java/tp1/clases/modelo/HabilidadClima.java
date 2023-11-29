@@ -21,7 +21,6 @@ public class HabilidadClima extends Habilidad {
             return Optional.of(error);
         }
         this.administradorDeClima.cambiarClima(this.clima);
-        System.out.println(this.pokemonAtacante.getNombre() + " ha cambiado el clima a " + this.clima.toString().toLowerCase());
 
         this.restarUso();
         return Optional.empty();
