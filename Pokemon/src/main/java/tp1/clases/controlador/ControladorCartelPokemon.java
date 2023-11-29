@@ -23,6 +23,8 @@ import tp1.clases.modelo.Pokemon;
 import java.util.List;
 
 public class ControladorCartelPokemon {
+    public HBox circulosEstados;
+    public Pane contenedorPokemon;
     @FXML private Label labelNombre;
     @FXML private Label labelNivel;
     @FXML private ProgressBar barraVida;
@@ -31,6 +33,7 @@ public class ControladorCartelPokemon {
     @FXML private HBox contenedorCajaPokemon;
     @FXML private Pane imagenesEstados;
 
+    ControladorMenuPokemon controladorGeneral;
     private Pokemon pokemon;
     private final List<ObjectProperty<Image>> imagenesEstadosProperty = List.of(new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>());
 

@@ -12,9 +12,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+<StackPane fx:id="contenedorPrincipal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
     <ImageView fitHeight="600.0" fitWidth="800.0">
-        <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
+        <Image url="@../Imagenes/fondos/fondoMenuPokemonAzul.jpg" />
     </ImageView>
     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
         <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="120.0" />
@@ -34,30 +34,30 @@
                                 <Group />
                                 <Circle radius="34.0" />
                                 <ImageView fitHeight="67.0" fitWidth="76.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
-                                    <Image url="@../Imagenes/bolaPokemon.png" />
+                                    <Image url="@../Imagenes/pokebolas/bolaPokemon.png" />
                                 </ImageView>
                             </StackPane>
                             <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="98.0" text="VOLVER" translateX="-5.0">
                                 <font>
-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                    <Font name="000webfont" size="28.0" />
                                 </font>
                             </Label>
                         </children>
                     </HBox>
-                    <HBox fx:id="botonConfirmar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="50.0" prefWidth="120.0" onMouseClicked="#handleMouseOnClickConfirmar"  style="-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-width: 2.5;" translateY="-30.0">
+                    <HBox fx:id="botonConfirmar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickConfirmar" opacity="0.0" prefHeight="50.0" prefWidth="120.0" style="-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-width: 2.5;" translateY="-30.0">
                         <children>
                             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="120.0" text="USAR">
                                 <font>
-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                    <Font name="000webfont" size="30.0" />
                                 </font>
                             </Label>
                         </children>
                     </HBox>
-                    <HBox fx:id="botonCancelar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="50.0" prefWidth="120.0" onMouseClicked="#handleMouseOnClickCancelar"  style="-fx-border-color: black; -fx-background-color: grey; -fx-border-width: 2.5;" translateY="30.0">
+                    <HBox fx:id="botonCancelar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickCancelar" opacity="0.0" prefHeight="50.0" prefWidth="120.0" style="-fx-border-color: black; -fx-background-color: grey; -fx-border-width: 2.5;" translateY="30.0">
                         <children>
                             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="129.0" text="CANCELAR">
                                 <font>
-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                    <Font name="000webfont" size="30.0" />
                                 </font>
                             </Label>
                         </children>
@@ -70,7 +70,7 @@
                         <Insets />
                     </HBox.margin>
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="48.0" />
+                        <Font name="000webfont" size="48.0" />
                     </font>
                 </Label>
             </HBox>

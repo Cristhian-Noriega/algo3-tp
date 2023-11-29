@@ -141,21 +141,14 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void mostrarPokemonMuerto(JugadorEnum jugador) {
-        Jugador jugadorConPokemonMuerto = this.batalla.getJugadorActual();
-        if (jugador == JugadorEnum.RIVAL) {
-            jugadorConPokemonMuerto = this.batalla.getJugadorSiguiente();
-        }
-
-        String mensaje = jugadorConPokemonMuerto.getPokemonActual().getNombre() + " ha muerto. ";
+        this.setTextoProperty(this.pokemones.get(1).getNombre() + " ha muerto.");
 
         this.campoController.aplicarDesaparicionPokemonMuerto(jugador);
 
-        this.setTextoProperty(mensaje);
-        this.setEventoCambioDeEscena(false);
+        this.labelTexto.fireEvent(new CambioDeEscenaEvent(Escena.MENU_PRINCIPAL.ordinal()));
     }
 
     public void mostrarEfectosClimaYEstados() {
-        System.out.println(this.textoProperty.get());
 
         Timeline timelineInicial = new Timeline(
                 new KeyFrame(Duration.seconds(5), event -> this.setTextoProperty(this.textoProperty.get()))

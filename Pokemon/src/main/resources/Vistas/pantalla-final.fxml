@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaFinal">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaFinal">
     <children>
         <Pane prefHeight="718.0" prefWidth="800.0">
             <children>
                 <ImageView fx:id="fondo" fitHeight="484.0" fitWidth="800.0" onMouseClicked="#handleOnMouseClicked" preserveRatio="true">
                     <image>
-                        <Image url="@../Imagenes/background.png" />
+                        <Image url="@../Imagenes/fondos/background.png" />
                     </image>
                 </ImageView>
                 <GridPane fx:id="gridPane" onMouseClicked="#handleOnMouseClicked" opacity="0.69" prefHeight="453.0" prefWidth="798.0">
@@ -36,12 +41,12 @@
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#54a8bf" height="146.0" layoutY="1.0" onMouseClicked="#handleOnMouseClicked" stroke="BLACK" strokeType="INSIDE" width="800.0" />
                 <Label fx:id="texto" layoutX="18.0" layoutY="25.0" onMouseClicked="#handleOnMouseClicked" prefHeight="77.0" prefWidth="765.0" textFill="WHITE">
                     <font>
-                        <Font name="Pokemon X and Y Regular" size="33.0" />
+                        <Font name="000webfont" size="38.0" />
                     </font>
                 </Label>
-                <Label fx:id="textoClixk" layoutX="599.0" layoutY="102.0" onMouseClicked="#handleOnMouseClicked" prefHeight="38.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
+                <Label fx:id="textoClixk" layoutX="585.0" layoutY="94.0" onMouseClicked="#handleOnMouseClicked" prefHeight="38.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
                     <font>
-                        <Font name="Pokemon Classic Regular" size="10.0" />
+                        <Font name="000webfont" size="23.0" />
                     </font>
                 </Label>
             </children>

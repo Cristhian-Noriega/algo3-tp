@@ -90,7 +90,7 @@ public class ControladorPantallaFinal implements Controlador{
     }
 
     private void setGanador(String nombre){
-        String path = "/Imagenes/" + nombre + ".png";
+        String path = "/Imagenes/jugadores/" + nombre + ".png";
         this.ganador.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource(path)))));
 
         Timeline timeline2 = new Timeline();
@@ -117,8 +117,9 @@ public class ControladorPantallaFinal implements Controlador{
 
             for (Pokemon pokemon : this.jugador.getListaPokemones()) {
                 Text info = new Text(pokemon.getNombre() + " " + "  Nvl " + pokemon.getNivel() + "  Vida " + pokemon.getVida());
-                info.setFont(new Font("Pokemon X and Y Regular", 27));
+                info.setFont(new Font("000webfont", 24));
                 this.infoPokemones.getChildren().add(info);
+                this.infoPokemones.getChildren().add(new Text(""));
                 this.infoPokemones.getChildren().add(new Text(""));
             }
         }

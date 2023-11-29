@@ -13,24 +13,24 @@
 
 <Pane fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="92.0" fitWidth="409.0">
-        <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
+        <Image url="@../Imagenes/fondos/fondoMenuPokemonAzul.jpg" />
     </ImageView>
     <ImageView fitHeight="83.0" fitWidth="341.0" layoutX="64.0" layoutY="6.0">
-        <Image url="@../Imagenes/fondoOpcionPokemonVerde.jpeg" />
+        <Image url="@../Imagenes/fondos/fondoOpcionPokemonVerde.jpeg" />
     </ImageView>
     <HBox fx:id="contenedorCajaPokemon" layoutX="63.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="83.0" prefWidth="341.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
         <StackPane prefHeight="94.0" prefWidth="178.0">
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="127.0" translateX="45.0" translateY="-25.0">
                 <Label fx:id="labelNombre" prefHeight="40.0" prefWidth="134.0" text="NOMBRE" translateY="5.0">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="35.0" />
+                        <Font name="000webfont" size="28.0" />
                     </font>
                 </Label>
             </HBox>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="96.0" translateX="10.0" translateY="20.0">
                 <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="117.0" text="Nvl.XX">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+                        <Font name="000webfont" size="28.0" />
                     </font>
                 </Label>
             </HBox>
@@ -64,7 +64,7 @@
         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="88.0" translateX="-160.0" translateY="43.0">
             <Label fx:id="labelVida" alignment="CENTER" prefHeight="36.0" prefWidth="87.0" text="XXX/XXX">
                 <font>
-                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                    <Font name="000webfont" size="28.0" />
                 </font>
             </Label>
         </HBox>

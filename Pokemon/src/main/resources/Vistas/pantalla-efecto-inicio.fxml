@@ -6,33 +6,33 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
     <children>
         <Pane prefHeight="706.0" prefWidth="925.0">
             <children>
                 <ImageView fx:id="fondo" fitHeight="600.0" fitWidth="800.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
                     <image>
-                        <Image url="@../Imagenes/fondoBatalla.png" />
+                        <Image url="@../Imagenes/fondos/fondoBatalla.png" />
                     </image>
                 </ImageView>
                 <ImageView id="ash" fx:id="ash" fitHeight="577.0" fitWidth="862.0" layoutX="-39.0" layoutY="43.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
                     <image>
-                        <Image url="@../Imagenes/ash.png" />
+                        <Image url="@../Imagenes/jugadores/ash.png" />
                     </image>
                 </ImageView>
                 <ImageView id="brook" fx:id="brook" fitHeight="620.0" fitWidth="823.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
                     <image>
-                        <Image url="@../Imagenes/brook.png" />
+                        <Image url="@../Imagenes/jugadores/brook.png" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="bolasAsh" fitHeight="116.0" fitWidth="371.0" layoutX="456.0" layoutY="324.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
                     <image>
-                        <Image url="@../Imagenes/bolasDer.png" />
+                        <Image url="@../Imagenes/pokebolas/bolasDer.png" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="bolasBrook" fitHeight="124.0" fitWidth="406.0" layoutX="-26.0" layoutY="60.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
                     <image>
-                        <Image url="@../Imagenes/bolasIzq.png" />
+                        <Image url="@../Imagenes/pokebolas/bolasIzq.png" />
                     </image>
                 </ImageView>
             </children>
@@ -41,14 +41,14 @@
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff3d6" height="155.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="800.0" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#256bbf" height="131.0" layoutX="17.0" layoutY="12.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="#aba596" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" strokeWidth="8.0" width="766.0" />
-                <Label fx:id="texto" layoutX="39.0" layoutY="34.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="51.0" prefWidth="578.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
+                <Label fx:id="texto" layoutX="39.0" layoutY="34.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="64.0" prefWidth="682.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="69.0" />
+                        <Font name="000webfont" size="64.0" />
                     </font>
                 </Label>
-                <Label layoutX="591.0" layoutY="95.0" prefHeight="40.0" prefWidth="183.0" text="(click para continuar)" textFill="WHITE">
+                <Label layoutX="573.0" layoutY="95.0" prefHeight="40.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
                     <font>
-                        <Font name="Pokemon X and Y Regular" size="20.0" />
+                        <Font name="000webfont" size="23.0" />
                     </font>
                 </Label>
             </children>

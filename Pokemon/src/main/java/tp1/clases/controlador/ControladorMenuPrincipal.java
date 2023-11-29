@@ -36,7 +36,7 @@ public class ControladorMenuPrincipal implements Controlador {
         this.botonRendirse.setOnMouseClicked(this::confirmacionRendirse);
 
         this.rendirsePane.setOpacity(0);
-        this.botonNo.setOnMouseClicked(this::noRindirse);
+        this.botonNo.setOnMouseClicked(this::noRendirse);
         this.botonNo.setDisable(true);
         this.botonSi.setOnMouseClicked(this::rendirse);
         this.botonSi.setDisable(true);
@@ -73,7 +73,7 @@ public class ControladorMenuPrincipal implements Controlador {
 
     }
 
-    private void noRindirse(MouseEvent event) {
+    private void noRendirse(MouseEvent event) {
         this.rendirsePane.setOpacity(0);
 
         this.botonAtacar.setDisable(false);

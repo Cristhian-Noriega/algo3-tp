@@ -22,11 +22,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ControladorMenuItems implements Controlador, CancelarAccionListener, SubscriptorTurno {
+public class ControladorMenuItems implements Controlador, SubscriptorTurno {
+    public Pane itemInfo;
     @FXML private VBox botonesItems;
     @FXML private Button botonVolver;
     @FXML private BorderPane borderPane;
-    @FXML private Label itemDescriptionLabel;
+    @FXML
+    private Label itemDescriptionLabel;
     @FXML private ImageView imagenItem;
     private Pane bottomActual;
     private Batalla batalla;
@@ -77,7 +79,7 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
     private void cambiarMenuItemsConfirmacion(Event evento, Item item){
         this.deshabilitarBotones();
         this.bottomActual = (Pane) borderPane.getBottom();
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cartel-confirmacion-item.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/cartel-confirmacion-item.fxml"));
         Pane itemInfoPane;
         try {
             itemInfoPane = loader.load();

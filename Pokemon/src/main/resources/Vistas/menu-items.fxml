@@ -22,7 +22,7 @@
                   <Insets />
                </VBox.margin>
                <font>
-                  <Font name="Pokemon Fire Red Regular" size="21.0" />
+                  <Font name="000webfont" size="21.0" />
                </font></Button>
          </children>
       </VBox>
@@ -36,7 +36,7 @@
                   <children>
                      <Label fx:id="itemDescriptionLabel" layoutX="169.0" layoutY="14.0" prefHeight="86.0" prefWidth="518.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
                         <font>
-                           <Font name="Pokemon Fire Red Regular" size="40.0" />
+                           <Font name="000webfont" size="40.0" />
                         </font>
                      </Label>
                         <Pane layoutX="14.0" layoutY="11.0" prefHeight="105.0" prefWidth="136.0">
@@ -62,7 +62,7 @@
                <children>
                   <Label layoutX="32.0" prefHeight="50.0" prefWidth="90.0" text="ITEMS">
                      <font>
-                        <Font name="Pokemon Fire Red Regular" size="35.0" />
+                        <Font name="000webfont" size="35.0" />
                      </font>
                   </Label>
                </children>

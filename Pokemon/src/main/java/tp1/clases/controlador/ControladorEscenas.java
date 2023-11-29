@@ -38,6 +38,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             ControladorPantallaInicial controladorInicial = (ControladorPantallaInicial) this.controladores.get(Escena.PANTALLA_INICIAL.ordinal());
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
+            this.stage.getScene().getRoot().autosize();
             this.stage.show();
         } catch (IOException e) {
             e.printStackTrace();

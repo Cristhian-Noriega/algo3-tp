@@ -16,18 +16,18 @@
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f2d1" height="100.0" layoutX="3.0" layoutY="1.0" stroke="#ebd5ab" strokeType="INSIDE" strokeWidth="5.0" width="290.0" />
                 <Label fx:id="labelNombre" layoutX="20.0" layoutY="10.0" prefHeight="36.0" prefWidth="151.0">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+                        <Font name="000webfont" size="30.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelNivel" layoutX="210.0" layoutY="15.0" prefHeight="36.0" prefWidth="76.0">
+                <Label fx:id="labelNivel" layoutX="203.0" layoutY="10.0" prefHeight="36.0" prefWidth="76.0">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+                        <Font name="000webfont" size="30.0" />
                     </font>
                 </Label>
-                <Rectangle fx:id="barraFondo" arcHeight="5.0" arcWidth="5.0" fill="#e4e4e4" height="22.0" layoutX="17.0" layoutY="65.0" stroke="#987658" strokeType="OUTSIDE" strokeWidth="3.0" width="262.0" />
-                <Label fx:id="labelCantVida" layoutX="198.0" layoutY="59.0" prefHeight="36.0" prefWidth="85.0">
+                <Rectangle fx:id="barraFondo" arcHeight="5.0" arcWidth="5.0" fill="#e4e4e4" height="22.0" layoutX="17.0" layoutY="65.0" stroke="#ebd6ae" strokeType="OUTSIDE" strokeWidth="3.0" width="262.0" />
+                <Label fx:id="labelCantVida" layoutX="199.0" layoutY="57.0" prefHeight="36.0" prefWidth="85.0">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+                        <Font name="000webfont" size="30.0" />
                     </font>
                 </Label>
                 <HBox layoutX="17.0" layoutY="65.0" prefHeight="22.0" prefWidth="262.0" translateX="1.0" translateY="1.0">

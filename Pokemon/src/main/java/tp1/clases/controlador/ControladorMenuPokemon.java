@@ -20,6 +20,9 @@ import java.util.List;
 
 
 public class ControladorMenuPokemon implements Controlador, SubscriptorTurno, SubscriptorEscena {
+    public HBox botonConfirmar;
+    public HBox botonCancelar;
+    public Label labelTexto;
     @FXML private VBox contenedorPokemonActual;
     @FXML private HBox contenedorBotonVolver;
     @FXML private StackPane contenedorPrincipal;
@@ -142,7 +145,7 @@ public class ControladorMenuPokemon implements Controlador, SubscriptorTurno, Su
         contenedorPokemon.setDisable(false);
         contenedorPokemonActual.setDisable(false);
 
-        this.labelTexto.setStyle("-fx-font-size: 48.0; -fx-font-family: 'Pokemon Fire Red Regular';");
+        this.labelTexto.setStyle("-fx-font-size: 48.0; -fx-font-family: '000webfont';");
         this.labelTexto.setText("Seleccione un Pokemon");
     }
 
@@ -160,7 +163,7 @@ public class ControladorMenuPokemon implements Controlador, SubscriptorTurno, Su
         contenedorPokemonActual.setDisable(true);
 
         this.pokemonElegido = pokemon;
-        this.labelTexto.setStyle("-fx-font-size: 40.0; -fx-font-family: 'Pokemon Fire Red Regular';");
+        this.labelTexto.setStyle("-fx-font-size: 40.0; -fx-font-family: '000webfont';");
         this.labelTexto.setText("Has seleccionado a " + pokemon.getNombre());
     }
 
