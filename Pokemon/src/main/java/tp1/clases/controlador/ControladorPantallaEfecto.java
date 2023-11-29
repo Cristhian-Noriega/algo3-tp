@@ -87,9 +87,11 @@ public class ControladorPantallaEfecto implements Controlador {
     }
 
     public void mostrarEfectosClimaYEstados() {
+        System.out.println(this.textoProperty.get());
         InfoTurno infoTurno = this.batalla.getInfoTurno();
 
         Queue<String> colaMensajes = new ArrayDeque<String>();
+        colaMensajes.add(this.textoProperty.get());
 
         for (Pokemon pokemon: infoTurno.getPokemonesAfectadosPorClima()) {
             colaMensajes.add(pokemon.getNombre() + " fue afectado por el clima actual y su vida actual ha disminuido.");
@@ -104,7 +106,7 @@ public class ControladorPantallaEfecto implements Controlador {
         }
 
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(3), event -> this.setTextoProperty(colaMensajes.poll()))
+                new KeyFrame(Duration.seconds(5), event -> this.setTextoProperty(colaMensajes.poll()))
         );
         timeline.setCycleCount(colaMensajes.size());
         timeline.play();
