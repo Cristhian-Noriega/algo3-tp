@@ -1,11 +1,17 @@
 package tp1.clases.controlador;
 
 
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tp1.clases.Finalizador;
 import tp1.clases.eventos.*;
 
@@ -13,16 +19,16 @@ import tp1.clases.modelo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ControladorEscenas implements EventHandler<ActionEvent> {
     private Batalla batalla;
     private Stage stage;
-    private ArrayList<Scene> escenas;
+    private static ArrayList<Scene> escenas;
     private ArrayList<Controlador> controladores;
     private int escenaActual;
     private int escenaAnterior;
     private ArrayList<SubscriptorEscena> subscriptores;
-
 
     public ControladorEscenas(Stage stage, Batalla batalla) {
         this.escenas = new ArrayList<>();
@@ -38,7 +44,8 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
             this.stage.show();
-        } catch (IOException e) {;
+        } catch (IOException e) {
+            ;
             e.printStackTrace();
         }
 
@@ -52,13 +59,13 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             this.cambiarEscena(escena);
         });
 
-        this.stage.addEventHandler(ItemSeleccionadoEvent.ITEM_SELECCIONADO_EVENT , event -> {
+        this.stage.addEventHandler(ItemSeleccionadoEvent.ITEM_SELECCIONADO_EVENT, event -> {
             Item item = event.getItem();
             ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
             controladorPantallaEfecto.setItemSeleccionado(item);
         });
 
-        this.stage.addEventHandler(PokemonSeleccionadoEvent.POKEMON_SELECCIONADO_EVENT , event -> {
+        this.stage.addEventHandler(PokemonSeleccionadoEvent.POKEMON_SELECCIONADO_EVENT, event -> {
             Pokemon pokemon = event.getPokemon();
             ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());
             controladorPantallaEfecto.setPokemonSeleccionado(pokemon);
@@ -69,11 +76,11 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             }
         });
 
-        this.stage.addEventHandler(AplicarItemEvent.APLICAR_ITEM_EVENT , event -> {
+        this.stage.addEventHandler(AplicarItemEvent.APLICAR_ITEM_EVENT, event -> {
             Pokemon pokemon = event.getPokemon();
         });
 
-        this.stage.addEventHandler(RendirseEvent.RENDIRSE_EVENT , event -> {
+        this.stage.addEventHandler(RendirseEvent.RENDIRSE_EVENT, event -> {
             this.batalla.rendir(this.batalla.getJugadorActual());
             try {
                 partidaTerminada();
@@ -92,7 +99,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         this.escenaAnterior = this.escenaActual;
         this.escenaActual = escena;
 
-        for (SubscriptorEscena subscriptor: this.subscriptores) {
+        for (SubscriptorEscena subscriptor : this.subscriptores) {
             subscriptor.Update(escena);
         }
     }
@@ -122,7 +129,7 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
     }
 
     public void cambiarEscena(int escena) {
-        if (this.batalla.obtenerGanador().isPresent()){
+        if (this.batalla.obtenerGanador().isPresent()) {
             try {
                 partidaTerminada();
             } catch (IOException e) {
@@ -144,9 +151,19 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             }
         }
 
-        this.stage.setScene(this.escenas.get(escena));
-        this.stage.show();
+        if (
+                (escena != Escena.MENU_HABILIDADES.ordinal())
+                && (escenaAnterior != Escena.MENU_HABILIDADES.ordinal())
+                && (escenaAnterior != Escena.PANTALLA_EFECTO.ordinal())
+        ) {
+            this.sacarEscenaAnterior(escenaActual);
+            this.stage.setScene(this.escenas.get(escena));
+            this.ponerEscenaNueva(escena);
+        } else {
+            this.stage.setScene(this.escenas.get(escena));
+        }
 
+        this.stage.show();
     }
 
     private void partidaTerminada() throws IOException {
@@ -158,8 +175,42 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
         finalizador.crearJsonPartida();
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
+
+
+
+    public void sacarEscenaAnterior(int escena) {
+        Animation transition = new Transition() {
+            {
+                setCycleDuration(Duration.millis(1000));
+                setInterpolator(Interpolator.EASE_OUT);
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                escenas.get(escena).getRoot().setOpacity(stage.getOpacity() * (1 - frac));
+                escenas.get(escena).setFill(javafx.scene.paint.Color.BLACK.interpolate(javafx.scene.paint.Color.TRANSPARENT, frac));
+            }
+        };
+        transition.play();
     }
 
+    public void ponerEscenaNueva(int escena) {
+        Animation transition = new Transition() {
+            {
+                setCycleDuration(Duration.millis(1000));
+                setInterpolator(Interpolator.EASE_IN);
+            }
+
+            @Override
+            protected void interpolate(double frac) {
+                escenas.get(escena).getRoot().setOpacity(stage.getOpacity() * frac);
+                escenas.get(escena).setFill(javafx.scene.paint.Color.BLACK.interpolate(javafx.scene.paint.Color.TRANSPARENT, frac));
+            }
+        };
+        transition.play();
+    }
+
+
+    @Override
+    public void handle(ActionEvent actionEvent) {}
 }
