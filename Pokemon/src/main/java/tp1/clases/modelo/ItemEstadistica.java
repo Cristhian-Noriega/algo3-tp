@@ -3,6 +3,8 @@ package tp1.clases.modelo;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import tp1.clases.errores.Error;
+import tp1.clases.errores.ErrorItemEnPokemonMuerto;
+import tp1.clases.errores.ErrorPokemonMuerto;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -44,19 +46,19 @@ public class ItemEstadistica implements Item, Serializable, Cloneable {
 
     @Override
     public Optional<Error> usar(Pokemon pokemon){
+        if (pokemon.estaMuerto()) {
+            return Optional.of(new ErrorItemEnPokemonMuerto(pokemon.getNombre()));
+        }
         double porcentajeDeAumento = 0.1;
         switch (this.estadistica){
             case ATAQUE:
                 pokemon.modificarAtaque(pokemon.getAtaque()* porcentajeDeAumento);
-                System.out.println("¡El ataque de " + pokemon.getNombre() + " ha aumentado! \n");
                 return Optional.empty();
             case DEFENSA:
                 pokemon.modificarDefensa(pokemon.getDefensa()* porcentajeDeAumento);
-                System.out.println("¡La defensa de " + pokemon.getNombre() + " ha aumentado! \n");
                 return Optional.empty();
             case VELOCIDAD:
                 pokemon.modificadorVelocidad(pokemon.getVelocidad()* porcentajeDeAumento);
-                System.out.println("¡La velocidad de " + pokemon.getNombre() + " ha aumentado! \n");
                 return Optional.empty();
         }
         return Optional.empty();

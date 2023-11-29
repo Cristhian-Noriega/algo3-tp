@@ -26,12 +26,9 @@ public class ControladorPantallaFinal implements Controlador{
     public Label textoClixk;
     public Rectangle rectangulo;
     public VBox infoPokemones;
-    @FXML
-    private Label texto;
-    @FXML
-    private ImageView ganador;
-    @FXML
-    private GridPane gridPane;
+    @FXML private Label texto;
+    @FXML private ImageView ganador;
+    @FXML private GridPane gridPane;
 
     private Jugador jugador;
     private boolean clicksHecho = false;
@@ -120,7 +117,7 @@ public class ControladorPantallaFinal implements Controlador{
 
             for (Pokemon pokemon : this.jugador.getListaPokemones()) {
                 Text info = new Text(pokemon.getNombre() + " " + "  Nvl " + pokemon.getNivel() + "  Vida " + pokemon.getVida());
-                info.setFont(new Font("Pokemon X and Y Regular", 27));
+                info.setFont(new Font("Pokemon Classic Regular", 12));
                 this.infoPokemones.getChildren().add(info);
                 this.infoPokemones.getChildren().add(new Text(""));
             }

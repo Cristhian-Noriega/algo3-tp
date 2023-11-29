@@ -26,12 +26,10 @@ public class HabilidadEstadistica extends Habilidad {
     public Optional<Error> usar() {
         if (this.isContraRival()) {
             this.modificarEstadistica(this.pokemonRival, (-1));
-            System.out.println(this.pokemonRival.getNombre() + " ha disminuido su " + this.estadistica.toString().toLowerCase());
             this.infoHabilidad.setJugadorAfectado(JugadorEnum.RIVAL);
         } else {
             this.modificarEstadistica(this.pokemonAtacante, 1);
             this.infoHabilidad.setJugadorAfectado(JugadorEnum.ACTUAL);
-            System.out.println(this.pokemonAtacante.getNombre() + " ha aumentdo su " + this.estadistica.toString().toLowerCase());
         }
 
         this.restarUso();

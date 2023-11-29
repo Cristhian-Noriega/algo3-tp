@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,20 +23,15 @@ import java.util.Map;
 import java.util.Objects;
 
 public class ControladorMenuItems implements Controlador, CancelarAccionListener, Subscriptor {
-    @FXML
-    private VBox botonesItems;
+    @FXML private VBox botonesItems;
 
-    @FXML
-    private Button botonVolver;
+    @FXML private Button botonVolver;
 
-    @FXML
-    private BorderPane borderPane;
+    @FXML private BorderPane borderPane;
 
-    @FXML
-    private Label itemDescriptionLabel;
+    @FXML private Label itemDescriptionLabel;
 
-    @FXML
-    private ImageView imagenItem;
+    @FXML private ImageView imagenItem;
 
     private Pane bottomActual;
 
@@ -118,7 +112,7 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
     }
 
     @Override
-    public void onCancelAction() {
+    public void onAccionCancelada() {
         if (this.bottomActual != null) {
             borderPane.setBottom(bottomActual);
             habilitarBotones();
@@ -133,12 +127,4 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         this.botonesItems.getChildren().clear();
         this.setBotonesItems();
     }
-
-    public BorderPane getBorderPane() {
-        return borderPane;
-    }
 }
-
-
-
-//            boton.setDisable(cantidadItems.get(item.getNombre()) == 0);

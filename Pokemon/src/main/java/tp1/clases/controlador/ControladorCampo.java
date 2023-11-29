@@ -4,21 +4,22 @@ import javafx.animation.*;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
+
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
-import javafx.scene.shape.Line;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ControladorCampo implements Subscriptor {
     private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();
@@ -62,13 +63,12 @@ public class ControladorCampo implements Subscriptor {
         this.cartelPokemonRivalController.actualizar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);
         this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());
         this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());
-        this.setPokebolas(JugadorEnum.ACTUAL);
-        this.setPokebolas(JugadorEnum.RIVAL);
+        this.setPokebolas(JugadorEnum.ACTUAL, this.batalla.getJugadorActual().getListaPokemones());
+        this.setPokebolas(JugadorEnum.RIVAL, this.batalla.getJugadorSiguiente().getListaPokemones());
         this.setFondoClimaProperty(this.batalla.getClima().name());
     }
 
-    public void setPokebolas(JugadorEnum jugador) {
-        List<Pokemon> pokemones = this.batalla.getJugadores().get(jugador.ordinal()).getListaPokemones();
+    public void setPokebolas(JugadorEnum jugador, List<Pokemon> pokemones) {
         int cant = 0;
         for (Pokemon pokemon: pokemones) {
             if (!pokemon.estaMuerto()) {
@@ -99,11 +99,25 @@ public class ControladorCampo implements Subscriptor {
     }
 
     public void aplicarParpadeo(JugadorEnum jugador) {
-        ImageView imagen = this.imagenRival;
-        if (jugador == JugadorEnum.ACTUAL) {
-            imagen = this.imagenActual;
+        if (jugador == JugadorEnum.NINGUNO) {
+            return;
         }
 
+        if (jugador == JugadorEnum.ACTUAL) {
+            this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillos.gif")));
+
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, new KeyValue(this.efectoActual.opacityProperty(), 0.0)),
+                    new KeyFrame(Duration.seconds(0.2), new KeyValue(this.efectoActual.opacityProperty(), 1.0)),
+                    new KeyFrame(Duration.seconds(0.5), new KeyValue(this.efectoActual.opacityProperty(), 0.0))
+            );
+
+            timeline.setCycleCount(3);
+            timeline.play();
+            return;
+        }
+
+        ImageView imagen = this.imagenRival;
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),
                 new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 0.0)),
@@ -150,32 +164,55 @@ public class ControladorCampo implements Subscriptor {
         imagen.setEffect(blend);
     }
 
-    public void aplicarDesaparicionPokemonMuerto(Pokemon pokemon){
-        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
-        Line path = new Line(imagen.getTranslateX(), imagen.getTranslateY(), imagen.getTranslateX(), 400);
+    public void aplicarEfectoItem(){
+        Image gifImagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Imagenes/spark.gif")));
 
-        PathTransition pathTransition = new PathTransition();
-        pathTransition.setNode(imagen);
-        pathTransition.setPath(path);
-        pathTransition.setCycleCount(1);
-        pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
-        pathTransition.setDuration(Duration.seconds(2.0));
+        ImageView imagen = this.efectoActual;
 
-        pathTransition.play();
+        Image imagenActual = this.efectoActual.getImage();
+
+        imagen.setImage(gifImagen);
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(3));
+
+        pause.setOnFinished(event -> {
+            imagen.setImage(imagenActual);
+        });
+        pause.play();
     }
 
-    public void aplicarAparicionPokemonNuevo(Pokemon pokemon){
-        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes("pokemon/" + pokemon.getNombre() + ".gif"));
-        Line path = new Line(imagen.getTranslateX(), 400, imagen.getTranslateX(), imagen.getTranslateY());
+    public void aplicarDesaparicionPokemonMuerto(JugadorEnum jugador){
+        ImageView imagen = this.imagenActual;
+        if (jugador == JugadorEnum.RIVAL) {
+            imagen = this.imagenRival;
+        }
 
-        PathTransition pathTransition = new PathTransition();
-        pathTransition.setNode(imagen);
-        pathTransition.setPath(path);
-        pathTransition.setCycleCount(1);
-        pathTransition.setInterpolator(javafx.animation.Interpolator.EASE_OUT);
-        pathTransition.setDuration(Duration.seconds(2.0));
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(2), new KeyValue(imagen.opacityProperty(), 0.0))
+        );
 
-        pathTransition.play();
+        timeline.setOnFinished(event -> {
+            this.aplicarAparicionPokemonNuevo(jugador);
+        });
+
+        timeline.play();
+    }
+
+    public void aplicarAparicionPokemonNuevo(JugadorEnum jugador){
+        this.batalla.cambiarPokemonMuertoJugadorSiguiente();
+        this.actualizar();
+        ImageView imagen = this.imagenActual;
+        if (jugador == JugadorEnum.RIVAL) {
+            imagen = this.imagenRival;
+        }
+
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.seconds(2), new KeyValue(imagen.opacityProperty(), 1.0))
+        );
+
+        timeline.play();
     }
 
     @Override

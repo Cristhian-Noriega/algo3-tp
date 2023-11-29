@@ -15,6 +15,7 @@ module Pokemon {
     opens tp1.clases.eventos to javafx.fxml;
     opens tp1.clases.modelo to javafx.fxml;
 
+    exports tp1.clases.modelo;
     exports tp1.clases;
 
 }

@@ -23,7 +23,6 @@ public class HabilidadAtaque extends Habilidad {
         this.infoHabilidad.setDanio(danio);
         if (this.getClimaActual().favorece(this.pokemonAtacante.getTipo())) {
             this.infoHabilidad.setBeneficiadoPorClima(true);
-            System.out.println(this.pokemonAtacante.getNombre() + " ha mejorado su ataque gracias al clima actual.");
             return danio + (danio * Constantes.modificacionPorClima);
         }
         return danio;
@@ -32,12 +31,6 @@ public class HabilidadAtaque extends Habilidad {
     public Optional<Error> usar() {
         double danio = calcularDanioAtaque();
         this.pokemonRival.modificarVida((-1)*danio);
-
-        if (this.esEfectivo(danio)){
-            System.out.println(this.pokemonAtacante.getNombre() + " ha atacado a " + this.pokemonRival.getNombre() + " ¡Qué eficaz!\n");
-        } else {
-            System.out.println("¡" + this.pokemonRival.getNombre() + " ni se inmuta!\n");
-        }
 
         this.restarUso();
         return Optional.empty();

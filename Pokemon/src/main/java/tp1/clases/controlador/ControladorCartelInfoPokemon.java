@@ -23,13 +23,13 @@ import tp1.clases.modelo.Pokemon;
 import java.util.List;
 
 public class ControladorCartelInfoPokemon {
-    private String nombre = "Pokemon";
-    private String nivel = "Nvl.0";
-    private String cantVida = "00/00";
+    private final String nombre = "Pokemon";
+    private final String nivel = "Nvl.0";
+    private final String cantVida = "00/00";
 
-    private StringProperty nombreProperty = new SimpleStringProperty(nombre);
-    private StringProperty nivelProperty = new SimpleStringProperty(nivel);
-    private StringProperty cantVidaProperty = new SimpleStringProperty(cantVida);
+    private final StringProperty nombreProperty = new SimpleStringProperty(nombre);
+    private final StringProperty nivelProperty = new SimpleStringProperty(nivel);
+    private final StringProperty cantVidaProperty = new SimpleStringProperty(cantVida);
     private final List<ObjectProperty<Image>> imagenesEstadosProperty = List.of(new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>(), new SimpleObjectProperty<>());
 
     @FXML public Label labelNombre;
@@ -65,6 +65,18 @@ public class ControladorCartelInfoPokemon {
 
         this.setEstados(pokemon);
     }
+
+    public void cambiarColorBarraVida() {
+        if (this.getPorcentajeBarraDeVida() < 0.3) {
+            this.barraVida.setStyle("-fx-fill: #c22f2f");
+        } else if (this.getPorcentajeBarraDeVida() < 0.6) {
+            this.barraVida.setStyle("-fx-fillt: #c5c742");
+        } else {
+            this.barraVida.setStyle("-fx-fillt: #34BC81");
+        }
+    }
+
+
     public void setNombreProperty(String nombreProperty) {
         this.nombreProperty.set(nombreProperty);
     }
@@ -111,11 +123,7 @@ public class ControladorCartelInfoPokemon {
 
         this.setPorcentajeVida((double) pokemon.getVida() / pokemon.getVidaMax());
 
-        if (this.getPorcentajeBarraDeVida() < 0.3) {
-            this.barraVida.setStyle("-fx-fill: #c22f2f");
-        } else if (this.getPorcentajeBarraDeVida() < 0.6) {
-            this.barraVida.setStyle("-fx-fillt: #c5c742");
-        }
+        this.cambiarColorBarraVida();
     }
 
     public void animarBarraDeVida(double porcentajeInicial, double porcentajeFinal) {
@@ -143,5 +151,6 @@ public class ControladorCartelInfoPokemon {
         this.setNivelProperty(("Nvl." + pokemon.getNivel()));
         this.setEstados(pokemon);
         this.setVida(pokemon, jugador);
+        this.cambiarColorBarraVida();
     }
 }

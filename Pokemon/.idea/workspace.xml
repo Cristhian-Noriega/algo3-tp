@@ -5,232 +5,156 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Finalizador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CancelarAccionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Controlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorClima.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEstados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaAplicarItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaPokemonSeleccionado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Escena.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/SubscriptorEscena.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorHabilidadErronea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/AplicarItemEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/CambioDeEscenaEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/CambioDeTurnoEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/HabilidadSeleccionadaEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/ItemSeleccionadoEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/PokemonSeleccionadoEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstadosv2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/InfoHabilidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/JugadorEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Subscriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Ash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Brook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/ash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/bag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/bolaPokemon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/bolasDer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/bolasIzq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/brook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/charizard.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_HURACAN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_LLUVIA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_NIEBLA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_SIN_CLIMA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_SOLEADO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_TORMENTA_DE_ARENA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/CLIMA_TORMENTA_DE_RAYOS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/HURACAN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/LLUVIA.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/LLUVIA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/NIEBLA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/SIN_CLIMA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/SOLEADO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/TORMENTA_DE_ARENA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/clima/TORMENTA_DE_RAYOS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/estados/CONFUNDIDO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/estados/DORMIDO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/estados/ENVENENADO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/estados/PARALIZADO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/fondo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/fondoBatalla.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/fondoMenuPokemonAzul.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/fondoOpcionPokemonVerde.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/fondoPokemonActual.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Batido proteico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Hiper Pocion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Jugo de apio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Mega Pocion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Molesta Alumnos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Red Bull.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Revivir.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/items/Sacar estado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/logo-pixel.96c2ab63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/playPressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/playRojo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-actual-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokebolas/pokebolas-rival-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Ampharos.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Ampharos_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Charmander.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Charmander_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Cloyster.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Cloyster_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Cubone.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Cubone_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Dragonair.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Dragonair_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Fraxure.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Fraxure_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Gastrodon.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Gastrodon_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Golem.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Golem_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Golurk.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Golurk_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Rapidash.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Rapidash_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Sudowoodo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Sudowoodo_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Thundurus.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/pokemon/Thundurus_espalda.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/volver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/botonConfirmacion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/botonInicio.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/botonesItems.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/colorFont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-clima.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-habilidades.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-aplicar-item.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-poke-elegido.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaEfectoInicio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaFinal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaInicial.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cartel-confirmacion-item.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/items-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/habilidades.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/items.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/jugadores.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/pokemones.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sonidos/sonido-boton.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Inicializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Inicializador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Finalizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Finalizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/MainJavaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/MainJavaFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CategoriaMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorJuego.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemonActual.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEstados.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuHabilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuHabilidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaInicial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuHabilidades.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuItems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPokemones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/MenuPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/CambiarPokemonComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/Comando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarHabilidadComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/comandos/UsarItemComando.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeTurnos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeTurnos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaPokemonSeleccionado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Escena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Escena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/AplicarItemEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/eventos/AplicarItemEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstadosv2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Confundido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Confundido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Constantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Dormido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Dormido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Envenenado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Envenenado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/EstadoComportamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/EstadoComportamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Habilidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadAtaque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadClima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadClima.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/HabilidadEstado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstadistica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRevivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRevivir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Paralizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Paralizado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Proveedor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/CampoVista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/OpcionMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/ResultadoVista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/vista/VistaMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-poke-elegido.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-pokemon-muerto.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaEfectoInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto-inicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaFinal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-final.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantallaInicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-inicial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartelPokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartelPokemonActual.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/bolaPokemon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fondoCartelPokemon.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fondoCartelPokemonActual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fondoMenuPokemon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Ampharos.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Charmander.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Cloyster.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Cubone.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Dragonair.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Fraxure.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Gastrodon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Golem.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Golurk.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Rapidash.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Sudowoodo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pokemon/Thundurus.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/integracion/BatallaIntegracionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integracion/BatallaIntegracionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/AdministradorClimaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoConfundidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoConfundidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoDormidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoDormidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoEnvenenadoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoParalizadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/EstadoParalizadoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/HabilidadesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/ItemsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitarios/modeloTest/PokemonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/cartel-pokemon.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-poke-elegido.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-pokemon-muerto.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaEfectoInicio.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaFinal.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantallaInicial.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-confirmacion-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cartel-confirmacion-item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon-actual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartelPokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartelPokemonActual.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/bolaPokemon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/fondoCartelPokemon.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/fondoCartelPokemonActual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/fondoMenuPokemon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Ampharos.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Charmander.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Cloyster.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Cubone.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Dragonair.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Fraxure.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Gastrodon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Golem.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Golurk.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Rapidash.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Sudowoodo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pokemon/Thundurus.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pokemones-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CancelarAccionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CancelarAccionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CategoriaMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemonActual.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemonActual.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemonActual.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorJuego.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/Error.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/errores/Error.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaPokemonSeleccionado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuHabilidades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPokemones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/MenuPrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/CambiarPokemonComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/Comando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarHabilidadComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/comandos/UsarItemComando.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorNoPuedeAtacarDormido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorNoPuedeUsarHabilidadParalizado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/AplicarItemEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/AplicarItemEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstadosv2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoComportamiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoComportamiento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadClima.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadClima.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstadistica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadEstado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstadistica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" afterDir="false" />
@@ -239,8 +163,60 @@
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Proveedor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ResultadosJugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ResultadosJugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/CampoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/OpcionMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/ResultadoVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/vista/VistaMenu.class" beforeDir="false" />
+    </list>
+    <list id="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" name="Changes by cristhian" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CancelarAccionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CancelarAccionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorNoPuedeAtacarDormido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/errores/ErrorNoPuedeUsarHabilidadParalizado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstadistica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/botonesItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/botonesItems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-confirmacion-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cartel-confirmacion-item.fxml" afterDir="false" />
+    </list>
+    <list id="d26d8549-3c67-4c16-b392-ac9b5601da39" name="Changes by emilia" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaAplicarItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaAplicarItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon.fxml" afterDir="false" />
+    </list>
+    <list id="fce387b2-6c69-477e-81af-75f3d8bfaddd" name="Changes by melina" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Constantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-habilidades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-habilidades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,65 +240,211 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LuCalvert&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="346c2d2f-6673-4110-8e3a-d89cec946f6c" />
+        <option name="url" value="https://github.com/Cristhian-Noriega/algo3-tp.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Pokemon.java">
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemRestauracionVida.java">
       <ranges>
-        <range start1="94" end1="95" start2="94" end2="94" changelist="97ae390e-5368-4026-a76e-7dd30a024249" />
-        <range start1="99" end1="100" start2="98" end2="98" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
-        <range start1="102" end1="102" start2="100" end2="101" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
+        <range start1="5" end1="5" start2="5" end2="6" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="51" end1="52" start2="52" end2="53" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="56" end1="58" start2="57" end2="57" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java">
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelInfoPokemon.java">
       <ranges>
-        <range start1="17" end1="17" start2="17" end2="18" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="45" end1="46" start2="46" end2="47" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="81" end1="82" start2="82" end2="82" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="85" end1="85" start2="85" end2="86" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="95" end1="95" start2="96" end2="134" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="139" end1="140" start2="178" end2="179" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="156" end1="158" start2="195" end2="197" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="195" end1="195" start2="234" end2="235" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
-        <range start1="199" end1="199" start2="239" end2="244" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="25" end1="28" start2="25" end2="28" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="29" end1="32" start2="29" end2="32" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="67" end1="67" start2="67" end2="79" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="113" end1="118" start2="125" end2="126" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="145" end1="145" start2="153" end2="154" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java">
+      <ranges>
+        <range start1="7" end1="8" start2="7" end2="7" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="26" end1="28" start2="25" end2="26" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="29" end1="31" start2="27" end2="28" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="32" end1="34" start2="29" end2="30" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="35" end1="37" start2="31" end2="32" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="38" end1="40" start2="33" end2="34" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="120" end1="121" start2="114" end2="115" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="135" end1="139" start2="129" end2="129" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="140" end1="144" start2="130" end2="130" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java">
       <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="26e39c8b-4afc-443d-a0d6-088553963047" />
-        <range start1="8" end1="8" start2="9" end2="11" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="10" end1="11" start2="13" end2="14" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="23" end1="23" start2="26" end2="27" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="28" end1="29" start2="32" end2="34" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="33" end1="33" start2="38" end2="39" changelist="26e39c8b-4afc-443d-a0d6-088553963047" />
-        <range start1="43" end1="43" start2="49" end2="50" changelist="26e39c8b-4afc-443d-a0d6-088553963047" />
-        <range start1="46" end1="46" start2="53" end2="71" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="13" end1="26" start2="13" end2="21" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="32" end1="33" start2="27" end2="27" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="58" end1="71" start2="52" end2="52" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/AdministradorDeEstadosv2.java">
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java">
       <ranges>
-        <range start1="2" end1="2" start2="2" end2="4" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
-        <range start1="10" end1="11" start2="12" end2="13" changelist="97ae390e-5368-4026-a76e-7dd30a024249" />
-        <range start1="13" end1="15" start2="15" end2="18" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
-        <range start1="16" end1="18" start2="19" end2="41" changelist="2ce58ff0-9e44-4341-8352-63450b58e4ba" />
+        <range start1="4" end1="6" start2="4" end2="5" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="11" end1="12" start2="10" end2="11" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="20" end1="22" start2="19" end2="20" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="23" end1="25" start2="21" end2="22" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="47" end1="48" start2="44" end2="45" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="55" end1="56" start2="52" end2="53" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java">
+      <ranges>
+        <range start1="6" end1="7" start2="6" end2="7" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="20" end1="21" start2="20" end2="21" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="22" end1="24" start2="22" end2="22" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="26" end1="35" start2="24" end2="32" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="36" end1="46" start2="33" end2="33" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="47" end1="50" start2="34" end2="34" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="52" end1="54" start2="36" end2="37" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="55" end1="57" start2="38" end2="38" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="61" end1="61" start2="42" end2="43" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="70" end1="74" start2="52" end2="52" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="90" end1="92" start2="68" end2="69" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="95" end1="96" start2="72" end2="73" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="98" end1="98" start2="75" end2="79" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="112" end1="113" start2="93" end2="93" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="128" end1="128" start2="108" end2="109" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java">
+      <ranges>
+        <range start1="28" end1="34" start2="28" end2="31" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="122" end1="123" start2="119" end2="120" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java">
+      <ranges>
+        <range start1="6" end1="6" start2="6" end2="7" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="12" end1="13" start2="13" end2="14" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="18" end1="19" start2="19" end2="19" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="21" end1="21" start2="21" end2="22" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="64" end1="66" start2="65" end2="67" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="69" end1="71" start2="70" end2="71" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="101" end1="102" start2="101" end2="105" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="103" end1="104" start2="106" end2="117" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="106" end1="106" start2="119" end2="120" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="151" end1="151" start2="165" end2="182" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="152" end1="155" start2="183" end2="188" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="156" end1="162" start2="189" end2="193" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="163" end1="164" start2="194" end2="199" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="166" end1="169" start2="201" end2="208" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="170" end1="176" start2="209" end2="213" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="177" end1="178" start2="214" end2="215" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="4" end1="5" start2="5" end2="5" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="6" end1="6" start2="6" end2="7" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="19" end1="27" start2="20" end2="24" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="30" end1="31" start2="27" end2="27" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="45" end1="53" start2="41" end2="41" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="58" end1="58" start2="46" end2="47" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="59" end1="60" start2="48" end2="48" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="61" end1="62" start2="49" end2="50" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="68" end1="69" start2="56" end2="57" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="73" end1="75" start2="61" end2="62" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="80" end1="80" start2="67" end2="68" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="82" end1="83" start2="70" end2="72" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="93" end1="95" start2="82" end2="82" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="96" end1="97" start2="83" end2="85" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="105" end1="106" start2="93" end2="93" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="116" end1="118" start2="103" end2="103" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="139" end1="142" start2="124" end2="124" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Batalla.java">
+      <ranges>
+        <range start1="16" end1="17" start2="16" end2="17" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="22" end1="23" start2="22" end2="23" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="35" end1="35" start2="35" end2="38" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="106" end1="106" start2="109" end2="113" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEfectoInicio.java">
+      <ranges>
+        <range start1="9" end1="10" start2="9" end2="9" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="14" end1="24" start2="13" end2="18" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="9" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="16" end1="21" start2="17" end2="18" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="30" end1="31" start2="27" end2="28" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="32" end1="36" start2="29" end2="30" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="46" end1="47" start2="40" end2="40" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
+        <range start1="54" end1="56" start2="47" end2="48" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="73" end1="74" start2="65" end2="66" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="81" end1="82" start2="73" end2="74" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="95" end1="110" start2="87" end2="87" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="114" end1="114" start2="91" end2="93" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="115" end1="117" start2="94" end2="95" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="118" end1="120" start2="96" end2="97" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="121" end1="123" start2="98" end2="99" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="125" end1="126" start2="101" end2="101" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="127" end1="129" start2="102" end2="103" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="131" end1="131" start2="105" end2="110" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="178" end1="179" start2="157" end2="157" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="181" end1="181" start2="159" end2="163" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="192" end1="193" start2="174" end2="175" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="195" end1="197" start2="177" end2="178" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="198" end1="198" start2="179" end2="182" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="214" end1="214" start2="198" end2="199" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="226" end1="229" start2="211" end2="213" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="235" end1="235" start2="219" end2="220" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="239" end1="242" start2="224" end2="230" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="243" end1="243" start2="231" end2="232" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/Jugador.java">
+      <ranges>
+        <range start1="47" end1="48" start2="47" end2="47" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="74" end1="74" start2="73" end2="74" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="81" end1="81" start2="81" end2="90" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ItemEstadistica.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="7" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="46" end1="46" start2="48" end2="51" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="50" end1="51" start2="55" end2="55" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="54" end1="55" start2="58" end2="58" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="58" end1="59" start2="61" end2="61" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java">
       <ranges>
-        <range start1="8" end1="8" start2="8" end2="9" changelist="26e39c8b-4afc-443d-a0d6-088553963047" />
-        <range start1="14" end1="14" start2="15" end2="16" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="40" end1="41" start2="42" end2="43" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="47" end1="48" start2="49" end2="50" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="53" end1="54" start2="55" end2="56" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="60" end1="61" start2="62" end2="63" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="72" end1="73" start2="74" end2="75" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="77" end1="78" start2="79" end2="80" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="80" end1="80" start2="82" end2="90" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="96" end1="96" start2="106" end2="107" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="109" end1="110" start2="120" end2="120" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="115" end1="117" start2="125" end2="125" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="127" end1="131" start2="135" end2="146" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="132" end1="133" start2="147" end2="147" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="135" end1="135" start2="149" end2="157" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="138" end1="139" start2="160" end2="161" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="15" end1="16" start2="15" end2="15" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="41" end1="43" start2="40" end2="41" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="49" end1="50" start2="47" end2="47" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="55" end1="56" start2="52" end2="52" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="62" end1="63" start2="58" end2="58" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="74" end1="75" start2="69" end2="69" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="79" end1="80" start2="73" end2="73" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="96" end1="99" start2="89" end2="89" changelist="6f1fa96d-4bd5-4fb2-a01c-72f961a1ceaf" />
+        <range start1="106" end1="107" start2="96" end2="96" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="120" end1="121" start2="109" end2="110" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="131" end1="132" start2="120" end2="121" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="135" end1="136" start2="124" end2="125" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="141" end1="146" start2="130" end2="148" changelist="fce387b2-6c69-477e-81af-75f3d8bfaddd" />
+        <range start1="150" end1="151" start2="152" end2="153" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
+        <range start1="160" end1="161" start2="162" end2="162" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
       </ranges>
     </file>
   </component>
@@ -337,19 +459,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging cambiosShare",
-
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;cambiosShare&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.idea" />
@@ -382,9 +504,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tp1.clases.vista in Pokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tp1.clases.vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tp1.clases.vista" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainJavaFX" />
+        <item itemvalue="JUnit.tp1.clases.vista in Pokemon" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -406,6 +543,7 @@
       <workItem from="1700615408144" duration="6801000" />
       <workItem from="1700622476258" duration="1334000" />
       <workItem from="1700623874293" duration="345000" />
+      <workItem from="1701210845350" duration="12356000" />
     </task>
     <servers />
   </component>

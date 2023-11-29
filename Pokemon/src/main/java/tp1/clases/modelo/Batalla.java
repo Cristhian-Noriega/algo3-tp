@@ -14,13 +14,13 @@ public class Batalla {
     private final AdministradorDeClima administradorDeClima;
     private InfoTurno infoTurno;
 
-    private final AdministradorDeEstadosv2 administradorDeEstadosv2;
+    private final AdministradorDeEstados administradorDeEstadosv2;
 
     public Batalla(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
         this.administradorTurnos = new AdministradorDeTurnos(jugadores);
         this.administradorDeClima = new AdministradorDeClima();
-        this.administradorDeEstadosv2 = new AdministradorDeEstadosv2(this);
+        this.administradorDeEstadosv2 = new AdministradorDeEstados(this);
         this.rendidos = new ArrayList<Jugador>();
         this.infoTurno = new InfoTurno();
     }
@@ -33,6 +33,9 @@ public class Batalla {
         List<Jugador> jugadoresConVida = jugadores.stream()
                 .filter(Jugador::tienePokemonesConVida)
                 .toList();
+        if (jugadoresConVida.size() == 1){
+            this.rendidos.add(getJugadorSiguiente());
+        }
         return jugadoresConVida.size() == 1 ? Optional.of(jugadoresConVida.get(0).getNombre()) : Optional.empty();
     }
 
@@ -102,6 +105,10 @@ public class Batalla {
             datos.add(jugador.getDatos());
         }
         return datos;
+    }
+
+    public void cambiarPokemonMuertoJugadorSiguiente(){
+        this.getJugadorSiguiente().cambiarPokemonMuerto();
     }
 
     public boolean estaMuertoPokemonActual(){

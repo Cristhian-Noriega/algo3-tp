@@ -11,26 +11,20 @@ import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.Subscriptor;
 
 
-public class ControladorMenuPrincipal implements Controlador, Subscriptor {
-    @FXML
-    public ControladorCampo campoController;
-    @FXML
-    public Label dialogo;
-    @FXML
-    public Button botonAtacar;
-    @FXML
-    public Button botonMochila;
-    @FXML
-    public Button botonPokemon;
-    @FXML
-    public Button botonRendirse;
+public class ControladorMenuPrincipal implements Controlador {
+    @FXML public ControladorCampo campoController;
+    @FXML public Label dialogo;
+    @FXML public Button botonAtacar;
+    @FXML public Button botonMochila;
+    @FXML public Button botonPokemon;
+    @FXML public Button botonRendirse;
+
     private Batalla batalla;
 
     public ControladorMenuPrincipal() {
     }
 
     public void inicializar(Batalla batalla) {
-       // System.out.println("batalla en menu principla " + batalla);
         this.batalla = batalla;
         this.campoController.inicializar(batalla);
         this.botonAtacar.setOnMouseClicked(this::cambiarMenuHabilidades);
@@ -56,17 +50,4 @@ public class ControladorMenuPrincipal implements Controlador, Subscriptor {
         this.dialogo.fireEvent(new RendirseEvent());
     }
 
-
-    @Override
-    public void Update() {
-        System.out.println("murio");
-        Pokemon pokeActual = batalla.getJugadorActual().getPokemonActual();
-        if (pokeActual.estaMuerto()){
-            // ESTO NO IRIA ACA PERO ESTABA PROBANDO
-           // this.dialogo.setText("El pokemon " + pokeActual.getNombre() + " ha muerto!");
-           // this.campoController.aplicarDesaparicionPokemonMuerto(pokeActual);
-
-            this.dialogo.fireEvent(new CambioDeEscenaEvent(Escena.PANTALLA_EFECTO.ordinal()));
-        }
-    }
 }

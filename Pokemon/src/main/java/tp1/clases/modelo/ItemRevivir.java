@@ -48,7 +48,6 @@ public class ItemRevivir implements Item, Serializable, Cloneable {
             return Optional.of(new ErrorPokemonNoMuerto(pokemon.getNombre(), this.nombre));
         }
         pokemon.modificarVida(pokemon.getVidaMax());
-        System.out.println("¡Pokemon " + pokemon.getNombre() + " ha revivido!!");
         return Optional.empty();
     }
     @Override

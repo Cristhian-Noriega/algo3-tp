@@ -7,21 +7,15 @@ import javafx.scene.image.ImageView;
 
 import javafx.util.Duration;
 import tp1.clases.eventos.CambioDeEscenaEvent;
-import tp1.clases.modelo.Batalla;
 
 public class ControladorEfectoInicio{
 
     public ImageView fondo;
-    @FXML
-    private ImageView ash;
-    @FXML
-    private ImageView brook;
-    @FXML
-    private Label texto;
-    @FXML
-    private ImageView bolasAsh;
-    @FXML
-    private ImageView bolasBrook;
+    @FXML private ImageView ash;
+    @FXML private ImageView brook;
+    @FXML private Label texto;
+    @FXML private ImageView bolasAsh;
+    @FXML private ImageView bolasBrook;
 
     private int clicks = 0;
 

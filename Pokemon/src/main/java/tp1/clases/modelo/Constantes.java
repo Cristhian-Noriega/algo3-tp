@@ -16,6 +16,6 @@ public class Constantes {
     public static int maxRandom =  255;
     public static int minRandom = 217;
 
-    public static int tamanioBarraVidaJugadorActual = 140;
+    public static int tamanioBarraVidaJugadorActual = 170;
     public static int margen = 2;
 }

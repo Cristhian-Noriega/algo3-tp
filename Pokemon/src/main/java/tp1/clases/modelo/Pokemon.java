@@ -130,7 +130,6 @@ public class Pokemon implements Serializable {
             estadoComportamiento = EstadoFacotory.crearEstado(estado);
             estadosComportamientos.put(estado, estadoComportamiento);
         }
-        System.out.println(this.getNombre() + " ahora esta " + estado.name().toLowerCase());
         return Optional.empty() ;
     }
 
@@ -146,7 +145,6 @@ public class Pokemon implements Serializable {
 
     public void eliminarEstado(Estado estado) {
         this.estadosParaEliminar.add(estado);
-        System.out.println(this.nombre + " ha dejado de estar " + estado.name().toLowerCase());
     }
 
     public List<Habilidad> getHabilidades() { return this.habilidades; }

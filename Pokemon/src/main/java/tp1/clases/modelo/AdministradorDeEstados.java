@@ -1,64 +1,41 @@
 package tp1.clases.modelo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class AdministradorDeEstados {
 
-    private Pokemon pokemon;
-    private final HashMap<Estado, EstadoComportamiento> estadosComportamientos;
-    private List<Estado> estadosParaEliminar;
+    private Batalla batalla;
 
-
-    public AdministradorDeEstados(Pokemon pokemon){
-        this.pokemon = pokemon;
-        this.estadosComportamientos = new HashMap<>();
-        this.estadosComportamientos.put(Estado.NORMAL, null);
-        this.estadosParaEliminar = new ArrayList<>();
+    public AdministradorDeEstados(Batalla batalla) {
+        this.batalla = batalla;
     }
 
+    public void aplicarEfectoEstado(InfoTurno infoTurno){
+        Pokemon pokemonJugadorActual = this.batalla.getJugadorActual().getPokemonActual();
+        Pokemon pokemonJugadorSiguiente = this.batalla.getJugadorSiguiente().getPokemonActual();
 
-    public void setEstado(Estado estado){
-        EstadoComportamiento estadoComportamiento = estadosComportamientos.get(estado);
-        if (estadoComportamiento == null) {
-            estadoComportamiento = EstadoFacotory.crearEstado(estado);
-            estadosComportamientos.put(estado, estadoComportamiento);
+        this.controlarEfectoEstados(pokemonJugadorActual, infoTurno);
+        this.controlarEfectoEstados(pokemonJugadorSiguiente, infoTurno);
+    }
+    
+    public void controlarEfectoEstados(Pokemon pokemon, InfoTurno infoTurno){
+        if (pokemon.getEstados().contains(Estado.ENVENENADO)) {
+            infoTurno.agregarPokemonEnvenenado(pokemon);
         }
-    }
 
-    public Boolean usarHabilidadEstados(Habilidad habilidad, Pokemon pokemon) {
-        for (Estado estado : pokemon.getEstados()) {
-            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
-            if (estadoComportamiento != null) {
-                boolean puedeUsarHabilidad = estadoComportamiento.usarHabilidad(habilidad, pokemon);
-                if (!puedeUsarHabilidad) {
-                    return false;
-                }
+        List<Estado> estadosPokemonActual = pokemon.getEstados();
+        
+        pokemon.aplicarEfectoEstados();
+
+        resetearEstados(pokemon, estadosPokemonActual, infoTurno);
+    }
+    
+    public void resetearEstados(Pokemon pokemon, List<Estado> estadosAnteriores, InfoTurno infoTurno) {
+        for (Estado estado : estadosAnteriores) {
+            if (!pokemon.getEstados().contains(estado)) {
+                infoTurno.agregarEstadoReseteado(pokemon, estado);
             }
         }
-        return true;
     }
 
-
-    public void aplicarEfectoEstados(){
-
-        for (Estado estado: this.pokemon.getEstados()){
-            EstadoComportamiento estadoComportamiento = this.estadosComportamientos.get(estado);
-            if (estadoComportamiento != null) {
-                estadoComportamiento.aplicarEfecto(this.pokemon);
-
-            }
-        }
-        this.pokemon.getEstados().removeAll(this.estadosParaEliminar);
-        this.estadosParaEliminar.clear();
-        if (this.pokemon.getEstados().isEmpty()){
-            this.pokemon.setEstado(Estado.NORMAL);
-        }
-    }
-
-    public void eliminarEstado(Estado estado){
-        this.estadosParaEliminar.add(estado);
-        System.out.println(pokemon.getNombre() + " ha dejado de estar " + estado.name().toLowerCase());
-    }
 }
