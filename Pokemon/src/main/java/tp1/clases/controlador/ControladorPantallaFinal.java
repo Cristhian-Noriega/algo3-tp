@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -32,11 +33,15 @@ public class ControladorPantallaFinal implements Controlador{
     private Jugador jugador;
     private boolean clicksHecho = false;
 
+    private MediaPlayer mediaPlayer;
+
     public void inicializar(Batalla batalla){
         this.jugador = batalla.getJugadores().get(0);
         setImagenesPokemones();
         setTexto(this.jugador.getNombre());
         setGanador(this.jugador.getNombre());
+
+        Archivos.reproducirSonido("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/victoria.mp3", this.mediaPlayer);
     }
 
     private void setImagenesPokemones() {

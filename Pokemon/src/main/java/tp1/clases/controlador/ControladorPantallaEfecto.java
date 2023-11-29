@@ -9,12 +9,15 @@ import javafx.scene.control.Label;
 
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import tp1.clases.errores.Error;
 import tp1.clases.eventos.CambioDeEscenaEvent;
 import tp1.clases.modelo.*;
 
 
+import java.io.File;
 import java.util.*;
 
 public class ControladorPantallaEfecto implements Controlador {
@@ -90,7 +93,6 @@ public class ControladorPantallaEfecto implements Controlador {
         this.setTextoProperty(resultado);
 
         this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado(), habilidad.getTipo().name().toLowerCase());
-
         if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
             this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()), infoHabilidad.getJugadorAfectado());
         }

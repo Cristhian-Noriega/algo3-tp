@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tp1.clases.Finalizador;
@@ -13,6 +15,7 @@ import tp1.clases.eventos.*;
 
 import tp1.clases.modelo.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -38,7 +41,12 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             ControladorPantallaInicial controladorInicial = (ControladorPantallaInicial) this.controladores.get(Escena.PANTALLA_INICIAL.ordinal());
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
-            this.stage.getScene().getRoot().autosize();
+
+            Media media = new Media(new File("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Pokemon_FireRed_&_LeafGreen.mp3").toURI().toString());
+
+            MediaPlayer mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.volumeProperty().set(0.02);
+            mediaPlayer.setAutoPlay(true);
             this.stage.show();
         } catch (IOException e) {
             e.printStackTrace();
