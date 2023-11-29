@@ -12,12 +12,15 @@ import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import tp1.clases.modelo.Batalla;
 import tp1.clases.modelo.JugadorEnum;
 import tp1.clases.modelo.Pokemon;
 import tp1.clases.modelo.SubscriptorTurno;
 
+import java.io.File;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,6 +41,7 @@ public class ControladorCampo implements SubscriptorTurno {
     @FXML private ImageView efectoActual;
     @FXML private ImageView pokebolasJugadorActual;
     private Batalla batalla;
+    private MediaPlayer mediaPlayer;
 
     public ControladorCampo() {}
 
@@ -106,9 +110,11 @@ public class ControladorCampo implements SubscriptorTurno {
         if (jugador == JugadorEnum.ACTUAL) {
             this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes("brillitos.gif")));
             this.efecto(this.efectoActual);
+            //reproducir con ruta de brillito
             return;
         }
 
+        Archivos.reproducirSonido("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/golpe.wav", this.mediaPlayer);
         this.parpadeo(this.imagenRival);
         this.efectoRival.setImage(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
     }
