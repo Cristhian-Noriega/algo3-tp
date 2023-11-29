@@ -92,7 +92,7 @@ public class ControladorPantallaEfecto implements Controlador {
         String resultado = MensajesPantallaEfecto.mostrarResultado(infoHabilidad, habilidad.getNombre(), pokemones.get(JugadorEnum.ACTUAL.ordinal()).getNombre());
         this.setTextoProperty(resultado);
 
-        this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado(), habilidad.getTipo().name().toLowerCase());
+        this.campoController.aplicarParpadeo(infoHabilidad.getJugadorAfectado(), habilidad);
         if ((infoHabilidad.getCategoria() == Categoria.ATAQUE) | ((infoHabilidad.getCategoria() == Categoria.ESTADISTICA) && (infoHabilidad.getEstadisticaModificada() == Estadisticas.VIDA))) {
             this.campoController.animarVida(pokemones.get(infoHabilidad.getJugadorAfectado().ordinal()), infoHabilidad.getJugadorAfectado());
         }
