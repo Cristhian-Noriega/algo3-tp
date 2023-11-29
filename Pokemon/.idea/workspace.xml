@@ -7,27 +7,12 @@
     <list default="true" id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/campo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto-inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-efecto-inicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-final.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/pantalla-final.fxml" afterDir="false" />
-    </list>
-    <list id="d5991359-82c9-4fef-8b31-354c9e5d01da" name="Changes by cristhian" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/CancelarAccionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorConfirmacionItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuItems.java" afterDir="false" />
-    </list>
-    <list id="d26d8549-3c67-4c16-b392-ac9b5601da39" name="Changes by emilia" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/Finalizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/Finalizador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCartelPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/modelo/ResultadosJugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/ResultadosJugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
+    </list>
+    <list id="d5991359-82c9-4fef-8b31-354c9e5d01da" name="Changes by cristhian" comment="" />
+    <list id="d26d8549-3c67-4c16-b392-ac9b5601da39" name="Changes by emilia" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon-actual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-opcion-pokemon-actual.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cartel-opcion-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-opcion-pokemon.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,47 +49,6 @@
         <option name="url" value="https://github.com/Cristhian-Noriega/algo3-tp.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaEfecto.java">
-      <ranges>
-        <range start1="22" end1="23" start2="22" end2="22" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="25" end1="26" start2="24" end2="24" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="28" end1="29" start2="26" end2="26" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="89" end1="90" start2="86" end2="87" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="113" end1="114" start2="110" end2="110" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="156" end1="157" start2="152" end2="153" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="158" end1="159" start2="154" end2="156" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="180" end1="181" start2="177" end2="178" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="185" end1="185" start2="182" end2="183" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="189" end1="190" start2="187" end2="188" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="210" end1="211" start2="208" end2="208" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="228" end1="229" start2="225" end2="225" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="230" end1="231" start2="226" end2="226" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorMenuPokemon.java">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="7" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="13" end1="13" start2="13" end2="14" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="24" end1="24" start2="25" end2="28" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="27" end1="27" start2="31" end2="32" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="32" end1="33" start2="37" end2="38" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="34" end1="37" start2="39" end2="46" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="38" end1="41" start2="47" end2="63" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="44" end1="46" start2="66" end2="69" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="49" end1="52" start2="72" end2="74" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="55" end1="56" start2="77" end2="78" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="66" end1="67" start2="88" end2="89" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="70" end1="71" start2="92" end2="93" changelist="d26d8549-3c67-4c16-b392-ac9b5601da39" />
-        <range start1="75" end1="75" start2="97" end2="98" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="76" end1="80" start2="99" end2="101" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="86" end1="87" start2="107" end2="107" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="88" end1="93" start2="108" end2="108" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="99" end1="109" start2="114" end2="115" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-        <range start1="116" end1="116" start2="122" end2="166" changelist="f9608537-d117-41ca-95a1-957004d6c4b3" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -204,7 +148,7 @@
       <workItem from="1701210845350" duration="13044000" />
       <workItem from="1701227910203" duration="181000" />
       <workItem from="1701261070567" duration="457000" />
-      <workItem from="1701263529108" duration="8178000" />
+      <workItem from="1701263529108" duration="8990000" />
     </task>
     <servers />
   </component>

@@ -74,7 +74,7 @@ public class ControladorMenuPokemon implements Controlador, Subscriptor, Subscri
         Pokemon pokemonActual = this.batalla.getJugadorActual().getPokemonActual();
         for (Pokemon pokemon : pokemones) {
 
-            String ruta = "/cartel-opcion-pokemon";
+            String ruta = "/Vistas/cartel-opcion-pokemon";
             if (pokemon == pokemonActual) {
                 ruta += "-actual";
             }
