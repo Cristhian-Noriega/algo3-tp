@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<VBox onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
+<VBox onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
     <children>
         <Pane prefHeight="706.0" prefWidth="925.0">
             <children>
@@ -43,9 +41,9 @@
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff3d6" height="155.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="800.0" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#256bbf" height="131.0" layoutX="17.0" layoutY="12.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="#aba596" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" strokeWidth="8.0" width="766.0" />
-                <Label fx:id="texto" layoutX="31.0" layoutY="29.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="51.0" prefWidth="578.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
+                <Label fx:id="texto" layoutX="39.0" layoutY="34.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="51.0" prefWidth="578.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
                     <font>
-                        <Font name="Pokemon Fire Red Regular" size="72.0" />
+                        <Font name="Pokemon Fire Red Regular" size="69.0" />
                     </font>
                 </Label>
                 <Label layoutX="591.0" layoutY="95.0" prefHeight="40.0" prefWidth="183.0" text="(click para continuar)" textFill="WHITE">

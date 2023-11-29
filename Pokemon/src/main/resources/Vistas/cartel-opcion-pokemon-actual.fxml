@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/'0'" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
     <ImageView fitHeight="220.0" fitWidth="220.0">
         <Image url="@../Imagenes/fondoPokemonActual.png" />
     </ImageView>

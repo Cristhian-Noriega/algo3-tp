@@ -12,30 +12,59 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+<StackPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
     <ImageView fitHeight="600.0" fitWidth="800.0">
         <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
     </ImageView>
     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
-        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="110.0" />
-        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="-220.0" translateY="-230.0" />
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="706.0" translateY="-110.0">
+        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="120.0" />
+        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="-220.0" translateY="-210.0" />
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="800.0" translateY="-100.0">
             <opaqueInsets>
                 <Insets right="600.0" top="600.0" />
             </opaqueInsets>
             <VBox.margin>
                 <Insets />
             </VBox.margin>
-            <HBox fx:id="contenedorBotonVolver" alignment="CENTER" layoutX="548.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
+            <StackPane layoutX="502.0" layoutY="-22.0" prefHeight="125.0" prefWidth="299.0">
                 <children>
-                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="VOLVER" translateX="15.0">
-                        <font>
-                            <Font name="Pokemon Fire Red Regular" size="33.0" />
-                        </font>
-                    </Label>
+                    <HBox fx:id="contenedorBotonVolver" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickVolver" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
+                        <children>
+                            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="82.0">
+                                <Group />
+                                <Circle radius="34.0" />
+                                <ImageView fitHeight="67.0" fitWidth="76.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../Imagenes/bolaPokemon.png" />
+                                </ImageView>
+                            </StackPane>
+                            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="98.0" text="VOLVER" translateX="-5.0">
+                                <font>
+                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                    <HBox fx:id="botonConfirmar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="50.0" prefWidth="120.0" onMouseClicked="#handleMouseOnClickConfirmar"  style="-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-width: 2.5;" translateY="-30.0">
+                        <children>
+                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="120.0" text="USAR">
+                                <font>
+                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                    <HBox fx:id="botonCancelar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="50.0" prefWidth="120.0" onMouseClicked="#handleMouseOnClickCancelar"  style="-fx-border-color: black; -fx-background-color: grey; -fx-border-width: 2.5;" translateY="30.0">
+                        <children>
+                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="129.0" text="CANCELAR">
+                                <font>
+                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
                 </children>
-            </HBox>
-            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="483.0" style="-fx-background-color:white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;">
+            </StackPane>
+            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="509.0" style="-fx-background-color:white; -fx-border-radius: 1%; -fx-border-width: 4; -fx-border-color: #3b3939;">
                 <Label fx:id="labelTexto" alignment="CENTER" text="Seleccione un Pokemon" textAlignment="CENTER">
                     <HBox.margin>
                         <Insets />
@@ -45,14 +74,6 @@
                     </font>
                 </Label>
             </HBox>
-            <StackPane layoutX="500.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="97.0">
-                <Group />
-                <Circle radius="34.0" />
-                <ImageView fitHeight="67.0" fitWidth="76.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@../Imagenes/bolaPokemon.png" />
-                </ImageView>
-            </StackPane>
-
         </Pane>
     </VBox>
 </StackPane>

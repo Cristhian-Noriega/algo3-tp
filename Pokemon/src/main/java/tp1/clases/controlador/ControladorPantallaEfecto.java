@@ -22,10 +22,8 @@ public class ControladorPantallaEfecto implements Controlador {
     private Habilidad habilidadSeleccionada;
     private Pokemon pokemonSeleccionado;
     private Item itemSeleccionado;
-
     private ArrayList<Pokemon> pokemones;
     private final String texto = "Efecto";
-
     private final StringProperty textoProperty = new SimpleStringProperty(this.texto);
 
     @FXML public ControladorCampo campoController;
@@ -103,9 +101,10 @@ public class ControladorPantallaEfecto implements Controlador {
 
     public void mostrarCambioDePokemon() {
         Optional<Error> err = this.batalla.cambiarPokemon(this.pokemonSeleccionado);
-        this.setTextoProperty("antes del if");
+
         if (err.isEmpty()) {
-            this.setTextoProperty("Cambiaste tu pokemon a " + this.pokemonSeleccionado.getNombre() + "!");
+            this.setTextoProperty("¡Cambiaste tu pokemon a " + this.pokemonSeleccionado.getNombre() + "!");
+
         } else {
             this.setTextoProperty(err.get().mostrar());
             this.setEventoCambioDeEscena(false);
@@ -123,11 +122,12 @@ public class ControladorPantallaEfecto implements Controlador {
         if (err.isEmpty()) {
             this.setTextoProperty("Se aplicó " + this.itemSeleccionado.getNombre() + " a " + this.pokemonSeleccionado.getNombre());
 
-            this.campoController.aplicarItem(this.pokemonSeleccionado);
+           this.campoController.aplicarItem(this.pokemonSeleccionado);
             if (this.pokemonSeleccionado.equals(this.batalla.getJugadorActual().getPokemonActual())){
                 this.campoController.aplicarEfectoItem();
             }
             this.campoController.actualizar();
+
         } else {
             this.setTextoProperty(err.get().mostrar());
             this.setEventoCambioDeEscena(false);

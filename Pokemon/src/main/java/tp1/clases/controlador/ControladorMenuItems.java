@@ -82,8 +82,8 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         try {
             itemInfoPane = loader.load();
             ControladorConfirmacionItem controladorConfirmacion = loader.getController();
-            controladorConfirmacion.inicializar(item, this.borderPane);
-            controladorConfirmacion.setCancelActionListener(this);
+            controladorConfirmacion.inicializar(item);
+            controladorConfirmacion.setControladorMenuItems(this);
         } catch (IOException e) {
             e.printStackTrace();
             return;
@@ -106,12 +106,13 @@ public class ControladorMenuItems implements Controlador, CancelarAccionListener
         this.botonVolver.setDisable(true);
     }
 
-    @Override
     public void onAccionCancelada() {
         if (this.bottomActual != null) {
             borderPane.setBottom(bottomActual);
             habilitarBotones();
         }
+        this.botonesItems.getChildren().clear();
+        this.setBotonesItems();
     }
 
     public void cambiarMenuPrincipal(MouseEvent event) {

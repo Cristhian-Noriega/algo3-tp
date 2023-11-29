@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Ellipse?>
 
-<Pane fx:id="campoPane" prefHeight="432.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
+<Pane fx:id="campoPane" prefHeight="432.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
     <children>
         <ImageView fx:id="fondoClima" fitHeight="400.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
         <VBox layoutX="-4.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
