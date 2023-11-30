@@ -1,18 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Pokemon:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/informe17_18_41.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/informe17_19_17.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultados/informe18_12_39.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Pokemon_FireRed_&amp;_LeafGreen.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sonidos/woosh_s21KzKN.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/woosh_s21KzKN.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/victoria.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Ash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Brook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/ash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolaPokemon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasDer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasIzq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brillos.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/charizard.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoBatalla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoMenuPokemonAzul.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoOpcionPokemonVerde.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoPokemonActual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonConfirmacion.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonConfirmacion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonInicio.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonInicio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonesItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonesItems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-clima.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/cartel-clima.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-pokemon.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-aplicar-item.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto-inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto-inicio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-final.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-final.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-inicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-inicial.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-confirmacion-item.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon-actual.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CancelarAccionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Escena.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Escena.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorIndiceFueraDeRango.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/AplicarItemEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/CambioDeTurnoEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/RendirseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/RendirseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/InfoHabilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/InfoHabilidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRestauracionVida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRestauracionVida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ResultadosJugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Subscriptor.class" beforeDir="false" />
+    </list>
+    <list id="97ae390e-5368-4026-a76e-7dd30a024249" name="Changes by cristhian" comment="" />
+    <list id="26e39c8b-4afc-443d-a0d6-088553963047" name="Changes by lu" comment="" />
+    <list id="2ce58ff0-9e44-4341-8352-63450b58e4ba" name="Changes by melina" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+    &quot;associatedIndex&quot;: 0
+    }</component>
+  <component name="ProjectId" id="2YUVoMGrh9qNsmem4hfBrM8RNl0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "entregaFinal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40114942",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/.idea" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.EstadoEnvenenadoTest.aplicaEfectoTest">
+    <configuration name="EstadoEnvenenadoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.EstadoEnvenenadoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+    <configuration name="EstadoEnvenenadoTest.aplicaEfectoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pokemon" />
-      <option name="filePath" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.EstadoEnvenenadoTest" />
+      <option name="METHOD_NAME" value="aplicaEfectoTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ItemsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.ItemsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.JugadorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitarios.modeloTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitarios.modeloTest" />
+      <option name="MAIN_CLASS_NAME" value="unitarios.modeloTest.PokemonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EstadoEnvenenadoTest.aplicaEfectoTest" />
+        <item itemvalue="JUnit.EstadoEnvenenadoTest" />
+        <item itemvalue="JUnit.PokemonTest" />
+        <item itemvalue="JUnit.JugadorTest" />
+        <item itemvalue="JUnit.ItemsTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="" />
+      <created>1700580324711</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700580324711</updated>
+      <workItem from="1700580329538" duration="337000" />
+      <workItem from="1700580706254" duration="109000" />
+      <workItem from="1700580934402" duration="1317000" />
+      <workItem from="1700600669020" duration="5305000" />
+      <workItem from="1700606309826" duration="679000" />
+      <workItem from="1700607220780" duration="306000" />
+      <workItem from="1700615408144" duration="6801000" />
+      <workItem from="1700622476258" duration="1334000" />
+      <workItem from="1700623874293" duration="402000" />
+      <workItem from="1700875091756" duration="3195000" />
+      <workItem from="1700916172040" duration="11864000" />
+      <workItem from="1700937912416" duration="2689000" />
+      <workItem from="1700952949205" duration="11796000" />
+      <workItem from="1700966564316" duration="631000" />
+      <workItem from="1701031286040" duration="22217000" />
+      <workItem from="1701198666191" duration="1401000" />
+      <workItem from="1701202208032" duration="2907000" />
+      <workItem from="1701218988583" duration="3343000" />
+      <workItem from="1701225588069" duration="1922000" />
+      <workItem from="1701258711276" duration="66000" />
+      <workItem from="1701258823828" duration="5672000" />
+      <workItem from="1701272635510" duration="4050000" />
+      <workItem from="1701285861339" duration="65000" />
+      <workItem from="1701285972652" duration="1459000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

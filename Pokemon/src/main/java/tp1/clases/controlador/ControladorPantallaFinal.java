@@ -41,7 +41,7 @@ public class ControladorPantallaFinal implements Controlador{
         setTexto(this.jugador.getNombre());
         setGanador(this.jugador.getNombre());
 
-        Archivos.reproducirSonido("/victoria.mp3", this.mediaPlayer);
+        Archivos.reproducirSonido("/victoria.wav", this.mediaPlayer);
     }
 
     private void setImagenesPokemones() {

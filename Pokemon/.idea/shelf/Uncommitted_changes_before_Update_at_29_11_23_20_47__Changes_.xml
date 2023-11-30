@@ -1,0 +1,324 @@
+<changelist name="Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]" date="1701301715895" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29/11/23 20:47 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/errores/ErrorIndiceFueraDeRango.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/CancelarAccionListener.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/EstadoFacotory.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/EstadoFacotory.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/EstadoFacotory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/eventos/RendirseEvent.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/eventos/RendirseEvent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/RendirseEvent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Estado.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Estado.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Estado.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/Archivos.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/Archivos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Archivos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/bolasDer.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorEfectoInicio.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/errores/ErrorItemNoValido.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/errores/ErrorItemNoValido.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ErrorItemNoValido.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/InfoHabilidad.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/InfoHabilidad.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/InfoHabilidad.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorEscenas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Confundido.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Confundido.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Confundido.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorPantallaEfecto.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/Finalizador.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/Finalizador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Finalizador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/HabilidadAtaque.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/HabilidadAtaque.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/HabilidadAtaque.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/AdministradorDeTurnos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/AdministradorDeEstados.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/AdministradorDeEstados.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/AdministradorDeEstados.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas$2.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorEscenas$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Dormido.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Dormido.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Dormido.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/Ash.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/ash.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/background.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Jugador.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Jugador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Jugador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorPantallaInicial.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/Escena.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/Escena.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Escena.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/fondo.jpeg" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Constantes.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Constantes.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Constantes.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/bolasIzq.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/fondoMenuPokemonAzul.jpg" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas$1.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorEscenas$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorEscenas$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorPantallaFinal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/eventos/AplicarItemEvent.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Habilidad.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Habilidad.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Habilidad.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Envenenado.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Envenenado.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Envenenado.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/bolaPokemon.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/charizard.gif" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/ItemEstado.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/ItemEstado.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ItemEstado.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Batalla.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Batalla.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Batalla.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/ResultadosJugador.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/Inicializador$1.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/Inicializador$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Inicializador$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorMenuHabilidades.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuItems.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuItems.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorMenuItems.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/Inicializador.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/Inicializador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Inicializador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/eventos/CambioDeTurnoEvent.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Subscriptor.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Paralizado.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Paralizado.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Paralizado.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorMenuPrincipal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/fondoBatalla.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorConfirmacionItem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/MainJavaFX.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/MainJavaFX.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/MainJavaFX.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/Brook.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/brook.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/brillos.gif" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorMenuPokemon.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/fondoOpcionPokemonVerde.jpeg" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorCampo.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorCampo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorCampo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Imagenes/fondoPokemonActual.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/Pokemon.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/Pokemon.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/Pokemon.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/modelo/ItemRestauracionVida.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/modelo/ItemRestauracionVida.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ItemRestauracionVida.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" />
+    <option name="AFTER_PATH" value="target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_23_20_47_[Changes]/ControladorCartelPokemon.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

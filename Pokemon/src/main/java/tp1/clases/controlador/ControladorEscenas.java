@@ -43,10 +43,10 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
             controladorInicial.setStage(this.stage);
             this.stage.setScene(this.escenas.get(0));
 
-            String ruta = "/Pokemon_FireRed_&_LeafGreen.mp3";
+            String ruta = "/Pokemon_FireRed___LeafGreen.YbcPfDOB.wav.part";
             Media media = new Media(Objects.requireNonNull(Archivos.class.getResource(ruta)).toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.volumeProperty().set(0.02);
+            mediaPlayer.volumeProperty().set(0.05);
             mediaPlayer.setAutoPlay(true);
             this.stage.show();
         } catch (IOException e) {
@@ -160,8 +160,8 @@ public class ControladorEscenas implements EventHandler<ActionEvent> {
 
         if (
                 (escena != Escena.MENU_HABILIDADES.ordinal())
-                && (escenaAnterior != Escena.MENU_HABILIDADES.ordinal())
-                && (escenaAnterior != Escena.PANTALLA_EFECTO.ordinal())
+                        && (escenaAnterior != Escena.MENU_HABILIDADES.ordinal())
+                        && (escenaAnterior != Escena.PANTALLA_EFECTO.ordinal())
         ) {
             this.sacarEscenaAnterior(escenaActual);
             this.stage.setScene(this.escenas.get(escena));

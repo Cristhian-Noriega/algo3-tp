@@ -34,9 +34,9 @@ public class EstadoEnvenenadoTest {
         when(pokeEnvenenado.getVidaMax()).thenReturn(1);
 
         estadoEnvenenado.aplicarEfecto(pokeEnvenenado); // turno 0-->sigue
+        verify(pokeEnvenenado).modificarVida((-1) * Constantes.porcentajeDeEnvenamiento);
         estadoEnvenenado.aplicarEfecto(pokeEnvenenado); // turno 1--> envenena
 
-        verify(pokeEnvenenado).modificarVida((-1) * Constantes.porcentajeDeEnvenamiento);
         assertEquals(2, estadoEnvenenado.getTurnos());
     }
 

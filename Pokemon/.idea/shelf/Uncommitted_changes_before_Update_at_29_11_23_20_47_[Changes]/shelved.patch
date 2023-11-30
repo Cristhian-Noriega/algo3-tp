@@ -1,0 +1,1333 @@
+Index: target/classes/cartel-opcion-pokemon-actual.fxml
+===================================================================
+diff --git a/target/classes/cartel-opcion-pokemon-actual.fxml b/target/classes/cartel-opcion-pokemon-actual.fxml
+deleted file mode 100644
+--- a/target/classes/cartel-opcion-pokemon-actual.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,71 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ProgressBar?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.StackPane?>
+-<?import javafx.scene.shape.Circle?>
+-<?import javafx.scene.text.Font?>
+-
+-<Pane prefHeight="220.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+-    <ImageView fitHeight="220.0" fitWidth="220.0">
+-        <Image url="@Imagenes/fondoPokemonActual.png" />
+-    </ImageView>
+-    <HBox fx:id="contenedorCajaPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="220.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
+-        <children>
+-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="103.0" translateX="110.0" translateY="20.0">
+-                <Label fx:id="labelNombre" prefHeight="37.0" prefWidth="100.0" text="NOMBRE">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="34.0" />
+-                    </font>
+-                </Label>
+-            </HBox>
+-            <ProgressBar fx:id="barraVida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="191.0" progress="0.0" translateX="-90.0" translateY="140.0" />
+-            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="116.0" translateX="-300.0" translateY="5.0">
+-                <Circle fill="#245924" radius="47.0" stroke="#040a04" strokeType="INSIDE" strokeWidth="3.0" translateX="3.0" />
+-                <ImageView fx:id="imagenPokemon" fitHeight="96.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+-            </StackPane>
+-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="83.0" translateX="-295.0" translateY="60.0">
+-                <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="77.0" text="Nvl.XX" textAlignment="JUSTIFY">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="28.0" />
+-                    </font>
+-                </Label>
+-            </HBox>
+-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="118.0" translateX="-450.0" translateY="180.0">
+-                <Label fx:id="labelVida" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="118.0" text="XXX/XXX" textAlignment="JUSTIFY">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="25.0" />
+-                    </font>
+-                </Label>
+-            </HBox>
+-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0" translateX="-530.0" translateY="103.0">
+-                <children>
+-                    <HBox fx:id="circulosEstados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0" spacing="5.0">
+-                        <children>
+-                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                            <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                        </children>
+-                        <padding>
+-                            <Insets top="2.0" />
+-                        </padding>
+-                    </HBox>
+-                    <Pane fx:id="imagenesEstados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="124.0">
+-                        <children>
+-                            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+-                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true" />
+-                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="60.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+-                            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="90.0" pickOnBounds="true" preserveRatio="true" />
+-                        </children>
+-                    </Pane>
+-                </children>
+-            </Pane>
+-        </children>
+-    </HBox>
+-</Pane>
+Index: target/classes/Vistas/pantalla-aplicar-item.fxml
+===================================================================
+diff --git a/target/classes/Vistas/pantalla-aplicar-item.fxml b/target/classes/Vistas/pantalla-aplicar-item.fxml
+deleted file mode 100644
+--- a/target/classes/Vistas/pantalla-aplicar-item.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,33 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import java.lang.*?>
+-<?import java.util.*?>
+-<?import javafx.scene.*?>
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.layout.*?>
+-
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.image.Image?>
+-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorPantallaAplicarItem">
+-    <children>
+-        <ImageView fitHeight="400.0" fitWidth="600.0">
+-            <image>
+-                <Image url="@../Imagenes/fondoBatalla.png" />
+-            </image>
+-        </ImageView>
+-        <VBox prefHeight="400.0" prefWidth="600.0" />
+-        <fx:include fx:id="campo" source="campo.fxml" />
+-        <Pane layoutY="289.0" prefHeight="110.0" prefWidth="593.0">
+-            <children>
+-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebe8de" height="96.0" layoutX="18.0" layoutY="7.0" stroke="#b1b2b5" strokeType="INSIDE" strokeWidth="5.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="557.0" />
+-                <Label fx:id="labelTexto" layoutX="26.0" layoutY="14.0" prefHeight="82.0" prefWidth="540.0">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="25.0" />
+-                    </font>
+-                </Label>
+-            </children>
+-        </Pane>
+-    </children>
+-</Pane>
+\ No newline at end of file
+Index: target/classes/cartel-opcion-pokemon.fxml
+===================================================================
+diff --git a/target/classes/cartel-opcion-pokemon.fxml b/target/classes/cartel-opcion-pokemon.fxml
+deleted file mode 100644
+--- a/target/classes/cartel-opcion-pokemon.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,76 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ProgressBar?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.StackPane?>
+-<?import javafx.scene.shape.Circle?>
+-<?import javafx.scene.text.Font?>
+-
+-<Pane fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCartelPokemon">
+-    <ImageView fitHeight="92.0" fitWidth="409.0">
+-        <Image url="@Imagenes/fondoMenuPokemonAzul.jpg" />
+-    </ImageView>
+-    <ImageView fitHeight="83.0" fitWidth="341.0" layoutX="64.0" layoutY="6.0">
+-        <Image url="@Imagenes/fondoOpcionPokemonVerde.jpeg" />
+-    </ImageView>
+-    <HBox fx:id="contenedorCajaPokemon" layoutX="63.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="83.0" prefWidth="341.0" style="-fx-border-color: black; -fx-border-radius: 3%; -fx-border-width: 3;">
+-        <StackPane prefHeight="94.0" prefWidth="178.0">
+-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="127.0" translateX="45.0" translateY="-25.0">
+-                <Label fx:id="labelNombre" prefHeight="40.0" prefWidth="134.0" text="NOMBRE" translateY="5.0">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="35.0" />
+-                    </font>
+-                </Label>
+-            </HBox>
+-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="96.0" translateX="10.0" translateY="20.0">
+-                <Label fx:id="labelNivel" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="117.0" text="Nvl.XX">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+-                    </font>
+-                </Label>
+-            </HBox>
+-        </StackPane>
+-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="121.0" translateX="-10.0" translateY="40.0">
+-            <children>
+-                <HBox fx:id="circulosEstados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="121.0" spacing="5.0">
+-                    <children>
+-                        <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                        <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                        <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                        <Circle fill="#b3cceb" opacity="0.0" radius="13.0" stroke="#8eafeb" strokeType="INSIDE" />
+-                    </children>
+-                    <padding>
+-                        <Insets top="2.0" />
+-                    </padding>
+-                </HBox>
+-                <Pane fx:id="imagenesEstados" prefHeight="24.0" prefWidth="121.0">
+-                    <children>
+-                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="29.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="68.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="91.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+-                    </children>
+-                </Pane>
+-            </children>
+-        </Pane>
+-        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="155.0" translateX="-80.0" translateY="8.0">
+-            <ProgressBar fx:id="barraVida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="158.0" progress="0.7" />
+-        </HBox>
+-        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="88.0" translateX="-160.0" translateY="43.0">
+-            <Label fx:id="labelVida" alignment="CENTER" prefHeight="36.0" prefWidth="87.0" text="XXX/XXX">
+-                <font>
+-                    <Font name="Pokemon Fire Red Regular" size="30.0" />
+-                </font>
+-            </Label>
+-        </HBox>
+-    </HBox>
+-    <StackPane layoutX="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="76.0">
+-        <Circle fill="#245924" radius="42.0" stroke="#000d00" strokeType="INSIDE" strokeWidth="3.0" />
+-        <ImageView fx:id="imagenPokemon" fitHeight="85.0" fitWidth="76.0" />
+-    </StackPane>
+-</Pane>
+Index: target/classes/items-view.fxml
+===================================================================
+diff --git a/target/classes/items-view.fxml b/target/classes/items-view.fxml
+deleted file mode 100644
+--- a/target/classes/items-view.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,80 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.StackPane?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.text.Font?>
+-
+-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Style/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuItems">
+-   <right>
+-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="443.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <VBox fx:id="botonesItems" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="444.0" style="-fx-border-color: #504f4f; -fx-border-width: 2; -fx-border-radius: 1%;" stylesheets="@Style/botonesItems.css" />
+-            <Button fx:id="botonVolver" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" stylesheets="@Style/botonConfirmacion.css" text="VOLVER" translateX="297.0">
+-               <VBox.margin>
+-                  <Insets />
+-               </VBox.margin>
+-               <font>
+-                  <Font name="Pokemon Fire Red Regular" size="21.0" />
+-               </font></Button>
+-         </children>
+-      </VBox>
+-   </right>
+-   <bottom>
+-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="129.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <StackPane prefHeight="150.0" prefWidth="200.0">
+-               <children>
+-                  <Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="796.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px; -fx-arc-height: 10; -fx-arc-width: 10;" translateX="1.0" translateY="1.0">
+-                  <children>
+-                     <Label fx:id="itemDescriptionLabel" layoutX="169.0" layoutY="14.0" prefHeight="86.0" prefWidth="518.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
+-                        <font>
+-                           <Font name="Pokemon Fire Red Regular" size="40.0" />
+-                        </font>
+-                     </Label>
+-                        <Pane layoutX="14.0" layoutY="11.0" prefHeight="105.0" prefWidth="136.0">
+-                           <children>
+-                              <Pane layoutX="16.0" prefHeight="93.0" prefWidth="107.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #615d9e; -fx-border-radius: 3%;">
+-                                 <children>
+-                                    <ImageView fx:id="imagenItem" fitHeight="79.0" fitWidth="91.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+-                                 </children>
+-                              </Pane>
+-                           </children>
+-                        </Pane>
+-                  </children>
+-                  </Pane>
+-               </children>
+-            </StackPane>
+-         </children>
+-      </HBox>
+-   </bottom>
+-   <top>
+-      <Pane prefHeight="54.0" prefWidth="619.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Pane layoutX="360.0" layoutY="14.0" prefHeight="57.0" prefWidth="136.0" style="-fx-background-color: #efc040; -fx-border-color: #6B6B6B; -fx-border-width: 3; -fx-border-radius: 5; -fx-padding: 15px;">
+-               <children>
+-                  <Label layoutX="32.0" prefHeight="50.0" prefWidth="90.0" text="ITEMS">
+-                     <font>
+-                        <Font name="Pokemon Fire Red Regular" size="35.0" />
+-                     </font>
+-                  </Label>
+-               </children>
+-            </Pane>
+-         </children>
+-      </Pane>
+-   </top>
+-   <left>
+-      <ImageView fitHeight="258.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+-         <image>
+-            <Image url="@Imagenes/bag.png" />
+-         </image>
+-      </ImageView>
+-   </left>
+-</BorderPane>
+Index: target/classes/cartel-confirmacion-item.fxml
+===================================================================
+diff --git a/target/classes/cartel-confirmacion-item.fxml b/target/classes/cartel-confirmacion-item.fxml
+deleted file mode 100644
+--- a/target/classes/cartel-confirmacion-item.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,45 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.text.Font?>
+-
+-
+-<Pane fx:id="itemInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="117.0" prefWidth="796.0" style="-fx-background-color: rgb(12,160,216); -fx-border-color: #504f4f; -fx-border-width: 5; -fx-border-radius: 2%; -fx-padding: 10px; -fx-arc-height: 10; -fx-arc-width: 10;" translateX="1.0" translateY="1.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorConfirmacionItem">
+-   <children>
+-      <Pane layoutX="14.0" layoutY="11.0" prefHeight="93.0" prefWidth="115.0">
+-         <children>
+-            <Pane prefHeight="93.0" prefWidth="107.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #615d9e; -fx-border-radius: 3%;">
+-               <children>
+-                  <ImageView fx:id="imagenItemSeleccionado" fitHeight="73.0" fitWidth="86.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+-               </children>
+-            </Pane>
+-         </children></Pane>
+-      <Pane layoutX="130.0" layoutY="10.0" prefHeight="93.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #6B6B6B; -fx-border-radius: 1%;">
+-         <children>
+-            <Label fx:id="itemSeleccionado" layoutX="9.0" layoutY="7.0" prefHeight="79.0" prefWidth="498.0" textAlignment="CENTER" textFill="#000000" wrapText="true">
+-               <font>
+-                  <Font name="Pokemon Fire Red Regular" size="32.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </Pane>
+-      <VBox layoutX="659.0" layoutY="8.0" prefHeight="79.0" prefWidth="123.0">
+-         <children>
+-            <Button fx:id="botonUsar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedUsar" prefHeight="44.0" prefWidth="129.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="USAR">
+-               <font>
+-                  <Font name="Pokemon Fire Red Regular" size="18.0" />
+-               </font>
+-            </Button>
+-            <Button fx:id="botonCancelar" mnemonicParsing="false" onMouseClicked="#handleMouseClickedCancelar" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 1;" stylesheets="@Style/botonConfirmacion.css" text="CANCELAR">
+-               <font>
+-                  <Font name="Pokemon Fire Red Regular" size="18.0" />
+-               </font>
+-            </Button>
+-         </children>
+-      </VBox>
+-   </children>
+-</Pane>
+Index: target/classes/Vistas/cartel-pokemon.fxml
+===================================================================
+diff --git a/target/classes/Vistas/cartel-pokemon.fxml b/target/classes/Vistas/cartel-pokemon.fxml
+deleted file mode 100644
+--- a/target/classes/Vistas/cartel-pokemon.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ /dev/null	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
+@@ -1,69 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.shape.Circle?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
+-
+-<?import javafx.scene.layout.Region?>
+-<Pane prefHeight="155.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorCartelInfoPokemon">
+-    <Region HBox.hgrow="ALWAYS" />
+-    <children>
+-        <Pane layoutX="3.0" layoutY="2.0" prefHeight="150.0" prefWidth="300.0">
+-            <children>
+-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f2d1" height="100.0" layoutX="3.0" layoutY="1.0" stroke="#ebd5ab" strokeType="INSIDE" strokeWidth="5.0" width="290.0" />
+-                <Label fx:id="labelNombre" layoutX="20.0" layoutY="10.0" prefHeight="36.0" prefWidth="151.0">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+-                    </font>
+-                </Label>
+-                <Label fx:id="labelNivel" layoutX="210.0" layoutY="15.0" prefHeight="36.0" prefWidth="76.0">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+-                    </font>
+-                </Label>
+-                <Rectangle fx:id="barraFondo" arcHeight="5.0" arcWidth="5.0" fill="#e4e4e4" height="22.0" layoutX="17.0" layoutY="65.0" stroke="#987658" strokeType="OUTSIDE" strokeWidth="3.0" width="262.0" />
+-                <Label fx:id="labelCantVida" layoutX="198.0" layoutY="59.0" prefHeight="36.0" prefWidth="85.0">
+-                    <font>
+-                        <Font name="Pokemon Fire Red Regular" size="30.0" />
+-                    </font>
+-                </Label>
+-                <HBox layoutX="17.0" layoutY="65.0" prefHeight="22.0" prefWidth="262.0" translateX="1.0" translateY="1.0">
+-                    <children>
+-                        <Rectangle fx:id="barraVida" arcHeight="5.0" arcWidth="5.0" fill="#34bc81" height="20.0" stroke="TRANSPARENT" strokeType="INSIDE" width="260.0" x="10.0" />
+-                    </children>
+-                </HBox>
+-            </children>
+-            <padding>
+-                <Insets top="5.0" />
+-            </padding>
+-        </Pane>
+-        <Pane layoutX="-1.0" layoutY="105.0" prefHeight="50.0" prefWidth="300.0">
+-            <children>
+-                <HBox fx:id="circulos" prefHeight="50.0" prefWidth="300.0" spacing="5.0">
+-                    <children>
+-                        <Circle fill="#f8f2d1" radius="22.0" stroke="#ebd4ab" strokeType="INSIDE" strokeWidth="3.0" />
+-                        <Circle fill="#f8f2d1" radius="22.0" stroke="#ebd4ab" strokeType="INSIDE" strokeWidth="3.0" />
+-                        <Circle fill="#f8f2d1" radius="22.0" stroke="#ebd4ab" strokeType="INSIDE" strokeWidth="3.0" />
+-                        <Circle fill="#f8f2d1" radius="22.0" stroke="#ebd4ab" strokeType="INSIDE" strokeWidth="3.0" />
+-                    </children>
+-                    <padding>
+-                        <Insets left="7.0" top="2.0" />
+-                    </padding>
+-                </HBox>
+-                <Pane fx:id="imagenesEstados" prefHeight="50.0" prefWidth="300.0">
+-                    <children>
+-                        <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="7.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="56.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="105.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+-                        <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="154.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+-                    </children>
+-                </Pane>
+-            </children>
+-        </Pane>
+-    </children>
+-</Pane>
+\ No newline at end of file
+Index: target/classes/Vistas/pantalla-efecto-inicio.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Rectangle?>\n<?import javafx.scene.text.Font?>\n\n<VBox onMouseClicked=\"#pasarPantalla\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"tp1.clases.controlador.ControladorEfectoInicio\">\n    <children>\n        <Pane prefHeight=\"706.0\" prefWidth=\"925.0\">\n            <children>\n                <ImageView fx:id=\"fondo\" fitHeight=\"600.0\" fitWidth=\"800.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\">\n                    <image>\n                        <Image url=\"@../Imagenes/fondoBatalla.png\" />\n                    </image>\n                </ImageView>\n                <ImageView id=\"ash\" fx:id=\"ash\" fitHeight=\"577.0\" fitWidth=\"862.0\" layoutX=\"-39.0\" layoutY=\"43.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\">\n                    <image>\n                        <Image url=\"@../Imagenes/ash.png\" />\n                    </image>\n                </ImageView>\n                <ImageView id=\"brook\" fx:id=\"brook\" fitHeight=\"620.0\" fitWidth=\"823.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\">\n                    <image>\n                        <Image url=\"@../Imagenes/brook.png\" />\n                    </image>\n                </ImageView>\n                <ImageView fx:id=\"bolasAsh\" fitHeight=\"116.0\" fitWidth=\"371.0\" layoutX=\"456.0\" layoutY=\"324.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\">\n                    <image>\n                        <Image url=\"@../Imagenes/bolasDer.png\" />\n                    </image>\n                </ImageView>\n                <ImageView fx:id=\"bolasBrook\" fitHeight=\"124.0\" fitWidth=\"406.0\" layoutX=\"-26.0\" layoutY=\"60.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\">\n                    <image>\n                        <Image url=\"@../Imagenes/bolasIzq.png\" />\n                    </image>\n                </ImageView>\n            </children>\n        </Pane>\n        <Pane prefHeight=\"411.0\" prefWidth=\"823.0\">\n            <children>\n                <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#fff3d6\" height=\"155.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\" stroke=\"BLACK\" strokeLineCap=\"ROUND\" strokeLineJoin=\"ROUND\" strokeType=\"INSIDE\" width=\"800.0\" />\n                <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#256bbf\" height=\"131.0\" layoutX=\"17.0\" layoutY=\"12.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\" stroke=\"#aba596\" strokeLineCap=\"ROUND\" strokeLineJoin=\"ROUND\" strokeMiterLimit=\"100.0\" strokeType=\"INSIDE\" strokeWidth=\"8.0\" width=\"766.0\" />\n                <Label fx:id=\"texto\" layoutX=\"31.0\" layoutY=\"29.0\" onMouseClicked=\"#pasarPantalla\" onMouseDragged=\"#pasarPantalla\" prefHeight=\"51.0\" prefWidth=\"578.0\" text=\"¡A luchar ASH vs BROCK!\" textFill=\"WHITE\">\n                    <font>\n                        <Font name=\"Pokemon Fire Red Regular\" size=\"72.0\" />\n                    </font>\n                </Label>\n                <Label layoutX=\"591.0\" layoutY=\"95.0\" prefHeight=\"40.0\" prefWidth=\"183.0\" text=\"(click para continuar)\" textFill=\"WHITE\">\n                    <font>\n                        <Font name=\"Pokemon X and Y Regular\" size=\"20.0\" />\n                    </font>\n                </Label>\n            </children>\n        </Pane>\n    </children>\n</VBox>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/pantalla-efecto-inicio.fxml b/target/classes/Vistas/pantalla-efecto-inicio.fxml
+--- a/target/classes/Vistas/pantalla-efecto-inicio.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/pantalla-efecto-inicio.fxml	(date 1701301546211)
+@@ -1,40 +1,38 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.shape.*?>
++<?import javafx.scene.text.*?>
+ 
+-<VBox onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
++<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#pasarPantalla" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorEfectoInicio">
+     <children>
+         <Pane prefHeight="706.0" prefWidth="925.0">
+             <children>
+                 <ImageView fx:id="fondo" fitHeight="600.0" fitWidth="800.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                     <image>
+-                        <Image url="@../Imagenes/fondoBatalla.png" />
++                        <Image url="@../Imagenes/fondos/fondoBatalla.png" />
+                     </image>
+                 </ImageView>
+                 <ImageView id="ash" fx:id="ash" fitHeight="577.0" fitWidth="862.0" layoutX="-39.0" layoutY="43.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                     <image>
+-                        <Image url="@../Imagenes/ash.png" />
++                        <Image url="@../Imagenes/jugadores/ash.png" />
+                     </image>
+                 </ImageView>
+                 <ImageView id="brook" fx:id="brook" fitHeight="620.0" fitWidth="823.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                     <image>
+-                        <Image url="@../Imagenes/brook.png" />
++                        <Image url="@../Imagenes/jugadores/brook.png" />
+                     </image>
+                 </ImageView>
+                 <ImageView fx:id="bolasAsh" fitHeight="116.0" fitWidth="371.0" layoutX="456.0" layoutY="324.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                     <image>
+-                        <Image url="@../Imagenes/bolasDer.png" />
++                        <Image url="@../Imagenes/pokebolas/bolasDer.png" />
+                     </image>
+                 </ImageView>
+                 <ImageView fx:id="bolasBrook" fitHeight="124.0" fitWidth="406.0" layoutX="-26.0" layoutY="60.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla">
+                     <image>
+-                        <Image url="@../Imagenes/bolasIzq.png" />
++                        <Image url="@../Imagenes/pokebolas/bolasIzq.png" />
+                     </image>
+                 </ImageView>
+             </children>
+@@ -43,14 +41,14 @@
+             <children>
+                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff3d6" height="155.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="800.0" />
+                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#256bbf" height="131.0" layoutX="17.0" layoutY="12.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" stroke="#aba596" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="100.0" strokeType="INSIDE" strokeWidth="8.0" width="766.0" />
+-                <Label fx:id="texto" layoutX="31.0" layoutY="29.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="51.0" prefWidth="578.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
++                <Label fx:id="texto" layoutX="39.0" layoutY="34.0" onMouseClicked="#pasarPantalla" onMouseDragged="#pasarPantalla" prefHeight="64.0" prefWidth="682.0" text="¡A luchar ASH vs BROCK!" textFill="WHITE">
+                     <font>
+-                        <Font name="Pokemon Fire Red Regular" size="72.0" />
++                        <Font name="000webfont" size="64.0" />
+                     </font>
+                 </Label>
+-                <Label layoutX="591.0" layoutY="95.0" prefHeight="40.0" prefWidth="183.0" text="(click para continuar)" textFill="WHITE">
++                <Label layoutX="573.0" layoutY="95.0" prefHeight="40.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
+                     <font>
+-                        <Font name="Pokemon X and Y Regular" size="20.0" />
++                        <Font name="000webfont" size="23.0" />
+                     </font>
+                 </Label>
+             </children>
+Index: src/main/java/tp1/clases/controlador/ControladorCampo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tp1.clases.controlador;\n\nimport javafx.animation.*;\nimport javafx.beans.property.ObjectProperty;\nimport javafx.beans.property.SimpleObjectProperty;\nimport javafx.fxml.FXML;\n\nimport javafx.scene.effect.Blend;\nimport javafx.scene.effect.BlendMode;\nimport javafx.scene.effect.Light;\nimport javafx.scene.effect.Lighting;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\n\nimport javafx.scene.media.Media;\nimport javafx.scene.media.MediaPlayer;\nimport javafx.util.Duration;\nimport tp1.clases.modelo.Batalla;\nimport tp1.clases.modelo.JugadorEnum;\nimport tp1.clases.modelo.Pokemon;\nimport tp1.clases.modelo.SubscriptorTurno;\n\nimport java.io.File;\nimport java.util.List;\nimport java.util.Objects;\n\npublic class ControladorCampo implements SubscriptorTurno {\n    private final ObjectProperty<Image> imagenRivalProperty = new SimpleObjectProperty<>();\n    private final ObjectProperty<Image> imagenActualProperty = new SimpleObjectProperty<>();\n    private final ObjectProperty<Image> pokebolasRivalProperty = new SimpleObjectProperty<>();\n    private final ObjectProperty<Image> pokebolasActualProperty = new SimpleObjectProperty<>();\n    private final ObjectProperty<Image> fondoClimaProperty = new SimpleObjectProperty<>();\n    @FXML protected ControladorCentroDeEstadisticas cartelPokemonRivalController;\n    @FXML protected ControladorCentroDeEstadisticas cartelPokemonActualController;\n    @FXML protected ControladorClima cartelClimaController;\n    @FXML private ImageView imagenRival;\n    @FXML private ImageView imagenActual;\n    @FXML private ImageView fondoClima;\n    @FXML private ImageView pokebolasJugadorRival;\n    @FXML private ImageView efectoRival;\n    @FXML private ImageView efectoActual;\n    @FXML private ImageView pokebolasJugadorActual;\n    private Batalla batalla;\n    private MediaPlayer mediaPlayer;\n\n    public ControladorCampo() {}\n\n    public void inicializar(Batalla batalla) {\n        this.batalla = batalla;\n        this.batalla.getAdministradorTurnos().agregarSubscriptor(this);\n        this.cartelPokemonActualController.inicializar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);\n        this.cartelPokemonRivalController.inicializar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);\n        this.cartelClimaController.inicializar(this.batalla.getClima().name());\n\n        this.imagenActual.imageProperty().bind(this.imagenActualProperty);\n        this.imagenRival.imageProperty().bind(this.imagenRivalProperty);\n        this.pokebolasJugadorActual.imageProperty().bind(this.pokebolasActualProperty);\n        this.pokebolasJugadorRival.imageProperty().bind(this.pokebolasRivalProperty);\n        this.fondoClima.imageProperty().bind(this.fondoClimaProperty);\n\n        this.actualizar();\n    }\n\n    public void actualizar() {\n        this.cartelClimaController.actualizar(this.batalla.getClima().name());\n        this.cartelPokemonActualController.actualizar(this.batalla.getJugadorActual().getPokemonActual(), JugadorEnum.ACTUAL);\n        this.cartelPokemonRivalController.actualizar(this.batalla.getJugadorSiguiente().getPokemonActual(), JugadorEnum.RIVAL);\n        this.setImagenActualProperty(this.batalla.getJugadorActual().getPokemonActual().getNombre());\n        this.setImagenRivalProperty(this.batalla.getJugadorSiguiente().getPokemonActual().getNombre());\n        this.setPokebolas(JugadorEnum.ACTUAL, this.batalla.getJugadorActual().getListaPokemones());\n        this.setPokebolas(JugadorEnum.RIVAL, this.batalla.getJugadorSiguiente().getListaPokemones());\n        this.setFondoClimaProperty(this.batalla.getClima().name());\n    }\n\n    public void setPokebolas(JugadorEnum jugador, List<Pokemon> pokemones) {\n        int cant = 0;\n        for (Pokemon pokemon: pokemones) {\n            if (!pokemon.estaMuerto()) {\n                cant++;\n            }\n        }\n        String ruta = \"pokebolas/pokebolas-\" + jugador.name().toLowerCase() + \"-\" + cant + \".png\";\n        if (jugador == JugadorEnum.ACTUAL) {\n            this.pokebolasActualProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));\n        } else {\n            this.pokebolasRivalProperty.set(new Image(Archivos.getRutaAbsolutaImagenes(ruta)));\n        }\n    }\n\n    public void setFondoClimaProperty(String clima) {\n        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes(\"clima/\" + clima + \".png\"));\n        this.fondoClimaProperty.set(imagen);\n    }\n\n    public void setImagenRivalProperty(String pokemon) {\n        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes(\"pokemon/\" + pokemon + \".gif\"));\n        this.imagenRivalProperty.set(imagen);\n    }\n\n    public void setImagenActualProperty(String pokemon) {\n        Image imagen = new Image(Archivos.getRutaAbsolutaImagenes(\"pokemon/\" + pokemon + \"_espalda.gif\"));\n        this.imagenActualProperty.set(imagen);\n    }\n\n    public void aplicarParpadeo(JugadorEnum jugador, String tipo) {\n        if (jugador == JugadorEnum.NINGUNO) {\n            return;\n        }\n\n        if (jugador == JugadorEnum.ACTUAL) {\n            this.efectoActual.setImage(new Image(Archivos.getRutaAbsolutaImagenes(\"brillitos.gif\")));\n            this.efecto(this.efectoActual);\n            //reproducir con ruta de brillito\n            return;\n        }\n\n        Archivos.reproducirSonido(\"/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/golpe.wav\", this.mediaPlayer);\n        this.parpadeo(this.imagenRival);\n        this.efectoRival.setImage(new Image(Archivos.getRutaAbsolutaImagenes(\"default.png\")));\n    }\n\n    public void efecto(ImageView imagen) {\n        Timeline timeline = new Timeline(\n                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 0.0)),\n                new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 1.0)),\n                new KeyFrame(Duration.seconds(0.5), new KeyValue(imagen.opacityProperty(), 0.0))\n        );\n\n        timeline.setCycleCount(3);\n        timeline.play();\n    }\n\n    public void parpadeo(ImageView imagen) {\n        Timeline timeline = new Timeline(\n                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),\n                new KeyFrame(Duration.seconds(0.2), new KeyValue(imagen.opacityProperty(), 0.0)),\n                new KeyFrame(Duration.seconds(0.5), new KeyValue(imagen.opacityProperty(), 1.0))\n        );\n\n        timeline.setCycleCount(3);\n        timeline.play();\n    }\n\n\n    public void animarVida(Pokemon pokemon, JugadorEnum jugador) {\n        ControladorCentroDeEstadisticas controlador = this.cartelPokemonRivalController;\n        if (jugador == JugadorEnum.ACTUAL) {\n            controlador = this.cartelPokemonActualController;\n        }\n        controlador.animarBarraDeVida(controlador.getPorcentajeBarraDeVida(), (double) pokemon.getVida() / pokemon.getVidaMax());\n        controlador.setVida(pokemon, jugador);\n    }\n\n\n    public void aplicarIntercambioDePokemon(){\n        ImageView imagen = this.imagenActual;\n\n        RotateTransition rotateTransition = new RotateTransition(Duration.millis(500), imagen);\n        rotateTransition.setByAngle(360);\n\n        rotateTransition.setOnFinished(event -> {\n\n            this.actualizar();\n\n            imagenActual.setRotate(0);\n        });\n\n        rotateTransition.play();\n    }\n\n    public void aplicarItem(Pokemon pokemon) {\n        ImageView imagen = new ImageView(Archivos.getRutaAbsolutaImagenes(\"pokemon/\" + pokemon.getNombre() + \".gif\"));\n\n        Light.Distant light = new Light.Distant();\n        light.setAzimuth(-135.0);\n        Lighting lighting = new Lighting();\n        lighting.setLight(light);\n\n        Blend blend = new Blend();\n        blend.setMode(BlendMode.ADD);\n        blend.setTopInput(lighting);\n\n        imagen.setEffect(blend);\n    }\n\n    public void aplicarEfectoItem(){\n        Image gifImagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream(\"/Imagenes/spark.gif\")));\n\n        ImageView imagen = this.efectoActual;\n\n        Image imagenActual = this.efectoActual.getImage();\n\n        imagen.setImage(gifImagen);\n\n        PauseTransition pause = new PauseTransition(Duration.seconds(3));\n\n        pause.setOnFinished(event -> {\n            imagen.setImage(imagenActual);\n        });\n        pause.play();\n    }\n\n    public void aplicarDesaparicionPokemonMuerto(JugadorEnum jugador){\n        ImageView imagen = this.imagenActual;\n        if (jugador == JugadorEnum.RIVAL) {\n            imagen = this.imagenRival;\n        }\n\n        Timeline timeline = new Timeline(\n                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 1.0)),\n                new KeyFrame(Duration.seconds(2), new KeyValue(imagen.opacityProperty(), 0.0))\n        );\n\n        timeline.setOnFinished(event -> {\n            this.aplicarAparicionPokemonNuevo(jugador);\n        });\n\n        timeline.play();\n    }\n\n    public void aplicarAparicionPokemonNuevo(JugadorEnum jugador){\n        this.batalla.cambiarPokemonMuertoJugadorSiguiente();\n        this.actualizar();\n        ImageView imagen = this.imagenActual;\n        if (jugador == JugadorEnum.RIVAL) {\n            imagen = this.imagenRival;\n        }\n\n        Timeline timeline = new Timeline(\n                new KeyFrame(Duration.ZERO, new KeyValue(imagen.opacityProperty(), 0.0)),\n                new KeyFrame(Duration.seconds(2), new KeyValue(imagen.opacityProperty(), 1.0))\n        );\n\n        timeline.play();\n    }\n\n    @Override\n    public void Update() {\n        this.actualizar();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tp1/clases/controlador/ControladorCampo.java b/src/main/java/tp1/clases/controlador/ControladorCampo.java
+--- a/src/main/java/tp1/clases/controlador/ControladorCampo.java	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/src/main/java/tp1/clases/controlador/ControladorCampo.java	(date 1701301546207)
+@@ -114,7 +114,6 @@
+             return;
+         }
+ 
+-        Archivos.reproducirSonido("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/golpe.wav", this.mediaPlayer);
+         this.parpadeo(this.imagenRival);
+         this.efectoRival.setImage(new Image(Archivos.getRutaAbsolutaImagenes("default.png")));
+     }
+Index: target/classes/Vistas/pantalla-inicial.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.Pane?>\n\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"tp1.clases.controlador.ControladorPantallaInicial\">\n    <children>\n        <ImageView fitHeight=\"600.0\" fitWidth=\"800.0\">\n            <image>\n                <Image url=\"@../Imagenes/fondo.jpeg\" />\n            </image>\n        </ImageView>\n        <ImageView fitHeight=\"221.0\" fitWidth=\"244.0\" layoutX=\"504.0\" layoutY=\"284.0\">\n            <image>\n                <Image url=\"@../Imagenes/charizard.gif\" />\n            </image>\n        </ImageView>\n        <ImageView fitHeight=\"319.0\" fitWidth=\"800.0\" layoutY=\"6.0\">\n            <image>\n                <Image url=\"@../Imagenes/logo-pixel.96c2ab63.gif\" />\n            </image>\n        </ImageView>\n        <ImageView fx:id=\"boton\" accessibleRole=\"BUTTON\" fitHeight=\"140.0\" fitWidth=\"227.0\" layoutX=\"329.0\" layoutY=\"284.0\" onMouseClicked=\"#handleOnMouseClicked\" onMouseDragEntered=\"#handleMouseDragEntered\" onMouseDragExited=\"#handleMouseDragExited\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n    </children>\n</Pane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/pantalla-inicial.fxml b/target/classes/Vistas/pantalla-inicial.fxml
+--- a/target/classes/Vistas/pantalla-inicial.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/pantalla-inicial.fxml	(date 1701301546211)
+@@ -1,26 +1,30 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.Pane?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
+ 
+-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaInicial">
+-    <children>
+-        <ImageView fitHeight="600.0" fitWidth="800.0">
+-            <image>
+-                <Image url="@../Imagenes/fondo.jpeg" />
+-            </image>
+-        </ImageView>
+-        <ImageView fitHeight="221.0" fitWidth="244.0" layoutX="504.0" layoutY="284.0">
+-            <image>
+-                <Image url="@../Imagenes/charizard.gif" />
+-            </image>
+-        </ImageView>
+-        <ImageView fitHeight="319.0" fitWidth="800.0" layoutY="6.0">
+-            <image>
+-                <Image url="@../Imagenes/logo-pixel.96c2ab63.gif" />
+-            </image>
+-        </ImageView>
+-        <ImageView fx:id="boton" accessibleRole="BUTTON" fitHeight="140.0" fitWidth="227.0" layoutX="329.0" layoutY="284.0" onMouseClicked="#handleOnMouseClicked" onMouseDragEntered="#handleMouseDragEntered" onMouseDragExited="#handleMouseDragExited" pickOnBounds="true" preserveRatio="true" />
+-    </children>
+-</Pane>
++
++<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaInicial">
++   <children>
++      <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
++          <children>
++              <ImageView fitHeight="600.0" fitWidth="800.0">
++                  <image>
++                      <Image url="@../Imagenes/fondos/fondo.jpeg" />
++                  </image>
++              </ImageView>
++              <ImageView fitHeight="221.0" fitWidth="244.0" layoutX="504.0" layoutY="284.0">
++                  <image>
++                      <Image url="@../Imagenes/pokemon/charizard.gif" />
++                  </image>
++              </ImageView>
++              <ImageView fitHeight="319.0" fitWidth="800.0" layoutY="6.0">
++                  <image>
++                      <Image url="@../Imagenes/logo-pixel.96c2ab63.gif" />
++                  </image>
++              </ImageView>
++              <ImageView fx:id="boton" accessibleRole="BUTTON" fitHeight="140.0" fitWidth="227.0" layoutX="329.0" layoutY="284.0" onMouseClicked="#handleOnMouseClicked" onMouseDragEntered="#handleMouseDragEntered" onMouseDragExited="#handleMouseDragExited" pickOnBounds="true" preserveRatio="true" />
++          </children>
++      </Pane>
++   </children>
++</StackPane>
+Index: target/classes/Vistas/cartel-clima.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.shape.Circle?>\n<?import javafx.scene.shape.Rectangle?>\n<?import javafx.scene.text.Font?>\n\n<Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"80.0\" prefWidth=\"256.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/0\" fx:controller=\"tp1.clases.controlador.ControladorClima\">\n    <children>\n        <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#fff0d2\" height=\"46.0\" layoutX=\"34.0\" layoutY=\"14.0\" stroke=\"#ffffff00\" strokeType=\"INSIDE\" width=\"210.0\" />\n        <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#fff0d2\" height=\"46.0\" layoutX=\"14.0\" layoutY=\"14.0\" stroke=\"TRANSPARENT\" strokeType=\"INSIDE\" style=\"-fx-arc-height: 30; -fx-arc-width: 30;\" width=\"229.0\" />\n        <Circle fill=\"DODGERBLUE\" layoutX=\"38.0\" layoutY=\"36.0\" radius=\"19.0\" stroke=\"TRANSPARENT\" strokeType=\"INSIDE\" />\n        <ImageView fx:id=\"imagenClima\" fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"19.0\" layoutY=\"17.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n        <Label fx:id=\"labelClima\" layoutX=\"59.0\" layoutY=\"18.0\" prefHeight=\"37.0\" prefWidth=\"182.0\">\n            <font>\n                <Font name=\"Pokemon Fire Red Regular\" size=\"27.0\" />\n            </font>\n        </Label>\n    </children>\n</Pane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/cartel-clima.fxml b/target/classes/Vistas/cartel-clima.fxml
+--- a/target/classes/Vistas/cartel-clima.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/cartel-clima.fxml	(date 1701301546211)
+@@ -1,21 +1,20 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.shape.Circle?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.shape.*?>
++<?import javafx.scene.text.*?>
+ 
+-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorClima">
++<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorClima">
+     <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff0d2" height="46.0" layoutX="34.0" layoutY="14.0" stroke="#ffffff00" strokeType="INSIDE" width="210.0" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff0d2" height="46.0" layoutX="14.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="229.0" />
+         <Circle fill="DODGERBLUE" layoutX="38.0" layoutY="36.0" radius="19.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+         <ImageView fx:id="imagenClima" fitHeight="38.0" fitWidth="38.0" layoutX="19.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
+-        <Label fx:id="labelClima" layoutX="59.0" layoutY="18.0" prefHeight="37.0" prefWidth="182.0">
++        <Label fx:id="labelClima" layoutX="64.0" layoutY="18.0" prefHeight="37.0" prefWidth="177.0">
+             <font>
+-                <Font name="Pokemon Fire Red Regular" size="27.0" />
++                <Font name="000webfont" size="24.0" />
+             </font>
+         </Label>
+     </children>
+Index: target/classes/Vistas/pantalla-final.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.ColumnConstraints?>\n<?import javafx.scene.layout.GridPane?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.RowConstraints?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Rectangle?>\n<?import javafx.scene.text.Font?>\n\n<VBox prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"tp1.clases.controlador.ControladorPantallaFinal\">\n    <children>\n        <Pane prefHeight=\"718.0\" prefWidth=\"800.0\">\n            <children>\n                <ImageView fx:id=\"fondo\" fitHeight=\"484.0\" fitWidth=\"800.0\" onMouseClicked=\"#handleOnMouseClicked\" preserveRatio=\"true\">\n                    <image>\n                        <Image url=\"@../Imagenes/background.png\" />\n                    </image>\n                </ImageView>\n                <GridPane fx:id=\"gridPane\" onMouseClicked=\"#handleOnMouseClicked\" opacity=\"0.69\" prefHeight=\"453.0\" prefWidth=\"798.0\">\n                    <columnConstraints>\n                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                    </columnConstraints>\n                    <rowConstraints>\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                    </rowConstraints>\n                </GridPane>\n                <ImageView fx:id=\"ganador\" fitHeight=\"377.0\" fitWidth=\"312.0\" layoutX=\"410.0\" layoutY=\"40.0\" onMouseClicked=\"#handleOnMouseClicked\" />\n                <Rectangle fx:id=\"rectangulo\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#e3c57f00\" height=\"350.0\" layoutX=\"75.0\" layoutY=\"30.0\" stroke=\"#ffffff00\" strokeLineCap=\"ROUND\" strokeLineJoin=\"ROUND\" strokeType=\"OUTSIDE\" strokeWidth=\"7.0\" width=\"292.0\" />\n                <VBox fx:id=\"infoPokemones\" layoutX=\"90.0\" layoutY=\"50.0\" prefHeight=\"350.0\" prefWidth=\"292.0\" />\n            </children>\n        </Pane>\n        <Pane prefHeight=\"410.0\" prefWidth=\"800.0\">\n            <children>\n                <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#54a8bf\" height=\"146.0\" layoutY=\"1.0\" onMouseClicked=\"#handleOnMouseClicked\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"800.0\" />\n                <Label fx:id=\"texto\" layoutX=\"8.0\" layoutY=\"25.0\" onMouseClicked=\"#handleOnMouseClicked\" prefHeight=\"77.0\" prefWidth=\"765.0\" textFill=\"WHITE\">\n                    <font>\n                        <Font name=\"Pokemon Classic Regular\" size=\"15.0\" />\n                    </font>\n                </Label>\n                <Label fx:id=\"textoClixk\" layoutX=\"599.0\" layoutY=\"102.0\" onMouseClicked=\"#handleOnMouseClicked\" prefHeight=\"38.0\" prefWidth=\"201.0\" text=\"(click para continuar)\" textFill=\"WHITE\">\n                    <font>\n                        <Font name=\"Pokemon Classic Regular\" size=\"10.0\" />\n                    </font>\n                </Label>\n            </children>\n        </Pane>\n    </children>\n</VBox>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/pantalla-final.fxml b/target/classes/Vistas/pantalla-final.fxml
+--- a/target/classes/Vistas/pantalla-final.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/pantalla-final.fxml	(date 1701301546211)
+@@ -11,13 +11,13 @@
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaFinal">
++<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaFinal">
+     <children>
+         <Pane prefHeight="718.0" prefWidth="800.0">
+             <children>
+                 <ImageView fx:id="fondo" fitHeight="484.0" fitWidth="800.0" onMouseClicked="#handleOnMouseClicked" preserveRatio="true">
+                     <image>
+-                        <Image url="@../Imagenes/background.png" />
++                        <Image url="@../Imagenes/fondos/background.png" />
+                     </image>
+                 </ImageView>
+                 <GridPane fx:id="gridPane" onMouseClicked="#handleOnMouseClicked" opacity="0.69" prefHeight="453.0" prefWidth="798.0">
+@@ -39,14 +39,14 @@
+         <Pane prefHeight="410.0" prefWidth="800.0">
+             <children>
+                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#54a8bf" height="146.0" layoutY="1.0" onMouseClicked="#handleOnMouseClicked" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+-                <Label fx:id="texto" layoutX="8.0" layoutY="25.0" onMouseClicked="#handleOnMouseClicked" prefHeight="77.0" prefWidth="765.0" textFill="WHITE">
++                <Label fx:id="texto" layoutX="18.0" layoutY="25.0" onMouseClicked="#handleOnMouseClicked" prefHeight="77.0" prefWidth="765.0" textFill="WHITE">
+                     <font>
+-                        <Font name="Pokemon Classic Regular" size="15.0" />
++                        <Font name="000webfont" size="38.0" />
+                     </font>
+                 </Label>
+-                <Label fx:id="textoClixk" layoutX="599.0" layoutY="102.0" onMouseClicked="#handleOnMouseClicked" prefHeight="38.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
++                <Label fx:id="textoClixk" layoutX="585.0" layoutY="94.0" onMouseClicked="#handleOnMouseClicked" prefHeight="38.0" prefWidth="201.0" text="(click para continuar)" textFill="WHITE">
+                     <font>
+-                        <Font name="Pokemon Classic Regular" size="10.0" />
++                        <Font name="000webfont" size="23.0" />
+                     </font>
+                 </Label>
+             </children>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f9608537-d117-41ca-95a1-957004d6c4b3\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml\" afterDir=\"false\" />\n    </list>\n    <list id=\"97ae390e-5368-4026-a76e-7dd30a024249\" name=\"Changes by cristhian\" comment=\"\" />\n    <list id=\"26e39c8b-4afc-443d-a0d6-088553963047\" name=\"Changes by lu\" comment=\"\" />\n    <list id=\"2ce58ff0-9e44-4341-8352-63450b58e4ba\" name=\"Changes by melina\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"module-info\" />\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"ProjectCodeStyleSettingsMigration\">\n    <option name=\"version\" value=\"2\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n    &quot;associatedIndex&quot;: 0\n    }</component>\n  <component name=\"ProjectId\" id=\"2YUVoMGrh9qNsmem4hfBrM8RNl0\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"main\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/.idea\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.MainJavaFX\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"tp1.clases.Main\" />\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"tp1.clases.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MainJavaFX\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"tp1.clases.MainJavaFX\" />\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"tp1.clases.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"BatallaIntegracionTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"integracion.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"integracion\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"integracion.BatallaIntegracionTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"EstadoConfundidoTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.EstadoConfundidoTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"EstadoDormidoTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Pokemon\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"unitarios.modeloTest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"unitarios.modeloTest\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"unitarios.modeloTest.EstadoDormidoTest\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.MainJavaFX\" />\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"JUnit.BatallaIntegracionTest\" />\n        <item itemvalue=\"JUnit.EstadoDormidoTest\" />\n        <item itemvalue=\"JUnit.EstadoConfundidoTest\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f9608537-d117-41ca-95a1-957004d6c4b3\" name=\"Changes\" comment=\"\" />\n      <created>1700580324711</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700580324711</updated>\n      <workItem from=\"1700580329538\" duration=\"337000\" />\n      <workItem from=\"1700580706254\" duration=\"109000\" />\n      <workItem from=\"1700580934402\" duration=\"1317000\" />\n      <workItem from=\"1700600669020\" duration=\"5305000\" />\n      <workItem from=\"1700606309826\" duration=\"679000\" />\n      <workItem from=\"1700607220780\" duration=\"306000\" />\n      <workItem from=\"1700615408144\" duration=\"6801000\" />\n      <workItem from=\"1700622476258\" duration=\"1334000\" />\n      <workItem from=\"1700623874293\" duration=\"402000\" />\n      <workItem from=\"1700875091756\" duration=\"3195000\" />\n      <workItem from=\"1700916172040\" duration=\"11864000\" />\n      <workItem from=\"1700937912416\" duration=\"2689000\" />\n      <workItem from=\"1700952949205\" duration=\"11796000\" />\n      <workItem from=\"1700966564316\" duration=\"631000\" />\n      <workItem from=\"1701031286040\" duration=\"22217000\" />\n      <workItem from=\"1701198666191\" duration=\"1401000\" />\n      <workItem from=\"1701202208032\" duration=\"2907000\" />\n      <workItem from=\"1701218988583\" duration=\"3343000\" />\n      <workItem from=\"1701225588069\" duration=\"1922000\" />\n      <workItem from=\"1701258711276\" duration=\"66000\" />\n      <workItem from=\"1701258823828\" duration=\"5672000\" />\n      <workItem from=\"1701272635510\" duration=\"4050000\" />\n      <workItem from=\"1701285861339\" duration=\"65000\" />\n      <workItem from=\"1701285972652\" duration=\"1459000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/.idea/workspace.xml	(date 1701301613946)
+@@ -5,8 +5,94 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f9608537-d117-41ca-95a1-957004d6c4b3" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/cartel-pokemon.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vistas/menu-pokemon.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/Archivos.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorCampo.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorEscenas.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Ash.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/Brook.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/ash.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/background.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolaPokemon.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasDer.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/bolasIzq.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brillos.gif" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/brook.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/charizard.gif" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondo.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoBatalla.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoMenuPokemonAzul.jpg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoOpcionPokemonVerde.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Imagenes/fondoPokemonActual.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonConfirmacion.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonConfirmacion.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonInicio.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonInicio.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Style/botonesItems.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/botonesItems.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Style/style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/campo.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-clima.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/cartel-clima.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/cartel-pokemon.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-habilidades.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-pokemon.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-pokemon.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/menu-principal.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-aplicar-item.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto-inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto-inicio.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-efecto.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-final.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-final.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Vistas/pantalla-inicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Vistas/pantalla-inicial.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/cartel-confirmacion-item.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon-actual.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/cartel-opcion-pokemon.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/items-view.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Finalizador.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/Inicializador.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/MainJavaFX.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Archivos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/CancelarAccionListener.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCampo.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon$1.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelInfoPokemon.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorCartelPokemon.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorConfirmacionItem.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEfectoInicio.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas$2.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorEscenas.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuHabilidades.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuItems.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPokemon.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorMenuPrincipal.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaAplicarItem.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto$1.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaEfecto.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaFinal.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/ControladorPantallaInicial.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Escena.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/controlador/Escena.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorIndiceFueraDeRango.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/errores/ErrorItemNoValido.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/AplicarItemEvent.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/CambioDeTurnoEvent.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/RendirseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/eventos/RendirseEvent.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeEstados.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/AdministradorDeTurnos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Batalla.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Confundido.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Constantes.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Dormido.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Envenenado.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Estado.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/EstadoFacotory.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Habilidad.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/HabilidadAtaque.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/InfoHabilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/InfoHabilidad.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemEstado.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRestauracionVida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ItemRestauracionVida.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Jugador.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Paralizado.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Pokemon.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/ResultadosJugador.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tp1/clases/modelo/Subscriptor.class" beforeDir="false" />
+     </list>
+     <list id="97ae390e-5368-4026-a76e-7dd30a024249" name="Changes by cristhian" comment="" />
+     <list id="26e39c8b-4afc-443d-a0d6-088553963047" name="Changes by lu" comment="" />
+@@ -27,6 +113,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectCodeStyleSettingsMigration">
+     <option name="version" value="2" />
+@@ -39,18 +126,18 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "main",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$" />
+@@ -171,6 +258,7 @@
+       <workItem from="1701272635510" duration="4050000" />
+       <workItem from="1701285861339" duration="65000" />
+       <workItem from="1701285972652" duration="1459000" />
++      <workItem from="1701291159400" duration="1308000" />
+     </task>
+     <servers />
+   </component>
+Index: target/classes/Vistas/pantalla-efecto.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Rectangle?>\n<?import javafx.scene.text.Font?>\n\n<Pane fx:id=\"pane\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/0\" fx:controller=\"tp1.clases.controlador.ControladorPantallaEfecto\">\n   <children>\n      <ImageView fitHeight=\"600.0\" fitWidth=\"800.0\">\n         <image>\n            <Image url=\"@../Imagenes/fondoBatalla.png\" />\n         </image>\n      </ImageView>\n      <VBox prefHeight=\"600.0\" prefWidth=\"800.0\" />\n      <fx:include fx:id=\"campo\" source=\"campo.fxml\" />\n      <Pane layoutY=\"449.0\" prefHeight=\"149.0\" prefWidth=\"800.0\">\n         <children>\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#eaf3fc\" height=\"140.0\" layoutX=\"10.0\" stroke=\"#5b615d\" strokeType=\"INSIDE\" strokeWidth=\"7.0\" style=\"-fx-arc-height: 10; -fx-arc-width: 10;\" width=\"780.0\" />\n            <Label fx:id=\"labelTexto\" layoutX=\"26.0\" layoutY=\"14.0\" prefHeight=\"109.0\" prefWidth=\"748.0\">\n               <font>\n                  <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n               </font>\n            </Label>\n         </children>\n      </Pane>\n   </children>\n</Pane>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/pantalla-efecto.fxml b/target/classes/Vistas/pantalla-efecto.fxml
+--- a/target/classes/Vistas/pantalla-efecto.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/pantalla-efecto.fxml	(date 1701301546211)
+@@ -12,7 +12,7 @@
+    <children>
+       <ImageView fitHeight="600.0" fitWidth="800.0">
+          <image>
+-            <Image url="@../Imagenes/fondoBatalla.png" />
++            <Image url="@../Imagenes/fondos/fondoBatalla.png" />
+          </image>
+       </ImageView>
+       <VBox prefHeight="600.0" prefWidth="800.0" />
+@@ -22,7 +22,7 @@
+             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="140.0" layoutX="10.0" stroke="#5b615d" strokeType="INSIDE" strokeWidth="7.0" style="-fx-arc-height: 10; -fx-arc-width: 10;" width="780.0" />
+             <Label fx:id="labelTexto" layoutX="26.0" layoutY="14.0" prefHeight="109.0" prefWidth="748.0">
+                <font>
+-                  <Font name="Pokemon Fire Red Regular" size="30.0" />
++                  <Font name="000webfont" size="30.0" />
+                </font>
+             </Label>
+          </children>
+Index: target/classes/Style/botonConfirmacion.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.button {\n    -fx-font-family: \"Pokemon Fire Red\";\n    -fx-font-weight: bold;\n    -fx-font-size: 28px;\n    -fx-background-color: #a8d0e6;\n    -fx-border-color: #80a0b0;\n    -fx-border-width: 3px;\n    -fx-border-radius: 5px;\n    -fx-padding: 8px 16px;\n    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n}\n\n.button:hover {\n    -fx-background-color: #c0e0f0;\n    -fx-translate-y: 1px;\n    -fx-effect: none;\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Style/botonConfirmacion.css b/target/classes/Style/botonConfirmacion.css
+--- a/target/classes/Style/botonConfirmacion.css	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Style/botonConfirmacion.css	(date 1701301546211)
+@@ -1,5 +1,5 @@
+ .button {
+-    -fx-font-family: "Pokemon Fire Red";
++    -fx-font-family: "000webfont";
+     -fx-font-weight: bold;
+     -fx-font-size: 28px;
+     -fx-background-color: #a8d0e6;
+Index: target/classes/Style/botonesItems.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#botonesItems {\n    -fx-background-color: #ddc26f;\n    -fx-padding: 10px;\n    -fx-spacing: 5px;\n}\n\n.button {\n    -fx-font-family: \"Pokemon Fire Red Regular\";\n    -fx-font-size: 30px;\n    -fx-padding: 10px 15px;\n    -fx-background-color: #f5e1a4;\n    -fx-text-fill: black;\n    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 0);\n    -fx-border-width: 3;\n    -fx-border-radius: 1.5%;\n    -fx-border-color: #d2b55d;\n    //style=\"-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;\" translateY=\"10.0\"\n}\n\n\n.button:hover {\n    -fx-background-color: #f7d777;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Style/botonesItems.css b/target/classes/Style/botonesItems.css
+--- a/target/classes/Style/botonesItems.css	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Style/botonesItems.css	(date 1701301546211)
+@@ -5,7 +5,7 @@
+ }
+ 
+ .button {
+-    -fx-font-family: "Pokemon Fire Red Regular";
++    -fx-font-family: "000webfont";
+     -fx-font-size: 30px;
+     -fx-padding: 10px 15px;
+     -fx-background-color: #f5e1a4;
+Index: src/main/java/tp1/clases/controlador/ControladorEscenas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tp1.clases.controlador;\n\n\nimport javafx.animation.*;\nimport javafx.event.ActionEvent;\nimport javafx.event.EventHandler;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.scene.media.Media;\nimport javafx.scene.media.MediaPlayer;\nimport javafx.stage.Stage;\nimport javafx.util.Duration;\nimport tp1.clases.Finalizador;\nimport tp1.clases.eventos.*;\n\nimport tp1.clases.modelo.*;\n\nimport java.io.File;\nimport java.io.IOException;\nimport java.util.ArrayList;\n\npublic class ControladorEscenas implements EventHandler<ActionEvent> {\n    private Batalla batalla;\n    private Stage stage;\n    private ArrayList<Scene> escenas;\n    private ArrayList<Controlador> controladores;\n    private int escenaActual;\n    private int escenaAnterior;\n    private ArrayList<SubscriptorEscena> subscriptores;\n\n    public ControladorEscenas(Stage stage, Batalla batalla) {\n        this.escenas = new ArrayList<>();\n        this.controladores = new ArrayList<>();\n        this.subscriptores = new ArrayList<>();\n        this.batalla = batalla;\n        this.stage = stage;\n        try {\n            this.cargarEscenas();\n            ControladorMenuPokemon controladorMenuPokemon = (ControladorMenuPokemon) this.controladores.get(Escena.MENU_POKEMONES.ordinal());\n            this.agregarSubscriptor(controladorMenuPokemon);\n            ControladorPantallaInicial controladorInicial = (ControladorPantallaInicial) this.controladores.get(Escena.PANTALLA_INICIAL.ordinal());\n            controladorInicial.setStage(this.stage);\n            this.stage.setScene(this.escenas.get(0));\n\n            Media media = new Media(new File(\"/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Pokemon_FireRed_&_LeafGreen.mp3\").toURI().toString());\n\n            MediaPlayer mediaPlayer = new MediaPlayer(media);\n            mediaPlayer.volumeProperty().set(0.02);\n            mediaPlayer.setAutoPlay(true);\n            this.stage.show();\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n\n        this.stage.addEventHandler(HabilidadSeleccionadaEvent.HABILIDAD_SELECCIONADA_EVENT, event -> {\n            this.seleccionarHabilidad(event.getHabilidad());\n        });\n\n        this.stage.addEventHandler(CambioDeEscenaEvent.CAMBIO_DE_ESCENA_EVENT, event -> {\n            this.cambiarEscena(event.getEscena());\n        });\n\n        this.stage.addEventHandler(ItemSeleccionadoEvent.ITEM_SELECCIONADO_EVENT, event -> {\n            this.seleccionarItem(event.getItem());\n        });\n\n        this.stage.addEventHandler(PokemonSeleccionadoEvent.POKEMON_SELECCIONADO_EVENT, event -> {\n            this.seleccionarPokemon(event.getPokemon());\n        });\n\n        this.stage.addEventHandler(RendirseEvent.RENDIRSE_EVENT, event -> {\n            this.rendirse();\n        });\n    }\n\n    public void agregarSubscriptor(SubscriptorEscena subscriptor) {\n        this.subscriptores.add(subscriptor);\n    }\n\n    public void actualizarEscena(int escena) {\n        this.escenaAnterior = this.escenaActual;\n        this.escenaActual = escena;\n\n        for (SubscriptorEscena subscriptor : this.subscriptores) {\n            subscriptor.Update(escena);\n        }\n    }\n\n    public void cargarFXML(String ruta) throws IOException {\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(ruta));\n        Scene scene = new Scene(loader.load());\n        this.escenas.add(scene);\n        Controlador controlador = loader.getController();\n        controlador.inicializar(this.batalla);\n        this.controladores.add(controlador);\n    }\n\n    public void cargarEscenas() throws IOException {\n        this.cargarFXML(\"/Vistas/pantalla-inicial.fxml\");\n        this.cargarFXML(\"/Vistas/menu-principal.fxml\");\n        this.cargarFXML(\"/Vistas/menu-habilidades.fxml\");\n        this.cargarFXML(\"/Vistas/menu-pokemon.fxml\");\n        this.cargarFXML(\"/Vistas/menu-items.fxml\");\n        this.cargarFXML(\"/Vistas/pantalla-efecto.fxml\");\n    }\n\n    public void seleccionarHabilidad(Habilidad habilidad) {\n        ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());\n        controlador.setHabilidadSeleccionada(habilidad);\n        controlador.mostrarAtaque();\n    }\n\n    public void seleccionarPokemon(Pokemon pokemon ){\n        ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());\n        controladorPantallaEfecto.setPokemonSeleccionado(pokemon);\n        if (escenaAnterior == Escena.MENU_ITEMS.ordinal()) {\n            controladorPantallaEfecto.mostrarItemAplicado();\n        } else {\n            controladorPantallaEfecto.mostrarCambioDePokemon();\n        }\n    }\n\n    public void seleccionarItem(Item item) {\n        ControladorPantallaEfecto controladorPantallaEfecto = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());\n        controladorPantallaEfecto.setItemSeleccionado(item);\n    }\n\n    public void rendirse() {\n        this.batalla.rendir(this.batalla.getJugadorActual());\n        try {\n            this.partidaTerminada();\n        } catch (IOException e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n    public void cambiarEscena(int escena) {\n        if (this.batalla.obtenerGanador().isPresent()) {\n            try {\n                partidaTerminada();\n            } catch (IOException e) {\n                throw new RuntimeException(e);\n            }\n            return;\n        }\n\n        this.actualizarEscena(escena);\n\n        if ((this.escenaAnterior != Escena.MENU_PRINCIPAL.ordinal()) | escena == Escena.MENU_PRINCIPAL.ordinal()) {\n            ControladorPantallaEfecto controlador = (ControladorPantallaEfecto) this.controladores.get(Escena.PANTALLA_EFECTO.ordinal());\n            if (this.batalla.getJugadorSiguiente().getPokemonActual().estaMuerto()) {\n                controlador.mostrarPokemonMuerto(JugadorEnum.RIVAL);\n            }\n\n            if (this.batalla.getJugadorActual().getPokemonActual().estaMuerto()) {\n                controlador.mostrarPokemonMuerto(JugadorEnum.ACTUAL);\n            }\n        }\n\n        if (\n                (escena != Escena.MENU_HABILIDADES.ordinal())\n                && (escenaAnterior != Escena.MENU_HABILIDADES.ordinal())\n                && (escenaAnterior != Escena.PANTALLA_EFECTO.ordinal())\n        ) {\n            this.sacarEscenaAnterior(escenaActual);\n            this.stage.setScene(this.escenas.get(escena));\n            this.ponerEscenaNueva(escena);\n        } else {\n            this.stage.setScene(this.escenas.get(escena));\n        }\n\n        this.stage.show();\n    }\n\n    private void partidaTerminada() throws IOException {\n        cargarFXML(\"/Vistas/pantalla-final.fxml\");\n        this.stage.setScene(this.escenas.get(Escena.PANTALLA_FINAL.ordinal()));\n        this.stage.show();\n\n        Finalizador finalizador = new Finalizador(batalla.getJugadores().get(0), batalla.getRendidos().get(0));\n        finalizador.crearJsonPartida();\n    }\n\n    public void sacarEscenaAnterior(int escena) {\n        Animation transition = new Transition() {\n            {\n                setCycleDuration(Duration.millis(1000));\n                setInterpolator(Interpolator.EASE_OUT);\n            }\n\n            @Override\n            protected void interpolate(double frac) {\n                escenas.get(escena).getRoot().setOpacity(stage.getOpacity() * (1 - frac));\n                escenas.get(escena).setFill(javafx.scene.paint.Color.BLACK.interpolate(javafx.scene.paint.Color.TRANSPARENT, frac));\n            }\n        };\n        transition.play();\n    }\n\n    public void ponerEscenaNueva(int escena) {\n        Animation transition = new Transition() {\n            {\n                setCycleDuration(Duration.millis(1000));\n                setInterpolator(Interpolator.EASE_IN);\n            }\n\n            @Override\n            protected void interpolate(double frac) {\n                escenas.get(escena).getRoot().setOpacity(stage.getOpacity() * frac);\n                escenas.get(escena).setFill(javafx.scene.paint.Color.BLACK.interpolate(javafx.scene.paint.Color.TRANSPARENT, frac));\n            }\n        };\n        transition.play();\n    }\n\n\n    @Override\n    public void handle(ActionEvent actionEvent) {}\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tp1/clases/controlador/ControladorEscenas.java b/src/main/java/tp1/clases/controlador/ControladorEscenas.java
+--- a/src/main/java/tp1/clases/controlador/ControladorEscenas.java	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/src/main/java/tp1/clases/controlador/ControladorEscenas.java	(date 1701301546207)
+@@ -42,11 +42,6 @@
+             controladorInicial.setStage(this.stage);
+             this.stage.setScene(this.escenas.get(0));
+ 
+-            Media media = new Media(new File("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/Pokemon_FireRed_&_LeafGreen.mp3").toURI().toString());
+-
+-            MediaPlayer mediaPlayer = new MediaPlayer(media);
+-            mediaPlayer.volumeProperty().set(0.02);
+-            mediaPlayer.setAutoPlay(true);
+             this.stage.show();
+         } catch (IOException e) {
+             e.printStackTrace();
+Index: target/classes/Style/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.root{\n    -fx-background-image:url(\"../Imagenes/background.png\");\n    -fx-background-size:cover;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Style/style.css b/target/classes/Style/style.css
+--- a/target/classes/Style/style.css	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Style/style.css	(date 1701301546211)
+@@ -1,4 +1,4 @@
+ .root{
+-    -fx-background-image:url("../Imagenes/background.png");
++    -fx-background-image:url("../Imagenes/fondos/background.png");
+     -fx-background-size:cover;
+ }
+Index: src/main/java/tp1/clases/controlador/Archivos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tp1.clases.controlador;\n\nimport javafx.scene.media.Media;\nimport javafx.scene.media.MediaPlayer;\n\nimport java.io.File;\nimport java.util.Objects;\n\npublic class Archivos {\n\n    public static String getRutaAbsolutaImagenes(String archivo) {\n        return Objects.requireNonNull(Archivos.class.getResource(\"/Imagenes/\" + archivo)).toString();\n    }\n\n    public static void reproducirSonido(String ruta, MediaPlayer mediaPlayer) {\n        Media media = new Media(new File(ruta).toURI().toString());\n        mediaPlayer = new MediaPlayer(media);\n        mediaPlayer.volumeProperty().set(1.0);\n        mediaPlayer.play();\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tp1/clases/controlador/Archivos.java b/src/main/java/tp1/clases/controlador/Archivos.java
+--- a/src/main/java/tp1/clases/controlador/Archivos.java	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/src/main/java/tp1/clases/controlador/Archivos.java	(date 1701301546207)
+@@ -12,12 +12,4 @@
+         return Objects.requireNonNull(Archivos.class.getResource("/Imagenes/" + archivo)).toString();
+     }
+ 
+-    public static void reproducirSonido(String ruta, MediaPlayer mediaPlayer) {
+-        Media media = new Media(new File(ruta).toURI().toString());
+-        mediaPlayer = new MediaPlayer(media);
+-        mediaPlayer.volumeProperty().set(1.0);
+-        mediaPlayer.play();
+-    }
+-
+-
+ }
+Index: target/classes/Style/botonInicio.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.button {\n    -fx-font-weight: bold;\n    -fx-font-size: 14px;\n    -fx-font-family: \"Pokemon Fire Red Regular\";\n    -fx-background-color: #a8d0e6; /* Color celeste claro */\n    -fx-border-color: #80a0b0; /* Color del borde */\n    -fx-border-width: 3px;\n    -fx-border-radius: 5px; /* Bordes más rectos, típicos de las interfaces de GameBoy */\n    -fx-padding: 8px 16px;\n    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n}\n\n.button:hover {\n    -fx-background-color: #c0e0f0; /* Color al pasar el cursor */\n    -fx-translate-y: 2px;\n    -fx-effect: none;\n}\n\n#startButton {\n    -fx-margin-top: 20px;\n    -fx-font-weight: bold;\n    -fx-font-size: 18px;\n    -fx-text-fill: black;\n    -fx-background-color: #a8d0e6;\n    -fx-border-color: #80a0b0; /* Color del borde */\n    -fx-border-width: 3px;\n    -fx-border-radius: 5px;\n    -fx-padding: 8px 20px;\n    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n}\n\n#startButton:hover {\n    -fx-background-color: #c0e0f0; /* Color al pasar el cursor */\n    -fx-translate-y: 3px;\n    -fx-effect: none;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Style/botonInicio.css b/target/classes/Style/botonInicio.css
+--- a/target/classes/Style/botonInicio.css	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Style/botonInicio.css	(date 1701301546211)
+@@ -1,7 +1,7 @@
+ .button {
+     -fx-font-weight: bold;
+     -fx-font-size: 14px;
+-    -fx-font-family: "Pokemon Fire Red Regular";
++    -fx-font-family: "000webfont";
+     -fx-background-color: #a8d0e6; /* Color celeste claro */
+     -fx-border-color: #80a0b0; /* Color del borde */
+     -fx-border-width: 3px;
+Index: src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tp1.clases.controlador;\n\nimport javafx.animation.KeyFrame;\nimport javafx.animation.KeyValue;\nimport javafx.animation.Timeline;\nimport javafx.fxml.FXML;\nimport javafx.scene.control.Label;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.layout.GridPane;\nimport javafx.scene.layout.VBox;\nimport javafx.scene.media.MediaPlayer;\nimport javafx.scene.paint.Color;\nimport javafx.scene.shape.Rectangle;\nimport javafx.scene.text.Font;\nimport javafx.scene.text.Text;\nimport javafx.util.Duration;\nimport tp1.clases.modelo.Batalla;\nimport tp1.clases.modelo.Jugador;\nimport tp1.clases.modelo.Pokemon;\n\nimport java.util.Objects;\n\npublic class ControladorPantallaFinal implements Controlador{\n    public ImageView fondo;\n    public Label textoClixk;\n    public Rectangle rectangulo;\n    public VBox infoPokemones;\n    @FXML private Label texto;\n    @FXML private ImageView ganador;\n    @FXML private GridPane gridPane;\n\n    private Jugador jugador;\n    private boolean clicksHecho = false;\n\n    private MediaPlayer mediaPlayer;\n\n    public void inicializar(Batalla batalla){\n        this.jugador = batalla.getJugadores().get(0);\n        setImagenesPokemones();\n        setTexto(this.jugador.getNombre());\n        setGanador(this.jugador.getNombre());\n\n        Archivos.reproducirSonido(\"/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/victoria.mp3\", this.mediaPlayer);\n    }\n\n    private void setImagenesPokemones() {\n        int columnas = 3;\n        int i = 0;\n        for (Pokemon pokemon : this.jugador.getListaPokemones()){\n\n            String path = \"/Imagenes/pokemon/\" + pokemon.getNombre() + \".gif\";\n            ImageView imageView = new ImageView(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource(path)))));\n            imageView.setFitWidth(50);\n            imageView.setFitHeight(50);\n\n            Timeline timeline = new Timeline();\n\n            KeyFrame startFrame = new KeyFrame(Duration.ZERO,\n                    new KeyValue(imageView.fitWidthProperty(), 50),\n                    new KeyValue(imageView.fitHeightProperty(), 50));\n\n            KeyFrame endFrame = new KeyFrame(Duration.seconds(2),\n                    new KeyValue(imageView.fitWidthProperty(), 220),\n                    new KeyValue(imageView.fitHeightProperty(), 180));\n\n            timeline.getKeyFrames().addAll(startFrame, endFrame);\n            timeline.play();\n            gridPane.add(imageView, i % columnas, i / columnas);\n            i++;\n        }\n\n    }\n\n    private void setTexto(String nombre){\n        texto.setOpacity(0);\n        texto.setText(\"¡ENHORABUENA! ¡\" + nombre + \" ha ganado! ¡Felicitaciones!\");\n        Timeline timeline = new Timeline();\n\n        for (int i = 0; i < texto.getText().length(); i++) {\n            KeyFrame keyFrame =\n                    new KeyFrame(\n                    Duration.seconds(0.1*i),\n                    new KeyValue(texto.textProperty(), texto.getText().substring(0, i + 1))\n            );\n            timeline.getKeyFrames().add(keyFrame);\n        }\n\n        timeline.getKeyFrames().add(new KeyFrame(\n                Duration.seconds(texto.getText().length()*0.1),\n                new KeyValue(texto.opacityProperty(), 1)\n        ));\n\n        timeline.play();\n    }\n\n    private void setGanador(String nombre){\n        String path = \"/Imagenes/jugadores/\" + nombre + \".png\";\n        this.ganador.setImage(new Image(String.valueOf(Objects.requireNonNull(getClass().getResource(path)))));\n\n        Timeline timeline2 = new Timeline();\n        KeyFrame startFrame = new KeyFrame(Duration.ZERO,\n                new KeyValue(this.ganador.fitWidthProperty(), 50),\n                new KeyValue(this.ganador.fitHeightProperty(), 50));\n\n        KeyFrame endFrame = new KeyFrame(Duration.seconds(2),\n                new KeyValue(this.ganador.fitWidthProperty(), 240),\n                new KeyValue(this.ganador.fitHeightProperty(), 300));\n\n        timeline2.getKeyFrames().addAll(startFrame, endFrame);\n        timeline2.play();\n    }\n\n    @FXML\n    private void handleOnMouseClicked() {\n        if (!this.clicksHecho) {\n            this.clicksHecho = true;\n            Color initialColor = Color.web(\"#e3c57ff7\");\n            this.rectangulo.setFill(initialColor);\n            this.rectangulo.setStroke(Color.WHITE);\n            this.textoClixk.setOpacity(0);\n\n            for (Pokemon pokemon : this.jugador.getListaPokemones()) {\n                Text info = new Text(pokemon.getNombre() + \" \" + \"  Nvl \" + pokemon.getNivel() + \"  Vida \" + pokemon.getVida());\n                info.setFont(new Font(\"000webfont\", 24));\n                this.infoPokemones.getChildren().add(info);\n                this.infoPokemones.getChildren().add(new Text(\"\"));\n                this.infoPokemones.getChildren().add(new Text(\"\"));\n            }\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java b/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java
+--- a/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/src/main/java/tp1/clases/controlador/ControladorPantallaFinal.java	(date 1701301546207)
+@@ -41,7 +41,6 @@
+         setTexto(this.jugador.getNombre());
+         setGanador(this.jugador.getNombre());
+ 
+-        Archivos.reproducirSonido("/home/melina/Escritorio/algo3/TP/algo3-tp/Pokemon/src/main/resources/victoria.mp3", this.mediaPlayer);
+     }
+ 
+     private void setImagenesPokemones() {
+Index: target/classes/Vistas/campo.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.geometry.Insets?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.HBox?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Ellipse?>\n\n<Pane fx:id=\"campoPane\" prefHeight=\"432.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"tp1.clases.controlador.ControladorCampo\">\n    <children>\n        <ImageView fx:id=\"fondoClima\" fitHeight=\"400.0\" fitWidth=\"800.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n        <VBox layoutX=\"-4.0\" layoutY=\"12.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"800.0\">\n            <children>\n                <HBox prefHeight=\"260.0\" prefWidth=\"800.0\">\n                    <children>\n                        <VBox prefHeight=\"200.0\" prefWidth=\"320.0\">\n                            <children>\n                                <fx:include fx:id=\"cartelPokemonRival\" source=\"cartel-pokemon.fxml\" />\n                                <ImageView fx:id=\"pokebolasJugadorRival\" fitHeight=\"50.0\" fitWidth=\"314.0\" />\n                            </children>\n                        </VBox>\n                        <Pane prefHeight=\"184.0\" prefWidth=\"231.0\">\n                            <children>\n                                <Ellipse fill=\"#46975a\" layoutX=\"110.0\" layoutY=\"183.0\" radiusX=\"113.0\" radiusY=\"13.0\" stroke=\"TRANSPARENT\" strokeType=\"INSIDE\" />\n                                <ImageView fx:id=\"imagenRival\" fitHeight=\"150.0\" fitWidth=\"202.0\" layoutX=\"9.0\" layoutY=\"40.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n                                <ImageView fx:id=\"efectoRival\" fitHeight=\"150.0\" fitWidth=\"195.0\" layoutX=\"9.0\" layoutY=\"40.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n                            </children>\n                        </Pane>\n                        <fx:include fx:id=\"cartelClima\" source=\"cartel-clima.fxml\" />\n                    </children>\n                    <padding>\n                        <Insets left=\"10.0\" />\n                    </padding>\n                </HBox>\n                <HBox fx:id=\"hboxCartelesActual\" prefHeight=\"237.0\" prefWidth=\"800.0\">\n                    <children>\n                        <Pane prefHeight=\"270.0\" prefWidth=\"624.0\">\n                            <children>\n                                <Ellipse fill=\"#46975a\" layoutX=\"295.0\" layoutY=\"175.0\" radiusX=\"119.0\" radiusY=\"13.0\" stroke=\"TRANSPARENT\" strokeType=\"INSIDE\" />\n                                <ImageView fx:id=\"imagenActual\" fitHeight=\"150.0\" fitWidth=\"202.0\" layoutX=\"188.0\" layoutY=\"32.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n                                <ImageView fx:id=\"efectoActual\" fitHeight=\"150.0\" fitWidth=\"209.0\" layoutX=\"188.0\" layoutY=\"32.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\n                            </children>\n                        </Pane>\n                        <VBox prefHeight=\"270.0\" prefWidth=\"414.0\">\n                            <children>\n                                <ImageView fx:id=\"pokebolasJugadorActual\" fitHeight=\"50.0\" fitWidth=\"295.0\" />\n                                <fx:include fx:id=\"cartelPokemonActual\" source=\"cartel-pokemon.fxml\" />\n                            </children>\n                        </VBox>\n                    </children>\n                </HBox>\n            </children>\n        </VBox>\n    </children>\n</Pane>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/campo.fxml b/target/classes/Vistas/campo.fxml
+--- a/target/classes/Vistas/campo.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/campo.fxml	(date 1701301546211)
+@@ -7,7 +7,7 @@
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.shape.Ellipse?>
+ 
+-<Pane fx:id="campoPane" prefHeight="432.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
++<Pane fx:id="campoPane" prefHeight="432.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorCampo">
+     <children>
+         <ImageView fx:id="fondoClima" fitHeight="400.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+         <VBox layoutX="-4.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
+@@ -16,7 +16,7 @@
+                     <children>
+                         <VBox prefHeight="200.0" prefWidth="320.0">
+                             <children>
+-                                <fx:include fx:id="cartelPokemonRival" source="cartel-pokemon.fxml" />
++                                <fx:include fx:id="cartelPokemonRival" source="centro-de-estadisticas.fxml" />
+                                 <ImageView fx:id="pokebolasJugadorRival" fitHeight="50.0" fitWidth="314.0" />
+                             </children>
+                         </VBox>
+@@ -45,7 +45,7 @@
+                         <VBox prefHeight="270.0" prefWidth="414.0">
+                             <children>
+                                 <ImageView fx:id="pokebolasJugadorActual" fitHeight="50.0" fitWidth="295.0" />
+-                                <fx:include fx:id="cartelPokemonActual" source="cartel-pokemon.fxml" />
++                                <fx:include fx:id="cartelPokemonActual" source="centro-de-estadisticas.fxml" />
+                             </children>
+                         </VBox>
+                     </children>
+Index: target/classes/Vistas/menu-principal.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import java.net.URL?>\n<?import javafx.geometry.Insets?>\n<?import javafx.scene.control.Button?>\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.HBox?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.StackPane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Rectangle?>\n<?import javafx.scene.text.Font?>\n\n<Pane prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/0\" fx:controller=\"tp1.clases.controlador.ControladorMenuPrincipal\">\n    <children>\n        <ImageView fitHeight=\"602.0\" fitWidth=\"802.0\">\n            <image>\n                <Image url=\"@../Imagenes/fondoBatalla.png\" />\n            </image>\n        </ImageView>\n        <VBox prefHeight=\"600.0\" prefWidth=\"800.0\">\n            <children>\n                <fx:include fx:id=\"campo\" source=\"campo.fxml\" />\n                <HBox prefHeight=\"160.0\" prefWidth=\"800.0\" spacing=\"5.0\">\n                    <children>\n                        <HBox prefHeight=\"160.0\" prefWidth=\"480.0\">\n                            <StackPane prefHeight=\"160.0\" prefWidth=\"480.0\">\n                                <children>\n                                    <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#eaf3fc\" height=\"150.0\" stroke=\"#5b615d9e\" strokeLineJoin=\"ROUND\" strokeType=\"OUTSIDE\" strokeWidth=\"7.0\" width=\"470.0\" />\n                                    <Label fx:id=\"dialogo\" prefHeight=\"89.0\" prefWidth=\"458.0\" text=\"Qué accion querés realizar?\">\n                                        <font>\n                                            <Font name=\"Pokemon Fire Red Regular\" size=\"49.0\" />\n                                        </font>\n                                    </Label>\n                                </children>\n                            </StackPane>\n                        </HBox>\n                        <VBox prefHeight=\"160.0\" prefWidth=\"160.0\" spacing=\"2.0\">\n                            <Button fx:id=\"botonAtacar\" mnemonicParsing=\"false\" prefHeight=\"80.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #ff8a9f; -fx-border-color: #ff2b52; -fx-border-radius: 5%; -fx-border-width: 5;\" text=\"ATACAR\">\n                                <font>\n                                    <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                </font>\n                            </Button>\n                            <Button fx:id=\"botonMochila\" mnemonicParsing=\"false\" prefHeight=\"80.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #ffd063; -fx-border-width: 5; -fx-border-radius: 5%; -fx-border-color: #ffbc21;\" text=\"MOCHILA\">\n                                <font>\n                                    <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                </font>\n                            </Button>\n                        </VBox>\n                        <VBox prefHeight=\"160.0\" prefWidth=\"160.0\" spacing=\"2.0\">\n                            <Button fx:id=\"botonPokemon\" mnemonicParsing=\"false\" prefHeight=\"80.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #6690fa; -fx-border-color: #0d51ff; -fx-border-radius: 5%; -fx-border-width: 5;\" text=\"POKEMON\">\n                                <font>\n                                    <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                </font>\n                            </Button>\n                            <Button fx:id=\"botonRendirse\" mnemonicParsing=\"false\" prefHeight=\"80.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #6bb573; -fx-border-color: #1aa129; -fx-border-width: 5; -fx-border-radius: 5%;\" text=\"RENDIRSE\">\n                                <font>\n                                    <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                </font>\n                            </Button>\n                        </VBox>\n                    </children>\n                    <padding>\n                        <Insets bottom=\"10.0\" left=\"10.0\" right=\"10.0\" top=\"10.0\" />\n                    </padding>\n                </HBox>\n            </children>\n        </VBox>\n    </children>\n</Pane>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/menu-principal.fxml b/target/classes/Vistas/menu-principal.fxml
+--- a/target/classes/Vistas/menu-principal.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/menu-principal.fxml	(date 1701301546211)
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import java.net.URL?>
+ <?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+@@ -13,11 +12,11 @@
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuPrincipal">
++<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPrincipal">
+     <children>
+         <ImageView fitHeight="602.0" fitWidth="802.0">
+             <image>
+-                <Image url="@../Imagenes/fondoBatalla.png" />
++                <Image url="@../Imagenes/fondos/fondoBatalla.png" />
+             </image>
+         </ImageView>
+         <VBox prefHeight="600.0" prefWidth="800.0">
+@@ -31,7 +30,7 @@
+                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eaf3fc" height="150.0" stroke="#5b615d9e" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="7.0" width="470.0" />
+                                     <Label fx:id="dialogo" prefHeight="89.0" prefWidth="458.0" text="Qué accion querés realizar?">
+                                         <font>
+-                                            <Font name="Pokemon Fire Red Regular" size="49.0" />
++                                            <Font name="000webfont" size="40.0" />
+                                         </font>
+                                     </Label>
+                                 </children>
+@@ -40,24 +39,24 @@
+                         <VBox prefHeight="160.0" prefWidth="160.0" spacing="2.0">
+                             <Button fx:id="botonAtacar" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #ff8a9f; -fx-border-color: #ff2b52; -fx-border-radius: 5%; -fx-border-width: 5;" text="ATACAR">
+                                 <font>
+-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                    <Font name="000webfont" size="30.0" />
+                                 </font>
+                             </Button>
+                             <Button fx:id="botonMochila" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #ffd063; -fx-border-width: 5; -fx-border-radius: 5%; -fx-border-color: #ffbc21;" text="MOCHILA">
+                                 <font>
+-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                    <Font name="000webfont" size="30.0" />
+                                 </font>
+                             </Button>
+                         </VBox>
+                         <VBox prefHeight="160.0" prefWidth="160.0" spacing="2.0">
+                             <Button fx:id="botonPokemon" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #6690fa; -fx-border-color: #0d51ff; -fx-border-radius: 5%; -fx-border-width: 5;" text="POKEMON">
+                                 <font>
+-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                    <Font name="000webfont" size="30.0" />
+                                 </font>
+                             </Button>
+                             <Button fx:id="botonRendirse" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #6bb573; -fx-border-color: #1aa129; -fx-border-width: 5; -fx-border-radius: 5%;" text="RENDIRSE">
+                                 <font>
+-                                    <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                    <Font name="000webfont" size="29.0" />
+                                 </font>
+                             </Button>
+                         </VBox>
+@@ -68,5 +67,25 @@
+                 </HBox>
+             </children>
+         </VBox>
++        <Pane fx:id="rendirsePane" layoutX="177.0" layoutY="121.0" prefHeight="284.0" prefWidth="452.0">
++            <children>
++                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebddbd" height="264.0" layoutX="14.0" layoutY="8.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" width="427.0" />
++                <Label layoutX="43.0" layoutY="60.0" prefHeight="117.0" prefWidth="382.0" text="Seguro que desea RENDIRSE?">
++                    <font>
++                        <Font name="000webfont" size="35.0" />
++                    </font>
++                </Label>
++                <ImageView fx:id="botonSi" layoutX="96.0" layoutY="156.0">
++                    <image>
++                        <Image url="@../Imagenes/si.png" />
++                    </image>
++                </ImageView>
++                <ImageView fx:id="botonNo" layoutX="258.0" layoutY="156.0">
++                    <image>
++                        <Image url="@../Imagenes/no.png" />
++                    </image>
++                </ImageView>
++            </children>
++        </Pane>
+     </children>
+-</Pane>
+\ No newline at end of file
++</Pane>
+Index: target/classes/Vistas/menu-pokemon.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.geometry.Insets?>\n<?import javafx.scene.Group?>\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.HBox?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.StackPane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.shape.Circle?>\n<?import javafx.scene.text.Font?>\n\n<?import javafx.scene.layout.Region?>\n<StackPane fx:id=\"contenedorPrincipal\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"tp1.clases.controlador.ControladorMenuPokemon\">\n    <Region HBox.hgrow=\"ALWAYS\" />\n    <ImageView fitHeight=\"600.0\" fitWidth=\"800.0\">\n        <Image url=\"@../Imagenes/fondoMenuPokemonAzul.jpg\" />\n    </ImageView>\n    <VBox alignment=\"CENTER\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\">\n        <VBox fx:id=\"contenedorPokemon\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"460.0\" prefWidth=\"420.0\" translateX=\"160.0\" translateY=\"110.0\" />\n        <VBox fx:id=\"contenedorPokemonActual\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"240.0\" prefWidth=\"240.0\" translateX=\"-220.0\" translateY=\"-230.0\" />\n        <Pane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"91.0\" prefWidth=\"706.0\" translateY=\"-110.0\">\n            <opaqueInsets>\n                <Insets right=\"600.0\" top=\"600.0\" />\n            </opaqueInsets>\n            <VBox.margin>\n                <Insets />\n            </VBox.margin>\n            <HBox fx:id=\"contenedorBotonVolver\" alignment=\"CENTER\" layoutX=\"548.0\" layoutY=\"12.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" onMouseClicked=\"#handleMouseOnClick\" prefHeight=\"55.0\" prefWidth=\"133.0\" style=\"-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;\" translateY=\"10.0\">\n                <children>\n                    <Label maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"43.0\" prefWidth=\"80.0\" text=\"VOLVER\" translateX=\"15.0\">\n                        <font>\n                            <Font name=\"Pokemon Fire Red Regular\" size=\"33.0\" />\n                        </font>\n                    </Label>\n                </children>\n            </HBox>\n            <HBox alignment=\"CENTER\" layoutX=\"20.0\" prefHeight=\"92.0\" prefWidth=\"483.0\" style=\"-fx-background-color:white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;\">\n                <Label fx:id=\"labelTexto\" alignment=\"CENTER\" text=\"Seleccione un Pokemon\" textAlignment=\"CENTER\">\n                    <HBox.margin>\n                        <Insets />\n                    </HBox.margin>\n                    <font>\n                        <Font name=\"Pokemon Fire Red Regular\" size=\"48.0\" />\n                    </font>\n                </Label>\n            </HBox>\n            <StackPane layoutX=\"500.0\" layoutY=\"9.0\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"81.0\" prefWidth=\"97.0\">\n                <Group />\n                <Circle radius=\"34.0\" />\n                <ImageView fitHeight=\"67.0\" fitWidth=\"76.0\" opacity=\"0.78\" pickOnBounds=\"true\" preserveRatio=\"true\">\n                    <Image url=\"@../Imagenes/bolaPokemon.png\" />\n                </ImageView>\n            </StackPane>\n\n        </Pane>\n    </VBox>\n</StackPane>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/menu-pokemon.fxml b/target/classes/Vistas/menu-pokemon.fxml
+--- a/target/classes/Vistas/menu-pokemon.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/menu-pokemon.fxml	(date 1701301546211)
+@@ -12,49 +12,68 @@
+ <?import javafx.scene.shape.Circle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<?import javafx.scene.layout.Region?>
+-<StackPane fx:id="contenedorPrincipal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+-    <Region HBox.hgrow="ALWAYS" />
++<StackPane fx:id="contenedorPrincipal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuPokemon">
+     <ImageView fitHeight="600.0" fitWidth="800.0">
+-        <Image url="@../Imagenes/fondoMenuPokemonAzul.jpg" />
++        <Image url="@../Imagenes/fondos/fondoMenuPokemonAzul.jpg" />
+     </ImageView>
+     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+-        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="110.0" />
+-        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="-220.0" translateY="-230.0" />
+-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="706.0" translateY="-110.0">
++        <VBox fx:id="contenedorPokemon" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="420.0" translateX="160.0" translateY="120.0" />
++        <VBox fx:id="contenedorPokemonActual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="-220.0" translateY="-210.0" />
++        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="800.0" translateY="-100.0">
+             <opaqueInsets>
+                 <Insets right="600.0" top="600.0" />
+             </opaqueInsets>
+             <VBox.margin>
+                 <Insets />
+             </VBox.margin>
+-            <HBox fx:id="contenedorBotonVolver" alignment="CENTER" layoutX="548.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClick" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
++            <StackPane layoutX="502.0" layoutY="-22.0" prefHeight="125.0" prefWidth="299.0">
+                 <children>
+-                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="VOLVER" translateX="15.0">
+-                        <font>
+-                            <Font name="Pokemon Fire Red Regular" size="33.0" />
+-                        </font>
+-                    </Label>
+-                </children>
+-            </HBox>
+-            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="483.0" style="-fx-background-color:white; -fx-border-radius: 2%; -fx-border-width: 5; -fx-border-color: #3b3939;">
++                    <HBox fx:id="contenedorBotonVolver" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickVolver" prefHeight="55.0" prefWidth="133.0" style="-fx-border-color: #721572; -fx-border-radius: 5%; -fx-border-width: 5; -fx-background-color: #bb50bb;" translateY="10.0">
++                        <children>
++                            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="82.0">
++                                <Group />
++                                <Circle radius="34.0" />
++                                <ImageView fitHeight="67.0" fitWidth="76.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
++                                    <Image url="@../Imagenes/pokebolas/bolaPokemon.png" />
++                                </ImageView>
++                            </StackPane>
++                            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="98.0" text="VOLVER" translateX="-5.0">
++                                <font>
++                                    <Font name="000webfont" size="28.0" />
++                                </font>
++                            </Label>
++                        </children>
++                    </HBox>
++                    <HBox fx:id="botonConfirmar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickConfirmar" opacity="0.0" prefHeight="50.0" prefWidth="120.0" style="-fx-border-color: #721572; -fx-background-color: #bb50bb; -fx-border-width: 2.5;" translateY="-30.0">
++                        <children>
++                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="120.0" text="USAR">
++                                <font>
++                                    <Font name="000webfont" size="30.0" />
++                                </font>
++                            </Label>
++                        </children>
++                    </HBox>
++                    <HBox fx:id="botonCancelar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseOnClickCancelar" opacity="0.0" prefHeight="50.0" prefWidth="120.0" style="-fx-border-color: black; -fx-background-color: grey; -fx-border-width: 2.5;" translateY="30.0">
++                        <children>
++                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="129.0" text="CANCELAR">
++                                <font>
++                                    <Font name="000webfont" size="30.0" />
++                                </font>
++                            </Label>
++                        </children>
++                    </HBox>
++                </children>
++            </StackPane>
++            <HBox alignment="CENTER" layoutX="20.0" prefHeight="92.0" prefWidth="509.0" style="-fx-background-color:white; -fx-border-radius: 1%; -fx-border-width: 4; -fx-border-color: #3b3939;">
+                 <Label fx:id="labelTexto" alignment="CENTER" text="Seleccione un Pokemon" textAlignment="CENTER">
+                     <HBox.margin>
+                         <Insets />
+                     </HBox.margin>
+                     <font>
+-                        <Font name="Pokemon Fire Red Regular" size="48.0" />
++                        <Font name="000webfont" size="48.0" />
+                     </font>
+                 </Label>
+             </HBox>
+-            <StackPane layoutX="500.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="97.0">
+-                <Group />
+-                <Circle radius="34.0" />
+-                <ImageView fitHeight="67.0" fitWidth="76.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+-                    <Image url="@../Imagenes/bolaPokemon.png" />
+-                </ImageView>
+-            </StackPane>
+-
+         </Pane>
+     </VBox>
+ </StackPane>
+Index: target/classes/Vistas/menu-habilidades.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<?import javafx.geometry.Insets?>\n<?import javafx.scene.control.Button?>\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.image.Image?>\n<?import javafx.scene.image.ImageView?>\n<?import javafx.scene.layout.AnchorPane?>\n<?import javafx.scene.layout.HBox?>\n<?import javafx.scene.layout.Pane?>\n<?import javafx.scene.layout.VBox?>\n<?import javafx.scene.text.Font?>\n\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"800.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/0\" fx:controller=\"tp1.clases.controlador.ControladorMenuHabilidades\">\n    <children>\n        <ImageView fitHeight=\"600.0\" fitWidth=\"800.0\">\n            <image>\n                <Image url=\"@../Imagenes/fondoBatalla.png\" />\n            </image>\n        </ImageView>\n        <VBox prefHeight=\"600.0\" prefWidth=\"800.0\">\n            <children>\n                <fx:include fx:id=\"campo\" source=\"campo.fxml\" />\n                <HBox prefHeight=\"166.0\" prefWidth=\"800.0\" spacing=\"5.0\">\n                    <children>\n                        <VBox fx:id=\"botonesHabilidades\" prefHeight=\"120.0\" prefWidth=\"480.0\" spacing=\"4.0\">\n                            <children>\n                                <Button fx:id=\"botonHab1\" alignment=\"TOP_LEFT\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"542.0\" style=\"-fx-background-color: #f0f0f0;\">\n                                    <font>\n                                        <Font name=\"Pokemon Fire Red Regular\" size=\"20.0\" />\n                                    </font>\n                                </Button>\n                                <Button fx:id=\"botonHab2\" alignment=\"TOP_LEFT\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"546.0\" style=\"-fx-background-color: #f0f0f0;\">\n                                    <font>\n                                        <Font name=\"Pokemon Fire Red Regular\" size=\"20.0\" />\n                                    </font>\n                                </Button>\n                                <Button fx:id=\"botonHab3\" alignment=\"TOP_LEFT\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"543.0\" style=\"-fx-background-color: #f0f0f0;\">\n                                    <font>\n                                        <Font name=\"Pokemon Fire Red Regular\" size=\"20.0\" />\n                                    </font>\n                                </Button>\n                                <Button fx:id=\"botonHab4\" alignment=\"TOP_LEFT\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"581.0\" style=\"-fx-background-color: #f0f0f0;\">\n                                    <font>\n                                        <Font name=\"Pokemon Fire Red Regular\" size=\"20.0\" />\n                                    </font>\n                                </Button>\n                            </children>\n                            <padding>\n                                <Insets bottom=\"2.0\" left=\"2.0\" />\n                            </padding>\n                        </VBox>\n                        <VBox prefHeight=\"108.0\" prefWidth=\"320.0\" spacing=\"2.0\">\n                            <children>\n                                <Pane prefHeight=\"110.0\" prefWidth=\"308.0\" style=\"-fx-background-color: eaf3fc;\">\n                                    <children>\n                                        <Label fx:id=\"labelUsos\" layoutX=\"23.0\" layoutY=\"7.0\" prefHeight=\"35.0\" prefWidth=\"97.0\" text=\"USOS\">\n                                            <font>\n                                                <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                            </font>\n                                        </Label>\n                                        <Label fx:id=\"labelCantUsos\" layoutX=\"185.0\" layoutY=\"8.0\" prefHeight=\"35.0\" prefWidth=\"124.0\">\n                                            <font>\n                                                <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                            </font>\n                                        </Label>\n                                        <Label fx:id=\"labelTipo\" layoutX=\"19.0\" layoutY=\"42.0\" prefHeight=\"35.0\" prefWidth=\"64.0\" text=\"TIPO\">\n                                            <font>\n                                                <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                            </font>\n                                        </Label>\n                                        <Label fx:id=\"labelTipoHabilidad\" layoutX=\"186.0\" layoutY=\"42.0\" prefHeight=\"35.0\" prefWidth=\"115.0\">\n                                            <font>\n                                                <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                            </font>\n                                        </Label>\n                                        <Label fx:id=\"texto\" layoutX=\"19.0\" layoutY=\"21.0\" prefHeight=\"72.0\" prefWidth=\"286.0\" text=\"Qué ataque queres usar?\" textOverrun=\"CLIP\" wrapText=\"true\">\n                                            <font>\n                                                <Font name=\"Pokemon Fire Red Regular\" size=\"30.0\" />\n                                            </font>\n                                        </Label>\n                                    </children>\n                                </Pane>\n                                <Button fx:id=\"botonVolver\" alignment=\"CENTER\" contentDisplay=\"CENTER\" mnemonicParsing=\"false\" prefHeight=\"20.0\" prefWidth=\"308.0\" style=\"-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 2;\" text=\"Volver\">\n                                    <font>\n                                        <Font name=\"Pokemon Fire Red Regular\" size=\"20.0\" />\n                                    </font>\n                                </Button>\n                            </children>\n                        </VBox>\n                    </children>\n                    <padding>\n                        <Insets bottom=\"10.0\" left=\"10.0\" right=\"10.0\" top=\"10.0\" />\n                    </padding>\n                </HBox>\n            </children>\n        </VBox>\n    </children>\n</AnchorPane>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/Vistas/menu-habilidades.fxml b/target/classes/Vistas/menu-habilidades.fxml
+--- a/target/classes/Vistas/menu-habilidades.fxml	(revision d98d1cd9aa9877195132ad6e91aec82a68d57b9b)
++++ b/target/classes/Vistas/menu-habilidades.fxml	(date 1701301546211)
+@@ -1,21 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.text.Font?>
++<?import javafx.geometry.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
+ 
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/0" fx:controller="tp1.clases.controlador.ControladorMenuHabilidades">
++<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorMenuHabilidades">
+     <children>
+         <ImageView fitHeight="600.0" fitWidth="800.0">
+             <image>
+-                <Image url="@../Imagenes/fondoBatalla.png" />
++                <Image url="@../Imagenes/fondos/fondoBatalla.png" />
+             </image>
+         </ImageView>
+         <VBox prefHeight="600.0" prefWidth="800.0">
+@@ -27,22 +22,22 @@
+                             <children>
+                                 <Button fx:id="botonHab1" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="30.0" prefWidth="542.0" style="-fx-background-color: #f0f0f0;">
+                                     <font>
+-                                        <Font name="Pokemon Fire Red Regular" size="20.0" />
++                                        <Font name="000webfont" size="21.0" />
+                                     </font>
+                                 </Button>
+                                 <Button fx:id="botonHab2" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="30.0" prefWidth="546.0" style="-fx-background-color: #f0f0f0;">
+                                     <font>
+-                                        <Font name="Pokemon Fire Red Regular" size="20.0" />
++                                        <Font name="000webfont" size="21.0" />
+                                     </font>
+                                 </Button>
+                                 <Button fx:id="botonHab3" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="30.0" prefWidth="543.0" style="-fx-background-color: #f0f0f0;">
+                                     <font>
+-                                        <Font name="Pokemon Fire Red Regular" size="20.0" />
++                                        <Font name="000webfont" size="21.0" />
+                                     </font>
+                                 </Button>
+                                 <Button fx:id="botonHab4" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="30.0" prefWidth="581.0" style="-fx-background-color: #f0f0f0;">
+                                     <font>
+-                                        <Font name="Pokemon Fire Red Regular" size="20.0" />
++                                        <Font name="000webfont" size="21.0" />
+                                     </font>
+                                 </Button>
+                             </children>
+@@ -56,34 +51,34 @@
+                                     <children>
+                                         <Label fx:id="labelUsos" layoutX="23.0" layoutY="7.0" prefHeight="35.0" prefWidth="97.0" text="USOS">
+                                             <font>
+-                                                <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                                <Font name="000webfont" size="30.0" />
+                                             </font>
+                                         </Label>
+                                         <Label fx:id="labelCantUsos" layoutX="185.0" layoutY="8.0" prefHeight="35.0" prefWidth="124.0">
+                                             <font>
+-                                                <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                                <Font name="000webfont" size="30.0" />
+                                             </font>
+                                         </Label>
+                                         <Label fx:id="labelTipo" layoutX="19.0" layoutY="42.0" prefHeight="35.0" prefWidth="64.0" text="TIPO">
+                                             <font>
+-                                                <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                                <Font name="000webfont" size="30.0" />
+                                             </font>
+                                         </Label>
+                                         <Label fx:id="labelTipoHabilidad" layoutX="186.0" layoutY="42.0" prefHeight="35.0" prefWidth="115.0">
+                                             <font>
+-                                                <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                                <Font name="000webfont" size="30.0" />
+                                             </font>
+                                         </Label>
+                                         <Label fx:id="texto" layoutX="19.0" layoutY="21.0" prefHeight="72.0" prefWidth="286.0" text="Qué ataque queres usar?" textOverrun="CLIP" wrapText="true">
+                                             <font>
+-                                                <Font name="Pokemon Fire Red Regular" size="30.0" />
++                                                <Font name="000webfont" size="28.0" />
+                                             </font>
+                                         </Label>
+                                     </children>
+                                 </Pane>
+                                 <Button fx:id="botonVolver" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="308.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #b0bfb9; -fx-border-width: 2;" text="Volver">
+                                     <font>
+-                                        <Font name="Pokemon Fire Red Regular" size="20.0" />
++                                        <Font name="000webfont" size="21.0" />
+                                     </font>
+                                 </Button>
+                             </children>
+@@ -96,4 +91,4 @@
+             </children>
+         </VBox>
+     </children>
+-</AnchorPane>
+\ No newline at end of file
++</AnchorPane>

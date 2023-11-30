@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaInicial">
-    <children>
-        <ImageView fitHeight="600.0" fitWidth="800.0">
-            <image>
-                <Image url="@../Imagenes/fondo.jpeg" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="221.0" fitWidth="244.0" layoutX="504.0" layoutY="284.0">
-            <image>
-                <Image url="@../Imagenes/charizard.gif" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="319.0" fitWidth="800.0" layoutY="6.0">
-            <image>
-                <Image url="@../Imagenes/logo-pixel.96c2ab63.gif" />
-            </image>
-        </ImageView>
-        <ImageView fx:id="boton" accessibleRole="BUTTON" fitHeight="140.0" fitWidth="227.0" layoutX="329.0" layoutY="284.0" onMouseClicked="#handleOnMouseClicked" onMouseDragEntered="#handleMouseDragEntered" onMouseDragExited="#handleMouseDragExited" pickOnBounds="true" preserveRatio="true" />
-    </children>
-</Pane>
+
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.clases.controlador.ControladorPantallaInicial">
+   <children>
+      <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+          <children>
+              <ImageView fitHeight="600.0" fitWidth="800.0">
+                  <image>
+                      <Image url="@../Imagenes/fondos/fondo.jpeg" />
+                  </image>
+              </ImageView>
+              <ImageView fitHeight="221.0" fitWidth="244.0" layoutX="504.0" layoutY="284.0">
+                  <image>
+                      <Image url="@../Imagenes/pokemon/charizard.gif" />
+                  </image>
+              </ImageView>
+              <ImageView fitHeight="319.0" fitWidth="800.0" layoutY="6.0">
+                  <image>
+                      <Image url="@../Imagenes/logo-pixel.96c2ab63.gif" />
+                  </image>
+              </ImageView>
+              <ImageView fx:id="boton" accessibleRole="BUTTON" fitHeight="140.0" fitWidth="227.0" layoutX="329.0" layoutY="284.0" onMouseClicked="#handleOnMouseClicked" onMouseDragEntered="#handleMouseDragEntered" onMouseDragExited="#handleMouseDragExited" pickOnBounds="true" preserveRatio="true" />
+          </children>
+      </Pane>
+   </children>
+</StackPane>
